@@ -1,13 +1,26 @@
 = Prompt Examples
 :toc: macro
+:toc-title: Contents
 :toclevels: 5
+:sectanchors:
+:sectlinks:
+:xrefstyle: short
 
 link:README.md[Back to README]
 
+[NOTE]
+====
 These examples show how a user might describe a desired DCS simulation in natural language. They are neither forms nor fixed templates; include only the details that matter to the request.
+====
+
+[TIP]
+====
+Start with <<quick-missions,Quick Missions>> for focused practice, continue to <<combat-scenarios,Combat Scenarios>> for complete standalone operations, or browse <<campaigns,Campaigns>> for linked multi-mission requests. Jump directly to <<named-campaigns,Named Long-Form Campaigns>> for the long-form collection.
+====
 
 toc::[]
 
+[[quick-missions]]
 == Quick Missions
 
 === Flight and Procedures
@@ -18,36 +31,36 @@ toc::[]
 
 [source,text]
 ----
-Create a daytime F-16C free-flight mission over the Caucasus. Start the player hot at Batumi, route the flight along the coast and through nearby valleys for about 25 minutes, include no enemies or mandatory objectives, and provide a clear-weather recovery route.
+Create a daytime Caucasus F-16C free flight. Start hot with an AI wingman at a coastal field and fly about 30 minutes in clear, light-wind weather. Add light civil and airport traffic but no enemies, mandatory waypoints, or win condition; allow return, go-around, or restart anytime.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Check field, traffic, and routes; build a .miz and brief, validating separation and recovery.
 ----
 
 ===== Night Free Flight
 
 [source,text]
 ----
-I want a night free flight in the M-2000C over the Persian Gulf. Depart from Al Dhafra, pass the Dubai skyline and coastline, then return home under moonlight with visible city lighting and no combat.
+Build a Persian Gulf full-fidelity M-2000C night free flight. Depart with a friendly aircraft and fly about 35 minutes over the city and coast under moonlight and thin cloud. Keep one neutral airliner safely separated, add no combat or compulsory action, and allow go-around or diversion.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+After checking field, night weather, and routes, build and validate a .miz and brief.
 ----
 
 ===== Scenic Flight
 
 [source,text]
 ----
-Generate a TF-51D sightseeing mission on the Cold War Germany map. Start hot from a West German airfield and tour the Elbe, Hamburg, and the North Sea coast with clear waypoints, no threats, and an easy flight of roughly 40 minutes.
+Generate a Cold War Germany MiG-29G sightseeing flight as a post-reunification German exchange sortie. Start hot with a wingman at a western field and fly about 45 minutes in scattered cloud on an autumn afternoon, observing a friendly transport and civil traffic. Add no enemy or win condition; permit early recovery and another departure.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Verify terrain, aircraft, and waypoints, then build and validate a .miz and route brief.
 ----
 
 ===== Adverse-Weather Flight
 
 [source,text]
 ----
-Make an adverse-weather MiG-29A flight on the Kola map. The player should cold-start, fly an instrument route through low cloud, snow, and strong crosswinds, then recover safely without enemy forces.
+Make a Kola adverse-weather free flight for the full-fidelity MiG-29A. Cold-start at dawn with an AI wingman and fly about 40 minutes through low cloud, snow, and strong crosswind. Keep a friendly transport above the layer and base traffic active; add no combat objective and allow early recovery or diversion.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+With weather, route, and start state checked, build and validate a .miz and instrument brief.
 ----
 
 ==== Start and Departure
@@ -56,27 +69,27 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Create a JF-17 cold-start practice mission at Nellis on the Nevada map. Include ramp startup, taxi, takeoff, a short local route, and recovery with uncomplicated ground and air traffic and no weapons objective.
+Create a JF-17 cold-start exercise at Nellis on the Nevada map. On a summer morning, power up, prepare avionics, taxi, take off, then join a friendly JF-17 for a 20-minute local route. Keep light ground and air traffic; allow an aborted start, go-around, or restart.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Use checked parking, taxi, radios, and routes to build and validate a .miz and beginner brief.
 ----
 
 ===== Hot Start
 
 [source,text]
 ----
-Give me a hot-start F-14B quick mission for a two-seat crew from a land base in the Marianas. After departure, fly a basic navigation route and a few formation turns, then return to the same field in about 30 minutes.
+Give me a Marianas F-15C hot-start mission. On a tropical morning, depart a land base with an AI wingman and spend about 35 minutes practicing navigation, formation changes, and recovery in scattered cloud and light wind. Add a friendly high patrol and airport transport; allow early separation or go-around.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Confirm terrain, spawns, and AI routes; produce and validate a .miz and brief.
 ----
 
 ===== Runway Takeoff
 
 [source,text]
 ----
-Build a short Su-25T runway-start mission at Vaziani. Have the player take off, climb to a specified altitude, pass one range waypoint, and return, keeping the focus on departure and basic aircraft handling.
+Build a Caucasus Su-25T runway-takeoff exercise. On an overcast morning, follow a specified climb profile, pass a training-area waypoint, and recover behind a friendly trainer in about 25 minutes. Launch a transport after the player clears the field; permit immediate return, go-around, or diversion.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Use Docs and Tools to check runway, start, and traffic timing, then build and validate a .miz and notes.
 ----
 
 ==== Navigation and Landing
@@ -85,54 +98,54 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Create a daytime visual-landing exercise for the M-2000C. Spawn the player about 15 nautical miles from a Caucasus airfield, lead them into a normal traffic pattern, and finish with a full-stop landing in good weather with useful radio and route cues.
+Create a full-fidelity M-2000C daytime visual-landing exercise. Start airborne about 15 nautical miles from a Caucasus field behind a same-type instructor joining the pattern, with light friendly traffic. In good weather and light wind, land full-stop within about 20 minutes, or fly a touch-and-go, another approach, or a diversion.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Check field, approach, and traffic; build a .miz and card, validating spacing and go-arounds.
 ----
 
 ===== Instrument Landing
 
 [source,text]
 ----
-I need a JF-17 instrument-landing mission. Put a Caucasus airfield under low cloud and light rain, start the player above the layer, and require an avionics-guided descent, approach intercept, and landing with no combat.
+Build a JF-17 instrument-landing exercise in the Caucasus. Start above the layer and follow a friendly transport through low cloud, light rain, and haze using verified aircraft and field facilities. Keep the roughly 25-minute mission noncombat with fuel for a missed approach, another attempt, or weather diversion.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Create and validate a .miz and brief from verified aids, weather, and approach data.
 ----
 
 ===== Night or Crosswind Landing
 
 [source,text]
 ----
-Make an F-16C night crosswind-landing mission on Sinai. Start the player downwind with moderate fuel, usable visibility, and noticeable gusts, and allow a missed approach followed by another attempt.
+Generate an F-16C night crosswind landing on Sinai. Start downwind with moderate fuel, conspicuous gusts, and usable visibility; put a friendly F-16C ahead and a neutral flight outside the approach sector. Within about 25 minutes, allow go-around and another approach or diversion to a less windy field.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Confirm runway, wind, and both routes before building and validating a .miz and night brief.
 ----
 
 ==== Formation Flight
 
 [source,text]
 ----
-Generate a four-ship F-5E formation exercise over the Nevada training ranges with the player as number two. Include rendezvous, formation changes, tactical turns, and a break-up for recovery, with no hostile aircraft.
+Generate a Nevada four-ship F-5E FC formation exercise; the player is number two. Start hot near Nellis and spend about 45 minutes in scattered morning cloud and mild turbulence practicing join-up, formation changes, tactical turns, and the recovery break. Keep a friendly tanker and airport traffic nearby; allow regrouping or a solo go-around.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Build and validate a .miz and formation brief from checked aircraft, AI, and airspace.
 ----
 
 ==== Air-to-Air Refueling
 
 [source,text]
 ----
-Create a Persian Gulf F/A-18C air-refueling exercise. Start airborne, use support calls to locate the tanker, let the player take fuel, and recover to a carrier in calm daylight with enough fuel for several attempts.
+Create a Persian Gulf F/A-18C refueling exercise. Start airborne with a wingman, follow controller calls to the tanker, and practice rendezvous, transfer, and breakaway for about 40 minutes in calm daylight. Separate a civil airway and shipping, allow repeated rejoins, and retain fuel for carrier recovery or land diversion even without a transfer.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build and validate a .miz and brief after checking tanker compatibility, route, and carrier; flag unsupported items.
 ----
 
 ==== Carrier Operations
 
 [source,text]
 ----
-Build an F-14B carrier-operations quick mission in the Marianas. Start hot on deck, launch by catapult, fly a short route, and return for a Case I recovery while the carrier group steams into the wind.
+Build a Marianas F-14B carrier exercise for an optional two-seat crew. Start hot on deck, launch behind a friendly F-14B, fly a short route, and make a clear-afternoon Case I recovery in about 35 minutes. Keep a rescue helicopter and patrol aircraft outside the pattern, add no combat, and allow bolter or land diversion.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Confirm carrier, deck, and recovery, then build and validate a .miz and deck brief.
 ----
 
 ==== Helicopter Basics
@@ -141,27 +154,27 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Create a UH-1H hovering exercise on a flat Caucasus training area. Place several spaced markers for stationary hover, sideward movement, backward movement, and pedal turns, with no hostile units.
+Create a Caucasus UH-1H hover exercise. Start hot on a flat site beside a friendly instructor demonstrating stationary hover, sideward and backward movement, and pedal turns, with a transport helicopter outside the box. Use calm clear weather for about 25 minutes, no enemy or required order, and repeated liftoffs after landing.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Use verified site, spawn, and AI routes to produce and validate a .miz and cues.
 ----
 
 ===== Nap-of-the-Earth Flight
 
 [source,text]
 ----
-Make a Mi-24P nap-of-the-earth flight on the Syria map. Route the player through valleys and between villages, avoiding known observation posts without engaging them, and finish at a forward airfield.
+Build a Mi-24P nap-of-the-earth exercise in Syria. Start hot with a friendly Mi-8 at a forward field and fly about 35 minutes through valleys, around villages, and behind terrain in light morning haze and wind. Observation posts only referee and never engage; allow following the friendly aircraft, choosing a route, early recovery, or restart after landing.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Check terrain, units, and exercise rules, then build and validate a .miz and route brief.
 ----
 
 ===== Confined-Area Landing
 
 [source,text]
 ----
-Generate a CH-47F confined-area landing exercise in the Afghan mountains. Require landings at three progressively harder valley sites while accounting for heat, altitude, and aircraft weight.
+Generate a CH-47F confined-area landing exercise in Afghanistan. Depart a forward base with a light friendly helicopter and attempt three increasingly difficult valley sites in hot-afternoon mountain gusts at a safe weight. Keep the 45-minute mission enemy-free and allow a go-around, retry, skipped site, or alternate landing.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Build and validate a .miz and site card from checked slope, weight, and weather.
 ----
 
 === Close Air Combat (BFM/ACM)
@@ -172,27 +185,27 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Create a guns-only 1v1 between the full-fidelity M-2000C and full-fidelity MiG-29A. Set an equal-altitude, equal-speed head-on merge over a Caucasus training area, carry only the required gun ammunition, allow the player to choose either aircraft, and support a quick restart after a kill.
+Create a Caucasus guns-only full-fidelity M-2000C versus full-fidelity MiG-29A 1v1; either side is playable. After instructors leave, begin head-on at equal speed and medium altitude. Clear-weather rounds last about 8 minutes, permit only guns and no boundary pursuit, and end with a kill or forced disengagement; loss, low fuel, or exit resets the original geometry.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Check aircraft, guns, and boundaries; build a .miz and dual brief, validating scoring and reset.
 ----
 
 ===== 2v2
 
 [source,text]
 ----
-Build a 2v2 guns engagement between F-5Es and MiG-21bis aircraft. Begin with opposing formations at medium altitude, use evenly matched AI wingmen, prohibit missiles, and define a clear fight area and win condition.
+Build a Nevada guns-only F-5E FC versus MiG-21Bis 2v2. Start head-on at medium altitude with the player leading evenly matched AI; keep the controller and civil airway outside. Clear-weather rounds last about 10 minutes, forbid missiles, boundary pursuit, and attacks on disengaging aircraft, and end when one side loses combat ability or escapes. Allow restart or side swap.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Confirm aircraft, guns, and airspace, then build and validate a .miz and red-blue rules card.
 ----
 
 ===== 1v2
 
 [source,text]
 ----
-Give me a guns-only 1v2 with one F-16C against two F-5Es. Grant the player an altitude advantage but limited fuel, use moderately coordinated opponents, and require both kills without leaving the training box.
+Generate a guns-only F-16C versus two F-5E FCs 1v2. Give the fuel-limited player height while two medium-skill AI enter spread below and a controller stays outside. Run 10-minute rounds with no missiles, boundary crossing, or controller attack; prioritize energy management and survival, make both kills optional, and allow disengagement or reset.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate and validate a .miz and training brief from checked loads, geometry, and fuel.
 ----
 
 ==== Infrared Missiles
@@ -201,36 +214,36 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Create a 1v1 infrared-missile fight between an F/A-18C and a MiG-29A. Give each aircraft two short-range heat-seeking missiles plus guns, start at visual range and medium altitude, and exclude radar-guided weapons.
+Create a Marianas offshore full-fidelity MiG-29A versus F/A-18C infrared 1v1. Begin head-on at visual range and medium altitude, with range control and a naval group outside. Give each aircraft exactly two short-range infrared missiles plus guns, but no radar missiles. Engage only after positive identification; an 8-minute round ends with a kill or safe withdrawal, with reset, side swap, and recovery available.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Produce and validate a .miz and rules brief after checking weapons, geometry, and range units; flag unsupported items.
 ----
 
 ===== 2v2
 
 [source,text]
 ----
-Make a 2v2 infrared-missile exercise with Mirage F1s against F-5Es during a 1980s Nevada Red Flag scenario. Keep the weapons period-correct, include limited gun ammunition, and clearly identify the training sides.
+Generate a 1980s Nevada Red Flag infrared Mirage F1 versus F-5E FC 2v2. The player leads; a controller only calls fight-on and terminate. Give each aircraft a period-appropriate limited infrared-and-gun load. Run 12-minute rounds, forbid attacks on disengaging aircraft or ejected crews, score formation survival and coordination, and allow reset or side swap.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Verify period aircraft, weapons, and airspace; build and validate a .miz with briefs for both sides.
 ----
 
 ===== 1v2
 
 [source,text]
 ----
-Generate a close-range 1v2 with a MiG-29A against two F-16Cs. Give the player only two R-73s and guns, bring the opponents in from separated bearings, and emphasize visual search, threat prioritization, and disengagement.
+Build a close engagement pitting the full-fidelity MiG-29A against two F-16Cs in a 1v2. Give the player two infrared missiles and guns; bring opponents from separate bearings slightly below, with a controller outside. Scattered cloud and low evening sun complicate the 10-minute visual-search, threat-prioritization, and disengagement exercise. Prohibit boundary pursuit; allow reset or recovery.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Use checked weapons, geometry, and AI timing to build and validate a .miz and learning-objectives card.
 ----
 
 ==== Fully Armed Surprise Encounter
 
 [source,text]
 ----
-Create a sudden close encounter between two F-14Bs and two MiG-29As above and below a low cloud layer. Keep representative full air-combat loads, start at short range with little warning, and give the AI sensible rules of engagement.
+Create a fully armed Kola encounter between two F-14Bs and two MiG-29Ss. Give both full air-combat loads and place the formations above and below low cloud for short-range discovery. AWACS communications resume after fighting begins, a neutral patrol needs protection, and the roughly 20-minute problem permits combat, covering withdrawal, or recovery. AI identifies before firing; survival and identification outrank kills.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Confirm loads, AWACS, and neutrals, then build and validate a .miz and situation brief.
 ----
 
 === Beyond-Visual-Range Combat (BVR)
@@ -239,45 +252,45 @@ Do not invent DCS internal names from memory; produce the mission file, briefing
 
 [source,text]
 ----
-Create a 1v1 BVR exercise between an F-16C and a JF-17 over the Persian Gulf. Start 45 nautical miles apart with medium-range missiles and short-range self-defense weapons, and require the winner to score a valid kill and disengage safely.
+Generate a Persian Gulf F-16C versus JF-17 BVR 1v1. Start about 45 nautical miles apart at similar energy with medium-range and self-defense weapons. AWACS gives limited information; civil traffic and shipping stay outside. In 15-minute rounds, forbid support attacks and boundary pursuit; accept a kill followed by disengagement or safe recovery from disadvantage, and allow side swap and reset.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Produce and validate a .miz and channel card after checking weapons, AWACS, and neutral routes; flag unsupported items.
 ----
 
 ==== 2v2
 
 [source,text]
 ----
-Build a 2v2 BVR mission with F-14Bs against MiG-29As over open water. Use moderate cloud, no third-party interference, and focus on formation spacing, target sorting, and post-launch defense.
+Build a Marianas offshore F-14B versus full-fidelity MiG-29A BVR 2v2. Start parallel formations about 55 nautical miles apart with combat loads and intermittent cloud masking; each side has a nonparticipating controller. Run 18-minute rounds on spacing, target sorting, mutual support, and post-launch defense. Forbid boundary pursuit; allow damaged-aircraft recovery, reset, or side swap.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+After checking loads, geometry, and controllers, build and validate a .miz and tactical brief.
 ----
 
 ==== 1v2
 
 [source,text]
 ----
-Give me a 1v2 BVR challenge with an M-2000C against two lower-skill fighters. The player must manage altitude, speed, and semi-active radar missile limitations, make one effective attack, and escape before being bracketed.
+Create a Caucasus mountain-edge full-fidelity M-2000C versus two lower-skill J-11A BVR 1v2. Let the player choose height and speed with semi-active radar weapons; opponents bracket loosely, ground control gives intermittent bearings, and a neutral transport must be avoided. Within about 18 minutes, require one disciplined attack and safe disengagement; allow terrain-assisted recovery or reset.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Check sensors, bracket AI, and neutral routes; build and validate a .miz and control brief.
 ----
 
 ==== 4v4 with AWACS and Datalink
 
 [source,text]
 ----
-Generate a 4v4 formation BVR mission with F/A-18Cs against Su-27s. Give both sides airborne early warning, let Blue use datalink for target assignment, keep the fight away from neutral traffic, and brief the relevant channels and control information.
+Generate a Sinai multinational-exercise JF-17 versus Su-27 BVR 4v4. Give both sides airborne warning; let the player formation use supported datalink for target allocation and mutual support. A neutral airway skirts the area in thin daytime cloud. Run 25-minute rounds; forbid attacks on support, neutral, or exited aircraft; score formation survival, identification, and safe recovery; allow reset or side swap.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build and validate a .miz and control brief after checking weapons, datalink, and AWACS; flag unsupported items.
 ----
 
 ==== Defensive Disengagement
 
 [source,text]
 ----
-Make a JF-17 defensive BVR disengagement exercise. Start with two hostile fighters already tracking the player and a long-range missile threat developing; success should depend on awareness, countermeasures, terrain, and fuel management rather than scoring a kill.
+Build a JF-17 defensive-disengagement exercise near a Kola fjord. Start alone, tracked by two enemies as a long-range missile threat develops; AWACS calls intermittently and a low-fuel friendly recovers behind. In low cloud, light snow, and limited fuel, do not return fire; use awareness, defenses, terrain, and energy to reach a safe corridor within about 15 minutes. Allow reset or continued recovery.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+From checked defenses, threat timing, and friendly routes, create and validate a .miz and escape card.
 ----
 
 === Air-to-Ground Weapons Training
@@ -286,99 +299,99 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Create an A-10C II cannon range with separate groups of stationary trucks, armored vehicles, and clearly marked practice targets. Start airborne, allow repeated passes, and keep every ground unit non-hostile.
+Create a Su-25T cannon range. Start airborne with a nonattacking observer and attack stationary trucks, light armor, and marked targets along the published axis on a clear morning. Targets do not fire back; protect a friendly convoy and maintenance area outside. Allow repeated passes for about 30 minutes; an unsafe pass ends only that run, ammunition exhaustion prompts recovery, and restart restores targets.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+With cannon, targets, and safety zones confirmed, produce and validate a .miz and range brief.
 ----
 
 ==== Rockets
 
 [source,text]
 ----
-Build a Mi-24P rocket training mission against light vehicles and area targets on a desert range. Include safe ingress and egress routes, a recommended attack direction, ample ammunition, and no air-defense threat.
+Build a Sinai Mi-24P rocket exercise. Depart a forward site with a friendly Mi-8, follow a safe corridor, and wait for an observer to open the range before attacking light vehicles and area targets. Protect settlements and friendly positions in hot-afternoon light crosswind. Use the rockets for repeated passes during about 35 minutes; entering a safety zone aborts only that pass, with retry or recovery available.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Confirm rockets, range, and observer, then build and validate a .miz and safety brief.
 ----
 
 ==== CCIP Unguided Bombs
 
 [source,text]
 ----
-Give me an F-16C CCIP bombing exercise from Nellis. Start hot, fly to a range with circular targets of several sizes, use clear weather, and provide enough stores and fuel for repeated deliveries and recovery.
+Generate an F-16C CCIP unguided-bomb exercise from Nellis. Start hot with a friendly F-16C and attack varied circular targets in clear, light-crosswind weather. Range control opens shallow and steeper delivery windows; friendly vehicles outside require the published axis. Allow repeated deliveries for about 40 minutes; a miss is not failure, and the player may re-enter or recover.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Use checked bombs, targets, and safety zones to build and validate a .miz and delivery card.
 ----
 
 ==== CCRP Unguided Bombs
 
 [source,text]
 ----
-Generate an M-2000C CCRP bombing exercise. Require a low-level ingress followed by a level delivery on a simulated runway target using a designated point, with straightforward navigation and impact scoring but no enemy interception.
+Create a full-fidelity M-2000C CCRP exercise on Cold War Germany. Depart with a same-type wingman, ingress low in autumn overcast and moderate wind, and make a level delivery on a simulated runway. A friendly transport uses the adjacent block; no interceptor appears. Use compatible unguided bombs in a 35-minute mission; if release conditions fail, overfly, rebuild, retry, and recover.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+After checking bombs, designation, and routes, build and validate a .miz and delivery brief.
 ----
 
 ==== Cluster Munitions
 
 [source,text]
 ----
-Create an F-16C cluster-munition exercise against dispersed soft targets and light armor. Let the player compare two release altitudes and keep the range well clear of friendly forces and populated areas.
+Generate a Caucasus F-16C cluster-munition exercise. Start airborne, contact range control, and compare two safe release altitudes against dispersed soft targets and light armor. Targets do not fire back; keep friendlies, settlements, and a neutral road clear while wind shifts the axis. In about 30 minutes, score effects and rule compliance separately; entering an exclusion area aborts only that run, allowing reattack or recovery.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build and validate a .miz and weapons brief from verified stores, wind, and safety zones.
 ----
 
 ==== Laser-Guided Weapons
 
 [source,text]
 ----
-Generate an F/A-18C laser-guided bomb exercise with a ground JTAC designating two different targets. Start hot on a carrier and require correct contact, target identification, weapon delivery, and recovery.
+Build a Marianas F/A-18C laser-guided weapons exercise. Start hot on a carrier with a wingman; in scattered afternoon cloud, let a JTAC sequentially designate two island targets while protecting a nearby friendly convoy. Spend about 45 minutes on contact, identification, delivery, and egress. If communications or laser support fails, rebuild the attack; then recover aboard or divert ashore.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate and validate a .miz and attack brief after checking weapon, laser, and JTAC support; flag unsupported items.
 ----
 
 ==== Television or Electro-Optical Weapons
 
 [source,text]
 ----
-Make a JF-17 electro-optical weapon mission against a radar vehicle and a bridge in a valley. Use weather that permits sensor employment while terrain masks the targets, and make the player choose which target has priority.
+Generate a Caucasus JF-17 electro-optical weapons exercise. Start hot and receive reconnaissance on a valley radar vehicle and simulated bridge, with a friendly patrol nearby. Weather permits sensor use, but cloud shadow and terrain intermittently mask both targets. In about 40 minutes, choose priority and score one effective hit before egress; after failed search or delivery, reacquire, reattack, or recover.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Check weapon, sensor, and targets, then build and validate a .miz and intelligence brief.
 ----
 
 ==== GPS/INS-Guided Weapons
 
 [source,text]
 ----
-Build an F/A-18C JDAM exercise with coordinates for three fixed targets in the briefing. Require a multi-target release without entering the short-range air-defense ring and report the result for each aimpoint.
+Build a Sinai F/A-18C GPS/INS-guided weapons exercise. Depart a land base with a wingman on a clear morning and attack three targets at briefing coordinates without entering a simulated short-range threat ring. Protect friendlies and a neutral road. During about 45 minutes, report each aimpoint result; after a data-entry or delivery error, use remaining weapons to rebuild the route and recover.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Generate and validate a .miz and coordinate card using checked stores, coordinates, and threat ring.
 ----
 
 ==== Standoff Weapons
 
 [source,text]
 ----
-Generate a JF-17 standoff strike exercise against a hardened coastal command post protected by medium-range air defenses. Keep the focus on route planning, launch conditions, the release window, and egress from outside the threat ring.
+Generate a Marianas JF-17 standoff exercise. Start airborne with an escort and reconnaissance updates on a hardened coastal command post behind a medium-range defense; neutral shipping limits launch direction. In a cloudy 45-minute evening mission, practice outside-ring routing, confirmation, launch timing, and fast egress. If the window is missed, allow one new setup before recovery or diversion.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+After confirming weapon, defense, and neutral shipping, produce and validate a .miz and mission card.
 ----
 
 ==== Anti-Radiation Missiles
 
 [source,text]
 ----
-Create an F-16C HARM range with several radar emitters that switch on and off intermittently. Require threat identification, selection of an employment mode, and suppression of at least one radar while all other forces remain in training behavior.
+Build a Nevada F-16C anti-radiation exercise. After departure, a friendly electronic-support aircraft reports several radars cycling by schedule. Other ground units remain in training behavior; unconfirmed friendly simulators cannot be attacked. In about 40 minutes, identify threats, choose a supported method, and suppress at least one emitter; wait or re-enter after a missed window, then recover.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate and validate a .miz and threat brief after checking weapon, radar AI, and suppression logic; flag unsupported items.
 ----
 
 ==== Anti-Ship Missiles
 
 [source,text]
 ----
-Give me an AJS-37 anti-ship missile exercise in a Baltic setting. Target a small transport convoy protected by a frigate, require a low-level approach and coordinated release, then a high-speed escape with no hostile fighters.
+Create an AJS-37 anti-ship exercise off Kola. Depart low with a wingman after maritime patrol reports a transport convoy protected by a frigate; first identify a nearby neutral merchant group. In low cloud and gusty sea wind, use anti-ship weapons for a coordinated release and fast escape during about 45 minutes, with no hostile fighters. Recover after a primary hit, convoy abort, or inability to launch.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Using verified weapons, ships, and neutral routes, build and validate a .miz and identification brief.
 ----
 
 === Sensors and Survivability
@@ -387,45 +400,45 @@ Query real available data first, then check spawn points, routes, loadouts, trig
 
 [source,text]
 ----
-Create a MiG-29A sensor exercise with friendly, hostile, and neutral aircraft at different altitudes and speeds. Require the player to build situational awareness with radar, IRST, and datalink and classify every contact without firing.
+Generate a full-fidelity MiG-29A sensor exercise in Cold War Germany airspace. Include friendly MiG-29As, adversary trainers, neutral transports, and civil traffic while ground control gives limited clues. In thin afternoon cloud for about 35 minutes, classify contacts with radar, IRST, and datalink functions, keeping weapons hold. A mistake permits another look; finish with recovery or an exercise reset.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Confirm sensors, routes, and coalitions, then build and validate a .miz and classification card.
 ----
 
 ==== Targeting Pod and JTAC
 
 [source,text]
 ----
-Build an A-10C II targeting-pod and JTAC coordination mission. Have the controller provide a nine-line, coordinates, and laser designation in sequence, while the player locates and dry-runs each target without releasing live weapons.
+Build a Sinai A-10C II pod-and-JTAC exercise. Start hot with an observing wingman, then receive a nine-line, verified coordinates, and laser cues for vehicles, a simulated point beside a structure, and a moving column. Protect friendlies and a neutral road. During a clear-morning exercise of about 45 minutes, search, mark, and dry-run without live weapons; allow repeated calls, reacquisition, and recovery.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Use verified pod, JTAC, and laser support to create and validate a .miz and nine-line brief.
 ----
 
 ==== RWR, ECM, and Countermeasures
 
 [source,text]
 ----
-Generate an F/A-18C defensive-systems exercise. Along a fixed route, expose the player to search radar, tracking radar, and simulated missile attacks, requiring correct use of the RWR, jammer, chaff, and flares before recovery.
+Generate a full-fidelity M-2000C defensive-systems exercise off the Marianas. Along a fixed route, encounter search radar, tracking radar, and a safely simulated missile while a friendly instructor observes and neutral traffic stays clear. In scattered evening cloud for about 30 minutes, use RWR, ECM, chaff, and flares without counterattack. Reset a failed stage in the safe area, then recover.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+With defenses, threats, and simulation checked, build and validate a .miz and stage card.
 ----
 
 ==== Low-Level Penetration
 
 [source,text]
 ----
-Make an AJS-37 low-level penetration exercise from a coastal airfield through valleys and along the shoreline to a target area without weapon release. Score route keeping, exposure time, and on-time arrival.
+Build a Cold War Germany MiG-29G low-level penetration. Follow river valleys, forest edges, and low ground to a simulated target without releasing weapons. Friendly reconnaissance monitors above, training radars only record exposure, and neutral roads and towns are excluded. In an overcast, moderately windy 35-minute run at dawn, score routing, exposure, timing, and safe recovery; a deviation permits rejoin.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Verify terrain, radar, and exclusion zones, then create and validate a .miz and low-level card.
 ----
 
 ==== Emergency Recovery
 
 [source,text]
 ----
-Give me an F-14B emergency recovery scenario. During an over-water patrol, introduce a single-engine failure and hydraulic problem, requiring a decision on jettison, carrier communication, and either a safe trap or diversion.
+Create a Marianas F-14B emergency recovery. During a two-seat patrol with a wingman, have one engine fail together with a hydraulic-system fault, but only if both are supported. The wingman escorts, the carrier recovers another friendly aircraft, a land alternate remains open, and weather turns from clear to scattered cloud. In about 30 minutes, manage jettison, calls, and fuel; choose a safe trap, bolter and retry, or diversion; score only crew and aircraft safety.
 
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate and validate a .miz and emergency card after checking failures, jettison, and carrier AI; flag unsupported items.
 ----
 
 === Aerobatics
@@ -434,20 +447,21 @@ Do not invent DCS internal names from memory; produce the mission file, briefing
 
 [source,text]
 ----
-Create an M-2000C solo aerobatics mission over a Nevada dry lake. Provide entry gates for a loop, roll, Cuban eight, and low high-speed pass, with no hostile units.
+Generate a full-fidelity M-2000C solo-aerobatics flight over a Nevada dry lake. Start hot while a friendly M-2000C demonstrates above and then exits; keep light airport traffic distant. In clear light wind for about 35 minutes, practice a loop, roll, Cuban eight, and high-speed low pass in any order. Add no enemy or mandatory score; permit re-entry or low-fuel recovery.
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+After checking field, display box, and AI, build a .miz and cues; validate clearance and re-entry.
 ----
 
 ==== Formation Aerobatics
 
 [source,text]
 ----
-Build a four-aircraft L-39 formation aerobatics scenario with the player leading stable AI wingmen. Include departure and join-up, diamond maneuvers, a smoke-on flypast, and a formation recovery.
+Build a four-aircraft L-39 formation-aerobatics flight in the Caucasus with the player leading AI through supported formation behavior. In a clear 40-minute afternoon, join, fly diamond turns, a smoke pass and gentle climb, then break for landing; keep a photo helicopter outside and clear other traffic. Add no enemy or perfect-score requirement; allow regrouping, go-around, and sequenced recovery.
 
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Produce and validate a .miz and leader brief after checking AI formation, smoke, and traffic; flag unsupported items.
 ----
 
+[[combat-scenarios]]
 == Combat Scenarios
 
 === Air Superiority and Air Defense
@@ -456,81 +470,63 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Generate a 1988 MiG-29A scramble interception on the Cold War Germany map. The player and an AI wingman cold-start while a French strike package approaches East Berlin from the west; include ground control and A-50 support and require interception before weapon release.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate a summer 1988 full-fidelity MiG-29A scramble on Cold War Germany. Player and AI wingman cold-start at an East German base as M-2000C-escorted Mirage F1 strikers approach a military target near East Berlin under low cloud; A-50 and ground control provide tracks but do not fight. Intercept before weapons release, then recover home or alternate within 70 minutes; verify project data and deliver the .miz, briefing, and validation report.
 ----
 
 ==== Strike-Package Interception
 
 [source,text]
 ----
-Build a Persian Gulf F-14B mission to intercept long-range bombers and their escorts. Launch a two-ship from a carrier, use AWACS control to identify and attack the package, and include nearby neutral traffic that must not be engaged.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build a dusk Persian Gulf interception for two carrier-launched F-14Bs. Under E-2 control beside fleet CAP, players identify long-range bombers and fighter escort while a neutral airliner strays near the engagement area; a low-level decoy may split attention. Engage only confirmed hostiles, disrupt the bomber raid, and trap or divert within 85 minutes; validate identification and carrier recovery in the .miz.
 ----
 
 ==== BARCAP
 
 [source,text]
 ----
-Generate a two-player F-16C BARCAP protecting a Caucasus frontline airbase and supply node. The patrol should last about 60 minutes, hostile fighters and attackers may arrive in waves, and Blue has tanker support but limited weapons.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate two-player J-11A BARCAP over the Mariana Islands in poor weather to protect a frontline airfield, supply flight, and coastal radar. Players relieve a low-fuel Su-27 patrol for a 60-minute station with limited AWACS and tanker support; two hostile waves may divide between base and transport. Hold until relief and protect both; build the .miz from checked data and validate fuel, routes, and threat logic.
 ----
 
 ==== TARCAP
 
 [source,text]
 ----
-Create an F/A-18C TARCAP over a target area deep in hostile territory. A four-ship player flight must clear the defending CAP, maintain air superiority during the strike, and cover the attackers on egress.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Create a four-ship M-2000C TARCAP on Sinai. Launch from a rear base at dawn ahead of a friendly JF-17 precision-strike package, clear its defending CAP, and hold while it attacks a military radar; reserve fighters may launch from a second base as neutral traffic diverts along the coast. Do not cross the no-fly line; success requires the package to attack and egress before an 80-minute recovery. Deliver the .miz and section briefs, validating timing and triggers.
 ----
 
 ==== Fighter Sweep
 
 [source,text]
 ----
-Generate an F-14B fighter sweep over Syria. A two-player flight enters ahead of the main strike package to draw out and defeat hostile patrols, with engagement boundaries and fuel limits that prevent endless pursuit.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Generate a two-player F-14B fighter sweep over afternoon Syria. Enter a mountain corridor ahead of the main strike to draw out MiG-21Bis patrols and a later MiG-29S response, while friendly M-2000Cs cover another axis and a neutral transport departs nearby. Open a 20-minute corridor, respect the pursuit line and recovery fuel, and return around 75 minutes; generate and check the .miz, routes, and objectives.
 ----
 
 ==== Escort
 
 [source,text]
 ----
-Build a four-ship M-2000C escort mission protecting low-flying Mirage F1 strikers through hostile airspace. Include interceptors on ingress and pursuit on egress, and make survival of the strike aircraft the primary objective.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Build a four-ship full-fidelity M-2000C escort over Sinai for two low-level Mirage F1s striking a military depot beneath broken cloud. AWACS and tanker support are time-limited, interceptors threaten ingress, and a second group may pursue from an alternate field on egress; villages and civilian routes remain protected. Let players choose close or forward escort, but require the strikers to attack and escape; validate formation survival and 90-minute recovery in the .miz.
 ----
 
 ==== Airbase Defense
 
 [source,text]
 ----
-Generate a 1970s F-5E airbase-defense mission. Scramble the player from a field under attack to stop low-level strike aircraft, while friendly anti-aircraft fire and possible runway damage complicate recovery.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate a 1970s F-5E FC airbase defense in the Mariana Islands at dusk. Player and AI wingman start hot on alert as friendly MiG-21Bis aircraft return low on fuel and attackers approach the runway and fuel area at sea level; base guns engage, but the first bombing pass may damage the runway. Identify the raiders, defend flight and base, and divert if damage demands it; validate the .miz for damage, outcome logic, and a 55-minute limit.
 ----
 
 ==== Fleet Air Defense
 
 [source,text]
 ----
-Build an F-14A fleet-air-defense mission in which bombers approach a carrier group from multiple axes to launch anti-ship missiles. The player must intercept the bombers at range and help deal with leakers if a launch occurs.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build an F-14A fleet defense over Kola in polar daylight. A two-ship holds carrier CAP as E-2 reports bombers approaching on two axes; the surface group and another F-14 flight cover only part of the threat, and a reconnaissance contact may lure players away before the main raid. Prioritize distant interception of launch aircraft and keep ships as the last layer; validate leakers and carrier recovery within 90 minutes in the .miz.
 ----
 
 ==== OCA Against Aircraft
 
 [source,text]
 ----
-Generate an F-16C offensive-counter-air mission intended to suppress fighters before they can generate sorties. The player package must handle airborne alerts and parked military aircraft while avoiding civilian airport facilities.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate a four-ship F-16C offensive-counter-air mission on Nevada at night, framed as a fictional high-intensity exercise. Suppress airborne alert fighters, military parking areas, and runway operations before later sorties form, while friendly JF-17s handle SEAD and AWACS and tanker windows shape timing; a neutral business jet remains in the shared civilian sector. Keep civilian facilities off limits and withdraw before mission minute 85; confirm feasible objectives, then deliver the .miz, role brief, and validation record.
 ----
 
 === Air-to-Ground Operations
@@ -539,81 +535,63 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Build an A-10C II preplanned CAS mission supporting friendly troops defending a Caucasus mountain pass. Brief the target area, friendly positions, and attack time, and task a two-ship with destroying a known armored group before egress.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Build winter-dawn preplanned CAS for two Su-25Ts over the Caucasus. Friendly troops hold a mountain pass against two confirmed armored groups and an artillery observer; a ground commander defines the safety line and attack window as a Mi-8 casualty flight departs and short-range defenses move with the convoy. Choose the attack order, stay behind the fire-coordination line, and return after stopping the main threat; validate the ground battle and 70-minute recovery in the .miz.
 ----
 
 ==== On-Call CAS
 
 [source,text]
 ----
-Generate a two-player AH-64D on-call CAS scenario. Hold the flight in an alert area until ground troops come under unexpected attack and a JTAC passes a nine-line; targets are moving and close to friendlies, so positive identification is required.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Generate two-player AH-64D on-call CAS on Sinai during a hot afternoon. Hold until a friendly reconnaissance team calls for help and a JTAC progressively supplies target description and clearance; hostile vehicles move along a village edge among friendlies and civilian traffic as dust reduces identification range. Fire only after identification, permit refusal of unsafe attacks, and cover the team's withdrawal; validate clearance and the 65-minute timeline in the .miz.
 ----
 
 ==== BAI
 
 [source,text]
 ----
-Build an F-16C battlefield interdiction mission against armored reinforcements moving toward the front along two roads. Let the player choose an ambush point from reconnaissance reports and destroy key vehicles before the columns reach friendly troops.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Build four-ship F-16C battlefield interdiction under an overcast Caucasus sky. Armored reinforcements approach the front through two valleys, reconnaissance updates are intermittent, friendly artillery will block one junction, and ordinary traffic shares the area. Choose the ambush, but never chase dispersed columns into the friendly contact zone; generate a 75-minute .miz and validate road movement and scoring.
 ----
 
 ==== Armed Reconnaissance
 
 [source,text]
 ----
-Generate an OH-58D armed reconnaissance mission in the Syrian hills, searching for suspected missile teams and supply vehicles. Keep target locations uncertain and require observation, marking, and engagement only after confirmation.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate OH-58D armed reconnaissance in the Syrian hills. Player and AI wingman launch at dawn to find suspected missile teams and supply vehicles from incomplete ground-patrol and friendly UAV reports; hostile crews may relocate or use unarmed vehicles as decoys. Prioritize finding, marking, and reporting, engaging only confirmed and cleared targets; validate discovery, authorization, and alternate egress in the 60-minute .miz.
 ----
 
 ==== Pinpoint Strike
 
 [source,text]
 ----
-Build a JF-17 pinpoint strike against a military communications center on the edge of a city. Place civilian buildings and short-range defenses nearby and require a weapon and attack direction that limit collateral damage.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build a two-ship JF-17 pinpoint strike over the cloudy Mariana Islands. Cold-start from an island base to attack a military communications center at a city edge, with AWACS support, short-range defenses, and an evacuating civilian convoy on a nearby road. Use a verified weapon and attack direction, then decide whether backup equipment merits a second pass; deliver the 75-minute .miz, illustrated brief, and validation results.
 ----
 
 ==== Deep Strike
 
 [source,text]
 ----
-Generate a four-ship F-15E deep strike against the entrance to an underground facility in a rear-area valley. Include escort, SEAD, and tanker support, plan for roughly 100 minutes, and have the enemy organize an interception on egress.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate a four-ship F-15E deep strike on a moonless Sinai night against a hardened military site's entrance in a rear valley. M-2000C escort, F-16C SEAD, and a tanker support a strict timeline while neutral traffic remains near the border; hostile radars may go silent and fighters launch from another base after impact. Hold the attack time, spare villages, and allow an unsafe reattack to be abandoned; validate the 105-minute .miz and package support.
 ----
 
 ==== Airfield and Runway Attack
 
 [source,text]
 ----
-Build an AJS-37 low-level airfield strike targeting a runway and attack aircraft parked in the military sector. Require meaningful runway damage before repairs can begin and prohibit attacks on the civilian side of the shared field.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Build a 1980s AJS-37 low-level airfield strike on Cold War Germany. Four players cross the misty front to attack a military runway intersection and strike aircraft in segregated parking, with only a short fighter-cover window; civilian facilities share the field and mobile defenses move after ingress. Coordinate one fast attack, prohibit strikes on the terminal, and leave any reattack to players; validate damage and egress in the 70-minute .miz.
 ----
 
 ==== Armored-Formation Attack
 
 [source,text]
 ----
-Generate a Su-25T mission against a large armored formation protected by self-propelled guns and short-range air defenses. Blue provides UAV reconnaissance but no air superiority, so the player must choose an attack order and retain enough weapons and fuel to recover.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Generate a two-ship Su-25T attack against armor on Kola in severe weather. A hostile group forms along a frozen road beneath self-propelled guns and short-range defenses; friendly UAV reconnaissance supplies only its initial position, and a Su-27 patrol cannot guarantee air superiority. Choose suppression or a flanking attack, then retain fuel and stores for instrument recovery as the enemy scatters; generate and validate an 80-minute .miz.
 ----
 
 ==== Infrastructure Attack
 
 [source,text]
 ----
-Build an F/A-18C strike on a bridge and rail junction to disrupt enemy logistics. Make it difficult to destroy both targets with one attack, require weapon allocation across the flight, and explain the expected battlefield effect in the briefing.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Build a four-ship F/A-18C infrastructure strike in the Mariana Islands at dawn against a military bridge and port-feeding rail junction. Launch from a carrier with limited JF-17 cover; make each target hard to destroy in one attack, keep civilian docks active, and let air defenses relocate afterward. Allocate weapons across the flight, sever at least one supply route, and generate a .miz validated for target damage and carrier or alternate recovery by 85 minutes.
 ----
 
 === Air Defense Suppression
@@ -622,36 +600,28 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Generate a two-player F-16C SEAD mission suppressing a medium-range SAM for a following strike package. Let the radar shut down and protect it with short-range systems; success means keeping the threat ineffective throughout the strike window.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate two-player JF-17 SEAD on Sinai for a following M-2000C strike package. Cold-start at dawn with AWACS and suppress a medium-range system whose radar shuts down intermittently behind short-range cover while a decoy site competes for the first attack. Keep the threat ineffective throughout the 18-minute strike window without requiring total destruction or border crossing; generate and validate the .miz.
 ----
 
 ==== DEAD
 
 [source,text]
 ----
-Build an F/A-18C DEAD mission to destroy the radars, launchers, and command node of an integrated coastal air-defense site. Provide one refueling opportunity and let the enemy use decoys and a mobile backup radar.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build a four-ship F/A-18C DEAD strike against an integrated coastal defense in rainy Mariana Islands weather. Launch from a carrier with E-2 early warning and exactly one tanker window, then destroy radar, launch elements, and command node while discriminating decoys and a mobile backup radar; the civilian port is protected. Confirm critical nodes are ineffective and choose between more search and timely withdrawal; validate the 95-minute .miz for early warning, refueling, and recovery.
 ----
 
 ==== SEAD Escort
 
 [source,text]
 ----
-Generate an F-16C SEAD escort accompanying F-15E strikers through several threat zones. Emphasize reacting to emitters on the package timeline rather than ranging ahead to hunt every site independently.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate a two-ship F-16C SEAD escort over the Caucasus at night, accompanying four F-15Es through two threat belts to a military command post. Players react to emitters on the package timeline, M-2000Cs cover high altitude, and the tanker offers only a short window; a silent site may activate on egress. Stay with the package rather than range ahead; success is the strikers attacking and escaping. Validate the 90-minute .miz and support sequence.
 ----
 
 ==== SEAD Sweep
 
 [source,text]
 ----
-Build a two-ship F/A-18C SEAD sweep against mobile air defenses dispersed along likely movement routes. Require active search, emitter provocation, and systematic destruction to open a corridor for the next day's operation.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Build a two-ship F/A-18C SEAD sweep in the Syrian mountains at dusk. Electronic reconnaissance gives only broad bearings to mobile defenses along movement routes; a neutral rescue helicopter crosses the edge, and the enemy uses brief emissions, relocation, and false targets. Engage only confirmed threats and leave at the fuel gate for carrier recovery; validate movement, emissions, restrictions, and recovery in the 80-minute .miz.
 ----
 
 === Maritime Operations
@@ -660,45 +630,35 @@ Do not invent DCS internal names from memory; produce the mission file, briefing
 
 [source,text]
 ----
-Generate a four-ship AJS-37 anti-ship strike against a frigate group in the North Sea. Require low-level navigation and a coordinated missile salvo against naval air defenses, with maritime reconnaissance but no tanker support.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Generate a four-ship AJS-37 anti-ship strike at dawn on Kola against frigates in a fjord. Maritime reconnaissance supplies an aging last-known position, friendly fighters offer brief cover, neutral fishing vessels remain nearby, and enemy CAP may appear after players cross the coast. Stay low, identify the warships, coordinate the attack, and neither hit neutrals nor chase beyond the area; generate a 75-minute .miz and validate maritime routing.
 ----
 
 ==== Coastal Strike
 
 [source,text]
 ----
-Build an F/A-18C coastal strike against missile boats, a fuel depot, and a shore-defense radar inside a port. The targets are close to a city, so require identification of the military docks and controlled weapon employment.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Build a two-ship JF-17 coastal strike in the Mariana Islands against missile boats, military fuel stores, and a shore radar in port. Launch from an island base on a cloudy afternoon with maritime-patrol identification support while short-range defenses and two fighters guard the harbor; neutral freighters may mask targets. Distinguish military docks and control employment, leaving once the radar or main warships are disabled; validate targets and payloads in the 80-minute .miz.
 ----
 
 ==== Maritime Convoy Escort
 
 [source,text]
 ----
-Generate a two-player F-14B escort for a friendly merchant convoy moving through a narrow Persian Gulf channel. Include low-level attackers and missile boats, and require coordination with the convoy's naval air defenses.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate a two-player F-14B escort for friendly cargo ships crossing a narrow Persian Gulf channel at dawn. E-2 and ship defenses provide limited awareness as two low-level attack waves and several missile boats approach separately, with neutral tankers still in the lane. Balance distant interception against close escort until the key transport reaches safety; validate threat timing and 90-minute recovery in the .miz.
 ----
 
 ==== Fleet Defense
 
 [source,text]
 ----
-Build a multiplayer fleet-defense scenario with four F/A-18Cs launching from a carrier against two anti-ship attack waves from different altitudes and bearings. Include E-2, tanker, and ship defenses without letting the ships solve every threat automatically.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build four-player F/A-18C fleet defense as a carrier group moves through the Mariana Islands at night. Two sections launch with E-2 and tanker support against anti-ship waves from different heights and bearings; the second may hide among residual tracks from the first, and neutral transport traffic remains nearby. Players assign sectors, identify launch aircraft, and handle leakers while ships remain the last layer; generate and validate the .miz and 95-minute night recovery.
 ----
 
 ==== Amphibious Support
 
 [source,text]
 ----
-Generate an AV-8B mission supporting an amphibious landing. Launch from an amphibious assault ship, suppress coastal fire positions, then provide on-call support to the landing force against mobile air defenses and an armored reserve.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate two-ship AV-8B amphibious support on the South Atlantic map. Launch from an assault ship at dawn, suppress coastal guns blocking landing craft, then provide JTAC-controlled support against mobile defenses and an armored reserve while friendly helicopters cross low. Enforce the fire-coordination line and individual clearances as the reserve changes route; generate an 85-minute .miz and validate landing support and ship or land recovery.
 ----
 
 === Helicopter and Special Operations
@@ -707,72 +667,56 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Build a Mi-8MTV2 air assault in which several transports deliver infantry to a mountain-pass strongpoint under armed escort. Put the player in command of route, landing sequence, and extraction signal.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Build a dawn Mi-8MTV2 air assault in the Caucasus as several transports deliver infantry to a mountain-pass strongpoint under Mi-24P escort. Player controls route, landing order, and extraction signal; brief artillery suppression may fail if an enemy observer forces an alternate landing zone. Keep those choices with players; escorts cannot solve the threat. Unload and withdraw within 70 minutes for success, then validate the .miz.
 ----
 
 ==== Troop Insertion
 
 [source,text]
 ----
-Generate a UH-1H night troop insertion near a village behind enemy lines in Syria. Use a concealed low-level route, limited night-vision conditions, and a strict landing window without alerting the defenders early.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Generate a two-ship UH-1H night insertion near a Syrian village behind enemy lines. Follow a concealed valley under limited moonlight and low cloud, using one preflight UAV update on the guards while a neutral relief convoy travels nearby. Hold the strict window without revealing the flight; if the primary is lost, use the alternate and a different return, then validate the 65-minute .miz.
 ----
 
 ==== Troop Extraction
 
 [source,text]
 ----
-Build a Mi-8 extraction of a surrounded reconnaissance team. Change the landing zone during the mission as enemy ground fire closes in, requiring the player to follow radio updates, choose an alternate site, and recover safely.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Build a Mi-8MTV2 extraction in rainy Caucasus weather for an encircled four-person reconnaissance team. Player and AI wingman depart a forward base as radio calls track the closing enemy; artillery denies the original landing zone, and a friendly Su-25T provides only one short suppression pass. Choose a radio-updated alternate without waiting for AI to clear pursuers, recover the survivors, and return through cloud; generate and validate the 60-minute rescue .miz.
 ----
 
 ==== Cargo Transport
 
 [source,text]
 ----
-Generate a CH-47F heavy-cargo mission moving artillery and ammunition from a rear base to a mountain position near the front. Account for sling load, weather, and high-altitude performance and score intact delivery.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate a CH-47F heavy-cargo mission on Kola in wind and snow, moving artillery and ammunition from a rear base to a mountain position. Player and AI transport divide the load under friendly patrol cover, but enemy reconnaissance may force a late delivery-point change; low cloud and terrain make fuel and climb planning decisive. Let the crew trade cargo against safety and score intact delivery of critical stores; validate weather, unloading, damage, and the 75-minute plan in the .miz.
 ----
 
 ==== Battlefield Resupply
 
 [source,text]
 ----
-Build a UH-1H battlefield resupply mission delivering ammunition and medical supplies to three dispersed positions. Put small-arms threats along some routes and let the player choose between speed and concealment.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build a two-ship UH-1H battlefield resupply in the Mariana Islands at dusk, delivering ammunition and medical stores to three positions. Launch from a shipboard point with patrol-boat route intelligence; some shores face small-arms fire and one unloading site may relocate. Choose speed or concealment, identify each zone, and supply at least two critical sites; generate a 70-minute .miz and validate delivery logic.
 ----
 
 ==== Combat Search and Rescue
 
 [source,text]
 ----
-Generate a two-helicopter UH-1H combat search and rescue mission for an aircrew down behind enemy lines. One aircraft performs pickup while the other covers, enemy search teams approach the site, and friendly fighters provide only a short cover window.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate a two-helicopter UH-1H CSAR for a pilot down behind enemy lines on Sinai. One player searches and picks up while the other covers; friendly M-2000Cs suppress hostile air patrols for only 12 minutes as ground teams close and civilian vehicles pass. Confirm the survivor, never fire on unidentified people, and allow a displaced rendezvous; validate pickup, cover, and forward-base return in the .miz.
 ----
 
 ==== Helicopter Escort
 
 [source,text]
 ----
-Build an AH-64D escort for a transport-helicopter formation through two ambush-prone valleys. Include guns, MANPADS, and armed vehicles and require the player to stay close enough to protect the transports.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Build a two-player AH-64D escort for Mi-8 transports crossing two ambush-prone Caucasus valleys in the afternoon. Intelligence locates only some guns, MANPADS, and armed vehicles, while friendly artillery can suppress one selected area; the enemy may wait until transports enter a gorge. Stay within support range, attack only confirmed threats, and never abandon the transports to hunt; validate three transports unloading within the 75-minute .miz.
 ----
 
 ==== Helicopter Hunt
 
 [source,text]
 ----
-Generate a Mi-24P hunt for hostile helicopters and their forward operating site. Let the targets maneuver low through terrain, require discovery of the support point, and force a choice between intercepting airborne helicopters and striking the base.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Generate a two-ship Mi-24P helicopter hunt on Kola under low cloud. Hostile helicopters use fjord terrain between a concealed forward site and the front; friendly observers offer fragmentary reports, and a Su-27 patrol covers high altitude without performing the player's intercept. Find the support site, choose base attack or interception, and respect the neutral boundary; validate target behavior and fuel limits in the 70-minute .miz.
 ----
 
 === Reconnaissance and Support
@@ -781,63 +725,49 @@ Query real available data first, then check spawn points, routes, loadouts, trig
 
 [source,text]
 ----
-Build a Mirage F1 tactical reconnaissance mission photographing three suspected deployment areas along a hostile border. Require specified altitude and heading over each site, avoidance of patrols and short-range defenses, and recovery with all intelligence.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Build a Mirage F1 tactical-reconnaissance mission along the Sinai border, recording three suspected deployment sites under overcast skies. One player aircraft gathers imagery while the other escorts, with friendly M-2000Cs on distant alert; hostile patrols and short-range defenses respond to an obvious border violation, and a neutral observer convoy nears the second site. Cross the sites on the briefed headings and altitudes, remain weapons-tight, and return with two useful sets; validate the 75-minute .miz for reconnaissance scoring.
 ----
 
 ==== AFAC/JTAC
 
 [source,text]
 ----
-Generate a two-player A-10C II airborne forward-control mission. One aircraft finds and marks targets while the other attacks under control; friendlies are close, so require a nine-line, laser code, and explicit clearance.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate a two-player A-10C II airborne-forward-control mission supporting a friendly counterattack in the Caucasus. One aircraft observes, marks, and passes nine-lines while the other attacks only with explicit clearance; artillery and F-16Cs enter in separate windows, and hostile vehicles may move close to friendlies or into an abandoned yard. Maintain separation, identify targets, and cancel unsafe attacks while helping retake the crossroads; validate the 80-minute .miz for nine-lines and clearance.
 ----
 
 ==== AEW&C Support
 
 [source,text]
 ----
-Build an F-16C mission that both protects an airborne early-warning aircraft and uses its control for interceptions. Let hostile fighters attempt to bypass the CAP and attack the high-value asset, forcing a choice between protection and pursuit.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build a two-ship F-15C mission in the Mariana Islands that protects an E-3 while using its control for interceptions. Relieve a low-fuel Su-27 patrol as one hostile group feints high and another may approach at sea level to attack the surveillance aircraft; a tanker waits in the rear and neutral transports are evacuating. Balance pursuit against protection inside the sector and keep the E-3 alive through its 55-minute station; validate the .miz for the player-led intercept.
 ----
 
 ==== Tanker Support
 
 [source,text]
 ----
-Generate a long-range F-14B operation in which the player must choose when to use limited tanker windows on ingress or egress. Add a possible threat to the tanker and make fuel planning, rendezvous timing, and protection important.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate a long-range two-ship F-14B operation on Kola in which the players choose whether to use the only tanker window before or after intercepting a maritime reconnaissance package. E-2 provides control and friendly F-15Cs protect the tanker but may be drawn away, while weather can delay rendezvous and an unconfirmed neutral patrol flies near the boundary. Do not attack that patrol without positive identification; choose the ingress or egress tanker window and trade combat against fuel margin. Validate the 105-minute .miz for rendezvous and fuel state.
 ----
 
 ==== Recovery Tanker
 
 [source,text]
 ----
-Build a carrier recovery-support scenario with an F/A-18C flight returning at night and two aircraft critically low on fuel. Provide a recovery tanker near the ship, worsen the weather, and require sensible refueling priority followed by safe traps.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Build a carrier-recovery support scenario at night in the Mariana Islands. Four player F/A-18Cs return from combat, two critically low on fuel, while a recovery tanker waits near the group; thunderstorms intermittently close the deck and a damaged AI aircraft requests priority. Players must set refueling priority, holding, approach, and any diversion; use the .miz to verify that every survivable aircraft lands within about 50 minutes.
 ----
 
 ==== Battlefield Surveillance
 
 [source,text]
 ----
-Generate an OH-58D battlefield surveillance mission tracking hostile convoys, artillery, and air defenses for friendly forces. Destruction is not the main objective; require covert contact and updated coordinates without being detected.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Generate an OH-58D battlefield-surveillance mission on the Cold War Germany map, following movements of hostile convoys, artillery, and mobile air defenses. A two-ship launches at dusk with limited cover from friendly ground scouts and an M-2000C patrol while neutral vehicles remain on border roads; detected enemies halt or hide in woods if they spot the helicopters. Destruction is not the goal: maintain covert, continuous contact and report updated coordinates; validate the 65-minute .miz for detection, reporting, and disengagement.
 ----
 
 ==== Show of Force
 
 [source,text]
 ----
-Build a two-ship F/A-18C show-of-force mission intended to stop hostile ground troops approaching a ceasefire zone. Allow low passes and flares, prohibit firing unless attacked, and require identification of the violating units.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Build a two-ship F/A-18C show-of-force mission over a Syrian ceasefire zone. Launch from a carrier and, after authorization from a ground liaison, use low passes and flares to halt armed units approaching an observation post; M-2000Cs monitor nearby airspace while a neutral convoy leaves the buffer zone, and the hostile force may stop or provoke with air-defense fire. Do not fire unless attacked; generate and validate a 65-minute .miz and rules-of-engagement brief in which hostile withdrawal and observation-post survival define success.
 ----
 
 === Ground and Joint Operations
@@ -846,63 +776,49 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Generate a Combined Arms positional-defense scenario in which the player commands armor, anti-tank, and air-defense units at a critical crossroads with limited A-10C support. Use phased enemy attacks and restricted ammunition and reinforcements.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate a Combined Arms positional defense in the Caucasus, with the player commanding armor, anti-tank, and air-defense units at a valley crossroads. A-10C support is available once for a limited window as a Mi-8 evacuates casualties; enemy reconnaissance, armor, and reserves attack in three phases and may use a side road. Conserve ammunition, set fields of fire, and choose the air-support call. Configure and validate the .miz so victory requires holding for 80 minutes with the command unit alive.
 ----
 
 ==== Capture a Strongpoint
 
 [source,text]
 ----
-Build a joint mission to capture a strongpoint. A ground player directs the armored assault, helicopter players insert infantry on a flank, and fixed-wing players suppress air defenses; victory requires ground forces to hold the objective.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build a joint strongpoint seizure on Sinai. A Combined Arms player fixes the defenders with armor, UH-1H players insert infantry on a flank, and a JF-17 pair suppresses confirmed air defenses; artillery and M-2000C CAP arrive in separate windows, and a nearby village is a no-fire area. Only actual ground-force control of the objective area counts, held for 15 minutes without AI substitution during a 95-minute mission; validate the .miz for capture logic.
 ----
 
 ==== Ground Offensive
 
 [source,text]
 ----
-Generate a large ground offensive with the player as a Combined Arms commander coordinating reconnaissance, artillery, armor, and army aviation. Give the enemy defense in depth and reserves, allow several axes of advance, and plan for about 90 minutes.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate a large Combined Arms offensive on the Cold War Germany map, with the player coordinating reconnaissance, artillery, armor, and army aviation against defenses in depth. Friendly full-fidelity MiG-29As provide local cover and Su-25Ts support one window; hostile anti-tank sites, mobile air defenses, and an uncertain reserve defend the approaches, while neutral towns are protected. Offer two axes and require a counterattack reserve, with the bridge and assembly area seized inside 90 minutes; validate the .miz for support and capture.
 ----
 
 ==== Convoy Escort
 
 [source,text]
 ----
-Build a Ka-50 escort for a supply convoy moving along a dangerous road. Include ambush teams, a mine threat, and scattered air defenses; let the convoy halt or reroute and require the key vehicles to arrive.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Build a two-ship Ka-50 escort for a supply convoy following a snowy fjord road on Kola toward a radar station. Friendly patrols have swept part of the route, but ambush teams, a suspected mine area, and scattered air defenses can halt or divert the convoy, with neutral rescue vehicles nearby. Scout ahead and protect the command and fuel trucks without hunting away from the convoy; validate the 75-minute .miz for halts, diversions, and arrival scoring.
 ----
 
 ==== Convoy Interdiction
 
 [source,text]
 ----
-Generate an F-16C interdiction mission against a high-value convoy mixed with ordinary traffic and able to disperse. Require positive identification of the command and air-defense vehicles and prohibit attacks on civilian vehicles.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Generate a two-ship F-16C convoy interdiction on Sinai, where the target hides among ordinary road traffic and may split into two groups. AWACS provides air warning, but an OH-58D observer can identify the command and air-defense vehicles only during a short window, and fighters may launch after the strike; towns and civilian vehicles are protected. Wait for reliable identification, reassess scattered targets, and leave before the convoy enters friendly contact; validate the 70-minute .miz for identification triggers.
 ----
 
 ==== Joint Fire Support
 
 [source,text]
 ----
-Build a joint fire-support mission with F/A-18Cs, A-10Cs, artillery, and a JTAC working the same frontline objective. Define timing, airspace restrictions, and friendly positions so the supporting elements do not interfere with each other.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Build a joint-fire-support mission in the Mariana Islands with F/A-18Cs, A-10C IIs, artillery, and a human or AI JTAC working one coastal defense line. Four pilots divide between suppression and close support as friendly landing troops advance; mobile defenses and armor relocate after the opening barrage, and the civilian port is a no-fire area. Define timing, altitude blocks, and clearances so players coordinate the breakthrough rather than scripts; generate the 90-minute .miz and validate joint support.
 ----
 
 ==== Large Multi-Package Operation
 
 [source,text]
 ----
-Generate a large multiplayer operation with fighter sweep, SEAD, escort, primary strike, anti-ship, and tanker packages against a coastal base complex. Give each player group its own objective and timeline while making overall success interdependent.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate a large multiplayer strike on Sinai using M-2000Cs for air superiority, JF-17s for SEAD, F-15Es for the primary strike, F/A-18Cs for anti-ship work, plus a tanker package against a coastal base complex. Every player group cold-starts with its own target, radio plan, and timeline under AWACS control; reserve fighters and mobile defenses react to the opening moves, and the civilian port remains protected. Every package must complete its own task and cooperate on egress, with AI unable to substitute; deliver the 120-minute .miz, package briefs, timeline, and itemized validation.
 ----
 
 === Multiplayer Scenarios
@@ -911,39 +827,41 @@ Do not invent DCS internal names from memory; produce the mission file, briefing
 
 [source,text]
 ----
-Build a four-player cooperative F-16C mission with two aircraft on SEAD and two striking an enemy command post. Start everyone cold, provide shared briefing, radios, and tanker support, and tune the mission for a regular group to finish in 75 minutes.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build a four-player JF-17 cooperative mission in a fictional high-intensity Nevada exercise: two aircraft perform SEAD and two strike a command post. All cold-start at one base and share AWACS, tanker, radio plan, and a 20-minute attack window; Red M-2000C patrols and mobile defenses react to player routing while neutral range-support vehicles remain protected. Each section opens the way for the other; neither can complete alone, and scripts may not complete objectives. Give the team 80 minutes, then generate the multiplayer .miz and validate synchronization.
 ----
 
 ==== Adversarial PvP
 
 [source,text]
 ----
-Generate an 8v8 adversarial scenario with two airfields, an AWACS, and limited respawns per side. Objectives should include protecting friendly supply flights and attacking enemy radar, not just air-to-air kills, with symmetric conditions.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Generate an 8v8 adversarial scenario in the Mariana Islands with two airfields, one AWACS, limited respawns, and one protected supply flight per side. Slots should naturally include F-16C, F-15C, Su-27, J-11A, MiG-29S, MiG-29G, and full-fidelity MiG-29A aircraft; scores come from air combat, disabling military radar, and escorting transports. Apply identical neutral and no-fire rules, then score multiple objectives at 100 minutes rather than forcing recovery; generate a symmetric .miz and validate balance.
 ----
 
 ==== Human JTAC Coordination
 
 [source,text]
 ----
-Build a multiplayer CAS mission with one Combined Arms player acting as JTAC and the others flying A-10C IIs and F/A-18Cs. Let the ground battle evolve and make the human controller responsible for target confirmation and attack clearance.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Build multiplayer CAS with one Combined Arms player as JTAC and four pilots in A-10C IIs and F/A-18Cs supporting a Caucasus ground battle. Both sides move between two villages, friendly artillery and a rescue helicopter occupy parts of the airspace, and hostile defenses reposition with the armor. Only the human JTAC may identify targets and clear attacks; pilots may abort and scripts may not strike. Validate the 90-minute .miz for permissions and ground victory.
 ----
 
 ==== Combined Arms Air-Ground Coordination
 
 [source,text]
 ----
-Generate a multiplayer air-ground scenario where ground players command defenders and air defenses while pilots provide reconnaissance, transport, and fires. Victory requires holding two areas and completing a counterattack, and no single branch should win alone.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Generate a multiplayer air-ground scenario on the Cold War Germany map. Ground players command defenders and air defenses, Mi-8 players supply them, and M-2000C and full-fidelity MiG-29A pilots provide reconnaissance and fires for opposing coalitions; both sides have limited early warning, while neutral towns and an evacuation convoy remain protected. Victory requires holding both areas and completing the counterattack, with every branch mutually dependent and no AI solo win; validate the 110-minute .miz for scoring.
 ----
 
+[[campaigns]]
 == Campaigns
+
+[IMPORTANT]
+====
+The following fifteen generic campaign prompts share this complete-delivery contract; any reference to IMPORTANT imports every requirement below.
+
+A top-tier long-running model such as Fable or GPT-5.6-Ultra must first read `Docs` and inspect `Tools`, then individually verify the requested player modules, terrain, era, coalitions, units, tasks, weapons, airfields, and coordinates. It must build a campaign bible, orders of battle, a state ledger, and a dependency graph; generate and validate every reachable `.miz`; test every branch, multiplayer layout, or dynamic configuration; and audit character, force, casualty, resource, and timeline continuity. An outline or generator design is not completion.
+
+Every named output directory must contain `missions/`, `briefings/`, the applicable `state/` or `progression/`, `artwork/`, `validation-reports/`, and a manifest. Image Gen must create a cover, patch, chapter or key-mission art, and ending art, but imagery is never authority for charts, coordinates, payloads, theater state, or other tactical facts. List and omit every unsupported item in the validation reports; never silently delete, enhance, or substitute it.
+====
 
 === Training and Qualification Campaigns
 
@@ -951,18 +869,14 @@ Query real available data first, then check spawn points, routes, loadouts, trig
 
 [source,text]
 ----
-Design a six-mission M-2000C basic flight qualification campaign covering cold start, taxi and takeoff, navigation, formation, instrument approach, and emergency recovery. Give each mission clear pass criteria and allow retries while retaining results.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Create a fictional French qualification course requiring the M-2000C and Caucasus: six linear missions of 50–70 minutes, about 6–7 hours total. A recurring instructor covers navigation, formation, night instruments, failures, and emergency recovery; grades and errors carry forward. Import the section-wide IMPORTANT contract in full. Have Fable or GPT-5.6-Ultra generate and validate the campaign end to end, audit cross-mission continuity, and call Image Gen. Deliver to `output/campaigns/m2k-qual/`, using `progression/`.
 ----
 
 ==== Combat Qualification
 
 [source,text]
 ----
-Generate an F-16C combat qualification campaign that begins with guns and infrared missiles, then adds BVR, air-to-ground weapons, SEAD, and a two-ship final evaluation. Increase difficulty gradually and make the final mission combine the earlier skills.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Build a fictional qualification campaign requiring the F-16C and Nevada: seven linear missions of 50–75 minutes, about 7–9 hours total. Recurring instructors advance from guns and two-ship tactics to beyond-visual-range combat, precision attack, air-defense suppression, and a combined test; grades, fratricide, and damage persist. Apply every term of the section-wide IMPORTANT contract. Fable or GPT-5.6-Ultra must generate and validate it end to end, audit cross-mission continuity, and use Image Gen. Deliver to `output/campaigns/f16-qual/`, using `progression/`.
 ----
 
 === Short Campaigns
@@ -971,18 +885,14 @@ Do not invent DCS internal names from memory; produce the mission file, briefing
 
 [source,text]
 ----
-Build a five-mission linear F-5E mini-campaign about an escalating border conflict. Begin with patrol and identification, continue through interception, escort, and airbase defense, and end with a limited counterstrike, with missions around 40 minutes each.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Make a fictional 1986 border crisis requiring the F-5E FC and Cold War Germany: five linear missions of 40–55 minutes, about 4–5 hours total. A recurring flight conducts patrol, interception, escort, airfield defense, and a restrained counterstrike; casualties, alert state, runway damage, and restraint persist. The section-wide IMPORTANT contract applies in full. Let Fable or GPT-5.6-Ultra generate and validate the campaign end to end, audit cross-mission continuity, and call Image Gen. Deliver to `output/campaigns/f5e-border/`.
 ----
 
 ==== Historical Short Campaign
 
 [source,text]
 ----
-Generate a short historical P-51D campaign on Normandy covering three operations in one week: bomber escort, attacks on transport routes, and airfield defense. Keep equipment, coalitions, and weather appropriate to the period while allowing fictional characters.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Create a P-51D campaign on Normandy during one week in 1944: four linear missions of 50–70 minutes, about 4–5 hours total. Escort, interdiction, airfield defense, and ground support carry losses, surviving targets, and weather forward; fictional results cannot rewrite history. Honor the section-wide IMPORTANT contract in full: Fable or GPT-5.6-Ultra must generate and validate everything end to end, audit cross-mission and period continuity, and invoke Image Gen. Deliver to `output/campaigns/normandy-week/` with a history-and-fiction note.
 ----
 
 === Narrative Campaigns
@@ -991,27 +901,21 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Design a ten-mission fictional linear F/A-18C campaign about a carrier group entering a Persian Gulf crisis. Develop the story from deterrence patrols through joint strikes and ceasefire enforcement, with recurring characters and continuous radio events.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Design a fictional carrier crisis requiring the F/A-18C, Supercarrier, and Persian Gulf: ten linear missions of 70–95 minutes, about 13–16 hours total, in three acts. Deterrence and fleet defense escalate to strike, evacuation, and ceasefire; deck aircraft, losses, and rules of engagement persist. Import all of the section-wide IMPORTANT contract. Fable or GPT-5.6-Ultra must generate and validate the result end to end, audit deck and narrative continuity, and call Image Gen. Deliver to `output/campaigns/carrier-crisis/`.
 ----
 
 ==== Historical Linear Campaign
 
 [source,text]
 ----
-Build a historically grounded F-4E campaign set in 1980s Germany with low-level strike, escort, interception, and reconnaissance missions. Exclude anachronistic equipment and advance the missions along a coherent conflict timeline.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build a fictional 1984–1987 conflict requiring the F-4E and Cold War Germany: nine linear missions of 60–85 minutes, about 10–12 hours total. Reconnaissance, escort, interdiction, and withdrawal carry bases, casualties, and the front forward, with no anachronisms. Carry out the section-wide IMPORTANT contract in full. Have Fable or GPT-5.6-Ultra generate and validate it end to end, audit cross-mission and period continuity, and use Image Gen. Deliver to `output/campaigns/f4e-germany/` with historical-boundary notes.
 ----
 
 ==== Character-Driven Campaign
 
 [source,text]
 ----
-Generate a character-driven Mi-24P campaign in Afghanistan. Keep the same crews, ground controllers, and transport units through escort, rescue, and mountain-assault missions, and reflect losses and choices in later briefings and dialogue.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Create a fictional character campaign requiring the Mi-24P, Mi-8MTV2, and Afghanistan: eight missions of 60–90 minutes, about 9–11 hours total, with a 1980s atmosphere. Escort, supply, search, and assault surround one rescue branch; casualties and ground results persist. Follow every requirement in the section-wide IMPORTANT contract. Fable or GPT-5.6-Ultra must generate and validate it end to end, audit character and branch continuity, and invoke Image Gen. Deliver to `output/campaigns/hind-crew/`.
 ----
 
 === Branching Campaigns
@@ -1020,18 +924,14 @@ Use the data actually available in the project to verify the map, airbases, unit
 
 [source,text]
 ----
-Build a branching JF-17 campaign in which every success or failure changes the next mission. Destroying radar should reduce later defenses, a failed escort should remove strikers, and airfield damage should force relocation; provide at least two viable paths to completion.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Create a fictional border war requiring the JF-17 and Syria: twelve nodes, with each playthrough flying nine or ten missions of 55–80 minutes for about 10–14 hours. Radar, escort, and runway results alter at least two completable routes; forces and stocks persist. Apply the section-wide IMPORTANT contract in full. Fable or GPT-5.6-Ultra must generate and validate every reachable `.miz` end to end, traverse the branches, audit continuity, and call Image Gen. Deliver to `output/campaigns/jf17-branch/` with path tests.
 ----
 
 ==== Multiple Endings
 
 [source,text]
 ----
-Generate an F-14B campaign with three endings shaped by interception decisions, restraint around neutral contacts, and protection of friendly assets. Provide victory, limited success, and failure outcomes rather than basing the result only on kill count.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Build a fictional 1991–1994 crisis requiring the F-14B, Supercarrier, and Kola: eleven nodes, with each route flying about nine missions of 70–100 minutes for 13–17 hours. Identification, restraint, fleet defense, and rescue lead to three endings; ship damage and alert persist. Import the complete section-wide IMPORTANT contract. Use Fable or GPT-5.6-Ultra to generate and validate every `.miz` end to end, traverse all endings, audit continuity, and call Image Gen. Deliver to `output/campaigns/f14-endings/`.
 ----
 
 === Persistent Campaigns
@@ -1040,27 +940,21 @@ Query real available data first, then check spawn points, routes, loadouts, trig
 
 [source,text]
 ----
-Design a persistent A-10C II campaign that carries forward player aircraft, AI wingmen, weapon stocks, and ground-force losses. Let the player choose missions and resupply priorities, with excessive use of precision weapons affecting later operations.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Design a fictional persistent campaign requiring the A-10C II and Caucasus: twelve missions of 60–90 minutes, about 14–18 hours total, with selectable order inside gated phases. Anti-armor, close support, and counterattack persist airframes, stocks, and fratricide. Enforce the section-wide IMPORTANT contract in full. Fable or GPT-5.6-Ultra must generate and validate the campaign end to end, test alternate orders, audit resource continuity, and use Image Gen. Deliver to `output/campaigns/a10-persistent/` with a resource audit.
 ----
 
 ==== Front-Line Progression
 
 [source,text]
 ----
-Generate an F-16C campaign on Cold War Germany with a moving front line. Ground control zones should change with results, new bases, targets, and patrol areas should open over time, and every air mission must reflect the current front.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Generate a fictional 1989 moving-front campaign requiring the F-16C and Cold War Germany: twelve missions of 60–90 minutes, about 15–18 hours total. Counter-air and strike move control zones; losses, runways, air defenses, and supply persist. Treat the section-wide IMPORTANT contract as mandatory in full. Fable or GPT-5.6-Ultra must generate and validate it end to end, audit front and period continuity, and call Image Gen. Deliver to `output/campaigns/f16-front/`.
 ----
 
 ==== Long Progressive Campaign
 
 [source,text]
 ----
-Build a progressive campaign of more than 25 missions that grows from a local border incident into a joint war. Persist forces and logistics and let the player choose among fighter, strike, helicopter, and support roles.
-
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+Create a fictional joint war on Syria: 28–32 missions of 45–100 minutes, with a principal-role path of about 35–45 hours. The player chooses the F-16C, F/A-18C, A-10C II, or Mi-8MTV2; artificial intelligence flies the others as the crisis escalates to joint operations and ceasefire, with shared losses. Adopt the section-wide IMPORTANT contract wholesale. Fable or GPT-5.6-Ultra must generate and validate the campaign end to end, cross-test roles, audit continuity, and call Image Gen. Deliver to `output/campaigns/syria-joint/`.
 ----
 
 === Dynamic Campaigns
@@ -1069,25 +963,298 @@ Query real available data first, then check spawn points, routes, loadouts, trig
 
 [source,text]
 ----
-Design a Persian Gulf dynamic campaign that creates different packages each turn from current objectives, forces, losses, and intelligence. Let the player accept or reject assignments while time advances and the enemy conducts its own operations.
-
-Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+Design a fictional turn-based campaign requiring the F/A-18C, Supercarrier, and Persian Gulf: each run has 12–20 missions of 50–90 minutes, about 15–25 hours total. Tasks follow forces, losses, and supply; declining one does not stop time, and state stays auditable. Bring in the section-wide IMPORTANT contract in full. Have Fable or GPT-5.6-Ultra generate and validate every turn end to end, replay choices, audit continuity, and use Image Gen. Deliver to `output/campaigns/pg-dynamic/` with logs.
 ----
 
 ==== Dynamic Theater
 
 [source,text]
 ----
-Generate a dynamic Kola theater with a changing front, maritime shipping, airbase control, radar coverage, and supply networks. Air, ground, and naval operations should affect one another, and theater state must persist between missions.
-
-Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+Create a fictional dynamic theater requiring Kola and either the F-16C or F-15C: 16–24 missions of 60–100 minutes, about 22–35 hours total. Artificial intelligence flies the other type; NATO and Russian fronts, bases, supply, and losses alter the next turn. Execute the section-wide IMPORTANT contract in full. Fable or GPT-5.6-Ultra must generate and validate everything end to end, audit continuity, call Image Gen, and check Su-35 and MiG-31 availability. Deliver to `output/campaigns/kola-dynamic/`.
 ----
 
 ==== Cooperative Dynamic Campaign
 
 [source,text]
 ----
-Build a four-to-eight-player dynamic cooperative campaign on Syria. Groups may take fighter, strike, helicopter transport, and Combined Arms command roles; persist theater progress across server restarts and use AI to cover absent players.
+Build a fictional Syria campaign for four to eight players: 12–20 missions of 60–120 minutes, about 20–32 hours total. Use the F-16C, F/A-18C, A-10C II, Mi-24P, and Mi-8MTV2, with Combined Arms optional. Artificial intelligence fills absences, and state survives restarts. The full section-wide IMPORTANT contract governs delivery. Fable or GPT-5.6-Ultra must generate and validate it end to end, test slots and recovery, audit continuity, and invoke Image Gen. Deliver to `output/campaigns/syria-coop/`.
+----
 
-Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+[[named-campaigns]]
+=== Named Long-Form Campaigns
+
+==== Reconceived User Concepts
+
+===== The Germans' MiG
+
+[source,text]
+----
+Create a campaign titled “The Germans' MiG” that requires the MiG-29G, Cold War Germany, and Nevada. Set this fictionalized history in 1991–1994, following former East German Fulcrums through acceptance by reunified Germany, evaluation, and multinational exchange testing. Its eight linear missions run 60–80 minutes each, about 8–10 hours total, in three chapters: German conversion and evaluation, dissimilar combat at Nellis, and a return home to codify lessons. The explicit order of battle comprises a German MiG-29G test flight, a former East German wingman, German maintainers and ground control, a NATO instructor detachment, plus US F-15C and F-16C adversary detachments and range support in Nevada. Verify each detachment's size, base, task, and entry condition. Carry serviceability, test results, violations, and trust forward; a kill made outside the training rules is a failure, not a victory.
+
+Treat the cross-map test matrix, serviceability ledger, and livery evidence as controlling artifacts. Have Fable or GPT-5.6-Ultra read Docs and inspect Tools, explicitly verify the MiG-29G on both Cold War Germany and Nevada, and validate each German, NATO, and US detachment, base, weapon, livery, task, and coordinate. Build a campaign bible, traceable order of battle, test-result state, and dependency graph. Generate and validate every `.miz`, then audit cross-map, airframe, test-result, force, and character continuity. Deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest under `output/campaigns/the-germans-mig/`. Use Image Gen for the cover, test-squadron patch, chapter or key-flight art, and graduation ending; artwork cannot replace charts, coordinates, or measured test data. A planning outline is not completion. Report every unsupported item and make no silent substitution.
+----
+
+===== Fractured Red Stars
+
+[source,text]
+----
+Create a campaign titled “Fractured Red Stars” that requires the MiG-21Bis and Caucasus and using the terrain as a declared fictional geographic stand-in for a 1972–1976 Sino-Soviet frontier. The Chinese MiG-21Bis, its MiG-19 and MiG-15 allies, and the full order of battle are representative story choices, not claims about a historical deployment or battle. Fly seven missions of 55–75 minutes, about 6–8 hours, on a linear main path with one resource branch. The Chinese order of battle explicitly includes the player MiG-21Bis squadron, allied MiG-19 and MiG-15 detachments, forward radar, air defense, and transport. The proposed Soviet order of battle includes period combinations of MiG-21, MiG-23, Su-17, ground-based air defenses, and armored columns, but each type's availability, quantity, base, and task must verify. Progress from reconnaissance interception and escort to point defense, interdiction, and stopping a deep thrust. Persist wingmen, forward fields, ammunition, radar losses, and transport routes; success means holding the corridor, not maximizing kills.
+
+Resolve the fictional geographic stand-in and period order-of-battle boundary before mission construction. Assign Fable or GPT-5.6-Ultra to read Docs and inspect Tools, explicitly verify the MiG-21Bis on Caucasus, and individually validate each proposed MiG-19, MiG-15, MiG-21, MiG-23, Su-17, weapon, airfield, ground unit, task, and coordinate. Record those limits in a campaign bible, traceable order of battle, resource state, and branch dependency graph. Generate and validate every `.miz`, and audit period, force, loss, and chronology continuity across both routes. Store `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, the stand-in note, and the manifest in `output/campaigns/fractured-red-stars/`. Call Image Gen for a cover, squadron patch, frontier chapter or key-mission art, and ending image; art is not geography, a chart, or tactical evidence. An outline-only response is incomplete. Report and omit unavailable assets rather than silently substitute another type.
+----
+
+===== Enemy of the Same Bloodline
+
+[source,text]
+----
+Create a campaign titled “Enemy of the Same Bloodline” that requires the MiG-29S and Caucasus. Set this wholly fictional modern conflict within a 2015–2022 technology window; the Ukrainian player unit and Russian force are representative DCS narrative choices, not claims about real orders of battle, people, or combat results. Use ten missions of 60–80 minutes, about 10–13 hours, in a linear structure with persistent losses. The Ukrainian order of battle explicitly comprises a MiG-29S player squadron, ground control, radar, air defenses, and transport support. The proposed Russian force explicitly comprises verified MiG-29, Su-27, Su-24, Su-25, and Su-34 units, long-range air defenses, and electronic warfare, with each type's quantity, base, task, and entry condition documented. Move from readiness dispersal, point defense, and combat air patrol to escort, cruise-missile defense, airfield contests, and covering evacuation. Persist pilots, aircraft, runways, radar coverage, and identification mistakes.
+
+Start from an auditable fiction boundary and loss ledger. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify the MiG-29S on Caucasus, and validate every stated Ukrainian and Russian aircraft, air-defense system, electronic-warfare asset, weapon, base, task, and coordinate. Create a campaign bible, traceable order of battle, resource state, and dependency graph; then generate and validate every `.miz` and audit aircraft, pilots, bases, radar, force losses, characters, and chronology for continuity. Write `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, a fiction note, and the manifest to `output/campaigns/enemy-of-the-same-bloodline/`. Image Gen must supply the cover, squadron patch, chapter or key air-defense art, and ending art, never situation, identification, or coordinate truth. A synopsis or outline is not the campaign. Report unsupported types and capabilities without substituting them.
+----
+
+===== At the End of the Strait
+
+[source,text]
+----
+Create a campaign titled “At the End of the Strait” that requires the F-5E FC and Mariana Islands, with a verified Republic of China Air Force-inspired livery. Set this fictional island-chain defense in a 2020–2028 technology window. Its nine missions run 50–75 minutes each, about 8–11 hours total, in a linear structure with dwindling resources. The defending order of battle explicitly comprises the F-5E FC player squadron, ground radar, air defenses, airfield guards, transport, and limited modern support. The attacking order of battle proposes MiG-21Bis, MiG-19, J-11A, Su-27, and JF-17 detachments, plus verified airborne early warning, tankers, ships, and landing support. Verify each type, quantity, base, task, and entry condition. Progress from patrol, visual identification, and escort to runway defense, anti-landing support, night interception, and protecting an evacuation. Persist aircraft and people on both sides, runways, radar, missile stocks, ships, and civilian evacuation.
+
+Make the nine-mission dependency graph and dwindling-resource ledger drive production. With Fable or GPT-5.6-Ultra, read Docs and inspect Tools, explicitly verify the F-5E FC on Mariana Islands and the requested Republic of China Air Force-inspired livery, and validate the MiG-21Bis, MiG-19, J-11A, Su-27, JF-17, air and naval support, bases, weapons, tasks, and coordinates. Build a campaign bible, traceable orders of battle, resource state, and explicit dependency graph. Generate and validate every `.miz`, then audit runway, ship, evacuation, personnel, and loss continuity. Under `output/campaigns/at-the-end-of-the-strait/`, deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest. Ask Image Gen for the cover, squadron patch, chapter or key airfield-defense art, and ending image; artwork cannot establish island geography, charts, or tactical data. Do not return only an outline. Report every unsupported livery, type, or asset and make no silent substitution.
+----
+
+===== Visitors from the Sea
+
+[source,text]
+----
+Create a campaign titled “Visitors from the Sea” that requires the Su-27, J-11A, and Mariana Islands. Set this fictional Chinese joint maritime campaign in a 2005–2015 technology window against a US carrier battle group. Its eight linear missions run 60–80 minutes each, about 8–10 hours total, alternating the player between Su-27 and J-11A detachments. The Chinese order of battle explicitly comprises Chinese naval-air Su-27 and J-11A player detachments, verified airborne early warning and tanker support, shore-based attack aviation, and naval forces. The US order of battle explicitly comprises carrier-borne F-14, F/A-18, and E-2 detachments plus verified escorts, shipboard air defense, and tankers. Verify the size, ships, bases, tasks, and entry conditions of every element. Move from ocean patrol, escort, and reconnaissance to counter-air, covering anti-ship formations, and extracting the fleet. Persist reconnaissance quality, ship damage, available fighters, and escalation.
+
+Let naval-contact chronology and persistent ship-damage state control every sortie. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify the Chinese naval-air Su-27 and J-11A player detachments on Mariana Islands, and validate the F-14, F/A-18, E-2, all support aircraft, ships, weapons, bases, tasks, and coordinates. Assemble a campaign bible, traceable joint order of battle, reconnaissance and ship state, and dependency graph. Generate and validate every `.miz`, then audit air, naval, damage, force, and chronology continuity. Package `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest in `output/campaigns/visitors-from-the-sea/`. Image Gen should create the cover, naval-air patch, chapter or key fleet-contact art, and ending image; verified data, not art, supplies sea charts, sensor ranges, and coordinates. A mission list or outline is not completion. Report missing types or ships and make no silent substitution.
+----
+
+===== Schrödinger's Hot-and-Cold War: Red
+
+[source,text]
+----
+Create a campaign titled “Schrödinger's Hot-and-Cold War: Red” that requires the full-fidelity MiG-29A and Cold War Germany. In this alternate 1987–1989 crisis, every local clash might ignite a world war. Use ten missions of 60–90 minutes, about 10–13 hours, with shared event nodes and limited branches. The Red order of battle explicitly comprises the full-fidelity MiG-29A player squadron, Soviet ground-controlled interception, radar, air defenses, and verified frontal attack and support aviation. The Blue force explicitly comprises a French M-2000C counter-air detachment, a Mirage F1 strike detachment, and NATO airborne early warning, tankers, and ground control. Both perspectives must use the same order-of-battle IDs, bases, quantities, and loss state. Cover alert launches, interception, escort, frontline counter-air, airfield defense, and restrained retaliation. Maintain an auditable escalation index and persist losses, radar sites, border violations, and ceasefire openings.
+
+Lock the shared event IDs, force quantities, and escalation state before building the Red perspective. Direct Fable or GPT-5.6-Ultra to read Docs and inspect Tools, explicitly verify the full-fidelity MiG-29A on Cold War Germany, and validate the M-2000C, Mirage F1, both sides' airborne early warning, tankers, ground control, air defenses, weapons, bases, tasks, and coordinates. Create the shared campaign bible, traceable orders of battle, event and loss state, and dependency graph. Generate and validate every `.miz`; cross-audit Red and Blue time, place, forces, casualties, and outcomes for continuity. Deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, shared events, and the manifest in `output/campaigns/schrodingers-war-red/`. Call Image Gen for a cover, Red patch, chapter or key-conflict art, and ending variants, while keeping tactical facts outside the artwork. Ten summaries or an outline are not a playable campaign. Report unsupported assets without substitution.
+----
+
+===== Schrödinger's Hot-and-Cold War: Blue
+
+[source,text]
+----
+Create a campaign titled “Schrödinger's Hot-and-Cold War: Blue” that requires the M-2000C and Cold War Germany, and revisit the Red campaign's major events through French eyes on the same alternate 1987–1989 timeline. Use ten missions of 60–90 minutes, about 10–13 hours, with the same shared nodes and limited branches. The Blue order of battle explicitly comprises the French M-2000C player squadron, a Mirage F1 strike detachment, and NATO airborne early warning, tankers, and ground control. The Red force explicitly comprises the full-fidelity MiG-29A squadron, Soviet ground-controlled interception, radar, air defenses, and verified frontal attack and support aviation. Both perspectives must use the same order-of-battle IDs, bases, quantities, and loss state. Progress from deployment, border patrol, and visual identification to escort, counter-air, emergency defense, and a decision over an escalatory strike. Losses, misidentification, rescue, and ceasefire openings remain causally compatible with Red even when intelligence differs.
+
+Load the Red campaign's shared event table before authoring the Blue viewpoint. Have Fable or GPT-5.6-Ultra read Docs and inspect Tools, explicitly verify the M-2000C on Cold War Germany, and validate the Mirage F1, full-fidelity MiG-29A, both sides' airborne early warning, tankers, ground control, air defenses, weapons, bases, tasks, and coordinates. Extend one campaign bible, the traceable shared orders of battle, event and escalation state, and dependency graph. Generate and validate each `.miz`, then audit bidirectional continuity of time, place, forces, losses, rescue, and outcomes. Place `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, shared events, and the manifest in `output/campaigns/schrodingers-war-blue/`. Use Image Gen for the cover, Blue patch, matching chapter or key-mission art, and endings; tactical truth must come from verified data. A comparison outline does not qualify. Report every limitation and do not silently substitute.
+----
+
+===== No Buffer in Sinai
+
+[source,text]
+----
+Create a campaign titled “No Buffer in Sinai” that requires the full-fidelity MiG-29A and Sinai. Set this wholly fictional Egyptian resistance to an Israeli invasion in a 2014–2018 technology window; the proposed forces are representative DCS combinations, not claims about real orders of battle or combat results. Use ten missions of 65–90 minutes, about 10–13 hours, in three linear phases with persistent resources. The Egyptian order of battle explicitly comprises the full-fidelity MiG-29A player squadron, ground control, radar, air defenses, and limited, verified airborne early warning and tanker support. The proposed Israeli order of battle explicitly comprises F-15C, F-15E, F-16C, and F-4E units plus airborne early warning and tankers. Verify each type's availability, quantity, base, task, and entry condition. Move from dispersal, interception, and radar defense to escorting anti-armor strikes, contesting airspace toward the canal, and covering a ceasefire. Persist runways, radars, pilots, civilian airfields, and ammunition.
+
+Separate verified capability from the wholly fictional Egyptian resistance to an Israeli invasion. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify the full-fidelity MiG-29A on Sinai, and individually validate the F-15C, F-15E, F-16C, F-4E, both sides' airborne early warning, tankers, air defenses, weapons, bases, tasks, and coordinates. Establish a campaign bible, fiction boundary, traceable orders of battle, runway and resource state, and dependency graph. Generate and validate every `.miz`; audit supportability plus aircraft, pilot, radar, runway, ammunition, and chronology continuity. Deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, a fiction note, and the manifest under `output/campaigns/no-buffer-in-sinai/`. Image Gen must make the cover, squadron patch, chapter or key canal-defense art, and ending art, but cannot establish identification, payloads, or coordinates. A concept list or outline is insufficient. Report unsupported types or capabilities and make no silent substitution.
+----
+
+===== Confrontation in the High North
+
+[source,text]
+----
+Create a campaign titled “Confrontation in the High North” that requires the F-16C, F-15C, and Kola. Set this wholly fictional US joint-air campaign within a 2015–2025 technology window. Use twelve missions of 70–100 minutes, about 14–18 hours, with linear chapters and persistent theater state. Alternate F-16C air-defense suppression and strike with F-15C long-range counter-air while progressing from escorting reinforcements and defending the fleet to suppressing northern bases, defeating an air-sea counterattack, and protecting a ceasefire. The US order of battle comprises the player squadrons, airborne early warning, tankers, naval forces, and ground allies. Preserve this complete conceptual Russian list and verify every item separately: MiG-29S; the full-fidelity MiG-29A; Su-27; Su-33 and its carrier; Su-34; Su-35; MiG-31; Su-24; Su-25; Su-25T; Tu-22M; Tu-144; and Tu-95, plus verified air defenses, ships, and land forces. Persist bases, radars, ship damage, pilots, and supply.
+
+Create an asset-by-asset verification matrix before populating Kola or carrying ship damage forward. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify the F-16C and F-15C on Kola, and issue separate findings for the MiG-29S, full-fidelity MiG-29A, Su-27, Su-33 and carrier, Su-34, Su-35, MiG-31, Su-24, Su-25, Su-25T, Tu-22M, Tu-144, and Tu-95, including existence, supported tasks, basing or carrier needs, quantities, weapons, and coordinates. Permit a Tu-144 only as an anomalous neutral or special target if project data verifies it; otherwise report and omit it, never impersonating it. Build a campaign bible, traceable joint order of battle, base, radar, supply, and ship-damage state, and dependency graph. Generate and validate every `.miz`, then audit force, base, radar, ship-damage, pilot, loss, and chronology continuity. Put `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest in `output/campaigns/confrontation-high-north/`. Call Image Gen for a cover, task-force patch, chapter or key long-range-intercept art, and ending art; charts and sensor facts require verified data. An outline is not delivery. Report and omit every unsupported item without substitution.
+----
+
+===== Old Grudges in the Sky
+
+[source,text]
+----
+Create a campaign titled “Old Grudges in the Sky” that requires the JF-17 and Afghanistan. Use a 2015–2025 technology window and declare the map's southwest a wholly fictional composite Indo-Pakistani frontier; neither the forces nor events claim to reproduce a real order of battle or combat result. Use ten missions of 60–90 minutes, about 10–14 hours, on a linear main path with diplomatic and resource branches. The Pakistani order of battle explicitly comprises the JF-17 player squadron, ground control, radar, and air defense. The proposed Indian order of battle explicitly comprises MiG-21, Mirage 2000, and Su-30 units, air defenses, and verified strike support. Outside Western forces explicitly comprise airborne early warning, tankers, reconnaissance, and escorts whose political restrictions may help or worsen the crisis. Verify every type's quantity, base, task, weapon, and entry condition. Cover alert interception, mountain-pass patrol, escort, precision strike, air-defense suppression, and base defense. Persist wingmen, bases, munitions, radar, and escalation; success requires containing the war, not maximizing damage.
+
+Use the three-party relationship and escalation state to gate every branch. Ask Fable or GPT-5.6-Ultra to read Docs and inspect Tools, explicitly verify the JF-17 on Afghanistan and the declared geographic abstraction, and validate the MiG-21, Mirage 2000, Su-30, both sides' air defenses, Western airborne early warning, tankers, reconnaissance, escorts, weapons, bases, tasks, and coordinates. Build a campaign bible, fiction boundary, traceable three-party orders of battle, relationship and resource state, and branch dependency graph. Generate and validate every `.miz`; traverse all paths and audit diplomatic, force, loss, base, radar, and chronology continuity. In `output/campaigns/old-grudges-in-the-sky/`, provide `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, a fiction note, and the manifest. Invoke Image Gen for the cover, squadron patch, chapter or key pass art, and branch endings; imagery is neither real geography nor tactical evidence. Plot or an outline alone is not completion. Report unsupported assets and make no silent substitution.
+----
+
+===== Scalpel over Frozen Ground
+
+[source,text]
+----
+Create a campaign titled “Scalpel over Frozen Ground” that requires the Su-25T and Kola. Set this wholly fictional Russian precision-strike campaign within a 2015–2025 technology window; its forces are representative DCS combinations, not claims about a real modern order of battle or combat result. Use eight missions of 60–80 minutes, about 8–10 hours, in three linear phases with variants for selected targets. The Russian order of battle explicitly comprises the Su-25T player attack regiment, ground control, verified fighter cover, and ground and naval support. The opposing order of battle explicitly comprises NATO and Norwegian F-16 and F-15 units, air-defense systems, armor, and ships. Verify each type's quantity, base, task, weapon, and entry condition. Move from poor-weather deployment, interdiction, and anti-armor work to air-defense suppression and destruction, anti-ship support, night precision attack, and covering a ground withdrawal. Persist reconnaissance, aircraft, weapons stocks, air-defense gaps, and the front.
+
+Treat each target variant as a branch over one common chronology, force ledger, and loss state. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify the Su-25T on Kola, and validate its sensor and weapon compatibility, Russian escorts and support, NATO and Norwegian F-16s and F-15s, air defenses, armor, ships, bases, tasks, and coordinates. Construct a campaign bible, fiction boundary, traceable orders of battle, target and resource state, and dependency graph. Generate and validate every `.miz`, test all mission variants, and conduct a full chronology, force, and loss continuity audit as well as state and difficulty checks. Deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, a fiction note, and the manifest in `output/campaigns/scalpel-over-frozen-ground/`. Use Image Gen for the cover, attack-regiment patch, chapter or key air-defense-hunt art, and ending art; target images and coordinates must come from verified data. A variant outline is not enough. Report unsupported functions or assets without substitution.
+----
+
+==== Additional Fixed-Wing and Joint Campaigns
+
+===== Tomcats over the Ice Sea
+
+[source,text]
+----
+Create a campaign titled “Tomcats over the Ice Sea” that requires the F-14B, Supercarrier, and Kola and set within a fictional 1991–1994 technology window. Its ten missions run 65–90 minutes each, about 11–14 hours total, in three linear chapters with persistent interception decisions. A recurring two-seat crew progresses from long-range identification, airborne-early-warning escort, and counter-reconnaissance to fleet defense, covering anti-ship forces, searching for a missing wingman, and defeating a saturation attack. A US carrier group, escorts, airborne early warning, and tankers face verified Russian long-range aviation, naval air, and ships. Persist carrier position, deck losses, aircraft, contact records, and rescue results.
+
+Let the deck cycle, contact record, and rescue results govern the carrier story. Fable or GPT-5.6-Ultra should read Docs and inspect Tools, explicitly verify the F-14B and Supercarrier on Kola, and validate the ships, adversaries, weapons, bases, tasks, coordinates, and questionable MiG-31 availability. Prepare a campaign bible, traceable carrier order of battle, deck and contact state, and dependency graph. Generate and validate every `.miz`, then audit deck, aircraft, contact, rescue, force, and timeline continuity. Deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest under `output/campaigns/tomcats-over-the-ice-sea/`. Call Image Gen for a cover, squadron patch, chapter or key-intercept art, and ending art; artwork cannot establish charts or sensor facts. A chapter outline is not the finished campaign. Report every availability limit and make no silent substitution.
+----
+
+===== Spear of the Islands
+
+[source,text]
+----
+Create a campaign titled “Spear of the Islands” that requires the F/A-18C, Supercarrier, and Mariana Islands and set within a fictional 2020–2028 technology window. Its twelve missions run 65–90 minutes each, about 13–17 hours total, with linear chapters and persistent deck and theater state. Move from carrier requalification, island reconnaissance, and fleet defense to escort, air-defense suppression, anti-ship attack, amphibious support, retaking a forward field, and protecting a ceasefire corridor. The air wing, Marines, airborne early warning, tankers, and amphibious ships face verified hostile aircraft, air defenses, ships, and island defenders. Persist deck aircraft, ship damage, fields, weapons, landing progress, and civilian restrictions.
+
+Tie every carrier sortie to the landing-state ledger and persistent ship damage. Have Fable or GPT-5.6-Ultra read Docs and inspect Tools, explicitly verify the F/A-18C and Supercarrier on Mariana Islands, and validate the carrier, deck operations, air wing, Marines, support, hostile forces, weapons, tasks, and coordinates. Build a campaign bible, traceable joint order of battle, deck and landing state, and dependency graph. Generate and validate every `.miz`; audit air, sea, land, deck, ship-damage, and chronology continuity. Write `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest beneath `output/campaigns/spear-of-the-islands/`. Image Gen must produce the cover, air-wing patch, chapter or key-landing art, and ending art, while verified data supplies maps, targets, and loadouts. A mission list or outline is not completion. Report unsupported assets and do not substitute them.
+----
+
+===== Phantom over Fulda
+
+[source,text]
+----
+Create a campaign titled “Phantom over Fulda” that requires the F-4E and Cold War Germany and set in an alternate NATO–Warsaw Pact war within a 1984–1987 technology window. Its ten linear missions run 60–80 minutes each, about 10–13 hours total. Move from terrain-following navigation, armed reconnaissance, and bridge interdiction to escort, airfield attack, air-defense hunting, and supporting a ground counterattack under fighter pressure. Reuse the front-seat and rear-seat crew, squadron, electronic-warfare and tanker support, and army units against verified Pact interceptors, air defenses, and armor. Persist reconnaissance, air-defense gaps, wingmen, runways, and the front; exclude anachronisms.
+
+Freeze the 1984–1987 period boundary and low-level route state before placing targets. Direct Fable or GPT-5.6-Ultra to read Docs and inspect Tools, explicitly verify the F-4E on Cold War Germany, and validate period units, weapons, tasks, bases, support, and coordinates. Create a campaign bible, traceable NATO and Pact orders of battle, target and loss state, and dependency graph. Generate and validate each `.miz`, then audit low-level routes, air-defense gaps, wingmen, runways, forces, chronology, and period continuity. Put `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, period notes, and the manifest in `output/campaigns/phantom-over-fulda/`. Use Image Gen for a cover, squadron patch, chapter or key low-level-strike art, and ending art; art is not a chart, coordinate source, or historical record. A war-story outline cannot replace the files. Report missing period assets without substitution.
+----
+
+===== Thunder in the Fjords
+
+[source,text]
+----
+Create a campaign titled “Thunder in the Fjords” that requires the AJS-37 and Kola and set in a fictional Scandinavian air-sea war within a 1982–1988 technology window. Its eight missions run 50–75 minutes each, about 7–10 hours total, in a linear chain with one reconnaissance branch. From dispersed road bases, fly coastal reconnaissance, low-level penetration, attacks on escorts and landing groups, supply interdiction, and coastal-radar strikes before covering a friendly naval withdrawal. Recurring ground crews, reconnaissance, fighter cover, and coastal defenses face verified Soviet ships, interceptors, and air defenses. Persist reconnaissance imagery, targets, road bases, aircraft, and anti-ship stocks.
+
+Make the road-base cycle, reconnaissance evidence, and preplanned-target table authoritative. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify the AJS-37 on Kola, and validate road-base support, ships, weapons, units, tasks, bases, and coordinates. Assemble a campaign bible, traceable air and naval orders of battle, target and stock state, and dependency graph. Generate and validate every `.miz`, then audit routes, targets, aircraft, anti-ship stocks, forces, and chronology for continuity across the branch. Store `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest in `output/campaigns/thunder-in-the-fjords/`. Call Image Gen for the cover, squadron patch, chapter or key anti-ship art, and ending art; factual routes and sea charts require verified data. An outline is not a campaign. Report limitations and make no silent substitution.
+----
+
+===== Guardians of the Pass
+
+[source,text]
+----
+Create a campaign titled “Guardians of the Pass” that requires the A-10C II, A-10A, and Caucasus together and set in a wholly fictional 2010–2020 mountain war. Use ten shared campaign nodes. Build an A-10C II precision mission and an A-10A austere-frontline mission for every node, for twenty player `.miz` files total. Each aircraft must have a complete ten-mission route from opening to ending; neither module is optional or a fallback, and the player may also alternate perspectives node by node. Missions run 60–90 minutes, and either complete route takes about 11–15 hours. A recurring army brigade defends, withdraws, and counterattacks through mountain passes while both routes use their distinct capabilities for close air support, armed reconnaissance, rescue cover, convoy escort, counter-battery work, and stopping armor. Friendly helicopters, artillery, and joint terminal attack controllers face verified armor, air defenses, and aircraft. Persist companies, the front, fratricide, stocks, fields, and pilots through one shared state.
+
+Prove parity between the two player routes before treating the campaign as complete. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify both the A-10C II and A-10A on Caucasus, and separately validate their tasks, joint-terminal-attack-controller support, sensors, weapons, units, bases, and coordinates. Build one campaign bible, traceable ground and air orders of battle, shared resource and front state, and dual-route dependency graph. Generate and validate both `.miz` files at every one of the ten nodes, for twenty player missions; test a full ten-mission A-10C II route, a full ten-mission A-10A route, and alternating perspectives, then audit front, force, pilot, loss, fratricide, supply, and chronology continuity. Deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest under `output/campaigns/guardians-of-the-pass/`. Ask Image Gen for a cover, joint patch, chapter or key-pass art, and ending art; verified data drives nine-line briefs, fronts, and coordinates. Ten summaries, an outline, or one optional aircraft are not completion. Report capability limits without substitution.
+----
+
+===== Night Flights over the Nile
+
+[source,text]
+----
+Create a campaign titled “Night Flights over the Nile” that requires the F-15E and Sinai and set in an escalating fictional night-strike campaign within a 2015–2025 technology window. Its ten missions run 70–95 minutes each, about 12–15 hours total. A recurring crew moves from night deployment, poor-visibility precision attack, and special-forces extraction cover to mobile-target hunting, air-defense suppression, deep command strikes, and stopping a final missile salvo. Friendly escorts, electronic warfare, airborne early warning, tankers, and rescue face verified fighters, integrated air defenses, and decoys. Persist target confirmation, civilian risk, tankers, wingmen, and radar state.
+
+Let target-intelligence confidence, civilian risk, and radar state constrain every night sortie. Assign Fable or GPT-5.6-Ultra to read Docs and inspect Tools, explicitly verify the F-15E on Sinai, and validate its sensors, weapons, forces, electronic warfare, airborne early warning, tankers, rescue, bases, tasks, and coordinates. Establish a campaign bible, traceable friendly and hostile orders of battle, target-intelligence and resource state, and dependency graph. Generate and validate each `.miz`; audit targets, crews, tankers, wingmen, radar, losses, and timeline continuity. Package `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest in `output/campaigns/night-flights-over-the-nile/`. Invoke Image Gen for a cover, squadron patch, chapter or key night-strike art, and ending art; images cannot establish identification, sensor facts, or coordinates. A target-list outline is insufficient. Report unsupported capabilities and never substitute them silently.
+----
+
+===== Above the Beachhead
+
+[source,text]
+----
+Create a campaign titled “Above the Beachhead” that requires the AV-8B and South Atlantic and set in a fictional expeditionary campaign within a 2015–2025 technology window. Its eight missions run 60–85 minutes each, about 8–11 hours total, in linear landing phases with persistent ships and shore forces. From an amphibious assault ship, fly reconnaissance, fleet-defense support, coastal air-defense suppression, close air support, forward-base deployment, and beachhead resupply protection before stopping a counterattack. Marines, helicopters, escorts, and limited fighter support face verified shore aircraft, air defenses, ships, and defenders. Persist the deck and forward bases, aircraft, landing troops, supplies, and weather.
+
+Drive the expedition from one landing-state ledger rather than disconnected sorties. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify the AV-8B on South Atlantic, and validate amphibious-ship and forward-base capabilities, air and naval forces, units, weapons, tasks, bases, and coordinates. Build a campaign bible, traceable joint order of battle, deck, landing, and resource state, and dependency graph. Generate and validate every `.miz`, then audit air, sea, land, ship, beachhead, supply, and chronology continuity. Under `output/campaigns/above-the-beachhead/`, deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest. Call Image Gen for the cover, expeditionary patch, chapter or key-beachhead art, and ending art; maps and coordinates must come from verified data. A campaign concept or outline is not completion. Report limits without silent substitution of ships, bases, or aircraft.
+----
+
+===== The Last Mirage
+
+[source,text]
+----
+Create a campaign titled “The Last Mirage” that requires a verified Mirage F1 variant and Sinai and set in a wholly fictional 1998–2001 conflict. The player explicitly belongs to a Jordanian Mirage F1 expeditionary squadron supporting an Egyptian-led coalition, not an unnamed generic air force. Its nine missions run 60–80 minutes each, about 9–12 hours total, in a linear, resource-depleting structure. Move from visual identification, border patrol, and ground support to transport escort, intercepting advanced fighters, low-level strike, airfield defense, and covering evacuation. The recurring Jordanian squadron, coalition ground control, air defenses, and limited allies face verified modern fighters, airborne early warning, tankers, precision attack, and electronic warfare. Persist aircraft, pilots, radar, airfields, weapons, and allied trust.
+
+Verify country, coalition alignment, livery, and variant before writing the tragedy. Have Fable or GPT-5.6-Ultra read Docs and inspect Tools, explicitly verify the playable Mirage F1 variant on Sinai, and validate the Jordanian player country, Egyptian-led coalition, forces, weapons, bases, tasks, and coordinates. Create a campaign bible, fiction boundary, traceable coalition order of battle, resource and character state, and nine-mission dependency graph. Generate and validate every `.miz`; audit the capability gap plus aircraft, pilots, radar, airfields, weapons, trust, force, and chronology continuity. Write `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, a fiction note, and the manifest to `output/campaigns/the-last-mirage/`. Use Image Gen for a cover, squadron patch, chapter or key-intercept art, and ending art; artwork cannot establish performance, identification, charts, or coordinates. Tragedy or outline alone is not a design. Report every variant, country, livery, or asset limit without substitution.
+----
+
+===== Silver Sabres
+
+[source,text]
+----
+Create a campaign titled “Silver Sabres” that requires the F-86F, MiG-15bis, and Caucasus and set in a fictional mountain air war within a 1952–1954 technology window. Its seven missions run 50–70 minutes each, about 6–8 hours total, alternating perspectives on one linear event chain: high-altitude patrol, bomber escort, valley interception, a missing-pilot search, and airfield defense. Give both sides recurring flights, ground radar, anti-aircraft artillery, transports, and bombers, all period-verified. Their briefings may disagree, but timing, losses, weather, and wreck positions must match; reward survival and assigned objectives rather than kills.
+
+Use one shared event table to reconcile both sides' contradictory briefings. Fable or GPT-5.6-Ultra should read Docs and inspect Tools, explicitly verify the F-86F and MiG-15bis on Caucasus, and validate period units, weapons, airfields, tasks, support, and coordinates. Build a two-view campaign bible, traceable opposing orders of battle, shared event and loss state, and dependency graph. Generate and validate every `.miz`, then cross-audit timing, losses, weather, wrecks, forces, pilots, and chronology for continuity. Deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest in `output/campaigns/silver-sabres/`. Call Image Gen for the cover, opposing patches, chapter or key-dogfight art, and ending art; verified data, not imagery, supplies performance and charts. Mission titles or an outline are not completion. Report missing period assets and do not substitute them.
+----
+
+===== Moonlight on the Railways
+
+[source,text]
+----
+Create a campaign titled “Moonlight on the Railways” that requires Normandy plus the Mosquito, P-47D, and P-51D. Use the historical atmosphere of June and July 1944, but fictional characters and results. Fly eight linear missions of 55–75 minutes, about 8–10 hours, across a month of night and dawn interdiction. Mosquitos attack rail nodes at night, P-47Ds hunt locomotives and convoys, and P-51Ds escort and suppress airfields. Reuse reconnaissance, resistance contacts, bomber formations, German fighters, and anti-aircraft artillery. Persist weather, moon phase, railway repairs, target losses, wingmen, and intelligence confidence while keeping equipment period-correct.
+
+Anchor the month to a railway-repair ledger and lunar chronology. Direct Fable or GPT-5.6-Ultra to read Docs and inspect Tools, explicitly verify the Mosquito, P-47D, and P-51D on Normandy, and validate period forces, weapons, airfields, rail targets, tasks, support, and coordinates. Establish a campaign bible, traceable Allied and German orders of battle, railway, weather, moon, and loss state, and dependency graph. Generate and validate each `.miz`; audit moon phase, repairs, targets, wingmen, intelligence, forces, and chronology continuity. Put `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, historical notes, and the manifest in `output/campaigns/moonlight-on-the-railways/`. Ask Image Gen for the cover, wing patch, chapter or key rail-strike art, and ending art; target diagrams and routes require verified data. Sortie ideas or an outline are not delivery. Report limitations without silent substitution.
+----
+
+===== Embers over the Kuban
+
+[source,text]
+----
+Create a campaign titled “Embers over the Kuban” that requires Caucasus, the I-16, Bf 109, and one verified playable Fw 190 variant. Make it explicitly fictional but inspired by the 1942–1943 Eastern Front. Its seven missions run 50–75 minutes each, about 6–9 hours total, in a linear multi-perspective structure. Soviet I-16 pilots defend fields and support troops; German Bf 109 and Fw 190 flights escort, sweep, and interdict; both converge on one withdrawal corridor. Keep pilots, airfields, anti-aircraft artillery, ground forces, weather, and losses on one timeline, without presenting invented events as history.
+
+Keep every perspective on one event-and-loss timeline and label all invented events as fiction. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify the I-16, Bf 109, and selected playable Fw 190 variant on Caucasus, and validate period weapons, units, airfields, tasks, support, and coordinates. Construct a shared campaign bible, traceable Soviet and German orders of battle, event, weather, and loss state, and dependency graph. Generate and validate every `.miz`; audit pilots, airfields, ground forces, weather, losses, perspectives, and chronology continuity. Provide `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, a fiction note, and the manifest in `output/campaigns/embers-over-the-kuban/`. Invoke Image Gen for a cover, opposing patches, chapter or key air-battle art, and ending art; imagery is neither evidence nor a chart. A war-story outline is incomplete. Report variant limits and make no silent substitution.
+----
+
+===== The Last Flying Lesson
+
+[source,text]
+----
+Create a campaign titled “The Last Flying Lesson” that requires the L-39, C-101, MB-339, and Syria and set in a fictional regional war within a 2015–2025 technology window that forces three training units into limited combat. Its seven missions run 55–80 minutes each, about 7–9 hours total, with linear escalation and persistent student losses. Start with evacuation, liaison, and border reconnaissance; add light close air support, transport escort, night interception of slow targets, and training-base defense. Recurring instructors, students, ground crews, defenders, and limited fighter support face verified irregulars, air defenses, and aircraft. Persist qualifications, trainers, weapons, bases, and evacuees, never turning trainers into implausible frontline fighters.
+
+Let the student roster and qualification state cap what each trainer can do. Have Fable or GPT-5.6-Ultra read Docs and inspect Tools, explicitly verify the L-39, C-101, and MB-339 on Syria, and validate their actual tasks and weapons, friendly support, opposing units, bases, and coordinates. Build a campaign bible, traceable training-unit and enemy orders of battle, student, aircraft, weapon, and evacuee state, and dependency graph. Generate and validate every `.miz`, then audit qualifications, losses, bases, difficulty, forces, characters, and chronology continuity. Store `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest in `output/campaigns/the-last-flying-lesson/`. Call Image Gen for the cover, school patch, chapter or key base-defense art, and ending art; verified data defines capability and tactics. The premise or an outline is not completion. Report limits without enhancement or substitution of aircraft.
+----
+
+===== No Retreat for the Carrier
+
+[source,text]
+----
+Create a campaign titled “No Retreat for the Carrier” that requires the Su-33 and Kola and set in a fictional Russian carrier campaign within a 1995–2005 technology window. Its nine missions run 65–90 minutes each, about 10–13 hours total, in a linear deployment–battle–withdrawal structure with persistent deck resources. Move from carrier requalification, fleet defense, and reconnaissance escort to long-range interception, covering anti-ship attacks, protecting a damaged group, and holding a final withdrawal corridor. A verified Russian carrier and escort group with shore support faces NATO carrier aircraft, airborne early warning, tankers, and anti-ship threats. Give the Russian force airborne early warning only if an appropriate platform and task verify; otherwise use verified shore-based radar or GCI, never an invented carrier capability. Persist carrier position, ship damage, aircraft, pilots, fuel, and shore fields.
+
+Resolve the carrier, deck cycle, and early-warning solution before plotting long-range intercepts. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify the Su-33 on Kola, and validate carrier and deck functions, ships, weapons, forces, tasks, bases, and coordinates. Verify a Russian airborne early-warning platform and supported task separately; if none exists, report that limit and use only verified shore-based radar or GCI without inventing a carrier capability. Create a campaign bible, traceable naval and air orders of battle, deck, ship-damage, aircraft, fuel, and early-warning state, and dependency graph. Generate and validate every `.miz`; audit carrier position, ship damage, deck, aircraft, pilots, fuel, early-warning coverage, forces, and chronology continuity. Deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest under `output/campaigns/no-retreat-for-the-carrier/`. Use Image Gen for a cover, regiment patch, chapter or key fleet-defense art, and ending art; charts, coverage, and performance require verified data. Plot or an outline alone is not completion. Report every carrier or support limitation and never substitute silently.
+----
+
+===== The Air Bridge
+
+[source,text]
+----
+Create a campaign titled “The Air Bridge” that requires a verified C-130 module and Syria and set in a fictional transport and evacuation campaign within a 2015–2025 technology window after a ceasefire collapses. Its eight missions run 60–90 minutes each, about 9–12 hours total. Use persistent logistics for poor-weather supply, forward-field unloading, airdrop, casualty and civilian evacuation, low-level threat penetration, and escort by artificial intelligence or an optional second fighter player. Reuse the transport wing, escorts, ground crews, rescue teams, and corridor defenders against verified air defenses, interceptors, and ground threats. Persist cargo, fields, escorts, evacuees, and corridor security.
+
+Make the cargo ledger, corridor security, and evacuation count balance after every flight. Assign Fable or GPT-5.6-Ultra to read Docs and inspect Tools, explicitly verify the exact C-130 module on Syria, and validate its capabilities, cargo and airdrop support, escorts, threats, bases, tasks, and coordinates. Build a campaign bible, traceable transport, escort, and enemy orders of battle, cargo, airfield, corridor, and personnel state, and dependency graph. Generate and validate each `.miz`, then audit cargo, evacuees, escorts, fields, losses, and chronology continuity. Place `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest in `output/campaigns/the-air-bridge/`. Image Gen must create the cover, transport patch, chapter or key-airdrop art, and ending art; factual loads, drop zones, and charts come from verified data. A logistics outline is not completion. Report every unsupported capability and make no silent substitution.
+----
+
+==== Independent Helicopter Campaigns
+
+===== Black Shark Hunting Grounds
+
+[source,text]
+----
+Create a campaign titled “Black Shark Hunting Grounds” that requires a verified Ka-50 module variant and Caucasus and set in a fictional mountain anti-armor campaign within a 2008–2015 technology window. Its eight missions run 60–85 minutes each, about 8–11 hours total, in linear hunting chapters with persistent targets and air defenses. Reconnoiter the front, ambush armor, hold a pass, hunt mobile air defenses, escort assault helicopters, conduct night searches, and stop a final breakthrough. A recurring Ka-50 flight, controllers, artillery, and brigade face verified armor, short-range air defenses, helicopters, and limited fixed-wing threats. Persist targets, air-defense gaps, wingmen, forward refueling points, and the front.
+
+Let the target-and-threat state determine what survives to the next hunt. Fable or GPT-5.6-Ultra should read Docs and inspect Tools, explicitly verify the selected Ka-50 module variant on Caucasus, and validate weapons, armor, air defenses, helicopters, fixed-wing threats, units, landing sites, tasks, and coordinates. Prepare a campaign bible, traceable friendly and hostile orders of battle, target, threat, front, and resource state, and dependency graph. Generate and validate every `.miz`; audit targets, air-defense gaps, wingmen, forward refueling points, forces, losses, and chronology continuity. Write `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest to `output/campaigns/black-shark-hunting-grounds/`. Call Image Gen for a cover, flight patch, chapter or key-ambush art, and ending art; targets, terrain, and coordinates require verified data. A target-list outline is insufficient. Report limits and do not substitute unsupported assets.
+----
+
+===== The Hind Corridor
+
+[source,text]
+----
+Create a campaign titled “The Hind Corridor” that requires the Mi-24P, Mi-8MTV2, and Cold War Germany and set in a fictional European war within a 1984–1988 technology window. Its nine missions run 60–80 minutes each, about 9–12 hours total, in a linear two-aircraft operation chain. Mi-8s carry troops, supply, casualties, and special teams; Mi-24Ps escort the corridor, suppress defenses, attack armor, and cover extraction. A recurring helicopter regiment, airborne company, controllers, and ground forces face verified NATO air defenses, armor, fighters, and helicopters. Persist delivered troops, crews, forward sites, fuel and weapons, defense gaps, and corridor control; exclude anachronisms.
+
+Use the transport ledger and corridor-control state to connect the two helicopter roles. Have Fable or GPT-5.6-Ultra read Docs and inspect Tools, explicitly verify the Mi-24P and Mi-8MTV2 on Cold War Germany, and validate period units, payload and transport support, weapons, landing sites, tasks, bases, and coordinates. Establish a campaign bible, traceable helicopter, ground, and NATO orders of battle, transport, defense-gap, and resource state, and dependency graph. Generate and validate every `.miz`, then audit cause and effect between aircraft plus troop, casualty, crew, fuel, weapon, force, and chronology continuity. Deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest in `output/campaigns/the-hind-corridor/`. Invoke Image Gen for the cover, regiment patch, chapter or key air-assault art, and ending art; verified data defines landing zones and routes. Narrative or outline alone is not completion. Report limitations without substitution.
+----
+
+===== Desert Longbow
+
+[source,text]
+----
+Create a campaign titled “Desert Longbow” that requires the AH-64D, OH-58D, and Sinai and set in a fictional reconnaissance-attack campaign within a 2015–2025 technology window. Its ten missions run 60–90 minutes each, about 11–15 hours total, in linear phases with persistent reconnaissance quality. OH-58Ds scout, designate, liaise, and confirm damage; AH-64Ds attack armor, escort, hunt mobile air defenses, and cover a ground breakthrough. Friendly uncrewed aircraft, artillery, rescue, and a brigade face verified armor, air defenses, artillery, and air threats. Persist discovered targets, misidentification, wingmen, forward sites, weapons, and ground progress.
+
+Make reconnaissance provenance and target identity explicit before each scout-to-shooter handoff. Direct Fable or GPT-5.6-Ultra to read Docs and inspect Tools, explicitly verify the AH-64D and OH-58D on Sinai, and validate their sensors, data link, weapons, tasks, supporting forces, threats, landing sites, bases, and coordinates. Build a campaign bible, traceable aviation and ground orders of battle, reconnaissance, target, weapon, and front state, and dependency graph. Generate and validate every `.miz`; audit scout-to-shooter, target, misidentification, wingman, forward-site, ground-progress, force, loss, and chronology continuity. Package `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest in `output/campaigns/desert-longbow/`. Ask Image Gen for a cover, joint patch, chapter or key scout-and-attack art, and ending art; images cannot establish target identity, firing data, or coordinates. A coordination outline is not delivery. Report unsupported capabilities and never substitute them.
+----
+
+===== Island Rescue Line
+
+[source,text]
+----
+Create a campaign titled “Island Rescue Line” that requires the UH-1H, SA342, and Mariana Islands and set in a fictional special-operations and combat-rescue campaign within a 2012–2022 technology window. Its eight missions run 55–75 minutes each, about 8–10 hours total, in a linear rescue chain with one priority branch. SA342s scout routes, observe targets, and direct support; UH-1Hs insert teams, rescue pilots and civilians, and supply isolated islands. Reuse special operators, rescue crews, ships, and controllers against verified light air defenses, patrol boats, troops, and weather. Persist rescued people, exposed safe houses, aircraft, fuel, island control, and civilian risk.
+
+Drive the priority branch from a personnel ledger and safe-house exposure state. Fable or GPT-5.6-Ultra must read Docs and inspect Tools, explicitly verify the UH-1H and SA342 on Mariana Islands, and validate reconnaissance and transport support, ships, units, threats, landing sites, tasks, bases, and coordinates. Create a campaign bible, traceable rescue and opposing orders of battle, personnel, safe-house, aircraft, island, and civilian-risk state, and branch dependency graph. Generate and validate each `.miz`, test both branch outcomes, and audit rescues, exposed sites, aircraft, fuel, island control, people, forces, losses, and chronology continuity. Put `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest in `output/campaigns/island-rescue-line/`. Use Image Gen for a cover, rescue patch, chapter or key-rescue art, and branch endings; verified data defines landing zones, routes, and coordinates. Mission titles or an outline are not completion. Report limits without silent substitution.
+----
+
+===== Arctic Heavy Lift
+
+[source,text]
+----
+Create a campaign titled “Arctic Heavy Lift” that requires the CH-47F, Mi-8MTV2, and Kola together and set in a fictional high-north logistics and evacuation crisis within a 2015–2025 technology window. Its eight missions run 65–90 minutes each, about 9–12 hours total, with persistent logistics. The helicopters belong to two separate detachments under one joint logistics task force: a US or coalition CH-47F heavy-lift detachment handles heavy sling loads, artillery movement, and forward reinforcement, while a partner-nation Mi-8MTV2 utility detachment handles internal cargo, radar-site supply, poor-weather rescue, and casualty evacuation. They are not one transport regiment and must not share an invented single establishment. Define both command relationships, aircraft and crew pools, and cross-detachment handoffs. Mountain rescue, escorts, and outposts face verified weather, terrain, light air defenses, and limited hostile aviation. Persist cargo, people, forward sites, aircraft, weather windows, and isolated posts.
+
+Keep two independent detachment pools and auditable cargo ownership through every handoff. Have Fable or GPT-5.6-Ultra read Docs and inspect Tools, explicitly verify the CH-47F and Mi-8MTV2 on Kola, and separately validate each type's cargo and sling-load support, coalition placement, units, landing sites, tasks, bases, and coordinates. Build a campaign bible, traceable joint order of battle, joint command relationships, separate aircraft and crew state, logistics ledger, weather and outpost state, and dependency graph. Generate and validate every `.miz`; audit cargo handoffs, ownership, crews, aircraft, people, sites, weather windows, forces, losses, and chronology continuity. Deliver `missions/`, `briefings/`, `state/`, `artwork/`, `validation-reports/`, and the manifest under `output/campaigns/arctic-heavy-lift/`. Call Image Gen for a cover, joint transport patch, chapter or key heavy-lift art, and ending art; factual loads, landing zones, charts, and coordinates require verified data. A transport list, mixed-regiment fiction, or outline is not completion. Report every capability or coalition limit and make no silent substitution.
 ----
