@@ -1,0 +1,1093 @@
+= Prompt Examples
+:toc: macro
+:toclevels: 5
+
+link:README.md[Back to README]
+
+These examples show how a user might describe a desired DCS simulation in natural language. They are neither forms nor fixed templates; include only the details that matter to the request.
+
+toc::[]
+
+== Quick Missions
+
+=== Flight and Procedures
+
+==== Free Flight
+
+===== Day Free Flight
+
+[source,text]
+----
+Create a daytime F-16C free-flight mission over the Caucasus. Start the player hot at Batumi, route the flight along the coast and through nearby valleys for about 25 minutes, include no enemies or mandatory objectives, and provide a clear-weather recovery route.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+===== Night Free Flight
+
+[source,text]
+----
+I want a night free flight in the M-2000C over the Persian Gulf. Depart from Al Dhafra, pass the Dubai skyline and coastline, then return home under moonlight with visible city lighting and no combat.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+===== Scenic Flight
+
+[source,text]
+----
+Generate a TF-51D sightseeing mission on the Cold War Germany map. Start hot from a West German airfield and tour the Elbe, Hamburg, and the North Sea coast with clear waypoints, no threats, and an easy flight of roughly 40 minutes.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+===== Adverse-Weather Flight
+
+[source,text]
+----
+Make an adverse-weather MiG-29A flight on the Kola map. The player should cold-start, fly an instrument route through low cloud, snow, and strong crosswinds, then recover safely without enemy forces.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Start and Departure
+
+===== Cold Start
+
+[source,text]
+----
+Create a JF-17 cold-start practice mission at Nellis on the Nevada map. Include ramp startup, taxi, takeoff, a short local route, and recovery with uncomplicated ground and air traffic and no weapons objective.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+===== Hot Start
+
+[source,text]
+----
+Give me a hot-start F-14B quick mission for a two-seat crew from a land base in the Marianas. After departure, fly a basic navigation route and a few formation turns, then return to the same field in about 30 minutes.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+===== Runway Takeoff
+
+[source,text]
+----
+Build a short Su-25T runway-start mission at Vaziani. Have the player take off, climb to a specified altitude, pass one range waypoint, and return, keeping the focus on departure and basic aircraft handling.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Navigation and Landing
+
+===== Visual Landing
+
+[source,text]
+----
+Create a daytime visual-landing exercise for the M-2000C. Spawn the player about 15 nautical miles from a Caucasus airfield, lead them into a normal traffic pattern, and finish with a full-stop landing in good weather with useful radio and route cues.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+===== Instrument Landing
+
+[source,text]
+----
+I need a JF-17 instrument-landing mission. Put a Caucasus airfield under low cloud and light rain, start the player above the layer, and require an avionics-guided descent, approach intercept, and landing with no combat.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+===== Night or Crosswind Landing
+
+[source,text]
+----
+Make an F-16C night crosswind-landing mission on Sinai. Start the player downwind with moderate fuel, usable visibility, and noticeable gusts, and allow a missed approach followed by another attempt.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Formation Flight
+
+[source,text]
+----
+Generate a four-ship F-5E formation exercise over the Nevada training ranges with the player as number two. Include rendezvous, formation changes, tactical turns, and a break-up for recovery, with no hostile aircraft.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Air-to-Air Refueling
+
+[source,text]
+----
+Create a Persian Gulf F/A-18C air-refueling exercise. Start airborne, use support calls to locate the tanker, let the player take fuel, and recover to a carrier in calm daylight with enough fuel for several attempts.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Carrier Operations
+
+[source,text]
+----
+Build an F-14B carrier-operations quick mission in the Marianas. Start hot on deck, launch by catapult, fly a short route, and return for a Case I recovery while the carrier group steams into the wind.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Helicopter Basics
+
+===== Hovering
+
+[source,text]
+----
+Create a UH-1H hovering exercise on a flat Caucasus training area. Place several spaced markers for stationary hover, sideward movement, backward movement, and pedal turns, with no hostile units.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+===== Nap-of-the-Earth Flight
+
+[source,text]
+----
+Make a Mi-24P nap-of-the-earth flight on the Syria map. Route the player through valleys and between villages, avoiding known observation posts without engaging them, and finish at a forward airfield.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+===== Confined-Area Landing
+
+[source,text]
+----
+Generate a CH-47F confined-area landing exercise in the Afghan mountains. Require landings at three progressively harder valley sites while accounting for heat, altitude, and aircraft weight.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+=== Close Air Combat (BFM/ACM)
+
+==== Guns
+
+===== 1v1
+
+[source,text]
+----
+Create a guns-only 1v1 between the full-fidelity M-2000C and full-fidelity MiG-29A. Set an equal-altitude, equal-speed head-on merge over a Caucasus training area, carry only the required gun ammunition, allow the player to choose either aircraft, and support a quick restart after a kill.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+===== 2v2
+
+[source,text]
+----
+Build a 2v2 guns engagement between F-5Es and MiG-21bis aircraft. Begin with opposing formations at medium altitude, use evenly matched AI wingmen, prohibit missiles, and define a clear fight area and win condition.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+===== 1v2
+
+[source,text]
+----
+Give me a guns-only 1v2 with one F-16C against two F-5Es. Grant the player an altitude advantage but limited fuel, use moderately coordinated opponents, and require both kills without leaving the training box.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Infrared Missiles
+
+===== 1v1
+
+[source,text]
+----
+Create a 1v1 infrared-missile fight between an F/A-18C and a MiG-29A. Give each aircraft two short-range heat-seeking missiles plus guns, start at visual range and medium altitude, and exclude radar-guided weapons.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+===== 2v2
+
+[source,text]
+----
+Make a 2v2 infrared-missile exercise with Mirage F1s against F-5Es during a 1980s Nevada Red Flag scenario. Keep the weapons period-correct, include limited gun ammunition, and clearly identify the training sides.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+===== 1v2
+
+[source,text]
+----
+Generate a close-range 1v2 with a MiG-29A against two F-16Cs. Give the player only two R-73s and guns, bring the opponents in from separated bearings, and emphasize visual search, threat prioritization, and disengagement.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Fully Armed Surprise Encounter
+
+[source,text]
+----
+Create a sudden close encounter between two F-14Bs and two MiG-29As above and below a low cloud layer. Keep representative full air-combat loads, start at short range with little warning, and give the AI sensible rules of engagement.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+=== Beyond-Visual-Range Combat (BVR)
+
+==== 1v1
+
+[source,text]
+----
+Create a 1v1 BVR exercise between an F-16C and a JF-17 over the Persian Gulf. Start 45 nautical miles apart with medium-range missiles and short-range self-defense weapons, and require the winner to score a valid kill and disengage safely.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== 2v2
+
+[source,text]
+----
+Build a 2v2 BVR mission with F-14Bs against MiG-29As over open water. Use moderate cloud, no third-party interference, and focus on formation spacing, target sorting, and post-launch defense.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== 1v2
+
+[source,text]
+----
+Give me a 1v2 BVR challenge with an M-2000C against two lower-skill fighters. The player must manage altitude, speed, and semi-active radar missile limitations, make one effective attack, and escape before being bracketed.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== 4v4 with AWACS and Datalink
+
+[source,text]
+----
+Generate a 4v4 formation BVR mission with F/A-18Cs against Su-27s. Give both sides airborne early warning, let Blue use datalink for target assignment, keep the fight away from neutral traffic, and brief the relevant channels and control information.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Defensive Disengagement
+
+[source,text]
+----
+Make a JF-17 defensive BVR disengagement exercise. Start with two hostile fighters already tracking the player and a long-range missile threat developing; success should depend on awareness, countermeasures, terrain, and fuel management rather than scoring a kill.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+=== Air-to-Ground Weapons Training
+
+==== Cannon Strafing
+
+[source,text]
+----
+Create an A-10C II cannon range with separate groups of stationary trucks, armored vehicles, and clearly marked practice targets. Start airborne, allow repeated passes, and keep every ground unit non-hostile.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Rockets
+
+[source,text]
+----
+Build a Mi-24P rocket training mission against light vehicles and area targets on a desert range. Include safe ingress and egress routes, a recommended attack direction, ample ammunition, and no air-defense threat.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== CCIP Unguided Bombs
+
+[source,text]
+----
+Give me an F-16C CCIP bombing exercise from Nellis. Start hot, fly to a range with circular targets of several sizes, use clear weather, and provide enough stores and fuel for repeated deliveries and recovery.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== CCRP Unguided Bombs
+
+[source,text]
+----
+Generate an M-2000C CCRP bombing exercise. Require a low-level ingress followed by a level delivery on a simulated runway target using a designated point, with straightforward navigation and impact scoring but no enemy interception.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Cluster Munitions
+
+[source,text]
+----
+Create an F-16C cluster-munition exercise against dispersed soft targets and light armor. Let the player compare two release altitudes and keep the range well clear of friendly forces and populated areas.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Laser-Guided Weapons
+
+[source,text]
+----
+Generate an F/A-18C laser-guided bomb exercise with a ground JTAC designating two different targets. Start hot on a carrier and require correct contact, target identification, weapon delivery, and recovery.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Television or Electro-Optical Weapons
+
+[source,text]
+----
+Make a JF-17 electro-optical weapon mission against a radar vehicle and a bridge in a valley. Use weather that permits sensor employment while terrain masks the targets, and make the player choose which target has priority.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== GPS/INS-Guided Weapons
+
+[source,text]
+----
+Build an F/A-18C JDAM exercise with coordinates for three fixed targets in the briefing. Require a multi-target release without entering the short-range air-defense ring and report the result for each aimpoint.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Standoff Weapons
+
+[source,text]
+----
+Generate a JF-17 standoff strike exercise against a hardened coastal command post protected by medium-range air defenses. Keep the focus on route planning, launch conditions, the release window, and egress from outside the threat ring.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Anti-Radiation Missiles
+
+[source,text]
+----
+Create an F-16C HARM range with several radar emitters that switch on and off intermittently. Require threat identification, selection of an employment mode, and suppression of at least one radar while all other forces remain in training behavior.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Anti-Ship Missiles
+
+[source,text]
+----
+Give me an AJS-37 anti-ship missile exercise in a Baltic setting. Target a small transport convoy protected by a frigate, require a low-level approach and coordinated release, then a high-speed escape with no hostile fighters.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+=== Sensors and Survivability
+
+==== Radar, IRST, and Datalink
+
+[source,text]
+----
+Create a MiG-29A sensor exercise with friendly, hostile, and neutral aircraft at different altitudes and speeds. Require the player to build situational awareness with radar, IRST, and datalink and classify every contact without firing.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Targeting Pod and JTAC
+
+[source,text]
+----
+Build an A-10C II targeting-pod and JTAC coordination mission. Have the controller provide a nine-line, coordinates, and laser designation in sequence, while the player locates and dry-runs each target without releasing live weapons.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== RWR, ECM, and Countermeasures
+
+[source,text]
+----
+Generate an F/A-18C defensive-systems exercise. Along a fixed route, expose the player to search radar, tracking radar, and simulated missile attacks, requiring correct use of the RWR, jammer, chaff, and flares before recovery.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Low-Level Penetration
+
+[source,text]
+----
+Make an AJS-37 low-level penetration exercise from a coastal airfield through valleys and along the shoreline to a target area without weapon release. Score route keeping, exposure time, and on-time arrival.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Emergency Recovery
+
+[source,text]
+----
+Give me an F-14B emergency recovery scenario. During an over-water patrol, introduce a single-engine failure and hydraulic problem, requiring a decision on jettison, carrier communication, and either a safe trap or diversion.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+=== Aerobatics
+
+==== Solo Aerobatics
+
+[source,text]
+----
+Create an M-2000C solo aerobatics mission over a Nevada dry lake. Provide entry gates for a loop, roll, Cuban eight, and low high-speed pass, with no hostile units.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Formation Aerobatics
+
+[source,text]
+----
+Build a four-aircraft L-39 formation aerobatics scenario with the player leading stable AI wingmen. Include departure and join-up, diamond maneuvers, a smoke-on flypast, and a formation recovery.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+== Combat Scenarios
+
+=== Air Superiority and Air Defense
+
+==== Scramble Interception
+
+[source,text]
+----
+Generate a 1988 MiG-29A scramble interception on the Cold War Germany map. The player and an AI wingman cold-start while a French strike package approaches East Berlin from the west; include ground control and A-50 support and require interception before weapon release.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Strike-Package Interception
+
+[source,text]
+----
+Build a Persian Gulf F-14B mission to intercept long-range bombers and their escorts. Launch a two-ship from a carrier, use AWACS control to identify and attack the package, and include nearby neutral traffic that must not be engaged.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== BARCAP
+
+[source,text]
+----
+Generate a two-player F-16C BARCAP protecting a Caucasus frontline airbase and supply node. The patrol should last about 60 minutes, hostile fighters and attackers may arrive in waves, and Blue has tanker support but limited weapons.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== TARCAP
+
+[source,text]
+----
+Create an F/A-18C TARCAP over a target area deep in hostile territory. A four-ship player flight must clear the defending CAP, maintain air superiority during the strike, and cover the attackers on egress.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Fighter Sweep
+
+[source,text]
+----
+Generate an F-14B fighter sweep over Syria. A two-player flight enters ahead of the main strike package to draw out and defeat hostile patrols, with engagement boundaries and fuel limits that prevent endless pursuit.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Escort
+
+[source,text]
+----
+Build a four-ship M-2000C escort mission protecting low-flying Mirage F1 strikers through hostile airspace. Include interceptors on ingress and pursuit on egress, and make survival of the strike aircraft the primary objective.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Airbase Defense
+
+[source,text]
+----
+Generate a 1970s F-5E airbase-defense mission. Scramble the player from a field under attack to stop low-level strike aircraft, while friendly anti-aircraft fire and possible runway damage complicate recovery.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Fleet Air Defense
+
+[source,text]
+----
+Build an F-14A fleet-air-defense mission in which bombers approach a carrier group from multiple axes to launch anti-ship missiles. The player must intercept the bombers at range and help deal with leakers if a launch occurs.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== OCA Against Aircraft
+
+[source,text]
+----
+Generate an F-16C offensive-counter-air mission intended to suppress fighters before they can generate sorties. The player package must handle airborne alerts and parked military aircraft while avoiding civilian airport facilities.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+=== Air-to-Ground Operations
+
+==== Preplanned CAS
+
+[source,text]
+----
+Build an A-10C II preplanned CAS mission supporting friendly troops defending a Caucasus mountain pass. Brief the target area, friendly positions, and attack time, and task a two-ship with destroying a known armored group before egress.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== On-Call CAS
+
+[source,text]
+----
+Generate a two-player AH-64D on-call CAS scenario. Hold the flight in an alert area until ground troops come under unexpected attack and a JTAC passes a nine-line; targets are moving and close to friendlies, so positive identification is required.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== BAI
+
+[source,text]
+----
+Build an F-16C battlefield interdiction mission against armored reinforcements moving toward the front along two roads. Let the player choose an ambush point from reconnaissance reports and destroy key vehicles before the columns reach friendly troops.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Armed Reconnaissance
+
+[source,text]
+----
+Generate an OH-58D armed reconnaissance mission in the Syrian hills, searching for suspected missile teams and supply vehicles. Keep target locations uncertain and require observation, marking, and engagement only after confirmation.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Pinpoint Strike
+
+[source,text]
+----
+Build a JF-17 pinpoint strike against a military communications center on the edge of a city. Place civilian buildings and short-range defenses nearby and require a weapon and attack direction that limit collateral damage.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Deep Strike
+
+[source,text]
+----
+Generate a four-ship F-15E deep strike against the entrance to an underground facility in a rear-area valley. Include escort, SEAD, and tanker support, plan for roughly 100 minutes, and have the enemy organize an interception on egress.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Airfield and Runway Attack
+
+[source,text]
+----
+Build an AJS-37 low-level airfield strike targeting a runway and attack aircraft parked in the military sector. Require meaningful runway damage before repairs can begin and prohibit attacks on the civilian side of the shared field.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Armored-Formation Attack
+
+[source,text]
+----
+Generate a Su-25T mission against a large armored formation protected by self-propelled guns and short-range air defenses. Blue provides UAV reconnaissance but no air superiority, so the player must choose an attack order and retain enough weapons and fuel to recover.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Infrastructure Attack
+
+[source,text]
+----
+Build an F/A-18C strike on a bridge and rail junction to disrupt enemy logistics. Make it difficult to destroy both targets with one attack, require weapon allocation across the flight, and explain the expected battlefield effect in the briefing.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+=== Air Defense Suppression
+
+==== SEAD
+
+[source,text]
+----
+Generate a two-player F-16C SEAD mission suppressing a medium-range SAM for a following strike package. Let the radar shut down and protect it with short-range systems; success means keeping the threat ineffective throughout the strike window.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== DEAD
+
+[source,text]
+----
+Build an F/A-18C DEAD mission to destroy the radars, launchers, and command node of an integrated coastal air-defense site. Provide one refueling opportunity and let the enemy use decoys and a mobile backup radar.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== SEAD Escort
+
+[source,text]
+----
+Generate an F-16C SEAD escort accompanying F-15E strikers through several threat zones. Emphasize reacting to emitters on the package timeline rather than ranging ahead to hunt every site independently.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== SEAD Sweep
+
+[source,text]
+----
+Build a two-ship F/A-18C SEAD sweep against mobile air defenses dispersed along likely movement routes. Require active search, emitter provocation, and systematic destruction to open a corridor for the next day's operation.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+=== Maritime Operations
+
+==== Anti-Ship Strike
+
+[source,text]
+----
+Generate a four-ship AJS-37 anti-ship strike against a frigate group in the North Sea. Require low-level navigation and a coordinated missile salvo against naval air defenses, with maritime reconnaissance but no tanker support.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Coastal Strike
+
+[source,text]
+----
+Build an F/A-18C coastal strike against missile boats, a fuel depot, and a shore-defense radar inside a port. The targets are close to a city, so require identification of the military docks and controlled weapon employment.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Maritime Convoy Escort
+
+[source,text]
+----
+Generate a two-player F-14B escort for a friendly merchant convoy moving through a narrow Persian Gulf channel. Include low-level attackers and missile boats, and require coordination with the convoy's naval air defenses.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Fleet Defense
+
+[source,text]
+----
+Build a multiplayer fleet-defense scenario with four F/A-18Cs launching from a carrier against two anti-ship attack waves from different altitudes and bearings. Include E-2, tanker, and ship defenses without letting the ships solve every threat automatically.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Amphibious Support
+
+[source,text]
+----
+Generate an AV-8B mission supporting an amphibious landing. Launch from an amphibious assault ship, suppress coastal fire positions, then provide on-call support to the landing force against mobile air defenses and an armored reserve.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+=== Helicopter and Special Operations
+
+==== Air Assault
+
+[source,text]
+----
+Build a Mi-8MTV2 air assault in which several transports deliver infantry to a mountain-pass strongpoint under armed escort. Put the player in command of route, landing sequence, and extraction signal.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Troop Insertion
+
+[source,text]
+----
+Generate a UH-1H night troop insertion near a village behind enemy lines in Syria. Use a concealed low-level route, limited night-vision conditions, and a strict landing window without alerting the defenders early.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Troop Extraction
+
+[source,text]
+----
+Build a Mi-8 extraction of a surrounded reconnaissance team. Change the landing zone during the mission as enemy ground fire closes in, requiring the player to follow radio updates, choose an alternate site, and recover safely.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Cargo Transport
+
+[source,text]
+----
+Generate a CH-47F heavy-cargo mission moving artillery and ammunition from a rear base to a mountain position near the front. Account for sling load, weather, and high-altitude performance and score intact delivery.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Battlefield Resupply
+
+[source,text]
+----
+Build a UH-1H battlefield resupply mission delivering ammunition and medical supplies to three dispersed positions. Put small-arms threats along some routes and let the player choose between speed and concealment.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Combat Search and Rescue
+
+[source,text]
+----
+Generate a two-helicopter UH-1H combat search and rescue mission for an aircrew down behind enemy lines. One aircraft performs pickup while the other covers, enemy search teams approach the site, and friendly fighters provide only a short cover window.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Helicopter Escort
+
+[source,text]
+----
+Build an AH-64D escort for a transport-helicopter formation through two ambush-prone valleys. Include guns, MANPADS, and armed vehicles and require the player to stay close enough to protect the transports.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Helicopter Hunt
+
+[source,text]
+----
+Generate a Mi-24P hunt for hostile helicopters and their forward operating site. Let the targets maneuver low through terrain, require discovery of the support point, and force a choice between intercepting airborne helicopters and striking the base.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+=== Reconnaissance and Support
+
+==== Tactical Reconnaissance
+
+[source,text]
+----
+Build a Mirage F1 tactical reconnaissance mission photographing three suspected deployment areas along a hostile border. Require specified altitude and heading over each site, avoidance of patrols and short-range defenses, and recovery with all intelligence.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== AFAC/JTAC
+
+[source,text]
+----
+Generate a two-player A-10C II airborne forward-control mission. One aircraft finds and marks targets while the other attacks under control; friendlies are close, so require a nine-line, laser code, and explicit clearance.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== AEW&C Support
+
+[source,text]
+----
+Build an F-16C mission that both protects an airborne early-warning aircraft and uses its control for interceptions. Let hostile fighters attempt to bypass the CAP and attack the high-value asset, forcing a choice between protection and pursuit.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Tanker Support
+
+[source,text]
+----
+Generate a long-range F-14B operation in which the player must choose when to use limited tanker windows on ingress or egress. Add a possible threat to the tanker and make fuel planning, rendezvous timing, and protection important.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Recovery Tanker
+
+[source,text]
+----
+Build a carrier recovery-support scenario with an F/A-18C flight returning at night and two aircraft critically low on fuel. Provide a recovery tanker near the ship, worsen the weather, and require sensible refueling priority followed by safe traps.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Battlefield Surveillance
+
+[source,text]
+----
+Generate an OH-58D battlefield surveillance mission tracking hostile convoys, artillery, and air defenses for friendly forces. Destruction is not the main objective; require covert contact and updated coordinates without being detected.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Show of Force
+
+[source,text]
+----
+Build a two-ship F/A-18C show-of-force mission intended to stop hostile ground troops approaching a ceasefire zone. Allow low passes and flares, prohibit firing unless attacked, and require identification of the violating units.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+=== Ground and Joint Operations
+
+==== Positional Defense
+
+[source,text]
+----
+Generate a Combined Arms positional-defense scenario in which the player commands armor, anti-tank, and air-defense units at a critical crossroads with limited A-10C support. Use phased enemy attacks and restricted ammunition and reinforcements.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Capture a Strongpoint
+
+[source,text]
+----
+Build a joint mission to capture a strongpoint. A ground player directs the armored assault, helicopter players insert infantry on a flank, and fixed-wing players suppress air defenses; victory requires ground forces to hold the objective.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Ground Offensive
+
+[source,text]
+----
+Generate a large ground offensive with the player as a Combined Arms commander coordinating reconnaissance, artillery, armor, and army aviation. Give the enemy defense in depth and reserves, allow several axes of advance, and plan for about 90 minutes.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Convoy Escort
+
+[source,text]
+----
+Build a Ka-50 escort for a supply convoy moving along a dangerous road. Include ambush teams, a mine threat, and scattered air defenses; let the convoy halt or reroute and require the key vehicles to arrive.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Convoy Interdiction
+
+[source,text]
+----
+Generate an F-16C interdiction mission against a high-value convoy mixed with ordinary traffic and able to disperse. Require positive identification of the command and air-defense vehicles and prohibit attacks on civilian vehicles.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Joint Fire Support
+
+[source,text]
+----
+Build a joint fire-support mission with F/A-18Cs, A-10Cs, artillery, and a JTAC working the same frontline objective. Define timing, airspace restrictions, and friendly positions so the supporting elements do not interfere with each other.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Large Multi-Package Operation
+
+[source,text]
+----
+Generate a large multiplayer operation with fighter sweep, SEAD, escort, primary strike, anti-ship, and tanker packages against a coastal base complex. Give each player group its own objective and timeline while making overall success interdependent.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+=== Multiplayer Scenarios
+
+==== Cooperative Mission
+
+[source,text]
+----
+Build a four-player cooperative F-16C mission with two aircraft on SEAD and two striking an enemy command post. Start everyone cold, provide shared briefing, radios, and tanker support, and tune the mission for a regular group to finish in 75 minutes.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Adversarial PvP
+
+[source,text]
+----
+Generate an 8v8 adversarial scenario with two airfields, an AWACS, and limited respawns per side. Objectives should include protecting friendly supply flights and attacking enemy radar, not just air-to-air kills, with symmetric conditions.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Human JTAC Coordination
+
+[source,text]
+----
+Build a multiplayer CAS mission with one Combined Arms player acting as JTAC and the others flying A-10C IIs and F/A-18Cs. Let the ground battle evolve and make the human controller responsible for target confirmation and attack clearance.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Combined Arms Air-Ground Coordination
+
+[source,text]
+----
+Generate a multiplayer air-ground scenario where ground players command defenders and air defenses while pilots provide reconnaissance, transport, and fires. Victory requires holding two areas and completing a counterattack, and no single branch should win alone.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+== Campaigns
+
+=== Training and Qualification Campaigns
+
+==== Basic Flight Qualification
+
+[source,text]
+----
+Design a six-mission M-2000C basic flight qualification campaign covering cold start, taxi and takeoff, navigation, formation, instrument approach, and emergency recovery. Give each mission clear pass criteria and allow retries while retaining results.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Combat Qualification
+
+[source,text]
+----
+Generate an F-16C combat qualification campaign that begins with guns and infrared missiles, then adds BVR, air-to-ground weapons, SEAD, and a two-ship final evaluation. Increase difficulty gradually and make the final mission combine the earlier skills.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+=== Short Campaigns
+
+==== Linear Mini-Campaign
+
+[source,text]
+----
+Build a five-mission linear F-5E mini-campaign about an escalating border conflict. Begin with patrol and identification, continue through interception, escort, and airbase defense, and end with a limited counterstrike, with missions around 40 minutes each.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Historical Short Campaign
+
+[source,text]
+----
+Generate a short historical P-51D campaign on Normandy covering three operations in one week: bomber escort, attacks on transport routes, and airfield defense. Keep equipment, coalitions, and weather appropriate to the period while allowing fictional characters.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+=== Narrative Campaigns
+
+==== Fictional Linear Campaign
+
+[source,text]
+----
+Design a ten-mission fictional linear F/A-18C campaign about a carrier group entering a Persian Gulf crisis. Develop the story from deterrence patrols through joint strikes and ceasefire enforcement, with recurring characters and continuous radio events.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Historical Linear Campaign
+
+[source,text]
+----
+Build a historically grounded F-4E campaign set in 1980s Germany with low-level strike, escort, interception, and reconnaissance missions. Exclude anachronistic equipment and advance the missions along a coherent conflict timeline.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+==== Character-Driven Campaign
+
+[source,text]
+----
+Generate a character-driven Mi-24P campaign in Afghanistan. Keep the same crews, ground controllers, and transport units through escort, rescue, and mountain-assault missions, and reflect losses and choices in later briefings and dialogue.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+=== Branching Campaigns
+
+==== Success/Failure Branching
+
+[source,text]
+----
+Build a branching JF-17 campaign in which every success or failure changes the next mission. Destroying radar should reduce later defenses, a failed escort should remove strikers, and airfield damage should force relocation; provide at least two viable paths to completion.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Multiple Endings
+
+[source,text]
+----
+Generate an F-14B campaign with three endings shaped by interception decisions, restraint around neutral contacts, and protection of friendly assets. Provide victory, limited success, and failure outcomes rather than basing the result only on kill count.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+=== Persistent Campaigns
+
+==== Persistent Losses and Resources
+
+[source,text]
+----
+Design a persistent A-10C II campaign that carries forward player aircraft, AI wingmen, weapon stocks, and ground-force losses. Let the player choose missions and resupply priorities, with excessive use of precision weapons affecting later operations.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Front-Line Progression
+
+[source,text]
+----
+Generate an F-16C campaign on Cold War Germany with a moving front line. Ground control zones should change with results, new bases, targets, and patrol areas should open over time, and every air mission must reflect the current front.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Long Progressive Campaign
+
+[source,text]
+----
+Build a progressive campaign of more than 25 missions that grows from a local border incident into a joint war. Persist forces and logistics and let the player choose among fighter, strike, helicopter, and support roles.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----
+
+=== Dynamic Campaigns
+
+==== Dynamic Mission Generation
+
+[source,text]
+----
+Design a Persian Gulf dynamic campaign that creates different packages each turn from current objectives, forces, losses, and intelligence. Let the player accept or reject assignments while time advances and the enemy conducts its own operations.
+
+Use the data actually available in the project to verify the map, airbases, units, loadouts, and coordinates, then generate and validate the resulting .miz.
+----
+
+==== Dynamic Theater
+
+[source,text]
+----
+Generate a dynamic Kola theater with a changing front, maritime shipping, airbase control, radar coverage, and supply networks. Air, ground, and naval operations should affect one another, and theater state must persist between missions.
+
+Do not invent DCS internal names from memory; produce the mission file, briefing, and validation results.
+----
+
+==== Cooperative Dynamic Campaign
+
+[source,text]
+----
+Build a four-to-eight-player dynamic cooperative campaign on Syria. Groups may take fighter, strike, helicopter transport, and Combined Arms command roles; persist theater progress across server restarts and use AI to cover absent players.
+
+Query real available data first, then check spawn points, routes, loadouts, triggers, and objective logic after generation.
+----

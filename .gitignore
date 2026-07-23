@@ -55,5 +55,5 @@ luac.out
 output/
 
 # Local clones of acknowledged upstream projects
-.develope/*
-!.develope/README.txt
+.develope/upstream/*
+!.develope/upstream/README.txt
