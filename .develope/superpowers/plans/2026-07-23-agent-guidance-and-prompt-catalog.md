@@ -272,4 +272,3 @@ headings.
 - [ ] **Step 4: Verify repository state**
 
 Require `git status -sb` to show a clean local branch. Do not push.
-

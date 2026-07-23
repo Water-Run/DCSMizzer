@@ -57,3 +57,7 @@ output/
 # Local clones of acknowledged upstream projects
 .develope/upstream/*
 !.develope/upstream/README.txt
+
+# Local copies of proprietary DCS official campaigns
+.develope/official-campaigns/*
+!.develope/official-campaigns/README.txt

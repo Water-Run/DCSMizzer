@@ -49,4 +49,3 @@ The six repositories are:
 - Verify `.develope/README.txt` is not ignored.
 - Verify a representative cloned file and nested `.git` path are ignored.
 - Verify all six clone directories exist and each has a valid `HEAD`.
-

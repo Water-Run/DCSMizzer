@@ -127,4 +127,3 @@ Use the same temporary Git-index method from Task 2.
 
 Expected: every cloned child directory is ignored, while
 `.develope/README.txt` remains visible.
-

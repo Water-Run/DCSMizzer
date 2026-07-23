@@ -159,4 +159,3 @@ The completed change is verified by checking:
 - the required top-level sections and representative DCS mission types are
   present;
 - no Prompt is an empty placeholder or structured configuration form.
-
