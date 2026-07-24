@@ -101,28 +101,29 @@ Extra length must add operational value rather than restating the same warning.
 
 The user's owned aircraft are:
 
-- full-fidelity MiG-29A Fulcrum;
-- MiG-29S;
-- MiG-29G;
+- full-fidelity MiG-29A Fulcrum (primary emphasis);
+- M-2000C (primary emphasis);
+- JF-17 (primary emphasis);
+- MiG-21Bis;
 - F-5E FC;
 - Su-27;
-- J-11A;
-- F-16C;
+- MiG-29A (FC);
+- MiG-29G;
+- MiG-29S;
 - F-15C;
 - Su-25T;
-- MiG-21Bis;
-- M-2000C;
-- JF-17.
+- TF-51D;
+- F-16C.
 
-Full-fidelity MiG-29A, M-2000C, and JF-17 receive the greatest emphasis.
-Every owned aircraft appears at least once in the reconstructed pre-campaign
-examples, with several receiving both training and combat roles.
+Primary trio (full-fidelity MiG-29A, M-2000C, JF-17) should occupy roughly half
+of catalog scenes as player aircraft. Secondary owned aircraft receive moderate
+emphasis. Every DCS aircraft and terrain currently for sale must appear in at
+least one scene.
 
-The user's owned terrains are Caucasus, Nevada, Mariana Islands, Cold War
-Germany, Kola, and Sinai. Every one appears in the pre-campaign catalog, but
-the catalog is not limited to them. Other terrains may be used whenever they
-better fit a historical setting, aircraft, or mission, including Persian Gulf,
-Syria, Afghanistan, Normandy, The Channel, and South Atlantic.
+Owned map priority order: Cold War Germany, Sinai, Kola, Nevada, Caucasus.
+Other terrains are used when they better fit historical setting or aircraft,
+including Persian Gulf, Syria, Afghanistan, Iraq, Normandy, The Channel,
+Marianas / Marianas WWII, and South Atlantic.
 
 Non-owned aircraft remain welcome when they are the natural choice for a
 classic scenario. Examples include F-14 and F/A-18 carrier operations, F-4 and
