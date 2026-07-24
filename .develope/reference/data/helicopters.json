@@ -1,0 +1,132 @@
+[
+  {
+    "class": "Mi_24V",
+    "id": "Mi-24V",
+    "fuel_max_kg": 1704.0
+  },
+  {
+    "class": "Mi_8MT",
+    "id": "Mi-8MT",
+    "fuel_max_kg": 1929.0
+  },
+  {
+    "class": "Mi_26",
+    "id": "Mi-26",
+    "fuel_max_kg": 9600.0
+  },
+  {
+    "class": "Ka_27",
+    "id": "Ka-27",
+    "fuel_max_kg": 2616.0
+  },
+  {
+    "class": "UH_60A",
+    "id": "UH-60A",
+    "fuel_max_kg": 1100.0
+  },
+  {
+    "class": "CH_53E",
+    "id": "CH-53E",
+    "fuel_max_kg": 2880.0
+  },
+  {
+    "class": "CH_47D",
+    "id": "CH-47D",
+    "fuel_max_kg": 3600.0
+  },
+  {
+    "class": "SH_3W",
+    "id": "SH-3W",
+    "fuel_max_kg": 2132.0
+  },
+  {
+    "class": "AH_64A",
+    "id": "AH-64A",
+    "fuel_max_kg": 1157.0
+  },
+  {
+    "class": "AH_64D",
+    "id": "AH-64D",
+    "fuel_max_kg": 1157.0
+  },
+  {
+    "class": "AH_1W",
+    "id": "AH-1W",
+    "fuel_max_kg": 1250.0
+  },
+  {
+    "class": "SH_60B",
+    "id": "SH-60B",
+    "fuel_max_kg": 1100.0
+  },
+  {
+    "class": "UH_1H",
+    "id": "UH-1H",
+    "fuel_max_kg": 631.0
+  },
+  {
+    "class": "Mi_28N",
+    "id": "Mi-28N",
+    "fuel_max_kg": 1500.0
+  },
+  {
+    "class": "OH_58D",
+    "id": "OH-58D",
+    "fuel_max_kg": 454.0
+  },
+  {
+    "class": "CHAP_TigerUHT",
+    "id": "CHAP_TigerUHT",
+    "fuel_max_kg": 1420.0
+  },
+  {
+    "class": "AH_64D_BLK_II",
+    "id": "AH-64D_BLK_II",
+    "fuel_max_kg": 1140.0
+  },
+  {
+    "class": "CH_47Fbl1",
+    "id": "CH-47Fbl1",
+    "fuel_max_kg": 3054.592
+  },
+  {
+    "class": "Ka_50",
+    "id": "Ka-50",
+    "fuel_max_kg": 1450.0
+  },
+  {
+    "class": "Ka_50_3",
+    "id": "Ka-50_3",
+    "fuel_max_kg": 1450.0
+  },
+  {
+    "class": "Mi_24P",
+    "id": "Mi-24P",
+    "fuel_max_kg": 1701.0
+  },
+  {
+    "class": "OH58D",
+    "id": "OH58D",
+    "fuel_max_kg": 333.69
+  },
+  {
+    "class": "SA342M",
+    "id": "SA342M",
+    "fuel_max_kg": 416.33
+  },
+  {
+    "class": "SA342L",
+    "id": "SA342L",
+    "fuel_max_kg": 416.33
+  },
+  {
+    "class": "SA342Mistral",
+    "id": "SA342Mistral",
+    "fuel_max_kg": 416.33
+  },
+  {
+    "class": "SA342Minigun",
+    "id": "SA342Minigun",
+    "fuel_max_kg": 416.33
+  }
+]

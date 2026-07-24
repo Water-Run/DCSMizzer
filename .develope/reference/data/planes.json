@@ -1,0 +1,1003 @@
+[
+  {
+    "class": "Tornado_GR4",
+    "id": "Tornado GR4",
+    "fuel_max_kg": 4663.0,
+    "max_speed_kmh": 2340.0,
+    "pylon_count": 12
+  },
+  {
+    "class": "Tornado_IDS",
+    "id": "Tornado IDS",
+    "fuel_max_kg": 4663.0,
+    "max_speed_kmh": 2340.0,
+    "pylon_count": 12
+  },
+  {
+    "class": "F_14A",
+    "id": "F-14A",
+    "fuel_max_kg": 7348.0,
+    "max_speed_kmh": 2490.0,
+    "pylon_count": 12
+  },
+  {
+    "class": "Tu_22M3",
+    "id": "Tu-22M3",
+    "fuel_max_kg": 50000.0,
+    "max_speed_kmh": 2300.0,
+    "pylon_count": 5
+  },
+  {
+    "class": "F_4E",
+    "id": "F-4E",
+    "fuel_max_kg": 4864.0,
+    "max_speed_kmh": 2370.0,
+    "pylon_count": 9
+  },
+  {
+    "class": "MiG_27K",
+    "id": "MiG-27K",
+    "fuel_max_kg": 4500.0,
+    "max_speed_kmh": 1810.0,
+    "pylon_count": 7
+  },
+  {
+    "class": "Su_27",
+    "id": "Su-27",
+    "fuel_max_kg": 9400.0,
+    "max_speed_kmh": 2500.0,
+    "pylon_count": 10
+  },
+  {
+    "class": "MiG_23MLD",
+    "id": "MiG-23MLD",
+    "fuel_max_kg": 3800.0,
+    "max_speed_kmh": 2500.0,
+    "pylon_count": 5
+  },
+  {
+    "class": "Su_25",
+    "id": "Su-25",
+    "fuel_max_kg": 2835.0,
+    "max_speed_kmh": 980.0,
+    "pylon_count": 10
+  },
+  {
+    "class": "Su_25TM",
+    "id": "Su-25TM",
+    "fuel_max_kg": 3790.0,
+    "max_speed_kmh": 950.0,
+    "pylon_count": 11
+  },
+  {
+    "class": "Su_25T",
+    "id": "Su-25T",
+    "fuel_max_kg": 3790.0,
+    "max_speed_kmh": 950.0,
+    "pylon_count": 11
+  },
+  {
+    "class": "Su_33",
+    "id": "Su-33",
+    "fuel_max_kg": 9500.0,
+    "max_speed_kmh": 2300.0,
+    "pylon_count": 12
+  },
+  {
+    "class": "MiG_25PD",
+    "id": "MiG-25PD",
+    "fuel_max_kg": 15245.0,
+    "max_speed_kmh": 3000.0,
+    "pylon_count": 4
+  },
+  {
+    "class": "MiG_25RBT",
+    "id": "MiG-25RBT",
+    "fuel_max_kg": 15245.0,
+    "max_speed_kmh": 3000.0,
+    "pylon_count": 4
+  },
+  {
+    "class": "Su_30",
+    "id": "Su-30",
+    "fuel_max_kg": 9400.0,
+    "max_speed_kmh": 2200.0,
+    "pylon_count": 10
+  },
+  {
+    "class": "Su_17M4",
+    "id": "Su-17M4",
+    "fuel_max_kg": 3770.0,
+    "max_speed_kmh": 1860.0,
+    "pylon_count": 8
+  },
+  {
+    "class": "MiG_31",
+    "id": "MiG-31",
+    "fuel_max_kg": 15500.0,
+    "max_speed_kmh": 3000.0,
+    "pylon_count": 6
+  },
+  {
+    "class": "Tu_95MS",
+    "id": "Tu-95MS",
+    "fuel_max_kg": 87000.0,
+    "max_speed_kmh": 828.0,
+    "pylon_count": 9
+  },
+  {
+    "class": "Su_24M",
+    "id": "Su-24M",
+    "fuel_max_kg": 11700.0,
+    "max_speed_kmh": 1700.0,
+    "pylon_count": 8
+  },
+  {
+    "class": "Su_24MR",
+    "id": "Su-24MR",
+    "fuel_max_kg": 11700.0,
+    "max_speed_kmh": 1700.0,
+    "pylon_count": 5
+  },
+  {
+    "class": "Tu_160",
+    "id": "Tu-160",
+    "fuel_max_kg": 157000.0,
+    "max_speed_kmh": 2200.0,
+    "pylon_count": 2
+  },
+  {
+    "class": "F_117A",
+    "id": "F-117A",
+    "fuel_max_kg": 8255.0,
+    "max_speed_kmh": 1000.0,
+    "pylon_count": 2
+  },
+  {
+    "class": "Mirage_2000_5",
+    "id": "Mirage 2000-5",
+    "fuel_max_kg": 3160.0,
+    "max_speed_kmh": 2340.0,
+    "pylon_count": 9
+  },
+  {
+    "class": "F_15C",
+    "id": "F-15C",
+    "fuel_max_kg": 6103.0,
+    "max_speed_kmh": 2650.0,
+    "pylon_count": 11
+  },
+  {
+    "class": "F_15E",
+    "id": "F-15E",
+    "fuel_max_kg": 10246.0,
+    "max_speed_kmh": 2650.0,
+    "pylon_count": 19
+  },
+  {
+    "class": "MiG_29A",
+    "id": "MiG-29A",
+    "fuel_max_kg": 3376.0,
+    "max_speed_kmh": 2450.0,
+    "pylon_count": 7
+  },
+  {
+    "class": "MiG_29G",
+    "id": "MiG-29G",
+    "fuel_max_kg": 3376.0,
+    "max_speed_kmh": 2450.0,
+    "pylon_count": 7
+  },
+  {
+    "class": "MiG_29S",
+    "id": "MiG-29S",
+    "fuel_max_kg": 3493.0,
+    "max_speed_kmh": 2450.0,
+    "pylon_count": 7
+  },
+  {
+    "class": "Tu_142",
+    "id": "Tu-142",
+    "fuel_max_kg": 87000.0,
+    "max_speed_kmh": 860.0,
+    "pylon_count": 1
+  },
+  {
+    "class": "C_130",
+    "id": "C-130",
+    "fuel_max_kg": 20830.0,
+    "max_speed_kmh": 610.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "An_26B",
+    "id": "An-26B",
+    "fuel_max_kg": 5500.0,
+    "max_speed_kmh": 540.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "An_30M",
+    "id": "An-30M",
+    "fuel_max_kg": 8300.0,
+    "max_speed_kmh": 540.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "C_17A",
+    "id": "C-17A",
+    "fuel_max_kg": 132405.0,
+    "max_speed_kmh": 850.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "A_50",
+    "id": "A-50",
+    "fuel_max_kg": 70000.0,
+    "max_speed_kmh": 850.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "E_3A",
+    "id": "E-3A",
+    "fuel_max_kg": 65000.0,
+    "max_speed_kmh": 860.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "IL_78M",
+    "id": "IL-78M",
+    "fuel_max_kg": 112000.0,
+    "max_speed_kmh": 850.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "E_2C",
+    "id": "E-2C",
+    "fuel_max_kg": 5624.0,
+    "max_speed_kmh": 610.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "IL_76MD",
+    "id": "IL-76MD",
+    "fuel_max_kg": 87584.0,
+    "max_speed_kmh": 850.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "F_16C_bl_50",
+    "id": "F-16C bl.50",
+    "fuel_max_kg": 3104.0,
+    "max_speed_kmh": 2150.0,
+    "pylon_count": 10
+  },
+  {
+    "class": "F_16C_bl_52d",
+    "id": "F-16C bl.52d",
+    "fuel_max_kg": 3104.0,
+    "max_speed_kmh": 2150.0,
+    "pylon_count": 10
+  },
+  {
+    "class": "F_16A",
+    "id": "F-16A",
+    "fuel_max_kg": 3104.0,
+    "max_speed_kmh": 2150.0,
+    "pylon_count": 9
+  },
+  {
+    "class": "F_16A_MLU",
+    "id": "F-16A MLU",
+    "fuel_max_kg": 3104.0,
+    "max_speed_kmh": 2150.0,
+    "pylon_count": 10
+  },
+  {
+    "class": "RQ_1A_Predator",
+    "id": "RQ-1A Predator",
+    "fuel_max_kg": 200.0,
+    "max_speed_kmh": 220.0,
+    "pylon_count": 2
+  },
+  {
+    "class": "Yak_40",
+    "id": "Yak-40",
+    "fuel_max_kg": 3080.0,
+    "max_speed_kmh": 570.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "KC_135",
+    "id": "KC-135",
+    "fuel_max_kg": 90700.0,
+    "max_speed_kmh": 980.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "FW_190D9",
+    "id": "FW-190D9",
+    "fuel_max_kg": 388.0,
+    "max_speed_kmh": 828.0,
+    "pylon_count": 3
+  },
+  {
+    "class": "FW_190A8",
+    "id": "FW-190A8",
+    "fuel_max_kg": 409.0,
+    "max_speed_kmh": 900.0,
+    "pylon_count": 3
+  },
+  {
+    "class": "Bf_109K_4",
+    "id": "Bf-109K-4",
+    "fuel_max_kg": 296.0,
+    "max_speed_kmh": 828.0,
+    "pylon_count": 1
+  },
+  {
+    "class": "SpitfireLFMkIX",
+    "id": "SpitfireLFMkIX",
+    "fuel_max_kg": 277.59853044,
+    "max_speed_kmh": 828.0,
+    "pylon_count": 3
+  },
+  {
+    "class": "SpitfireLFMkIXCW",
+    "id": "SpitfireLFMkIXCW",
+    "fuel_max_kg": 277.59853044,
+    "max_speed_kmh": 828.0,
+    "pylon_count": 3
+  },
+  {
+    "class": "P_51D",
+    "id": "P-51D",
+    "fuel_max_kg": 732.0,
+    "max_speed_kmh": 763.2,
+    "pylon_count": 10
+  },
+  {
+    "class": "P_51D_30_NA",
+    "id": "P-51D-30-NA",
+    "fuel_max_kg": 732.0,
+    "max_speed_kmh": 763.2,
+    "pylon_count": 10
+  },
+  {
+    "class": "P_47D_30",
+    "id": "P-47D-30",
+    "fuel_max_kg": 1007.0,
+    "max_speed_kmh": 828.0,
+    "pylon_count": 3
+  },
+  {
+    "class": "P_47D_30bl1",
+    "id": "P-47D-30bl1",
+    "fuel_max_kg": 1007.0,
+    "max_speed_kmh": 828.0,
+    "pylon_count": 3
+  },
+  {
+    "class": "P_47D_40",
+    "id": "P-47D-40",
+    "fuel_max_kg": 1007.0,
+    "max_speed_kmh": 828.0,
+    "pylon_count": 5
+  },
+  {
+    "class": "MosquitoFBMkVI",
+    "id": "MosquitoFBMkVI",
+    "fuel_max_kg": 1483.1,
+    "max_speed_kmh": 648.0,
+    "pylon_count": 6
+  },
+  {
+    "class": "A_20G",
+    "id": "A-20G",
+    "fuel_max_kg": 1500.0,
+    "max_speed_kmh": 619.2,
+    "pylon_count": 1
+  },
+  {
+    "class": "B_52H",
+    "id": "B-52H",
+    "fuel_max_kg": 141135.0,
+    "max_speed_kmh": 957.6,
+    "pylon_count": 4
+  },
+  {
+    "class": "B_1B",
+    "id": "B-1B",
+    "fuel_max_kg": 88450.0,
+    "max_speed_kmh": 1329.84,
+    "pylon_count": 3
+  },
+  {
+    "class": "S_3B",
+    "id": "S-3B",
+    "fuel_max_kg": 5962.0,
+    "max_speed_kmh": 834.12,
+    "pylon_count": 6
+  },
+  {
+    "class": "S_3B_Tanker",
+    "id": "S-3B Tanker",
+    "fuel_max_kg": 6887.0,
+    "max_speed_kmh": 834.12,
+    "pylon_count": 0
+  },
+  {
+    "class": "A_10A",
+    "id": "A-10A",
+    "fuel_max_kg": 5029.0,
+    "max_speed_kmh": 720.0,
+    "pylon_count": 11
+  },
+  {
+    "class": "A_10C",
+    "id": "A-10C",
+    "fuel_max_kg": 5029.0,
+    "max_speed_kmh": 720.0,
+    "pylon_count": 11
+  },
+  {
+    "class": "A_10C_2",
+    "id": "A-10C_2",
+    "fuel_max_kg": 5029.0,
+    "max_speed_kmh": 720.0,
+    "pylon_count": 11
+  },
+  {
+    "class": "A6E",
+    "id": "A6E",
+    "fuel_max_kg": 7229.8,
+    "max_speed_kmh": 1036.8,
+    "pylon_count": 5
+  },
+  {
+    "class": "AJS37",
+    "id": "AJS37",
+    "fuel_max_kg": 4476.0,
+    "max_speed_kmh": 2203.2,
+    "pylon_count": 7
+  },
+  {
+    "class": "AV8BNA",
+    "id": "AV8BNA",
+    "fuel_max_kg": 3519.423,
+    "max_speed_kmh": 990.0,
+    "pylon_count": 8
+  },
+  {
+    "class": "KC130",
+    "id": "KC130",
+    "fuel_max_kg": 30000.0,
+    "max_speed_kmh": 621.0,
+    "pylon_count": 0
+  },
+  {
+    "class": "KC135MPRS",
+    "id": "KC135MPRS",
+    "fuel_max_kg": 90700.0,
+    "max_speed_kmh": 1009.008,
+    "pylon_count": 0
+  },
+  {
+    "class": "C_101EB",
+    "id": "C-101EB",
+    "fuel_max_kg": 1796.0,
+    "max_speed_kmh": 925.2,
+    "pylon_count": 2
+  },
+  {
+    "class": "C_101CC",
+    "id": "C-101CC",
+    "fuel_max_kg": 1796.0,
+    "max_speed_kmh": 925.2,
+    "pylon_count": 7
+  },
+  {
+    "class": "C_130J_30",
+    "id": "C-130J-30",
+    "fuel_max_kg": 19692.0,
+    "max_speed_kmh": 630.0,
+    "pylon_count": 3
+  },
+  {
+    "class": "J_11A",
+    "id": "J-11A",
+    "fuel_max_kg": 9400.0,
+    "max_speed_kmh": 2499.984,
+    "pylon_count": 10
+  },
+  {
+    "class": "JF_17",
+    "id": "JF-17",
+    "fuel_max_kg": 2325.0,
+    "max_speed_kmh": 2520.0,
+    "pylon_count": 7
+  },
+  {
+    "class": "KJ_2000",
+    "id": "KJ-2000",
+    "fuel_max_kg": 70000.0,
+    "max_speed_kmh": 849.996,
+    "pylon_count": 0
+  },
+  {
+    "class": "WingLoong_I",
+    "id": "WingLoong-I",
+    "fuel_max_kg": 400.0,
+    "max_speed_kmh": 280.0,
+    "pylon_count": 2
+  },
+  {
+    "class": "H_6J",
+    "id": "H-6J",
+    "fuel_max_kg": 25000.0,
+    "max_speed_kmh": 1044.0,
+    "pylon_count": 8
+  },
+  {
+    "class": "Falcon_Gyrocopter",
+    "id": "Falcon_Gyrocopter",
+    "fuel_max_kg": 54.0,
+    "max_speed_kmh": 185.0,
+    "pylon_count": 4
+  },
+  {
+    "class": "Christen_Eagle_II",
+    "id": "Christen Eagle II",
+    "fuel_max_kg": 71.0,
+    "max_speed_kmh": 306.0,
+    "pylon_count": 1
+  },
+  {
+    "class": "F_100D",
+    "id": "F-100D",
+    "fuel_max_kg": 3505.4,
+    "max_speed_kmh": 1378.8,
+    "pylon_count": 9
+  },
+  {
+    "class": "F_15ESE",
+    "id": "F-15ESE",
+    "fuel_max_kg": 10245.529841878,
+    "max_speed_kmh": 2649.996,
+    "pylon_count": 15
+  },
+  {
+    "class": "F_16C_50",
+    "id": "F-16C_50",
+    "fuel_max_kg": 3249.0,
+    "max_speed_kmh": 2120.04,
+    "pylon_count": 12
+  },
+  {
+    "class": "F_4E_45MC",
+    "id": "F-4E-45MC",
+    "fuel_max_kg": 5510.5,
+    "max_speed_kmh": 2203.2,
+    "pylon_count": 14
+  },
+  {
+    "class": "QF_4E",
+    "id": "QF-4E",
+    "fuel_max_kg": 5510.5,
+    "max_speed_kmh": 2203.2,
+    "pylon_count": 4
+  },
+  {
+    "class": "F_5E",
+    "id": "F-5E",
+    "fuel_max_kg": 1996.0,
+    "max_speed_kmh": 1742.4,
+    "pylon_count": 7
+  },
+  {
+    "class": "F_5E_3",
+    "id": "F-5E-3",
+    "fuel_max_kg": 2046.0,
+    "max_speed_kmh": 1742.4,
+    "pylon_count": 7
+  },
+  {
+    "class": "F_5E_3_FC",
+    "id": "F-5E-3_FC",
+    "fuel_max_kg": 2046.0,
+    "max_speed_kmh": 1742.4,
+    "pylon_count": 7
+  },
+  {
+    "class": "F_86F_Sabre",
+    "id": "F-86F Sabre",
+    "fuel_max_kg": 1282.0,
+    "max_speed_kmh": 964.8,
+    "pylon_count": 10
+  },
+  {
+    "class": "F_86F_FC",
+    "id": "F-86F_FC",
+    "fuel_max_kg": 1282.0,
+    "max_speed_kmh": 964.8,
+    "pylon_count": 10
+  },
+  {
+    "class": "F_14B",
+    "id": "F-14B",
+    "fuel_max_kg": 7348.0,
+    "max_speed_kmh": 2407.5792,
+    "pylon_count": 10
+  },
+  {
+    "class": "F_14A_95_GR",
+    "id": "F-14A-95-GR",
+    "fuel_max_kg": 7348.0,
+    "max_speed_kmh": 2407.5792,
+    "pylon_count": 8
+  },
+  {
+    "class": "F_14A_135_GR_Early",
+    "id": "F-14A-135-GR-Early",
+    "fuel_max_kg": 7348.0,
+    "max_speed_kmh": 2407.5792,
+    "pylon_count": 10
+  },
+  {
+    "class": "F_14A_135_GR",
+    "id": "F-14A-135-GR",
+    "fuel_max_kg": 7348.0,
+    "max_speed_kmh": 2407.5792,
+    "pylon_count": 10
+  },
+  {
+    "class": "F4U_1D",
+    "id": "F4U-1D",
+    "fuel_max_kg": 662.0,
+    "max_speed_kmh": 662.4,
+    "pylon_count": 12
+  },
+  {
+    "class": "F4U_1D_CW",
+    "id": "F4U-1D_CW",
+    "fuel_max_kg": 662.0,
+    "max_speed_kmh": 662.4,
+    "pylon_count": 12
+  },
+  {
+    "class": "F_A_18A",
+    "id": "F/A-18A",
+    "fuel_max_kg": 4930.0,
+    "max_speed_kmh": 1950.12,
+    "pylon_count": 9
+  },
+  {
+    "class": "F_A_18C",
+    "id": "F/A-18C",
+    "fuel_max_kg": 4900.0,
+    "max_speed_kmh": 1950.12,
+    "pylon_count": 9
+  },
+  {
+    "class": "FA_18C_hornet",
+    "id": "FA-18C_hornet",
+    "fuel_max_kg": 4900.0,
+    "max_speed_kmh": 1950.12,
+    "pylon_count": 10
+  },
+  {
+    "class": "Hawk",
+    "id": "Hawk",
+    "fuel_max_kg": 1272.0,
+    "max_speed_kmh": 2880.0,
+    "pylon_count": 6
+  },
+  {
+    "class": "I_16",
+    "id": "I-16",
+    "fuel_max_kg": 191.0,
+    "max_speed_kmh": 464.4,
+    "pylon_count": 8
+  },
+  {
+    "class": "L_39C",
+    "id": "L-39C",
+    "fuel_max_kg": 980.0,
+    "max_speed_kmh": 763.2,
+    "pylon_count": 3
+  },
+  {
+    "class": "L_39ZA",
+    "id": "L-39ZA",
+    "fuel_max_kg": 980.0,
+    "max_speed_kmh": 763.2,
+    "pylon_count": 5
+  },
+  {
+    "class": "La_7",
+    "id": "La-7",
+    "fuel_max_kg": 333.0,
+    "max_speed_kmh": 774.0,
+    "pylon_count": 2
+  },
+  {
+    "class": "M_2000C",
+    "id": "M-2000C",
+    "fuel_max_kg": 3165.0,
+    "max_speed_kmh": 2376.0,
+    "pylon_count": 11
+  },
+  {
+    "class": "MB_339A",
+    "id": "MB-339A",
+    "fuel_max_kg": 626.0,
+    "max_speed_kmh": 763.2,
+    "pylon_count": 8
+  },
+  {
+    "class": "MB_339APAN",
+    "id": "MB-339APAN",
+    "fuel_max_kg": 626.0,
+    "max_speed_kmh": 763.2,
+    "pylon_count": 8
+  },
+  {
+    "class": "MQ_9_Reaper",
+    "id": "MQ-9 Reaper",
+    "fuel_max_kg": 1300.0,
+    "max_speed_kmh": 400.0,
+    "pylon_count": 4
+  },
+  {
+    "class": "MiG_15bis",
+    "id": "MiG-15bis",
+    "fuel_max_kg": 1172.0,
+    "max_speed_kmh": 992.0,
+    "pylon_count": 2
+  },
+  {
+    "class": "MiG_15bis_FC",
+    "id": "MiG-15bis_FC",
+    "fuel_max_kg": 1172.0,
+    "max_speed_kmh": 992.0,
+    "pylon_count": 2
+  },
+  {
+    "class": "MiG_19P",
+    "id": "MiG-19P",
+    "fuel_max_kg": 1800.0,
+    "max_speed_kmh": 992.0,
+    "pylon_count": 6
+  },
+  {
+    "class": "MiG_21Bis",
+    "id": "MiG-21Bis",
+    "fuel_max_kg": 2280.0,
+    "max_speed_kmh": 2509.2,
+    "pylon_count": 7
+  },
+  {
+    "class": "MiG_29_Fulcrum",
+    "id": "MiG-29 Fulcrum",
+    "fuel_max_kg": 3376.0,
+    "max_speed_kmh": 2450.16,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1C",
+    "id": "Mirage-F1C",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1CE",
+    "id": "Mirage-F1CE",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1EE",
+    "id": "Mirage-F1EE",
+    "fuel_max_kg": 3246.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1M_EE",
+    "id": "Mirage-F1M-EE",
+    "fuel_max_kg": 3246.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1M_CE",
+    "id": "Mirage-F1M-CE",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1C_200",
+    "id": "Mirage-F1C-200",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1EH",
+    "id": "Mirage-F1EH",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1CH",
+    "id": "Mirage-F1CH",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1JA",
+    "id": "Mirage-F1JA",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 5
+  },
+  {
+    "class": "Mirage_F1CG",
+    "id": "Mirage-F1CG",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1CZ",
+    "id": "Mirage-F1CZ",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1CJ",
+    "id": "Mirage-F1CJ",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1CK",
+    "id": "Mirage-F1CK",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1EQ",
+    "id": "Mirage-F1EQ",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1ED",
+    "id": "Mirage-F1ED",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1EDA",
+    "id": "Mirage-F1EDA",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1CR",
+    "id": "Mirage-F1CR",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1CT",
+    "id": "Mirage-F1CT",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1AD",
+    "id": "Mirage-F1AD",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1AZ",
+    "id": "Mirage-F1AZ",
+    "fuel_max_kg": 3356.0,
+    "max_speed_kmh": 1389.6,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1B",
+    "id": "Mirage-F1B",
+    "fuel_max_kg": 3045.0,
+    "max_speed_kmh": 2336.4,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1BE",
+    "id": "Mirage-F1BE",
+    "fuel_max_kg": 3045.0,
+    "max_speed_kmh": 2336.4,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1BQ",
+    "id": "Mirage-F1BQ",
+    "fuel_max_kg": 3045.0,
+    "max_speed_kmh": 2336.4,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1BD",
+    "id": "Mirage-F1BD",
+    "fuel_max_kg": 3045.0,
+    "max_speed_kmh": 2336.4,
+    "pylon_count": 7
+  },
+  {
+    "class": "Mirage_F1DDA",
+    "id": "Mirage-F1DDA",
+    "fuel_max_kg": 3045.0,
+    "max_speed_kmh": 2336.4,
+    "pylon_count": 7
+  },
+  {
+    "class": "Su_34",
+    "id": "Su-34",
+    "fuel_max_kg": 9800.0,
+    "max_speed_kmh": 1900.008,
+    "pylon_count": 12
+  },
+  {
+    "class": "TF_51D",
+    "id": "TF-51D",
+    "fuel_max_kg": 501.0,
+    "max_speed_kmh": 763.2,
+    "pylon_count": 0
+  },
+  {
+    "class": "Yak_52",
+    "id": "Yak-52",
+    "fuel_max_kg": 87.84,
+    "max_speed_kmh": 270.0,
+    "pylon_count": 1
+  },
+  {
+    "class": "B_17G",
+    "id": "B-17G",
+    "fuel_max_kg": 7600.0,
+    "max_speed_kmh": 522.0,
+    "pylon_count": 1
+  },
+  {
+    "class": "Ju_88A4",
+    "id": "Ju-88A4",
+    "fuel_max_kg": 2120.0,
+    "max_speed_kmh": 540.0,
+    "pylon_count": 3
+  },
+  {
+    "class": "C_47",
+    "id": "C-47",
+    "fuel_max_kg": 1470.0,
+    "max_speed_kmh": 369.0,
+    "pylon_count": 0
+  }
+]

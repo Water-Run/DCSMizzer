@@ -1,0 +1,68 @@
+{
+  "caucasus": {
+    "central_meridian": 33.0,
+    "false_easting": -99516.9999999732,
+    "false_northing": -4998114.999999984,
+    "scale_factor": 0.9996
+  },
+  "falklands": {
+    "central_meridian": -57.0,
+    "false_easting": 147639.99999997593,
+    "false_northing": 5815417.000000032,
+    "scale_factor": 0.9996
+  },
+  "germany": {
+    "central_meridian": 21.0,
+    "false_easting": 35427.619999985734,
+    "false_northing": -6061633.128000011,
+    "scale_factor": 0.9996
+  },
+  "kola": {
+    "central_meridian": 21.0,
+    "false_easting": -62702.00000000087,
+    "false_northing": -7543624.999999979,
+    "scale_factor": 0.9996
+  },
+  "marianaislands": {
+    "central_meridian": 147.0,
+    "false_easting": 238417.99999989968,
+    "false_northing": -1491840.000000048,
+    "scale_factor": 0.9996
+  },
+  "nevada": {
+    "central_meridian": -117.0,
+    "false_easting": -193996.80999964548,
+    "false_northing": -4410028.063999966,
+    "scale_factor": 0.9996
+  },
+  "normandy": {
+    "central_meridian": -3.0,
+    "false_easting": -195526.00000000204,
+    "false_northing": -5484812.999999951,
+    "scale_factor": 0.9996
+  },
+  "persiangulf": {
+    "central_meridian": 57.0,
+    "false_easting": 75755.99999999645,
+    "false_northing": -2894933.0000000377,
+    "scale_factor": 0.9996
+  },
+  "sinai": {
+    "central_meridian": 33.0,
+    "false_easting": 169221.9999999585,
+    "false_northing": -3325312.9999999693,
+    "scale_factor": 0.9996
+  },
+  "syria": {
+    "central_meridian": 39.0,
+    "false_easting": 282801.00000003993,
+    "false_northing": -3879865.9999999935,
+    "scale_factor": 0.9996
+  },
+  "thechannel": {
+    "central_meridian": 3.0,
+    "false_easting": 99376.00000000288,
+    "false_northing": -5636889.00000001,
+    "scale_factor": 0.9996
+  }
+}

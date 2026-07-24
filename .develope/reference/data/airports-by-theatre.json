@@ -1,0 +1,7736 @@
+{
+  "caucasus": [
+    {
+      "class": "Anapa_Vityazevo",
+      "id": 12,
+      "name": "Anapa-Vityazevo",
+      "x": -5412.409668,
+      "y": 243128.820313,
+      "parking_slots": 92,
+      "runways": [
+        "22-04"
+      ]
+    },
+    {
+      "class": "Krasnodar_Center",
+      "id": 13,
+      "name": "Krasnodar-Center",
+      "x": 11685.205078,
+      "y": 367933.515625,
+      "parking_slots": 56,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Novorossiysk",
+      "id": 14,
+      "name": "Novorossiysk",
+      "x": -40917.535156,
+      "y": 279256.0625,
+      "parking_slots": 38,
+      "runways": [
+        "22-04"
+      ]
+    },
+    {
+      "class": "Krymsk",
+      "id": 15,
+      "name": "Krymsk",
+      "x": -6576.524658,
+      "y": 294388.125,
+      "parking_slots": 57,
+      "runways": [
+        "04-22"
+      ]
+    },
+    {
+      "class": "Maykop_Khanskaya",
+      "id": 16,
+      "name": "Maykop-Khanskaya",
+      "x": -26437.275391,
+      "y": 458048.84375,
+      "parking_slots": 57,
+      "runways": [
+        "04-22"
+      ]
+    },
+    {
+      "class": "Gelendzhik",
+      "id": 17,
+      "name": "Gelendzhik",
+      "x": -50378.611328,
+      "y": 298406.15625,
+      "parking_slots": 13,
+      "runways": [
+        "01-19"
+      ]
+    },
+    {
+      "class": "Sochi_Adler",
+      "id": 18,
+      "name": "Sochi-Adler",
+      "x": -164496.46875,
+      "y": 462218.921875,
+      "parking_slots": 68,
+      "runways": [
+        "06-24"
+      ]
+    },
+    {
+      "class": "Krasnodar_Pashkovsky",
+      "id": 19,
+      "name": "Krasnodar-Pashkovsky",
+      "x": 7717.637452,
+      "y": 387878.803876,
+      "parking_slots": 19,
+      "runways": [
+        "23L-05R"
+      ]
+    },
+    {
+      "class": "Sukhumi_Babushara",
+      "id": 20,
+      "name": "Sukhumi-Babushara",
+      "x": -220592.328125,
+      "y": 564391.96875,
+      "parking_slots": 23,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Gudauta",
+      "id": 21,
+      "name": "Gudauta",
+      "x": -196710.085938,
+      "y": 516451.6875,
+      "parking_slots": 31,
+      "runways": [
+        "15-33"
+      ]
+    },
+    {
+      "class": "Batumi",
+      "id": 22,
+      "name": "Batumi",
+      "x": -355810.703125,
+      "y": 617386.1875,
+      "parking_slots": 10,
+      "runways": [
+        "31-13"
+      ]
+    },
+    {
+      "class": "Senaki_Kolkhi",
+      "id": 23,
+      "name": "Senaki-Kolkhi",
+      "x": -281782.46875,
+      "y": 647279.46875,
+      "parking_slots": 68,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Kobuleti",
+      "id": 24,
+      "name": "Kobuleti",
+      "x": -317962.296875,
+      "y": 635632.96875,
+      "parking_slots": 42,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "Kutaisi",
+      "id": 25,
+      "name": "Kutaisi",
+      "x": -284887.375,
+      "y": 683858.71875,
+      "parking_slots": 58,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "Mineralnye_Vody",
+      "id": 26,
+      "name": "Mineralnye Vody",
+      "x": -51259.983985,
+      "y": 705734.026899,
+      "parking_slots": 28,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Nalchik",
+      "id": 27,
+      "name": "Nalchik",
+      "x": -124932.167279,
+      "y": 760421.182617,
+      "parking_slots": 15,
+      "runways": [
+        "06-24"
+      ]
+    },
+    {
+      "class": "Mozdok",
+      "id": 28,
+      "name": "Mozdok",
+      "x": -83450.417969,
+      "y": 834461.78125,
+      "parking_slots": 39,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Tbilisi_Lochini",
+      "id": 29,
+      "name": "Tbilisi-Lochini",
+      "x": -315671.078125,
+      "y": 896629.78125,
+      "parking_slots": 74,
+      "runways": [
+        "13R-31L"
+      ]
+    },
+    {
+      "class": "Soganlug",
+      "id": 30,
+      "name": "Soganlug",
+      "x": -317828.046875,
+      "y": 895407.1875,
+      "parking_slots": 5,
+      "runways": [
+        "14-32"
+      ]
+    },
+    {
+      "class": "Vaziani",
+      "id": 31,
+      "name": "Vaziani",
+      "x": -319064.875,
+      "y": 903148.53125,
+      "parking_slots": 92,
+      "runways": [
+        "13R-31L"
+      ]
+    },
+    {
+      "class": "Beslan",
+      "id": 32,
+      "name": "Beslan",
+      "x": -148590.171875,
+      "y": 843668.625,
+      "parking_slots": 15,
+      "runways": [
+        "10-28"
+      ]
+    }
+  ],
+  "falklands": [
+    {
+      "class": "Port_Stanley",
+      "id": 1,
+      "name": "Port Stanley",
+      "x": 89025.222656,
+      "y": 93868.265625,
+      "parking_slots": 16,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Mount_Pleasant",
+      "id": 2,
+      "name": "Mount Pleasant",
+      "x": 73318.320313,
+      "y": 47168.748047,
+      "parking_slots": 37,
+      "runways": [
+        "23-05",
+        "10-28"
+      ]
+    },
+    {
+      "class": "San_Carlos_FOB",
+      "id": 3,
+      "name": "San Carlos FOB",
+      "x": 107939.375,
+      "y": 8484.390625,
+      "parking_slots": 13,
+      "runways": [
+        "11-27"
+      ]
+    },
+    {
+      "class": "Rio_Gallegos",
+      "id": 5,
+      "name": "Rio Gallegos",
+      "x": 25718.329375,
+      "y": -703408.191242,
+      "parking_slots": 24,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "Rio_Grande",
+      "id": 6,
+      "name": "Rio Grande",
+      "x": -197144.468784,
+      "y": -559487.57478,
+      "parking_slots": 7,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Ushuaia",
+      "id": 7,
+      "name": "Ushuaia",
+      "x": -320586.703125,
+      "y": -576144.78125,
+      "parking_slots": 8,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "Ushuaia_Helo_Port",
+      "id": 8,
+      "name": "Ushuaia Helo Port",
+      "x": -318409.578125,
+      "y": -577046.9375,
+      "parking_slots": 8,
+      "runways": [
+        "16-34"
+      ]
+    },
+    {
+      "class": "Punta_Arenas",
+      "id": 9,
+      "name": "Punta Arenas",
+      "x": -147785.300936,
+      "y": -779608.568689,
+      "parking_slots": 50,
+      "runways": [
+        "25-07",
+        "19-01",
+        "30-12"
+      ]
+    },
+    {
+      "class": "Pampa_Guanaco",
+      "id": 10,
+      "name": "Pampa Guanaco",
+      "x": -238408.351563,
+      "y": -623774.96875,
+      "parking_slots": 2,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "San_Julian",
+      "id": 11,
+      "name": "San Julian",
+      "x": 297477.765625,
+      "y": -636918.15625,
+      "parking_slots": 9,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "Puerto_Williams",
+      "id": 12,
+      "name": "Puerto Williams",
+      "x": -323519.353789,
+      "y": -531926.173104,
+      "parking_slots": 5,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Puerto_Natales",
+      "id": 13,
+      "name": "Puerto Natales",
+      "x": -24058.357422,
+      "y": -923008.125,
+      "parking_slots": 4,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "El_Calafate",
+      "id": 14,
+      "name": "El Calafate",
+      "x": 136356.9375,
+      "y": -922477.96875,
+      "parking_slots": 10,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "Puerto_Santa_Cruz",
+      "id": 15,
+      "name": "Puerto Santa Cruz",
+      "x": 210340.710938,
+      "y": -680891.53125,
+      "parking_slots": 10,
+      "runways": [
+        "07-07"
+      ]
+    },
+    {
+      "class": "Comandante_Luis_Piedrabuena",
+      "id": 16,
+      "name": "Comandante Luis Piedrabuena",
+      "x": 208540.984375,
+      "y": -707860.46875,
+      "parking_slots": 9,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Tolhuin",
+      "id": 17,
+      "name": "Tolhuin",
+      "x": -271432.625,
+      "y": -510004.6875,
+      "parking_slots": 7,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "Porvenir",
+      "id": 18,
+      "name": "Porvenir",
+      "x": -168264.273438,
+      "y": -738640.3125,
+      "parking_slots": 7,
+      "runways": [
+        "21-03",
+        "09-27"
+      ]
+    },
+    {
+      "class": "Almirante_Schroeders",
+      "id": 19,
+      "name": "Almirante Schroeders",
+      "x": -209214.25,
+      "y": -741523.0625,
+      "parking_slots": 14,
+      "runways": [
+        "22-04",
+        "12-30"
+      ]
+    },
+    {
+      "class": "Rio_Turbio",
+      "id": 20,
+      "name": "Rio Turbio",
+      "x": -12261.766602,
+      "y": -903418.8125,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "Rio_Chico",
+      "id": 21,
+      "name": "Rio Chico",
+      "x": 19603.670898,
+      "y": -699092.0,
+      "parking_slots": 3,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Franco_Bianco",
+      "id": 23,
+      "name": "Franco Bianco",
+      "x": -99216.238281,
+      "y": -683357.0625,
+      "parking_slots": 10,
+      "runways": [
+        "19-01",
+        "07-25"
+      ]
+    },
+    {
+      "class": "Goose_Green",
+      "id": 24,
+      "name": "Goose Green",
+      "x": 72564.992188,
+      "y": 11161.910645,
+      "parking_slots": 6,
+      "runways": [
+        "14-32"
+      ]
+    },
+    {
+      "class": "Hipico_Flying_Club",
+      "id": 25,
+      "name": "Hipico Flying Club",
+      "x": 329967.3125,
+      "y": -823640.0625,
+      "parking_slots": 4,
+      "runways": [
+        "19-01"
+      ]
+    },
+    {
+      "class": "Gobernador_Gregores",
+      "id": 26,
+      "name": "Gobernador Gregores",
+      "x": 328115.09375,
+      "y": -817026.1875,
+      "parking_slots": 6,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "O_Higgins",
+      "id": 27,
+      "name": "O'Higgins",
+      "x": 328843.03125,
+      "y": -1000893.75,
+      "parking_slots": 4,
+      "runways": [
+        "34-16"
+      ]
+    },
+    {
+      "class": "Gull_Point",
+      "id": 29,
+      "name": "Gull Point",
+      "x": 32793.739258,
+      "y": 20419.773438,
+      "parking_slots": 1,
+      "runways": [
+        "04-22",
+        "33-15"
+      ]
+    }
+  ],
+  "germany": [
+    {
+      "class": "Wittstock",
+      "id": 1,
+      "name": "Wittstock",
+      "x": -133238.0625,
+      "y": -530216.46875,
+      "parking_slots": 96,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Altes_Lager",
+      "id": 2,
+      "name": "Altes Lager",
+      "x": -270696.015625,
+      "y": -514508.75,
+      "parking_slots": 94,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "Barth",
+      "id": 3,
+      "name": "Barth",
+      "x": -8742.46875,
+      "y": -502976.953125,
+      "parking_slots": 9,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Zerbst",
+      "id": 4,
+      "name": "Zerbst",
+      "x": -263518.671875,
+      "y": -571936.375,
+      "parking_slots": 86,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "Bremen",
+      "id": 5,
+      "name": "Bremen",
+      "x": -114115.714844,
+      "y": -781459.96875,
+      "parking_slots": 29,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Briest",
+      "id": 6,
+      "name": "Briest",
+      "x": -217494.546875,
+      "y": -544967.6875,
+      "parking_slots": 70,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "Buckeburg",
+      "id": 7,
+      "name": "Buckeburg",
+      "x": -202433.117188,
+      "y": -776066.75,
+      "parking_slots": 92,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Celle",
+      "id": 8,
+      "name": "Celle",
+      "x": -178034.75,
+      "y": -706875.8125,
+      "parking_slots": 59,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Cochstedt",
+      "id": 9,
+      "name": "Cochstedt",
+      "x": -273090.828125,
+      "y": -623755.5625,
+      "parking_slots": 40,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Damgarten",
+      "id": 10,
+      "name": "Damgarten",
+      "x": -14897.206543,
+      "y": -521181.90625,
+      "parking_slots": 77,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "Fassberg",
+      "id": 11,
+      "name": "Fassberg",
+      "x": -143381.484375,
+      "y": -690534.53125,
+      "parking_slots": 35,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Finow",
+      "id": 12,
+      "name": "Finow",
+      "x": -183543.0625,
+      "y": -456471.53125,
+      "parking_slots": 135,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "Garz",
+      "id": 13,
+      "name": "Garz",
+      "x": -69879.074219,
+      "y": -414332.265625,
+      "parking_slots": 40,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "Gatow",
+      "id": 14,
+      "name": "Gatow",
+      "x": -218611.40625,
+      "y": -498125.046875,
+      "parking_slots": 42,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Templin",
+      "id": 15,
+      "name": "Templin",
+      "x": -159756.828125,
+      "y": -464279.140625,
+      "parking_slots": 81,
+      "runways": [
+        "01-19",
+        "27-09"
+      ]
+    },
+    {
+      "class": "Gutersloh",
+      "id": 16,
+      "name": "Gutersloh",
+      "x": -232635.734375,
+      "y": -835894.96875,
+      "parking_slots": 85,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Hamburg",
+      "id": 17,
+      "name": "Hamburg",
+      "x": -63015.992188,
+      "y": -691931.3125,
+      "parking_slots": 41,
+      "runways": [
+        "33-15",
+        "23-05"
+      ]
+    },
+    {
+      "class": "Hamburg_Finkenwerder",
+      "id": 18,
+      "name": "Hamburg Finkenwerder",
+      "x": -71728.09375,
+      "y": -703320.0,
+      "parking_slots": 19,
+      "runways": [
+        "05-23"
+      ]
+    },
+    {
+      "class": "Hannover",
+      "id": 19,
+      "name": "Hannover",
+      "x": -189701.609375,
+      "y": -731558.6875,
+      "parking_slots": 37,
+      "runways": [
+        "27R-09L",
+        "27L-09R"
+      ]
+    },
+    {
+      "class": "Laage",
+      "id": 20,
+      "name": "Laage",
+      "x": -51928.916016,
+      "y": -536642.375,
+      "parking_slots": 193,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "Larz",
+      "id": 21,
+      "name": "Larz",
+      "x": -123501.402344,
+      "y": -513588.921875,
+      "parking_slots": 136,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Mahlwinkel",
+      "id": 22,
+      "name": "Mahlwinkel",
+      "x": -217711.992188,
+      "y": -588190.34375,
+      "parking_slots": 97,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Neubrandenburg",
+      "id": 23,
+      "name": "Neubrandenburg",
+      "x": -94805.402344,
+      "y": -473243.828125,
+      "parking_slots": 58,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Neuruppin",
+      "id": 24,
+      "name": "Neuruppin",
+      "x": -164287.023438,
+      "y": -515985.171875,
+      "parking_slots": 92,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "Peenemunde",
+      "id": 25,
+      "name": "Peenemunde",
+      "x": -36297.238751,
+      "y": -436059.823441,
+      "parking_slots": 123,
+      "runways": [
+        "13-31"
+      ]
+    },
+    {
+      "class": "Schonefeld",
+      "id": 26,
+      "name": "Schonefeld",
+      "x": -231590.28125,
+      "y": -472324.46875,
+      "parking_slots": 66,
+      "runways": [
+        "25L-07R",
+        "25R-07L"
+      ]
+    },
+    {
+      "class": "Stendal",
+      "id": 27,
+      "name": "Stendal",
+      "x": -190960.894236,
+      "y": -585213.869614,
+      "parking_slots": 167,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Tegel",
+      "id": 28,
+      "name": "Tegel",
+      "x": -210529.171875,
+      "y": -486646.703125,
+      "parking_slots": 50,
+      "runways": [
+        "26R-08L",
+        "26L-08R"
+      ]
+    },
+    {
+      "class": "Tempelhof",
+      "id": 29,
+      "name": "Tempelhof",
+      "x": -221028.265625,
+      "y": -480137.515625,
+      "parking_slots": 39,
+      "runways": [
+        "09L-27R",
+        "09R-27L"
+      ]
+    },
+    {
+      "class": "Tutow",
+      "id": 30,
+      "name": "Tutow",
+      "x": -58723.283203,
+      "y": -475080.578125,
+      "parking_slots": 73,
+      "runways": [
+        "17-35"
+      ]
+    },
+    {
+      "class": "Werneuchen",
+      "id": 31,
+      "name": "Werneuchen",
+      "x": -205735.960938,
+      "y": -453635.453125,
+      "parking_slots": 95,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Wunstorf",
+      "id": 32,
+      "name": "Wunstorf",
+      "x": -186495.11533,
+      "y": -749530.34375,
+      "parking_slots": 79,
+      "runways": [
+        "21-03",
+        "26-08"
+      ]
+    },
+    {
+      "class": "Bornholm",
+      "id": 33,
+      "name": "Bornholm",
+      "x": 58025.151861,
+      "y": -362897.424959,
+      "parking_slots": 10,
+      "runways": [
+        "11-29"
+      ]
+    },
+    {
+      "class": "Brand",
+      "id": 34,
+      "name": "Brand",
+      "x": -271624.765625,
+      "y": -461799.296875,
+      "parking_slots": 138,
+      "runways": [
+        "27R-09L"
+      ]
+    },
+    {
+      "class": "Brandis",
+      "id": 35,
+      "name": "Brandis",
+      "x": -342170.28125,
+      "y": -545444.25,
+      "parking_slots": 146,
+      "runways": []
+    },
+    {
+      "class": "Chojna",
+      "id": 36,
+      "name": "Chojna",
+      "x": -175808.976344,
+      "y": -406374.839114,
+      "parking_slots": 98,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Cologne",
+      "id": 37,
+      "name": "Cologne",
+      "x": -334471.21875,
+      "y": -937340.15625,
+      "parking_slots": 86,
+      "runways": [
+        "07-25",
+        "14R-32L",
+        "14L-32R"
+      ]
+    },
+    {
+      "class": "Dusseldorf",
+      "id": 38,
+      "name": "Dusseldorf",
+      "x": -283045.234375,
+      "y": -954761.59375,
+      "parking_slots": 61,
+      "runways": [
+        "05-23"
+      ]
+    },
+    {
+      "class": "Falkenberg",
+      "id": 39,
+      "name": "Falkenberg",
+      "x": -322265.6875,
+      "y": -503944.78125,
+      "parking_slots": 75,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Heidelberg",
+      "id": 40,
+      "name": "Heidelberg",
+      "x": -516690.9375,
+      "y": -859486.78125,
+      "parking_slots": 18,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Kastrup",
+      "id": 41,
+      "name": "Kastrup",
+      "x": 133728.828125,
+      "y": -489624.703125,
+      "parking_slots": 101,
+      "runways": [
+        "04R-22L",
+        "04L-22R",
+        "30-12"
+      ]
+    },
+    {
+      "class": "Kiel",
+      "id": 42,
+      "name": "Kiel",
+      "x": 18576.151367,
+      "y": -668269.625,
+      "parking_slots": 28,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Landstuhl",
+      "id": 43,
+      "name": "Landstuhl",
+      "x": -501604.859375,
+      "y": -939923.5,
+      "parking_slots": 16,
+      "runways": [
+        "31-13"
+      ]
+    },
+    {
+      "class": "Mainz_Finthen",
+      "id": 44,
+      "name": "Mainz Finthen",
+      "x": -446790.75,
+      "y": -884848.3125,
+      "parking_slots": 46,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Sturup",
+      "id": 45,
+      "name": "Sturup",
+      "x": 119196.261719,
+      "y": -445211.09375,
+      "parking_slots": 30,
+      "runways": [
+        "17-35"
+      ]
+    },
+    {
+      "class": "Marxwalde",
+      "id": 46,
+      "name": "Marxwalde",
+      "x": -210947.421875,
+      "y": -421819.984375,
+      "parking_slots": 110,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Nordholz",
+      "id": 47,
+      "name": "Nordholz",
+      "x": -33000.5625,
+      "y": -776114.96875,
+      "parking_slots": 48,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Norvenich",
+      "id": 48,
+      "name": "Norvenich",
+      "x": -331860.8125,
+      "y": -972317.96875,
+      "parking_slots": 90,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "Oranienburg",
+      "id": 49,
+      "name": "Oranienburg",
+      "x": -191502.890625,
+      "y": -489781.796875,
+      "parking_slots": 81,
+      "runways": [
+        "34-16"
+      ]
+    },
+    {
+      "class": "Szczecin_Goleniow",
+      "id": 50,
+      "name": "Szczecin-Goleniow",
+      "x": -107005.611384,
+      "y": -368017.985956,
+      "parking_slots": 37,
+      "runways": [
+        "31-13"
+      ]
+    },
+    {
+      "class": "Obermehler_Schlotheim",
+      "id": 51,
+      "name": "Obermehler Schlotheim",
+      "x": -330821.625,
+      "y": -686827.375,
+      "parking_slots": 22,
+      "runways": [
+        "29-11"
+      ]
+    },
+    {
+      "class": "Adelsheim",
+      "id": 52,
+      "name": "Adelsheim",
+      "x": -528546.8125,
+      "y": -802927.9375,
+      "parking_slots": 4,
+      "runways": [
+        "5-23"
+      ]
+    },
+    {
+      "class": "H_FRG_01",
+      "id": 53,
+      "name": "H FRG 01",
+      "x": -220040.828125,
+      "y": -672240.625,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_02",
+      "id": 54,
+      "name": "H FRG 02",
+      "x": -41757.199219,
+      "y": -644331.75,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_03",
+      "id": 55,
+      "name": "H FRG 03",
+      "x": -62719.328125,
+      "y": -681190.25,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_04",
+      "id": 56,
+      "name": "H FRG 04",
+      "x": -88846.867188,
+      "y": -659675.875,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_05",
+      "id": 57,
+      "name": "H FRG 05",
+      "x": -124321.507813,
+      "y": -635677.4375,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_06",
+      "id": 58,
+      "name": "H FRG 06",
+      "x": -112638.125,
+      "y": -773002.0,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_07",
+      "id": 59,
+      "name": "H FRG 07",
+      "x": -131374.28125,
+      "y": -620658.0,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_08",
+      "id": 60,
+      "name": "H FRG 08",
+      "x": -182536.375,
+      "y": -665769.0,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_09",
+      "id": 61,
+      "name": "H FRG 09",
+      "x": -194336.15625,
+      "y": -652736.0625,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_10",
+      "id": 62,
+      "name": "H FRG 10",
+      "x": -198084.71875,
+      "y": -727524.625,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_12",
+      "id": 64,
+      "name": "H FRG 12",
+      "x": -65731.929688,
+      "y": -637241.875,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_13",
+      "id": 65,
+      "name": "H FRG 13",
+      "x": -223972.9375,
+      "y": -814741.875,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_14",
+      "id": 66,
+      "name": "H FRG 14",
+      "x": -220416.953125,
+      "y": -492494.75,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_01",
+      "id": 67,
+      "name": "H GDR 01",
+      "x": -95275.078125,
+      "y": -618294.5625,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_02",
+      "id": 68,
+      "name": "H GDR 02",
+      "x": -196614.140625,
+      "y": -549177.5625,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_03",
+      "id": 69,
+      "name": "H GDR 03",
+      "x": -150750.3125,
+      "y": -464421.0625,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_04",
+      "id": 70,
+      "name": "H GDR 04",
+      "x": -103572.546875,
+      "y": -473247.625,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_05",
+      "id": 71,
+      "name": "H GDR 05",
+      "x": -94852.921875,
+      "y": -433827.40625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_06",
+      "id": 72,
+      "name": "H GDR 06",
+      "x": -220710.375,
+      "y": -539810.4375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_07",
+      "id": 73,
+      "name": "H GDR 07",
+      "x": -150546.171875,
+      "y": -587952.9375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_08",
+      "id": 74,
+      "name": "H GDR 08",
+      "x": -195805.015625,
+      "y": -467992.40625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_09",
+      "id": 75,
+      "name": "H GDR 09",
+      "x": -64018.929688,
+      "y": -482535.15625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_10",
+      "id": 76,
+      "name": "H GDR 10",
+      "x": -218167.90625,
+      "y": -471591.625,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_11",
+      "id": 77,
+      "name": "H GDR 11",
+      "x": -232004.671875,
+      "y": -467087.03125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_15",
+      "id": 78,
+      "name": "H FRG 15",
+      "x": -205692.1875,
+      "y": -484623.625,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "Revinge",
+      "id": 79,
+      "name": "Revinge",
+      "x": 140271.851563,
+      "y": -439655.53125,
+      "parking_slots": 6,
+      "runways": [
+        "29-11"
+      ]
+    },
+    {
+      "class": "Gross_Mohrdorf",
+      "id": 80,
+      "name": "Gross Mohrdorf",
+      "x": -5286.263184,
+      "y": -489272.125,
+      "parking_slots": 16,
+      "runways": [
+        "13-31"
+      ]
+    },
+    {
+      "class": "Lubeck",
+      "id": 81,
+      "name": "Lubeck",
+      "x": -50634.525391,
+      "y": -640659.28125,
+      "parking_slots": 35,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "Kothen",
+      "id": 82,
+      "name": "Kothen",
+      "x": -292820.788589,
+      "y": -588302.626583,
+      "parking_slots": 109,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "Dessau",
+      "id": 83,
+      "name": "Dessau",
+      "x": -282548.53125,
+      "y": -570865.21875,
+      "parking_slots": 34,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Parchim",
+      "id": 84,
+      "name": "Parchim",
+      "x": -102139.058594,
+      "y": -575984.6875,
+      "parking_slots": 58,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "H_GDR_12",
+      "id": 85,
+      "name": "H GDR 12",
+      "x": -204987.5,
+      "y": -602388.6875,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "Uetersen",
+      "id": 86,
+      "name": "Uetersen",
+      "x": -57945.89999,
+      "y": -709813.561559,
+      "parking_slots": 59,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Tagra",
+      "id": 87,
+      "name": "Tagra",
+      "x": 124137.800781,
+      "y": -423198.84375,
+      "parking_slots": 8,
+      "runways": [
+        "33-15"
+      ]
+    },
+    {
+      "class": "Luneburg",
+      "id": 89,
+      "name": "Luneburg",
+      "x": -109711.792969,
+      "y": -666734.3125,
+      "parking_slots": 17,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Northeim",
+      "id": 90,
+      "name": "Northeim",
+      "x": -146391.65625,
+      "y": -619116.46875,
+      "parking_slots": 10,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "H_GDR_13",
+      "id": 91,
+      "name": "H GDR 13",
+      "x": -85573.085938,
+      "y": -545707.4375,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_14",
+      "id": 92,
+      "name": "H GDR 14",
+      "x": -157286.125,
+      "y": -474879.875,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_15",
+      "id": 93,
+      "name": "H GDR 15",
+      "x": -243124.0,
+      "y": -567018.875,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_16",
+      "id": 94,
+      "name": "H GDR 16",
+      "x": -235841.765625,
+      "y": -593646.375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_17",
+      "id": 95,
+      "name": "H GDR 17",
+      "x": -46310.859375,
+      "y": -595276.5,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_16",
+      "id": 96,
+      "name": "H FRG 16",
+      "x": -225079.515625,
+      "y": -754555.25,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_17",
+      "id": 97,
+      "name": "H FRG 17",
+      "x": -110358.28125,
+      "y": -733413.1875,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_18",
+      "id": 98,
+      "name": "H FRG 18",
+      "x": -10776.265625,
+      "y": -645730.875,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_19",
+      "id": 99,
+      "name": "H FRG 19",
+      "x": -80211.296875,
+      "y": -699572.125,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_11",
+      "id": 100,
+      "name": "H FRG 11",
+      "x": -154631.5625,
+      "y": -701429.875,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "Sperenberg",
+      "id": 101,
+      "name": "Sperenberg",
+      "x": -257400.226563,
+      "y": -490766.8125,
+      "parking_slots": 78,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Uelzen",
+      "id": 102,
+      "name": "Uelzen",
+      "x": -139088.351563,
+      "y": -670768.34375,
+      "parking_slots": 14,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Dedelow",
+      "id": 103,
+      "name": "Dedelow",
+      "x": -125516.867892,
+      "y": -444415.265698,
+      "parking_slots": 63,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "Kammermark",
+      "id": 104,
+      "name": "Kammermark",
+      "x": -131043.110843,
+      "y": -554135.601261,
+      "parking_slots": 63,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Weser_Wumme",
+      "id": 106,
+      "name": "Weser Wumme",
+      "x": -117857.128906,
+      "y": -753310.71875,
+      "parking_slots": 41,
+      "runways": [
+        "19-01"
+      ]
+    },
+    {
+      "class": "Braunschweig",
+      "id": 107,
+      "name": "Braunschweig",
+      "x": -213558.34375,
+      "y": -675577.0,
+      "parking_slots": 46,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Wismar",
+      "id": 108,
+      "name": "Wismar",
+      "x": -45741.773438,
+      "y": -587524.09375,
+      "parking_slots": 17,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Waren_Vielist",
+      "id": 109,
+      "name": "Waren Vielist",
+      "x": -93950.511719,
+      "y": -516754.71875,
+      "parking_slots": 10,
+      "runways": [
+        "24-06"
+      ]
+    },
+    {
+      "class": "Bienenfarm",
+      "id": 110,
+      "name": "Bienenfarm",
+      "x": -195306.921875,
+      "y": -522270.1875,
+      "parking_slots": 10,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Pinnow",
+      "id": 111,
+      "name": "Pinnow",
+      "x": -79282.343454,
+      "y": -587979.215082,
+      "parking_slots": 63,
+      "runways": [
+        "20-02"
+      ]
+    },
+    {
+      "class": "Gardelegen",
+      "id": 112,
+      "name": "Gardelegen",
+      "x": -197818.570313,
+      "y": -618380.875,
+      "parking_slots": 63,
+      "runways": [
+        "29-11"
+      ]
+    },
+    {
+      "class": "Glindbruchkippe",
+      "id": 113,
+      "name": "Glindbruchkippe",
+      "x": -209267.53125,
+      "y": -700839.28125,
+      "parking_slots": 41,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "Ummern",
+      "id": 114,
+      "name": "Ummern",
+      "x": -178762.054688,
+      "y": -680327.90625,
+      "parking_slots": 17,
+      "runways": [
+        "31-13"
+      ]
+    },
+    {
+      "class": "Hildesheim",
+      "id": 115,
+      "name": "Hildesheim",
+      "x": -222776.427375,
+      "y": -719219.858595,
+      "parking_slots": 23,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "Verden_Scharnhorst",
+      "id": 116,
+      "name": "Verden-Scharnhorst",
+      "x": -128647.410156,
+      "y": -750148.5,
+      "parking_slots": 16,
+      "runways": []
+    },
+    {
+      "class": "Rinteln",
+      "id": 117,
+      "name": "Rinteln",
+      "x": -213579.046875,
+      "y": -780047.6875,
+      "parking_slots": 17,
+      "runways": [
+        "12-30"
+      ]
+    },
+    {
+      "class": "Holzdorf",
+      "id": 118,
+      "name": "Holzdorf",
+      "x": -297359.430718,
+      "y": -504505.719744,
+      "parking_slots": 68,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "H_Med_GDR_01",
+      "id": 119,
+      "name": "H Med GDR 01",
+      "x": -30940.554688,
+      "y": -546656.75,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_GDR_02",
+      "id": 120,
+      "name": "H Med GDR 02",
+      "x": -15433.609375,
+      "y": -479944.1875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_GDR_03",
+      "id": 121,
+      "name": "H Med GDR 03",
+      "x": -41087.226563,
+      "y": -462763.625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_33",
+      "id": 122,
+      "name": "H GDR 33",
+      "x": -377164.34375,
+      "y": -685670.125,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "Airracing_Koblenz",
+      "id": 123,
+      "name": "Airracing Koblenz",
+      "x": -407058.671875,
+      "y": -901092.65625,
+      "parking_slots": 17,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_34",
+      "id": 124,
+      "name": "H GDR 34",
+      "x": -148483.0625,
+      "y": -524805.5,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "Perwenitz",
+      "id": 125,
+      "name": "Perwenitz",
+      "x": -195408.585938,
+      "y": -504533.03125,
+      "parking_slots": 10,
+      "runways": [
+        "01-19"
+      ]
+    },
+    {
+      "class": "H_Med_GDR_08",
+      "id": 126,
+      "name": "H Med GDR 08",
+      "x": -231164.015625,
+      "y": -586332.9375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_GDR_09",
+      "id": 127,
+      "name": "H Med GDR 09",
+      "x": -241050.734375,
+      "y": -604574.125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_GDR_10",
+      "id": 128,
+      "name": "H Med GDR 10",
+      "x": -267572.5625,
+      "y": -575447.4375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_01",
+      "id": 129,
+      "name": "H Med FRG 01",
+      "x": -45588.691406,
+      "y": -641827.75,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_02",
+      "id": 130,
+      "name": "H Med FRG 02",
+      "x": -70712.4375,
+      "y": -690217.4375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "Sittensen",
+      "id": 131,
+      "name": "Sittensen",
+      "x": -92659.714844,
+      "y": -723614.71875,
+      "parking_slots": 7,
+      "runways": [
+        "06-24"
+      ]
+    },
+    {
+      "class": "H_Med_FRG_04",
+      "id": 132,
+      "name": "H Med FRG 04",
+      "x": -108681.234375,
+      "y": -670744.25,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_06",
+      "id": 134,
+      "name": "H Med FRG 06",
+      "x": -198269.875,
+      "y": -788763.5,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "Sprendlingen",
+      "id": 135,
+      "name": "Sprendlingen",
+      "x": -455289.203022,
+      "y": -900188.058434,
+      "parking_slots": 7,
+      "runways": [
+        "33-15"
+      ]
+    },
+    {
+      "class": "Thurland",
+      "id": 136,
+      "name": "Thurland",
+      "x": -297702.234375,
+      "y": -571508.90625,
+      "parking_slots": 4,
+      "runways": [
+        "36-18"
+      ]
+    },
+    {
+      "class": "Zollschen",
+      "id": 137,
+      "name": "Zollschen",
+      "x": -344465.220233,
+      "y": -584951.001717,
+      "parking_slots": 5,
+      "runways": [
+        "05-23"
+      ]
+    },
+    {
+      "class": "H_Med_FRG_11",
+      "id": 139,
+      "name": "H Med FRG 11",
+      "x": -259561.671875,
+      "y": -807106.875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "Hasselfelde",
+      "id": 140,
+      "name": "Hasselfelde",
+      "x": -284714.421875,
+      "y": -663099.5,
+      "parking_slots": 41,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Grosse_Wiese",
+      "id": 141,
+      "name": "Grosse Wiese",
+      "x": -233904.875,
+      "y": -677369.375,
+      "parking_slots": 10,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "H_GDR_18",
+      "id": 142,
+      "name": "H GDR 18",
+      "x": -267812.5625,
+      "y": -668572.5,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_20",
+      "id": 143,
+      "name": "H FRG 20",
+      "x": -281004.0625,
+      "y": -682905.625,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_12",
+      "id": 144,
+      "name": "H Med FRG 12",
+      "x": -266955.5625,
+      "y": -698609.375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_19",
+      "id": 145,
+      "name": "H GDR 19",
+      "x": -273065.25,
+      "y": -632426.5625,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_30",
+      "id": 146,
+      "name": "H GDR 30",
+      "x": 3790.750244,
+      "y": -442071.75,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_Med_GDR_11",
+      "id": 147,
+      "name": "H Med GDR 11",
+      "x": -276599.875,
+      "y": -668144.5,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_21",
+      "id": 148,
+      "name": "H FRG 21",
+      "x": -212554.40625,
+      "y": -669507.0625,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_50",
+      "id": 149,
+      "name": "H FRG 50",
+      "x": -148824.875,
+      "y": -719459.3125,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_23",
+      "id": 150,
+      "name": "H FRG 23",
+      "x": -139513.765625,
+      "y": -694687.125,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_39",
+      "id": 151,
+      "name": "H FRG 39",
+      "x": -397540.125,
+      "y": -763954.0,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_21",
+      "id": 152,
+      "name": "H GDR 21",
+      "x": -13600.076172,
+      "y": -516123.125,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_22",
+      "id": 153,
+      "name": "H GDR 22",
+      "x": -263161.8125,
+      "y": -506378.1875,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "Fritzlar",
+      "id": 154,
+      "name": "Fritzlar",
+      "x": -333506.515625,
+      "y": -783281.6875,
+      "parking_slots": 31,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Hahn",
+      "id": 155,
+      "name": "Hahn",
+      "x": -437665.296875,
+      "y": -948351.1875,
+      "parking_slots": 81,
+      "runways": [
+        "21-03"
+      ]
+    },
+    {
+      "class": "Sembach",
+      "id": 156,
+      "name": "Sembach",
+      "x": -494436.796875,
+      "y": -914275.78125,
+      "parking_slots": 79,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "Allstedt",
+      "id": 157,
+      "name": "Allstedt",
+      "x": -326041.65625,
+      "y": -628749.34375,
+      "parking_slots": 136,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "Zweibrucken",
+      "id": 158,
+      "name": "Zweibrucken",
+      "x": -521232.609375,
+      "y": -953633.09375,
+      "parking_slots": 37,
+      "runways": [
+        "03-21"
+      ]
+    },
+    {
+      "class": "Giebelstadt",
+      "id": 159,
+      "name": "Giebelstadt",
+      "x": -503410.551531,
+      "y": -760379.359385,
+      "parking_slots": 100,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Schweinfurt",
+      "id": 160,
+      "name": "Schweinfurt",
+      "x": -461144.1875,
+      "y": -739132.5625,
+      "parking_slots": 17,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Haina",
+      "id": 161,
+      "name": "Haina",
+      "x": -359857.3125,
+      "y": -702039.625,
+      "parking_slots": 40,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "Spangdahlem",
+      "id": 162,
+      "name": "Spangdahlem",
+      "x": -426851.90625,
+      "y": -988058.46875,
+      "parking_slots": 105,
+      "runways": [
+        "23-05"
+      ]
+    },
+    {
+      "class": "Frankfurt",
+      "id": 163,
+      "name": "Frankfurt",
+      "x": -444041.21875,
+      "y": -853570.90625,
+      "parking_slots": 128,
+      "runways": [
+        "25L-07R",
+        "25R-07L"
+      ]
+    },
+    {
+      "class": "Bindersleben",
+      "id": 164,
+      "name": "Bindersleben",
+      "x": -365966.640625,
+      "y": -668461.6875,
+      "parking_slots": 17,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "Ramstein",
+      "id": 165,
+      "name": "Ramstein",
+      "x": -498696.890625,
+      "y": -934641.75,
+      "parking_slots": 198,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Fulda",
+      "id": 166,
+      "name": "Fulda",
+      "x": -401102.09375,
+      "y": -768302.59375,
+      "parking_slots": 25,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Mendig",
+      "id": 168,
+      "name": "Mendig",
+      "x": -392182.984375,
+      "y": -936027.8125,
+      "parking_slots": 33,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Merseburg",
+      "id": 169,
+      "name": "Merseburg",
+      "x": -332354.953125,
+      "y": -594040.375,
+      "parking_slots": 84,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Wiesbaden",
+      "id": 170,
+      "name": "Wiesbaden",
+      "x": -440060.6875,
+      "y": -870624.90625,
+      "parking_slots": 104,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Schkeuditz",
+      "id": 171,
+      "name": "Schkeuditz",
+      "x": -329049.421875,
+      "y": -574115.28125,
+      "parking_slots": 17,
+      "runways": [
+        "29-11"
+      ]
+    },
+    {
+      "class": "H_Med_GDR_12",
+      "id": 180,
+      "name": "H Med GDR 12",
+      "x": -358612.5,
+      "y": -713512.0,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_GDR_13",
+      "id": 181,
+      "name": "H Med GDR 13",
+      "x": -329507.0,
+      "y": -678944.375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_GDR_14",
+      "id": 182,
+      "name": "H Med GDR 14",
+      "x": -377418.90625,
+      "y": -723266.875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_GDR_16",
+      "id": 184,
+      "name": "H Med GDR 16",
+      "x": -382416.03125,
+      "y": -623949.5625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_24",
+      "id": 185,
+      "name": "H GDR 24",
+      "x": -255385.28125,
+      "y": -478253.875,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_13",
+      "id": 186,
+      "name": "H Med FRG 13",
+      "x": -499112.6875,
+      "y": -922274.5,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_14",
+      "id": 187,
+      "name": "H Med FRG 14",
+      "x": -354707.03125,
+      "y": -749508.25,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_15",
+      "id": 188,
+      "name": "H Med FRG 15",
+      "x": -318794.125,
+      "y": -774213.375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_16",
+      "id": 189,
+      "name": "H Med FRG 16",
+      "x": -273869.25,
+      "y": -841198.5,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_17",
+      "id": 190,
+      "name": "H Med FRG 17",
+      "x": -306133.96875,
+      "y": -752297.125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_25",
+      "id": 191,
+      "name": "H FRG 25",
+      "x": -383822.5625,
+      "y": -744826.75,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Radar_GDR_01",
+      "id": 193,
+      "name": "H Radar GDR 01",
+      "x": -271654.8125,
+      "y": -679917.1875,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_Radar_GDR_02",
+      "id": 194,
+      "name": "H Radar GDR 02",
+      "x": -402316.21875,
+      "y": -736558.6875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Radar_GDR_03",
+      "id": 195,
+      "name": "H Radar GDR 03",
+      "x": -344062.75,
+      "y": -720118.0625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Radar_GDR_04",
+      "id": 196,
+      "name": "H Radar GDR 04",
+      "x": -292226.3125,
+      "y": -675013.8125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Radar_GDR_05",
+      "id": 197,
+      "name": "H Radar GDR 05",
+      "x": -249862.140625,
+      "y": -669029.0,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Radar_GDR_06",
+      "id": 198,
+      "name": "H Radar GDR 06",
+      "x": -221398.921875,
+      "y": -614268.375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Radar_GDR_07",
+      "id": 199,
+      "name": "H Radar GDR 07",
+      "x": -112177.804688,
+      "y": -624960.0625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "Bitburg",
+      "id": 200,
+      "name": "Bitburg",
+      "x": -428496.140625,
+      "y": -998350.65625,
+      "parking_slots": 146,
+      "runways": [
+        "24-06"
+      ]
+    },
+    {
+      "class": "Airracing_Lubeck",
+      "id": 201,
+      "name": "Airracing Lubeck",
+      "x": -61429.269531,
+      "y": -638905.59375,
+      "parking_slots": 17,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_27",
+      "id": 202,
+      "name": "H FRG 27",
+      "x": -312523.5,
+      "y": -766281.625,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "Airracing_Frankfurt",
+      "id": 204,
+      "name": "Airracing Frankfurt",
+      "x": -441852.21875,
+      "y": -887600.40625,
+      "parking_slots": 17,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_21",
+      "id": 208,
+      "name": "H Med FRG 21",
+      "x": -516712.34375,
+      "y": -955473.625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_30",
+      "id": 211,
+      "name": "H FRG 30",
+      "x": -430928.875,
+      "y": -940813.5,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_31",
+      "id": 212,
+      "name": "H FRG 31",
+      "x": -441193.25,
+      "y": -946858.0,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_32",
+      "id": 213,
+      "name": "H FRG 32",
+      "x": -498148.375,
+      "y": -913587.9375,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_34",
+      "id": 215,
+      "name": "H FRG 34",
+      "x": -388266.1875,
+      "y": -926071.125,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_51",
+      "id": 218,
+      "name": "H FRG 51",
+      "x": -476275.625,
+      "y": -946843.75,
+      "parking_slots": 8,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_38",
+      "id": 219,
+      "name": "H FRG 38",
+      "x": -397841.0,
+      "y": -804564.0625,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_48",
+      "id": 220,
+      "name": "H FRG 48",
+      "x": -432577.59375,
+      "y": -990782.875,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_49",
+      "id": 221,
+      "name": "H FRG 49",
+      "x": -440818.28125,
+      "y": -853129.5,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_24",
+      "id": 222,
+      "name": "H Med FRG 24",
+      "x": -276567.0,
+      "y": -824883.5,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Radar_FRG_02",
+      "id": 223,
+      "name": "H Radar FRG 02",
+      "x": -421370.375,
+      "y": -857727.625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_26",
+      "id": 225,
+      "name": "H Med FRG 26",
+      "x": -434227.09375,
+      "y": -979057.5625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_25",
+      "id": 226,
+      "name": "H GDR 25",
+      "x": -355786.5625,
+      "y": -609538.6875,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_26",
+      "id": 227,
+      "name": "H GDR 26",
+      "x": -317575.59375,
+      "y": -595191.3125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_31",
+      "id": 229,
+      "name": "H GDR 31",
+      "x": -8151.804688,
+      "y": -478226.53125,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "H_GDR_32",
+      "id": 230,
+      "name": "H GDR 32",
+      "x": -13186.318359,
+      "y": -454528.1875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Med_FRG_27",
+      "id": 231,
+      "name": "H Med FRG 27",
+      "x": -435667.15625,
+      "y": -877882.5,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "Pferdsfeld",
+      "id": 232,
+      "name": "Pferdsfeld",
+      "x": -452481.953125,
+      "y": -925909.0625,
+      "parking_slots": 74,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "H_Med_FRG_29",
+      "id": 233,
+      "name": "H Med FRG 29",
+      "x": -501962.0,
+      "y": -938323.5,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_40",
+      "id": 234,
+      "name": "H FRG 40",
+      "x": -394813.5,
+      "y": -916886.625,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "Buchel",
+      "id": 235,
+      "name": "Buchel",
+      "x": -410027.078125,
+      "y": -957879.1875,
+      "parking_slots": 58,
+      "runways": [
+        "03-21"
+      ]
+    },
+    {
+      "class": "Leipzig_Mockau",
+      "id": 236,
+      "name": "Leipzig Mockau",
+      "x": -332903.453125,
+      "y": -561847.125,
+      "parking_slots": 35,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "H_FRG_43",
+      "id": 237,
+      "name": "H FRG 43",
+      "x": -485798.25,
+      "y": -792526.75,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_44",
+      "id": 238,
+      "name": "H FRG 44",
+      "x": -458853.875,
+      "y": -830446.0,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_45",
+      "id": 239,
+      "name": "H FRG 45",
+      "x": -482750.5,
+      "y": -822902.0625,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_46",
+      "id": 240,
+      "name": "H FRG 46",
+      "x": -457237.3125,
+      "y": -763776.5625,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_47",
+      "id": 241,
+      "name": "H FRG 47",
+      "x": -504603.5625,
+      "y": -805866.6875,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "Bad_Durkheim",
+      "id": 242,
+      "name": "Bad Durkheim",
+      "x": -502328.315832,
+      "y": -891018.369592,
+      "parking_slots": 17,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Gelnhausen",
+      "id": 243,
+      "name": "Gelnhausen",
+      "x": -433823.546875,
+      "y": -808033.03125,
+      "parking_slots": 32,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Herrenteich",
+      "id": 244,
+      "name": "Herrenteich",
+      "x": -520266.046875,
+      "y": -872150.03125,
+      "parking_slots": 10,
+      "runways": [
+        "06-24"
+      ]
+    },
+    {
+      "class": "Hockenheim",
+      "id": 245,
+      "name": "Hockenheim",
+      "x": -522743.364455,
+      "y": -869766.55648,
+      "parking_slots": 10,
+      "runways": [
+        "33-15"
+      ]
+    },
+    {
+      "class": "Langenselbold",
+      "id": 246,
+      "name": "Langenselbold",
+      "x": -435035.53125,
+      "y": -815795.40625,
+      "parking_slots": 10,
+      "runways": [
+        "24-06"
+      ]
+    },
+    {
+      "class": "Walldorf",
+      "id": 247,
+      "name": "Walldorf",
+      "x": -526748.625,
+      "y": -860464.625,
+      "parking_slots": 10,
+      "runways": [
+        "01-19"
+      ]
+    },
+    {
+      "class": "Ober_Morlen",
+      "id": 248,
+      "name": "Ober-Morlen",
+      "x": -410130.25,
+      "y": -837274.90625,
+      "parking_slots": 10,
+      "runways": [
+        "24-06"
+      ]
+    },
+    {
+      "class": "Pottschutthohe",
+      "id": 249,
+      "name": "Pottschutthohe",
+      "x": -516318.078125,
+      "y": -946153.625,
+      "parking_slots": 17,
+      "runways": [
+        "06-24"
+      ]
+    },
+    {
+      "class": "Worms",
+      "id": 250,
+      "name": "Worms",
+      "x": -489622.5625,
+      "y": -876191.59375,
+      "parking_slots": 16,
+      "runways": []
+    },
+    {
+      "class": "H_Radar_GDR_09",
+      "id": 251,
+      "name": "H Radar GDR 09",
+      "x": -223165.40625,
+      "y": -433505.875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_Radar_GDR_08",
+      "id": 252,
+      "name": "H Radar GDR 08",
+      "x": -163706.40625,
+      "y": -650633.0,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_41",
+      "id": 253,
+      "name": "H FRG 41",
+      "x": -487516.0625,
+      "y": -756529.9375,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "H_FRG_42",
+      "id": 254,
+      "name": "H FRG 42",
+      "x": -482601.0,
+      "y": -762950.5625,
+      "parking_slots": 6,
+      "runways": []
+    }
+  ],
+  "kola": [
+    {
+      "class": "Banak",
+      "id": 1,
+      "name": "Banak",
+      "x": 234850.039063,
+      "y": 88378.335938,
+      "parking_slots": 26,
+      "runways": [
+        "34-16"
+      ]
+    },
+    {
+      "class": "Rovaniemi",
+      "id": 2,
+      "name": "Rovaniemi",
+      "x": -152462.09375,
+      "y": 151503.710938,
+      "parking_slots": 42,
+      "runways": [
+        "21-03"
+      ]
+    },
+    {
+      "class": "Kemi_Tornio",
+      "id": 3,
+      "name": "Kemi Tornio",
+      "x": -243395.968891,
+      "y": 101204.631625,
+      "parking_slots": 6,
+      "runways": [
+        "18-36"
+      ]
+    },
+    {
+      "class": "Vuojarvi",
+      "id": 4,
+      "name": "Vuojarvi",
+      "x": -93814.804688,
+      "y": 177899.304688,
+      "parking_slots": 10,
+      "runways": []
+    },
+    {
+      "class": "Kiruna",
+      "id": 5,
+      "name": "Kiruna",
+      "x": -20455.625,
+      "y": -90638.921875,
+      "parking_slots": 13,
+      "runways": [
+        "21-03"
+      ]
+    },
+    {
+      "class": "Severomorsk_3",
+      "id": 6,
+      "name": "Severomorsk-3",
+      "x": 148839.246577,
+      "y": 445897.988931,
+      "parking_slots": 75,
+      "runways": [
+        "35-17"
+      ]
+    },
+    {
+      "class": "Bodo",
+      "id": 7,
+      "name": "Bodo",
+      "x": -66958.882813,
+      "y": -348337.328125,
+      "parking_slots": 94,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "Severomorsk_1",
+      "id": 8,
+      "name": "Severomorsk-1",
+      "x": 164318.273438,
+      "y": 430555.578125,
+      "parking_slots": 67,
+      "runways": [
+        "14-32"
+      ]
+    },
+    {
+      "class": "Olenya",
+      "id": 9,
+      "name": "Olenya",
+      "x": 68386.710938,
+      "y": 451986.390625,
+      "parking_slots": 67,
+      "runways": [
+        "19-01"
+      ]
+    },
+    {
+      "class": "Monchegorsk",
+      "id": 10,
+      "name": "Monchegorsk",
+      "x": 46867.561851,
+      "y": 437312.674304,
+      "parking_slots": 96,
+      "runways": [
+        "01-19"
+      ]
+    },
+    {
+      "class": "Jokkmokk",
+      "id": 11,
+      "name": "Jokkmokk",
+      "x": -168129.9375,
+      "y": -100661.414063,
+      "parking_slots": 41,
+      "runways": [
+        "14-32"
+      ]
+    },
+    {
+      "class": "Murmansk_International",
+      "id": 12,
+      "name": "Murmansk International",
+      "x": 131730.496094,
+      "y": 409479.0,
+      "parking_slots": 29,
+      "runways": [
+        "13-31"
+      ]
+    },
+    {
+      "class": "Kalixfors",
+      "id": 13,
+      "name": "Kalixfors",
+      "x": -26773.458984,
+      "y": -94330.128906,
+      "parking_slots": 17,
+      "runways": [
+        "17-35"
+      ]
+    },
+    {
+      "class": "Kirkenes",
+      "id": 14,
+      "name": "Kirkenes",
+      "x": 216627.87565,
+      "y": 280054.90785,
+      "parking_slots": 10,
+      "runways": [
+        "23-05"
+      ]
+    },
+    {
+      "class": "Kallax",
+      "id": 15,
+      "name": "Kallax",
+      "x": -274102.5,
+      "y": -10878.522949,
+      "parking_slots": 41,
+      "runways": []
+    },
+    {
+      "class": "Kuusamo",
+      "id": 16,
+      "name": "Kuusamo",
+      "x": -200527.164063,
+      "y": 310573.234375,
+      "parking_slots": 5,
+      "runways": [
+        "12-30"
+      ]
+    },
+    {
+      "class": "Vidsel",
+      "id": 17,
+      "name": "Vidsel",
+      "x": -237355.53125,
+      "y": -101474.101563,
+      "parking_slots": 20,
+      "runways": [
+        "11-29"
+      ]
+    },
+    {
+      "class": "Ivalo",
+      "id": 18,
+      "name": "Ivalo",
+      "x": 80495.585938,
+      "y": 197621.367188,
+      "parking_slots": 15,
+      "runways": [
+        "22-04"
+      ]
+    },
+    {
+      "class": "Alakurtti",
+      "id": 19,
+      "name": "Alakurtti",
+      "x": -84651.667969,
+      "y": 344113.5,
+      "parking_slots": 22,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Andoya",
+      "id": 20,
+      "name": "Andoya",
+      "x": 151539.578125,
+      "y": -254451.789063,
+      "parking_slots": 68,
+      "runways": [
+        "14-32"
+      ]
+    },
+    {
+      "class": "Bardufoss",
+      "id": 21,
+      "name": "Bardufoss",
+      "x": 118870.59375,
+      "y": -160678.242188,
+      "parking_slots": 73,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "Kittila",
+      "id": 22,
+      "name": "Kittila",
+      "x": -29037.706055,
+      "y": 100101.597656,
+      "parking_slots": 11,
+      "runways": [
+        "16-34"
+      ]
+    },
+    {
+      "class": "Hosio",
+      "id": 23,
+      "name": "Hosio",
+      "x": -227262.609375,
+      "y": 151497.34375,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "Alta",
+      "id": 24,
+      "name": "Alta",
+      "x": 221465.984375,
+      "y": 27686.098633,
+      "parking_slots": 10,
+      "runways": [
+        "29-11"
+      ]
+    },
+    {
+      "class": "Evenes",
+      "id": 25,
+      "name": "Evenes",
+      "x": 60208.767578,
+      "y": -239417.101563,
+      "parking_slots": 57,
+      "runways": [
+        "17-35"
+      ]
+    },
+    {
+      "class": "Enontekio",
+      "id": 26,
+      "name": "Enontekio",
+      "x": 41616.833984,
+      "y": 37027.746094,
+      "parking_slots": 4,
+      "runways": [
+        "03-21"
+      ]
+    },
+    {
+      "class": "Sodankyla",
+      "id": 27,
+      "name": "Sodankyla",
+      "x": -57296.550781,
+      "y": 178052.148438,
+      "parking_slots": 3,
+      "runways": [
+        "16-34"
+      ]
+    },
+    {
+      "class": "Kilpyavr",
+      "id": 28,
+      "name": "Kilpyavr",
+      "x": 163480.617188,
+      "y": 389049.8125,
+      "parking_slots": 57,
+      "runways": [
+        "21-03"
+      ]
+    },
+    {
+      "class": "Luostari_Pechenga",
+      "id": 29,
+      "name": "Luostari Pechenga",
+      "x": 187599.09375,
+      "y": 328063.921875,
+      "parking_slots": 27,
+      "runways": [
+        "20-02"
+      ]
+    },
+    {
+      "class": "Koshka_Yavr",
+      "id": 30,
+      "name": "Koshka Yavr",
+      "x": 172272.046875,
+      "y": 338839.0,
+      "parking_slots": 21,
+      "runways": [
+        "19-01"
+      ]
+    },
+    {
+      "class": "Poduzhemye",
+      "id": 31,
+      "name": "Poduzhemye",
+      "x": -278453.125,
+      "y": 561022.4375,
+      "parking_slots": 24,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Kalevala",
+      "id": 32,
+      "name": "Kalevala",
+      "x": -273728.015625,
+      "y": 409821.859375,
+      "parking_slots": 2,
+      "runways": [
+        "20-02"
+      ]
+    },
+    {
+      "class": "Afrikanda",
+      "id": 33,
+      "name": "Afrikanda",
+      "x": -13402.855469,
+      "y": 438922.3125,
+      "parking_slots": 55,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "Boden_Heli_Base",
+      "id": 34,
+      "name": "Boden Heli Base",
+      "x": -244792.210938,
+      "y": -30945.338867,
+      "parking_slots": 30,
+      "runways": [
+        "13-31"
+      ]
+    },
+    {
+      "class": "Hemavan",
+      "id": 35,
+      "name": "Hemavan",
+      "x": -232656.234375,
+      "y": -332951.640625,
+      "parking_slots": 3,
+      "runways": [
+        "33-15"
+      ]
+    },
+    {
+      "class": "Arvidsjaur",
+      "id": 36,
+      "name": "Arvidsjaur",
+      "x": -268159.331616,
+      "y": -142107.057546,
+      "parking_slots": 5,
+      "runways": [
+        "12-30"
+      ]
+    }
+  ],
+  "marianaislands": [
+    {
+      "class": "Rota_Intl",
+      "id": 1,
+      "name": "Rota Intl",
+      "x": 75884.859375,
+      "y": 48589.876953,
+      "parking_slots": 9,
+      "runways": []
+    },
+    {
+      "class": "Saipan_Intl",
+      "id": 2,
+      "name": "Saipan Intl",
+      "x": 180035.4375,
+      "y": 101855.960938,
+      "parking_slots": 19,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "Tinian_Intl",
+      "id": 3,
+      "name": "Tinian Intl",
+      "x": 166859.859375,
+      "y": 89956.625,
+      "parking_slots": 4,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Antonio_B__Won_Pat_Intl",
+      "id": 4,
+      "name": "Antonio B. Won Pat Intl",
+      "x": -23.656158,
+      "y": -77.940308,
+      "parking_slots": 23,
+      "runways": [
+        "06R-24L",
+        "06L-24R"
+      ]
+    },
+    {
+      "class": "Olf_Orote",
+      "id": 5,
+      "name": "Olf Orote",
+      "x": -5023.305023,
+      "y": -16869.435119,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "Andersen_AFB",
+      "id": 6,
+      "name": "Andersen AFB",
+      "x": 10575.040774,
+      "y": 14548.944057,
+      "parking_slots": 194,
+      "runways": [
+        "06L-24R",
+        "06R-24L"
+      ]
+    },
+    {
+      "class": "Pagan_Airstrip",
+      "id": 7,
+      "name": "Pagan Airstrip",
+      "x": 512410.262497,
+      "y": 107564.608564,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "North_West_Field",
+      "id": 8,
+      "name": "North West Field",
+      "x": 15471.142578,
+      "y": 6726.737305,
+      "parking_slots": 8,
+      "runways": []
+    }
+  ],
+  "nevada": [
+    {
+      "class": "Creech",
+      "id": 1,
+      "name": "Creech",
+      "x": -360507.203125,
+      "y": -75590.070313,
+      "parking_slots": 51,
+      "runways": [
+        "13-31",
+        "08-26"
+      ]
+    },
+    {
+      "class": "Groom_Lake",
+      "id": 2,
+      "name": "Groom Lake",
+      "x": -288604.671875,
+      "y": -86870.445313,
+      "parking_slots": 52,
+      "runways": [
+        "32-14"
+      ]
+    },
+    {
+      "class": "McCarran_International",
+      "id": 3,
+      "name": "McCarran International",
+      "x": -416011.359375,
+      "y": -26929.336914,
+      "parking_slots": 15,
+      "runways": [
+        "7R-25L",
+        "7L-25R"
+      ]
+    },
+    {
+      "class": "Nellis",
+      "id": 4,
+      "name": "Nellis",
+      "x": -398195.375,
+      "y": -17233.236816,
+      "parking_slots": 247,
+      "runways": [
+        "03L-21R",
+        "03R-21L"
+      ]
+    },
+    {
+      "class": "Beatty",
+      "id": 5,
+      "name": "Beatty",
+      "x": -330553.625,
+      "y": -174958.53125,
+      "parking_slots": 3,
+      "runways": [
+        "16-34"
+      ]
+    },
+    {
+      "class": "Boulder_City",
+      "id": 6,
+      "name": "Boulder City",
+      "x": -429660.09375,
+      "y": -1148.724518,
+      "parking_slots": 37,
+      "runways": [
+        "27L-9",
+        "33-15"
+      ]
+    },
+    {
+      "class": "Echo_Bay",
+      "id": 7,
+      "name": "Echo Bay",
+      "x": -388592.34375,
+      "y": 33697.310547,
+      "parking_slots": 2,
+      "runways": [
+        "6-24"
+      ]
+    },
+    {
+      "class": "Henderson_Executive",
+      "id": 8,
+      "name": "Henderson Executive",
+      "x": -427352.71875,
+      "y": -25668.716797,
+      "parking_slots": 43,
+      "runways": [
+        "35L-17R",
+        "35R-17L"
+      ]
+    },
+    {
+      "class": "Jean",
+      "id": 9,
+      "name": "Jean",
+      "x": -450392.859375,
+      "y": -43000.460938,
+      "parking_slots": 4,
+      "runways": [
+        "20L-2R",
+        "20R-2L"
+      ]
+    },
+    {
+      "class": "Laughlin",
+      "id": 10,
+      "name": "Laughlin",
+      "x": -516946.421875,
+      "y": 28306.30957,
+      "parking_slots": 16,
+      "runways": [
+        "16-34"
+      ]
+    },
+    {
+      "class": "Lincoln_County",
+      "id": 11,
+      "name": "Lincoln County",
+      "x": -224670.351563,
+      "y": 33199.935547,
+      "parking_slots": 6,
+      "runways": [
+        "17-35"
+      ]
+    },
+    {
+      "class": "Mesquite",
+      "id": 13,
+      "name": "Mesquite",
+      "x": -329622.09375,
+      "y": 68561.148438,
+      "parking_slots": 11,
+      "runways": [
+        "1-19"
+      ]
+    },
+    {
+      "class": "Mina",
+      "id": 14,
+      "name": "Mina",
+      "x": -161504.46875,
+      "y": -289784.765625,
+      "parking_slots": 0,
+      "runways": [
+        "13-31"
+      ]
+    },
+    {
+      "class": "North_Las_Vegas",
+      "id": 15,
+      "name": "North Las Vegas",
+      "x": -400891.484375,
+      "y": -31726.952148,
+      "parking_slots": 47,
+      "runways": [
+        "30L-12R",
+        "12L-30R",
+        "25-7"
+      ]
+    },
+    {
+      "class": "Pahute_Mesa",
+      "id": 16,
+      "name": "Pahute Mesa",
+      "x": -303620.0,
+      "y": -132937.929688,
+      "parking_slots": 5,
+      "runways": [
+        "36-18"
+      ]
+    },
+    {
+      "class": "Tonopah",
+      "id": 17,
+      "name": "Tonopah",
+      "x": -197282.898438,
+      "y": -201302.882813,
+      "parking_slots": 25,
+      "runways": [
+        "33-15",
+        "29-11"
+      ]
+    },
+    {
+      "class": "Tonopah_Test_Range",
+      "id": 18,
+      "name": "Tonopah Test Range",
+      "x": -226505.273438,
+      "y": -174698.484375,
+      "parking_slots": 68,
+      "runways": [
+        "32-14"
+      ]
+    }
+  ],
+  "normandy": [
+    {
+      "class": "Saint_Pierre_du_Mont",
+      "id": 1,
+      "name": "Saint Pierre du Mont",
+      "x": -11938.039063,
+      "y": -47277.675781,
+      "parking_slots": 117,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Lignerolles",
+      "id": 2,
+      "name": "Lignerolles",
+      "x": -35537.935547,
+      "y": -34376.277344,
+      "parking_slots": 66,
+      "runways": [
+        "11-29"
+      ]
+    },
+    {
+      "class": "Cretteville",
+      "id": 3,
+      "name": "Cretteville",
+      "x": -18675.549805,
+      "y": -77791.1875,
+      "parking_slots": 56,
+      "runways": [
+        "31-13"
+      ]
+    },
+    {
+      "class": "Maupertus",
+      "id": 4,
+      "name": "Maupertus",
+      "x": 16010.665039,
+      "y": -84863.335938,
+      "parking_slots": 7,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "Brucheville",
+      "id": 5,
+      "name": "Brucheville",
+      "x": -14841.234382,
+      "y": -65991.659246,
+      "parking_slots": 107,
+      "runways": [
+        "24-06"
+      ]
+    },
+    {
+      "class": "Meautis",
+      "id": 6,
+      "name": "Meautis",
+      "x": -24485.6875,
+      "y": -71910.214844,
+      "parking_slots": 46,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Cricqueville_en_Bessin",
+      "id": 7,
+      "name": "Cricqueville-en-Bessin",
+      "x": -14917.459473,
+      "y": -50815.857422,
+      "parking_slots": 73,
+      "runways": [
+        "35-17"
+      ]
+    },
+    {
+      "class": "Lessay",
+      "id": 8,
+      "name": "Lessay",
+      "x": -33811.955078,
+      "y": -86866.464844,
+      "parking_slots": 57,
+      "runways": [
+        "24-06",
+        "12-30"
+      ]
+    },
+    {
+      "class": "Sainte_Laurent_sur_Mer",
+      "id": 9,
+      "name": "Sainte-Laurent-sur-Mer",
+      "x": -14665.532227,
+      "y": -41130.955078,
+      "parking_slots": 42,
+      "runways": [
+        "29-11"
+      ]
+    },
+    {
+      "class": "Biniville",
+      "id": 10,
+      "name": "Biniville",
+      "x": -7680.425049,
+      "y": -84526.996094,
+      "parking_slots": 32,
+      "runways": [
+        "32-14"
+      ]
+    },
+    {
+      "class": "Cardonville",
+      "id": 11,
+      "name": "Cardonville",
+      "x": -16508.702148,
+      "y": -53979.535156,
+      "parking_slots": 116,
+      "runways": [
+        "15-33"
+      ]
+    },
+    {
+      "class": "Deux_Jumeaux",
+      "id": 12,
+      "name": "Deux Jumeaux",
+      "x": -16784.448242,
+      "y": -48871.498047,
+      "parking_slots": 106,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "Chippelle",
+      "id": 13,
+      "name": "Chippelle",
+      "x": -28484.015625,
+      "y": -47891.751953,
+      "parking_slots": 38,
+      "runways": [
+        "24-06"
+      ]
+    },
+    {
+      "class": "Beuzeville",
+      "id": 14,
+      "name": "Beuzeville",
+      "x": -9213.70752,
+      "y": -72131.675781,
+      "parking_slots": 36,
+      "runways": [
+        "05-23"
+      ]
+    },
+    {
+      "class": "Azeville",
+      "id": 15,
+      "name": "Azeville",
+      "x": -2525.195801,
+      "y": -73664.195313,
+      "parking_slots": 31,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "Picauville",
+      "id": 16,
+      "name": "Picauville",
+      "x": -12078.900879,
+      "y": -80241.09375,
+      "parking_slots": 36,
+      "runways": [
+        "11-29"
+      ]
+    },
+    {
+      "class": "Le_Molay",
+      "id": 17,
+      "name": "Le Molay",
+      "x": -26123.463867,
+      "y": -41403.646484,
+      "parking_slots": 36,
+      "runways": [
+        "04-22"
+      ]
+    },
+    {
+      "class": "Longues_sur_Mer",
+      "id": 18,
+      "name": "Longues-sur-Mer",
+      "x": -16733.194336,
+      "y": -28909.373047,
+      "parking_slots": 46,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Carpiquet",
+      "id": 19,
+      "name": "Carpiquet",
+      "x": -34769.425781,
+      "y": -10001.302734,
+      "parking_slots": 47,
+      "runways": [
+        "12-30"
+      ]
+    },
+    {
+      "class": "Bazenville",
+      "id": 20,
+      "name": "Bazenville",
+      "x": -20712.899414,
+      "y": -18498.402344,
+      "parking_slots": 60,
+      "runways": [
+        "05-23"
+      ]
+    },
+    {
+      "class": "Sainte_Croix_sur_Mer",
+      "id": 21,
+      "name": "Sainte-Croix-sur-Mer",
+      "x": -18787.416016,
+      "y": -15106.742676,
+      "parking_slots": 36,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Beny_sur_Mer",
+      "id": 22,
+      "name": "Beny-sur-Mer",
+      "x": -21040.570313,
+      "y": -8437.481445,
+      "parking_slots": 49,
+      "runways": [
+        "35-17"
+      ]
+    },
+    {
+      "class": "Rucqueville",
+      "id": 23,
+      "name": "Rucqueville",
+      "x": -26589.313477,
+      "y": -19444.006836,
+      "parking_slots": 40,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Sommervieu",
+      "id": 24,
+      "name": "Sommervieu",
+      "x": -21371.757813,
+      "y": -26206.679688,
+      "parking_slots": 24,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Lantheuil",
+      "id": 25,
+      "name": "Lantheuil",
+      "x": -24264.16559,
+      "y": -16467.195063,
+      "parking_slots": 67,
+      "runways": [
+        "06-24"
+      ]
+    },
+    {
+      "class": "Evreux",
+      "id": 26,
+      "name": "Evreux",
+      "x": -46154.541016,
+      "y": 112456.855469,
+      "parking_slots": 24,
+      "runways": [
+        "16-34",
+        "22-04"
+      ]
+    },
+    {
+      "class": "Chailey",
+      "id": 27,
+      "name": "Chailey",
+      "x": 163883.453125,
+      "y": 11849.15332,
+      "parking_slots": 56,
+      "runways": [
+        "25-07",
+        "15-33"
+      ]
+    },
+    {
+      "class": "Needs_Oar_Point",
+      "id": 28,
+      "name": "Needs Oar Point",
+      "x": 140788.828125,
+      "y": -85142.085938,
+      "parking_slots": 55,
+      "runways": [
+        "17-35",
+        "06-24"
+      ]
+    },
+    {
+      "class": "Funtington",
+      "id": 29,
+      "name": "Funtington",
+      "x": 152518.3125,
+      "y": -45583.925781,
+      "parking_slots": 27,
+      "runways": [
+        "09-27",
+        "33-15"
+      ]
+    },
+    {
+      "class": "Tangmere",
+      "id": 30,
+      "name": "Tangmere",
+      "x": 150376.648438,
+      "y": -33743.716797,
+      "parking_slots": 15,
+      "runways": [
+        "06-24",
+        "34-16"
+      ]
+    },
+    {
+      "class": "Ford",
+      "id": 31,
+      "name": "Ford",
+      "x": 147593.828125,
+      "y": -25850.829102,
+      "parking_slots": 84,
+      "runways": [
+        "23-05",
+        "14-32"
+      ]
+    },
+    {
+      "class": "Argentan",
+      "id": 32,
+      "name": "Argentan",
+      "x": -78808.183594,
+      "y": 22665.733398,
+      "parking_slots": 32,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Goulet",
+      "id": 33,
+      "name": "Goulet",
+      "x": -81156.734375,
+      "y": 16794.329102,
+      "parking_slots": 32,
+      "runways": [
+        "03-21"
+      ]
+    },
+    {
+      "class": "Barville",
+      "id": 34,
+      "name": "Barville",
+      "x": -109839.683594,
+      "y": 49363.208984,
+      "parking_slots": 17,
+      "runways": [
+        "27-09",
+        "33-15"
+      ]
+    },
+    {
+      "class": "Essay",
+      "id": 35,
+      "name": "Essay",
+      "x": -105528.050781,
+      "y": 45012.607422,
+      "parking_slots": 32,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Hauterive",
+      "id": 36,
+      "name": "Hauterive",
+      "x": -107997.578125,
+      "y": 40856.027344,
+      "parking_slots": 32,
+      "runways": [
+        "14-32"
+      ]
+    },
+    {
+      "class": "Lymington",
+      "id": 37,
+      "name": "Lymington",
+      "x": 139651.4375,
+      "y": -90746.367188,
+      "parking_slots": 56,
+      "runways": [
+        "06-24",
+        "14-32"
+      ]
+    },
+    {
+      "class": "Vrigny",
+      "id": 38,
+      "name": "Vrigny",
+      "x": -89449.5,
+      "y": 25165.663086,
+      "parking_slots": 32,
+      "runways": [
+        "14-32"
+      ]
+    },
+    {
+      "class": "Odiham",
+      "id": 39,
+      "name": "Odiham",
+      "x": 193093.796875,
+      "y": -51833.476563,
+      "parking_slots": 13,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "Conches",
+      "id": 40,
+      "name": "Conches",
+      "x": -57037.712891,
+      "y": 94560.480469,
+      "parking_slots": 13,
+      "runways": [
+        "22-04"
+      ]
+    },
+    {
+      "class": "West_Malling",
+      "id": 41,
+      "name": "West Malling",
+      "x": 200585.023438,
+      "y": 41958.845703,
+      "parking_slots": 15,
+      "runways": [
+        "24-06"
+      ]
+    },
+    {
+      "class": "Villacoublay",
+      "id": 42,
+      "name": "Villacoublay",
+      "x": -70139.621094,
+      "y": 186884.203125,
+      "parking_slots": 76,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Kenley",
+      "id": 43,
+      "name": "Kenley",
+      "x": 202841.609375,
+      "y": 6826.667969,
+      "parking_slots": 52,
+      "runways": [
+        "02-20",
+        "12-30"
+      ]
+    },
+    {
+      "class": "Beauvais_Tille",
+      "id": 44,
+      "name": "Beauvais-Tille",
+      "x": 5710.25293,
+      "y": 174980.65625,
+      "parking_slots": 13,
+      "runways": [
+        "22-04",
+        "12-30"
+      ]
+    },
+    {
+      "class": "Cormeilles_en_Vexin",
+      "id": 45,
+      "name": "Cormeilles-en-Vexin",
+      "x": -34766.40625,
+      "y": 172022.796875,
+      "parking_slots": 15,
+      "runways": [
+        "11-29",
+        "22-04"
+      ]
+    },
+    {
+      "class": "Creil",
+      "id": 46,
+      "name": "Creil",
+      "x": -14655.369629,
+      "y": 205058.546875,
+      "parking_slots": 78,
+      "runways": [
+        "24-06",
+        "31-13"
+      ]
+    },
+    {
+      "class": "Guyancourt",
+      "id": 47,
+      "name": "Guyancourt",
+      "x": -71717.359375,
+      "y": 177759.757813,
+      "parking_slots": 7,
+      "runways": [
+        "04-22",
+        "07-25",
+        "13-31"
+      ]
+    },
+    {
+      "class": "Lonrai",
+      "id": 48,
+      "name": "Lonrai",
+      "x": -112074.121094,
+      "y": 28981.238281,
+      "parking_slots": 14,
+      "runways": [
+        "06-24"
+      ]
+    },
+    {
+      "class": "Dinan_Trelivan",
+      "id": 49,
+      "name": "Dinan-Trelivan",
+      "x": -118842.234375,
+      "y": -129198.449219,
+      "parking_slots": 17,
+      "runways": [
+        "07-25"
+      ]
+    },
+    {
+      "class": "Fecamp_Benouville",
+      "id": 51,
+      "name": "Fecamp-Benouville",
+      "x": 31017.939453,
+      "y": 46236.578125,
+      "parking_slots": 19,
+      "runways": [
+        "18-36"
+      ]
+    },
+    {
+      "class": "Farnborough",
+      "id": 52,
+      "name": "Farnborough",
+      "x": 198359.296875,
+      "y": -40322.033203,
+      "parking_slots": 8,
+      "runways": [
+        "24-06",
+        "17-35"
+      ]
+    },
+    {
+      "class": "Friston",
+      "id": 53,
+      "name": "Friston",
+      "x": 143314.512869,
+      "y": 28131.359873,
+      "parking_slots": 32,
+      "runways": [
+        "06-24"
+      ]
+    },
+    {
+      "class": "Deanland",
+      "id": 54,
+      "name": "Deanland",
+      "x": 156912.960938,
+      "y": 26832.962891,
+      "parking_slots": 32,
+      "runways": [
+        "23-05"
+      ]
+    },
+    {
+      "class": "Triqueville",
+      "id": 55,
+      "name": "Triqueville",
+      "x": -14226.536916,
+      "y": 55691.491989,
+      "parking_slots": 32,
+      "runways": [
+        "34-15"
+      ]
+    },
+    {
+      "class": "Poix",
+      "id": 56,
+      "name": "Poix",
+      "x": 45570.792969,
+      "y": 162443.046875,
+      "parking_slots": 24,
+      "runways": [
+        "27-09",
+        "04-22"
+      ]
+    },
+    {
+      "class": "Orly",
+      "id": 57,
+      "name": "Orly",
+      "x": -72761.085938,
+      "y": 200856.46875,
+      "parking_slots": 81,
+      "runways": [
+        "01-19",
+        "07-25"
+      ]
+    },
+    {
+      "class": "Stoney_Cross",
+      "id": 58,
+      "name": "Stoney Cross",
+      "x": 156400.382813,
+      "y": -100851.132813,
+      "parking_slots": 39,
+      "runways": [
+        "06-24",
+        "19-01"
+      ]
+    },
+    {
+      "class": "Amiens_Glisy",
+      "id": 59,
+      "name": "Amiens-Glisy",
+      "x": 53534.210938,
+      "y": 191712.921875,
+      "parking_slots": 48,
+      "runways": [
+        "22-04",
+        "11-29"
+      ]
+    },
+    {
+      "class": "Ronai",
+      "id": 60,
+      "name": "Ronai",
+      "x": -73103.863281,
+      "y": 12831.819824,
+      "parking_slots": 17,
+      "runways": [
+        "25-07",
+        "30-12"
+      ]
+    },
+    {
+      "class": "Rouen_Boos",
+      "id": 61,
+      "name": "Rouen-Boos",
+      "x": -5907.317627,
+      "y": 107717.976563,
+      "parking_slots": 32,
+      "runways": [
+        "22-04"
+      ]
+    },
+    {
+      "class": "Deauville",
+      "id": 62,
+      "name": "Deauville",
+      "x": -12067.121582,
+      "y": 33696.617188,
+      "parking_slots": 3,
+      "runways": [
+        "12-30"
+      ]
+    },
+    {
+      "class": "Saint_Aubin",
+      "id": 63,
+      "name": "Saint-Aubin",
+      "x": 49020.730469,
+      "y": 97561.316406,
+      "parking_slots": 4,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Flers",
+      "id": 64,
+      "name": "Flers",
+      "x": -82446.15625,
+      "y": -18789.126953,
+      "parking_slots": 32,
+      "runways": [
+        "23-05"
+      ]
+    },
+    {
+      "class": "Avranches_Le_Val_Saint_Pere",
+      "id": 65,
+      "name": "Avranches Le Val-Saint-Pere",
+      "x": -92981.292969,
+      "y": -76298.9375,
+      "parking_slots": 32,
+      "runways": [
+        "13-31"
+      ]
+    },
+    {
+      "class": "Gravesend",
+      "id": 66,
+      "name": "Gravesend",
+      "x": 216978.257813,
+      "y": 40643.498047,
+      "parking_slots": 44,
+      "runways": [
+        "24-06",
+        "18-36"
+      ]
+    },
+    {
+      "class": "Beaumont_le_Roger",
+      "id": 67,
+      "name": "Beaumont-le-Roger",
+      "x": -39697.355469,
+      "y": 81625.679688,
+      "parking_slots": 7,
+      "runways": [
+        "23-05",
+        "26-08",
+        "32-14"
+      ]
+    },
+    {
+      "class": "Broglie",
+      "id": 68,
+      "name": "Broglie",
+      "x": -49720.132813,
+      "y": 60287.275391,
+      "parking_slots": 32,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Bernay_Saint_Martin",
+      "id": 69,
+      "name": "Bernay Saint Martin",
+      "x": -39510.070313,
+      "y": 67097.558594,
+      "parking_slots": 19,
+      "runways": [
+        "18-36"
+      ]
+    },
+    {
+      "class": "Saint_Andre_de_lEure",
+      "id": 70,
+      "name": "Saint-Andre-de-lEure",
+      "x": -60655.046875,
+      "y": 117310.859375,
+      "parking_slots": 30,
+      "runways": [
+        "23-05",
+        "13-31"
+      ]
+    },
+    {
+      "class": "Biggin_Hill",
+      "id": 71,
+      "name": "Biggin Hill",
+      "x": 206075.539063,
+      "y": 15669.486328,
+      "parking_slots": 19,
+      "runways": [
+        "28-10",
+        "20-02"
+      ]
+    },
+    {
+      "class": "Manston",
+      "id": 72,
+      "name": "Manston",
+      "x": 212061.960938,
+      "y": 107129.84375,
+      "parking_slots": 47,
+      "runways": [
+        "11-29"
+      ]
+    },
+    {
+      "class": "Detling",
+      "id": 73,
+      "name": "Detling",
+      "x": 205178.90625,
+      "y": 55494.496094,
+      "parking_slots": 43,
+      "runways": [
+        "04-22"
+      ]
+    },
+    {
+      "class": "Lympne",
+      "id": 74,
+      "name": "Lympne",
+      "x": 181920.085938,
+      "y": 85960.074219,
+      "parking_slots": 24,
+      "runways": [
+        "02-20",
+        "11-29"
+      ]
+    },
+    {
+      "class": "Abbeville_Drucat",
+      "id": 75,
+      "name": "Abbeville Drucat",
+      "x": 80389.722656,
+      "y": 150123.953125,
+      "parking_slots": 48,
+      "runways": [
+        "20-02",
+        "26-08",
+        "31-13"
+      ]
+    },
+    {
+      "class": "Saint_Omer_Wizernes",
+      "id": 76,
+      "name": "Saint-Omer Wizernes",
+      "x": 147925.585938,
+      "y": 173656.367188,
+      "parking_slots": 23,
+      "runways": [
+        "21-03",
+        "27-09"
+      ]
+    },
+    {
+      "class": "Merville_Calonne",
+      "id": 77,
+      "name": "Merville Calonne",
+      "x": 138090.828125,
+      "y": 204275.523438,
+      "parking_slots": 57,
+      "runways": [
+        "32-14",
+        "21-03",
+        "25-07"
+      ]
+    },
+    {
+      "class": "High_Halden",
+      "id": 78,
+      "name": "High Halden",
+      "x": 185404.304688,
+      "y": 63761.78125,
+      "parking_slots": 82,
+      "runways": [
+        "11-29",
+        "22-04"
+      ]
+    },
+    {
+      "class": "Dunkirk_Mardyck",
+      "id": 79,
+      "name": "Dunkirk-Mardyck",
+      "x": 181551.851563,
+      "y": 173005.132813,
+      "parking_slots": 26,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Lashenden",
+      "id": 80,
+      "name": "Lashenden",
+      "x": 188708.453125,
+      "y": 59300.070313,
+      "parking_slots": 58,
+      "runways": [
+        "21-03",
+        "11-29"
+      ]
+    },
+    {
+      "class": "Eastchurch",
+      "id": 81,
+      "name": "Eastchurch",
+      "x": 215451.492188,
+      "y": 72165.707031,
+      "parking_slots": 21,
+      "runways": [
+        "20-02",
+        "10-28"
+      ]
+    },
+    {
+      "class": "Hawkinge",
+      "id": 82,
+      "name": "Hawkinge",
+      "x": 185664.007813,
+      "y": 95487.992188,
+      "parking_slots": 16,
+      "runways": [
+        "19-01",
+        "04-22"
+      ]
+    },
+    {
+      "class": "Guernsey",
+      "id": 83,
+      "name": "Guernsey",
+      "x": -8832.71875,
+      "y": -166231.976563,
+      "parking_slots": 38,
+      "runways": [
+        "29-11"
+      ]
+    },
+    {
+      "class": "Jersey",
+      "id": 84,
+      "name": "Jersey",
+      "x": -33962.067393,
+      "y": -137233.195249,
+      "parking_slots": 4,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Alderney",
+      "id": 85,
+      "name": "Alderney",
+      "x": 21510.683594,
+      "y": -138896.914063,
+      "parking_slots": 37,
+      "runways": [
+        "03-21",
+        "13-31",
+        "08-26"
+      ]
+    },
+    {
+      "class": "Headcorn",
+      "id": 86,
+      "name": "Headcorn",
+      "x": 191816.039063,
+      "y": 62251.796875,
+      "parking_slots": 43,
+      "runways": [
+        "36-18",
+        "09-27"
+      ]
+    },
+    {
+      "class": "Saint_Pol_Bryas",
+      "id": 87,
+      "name": "Saint-Pol-Bryas",
+      "x": 111618.195313,
+      "y": 184674.421875,
+      "parking_slots": 12,
+      "runways": [
+        "20-3"
+      ]
+    },
+    {
+      "class": "Northolt",
+      "id": 88,
+      "name": "Northolt",
+      "x": 229643.890625,
+      "y": -16612.243164,
+      "parking_slots": 22,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Holmsley_South",
+      "id": 89,
+      "name": "Holmsley South",
+      "x": 142471.507813,
+      "y": -103965.085938,
+      "parking_slots": 37,
+      "runways": [
+        "35-17",
+        "25-05",
+        "29-11"
+      ]
+    },
+    {
+      "class": "Bembridg",
+      "id": 90,
+      "name": "Bembridg",
+      "x": 130960.257813,
+      "y": -62052.40625,
+      "parking_slots": 32,
+      "runways": [
+        "30-12"
+      ]
+    }
+  ],
+  "persiangulf": [
+    {
+      "class": "Abu_Musa_Island",
+      "id": 1,
+      "name": "Abu Musa Island",
+      "x": -31505.274308,
+      "y": -121335.307759,
+      "parking_slots": 8,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Bandar_Abbas_Intl",
+      "id": 2,
+      "name": "Bandar Abbas Intl",
+      "x": 115765.882812,
+      "y": 14257.968262,
+      "parking_slots": 50,
+      "runways": [
+        "03R-21L"
+      ]
+    },
+    {
+      "class": "Bandar_Lengeh",
+      "id": 3,
+      "name": "Bandar Lengeh",
+      "x": 41536.408234,
+      "y": -140987.327942,
+      "parking_slots": 5,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Al_Dhafra_AFB",
+      "id": 4,
+      "name": "Al Dhafra AFB",
+      "x": -211027.78125,
+      "y": -173240.007812,
+      "parking_slots": 250,
+      "runways": [
+        "13R-31L",
+        "13L-31R"
+      ]
+    },
+    {
+      "class": "Dubai_Intl",
+      "id": 5,
+      "name": "Dubai Intl",
+      "x": -100594.371094,
+      "y": -88875.371094,
+      "parking_slots": 96,
+      "runways": [
+        "30L-12R",
+        "30R-12L"
+      ]
+    },
+    {
+      "class": "Al_Maktoum_Intl",
+      "id": 6,
+      "name": "Al Maktoum Intl",
+      "x": -140127.671875,
+      "y": -110068.890625,
+      "parking_slots": 69,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Fujairah_Intl",
+      "id": 7,
+      "name": "Fujairah Intl",
+      "x": -117531.972946,
+      "y": 7939.275818,
+      "parking_slots": 4,
+      "runways": [
+        "29-11"
+      ]
+    },
+    {
+      "class": "Tunb_Island_AFB",
+      "id": 8,
+      "name": "Tunb Island AFB",
+      "x": 10515.440918,
+      "y": -92440.328125,
+      "parking_slots": 4,
+      "runways": [
+        "03-21"
+      ]
+    },
+    {
+      "class": "Havadarya",
+      "id": 9,
+      "name": "Havadarya",
+      "x": 109297.824219,
+      "y": -6278.723145,
+      "parking_slots": 22,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Khasab",
+      "id": 10,
+      "name": "Khasab",
+      "x": -219.726892,
+      "y": -177.707709,
+      "parking_slots": 12,
+      "runways": [
+        "19-01"
+      ]
+    },
+    {
+      "class": "Lar",
+      "id": 11,
+      "name": "Lar",
+      "x": 168977.578922,
+      "y": -182359.639734,
+      "parking_slots": 5,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Al_Minhad_AFB",
+      "id": 12,
+      "name": "Al Minhad AFB",
+      "x": -126013.714844,
+      "y": -89133.46875,
+      "parking_slots": 62,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Qeshm_Island",
+      "id": 13,
+      "name": "Qeshm Island",
+      "x": 64800.714844,
+      "y": -33383.481445,
+      "parking_slots": 12,
+      "runways": [
+        "23-05"
+      ]
+    },
+    {
+      "class": "Sharjah_Intl",
+      "id": 14,
+      "name": "Sharjah Intl",
+      "x": -92544.089844,
+      "y": -73373.601562,
+      "parking_slots": 47,
+      "runways": [
+        "30L-12R",
+        "30R-12L"
+      ]
+    },
+    {
+      "class": "Sirri_Island",
+      "id": 15,
+      "name": "Sirri Island",
+      "x": -26946.104553,
+      "y": -170745.015625,
+      "parking_slots": 2,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Tunb_Kochak",
+      "id": 16,
+      "name": "Tunb Kochak",
+      "x": 9023.430176,
+      "y": -109467.078125,
+      "parking_slots": 2,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Sir_Abu_Nuayr",
+      "id": 17,
+      "name": "Sir Abu Nuayr",
+      "x": -103102.871094,
+      "y": -202973.078125,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "Kerman",
+      "id": 18,
+      "name": "Kerman",
+      "x": 454116.796875,
+      "y": 71096.085938,
+      "parking_slots": 42,
+      "runways": [
+        "34-16"
+      ]
+    },
+    {
+      "class": "Shiraz_Intl",
+      "id": 19,
+      "name": "Shiraz Intl",
+      "x": 381101.03125,
+      "y": -351636.515625,
+      "parking_slots": 119,
+      "runways": [
+        "29L-11R",
+        "29R-11L"
+      ]
+    },
+    {
+      "class": "Sas_Al_Nakheel",
+      "id": 20,
+      "name": "Sas Al Nakheel",
+      "x": -189610.296875,
+      "y": -175974.140625,
+      "parking_slots": 87,
+      "runways": []
+    },
+    {
+      "class": "Bandar_e_Jask",
+      "id": 21,
+      "name": "Bandar-e-Jask",
+      "x": -57247.5,
+      "y": 156196.507812,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "Abu_Dhabi_Intl",
+      "id": 22,
+      "name": "Abu Dhabi Intl",
+      "x": -188457.460938,
+      "y": -162030.984375,
+      "parking_slots": 126,
+      "runways": []
+    },
+    {
+      "class": "Al_Bateen",
+      "id": 23,
+      "name": "Al-Bateen",
+      "x": -190946.55263,
+      "y": -181928.271658,
+      "parking_slots": 48,
+      "runways": []
+    },
+    {
+      "class": "Kish_Intl",
+      "id": 24,
+      "name": "Kish Intl",
+      "x": 42784.291016,
+      "y": -225094.046875,
+      "parking_slots": 46,
+      "runways": []
+    },
+    {
+      "class": "Al_Ain_Intl",
+      "id": 25,
+      "name": "Al Ain Intl",
+      "x": -211058.15625,
+      "y": -65421.177734,
+      "parking_slots": 74,
+      "runways": []
+    },
+    {
+      "class": "Lavan_Island",
+      "id": 26,
+      "name": "Lavan Island",
+      "x": 75789.741687,
+      "y": -286801.46313,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "Jiroft",
+      "id": 27,
+      "name": "Jiroft",
+      "x": 282607.962896,
+      "y": 141685.262108,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "Ras_Al_Khaimah_Intl",
+      "id": 28,
+      "name": "Ras Al Khaimah Intl",
+      "x": -61624.488064,
+      "y": -30795.647521,
+      "parking_slots": 18,
+      "runways": []
+    },
+    {
+      "class": "Liwa_AFB",
+      "id": 29,
+      "name": "Liwa AFB",
+      "x": -275765.53125,
+      "y": -248213.578125,
+      "parking_slots": 65,
+      "runways": []
+    }
+  ],
+  "sinai": [
+    {
+      "class": "Difarsuwar_Airfield",
+      "id": 1,
+      "name": "Difarsuwar Airfield",
+      "x": 40837.050781,
+      "y": 105395.976563,
+      "parking_slots": 14,
+      "runways": [
+        "27-09",
+        "36-18"
+      ]
+    },
+    {
+      "class": "Abu_Suwayr",
+      "id": 2,
+      "name": "Abu Suwayr",
+      "x": 57580.1875,
+      "y": 82564.84375,
+      "parking_slots": 48,
+      "runways": [
+        "27-09",
+        "29-11"
+      ]
+    },
+    {
+      "class": "As_Salihiyah",
+      "id": 3,
+      "name": "As Salihiyah",
+      "x": 81974.308594,
+      "y": 77620.761719,
+      "parking_slots": 71,
+      "runways": [
+        "02R-20L",
+        "02L-20R"
+      ]
+    },
+    {
+      "class": "Al_Ismailiyah",
+      "id": 4,
+      "name": "Al Ismailiyah",
+      "x": 60078.449219,
+      "y": 95845.40625,
+      "parking_slots": 14,
+      "runways": [
+        "31-13"
+      ]
+    },
+    {
+      "class": "Melez",
+      "id": 5,
+      "name": "Melez",
+      "x": 38907.09375,
+      "y": 183604.53125,
+      "parking_slots": 30,
+      "runways": [
+        "33R-15L",
+        "33L-15R"
+      ]
+    },
+    {
+      "class": "Fayed",
+      "id": 6,
+      "name": "Fayed",
+      "x": 30164.332031,
+      "y": 98806.203125,
+      "parking_slots": 41,
+      "runways": [
+        "27-09"
+      ]
+    },
+    {
+      "class": "Hatzerim",
+      "id": 7,
+      "name": "Hatzerim",
+      "x": 131918.421875,
+      "y": 327167.53125,
+      "parking_slots": 174,
+      "runways": [
+        "28L-10R",
+        "28R-10L"
+      ]
+    },
+    {
+      "class": "Nevatim",
+      "id": 8,
+      "name": "Nevatim",
+      "x": 129123.308594,
+      "y": 360906.375,
+      "parking_slots": 151,
+      "runways": [
+        "08L-26R",
+        "07-25",
+        "08R-26L"
+      ]
+    },
+    {
+      "class": "Ramon_Airbase",
+      "id": 9,
+      "name": "Ramon Airbase",
+      "x": 80825.4375,
+      "y": 328661.15625,
+      "parking_slots": 140,
+      "runways": [
+        "07R-25L",
+        "07L-25R"
+      ]
+    },
+    {
+      "class": "Ovda",
+      "id": 10,
+      "name": "Ovda",
+      "x": -11512.652832,
+      "y": 355892.671875,
+      "parking_slots": 100,
+      "runways": [
+        "03R-21L",
+        "03L-21R"
+      ]
+    },
+    {
+      "class": "Kibrit_Air_Base",
+      "id": 11,
+      "name": "Kibrit Air Base",
+      "x": 20567.87793,
+      "y": 120267.300781,
+      "parking_slots": 16,
+      "runways": [
+        "32R-14L",
+        "32L-14R"
+      ]
+    },
+    {
+      "class": "Kedem",
+      "id": 12,
+      "name": "Kedem",
+      "x": 134332.039063,
+      "y": 325363.625,
+      "parking_slots": 62,
+      "runways": [
+        "28-10"
+      ]
+    },
+    {
+      "class": "Wadi_al_Jandali",
+      "id": 13,
+      "name": "Wadi al Jandali",
+      "x": 2085.398132,
+      "y": 56774.521484,
+      "parking_slots": 71,
+      "runways": [
+        "01R-19L",
+        "01L-19R"
+      ]
+    },
+    {
+      "class": "Al_Mansurah",
+      "id": 14,
+      "name": "Al Mansurah",
+      "x": 101487.527344,
+      "y": 19421.140625,
+      "parking_slots": 44,
+      "runways": [
+        "35-17",
+        "32-14"
+      ]
+    },
+    {
+      "class": "AzZaqaziq",
+      "id": 15,
+      "name": "AzZaqaziq",
+      "x": 60146.006775,
+      "y": 41192.934448,
+      "parking_slots": 29,
+      "runways": [
+        "36R-18L",
+        "36L-18R"
+      ]
+    },
+    {
+      "class": "Bilbeis_Air_Base",
+      "id": 16,
+      "name": "Bilbeis Air Base",
+      "x": 38473.015625,
+      "y": 35431.076172,
+      "parking_slots": 49,
+      "runways": [
+        "27L-09R",
+        "04-22",
+        "35R-17L"
+      ]
+    },
+    {
+      "class": "Cairo_International_Airport",
+      "id": 17,
+      "name": "Cairo International Airport",
+      "x": 6582.669189,
+      "y": 18419.84375,
+      "parking_slots": 129,
+      "runways": [
+        "05C-23C",
+        "05L-23R",
+        "05R-23L"
+      ]
+    },
+    {
+      "class": "Cairo_West",
+      "id": 18,
+      "name": "Cairo West",
+      "x": 7349.451904,
+      "y": -33538.970703,
+      "parking_slots": 103,
+      "runways": [
+        "28-10",
+        "34R-16L",
+        "34L-16R"
+      ]
+    },
+    {
+      "class": "Inshas_Airbase",
+      "id": 19,
+      "name": "Inshas Airbase",
+      "x": 31533.311523,
+      "y": 19893.730469,
+      "parking_slots": 63,
+      "runways": [
+        "09-27",
+        "04-22"
+      ]
+    },
+    {
+      "class": "Hatzor",
+      "id": 20,
+      "name": "Hatzor",
+      "x": 189869.304688,
+      "y": 332622.0625,
+      "parking_slots": 121,
+      "runways": [
+        "29R-11L",
+        "29L-11R",
+        "05-23"
+      ]
+    },
+    {
+      "class": "Palmachim",
+      "id": 21,
+      "name": "Palmachim",
+      "x": 205486.703125,
+      "y": 329304.75,
+      "parking_slots": 78,
+      "runways": [
+        "03R-21L"
+      ]
+    },
+    {
+      "class": "Sde_Dov",
+      "id": 22,
+      "name": "Sde Dov",
+      "x": 229223.96875,
+      "y": 337369.84375,
+      "parking_slots": 42,
+      "runways": [
+        "21-03"
+      ]
+    },
+    {
+      "class": "Tel_Nof",
+      "id": 23,
+      "name": "Tel Nof",
+      "x": 198386.8125,
+      "y": 341243.3125,
+      "parking_slots": 144,
+      "runways": [
+        "33L-15R",
+        "33R-15L",
+        "36-18"
+      ]
+    },
+    {
+      "class": "Ben_Gurion",
+      "id": 24,
+      "name": "Ben-Gurion",
+      "x": 217467.90625,
+      "y": 348036.15625,
+      "parking_slots": 89,
+      "runways": [
+        "08-26",
+        "30-12",
+        "03-21"
+      ]
+    },
+    {
+      "class": "St_Catherine",
+      "id": 25,
+      "name": "St Catherine",
+      "x": -151745.453125,
+      "y": 273037.234375,
+      "parking_slots": 7,
+      "runways": [
+        "35-17"
+      ]
+    },
+    {
+      "class": "Abu_Rudeis",
+      "id": 26,
+      "name": "Abu Rudeis",
+      "x": -128441.046875,
+      "y": 188948.640625,
+      "parking_slots": 3,
+      "runways": [
+        "13-31"
+      ]
+    },
+    {
+      "class": "Baluza",
+      "id": 27,
+      "name": "Baluza",
+      "x": 104349.492188,
+      "y": 126474.0,
+      "parking_slots": 3,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "Bir_Hasanah",
+      "id": 28,
+      "name": "Bir Hasanah",
+      "x": 15112.084473,
+      "y": 208960.679688,
+      "parking_slots": 28,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "El_Arish",
+      "id": 29,
+      "name": "El Arish",
+      "x": 108774.84375,
+      "y": 247387.734375,
+      "parking_slots": 22,
+      "runways": [
+        "34R-16L",
+        "34L-16R"
+      ]
+    },
+    {
+      "class": "El_Gora",
+      "id": 30,
+      "name": "El Gora",
+      "x": 112947.074219,
+      "y": 278771.265625,
+      "parking_slots": 15,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Al_Khatatbah",
+      "id": 31,
+      "name": "Al Khatatbah",
+      "x": 30000.823242,
+      "y": -35160.732422,
+      "parking_slots": 40,
+      "runways": [
+        "20R-02L",
+        "20L-02R",
+        "11-29"
+      ]
+    },
+    {
+      "class": "Al_Rahmaniyah_Air_Base",
+      "id": 32,
+      "name": "Al Rahmaniyah Air Base",
+      "x": 111444.902344,
+      "y": -53678.824219,
+      "parking_slots": 22,
+      "runways": [
+        "34-16"
+      ]
+    },
+    {
+      "class": "Beni_Suef",
+      "id": 33,
+      "name": "Beni Suef",
+      "x": -93775.957031,
+      "y": -23378.751953,
+      "parking_slots": 70,
+      "runways": [
+        "05-23",
+        "36L-18R",
+        "36R-18L"
+      ]
+    },
+    {
+      "class": "Birma_Air_Base",
+      "id": 34,
+      "name": "Birma Air Base",
+      "x": 88051.835938,
+      "y": -28172.807617,
+      "parking_slots": 32,
+      "runways": [
+        "32L-14R",
+        "32R-14L"
+      ]
+    },
+    {
+      "class": "Borg_El_Arab_International_Airport",
+      "id": 35,
+      "name": "Borg El Arab International Airport",
+      "x": 99766.792969,
+      "y": -146755.710938,
+      "parking_slots": 84,
+      "runways": [
+        "14L-32R",
+        "14-32",
+        "14-32",
+        "14R-32L"
+      ]
+    },
+    {
+      "class": "El_Minya",
+      "id": 36,
+      "name": "El Minya",
+      "x": -214834.804688,
+      "y": -53828.40625,
+      "parking_slots": 37,
+      "runways": [
+        "34R-16L",
+        "34L-16R"
+      ]
+    },
+    {
+      "class": "Gebel_El_Basur_Air_Base",
+      "id": 37,
+      "name": "Gebel El Basur Air Base",
+      "x": 55664.166016,
+      "y": -65567.445313,
+      "parking_slots": 76,
+      "runways": [
+        "18-36",
+        "15-33"
+      ]
+    },
+    {
+      "class": "Hurghada_International_Airport",
+      "id": 38,
+      "name": "Hurghada International Airport",
+      "x": -319084.890625,
+      "y": 247648.25,
+      "parking_slots": 87,
+      "runways": [
+        "16L-34R",
+        "16R-34L"
+      ]
+    },
+    {
+      "class": "Jiyanklis_Air_Base",
+      "id": 39,
+      "name": "Jiyanklis Air Base",
+      "x": 87971.730469,
+      "y": -99355.671875,
+      "parking_slots": 66,
+      "runways": [
+        "11-29",
+        "12-30"
+      ]
+    },
+    {
+      "class": "Kom_Awshim",
+      "id": 40,
+      "name": "Kom Awshim",
+      "x": -54134.808594,
+      "y": -34871.597656,
+      "parking_slots": 42,
+      "runways": [
+        "34-16",
+        "33-15"
+      ]
+    },
+    {
+      "class": "Ramon_International_Airport",
+      "id": 41,
+      "name": "Ramon International Airport",
+      "x": -35075.113281,
+      "y": 364019.84375,
+      "parking_slots": 53,
+      "runways": [
+        "19-01"
+      ]
+    },
+    {
+      "class": "Sharm_El_Sheikh_International_Airport",
+      "id": 42,
+      "name": "Sharm El Sheikh International Airport",
+      "x": -229684.5625,
+      "y": 306246.96875,
+      "parking_slots": 48,
+      "runways": [
+        "04R-22L",
+        "04L-22R"
+      ]
+    },
+    {
+      "class": "Wadi_Abu_Rish",
+      "id": 43,
+      "name": "Wadi Abu Rish",
+      "x": -119840.890625,
+      "y": 42431.076172,
+      "parking_slots": 67,
+      "runways": [
+        "19R-01L",
+        "19L-01R"
+      ]
+    },
+    {
+      "class": "Al_Bahr_al_Ahmar",
+      "id": 44,
+      "name": "Al Bahr al Ahmar",
+      "x": -388005.78125,
+      "y": 181276.859375,
+      "parking_slots": 37,
+      "runways": [
+        "32R-14L",
+        "32L-14R"
+      ]
+    },
+    {
+      "class": "Quwaysina",
+      "id": 45,
+      "name": "Quwaysina",
+      "x": 59123.898438,
+      "y": -10186.813477,
+      "parking_slots": 15,
+      "runways": [
+        "16-34"
+      ]
+    },
+    {
+      "class": "Rafic_Hariri_Intl",
+      "id": 46,
+      "name": "Rafic Hariri Intl",
+      "x": 420154.5625,
+      "y": 399041.296875,
+      "parking_slots": 49,
+      "runways": [
+        "03-21",
+        "16-34"
+      ]
+    },
+    {
+      "class": "Tabuk",
+      "id": 47,
+      "name": "Tabuk",
+      "x": -181719.304688,
+      "y": 522694.640625,
+      "parking_slots": 183,
+      "runways": [
+        "24R-06L",
+        "13-31"
+      ]
+    },
+    {
+      "class": "Damascus_Intl",
+      "id": 48,
+      "name": "Damascus Intl",
+      "x": 375326.765625,
+      "y": 495740.890625,
+      "parking_slots": 61,
+      "runways": [
+        "05L-23R",
+        "05R-23L"
+      ]
+    },
+    {
+      "class": "Mezzeh_Air_Base",
+      "id": 49,
+      "name": "Mezzeh Air Base",
+      "x": 383579.703125,
+      "y": 468789.203125,
+      "parking_slots": 74,
+      "runways": [
+        "06-24"
+      ]
+    },
+    {
+      "class": "Ramat_David",
+      "id": 50,
+      "name": "Ramat David",
+      "x": 291107.234375,
+      "y": 374035.84375,
+      "parking_slots": 125,
+      "runways": [
+        "09-27",
+        "11-29",
+        "15-33"
+      ]
+    },
+    {
+      "class": "Megiddo",
+      "id": 51,
+      "name": "Megiddo",
+      "x": 283509.78125,
+      "y": 378523.125,
+      "parking_slots": 62,
+      "runways": [
+        "09-27"
+      ]
+    },
+    {
+      "class": "Ein_Shamer",
+      "id": 52,
+      "name": "Ein Shamer",
+      "x": 265763.1875,
+      "y": 357945.765625,
+      "parking_slots": 10,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "Taba_International_Airport",
+      "id": 53,
+      "name": "Taba International Airport",
+      "x": -50856.566406,
+      "y": 341451.765625,
+      "parking_slots": 12,
+      "runways": [
+        "22-04"
+      ]
+    },
+    {
+      "class": "King_Feisal_Air_Base",
+      "id": 54,
+      "name": "King Feisal Air Base",
+      "x": 35757.6875,
+      "y": 471805.875,
+      "parking_slots": 78,
+      "runways": [
+        "29-11"
+      ]
+    },
+    {
+      "class": "Khalkhalah_Air_Base",
+      "id": 55,
+      "name": "Khalkhalah Air Base",
+      "x": 340303.703125,
+      "y": 499770.65625,
+      "parking_slots": 52,
+      "runways": [
+        "07-25",
+        "15-33"
+      ]
+    }
+  ],
+  "syria": [
+    {
+      "class": "Abu_al_Duhur",
+      "id": 1,
+      "name": "Abu al-Duhur",
+      "x": 76048.957031,
+      "y": 111344.925781,
+      "parking_slots": 36,
+      "runways": []
+    },
+    {
+      "class": "Adana_Sakirpasa",
+      "id": 2,
+      "name": "Adana Sakirpasa",
+      "x": 219474.219224,
+      "y": -48324.287805,
+      "parking_slots": 39,
+      "runways": [
+        "23-05"
+      ]
+    },
+    {
+      "class": "Al_Qusayr",
+      "id": 3,
+      "name": "Al Qusayr",
+      "x": -51906.964844,
+      "y": 60013.205078,
+      "parking_slots": 34,
+      "runways": []
+    },
+    {
+      "class": "An_Nasiriyah",
+      "id": 4,
+      "name": "An Nasiriyah",
+      "x": -124683.738281,
+      "y": 85510.820313,
+      "parking_slots": 20,
+      "runways": []
+    },
+    {
+      "class": "Tha_lah",
+      "id": 5,
+      "name": "Tha'lah",
+      "x": -258434.929688,
+      "y": 40368.673828,
+      "parking_slots": 27,
+      "runways": [
+        "05R-23L"
+      ]
+    },
+    {
+      "class": "Beirut_Rafic_Hariri",
+      "id": 6,
+      "name": "Beirut-Rafic Hariri",
+      "x": -131531.777344,
+      "y": -42725.0625,
+      "parking_slots": 41,
+      "runways": [
+        "17-35",
+        "21-03",
+        "34-16"
+      ]
+    },
+    {
+      "class": "Damascus",
+      "id": 7,
+      "name": "Damascus",
+      "x": -178652.320313,
+      "y": 52081.296875,
+      "parking_slots": 71,
+      "runways": [
+        "05R-23L",
+        "05L-23R"
+      ]
+    },
+    {
+      "class": "Marj_as_Sultan_South",
+      "id": 8,
+      "name": "Marj as Sultan South",
+      "x": -171711.042484,
+      "y": 48237.622439,
+      "parking_slots": 20,
+      "runways": []
+    },
+    {
+      "class": "Al_Dumayr",
+      "id": 9,
+      "name": "Al-Dumayr",
+      "x": -158713.454299,
+      "y": 73971.64764,
+      "parking_slots": 67,
+      "runways": []
+    },
+    {
+      "class": "Eyn_Shemer",
+      "id": 10,
+      "name": "Eyn Shemer",
+      "x": -283529.25,
+      "y": -92673.230469,
+      "parking_slots": 15,
+      "runways": []
+    },
+    {
+      "class": "Gaziantep",
+      "id": 11,
+      "name": "Gaziantep",
+      "x": 210333.625365,
+      "y": 147313.672429,
+      "parking_slots": 12,
+      "runways": []
+    },
+    {
+      "class": "H4",
+      "id": 12,
+      "name": "H4",
+      "x": -279366.758024,
+      "y": 207219.267431,
+      "parking_slots": 18,
+      "runways": []
+    },
+    {
+      "class": "Haifa",
+      "id": 13,
+      "name": "Haifa",
+      "x": -242620.8125,
+      "y": -87704.417969,
+      "parking_slots": 16,
+      "runways": [
+        "34-16"
+      ]
+    },
+    {
+      "class": "Hama",
+      "id": 14,
+      "name": "Hama",
+      "x": 8662.594238,
+      "y": 74333.1875,
+      "parking_slots": 46,
+      "runways": []
+    },
+    {
+      "class": "Hatay",
+      "id": 15,
+      "name": "Hatay",
+      "x": 147687.484375,
+      "y": 39418.742188,
+      "parking_slots": 10,
+      "runways": []
+    },
+    {
+      "class": "Incirlik",
+      "id": 16,
+      "name": "Incirlik",
+      "x": 221207.773438,
+      "y": -35240.347656,
+      "parking_slots": 126,
+      "runways": [
+        "05-23"
+      ]
+    },
+    {
+      "class": "Jirah",
+      "id": 17,
+      "name": "Jirah",
+      "x": 115350.483441,
+      "y": 187069.20336,
+      "parking_slots": 29,
+      "runways": []
+    },
+    {
+      "class": "Khalkhalah",
+      "id": 18,
+      "name": "Khalkhalah",
+      "x": -217201.976563,
+      "y": 53275.345703,
+      "parking_slots": 55,
+      "runways": [
+        "07-25",
+        "15-33"
+      ]
+    },
+    {
+      "class": "King_Hussein_Air_College",
+      "id": 19,
+      "name": "King Hussein Air College",
+      "x": -296592.405413,
+      "y": 24944.355658,
+      "parking_slots": 52,
+      "runways": []
+    },
+    {
+      "class": "Kiryat_Shmona",
+      "id": 20,
+      "name": "Kiryat Shmona",
+      "x": -199486.164063,
+      "y": -34500.691406,
+      "parking_slots": 5,
+      "runways": []
+    },
+    {
+      "class": "Bassel_Al_Assad",
+      "id": 21,
+      "name": "Bassel Al-Assad",
+      "x": 42236.566406,
+      "y": 5836.231689,
+      "parking_slots": 54,
+      "runways": [
+        "17R-35L",
+        "17L-35R"
+      ]
+    },
+    {
+      "class": "Marj_as_Sultan_North",
+      "id": 22,
+      "name": "Marj as Sultan North",
+      "x": -170244.028992,
+      "y": 47506.718825,
+      "parking_slots": 14,
+      "runways": []
+    },
+    {
+      "class": "Marj_Ruhayyil",
+      "id": 23,
+      "name": "Marj Ruhayyil",
+      "x": -193677.15625,
+      "y": 45844.763672,
+      "parking_slots": 53,
+      "runways": [
+        "06L-24R"
+      ]
+    },
+    {
+      "class": "Megiddo",
+      "id": 24,
+      "name": "Megiddo",
+      "x": -266965.0625,
+      "y": -71068.835938,
+      "parking_slots": 26,
+      "runways": []
+    },
+    {
+      "class": "Mezzeh",
+      "id": 25,
+      "name": "Mezzeh",
+      "x": -172160.453125,
+      "y": 24865.682617,
+      "parking_slots": 40,
+      "runways": []
+    },
+    {
+      "class": "Minakh",
+      "id": 26,
+      "name": "Minakh",
+      "x": 163697.53125,
+      "y": 107430.609375,
+      "parking_slots": 20,
+      "runways": [
+        "04-22",
+        "10-28"
+      ]
+    },
+    {
+      "class": "Aleppo",
+      "id": 27,
+      "name": "Aleppo",
+      "x": 125576.863281,
+      "y": 123125.304688,
+      "parking_slots": 23,
+      "runways": []
+    },
+    {
+      "class": "Palmyra",
+      "id": 28,
+      "name": "Palmyra",
+      "x": -55703.245459,
+      "y": 220125.654988,
+      "parking_slots": 22,
+      "runways": [
+        "26-08"
+      ]
+    },
+    {
+      "class": "Qabr_as_Sitt",
+      "id": 29,
+      "name": "Qabr as Sitt",
+      "x": -174598.3671,
+      "y": 37220.91243,
+      "parking_slots": 20,
+      "runways": [
+        "05-23"
+      ]
+    },
+    {
+      "class": "Ramat_David",
+      "id": 30,
+      "name": "Ramat David",
+      "x": -259121.195313,
+      "y": -75104.90625,
+      "parking_slots": 86,
+      "runways": [
+        "11-29",
+        "09-27",
+        "33-15"
+      ]
+    },
+    {
+      "class": "Kuweires",
+      "id": 31,
+      "name": "Kuweires",
+      "x": 125810.890625,
+      "y": 155253.8125,
+      "parking_slots": 37,
+      "runways": []
+    },
+    {
+      "class": "Rayak",
+      "id": 32,
+      "name": "Rayak",
+      "x": -130132.492188,
+      "y": 4053.336304,
+      "parking_slots": 12,
+      "runways": []
+    },
+    {
+      "class": "Rene_Mouawad",
+      "id": 33,
+      "name": "Rene Mouawad",
+      "x": -48306.007813,
+      "y": 8690.693604,
+      "parking_slots": 13,
+      "runways": []
+    },
+    {
+      "class": "Rosh_Pina",
+      "id": 34,
+      "name": "Rosh Pina",
+      "x": -225277.734375,
+      "y": -37687.537109,
+      "parking_slots": 12,
+      "runways": []
+    },
+    {
+      "class": "Sayqal",
+      "id": 35,
+      "name": "Sayqal",
+      "x": -151781.375,
+      "y": 117529.734375,
+      "parking_slots": 59,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Shayrat",
+      "id": 36,
+      "name": "Shayrat",
+      "x": -61368.212891,
+      "y": 90675.136719,
+      "parking_slots": 57,
+      "runways": [
+        "11-29"
+      ]
+    },
+    {
+      "class": "Tabqa",
+      "id": 37,
+      "name": "Tabqa",
+      "x": 76964.6875,
+      "y": 243605.210938,
+      "parking_slots": 29,
+      "runways": []
+    },
+    {
+      "class": "Taftanaz",
+      "id": 38,
+      "name": "Taftanaz",
+      "x": 103485.980469,
+      "y": 82766.671875,
+      "parking_slots": 48,
+      "runways": []
+    },
+    {
+      "class": "Tiyas",
+      "id": 39,
+      "name": "Tiyas",
+      "x": -58907.53125,
+      "y": 157071.484375,
+      "parking_slots": 82,
+      "runways": []
+    },
+    {
+      "class": "Wujah_Al_Hajar",
+      "id": 40,
+      "name": "Wujah Al Hajar",
+      "x": -81524.375,
+      "y": -22832.533203,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "Gazipasa",
+      "id": 41,
+      "name": "Gazipasa",
+      "x": 158144.617188,
+      "y": -319392.546875,
+      "parking_slots": 6,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Deir_ez_Zor",
+      "id": 42,
+      "name": "Deir ez-Zor",
+      "x": 25465.162934,
+      "y": 389747.046042,
+      "parking_slots": 17,
+      "runways": []
+    },
+    {
+      "class": "Akrotiri",
+      "id": 44,
+      "name": "Akrotiri",
+      "x": -35778.628906,
+      "y": -268906.125,
+      "parking_slots": 45,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "Kingsfield",
+      "id": 45,
+      "name": "Kingsfield",
+      "x": 7596.761963,
+      "y": -199426.492188,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "Paphos",
+      "id": 46,
+      "name": "Paphos",
+      "x": -18696.34668,
+      "y": -314208.375,
+      "parking_slots": 43,
+      "runways": [
+        "11-29"
+      ]
+    },
+    {
+      "class": "Larnaca",
+      "id": 47,
+      "name": "Larnaca",
+      "x": -7674.737061,
+      "y": -208843.625,
+      "parking_slots": 45,
+      "runways": [
+        "04-22"
+      ]
+    },
+    {
+      "class": "Lakatamia",
+      "id": 48,
+      "name": "Lakatamia",
+      "x": 19561.164063,
+      "y": -234985.75,
+      "parking_slots": 8,
+      "runways": []
+    },
+    {
+      "class": "Ercan",
+      "id": 49,
+      "name": "Ercan",
+      "x": 23583.947266,
+      "y": -217287.304688,
+      "parking_slots": 29,
+      "runways": [
+        "11-29"
+      ]
+    },
+    {
+      "class": "Gecitkale",
+      "id": 50,
+      "name": "Gecitkale",
+      "x": 32144.729634,
+      "y": -197767.51907,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "Pinarbashi",
+      "id": 51,
+      "name": "Pinarbashi",
+      "x": 38639.882813,
+      "y": -238774.6875,
+      "parking_slots": 5,
+      "runways": []
+    },
+    {
+      "class": "Naqoura",
+      "id": 52,
+      "name": "Naqoura",
+      "x": -209938.1875,
+      "y": -78642.609375,
+      "parking_slots": 9,
+      "runways": []
+    },
+    {
+      "class": "H3",
+      "id": 53,
+      "name": "H3",
+      "x": -235405.664063,
+      "y": 352522.65625,
+      "parking_slots": 68,
+      "runways": [
+        "06-24",
+        "11-29"
+      ]
+    },
+    {
+      "class": "H3_Northwest",
+      "id": 54,
+      "name": "H3 Northwest",
+      "x": -220000.35156,
+      "y": 338483.561903,
+      "parking_slots": 29,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "H3_Southwest",
+      "id": 55,
+      "name": "H3 Southwest",
+      "x": -256870.779619,
+      "y": 339238.230883,
+      "parking_slots": 31,
+      "runways": [
+        "30-12"
+      ]
+    },
+    {
+      "class": "Zarqa",
+      "id": 56,
+      "name": "Zarqa",
+      "x": -333007.158135,
+      "y": 13037.710339,
+      "parking_slots": 14,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "Ruwayshid",
+      "id": 57,
+      "name": "Ruwayshid",
+      "x": -294533.859375,
+      "y": 295074.640625,
+      "parking_slots": 24,
+      "runways": []
+    },
+    {
+      "class": "Sanliurfa",
+      "id": 58,
+      "name": "Sanliurfa",
+      "x": 264719.125,
+      "y": 273812.4375,
+      "parking_slots": 11,
+      "runways": []
+    },
+    {
+      "class": "Kharab_Ishk",
+      "id": 59,
+      "name": "Kharab Ishk",
+      "x": 164820.140625,
+      "y": 245880.46875,
+      "parking_slots": 11,
+      "runways": []
+    },
+    {
+      "class": "Tal_Siman",
+      "id": 60,
+      "name": "Tal Siman",
+      "x": 133191.875,
+      "y": 276361.453125,
+      "parking_slots": 4,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "H4_Emergency",
+      "id": 61,
+      "name": "H4 Emergency",
+      "x": -295962.15625,
+      "y": 168207.601563,
+      "parking_slots": 3,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "Nevatim",
+      "id": 62,
+      "name": "Nevatim",
+      "x": -420310.71875,
+      "y": -97221.183594,
+      "parking_slots": 150,
+      "runways": [
+        "25-07",
+        "26R-08L",
+        "26L-08R"
+      ]
+    },
+    {
+      "class": "At_Tanf",
+      "id": 63,
+      "name": "At Tanf",
+      "x": -172365.28125,
+      "y": 247031.90625,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "Prince_Hassan",
+      "id": 64,
+      "name": "Prince Hassan",
+      "x": -320113.40625,
+      "y": 108294.582031,
+      "parking_slots": 75,
+      "runways": []
+    },
+    {
+      "class": "King_Abdullah_II",
+      "id": 65,
+      "name": "King Abdullah II",
+      "x": -335450.1875,
+      "y": 20534.525391,
+      "parking_slots": 117,
+      "runways": []
+    },
+    {
+      "class": "Herzliya",
+      "id": 66,
+      "name": "Herzliya",
+      "x": -311947.078125,
+      "y": -109710.855469,
+      "parking_slots": 49,
+      "runways": []
+    },
+    {
+      "class": "Marka",
+      "id": 67,
+      "name": "Marka",
+      "x": -338495.234375,
+      "y": -1486.426577,
+      "parking_slots": 78,
+      "runways": []
+    },
+    {
+      "class": "Muwaffaq_Salti",
+      "id": 68,
+      "name": "Muwaffaq Salti",
+      "x": -357496.34375,
+      "y": 72548.183594,
+      "parking_slots": 130,
+      "runways": [
+        "31-13",
+        "26-08"
+      ]
+    },
+    {
+      "class": "HC01",
+      "id": 69,
+      "name": "HC01",
+      "x": -1909.417969,
+      "y": -210324.59375,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HC02",
+      "id": 70,
+      "name": "HC02",
+      "x": -11651.873047,
+      "y": -222381.390625,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HC03",
+      "id": 71,
+      "name": "HC03",
+      "x": 42759.042969,
+      "y": -236540.65625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HC04",
+      "id": 72,
+      "name": "HC04",
+      "x": 36725.941406,
+      "y": -218077.875,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HC05",
+      "id": 73,
+      "name": "HC05",
+      "x": 15571.533203,
+      "y": -183557.703125,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HC06",
+      "id": 74,
+      "name": "HC06",
+      "x": 14422.808594,
+      "y": -182572.46875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "Kahramanmaras",
+      "id": 75,
+      "name": "Kahramanmaras",
+      "x": 276714.765625,
+      "y": 101896.460938,
+      "parking_slots": 7,
+      "runways": [
+        "25-07"
+      ]
+    },
+    {
+      "class": "HI08",
+      "id": 76,
+      "name": "HI08",
+      "x": -227518.71875,
+      "y": -39695.945313,
+      "parking_slots": 7,
+      "runways": []
+    },
+    {
+      "class": "HI09",
+      "id": 77,
+      "name": "HI09",
+      "x": -225166.0625,
+      "y": -42928.195313,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HI01",
+      "id": 79,
+      "name": "HI01",
+      "x": -236859.625,
+      "y": -24173.347656,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HI02",
+      "id": 80,
+      "name": "HI02",
+      "x": -230260.71875,
+      "y": -38038.21875,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "Hatzerim",
+      "id": 81,
+      "name": "Hatzerim",
+      "x": -415657.87613,
+      "y": -130890.758171,
+      "parking_slots": 191,
+      "runways": [
+        "10R-28L",
+        "10L-28R"
+      ]
+    },
+    {
+      "class": "HI03",
+      "id": 82,
+      "name": "HI03",
+      "x": -244391.609375,
+      "y": -54174.597656,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HI05",
+      "id": 83,
+      "name": "HI05",
+      "x": -244187.40625,
+      "y": -51945.539063,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HI06",
+      "id": 84,
+      "name": "HI06",
+      "x": -265064.4375,
+      "y": -95176.210938,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HI07",
+      "id": 85,
+      "name": "HI07",
+      "x": -242563.15625,
+      "y": -50868.386719,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HI11",
+      "id": 86,
+      "name": "HI11",
+      "x": -223660.78125,
+      "y": -45746.117188,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HI12",
+      "id": 87,
+      "name": "HI12",
+      "x": -221855.96875,
+      "y": -25060.3125,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "Kedem",
+      "id": 88,
+      "name": "Kedem",
+      "x": -413182.5625,
+      "y": -132437.320313,
+      "parking_slots": 82,
+      "runways": [
+        "10-28"
+      ]
+    },
+    {
+      "class": "HS02",
+      "id": 89,
+      "name": "HS02",
+      "x": 34650.914063,
+      "y": 16892.472656,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "Chukurova",
+      "id": 90,
+      "name": "Chukurova",
+      "x": 210326.890625,
+      "y": -67503.113281,
+      "parking_slots": 60,
+      "runways": [
+        "21L-03R",
+        "21R-03L"
+      ]
+    },
+    {
+      "class": "Teyman",
+      "id": 91,
+      "name": "Teyman",
+      "x": -410555.633056,
+      "y": -124473.588689,
+      "parking_slots": 17,
+      "runways": [
+        "32-14"
+      ]
+    },
+    {
+      "class": "HS05",
+      "id": 92,
+      "name": "HS05",
+      "x": 81444.421875,
+      "y": 167560.6875,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HS06",
+      "id": 93,
+      "name": "HS06",
+      "x": -193853.15625,
+      "y": 11337.087891,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HS08",
+      "id": 94,
+      "name": "HS08",
+      "x": -43893.3125,
+      "y": 75999.921875,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HS09",
+      "id": 95,
+      "name": "HS09",
+      "x": 112046.929688,
+      "y": 133579.46875,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS10",
+      "id": 96,
+      "name": "HS10",
+      "x": 110991.648438,
+      "y": 132585.96875,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HS11",
+      "id": 97,
+      "name": "HS11",
+      "x": -182424.109375,
+      "y": 29107.121094,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS19",
+      "id": 98,
+      "name": "HS19",
+      "x": -179190.84375,
+      "y": 30290.609375,
+      "parking_slots": 5,
+      "runways": []
+    },
+    {
+      "class": "HS18",
+      "id": 99,
+      "name": "HS18",
+      "x": -49713.671875,
+      "y": 214312.96875,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "HS17",
+      "id": 100,
+      "name": "HS17",
+      "x": -47920.046875,
+      "y": 213406.125,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HS16",
+      "id": 101,
+      "name": "HS16",
+      "x": 103896.304688,
+      "y": 139855.5,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HS15",
+      "id": 102,
+      "name": "HS15",
+      "x": -181717.15625,
+      "y": 37228.0,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HS14",
+      "id": 103,
+      "name": "HS14",
+      "x": -174294.78125,
+      "y": 12049.615234,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HS13",
+      "id": 104,
+      "name": "HS13",
+      "x": -143739.78125,
+      "y": 79341.257813,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "HS12",
+      "id": 105,
+      "name": "HS12",
+      "x": -177248.84375,
+      "y": 14913.109375,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "HS25",
+      "id": 106,
+      "name": "HS25",
+      "x": -174162.625,
+      "y": 16124.533203,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "HS24",
+      "id": 107,
+      "name": "HS24",
+      "x": -176031.203125,
+      "y": 32733.699219,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "HS23",
+      "id": 108,
+      "name": "HS23",
+      "x": -205780.78125,
+      "y": 56427.867188,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HS22",
+      "id": 109,
+      "name": "HS22",
+      "x": -147659.90625,
+      "y": 67139.390625,
+      "parking_slots": 8,
+      "runways": []
+    },
+    {
+      "class": "HS21",
+      "id": 110,
+      "name": "HS21",
+      "x": -179414.84375,
+      "y": 21648.0625,
+      "parking_slots": 5,
+      "runways": []
+    },
+    {
+      "class": "HS20",
+      "id": 111,
+      "name": "HS20",
+      "x": -186567.25,
+      "y": 48755.1875,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HI17",
+      "id": 112,
+      "name": "HI17",
+      "x": -264467.53125,
+      "y": -56972.355469,
+      "parking_slots": 6,
+      "runways": []
+    },
+    {
+      "class": "HI16",
+      "id": 113,
+      "name": "HI16",
+      "x": -228217.921875,
+      "y": -72069.8125,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HI15",
+      "id": 114,
+      "name": "HI15",
+      "x": -222468.65625,
+      "y": -28966.998047,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HI14",
+      "id": 115,
+      "name": "HI14",
+      "x": -248813.5,
+      "y": -63606.941406,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HI13",
+      "id": 116,
+      "name": "HI13",
+      "x": -225668.78125,
+      "y": -23064.505859,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HT01",
+      "id": 117,
+      "name": "HT01",
+      "x": 206722.03125,
+      "y": -98750.054688,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS33",
+      "id": 118,
+      "name": "HS33",
+      "x": -218041.421875,
+      "y": -77878.648438,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HMed10",
+      "id": 119,
+      "name": "HMed10",
+      "x": -200345.203125,
+      "y": -36831.859375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed09",
+      "id": 120,
+      "name": "HMed09",
+      "x": 4824.811035,
+      "y": -168230.28125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed08",
+      "id": 121,
+      "name": "HMed08",
+      "x": 46821.480469,
+      "y": -245006.640625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed07",
+      "id": 122,
+      "name": "HMed07",
+      "x": 44949.476563,
+      "y": -233284.140625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed06",
+      "id": 123,
+      "name": "HMed06",
+      "x": 11737.285156,
+      "y": 78141.3125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed05",
+      "id": 124,
+      "name": "HMed05",
+      "x": 23805.400391,
+      "y": -231792.9375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed04",
+      "id": 125,
+      "name": "HMed04",
+      "x": 227359.75,
+      "y": -48127.035156,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed03",
+      "id": 126,
+      "name": "HMed03",
+      "x": 55216.226563,
+      "y": -8201.401367,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed02",
+      "id": 127,
+      "name": "HMed02",
+      "x": 99196.703125,
+      "y": 281832.71875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed01",
+      "id": 128,
+      "name": "HMed01",
+      "x": 2549.282959,
+      "y": -187689.4375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed00",
+      "id": 129,
+      "name": "HMed00",
+      "x": 171643.171875,
+      "y": 32166.269531,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed11",
+      "id": 130,
+      "name": "HMed11",
+      "x": -271792.21875,
+      "y": -13300.441406,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_med_orig_08",
+      "id": 131,
+      "name": "H_med_orig_08",
+      "x": -124129.28125,
+      "y": -38767.148438,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_med_orig_07",
+      "id": 132,
+      "name": "H_med_orig_07",
+      "x": -239898.125,
+      "y": -92927.015625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_med_orig_06",
+      "id": 133,
+      "name": "H_med_orig_06",
+      "x": 21866.267578,
+      "y": -229639.953125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_med_orig_05",
+      "id": 134,
+      "name": "H_med_orig_05",
+      "x": -245195.828125,
+      "y": -93708.75,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_med_orig_04",
+      "id": 135,
+      "name": "H_med_orig_04",
+      "x": -22678.439453,
+      "y": -268661.5,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_med_orig_03",
+      "id": 136,
+      "name": "H_med_orig_03",
+      "x": -2219.406006,
+      "y": -210290.96875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_med_orig_02",
+      "id": 137,
+      "name": "H_med_orig_02",
+      "x": -10698.604492,
+      "y": -317325.8125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_med_orig_01",
+      "id": 138,
+      "name": "H_med_orig_01",
+      "x": 222517.078125,
+      "y": -41742.527344,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HStad06",
+      "id": 139,
+      "name": "HStad06",
+      "x": -166748.0625,
+      "y": 31892.707031,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HStad05",
+      "id": 140,
+      "name": "HStad05",
+      "x": 8419.079102,
+      "y": 78839.515625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HStad04",
+      "id": 141,
+      "name": "HStad04",
+      "x": 60216.75,
+      "y": -12288.379883,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HStad03",
+      "id": 142,
+      "name": "HStad03",
+      "x": 129617.632813,
+      "y": 117115.390625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HStad02",
+      "id": 143,
+      "name": "HStad02",
+      "x": 24209.625,
+      "y": -235411.40625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HStad01",
+      "id": 144,
+      "name": "HStad01",
+      "x": 221203.9375,
+      "y": -43846.519531,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HS26",
+      "id": 145,
+      "name": "HS26",
+      "x": -223220.4375,
+      "y": 339599.875,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS42",
+      "id": 146,
+      "name": "HS42",
+      "x": -252415.78125,
+      "y": -9587.150391,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HL13",
+      "id": 147,
+      "name": "HL13",
+      "x": -207813.390625,
+      "y": -43302.433594,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HL12",
+      "id": 148,
+      "name": "HL12",
+      "x": -203136.6875,
+      "y": -64559.292969,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HS41",
+      "id": 149,
+      "name": "HS41",
+      "x": -251153.53125,
+      "y": -7836.765137,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HS35",
+      "id": 150,
+      "name": "HS35",
+      "x": -135772.71875,
+      "y": 18951.167969,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HL11",
+      "id": 151,
+      "name": "HL11",
+      "x": -145744.890625,
+      "y": 1682.621582,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HL10",
+      "id": 152,
+      "name": "HL10",
+      "x": -85532.171875,
+      "y": 51076.960938,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HL09",
+      "id": 153,
+      "name": "HL09",
+      "x": -74410.96875,
+      "y": 54011.53125,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HL08",
+      "id": 154,
+      "name": "HL08",
+      "x": -200058.703125,
+      "y": -57188.457031,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HL07",
+      "id": 155,
+      "name": "HL07",
+      "x": -193789.125,
+      "y": -50862.128906,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HS27",
+      "id": 156,
+      "name": "HS27",
+      "x": -176976.984375,
+      "y": -2193.785645,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HL06",
+      "id": 157,
+      "name": "HL06",
+      "x": -189325.96875,
+      "y": -39286.421875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed30",
+      "id": 158,
+      "name": "HMed30",
+      "x": 221842.484375,
+      "y": 139624.34375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed29",
+      "id": 159,
+      "name": "HMed29",
+      "x": 31334.716797,
+      "y": 385438.6875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed28",
+      "id": 160,
+      "name": "HMed28",
+      "x": -55594.832031,
+      "y": 216633.0625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed27",
+      "id": 161,
+      "name": "HMed27",
+      "x": 100143.203125,
+      "y": 196394.390625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed26",
+      "id": 162,
+      "name": "HMed26",
+      "x": 127277.054688,
+      "y": 111782.953125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed25",
+      "id": 163,
+      "name": "HMed25",
+      "x": -366070.90625,
+      "y": -20651.453125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed24",
+      "id": 164,
+      "name": "HMed24",
+      "x": -124216.078125,
+      "y": -34665.90625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed23",
+      "id": 165,
+      "name": "HMed23",
+      "x": -24323.556641,
+      "y": -270753.96875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed22",
+      "id": 166,
+      "name": "HMed22",
+      "x": -348647.8125,
+      "y": -60.603279,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed21",
+      "id": 167,
+      "name": "HMed21",
+      "x": -174607.421875,
+      "y": 25824.818359,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed20",
+      "id": 168,
+      "name": "HMed20",
+      "x": -313531.53125,
+      "y": -109070.703125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed19",
+      "id": 169,
+      "name": "HMed19",
+      "x": -241290.59375,
+      "y": -92618.023438,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed18",
+      "id": 170,
+      "name": "HMed18",
+      "x": -254881.078125,
+      "y": -63877.308594,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed17",
+      "id": 171,
+      "name": "HMed17",
+      "x": -167396.859375,
+      "y": 37139.230469,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed16",
+      "id": 172,
+      "name": "HMed16",
+      "x": -35451.175781,
+      "y": 75210.96875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed15",
+      "id": 173,
+      "name": "HMed15",
+      "x": 130717.890625,
+      "y": 26791.4375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed14",
+      "id": 174,
+      "name": "HMed14",
+      "x": -15288.266602,
+      "y": -1718.334473,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed13",
+      "id": 175,
+      "name": "HMed13",
+      "x": -312183.625,
+      "y": -96410.125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HMed12",
+      "id": 176,
+      "name": "HMed12",
+      "x": -335957.4375,
+      "y": -11038.44043,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HOil05",
+      "id": 177,
+      "name": "HOil05",
+      "x": 30205.117188,
+      "y": 383272.96875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HOil04",
+      "id": 178,
+      "name": "HOil04",
+      "x": 15238.806641,
+      "y": 381282.0625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HOil03",
+      "id": 179,
+      "name": "HOil03",
+      "x": 14742.870117,
+      "y": 365007.65625,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HOil02",
+      "id": 180,
+      "name": "HOil02",
+      "x": 30904.890625,
+      "y": 351943.03125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HOil01",
+      "id": 181,
+      "name": "HOil01",
+      "x": -50325.945313,
+      "y": 182096.609375,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "H_med_orig_09",
+      "id": 182,
+      "name": "H_med_orig_09",
+      "x": 224352.53125,
+      "y": -41733.660156,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HS34",
+      "id": 183,
+      "name": "HS34",
+      "x": -10727.029297,
+      "y": 8033.193848,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS04",
+      "id": 184,
+      "name": "HS04",
+      "x": 81654.710938,
+      "y": 167697.421875,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HS07",
+      "id": 185,
+      "name": "HS07",
+      "x": -44554.09375,
+      "y": 217666.21875,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HI18",
+      "id": 186,
+      "name": "HI18",
+      "x": -280598.5,
+      "y": -91036.359375,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS03",
+      "id": 187,
+      "name": "HS03",
+      "x": -43227.71875,
+      "y": 218511.390625,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS36",
+      "id": 188,
+      "name": "HS36",
+      "x": -198932.3125,
+      "y": 17115.625,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS28",
+      "id": 189,
+      "name": "HS28",
+      "x": -194770.515625,
+      "y": 28548.925781,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HS29",
+      "id": 190,
+      "name": "HS29",
+      "x": -197349.5,
+      "y": 28554.351563,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS30",
+      "id": 191,
+      "name": "HS30",
+      "x": -194069.359375,
+      "y": 28007.244141,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HT02",
+      "id": 192,
+      "name": "HT02",
+      "x": 223448.421875,
+      "y": -42507.359375,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HI20",
+      "id": 193,
+      "name": "HI20",
+      "x": -222915.4375,
+      "y": -52884.019531,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HI26",
+      "id": 194,
+      "name": "HI26",
+      "x": -322235.25,
+      "y": -115473.703125,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HI25",
+      "id": 195,
+      "name": "HI25",
+      "x": -201979.78125,
+      "y": -68354.03125,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HI24",
+      "id": 196,
+      "name": "HI24",
+      "x": -315846.625,
+      "y": -112004.65625,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HI23",
+      "id": 197,
+      "name": "HI23",
+      "x": -360223.125,
+      "y": -102285.273438,
+      "parking_slots": 8,
+      "runways": []
+    },
+    {
+      "class": "HI22",
+      "id": 198,
+      "name": "HI22",
+      "x": -322427.25,
+      "y": -102375.296875,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HI21",
+      "id": 199,
+      "name": "HI21",
+      "x": -249323.640625,
+      "y": -54436.375,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HJ04",
+      "id": 200,
+      "name": "HJ04",
+      "x": -282810.03125,
+      "y": 6809.364746,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HJ03",
+      "id": 201,
+      "name": "HJ03",
+      "x": -281967.4375,
+      "y": 7073.218262,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HJ02",
+      "id": 202,
+      "name": "HJ02",
+      "x": -270217.375,
+      "y": -5879.893555,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HJ01",
+      "id": 203,
+      "name": "HJ01",
+      "x": -193745.6875,
+      "y": 255127.96875,
+      "parking_slots": 7,
+      "runways": []
+    },
+    {
+      "class": "HL05",
+      "id": 204,
+      "name": "HL05",
+      "x": -205086.9375,
+      "y": -71998.890625,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HL04",
+      "id": 205,
+      "name": "HL04",
+      "x": -208089.21875,
+      "y": -53706.59375,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HL03",
+      "id": 206,
+      "name": "HL03",
+      "x": -202835.875,
+      "y": -43949.472656,
+      "parking_slots": 4,
+      "runways": []
+    },
+    {
+      "class": "HL02",
+      "id": 207,
+      "name": "HL02",
+      "x": -203320.53125,
+      "y": -72816.695313,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HL01",
+      "id": 208,
+      "name": "HL01",
+      "x": -192752.328125,
+      "y": -69701.320313,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HS32",
+      "id": 209,
+      "name": "HS32",
+      "x": -327453.5,
+      "y": 13265.248047,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS31",
+      "id": 210,
+      "name": "HS31",
+      "x": -144529.75,
+      "y": 52020.828125,
+      "parking_slots": 3,
+      "runways": []
+    },
+    {
+      "class": "HOil06",
+      "id": 211,
+      "name": "HOil06",
+      "x": -323127.75,
+      "y": 9754.041016,
+      "parking_slots": 1,
+      "runways": []
+    },
+    {
+      "class": "HS40",
+      "id": 212,
+      "name": "HS40",
+      "x": -243956.65625,
+      "y": 1595.556763,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS39",
+      "id": 213,
+      "name": "HS39",
+      "x": -268636.0625,
+      "y": -55162.117188,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS38",
+      "id": 214,
+      "name": "HS38",
+      "x": -286938.03125,
+      "y": 2538.717773,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "HS37",
+      "id": 215,
+      "name": "HS37",
+      "x": -164441.6875,
+      "y": 45795.5,
+      "parking_slots": 2,
+      "runways": []
+    },
+    {
+      "class": "Gulechoba",
+      "id": 216,
+      "name": "Gulechoba",
+      "x": 327712.913574,
+      "y": 366610.120767,
+      "parking_slots": 23,
+      "runways": [
+        "01-19"
+      ]
+    },
+    {
+      "class": "Diyarbakir",
+      "id": 217,
+      "name": "Diyarbakir",
+      "x": 314792.109375,
+      "y": 388196.765625,
+      "parking_slots": 133,
+      "runways": [
+        "34R-16L",
+        "34L-16R"
+      ]
+    },
+    {
+      "class": "Konya",
+      "id": 218,
+      "name": "Konya",
+      "x": 343087.3125,
+      "y": -282944.109375,
+      "parking_slots": 152,
+      "runways": [
+        "01L-19R",
+        "01R-19L"
+      ]
+    },
+    {
+      "class": "Adiyaman",
+      "id": 219,
+      "name": "Adiyaman",
+      "x": 296265.23657,
+      "y": 236003.999203,
+      "parking_slots": 6,
+      "runways": [
+        "04-22"
+      ]
+    },
+    {
+      "class": "Tel_Nof",
+      "id": 220,
+      "name": "Tel Nof",
+      "x": -349771.3125,
+      "y": -111673.332031,
+      "parking_slots": 135,
+      "runways": [
+        "18-36",
+        "33-15",
+        "33-15"
+      ]
+    },
+    {
+      "class": "Ben_Gurion",
+      "id": 221,
+      "name": "Ben Gurion",
+      "x": -331339.375,
+      "y": -106248.296875,
+      "parking_slots": 172,
+      "runways": [
+        "21-03",
+        "26-08",
+        "12-30"
+      ]
+    },
+    {
+      "class": "Hatzor",
+      "id": 222,
+      "name": "Hatzor",
+      "x": -358026.625,
+      "y": -122186.695313,
+      "parking_slots": 84,
+      "runways": [
+        "11-29",
+        "29-11",
+        "23-05"
+      ]
+    },
+    {
+      "class": "Palmachim",
+      "id": 223,
+      "name": "Palmachim",
+      "x": -342102.941252,
+      "y": -124575.798296,
+      "parking_slots": 135,
+      "runways": [
+        "03L-21R",
+        "03R-21L"
+      ]
+    },
+    {
+      "class": "Sanliurfa_Heliport",
+      "id": 224,
+      "name": "Sanliurfa Heliport",
+      "x": 235715.28125,
+      "y": 264303.96875,
+      "parking_slots": 8,
+      "runways": []
+    },
+    {
+      "class": "T2",
+      "id": 225,
+      "name": "T2",
+      "x": -73888.988281,
+      "y": 388839.78125,
+      "parking_slots": 5,
+      "runways": [
+        "04-22",
+        "31-13"
+      ]
+    },
+    {
+      "class": "T3",
+      "id": 226,
+      "name": "T3",
+      "x": -59024.5625,
+      "y": 257971.195313,
+      "parking_slots": 4,
+      "runways": []
+    }
+  ],
+  "thechannel": [
+    {
+      "class": "Abbeville_Drucat",
+      "id": 1,
+      "name": "Abbeville Drucat",
+      "x": -81655.472418,
+      "y": 15915.37745,
+      "parking_slots": 27,
+      "runways": [
+        "27-09",
+        "20-02"
+      ]
+    },
+    {
+      "class": "Merville_Calonne",
+      "id": 2,
+      "name": "Merville Calonne",
+      "x": -29311.714574,
+      "y": 73776.745175,
+      "parking_slots": 51,
+      "runways": [
+        "26-08",
+        "32-14"
+      ]
+    },
+    {
+      "class": "Saint_Omer_Longuenesse",
+      "id": 3,
+      "name": "Saint Omer Longuenesse",
+      "x": -16951.693085,
+      "y": 45167.689101,
+      "parking_slots": 37,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Dunkirk_Mardyck",
+      "id": 4,
+      "name": "Dunkirk Mardyck",
+      "x": 16496.0384,
+      "y": 46954.354309,
+      "parking_slots": 19,
+      "runways": [
+        "08-26"
+      ]
+    },
+    {
+      "class": "Manston",
+      "id": 5,
+      "name": "Manston",
+      "x": 52264.839844,
+      "y": -15815.91748,
+      "parking_slots": 68,
+      "runways": [
+        "04-23",
+        "10-28",
+        "10-28"
+      ]
+    },
+    {
+      "class": "Hawkinge",
+      "id": 6,
+      "name": "Hawkinge",
+      "x": 26989.935547,
+      "y": -29402.577148,
+      "parking_slots": 54,
+      "runways": [
+        "22-04",
+        "19-01"
+      ]
+    },
+    {
+      "class": "Lympne",
+      "id": 7,
+      "name": "Lympne",
+      "x": 23776.552734,
+      "y": -39519.908203,
+      "parking_slots": 22,
+      "runways": [
+        "13-31"
+      ]
+    },
+    {
+      "class": "Detling",
+      "id": 8,
+      "name": "Detling",
+      "x": 49594.240234,
+      "y": -67923.304688,
+      "parking_slots": 32,
+      "runways": [
+        "23-05"
+      ]
+    },
+    {
+      "class": "Eastchurch",
+      "id": 10,
+      "name": "Eastchurch",
+      "x": 58521.96875,
+      "y": -50427.826172,
+      "parking_slots": 42,
+      "runways": [
+        "02-20",
+        "28-10"
+      ]
+    },
+    {
+      "class": "High_Halden",
+      "id": 12,
+      "name": "High Halden",
+      "x": 28992.266602,
+      "y": -62020.105469,
+      "parking_slots": 79,
+      "runways": [
+        "22-04",
+        "11-29"
+      ]
+    },
+    {
+      "class": "Headcorn",
+      "id": 13,
+      "name": "Headcorn",
+      "x": 35780.818359,
+      "y": -62104.404297,
+      "parking_slots": 77,
+      "runways": [
+        "01-19",
+        "10-29"
+      ]
+    },
+    {
+      "class": "Biggin_Hill",
+      "id": 14,
+      "name": "Biggin Hill",
+      "x": 53454.535156,
+      "y": -107463.621094,
+      "parking_slots": 64,
+      "runways": [
+        "30-12",
+        "22-04",
+        "23-05"
+      ]
+    }
+  ]
+}
