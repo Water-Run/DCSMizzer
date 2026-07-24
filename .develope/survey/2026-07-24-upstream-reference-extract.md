@@ -2,54 +2,41 @@
 
 ## Goal
 
-Pull acknowledged upstream projects into `.develope/upstream` (gitignored),
-read their data models, and write **git-tracked** distilled references under
-`.develope/reference/` for Agents (types, coordinates, config writing, weapons,
-factions, runtime patterns).
+Complete surveying of six acknowledged upstream projects; write **git-tracked**
+distilled references only under `.develope/reference/` and `.develope/survey/`.
+**Do not write product Docs/** (reserved for final Agent-facing deliverables).
 
-## Clone status (final)
+## Clones
 
-| Project | Result |
+All under `.develope/upstream/` (ignored):
+
+| Project | Status |
 |---------|--------|
 | pydcs | OK |
 | dcs-mission-maker | OK |
-| dcs-global-terrain-database | OK |
-| briefing-room-for-dcs | OK (~401M shallow) |
-| dcs-retribution | OK (~265M shallow) |
-| MOOSE | OK (~71M shallow, partial blob filter) |
+| dcs-global-terrain-database | OK (Caucasus data in-tree) |
+| briefing-room-for-dcs | OK |
+| dcs-retribution | OK (payloads in `customized_payloads/`) |
+| MOOSE | OK |
 
-## Tracked outputs
+## Major extract batches
 
-### pydcs-derived
+1. **pydcs core** — planes, helis, vehicles, ships, statics, countries, weapons, airports, projections, mission/waypoint notes
+2. **BriefingRoom** — theatres, 802 airbases, weather INI, default unit lists by decade, situations, unit DB, weapons-by-date, terrain bounds, Iraq/Afghanistan airports
+3. **Retribution** — factions, flightplan types, climate yaml, 224 customized payload files (priority loadouts expanded)
+4. **MOOSE** — COORDINATE API, module map, Vec3 vs miz y
+5. **GTD** — Caucasus airbases/beacons GeoJSON model
+6. **mission-maker** — stubs, ME_DB plane keys, callnames
 
-- `reference/aircraft/*` — planes, helicopters, config writing
-- `reference/units/*` — vehicles (350), ships (57), statics (263), countries (92)
-- `reference/terrain/*` — theatres, projections, 11 airport tables
-- `reference/mission/*` — miz structure, waypoints, tasks
-- `reference/weapons/clsid-common-aam.md` — **AAM-only** curated CLSID list
-- `reference/data/*.json` — machine indexes including vehicles/ships/statics/countries/weapons
+## Verification notes
 
-### third-party patterns
+- MiG-29A CAP preset includes R-27R `{9B25D316-…}` and R-73 `{FBC29BFE-…}`
+- Tempelhof id=29 matches pydcs and BriefingRoom
+- AAM doc excludes cluster bombs
+- Theatre matrix: BR-only Afghanistan, Iraq, MarianaIslandsWWII vs pydcs packages
 
-- `reference/upstream/briefing-room.md` + `data/briefing-room-*.json`
-- `reference/upstream/retribution.md` + faction/theater indexes
-- `reference/upstream/moose.md` — COORDINATE API + module map
+## Not committed
 
-## Verification (spot-check vs pydcs source)
-
-Script evidence: `/tmp/grok-goal-47e6a9fc77b8/implementer/verify-reference.txt`
-
-Checks include:
-
-- Plane ids/fuel for MiG-29A, JF-17, M-2000C, F-16C_50, FA-18C_hornet, Su-25T
-- Germany Tempelhof / Finow airport ids and coordinates
-- Vehicle count 350; ship Speedboat/VINSON field isolation
-- Country Russia id 0
-- AAM doc excludes AB cluster bombs; includes R-27R / AIM-9M
-- R-27R CLSID present in weapons-index and source
-- BriefingRoom Tempelhof id 29 (+ lat/lon); note ~100m reference-point delta vs pydcs airport position
-
-## Intentionally not committed
-
-- Entire upstream git clones (`.gitignore`: `.develope/upstream/*` except README)
-- Official campaign binaries under `.develope/official-campaigns/*`
+- Upstream full trees (gitignored)
+- Official campaigns under `.develope/official-campaigns/*`
+- Empty `Docs/` product tree (intentionally untouched)

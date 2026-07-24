@@ -1,0 +1,1654 @@
+[
+  {
+    "file": "AfghanistanHostileMountains.json",
+    "id": "AfghanistanHostileMountains",
+    "theatre": "Afghanistan",
+    "name": "Hostile Mountains",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "AfghanistanMinimalControl.json",
+    "id": "AfghanistanMinimalControl",
+    "theatre": "Afghanistan",
+    "name": "Minimal Control",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "AfghanistanWestvsEast.json",
+    "id": "AfghanistanWestvsEast",
+    "theatre": "Afghanistan",
+    "name": "West vs East",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusBeslanRebellion.json",
+    "id": "CaucasusBeslanRebellion",
+    "theatre": "Caucasus",
+    "name": "Beslan Rebellion",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones",
+      "combatZones",
+      "frontLine"
+    ]
+  },
+  {
+    "file": "CaucasusDefault.json",
+    "id": "CaucasusDefault",
+    "theatre": "Caucasus",
+    "name": "Peacetime National Control",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusRussianCostalInvasionEarly.json",
+    "id": "CaucasusRussianCostalInvasionEarly",
+    "theatre": "Caucasus",
+    "name": "Russian Costal Invation (Early Stages)",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusRussianCostalInvasionLate.json",
+    "id": "CaucasusRussianCostalInvasionLate",
+    "theatre": "Caucasus",
+    "name": "Russian Costal Invation (Late Stages)",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusRussoGeorgianWar2008.json",
+    "id": "CaucasusRussoGeorgianWar2008",
+    "theatre": "Caucasus",
+    "name": "Russo Georgian War 2008",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarBatumiExpands.json",
+    "id": "CaucasusSecondRussoGeorgianWarBatumiExpands",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Batumi Expands",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarBatumiNewFront.json",
+    "id": "CaucasusSecondRussoGeorgianWarBatumiNewFront",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Batumi new front",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarCostalEncirclement.json",
+    "id": "CaucasusSecondRussoGeorgianWarCostalEncirclement",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Batumi Costal Encirclement",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarGeorgiaLastStand.json",
+    "id": "CaucasusSecondRussoGeorgianWarGeorgiaLastStand",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Georgia Last Stand",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarGeorgiaPushedBack.json",
+    "id": "CaucasusSecondRussoGeorgianWarGeorgiaPushedBack",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Georgia Pushed Back",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarOssetiaCollapse.json",
+    "id": "CaucasusSecondRussoGeorgianWarOssetiaCollapse",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Ossetia Collapse",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarOssetiaEncirclement.json",
+    "id": "CaucasusSecondRussoGeorgianWarOssetiaEncirclement",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Ossetia Encirclement",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarRaidOnSochi.json",
+    "id": "CaucasusSecondRussoGeorgianWarRaidOnSochi",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Raid on Sochi",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarRussiansOut.json",
+    "id": "CaucasusSecondRussoGeorgianWarRussiansOut",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Russians Out",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarSokhumiAbandoned.json",
+    "id": "CaucasusSecondRussoGeorgianWarSokhumiAbandoned",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Sokhumi Abandoned",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "CaucasusSecondRussoGeorgianWarStart.json",
+    "id": "CaucasusSecondRussoGeorgianWarStart",
+    "theatre": "Caucasus",
+    "name": "Second Russo Georgian War Start",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "FalklandsChileVsArgy.json",
+    "id": "FalklandsChileVsArgy",
+    "theatre": "Falklands",
+    "name": "Chile Vs Argentina",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "FalklandsDefault.json",
+    "id": "FalklandsDefault",
+    "theatre": "Falklands",
+    "name": "Peacetime National Control",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "FalklandsFalklandsArgyControl.json",
+    "id": "FalklandsFalklandsArgyControl",
+    "theatre": "Falklands",
+    "name": "Argentina Full Falklands Control",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "FalklandsFalklandsArgyWestControl.json",
+    "id": "FalklandsFalklandsArgyWestControl",
+    "theatre": "Falklands",
+    "name": "Argentina West Falklands Control",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "FalklandsFalklandsBritNLanding.json",
+    "id": "FalklandsFalklandsBritNLanding",
+    "theatre": "Falklands",
+    "name": "Falklands British Beachhead North",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "GermanyCWBerlinOnly.json",
+    "id": "GermanyCWBerlinOnly",
+    "theatre": "GermanyCW",
+    "name": "Battle In Berlin",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "GermanyCWDenmarkVsGermany.json",
+    "id": "GermanyCWDenmarkVsGermany",
+    "theatre": "GermanyCW",
+    "name": "DenmarkVsGermany",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "GermanyCWDenmarkVsSweden.json",
+    "id": "GermanyCWDenmarkVsSweden",
+    "theatre": "GermanyCW",
+    "name": "DenmarkVsSweden",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "GermanyCWDenmarkandSwedenVsGermany.json",
+    "id": "GermanyCWDenmarkandSwedenVsGermany",
+    "theatre": "GermanyCW",
+    "name": "Denmark  & Sweden Vs Germany",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "GermanyCWMainBorder.json",
+    "id": "GermanyCWMainBorder",
+    "theatre": "GermanyCW",
+    "name": "Main East West Border",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "GermanyCWMainBorderAndBerlin.json",
+    "id": "GermanyCWMainBorderAndBerlin",
+    "theatre": "GermanyCW",
+    "name": "Main East West Border and Berlin",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "IraqNorthSouthSplit.json",
+    "id": "IraqNorthSouthSplit",
+    "theatre": "Iraq",
+    "name": "North South split",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "KolaDefault.json",
+    "id": "KolaDefault",
+    "theatre": "Kola",
+    "name": "Peacetime National Control",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "KolaNatoInvasion.json",
+    "id": "KolaNatoInvasion",
+    "theatre": "Kola",
+    "name": "NATO Invasion of Kola Peninsula",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "KolaNorwayVsSweden.json",
+    "id": "KolaNorwayVsSweden",
+    "theatre": "Kola",
+    "name": "Norway Vs Sweden",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "KolaRussianInvasion.json",
+    "id": "KolaRussianInvasion",
+    "theatre": "Kola",
+    "name": "Russian Invasion of Finland",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "KolaWinterWar.json",
+    "id": "KolaWinterWar",
+    "theatre": "Kola",
+    "name": "Winter War",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsDefault.json",
+    "id": "MarianaIslandsDefault",
+    "theatre": "MarianaIslands",
+    "name": "North South Divide",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsHoppingCounterAttack.json",
+    "id": "MarianaIslandsHoppingCounterAttack",
+    "theatre": "MarianaIslands",
+    "name": "Island Hopping Counter Attack",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsHoppingFour.json",
+    "id": "MarianaIslandsHoppingFour",
+    "theatre": "MarianaIslands",
+    "name": "Island Hopping pt4",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsHoppingOne.json",
+    "id": "MarianaIslandsHoppingOne",
+    "theatre": "MarianaIslands",
+    "name": "Island Hopping pt1",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsHoppingThree.json",
+    "id": "MarianaIslandsHoppingThree",
+    "theatre": "MarianaIslands",
+    "name": "Island Hopping pt3",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsHoppingTwo.json",
+    "id": "MarianaIslandsHoppingTwo",
+    "theatre": "MarianaIslands",
+    "name": "Island Hopping pt2",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsRetakeTheIslands.json",
+    "id": "MarianaIslandsRetakeTheIslands",
+    "theatre": "MarianaIslands",
+    "name": "Retake The Islands (Blue Carrier Only)",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsWWIIDefault.json",
+    "id": "MarianaIslandsWWIIDefault",
+    "theatre": "MarianaIslandsWWII",
+    "name": "North South Divide",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsWWIIHoppingCounterAttack.json",
+    "id": "MarianaIslandsWWIIHoppingCounterAttack",
+    "theatre": "MarianaIslandsWWII",
+    "name": "Island Hopping Counter Attack",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsWWIIHoppingFour.json",
+    "id": "MarianaIslandsWWIIHoppingFour",
+    "theatre": "MarianaIslandsWWII",
+    "name": "Island Hopping pt4",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsWWIIHoppingOne.json",
+    "id": "MarianaIslandsWWIIHoppingOne",
+    "theatre": "MarianaIslandsWWII",
+    "name": "Island Hopping pt1",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsWWIIHoppingThree.json",
+    "id": "MarianaIslandsWWIIHoppingThree",
+    "theatre": "MarianaIslandsWWII",
+    "name": "Island Hopping pt3",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsWWIIHoppingTwo.json",
+    "id": "MarianaIslandsWWIIHoppingTwo",
+    "theatre": "MarianaIslandsWWII",
+    "name": "Island Hopping pt2",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "MarianaIslandsWWIIRetakeTheIslands.json",
+    "id": "MarianaIslandsWWIIRetakeTheIslands",
+    "theatre": "MarianaIslandsWWII",
+    "name": "Retake The Islands (Blue Carrier Only)",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaCasino.json",
+    "id": "NevadaCasino",
+    "theatre": "Nevada",
+    "name": "Casino",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaCasinoRoyal.json",
+    "id": "NevadaCasinoRoyal",
+    "theatre": "Nevada",
+    "name": "Casino Royal",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaCassablanca.json",
+    "id": "NevadaCassablanca",
+    "theatre": "Nevada",
+    "name": "Cassablanca",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaConflict.json",
+    "id": "NevadaConflict",
+    "theatre": "Nevada",
+    "name": "Conflict",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaDefault.json",
+    "id": "NevadaDefault",
+    "theatre": "Nevada",
+    "name": "Training Situation 1",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaDelta.json",
+    "id": "NevadaDelta",
+    "theatre": "Nevada",
+    "name": "Delta",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaInvasion.json",
+    "id": "NevadaInvasion",
+    "theatre": "Nevada",
+    "name": "Invasion",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaRangers.json",
+    "id": "NevadaRangers",
+    "theatre": "Nevada",
+    "name": "Rangers",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaRebellion.json",
+    "id": "NevadaRebellion",
+    "theatre": "Nevada",
+    "name": "Rebellion",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaUFOs.json",
+    "id": "NevadaUFOs",
+    "theatre": "Nevada",
+    "name": "UFOs",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NevadaVivaLasVegas.json",
+    "id": "NevadaVivaLasVegas",
+    "theatre": "Nevada",
+    "name": "Viva Las Vegas",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NormandyDDayP1.json",
+    "id": "NormandyDDayP1",
+    "theatre": "Normandy",
+    "name": "D-Day-P1",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NormandyDDayP2.json",
+    "id": "NormandyDDayP2",
+    "theatre": "Normandy",
+    "name": "D-Day-P2",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NormandyDDayP3.json",
+    "id": "NormandyDDayP3",
+    "theatre": "Normandy",
+    "name": "D-Day-P3",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NormandyDDayP4.json",
+    "id": "NormandyDDayP4",
+    "theatre": "Normandy",
+    "name": "D-Day-P4",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NormandyDDayP5.json",
+    "id": "NormandyDDayP5",
+    "theatre": "Normandy",
+    "name": "D-Day-P5",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NormandyDDayP6.json",
+    "id": "NormandyDDayP6",
+    "theatre": "Normandy",
+    "name": "D-Day-P6",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NormandyDDayP7.json",
+    "id": "NormandyDDayP7",
+    "theatre": "Normandy",
+    "name": "D-Day-P7",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "NormandyDefault.json",
+    "id": "NormandyDefault",
+    "theatre": "Normandy",
+    "name": "Original",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersainGulfRebelScum.json",
+    "id": "PersainGulfRebelScum",
+    "theatre": "PersianGulf",
+    "name": "Rebel Scum",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersainGulfRebellian.json",
+    "id": "PersainGulfRebellian",
+    "theatre": "PersianGulf",
+    "name": "Rebellion",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfBeachHoliday.json",
+    "id": "PersianGulfBeachHoliday",
+    "theatre": "PersianGulf",
+    "name": "Beach Holiday",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfCivilWarInIran.json",
+    "id": "PersianGulfCivilWarInIran",
+    "theatre": "PersianGulf",
+    "name": "Civil War in Iran",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfConflictBlack.json",
+    "id": "PersianGulfConflictBlack",
+    "theatre": "PersianGulf",
+    "name": "Conflict Black",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfDefault.json",
+    "id": "PersianGulfDefault",
+    "theatre": "PersianGulf",
+    "name": "Peacetime National Control",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfDelta16.json",
+    "id": "PersianGulfDelta16",
+    "theatre": "PersianGulf",
+    "name": "Delta 16",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfDesertStorm.json",
+    "id": "PersianGulfDesertStorm",
+    "theatre": "PersianGulf",
+    "name": "Desert Storm",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfIslandHopping.json",
+    "id": "PersianGulfIslandHopping",
+    "theatre": "PersianGulf",
+    "name": "Island Hopping",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfOilInvasion.json",
+    "id": "PersianGulfOilInvasion",
+    "theatre": "PersianGulf",
+    "name": "Oil Invasion",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfOmanInvadesUAE.json",
+    "id": "PersianGulfOmanInvadesUAE",
+    "theatre": "PersianGulf",
+    "name": "Oman Invades UAE",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfOverPar.json",
+    "id": "PersianGulfOverPar",
+    "theatre": "PersianGulf",
+    "name": "Over Par",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfSecuringtheStraitBadarLandings.json",
+    "id": "PersianGulfSecuringtheStraitBadarLandings",
+    "theatre": "PersianGulf",
+    "name": "Securing the Strait Badar-e-jask landings",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfSecuringtheStraitBattleForBandarAbbas.json",
+    "id": "PersianGulfSecuringtheStraitBattleForBandarAbbas",
+    "theatre": "PersianGulf",
+    "name": "Securing the Strait Battle for Bandar Abbas",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfSecuringtheStraitClosingIn.json",
+    "id": "PersianGulfSecuringtheStraitClosingIn",
+    "theatre": "PersianGulf",
+    "name": "Securing the Strait Closing in",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfSecuringtheStraitIslandCapture.json",
+    "id": "PersianGulfSecuringtheStraitIslandCapture",
+    "theatre": "PersianGulf",
+    "name": "Securing the Strait Small Island Capture",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfSecuringtheStraitLarRaid.json",
+    "id": "PersianGulfSecuringtheStraitLarRaid",
+    "theatre": "PersianGulf",
+    "name": "Securing the Strait Lar Raid",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfSecuringtheStraitNorthernLandings.json",
+    "id": "PersianGulfSecuringtheStraitNorthernLandings",
+    "theatre": "PersianGulf",
+    "name": "Securing the Strait Northern Landings",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfSecuringtheStraitSecured.json",
+    "id": "PersianGulfSecuringtheStraitSecured",
+    "theatre": "PersianGulf",
+    "name": "Securing the Strait Secured",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfSecuringtheStraitStart.json",
+    "id": "PersianGulfSecuringtheStraitStart",
+    "theatre": "PersianGulf",
+    "name": "Securing the Strait Start",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "PersianGulfSurfingDestruction.json",
+    "id": "PersianGulfSurfingDestruction",
+    "theatre": "PersianGulf",
+    "name": "Surfing Destruction",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapDefault.json",
+    "id": "SinaiMapDefault",
+    "theatre": "SinaiMap",
+    "name": "Peacetime National Control",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapOccupation.json",
+    "id": "SinaiMapOccupation",
+    "theatre": "SinaiMap",
+    "name": "Israeli Sinai Occupation",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapOperationsOverGaza.json",
+    "id": "SinaiMapOperationsOverGaza",
+    "theatre": "SinaiMap",
+    "name": "Operations Over Gaza",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapSixDayWar0.json",
+    "id": "SinaiMapSixDayWar0",
+    "theatre": "SinaiMap",
+    "name": "Six-Day War Day 0",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapSixDayWar1.json",
+    "id": "SinaiMapSixDayWar1",
+    "theatre": "SinaiMap",
+    "name": "Six-Day War Day 1",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapSixDayWar2.json",
+    "id": "SinaiMapSixDayWar2",
+    "theatre": "SinaiMap",
+    "name": "Six-Day War Day 2",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapSixDayWar3.json",
+    "id": "SinaiMapSixDayWar3",
+    "theatre": "SinaiMap",
+    "name": "Six-Day War Day 3",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapSixDayWar4.json",
+    "id": "SinaiMapSixDayWar4",
+    "theatre": "SinaiMap",
+    "name": "Six-Day War Day 4",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapSixDayWar5.json",
+    "id": "SinaiMapSixDayWar5",
+    "theatre": "SinaiMap",
+    "name": "Six-Day War Day 5",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapSixDayWar6.json",
+    "id": "SinaiMapSixDayWar6",
+    "theatre": "SinaiMap",
+    "name": "Six-Day War Day 6",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SinaiMapWarOverSinai.json",
+    "id": "SinaiMapWarOverSinai",
+    "theatre": "SinaiMap",
+    "name": "War Over Sinai",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SyriaCivilWarPreSpillover.json",
+    "id": "SyriaCivilWarPreSpillover",
+    "theatre": "Syria",
+    "name": "Syrian Civil War (Pre Lebanon spill over)",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SyriaCyprus.json",
+    "id": "SyriaCyprus",
+    "theatre": "Syria",
+    "name": "Turkish invasion of Cyprus",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SyriaDefault.json",
+    "id": "SyriaDefault",
+    "theatre": "Syria",
+    "name": "Peacetime National Control",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SyriaIraq2003.json",
+    "id": "SyriaIraq2003",
+    "theatre": "Syria",
+    "name": "Iraq War 2003 (no short flights)",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SyriaIraq2003Ally.json",
+    "id": "SyriaIraq2003Ally",
+    "theatre": "Syria",
+    "name": "Iraq War 2003 (Ally Airbases)",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SyriaIsraielJordanWar.json",
+    "id": "SyriaIsraielJordanWar",
+    "theatre": "Syria",
+    "name": "Israel War with Jordan (No allies)",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SyriaIsraielLebanonWar.json",
+    "id": "SyriaIsraielLebanonWar",
+    "theatre": "Syria",
+    "name": "Israel War with Lebanon (No Allies)",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "SyriaIsraielSyriaJordanLebanonWar.json",
+    "id": "SyriaIsraielSyriaJordanLebanonWar",
+    "theatre": "Syria",
+    "name": "Israel War with Syria, Jordan & Lebanon",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  },
+  {
+    "file": "TheChannelDefault.json",
+    "id": "TheChannelDefault",
+    "theatre": "TheChannel",
+    "name": "Original",
+    "keys": [
+      "DisplayName",
+      "Theater",
+      "BriefingDescriptions",
+      "RelatedSituations",
+      "redZones",
+      "blueZones",
+      "noSpawnZones"
+    ]
+  }
+]

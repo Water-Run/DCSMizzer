@@ -1,0 +1,3386 @@
+[
+  {
+    "attr": "_Special_Weapons_Adapter__2x_GBU_12___500lb_Laser_Guided_Bomb__TER_",
+    "clsid": "{HB_F4E_GBU-12_2x_SWA}",
+    "name": "(Special Weapons Adapter) 2x GBU-12 - 500lb Laser Guided Bomb (TER)",
+    "weight": "682"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__2x_Mk_82___500lb_GP_Bomb_LD__TER_",
+    "clsid": "{HB_F4E_MK-82_2x_SWA}",
+    "name": "(Special Weapons Adapter) 2x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": "584"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__2x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD__TER_",
+    "clsid": "{HB_F4E_MK-82AIR_2x_SWA}",
+    "name": "(Special Weapons Adapter) 2x Mk-82 AIR Ballute - 500lb GP Bomb HD (TER)",
+    "weight": "612"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__2x_Mk_82_Snakeye___500lb_GP_Bomb_HD__TER_",
+    "clsid": "{HB_F4E_MK-82_Snakeye_2x_SWA}",
+    "name": "(Special Weapons Adapter) 2x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": "627"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__AGM_12A_Bullpup_MCLOS_ASM__LAU_34_",
+    "clsid": "{AGM_12A_SWA}",
+    "name": "(Special Weapons Adapter) AGM-12A Bullpup MCLOS ASM (LAU-34)",
+    "weight": "296"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__AGM_12B_Bullpup_MCLOS_ASM__LAU_34_",
+    "clsid": "{AGM_12B_SWA}",
+    "name": "(Special Weapons Adapter) AGM-12B Bullpup MCLOS ASM (LAU-34)",
+    "weight": "302"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__AGM_12C_Bullpup_MCLOS_ASM",
+    "clsid": "{AGM_12C_SWA}",
+    "name": "(Special Weapons Adapter) AGM-12C Bullpup MCLOS ASM",
+    "weight": "811.5"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__AGM_45A_Shrike_ARM__LAU_34_",
+    "clsid": "{LAU_34_AGM_45A_SWA}",
+    "name": "(Special Weapons Adapter) AGM-45A Shrike ARM (LAU-34)",
+    "weight": "219"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__AGM_65A___Maverick_A__TV_Guided___LAU_117__Special_Weapons_Adapter__",
+    "clsid": "{HB_F4E_AGM-65A_LAU117_SWA}",
+    "name": "(Special Weapons Adapter) AGM-65A - Maverick A (TV Guided) (LAU-117)(Special Weapons Adapter) ",
+    "weight": "269.5"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__AGM_65B___Maverick_B__TV_Guided___LAU_117__Special_Weapons_Adapter__",
+    "clsid": "{HB_F4E_AGM-65B_LAU117_SWA}",
+    "name": "(Special Weapons Adapter) AGM-65B - Maverick B (TV Guided) (LAU-117)(Special Weapons Adapter) ",
+    "weight": "269.5"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__AGM_65D___Maverick_D__IIR_ASM___LAU_117__Special_Weapons_Adapter__",
+    "clsid": "{HB_F4E_AGM-65D_LAU117_SWA}",
+    "name": "(Special Weapons Adapter) AGM-65D - Maverick D (IIR ASM) (LAU-117)(Special Weapons Adapter) ",
+    "weight": "269.5"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__GBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{HB_GBU-12_SWA}",
+    "name": "(Special Weapons Adapter) GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "277"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{HB_MK-82_SWA}",
+    "name": "(Special Weapons Adapter) Mk-82 - 500lb GP Bomb LD",
+    "weight": "228"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__Mk_82_AIR_Ballute___500lb_GP_Bomb_HD",
+    "clsid": "{HB_MK-82AIR_SWA}",
+    "name": "(Special Weapons Adapter) Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "242"
+  },
+  {
+    "attr": "_Special_Weapons_Adapter__Mk_82_Snakeye___500lb_GP_Bomb_HD",
+    "clsid": "{HB_MK-82_Snakeye_SWA}",
+    "name": "(Special Weapons Adapter) Mk-82 Snakeye - 500lb GP Bomb HD",
+    "weight": "249.5"
+  },
+  {
+    "attr": "_12_x_BetAB_500___500kg_Concrete_Piercing_Bombs_LD",
+    "clsid": "{D6A0441E-6794-4FEB-87F7-E68E2290DFAB}",
+    "name": "12 x BetAB-500 - 500kg Concrete Piercing Bombs LD",
+    "weight": "478"
+  },
+  {
+    "attr": "_12_x_FAB_500_M_62___500kg_GP_Bombs_LD",
+    "clsid": "{E70446B7-C7E6-4B95-B685-DEA10CAD1A0E}",
+    "name": "12 x FAB-500 M-62 - 500kg GP Bombs LD",
+    "weight": "6000"
+  },
+  {
+    "attr": "_1x_GBU_12___500lb_Laser_Guided_Bomb__TER_",
+    "clsid": "{HB_A6E_GBU12_TER_1x}",
+    "name": "1x GBU-12 - 500lb Laser Guided Bomb (TER)",
+    "weight": "405"
+  },
+  {
+    "attr": "_1x_GBU_12___500lb_Laser_Guided_Bomb__TER__",
+    "clsid": "{GD_F100_TER_GBU-12_x1}",
+    "name": "1x GBU-12 - 500lb Laser Guided Bomb (TER)",
+    "weight": "324.6"
+  },
+  {
+    "attr": "_1x_GBU_16___1000lb_Laser_Guided_Bomb__MER_",
+    "clsid": "{HB_A6E_GBU16_MER_1x_AFT}",
+    "name": "1x GBU-16 - 1000lb Laser Guided Bomb (MER)",
+    "weight": "612.8"
+  },
+  {
+    "attr": "_1x_GBU_16___1000lb_Laser_Guided_Bomb__MER__",
+    "clsid": "{HB_A6E_GBU16_MER_1x_FWD}",
+    "name": "1x GBU-16 - 1000lb Laser Guided Bomb (MER)",
+    "weight": "612.8"
+  },
+  {
+    "attr": "_1x_GBU_16___1000lb_Laser_Guided_Bomb__TER_",
+    "clsid": "{HB_A6E_GBU16_TER_1x}",
+    "name": "1x GBU-16 - 1000lb Laser Guided Bomb (TER)",
+    "weight": "641"
+  },
+  {
+    "attr": "_1x_Mk_82___500lb_GP_Bomb_LD__MER_",
+    "clsid": "{HB_A6E_MK82_MER_1x}",
+    "name": "1x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": "327.8"
+  },
+  {
+    "attr": "_1x_Mk_82___500lb_GP_Bomb_LD__TER_",
+    "clsid": "{GD_F100_TER_MK-82_x1}",
+    "name": "1x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": "275.6"
+  },
+  {
+    "attr": "_1x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER_",
+    "clsid": "{HB_A6E_MK82SE_MER_1x}",
+    "name": "1x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "349.3"
+  },
+  {
+    "attr": "_1x_Mk_82_Snakeye___500lb_GP_Bomb_HD__TER_",
+    "clsid": "{GD_F100_TER_MK-82_Snakeye_x1}",
+    "name": "1x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": "297.1"
+  },
+  {
+    "attr": "_1x_Mk_83___1000lb_GP_Bomb_LD__MER_",
+    "clsid": "{HB_A6E_MK83_MER_1x}",
+    "name": "1x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": "553.8"
+  },
+  {
+    "attr": "_1x_Mk_83___1000lb_GP_Bomb_LD__MER__Ripple",
+    "clsid": "{HB_F4E_MK-83_MER_1x_Left_Ripple}",
+    "name": "1x Mk-83 - 1000lb GP Bomb LD (MER) Ripple",
+    "weight": "553.8"
+  },
+  {
+    "attr": "_1x_Mk_83___1000lb_GP_Bomb_LD__MER__Ripple_",
+    "clsid": "{HB_F4E_MK-83_MER_1x_Right_Ripple}",
+    "name": "1x Mk-83 - 1000lb GP Bomb LD (MER) Ripple",
+    "weight": "553.8"
+  },
+  {
+    "attr": "OH58D_AGM_114_L1",
+    "clsid": "OH58D_AGM_114_L1",
+    "name": "1xAGM-114K",
+    "weight": "93.05"
+  },
+  {
+    "attr": "OH58D_AGM_114_R1",
+    "clsid": "OH58D_AGM_114_R1",
+    "name": "1xAGM-114K",
+    "weight": "93.05"
+  },
+  {
+    "attr": "_2_GBU_12____",
+    "clsid": "{BRU-42A_2*GBU-12_SIDE_LEFT}",
+    "name": "2 GBU-12 *-*",
+    "weight": "612.802792"
+  },
+  {
+    "attr": "_2_GBU_12_____",
+    "clsid": "{BRU-42A_2*GBU-12_SIDE_RIGHT}",
+    "name": "2 GBU-12 *-*",
+    "weight": "612.802792"
+  },
+  {
+    "attr": "_2_GBU_12______",
+    "clsid": "{BRU-42_2*GBU-12_LEFT}",
+    "name": "2 GBU-12 */*",
+    "weight": "612.802792"
+  },
+  {
+    "attr": "_2_GBU_12_______",
+    "clsid": "{BRU-42_2*GBU-12_RIGHT}",
+    "name": "2 GBU-12 *\\*",
+    "weight": "612.802792"
+  },
+  {
+    "attr": "_2_GBU_16____",
+    "clsid": "{BRU-42_2*GBU-16_LEFT}",
+    "name": "2 GBU-16 */*",
+    "weight": "1048.251112"
+  },
+  {
+    "attr": "_2_GBU_16_____",
+    "clsid": "{BRU-42_2*GBU-16_RIGHT}",
+    "name": "2 GBU-16 *\\*",
+    "weight": "1048.251112"
+  },
+  {
+    "attr": "_2_GBU_38____",
+    "clsid": "{BRU-70A_2*GBU-38_SIDE_LEFT}",
+    "name": "2 GBU-38 *-*",
+    "weight": "569.25796"
+  },
+  {
+    "attr": "_2_GBU_38_____",
+    "clsid": "{BRU-70A_2*GBU-38_SIDE_RIGHT}",
+    "name": "2 GBU-38 *-*",
+    "weight": "569.25796"
+  },
+  {
+    "attr": "_2_GBU_38______",
+    "clsid": "{BRU-42_2*GBU-38_LEFT}",
+    "name": "2 GBU-38 */*",
+    "weight": "569.25796"
+  },
+  {
+    "attr": "_2_GBU_38_______",
+    "clsid": "{BRU-42_2*GBU-38_RIGHT}",
+    "name": "2 GBU-38 *\\*",
+    "weight": "569.25796"
+  },
+  {
+    "attr": "_2_GBU_54_V_1_B____",
+    "clsid": "{BRU-70A_2*GBU-54_SIDE_LEFT}",
+    "name": "2 GBU-54(V)1/B *-*",
+    "weight": "563.814856"
+  },
+  {
+    "attr": "_2_GBU_54_V_1_B_____",
+    "clsid": "{BRU-70A_2*GBU-54_SIDE_RIGHT}",
+    "name": "2 GBU-54(V)1/B *-*",
+    "weight": "563.814856"
+  },
+  {
+    "attr": "_2_GBU_54_V_1_B______",
+    "clsid": "{BRU-70A_2*GBU-54_LEFT}",
+    "name": "2 GBU-54(V)1/B */*",
+    "weight": "563.814856"
+  },
+  {
+    "attr": "_2_GBU_54_V_1_B_______",
+    "clsid": "{BRU-70A_2*GBU-54_RIGHT}",
+    "name": "2 GBU-54(V)1/B *\\*",
+    "weight": "563.814856"
+  },
+  {
+    "attr": "_2_Mk_82",
+    "clsid": "{BRU42_2*MK82 RS}",
+    "name": "2 Mk-82",
+    "weight": "610"
+  },
+  {
+    "attr": "_2_Mk_82_",
+    "clsid": "{BRU3242_2*MK82 RS}",
+    "name": "2 Mk-82",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82__",
+    "clsid": "{PHXBRU3242_2*MK82 RS}",
+    "name": "2 Mk-82",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82___",
+    "clsid": "{BRU42_2*MK82 LS}",
+    "name": "2 Mk-82",
+    "weight": "610"
+  },
+  {
+    "attr": "_2_Mk_82______",
+    "clsid": "{BRU3242_2*MK82 LS}",
+    "name": "2 Mk-82",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82_______",
+    "clsid": "{PHXBRU3242_2*MK82 LS}",
+    "name": "2 Mk-82",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82____",
+    "clsid": "{BRU-42_2*Mk-82_LEFT}",
+    "name": "2 Mk-82 */*",
+    "weight": "520.270024"
+  },
+  {
+    "attr": "_2_Mk_82_____",
+    "clsid": "{BRU-42_2*Mk-82_RIGHT}",
+    "name": "2 Mk-82 *\\*",
+    "weight": "520.270024"
+  },
+  {
+    "attr": "_2_Mk_82_AIR____",
+    "clsid": "{BRU-42_2*Mk-82AIR_LEFT}",
+    "name": "2 Mk-82 AIR */*",
+    "weight": "551.11428"
+  },
+  {
+    "attr": "_2_Mk_82_AIR_____",
+    "clsid": "{BRU-42_2*Mk-82AIR_RIGHT}",
+    "name": "2 Mk-82 AIR *\\*",
+    "weight": "551.11428"
+  },
+  {
+    "attr": "_2_Mk_82_SnakeEye",
+    "clsid": "{BRU42_2*MK82SE RS}",
+    "name": "2 Mk-82 SnakeEye",
+    "weight": "610"
+  },
+  {
+    "attr": "_2_Mk_82_SnakeEye_",
+    "clsid": "{BRU3242_2*MK82SE RS}",
+    "name": "2 Mk-82 SnakeEye",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82_SnakeEye__",
+    "clsid": "{PHXBRU3242_2*MK82SE RS}",
+    "name": "2 Mk-82 SnakeEye",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82_SnakeEye___",
+    "clsid": "{BRU42_2*MK82SE LS}",
+    "name": "2 Mk-82 SnakeEye",
+    "weight": "610"
+  },
+  {
+    "attr": "_2_Mk_82_SnakeEye____",
+    "clsid": "{BRU3242_2*MK82SE LS}",
+    "name": "2 Mk-82 SnakeEye",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82_SnakeEye_____",
+    "clsid": "{PHXBRU3242_2*MK82SE LS}",
+    "name": "2 Mk-82 SnakeEye",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82_Snakeye____",
+    "clsid": "{BRU-42_2*Mk-82SNAKEYE_LEFT}",
+    "name": "2 Mk-82 Snakeye */*",
+    "weight": "556.557384"
+  },
+  {
+    "attr": "_2_Mk_82_Snakeye_____",
+    "clsid": "{BRU-42_2*Mk-82SNAKEYE_RIGHT}",
+    "name": "2 Mk-82 Snakeye *\\*",
+    "weight": "556.557384"
+  },
+  {
+    "attr": "_2_Mk_82AIR",
+    "clsid": "{BRU42_2*MK82AIR RS}",
+    "name": "2 Mk-82AIR",
+    "weight": "610"
+  },
+  {
+    "attr": "_2_Mk_82AIR_",
+    "clsid": "{BRU3242_2*MK82AIR RS}",
+    "name": "2 Mk-82AIR",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82AIR__",
+    "clsid": "{PHXBRU3242_2*MK82AIR RS}",
+    "name": "2 Mk-82AIR",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82AIR___",
+    "clsid": "{BRU42_2*MK82AIR LS}",
+    "name": "2 Mk-82AIR",
+    "weight": "610"
+  },
+  {
+    "attr": "_2_Mk_82AIR____",
+    "clsid": "{BRU3242_2*MK82AIR LS}",
+    "name": "2 Mk-82AIR",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_82AIR_____",
+    "clsid": "{PHXBRU3242_2*MK82AIR LS}",
+    "name": "2 Mk-82AIR",
+    "weight": "667.38"
+  },
+  {
+    "attr": "_2_Mk_83____",
+    "clsid": "{BRU-42_2*Mk-83_LEFT}",
+    "name": "2 Mk-83 */*",
+    "weight": "951.182424"
+  },
+  {
+    "attr": "_2_Mk_83_____",
+    "clsid": "{BRU-42_2*Mk-83_RIGHT}",
+    "name": "2 Mk-83 *\\*",
+    "weight": "951.182424"
+  },
+  {
+    "attr": "_2_x_FAB_250",
+    "clsid": "{FAB_250_DUAL_L}",
+    "name": "2 x FAB-250",
+    "weight": "532"
+  },
+  {
+    "attr": "_2_x_FAB_250_",
+    "clsid": "{FAB_250_DUAL_R}",
+    "name": "2 x FAB-250",
+    "weight": "532"
+  },
+  {
+    "attr": "_2_x_FAB_500",
+    "clsid": "{FAB_500_DUAL_L}",
+    "name": "2 x FAB-500",
+    "weight": "1044"
+  },
+  {
+    "attr": "_2_x_FAB_500_",
+    "clsid": "{FAB_500_DUAL_R}",
+    "name": "2 x FAB-500",
+    "weight": "1044"
+  },
+  {
+    "attr": "_2_x_OFAB_100_Jupiter___100kg_GP_Bombs_HD",
+    "clsid": "{FAB-100x2}",
+    "name": "2 x OFAB-100 Jupiter - 100kg GP Bombs HD",
+    "weight": "342"
+  },
+  {
+    "attr": "_20_x_AGM_86D",
+    "clsid": "{22906569-A97F-404B-BA4F-D96DBF94D05E}",
+    "name": "20 x AGM-86D",
+    "weight": "41000"
+  },
+  {
+    "attr": "_24_x_FAB_250___250kg_GP_Bombs_LD",
+    "clsid": "{B0241BD2-5628-47E0-954C-A8675B7E698E}",
+    "name": "24 x FAB-250 - 250kg GP Bombs LD",
+    "weight": "6000"
+  },
+  {
+    "attr": "_27_x_Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{6C47D097-83FF-4FB2-9496-EAB36DDF0B05}",
+    "name": "27 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "6156"
+  },
+  {
+    "attr": "_27_x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD",
+    "clsid": "{B52H_BAY_Mk82AIR}",
+    "name": "27 x Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "6534"
+  },
+  {
+    "attr": "GBU_38_16",
+    "clsid": "GBU-38*16",
+    "name": "28 x GBU-38 - JDAM, 500lb GPS Guided Bombs",
+    "weight": "8522.2"
+  },
+  {
+    "attr": "_2x_AGM_65A___Maverick_A__TV_Guided___LAU_88_",
+    "clsid": "{HB_F4EAGM-65A_LAU88_2x_Right}",
+    "name": "2x AGM-65A - Maverick A (TV Guided) (LAU-88)",
+    "weight": "632"
+  },
+  {
+    "attr": "_2x_AGM_65A___Maverick_A__TV_Guided___LAU_88__",
+    "clsid": "{HB_F4EAGM-65A_LAU88_2x_Left}",
+    "name": "2x AGM-65A - Maverick A (TV Guided) (LAU-88)",
+    "weight": "632"
+  },
+  {
+    "attr": "_2x_AGM_65B___Maverick_B__TV_Guided___LAU_88_",
+    "clsid": "{HB_F4EAGM-65B_LAU88_2x_Right}",
+    "name": "2x AGM-65B - Maverick B (TV Guided) (LAU-88)",
+    "weight": "632"
+  },
+  {
+    "attr": "_2x_AGM_65B___Maverick_B__TV_Guided___LAU_88__",
+    "clsid": "{HB_F4EAGM-65B_LAU88_2x_Left}",
+    "name": "2x AGM-65B - Maverick B (TV Guided) (LAU-88)",
+    "weight": "632"
+  },
+  {
+    "attr": "_2x_AGM_65D___Maverick_D__IIR_ASM___LAU_88_",
+    "clsid": "{HB_F4EAGM-65D_LAU88_2x_Right}",
+    "name": "2x AGM-65D - Maverick D (IIR ASM) (LAU-88)",
+    "weight": "632"
+  },
+  {
+    "attr": "_2x_AGM_65D___Maverick_D__IIR_ASM___LAU_88__",
+    "clsid": "{HB_F4EAGM-65D_LAU88_2x_Left}",
+    "name": "2x AGM-65D - Maverick D (IIR ASM) (LAU-88)",
+    "weight": "632"
+  },
+  {
+    "attr": "_2x_GBU_12___500lb_Laser_Guided_Bomb__MER_",
+    "clsid": "{HB_A6E_GBU12_MER_2x_RIGHT}",
+    "name": "2x GBU-12 - 500lb Laser Guided Bomb (MER)",
+    "weight": "653.8"
+  },
+  {
+    "attr": "_2x_GBU_12___500lb_Laser_Guided_Bomb__MER__",
+    "clsid": "{HB_A6E_GBU12_MER_2x_LEFT}",
+    "name": "2x GBU-12 - 500lb Laser Guided Bomb (MER)",
+    "weight": "653.8"
+  },
+  {
+    "attr": "_2x_GBU_12___500lb_Laser_Guided_Bomb__TER_",
+    "clsid": "{HB_A6E_GBU12_TER_2x}",
+    "name": "2x GBU-12 - 500lb Laser Guided Bomb (TER)",
+    "weight": "682"
+  },
+  {
+    "attr": "_2x_GBU_12___500lb_Laser_Guided_Bomb__TER__",
+    "clsid": "{GD_F100_TER_GBU-12_x2}",
+    "name": "2x GBU-12 - 500lb Laser Guided Bomb (TER)",
+    "weight": "601.6"
+  },
+  {
+    "attr": "_2x_GBU_12___500lb_Laser_Guided_Bomb__TER___",
+    "clsid": "{HB_F4E_GBU-12_2x}",
+    "name": "2x GBU-12 - 500lb Laser Guided Bomb (TER)",
+    "weight": "682"
+  },
+  {
+    "attr": "_2x_Mk_82___500lb_GP_Bomb_LD__MER_",
+    "clsid": "{HB_A6E_MK82_MER_2x}",
+    "name": "2x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": "555.8"
+  },
+  {
+    "attr": "_2x_Mk_82___500lb_GP_Bomb_LD__TER_",
+    "clsid": "{HB_A6E_MK82_TER_2x_RIGHT}",
+    "name": "2x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": "584"
+  },
+  {
+    "attr": "_2x_Mk_82___500lb_GP_Bomb_LD__TER__",
+    "clsid": "{HB_A6E_MK82_TER_2x_LEFT}",
+    "name": "2x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": "584"
+  },
+  {
+    "attr": "_2x_Mk_82___500lb_GP_Bomb_LD__TER___",
+    "clsid": "{GD_F100_TER_MK-82_x2}",
+    "name": "2x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": "503.6"
+  },
+  {
+    "attr": "_2x_Mk_82___500lb_GP_Bomb_LD__TER____",
+    "clsid": "{HB_F4E_MK-82_2x}",
+    "name": "2x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": "584"
+  },
+  {
+    "attr": "_2x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD__TER_",
+    "clsid": "{HB_F4E_MK-82AIR_2x}",
+    "name": "2x Mk-82 AIR Ballute - 500lb GP Bomb HD (TER)",
+    "weight": "612"
+  },
+  {
+    "attr": "_2x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER_",
+    "clsid": "{HB_A6E_MK82SE_MER_2x}",
+    "name": "2x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "598.8"
+  },
+  {
+    "attr": "_2x_Mk_82_Snakeye___500lb_GP_Bomb_HD__TER_",
+    "clsid": "{HB_A6E_MK82SE_TER_2x_RIGHT}",
+    "name": "2x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": "627"
+  },
+  {
+    "attr": "_2x_Mk_82_Snakeye___500lb_GP_Bomb_HD__TER__",
+    "clsid": "{HB_A6E_MK82SE_TER_2x_LEFT}",
+    "name": "2x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": "627"
+  },
+  {
+    "attr": "_2x_Mk_82_Snakeye___500lb_GP_Bomb_HD__TER___",
+    "clsid": "{GD_F100_TER_MK-82_Snakeye_x2}",
+    "name": "2x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": "546.6"
+  },
+  {
+    "attr": "_2x_Mk_82_Snakeye___500lb_GP_Bomb_HD__TER____",
+    "clsid": "{HB_F4E_MK-82_Snakeye_2x}",
+    "name": "2x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": "627"
+  },
+  {
+    "attr": "_2x_Mk_83___1000lb_GP_Bomb_LD__MER_",
+    "clsid": "{HB_A6E_MK83_MER_2x_RIGHT}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": "1007.8"
+  },
+  {
+    "attr": "_2x_Mk_83___1000lb_GP_Bomb_LD__MER__",
+    "clsid": "{HB_A6E_MK83_MER_2x_LEFT}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": "1007.8"
+  },
+  {
+    "attr": "_2x_Mk_83___1000lb_GP_Bomb_LD__MER___",
+    "clsid": "{HB_F4E_MK-83_MER_2x}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": "1007.8"
+  },
+  {
+    "attr": "_2x_Mk_83___1000lb_GP_Bomb_LD__TER_",
+    "clsid": "{HB_A6E_MK83_TER_2x_RIGHT}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (TER)",
+    "weight": "1036"
+  },
+  {
+    "attr": "_2x_Mk_83___1000lb_GP_Bomb_LD__TER__",
+    "clsid": "{HB_A6E_MK83_TER_2x_LEFT}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (TER)",
+    "weight": "1036"
+  },
+  {
+    "attr": "_2x_Mk_83___1000lb_GP_Bomb_LD__TER___",
+    "clsid": "{HB_F4E_MK-83_2x_Left}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (TER)",
+    "weight": "1036"
+  },
+  {
+    "attr": "_2x_Mk_83___1000lb_GP_Bomb_LD__TER____",
+    "clsid": "{HB_F4E_MK-83_2x_Right}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (TER)",
+    "weight": "1036"
+  },
+  {
+    "attr": "OH58D_AGM_114_L",
+    "clsid": "OH58D_AGM_114_L",
+    "name": "2xAGM-114K",
+    "weight": "138.23"
+  },
+  {
+    "attr": "OH58D_AGM_114_R",
+    "clsid": "OH58D_AGM_114_R",
+    "name": "2xAGM-114K",
+    "weight": "138.23"
+  },
+  {
+    "attr": "_2xGBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{89D000B0-0360-461A-AD83-FB727E2ABA98}",
+    "name": "2xGBU-12 - 500lb Laser Guided Bomb",
+    "weight": "610.25"
+  },
+  {
+    "attr": "_2xGBU_12___500lb_Laser_Guided_Bomb_",
+    "clsid": "{BRU-42_2xGBU-12_right}",
+    "name": "2xGBU-12 - 500lb Laser Guided Bomb",
+    "weight": "610.25"
+  },
+  {
+    "attr": "_3_GBU_12",
+    "clsid": "{BRU-42A_3*GBU-12}",
+    "name": "3 GBU-12",
+    "weight": "890.401096"
+  },
+  {
+    "attr": "_3_GBU_16",
+    "clsid": "{BRU-42A_3*GBU-16}",
+    "name": "3 GBU-16",
+    "weight": "1543.573576"
+  },
+  {
+    "attr": "_3_GBU_38",
+    "clsid": "{BRU-70A_3*GBU-38}",
+    "name": "3 GBU-38",
+    "weight": "825.083848"
+  },
+  {
+    "attr": "_3_GBU_38_",
+    "clsid": "{BRU-42_3*GBU-38}",
+    "name": "3 GBU-38",
+    "weight": "825.083848"
+  },
+  {
+    "attr": "_3_GBU_54_V_1_B",
+    "clsid": "{BRU-70A_3*GBU-54}",
+    "name": "3 GBU-54(V)1/B",
+    "weight": "816.919192"
+  },
+  {
+    "attr": "_3_Mk_82",
+    "clsid": "{BRU-42_3*Mk-82LD}",
+    "name": "3 Mk-82",
+    "weight": "751.601944"
+  },
+  {
+    "attr": "_3_Mk_82_AIR",
+    "clsid": "{BRU-42_3_MK82AIR}",
+    "name": "3 Mk-82 AIR",
+    "weight": "797.868328"
+  },
+  {
+    "attr": "_3_Mk_82_Snakeye",
+    "clsid": "{BRU-42_3*Mk-82SNAKEYE}",
+    "name": "3 Mk-82 Snakeye",
+    "weight": "806.032984"
+  },
+  {
+    "attr": "_3_Mk_83",
+    "clsid": "{BRU-42_3*Mk-83}",
+    "name": "3 Mk-83",
+    "weight": "1397.970544"
+  },
+  {
+    "attr": "_3_x_FAB_1500_M_54___1500kg_GP_Bombs_LD",
+    "clsid": "{639DB5DD-CB7E-4E42-AC75-2112BC397B97}",
+    "name": "3 x FAB-1500 M-54 - 1500kg GP Bombs LD",
+    "weight": "4500"
+  },
+  {
+    "attr": "_3_x_GBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{B52H_BAY_3x_GBU12}",
+    "name": "3 x GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "831"
+  },
+  {
+    "attr": "_33_x_FAB_500M_62___500_kg_GP_Bomb_LD",
+    "clsid": "{AD5E5863-08FC-4283-B92C-162E2B2BD3FF}",
+    "name": "33 x FAB-500M-62 - 500 kg GP Bomb LD",
+    "weight": "17160"
+  },
+  {
+    "attr": "_33_x_OFAB_250_270___250_kg_GP_Bomb_LD",
+    "clsid": "{BDAD04AA-4D4A-4E51-B958-180A89F963CF}",
+    "name": "33 x OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "8778"
+  },
+  {
+    "attr": "_3x_AGM_65A___Maverick_A__TV_Guided___LAU_88_",
+    "clsid": "{HB_F4EAGM-65A_LAU88_3x_Right}",
+    "name": "3x AGM-65A - Maverick A (TV Guided) (LAU-88)",
+    "weight": "842.5"
+  },
+  {
+    "attr": "_3x_AGM_65A___Maverick_A__TV_Guided___LAU_88__",
+    "clsid": "{HB_F4EAGM-65A_LAU88_3x_Left}",
+    "name": "3x AGM-65A - Maverick A (TV Guided) (LAU-88)",
+    "weight": "842.5"
+  },
+  {
+    "attr": "_3x_AGM_65B___Maverick_B__TV_Guided___LAU_88_",
+    "clsid": "{HB_F4EAGM-65B_LAU88_3x_Right}",
+    "name": "3x AGM-65B - Maverick B (TV Guided) (LAU-88)",
+    "weight": "842.5"
+  },
+  {
+    "attr": "_3x_AGM_65B___Maverick_B__TV_Guided___LAU_88__",
+    "clsid": "{HB_F4EAGM-65B_LAU88_3x_Left}",
+    "name": "3x AGM-65B - Maverick B (TV Guided) (LAU-88)",
+    "weight": "842.5"
+  },
+  {
+    "attr": "_3x_AGM_65D___Maverick_D__IIR_ASM___LAU_88_",
+    "clsid": "{HB_F4EAGM-65D_LAU88_3x_Right}",
+    "name": "3x AGM-65D - Maverick D (IIR ASM) (LAU-88)",
+    "weight": "842.5"
+  },
+  {
+    "attr": "_3x_AGM_65D___Maverick_D__IIR_ASM___LAU_88__",
+    "clsid": "{HB_F4EAGM-65D_LAU88_3x_Left}",
+    "name": "3x AGM-65D - Maverick D (IIR ASM) (LAU-88)",
+    "weight": "842.5"
+  },
+  {
+    "attr": "_3x_GBU_12___500lb_Laser_Guided_Bomb__TER_",
+    "clsid": "{GD_F100_TER_GBU-12_x3}",
+    "name": "3x GBU-12 - 500lb Laser Guided Bomb (TER)",
+    "weight": "878.6"
+  },
+  {
+    "attr": "_3x_Mk_82___500lb_GP_Bomb_LD__MER_",
+    "clsid": "{HB_A6E_MK82_MER_3x_RIGHT}",
+    "name": "3x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": "783.8"
+  },
+  {
+    "attr": "_3x_Mk_82___500lb_GP_Bomb_LD__MER__",
+    "clsid": "{HB_A6E_MK82_MER_3x_LEFT}",
+    "name": "3x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": "783.8"
+  },
+  {
+    "attr": "_3x_Mk_82___500lb_GP_Bomb_LD__TER_",
+    "clsid": "{HB_A6E_MK82_TER_3x}",
+    "name": "3x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": "812"
+  },
+  {
+    "attr": "_3x_Mk_82___500lb_GP_Bomb_LD__TER__",
+    "clsid": "{GD_F100_TER_MK-82_x3}",
+    "name": "3x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": "731.6"
+  },
+  {
+    "attr": "_3x_Mk_82___500lb_GP_Bomb_LD__TER___",
+    "clsid": "{HB_F4E_MK-82_3x}",
+    "name": "3x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": "812"
+  },
+  {
+    "attr": "_3x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD__TER_",
+    "clsid": "{HB_F4E_MK-82AIR_3x}",
+    "name": "3x Mk-82 AIR Ballute - 500lb GP Bomb HD (TER)",
+    "weight": "854"
+  },
+  {
+    "attr": "_3x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER_",
+    "clsid": "{HB_A6E_MK82SE_MER_3x_RIGHT}",
+    "name": "3x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "848.3"
+  },
+  {
+    "attr": "_3x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER__",
+    "clsid": "{HB_A6E_MK82SE_MER_3x_LEFT}",
+    "name": "3x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "848.3"
+  },
+  {
+    "attr": "_3x_Mk_82_Snakeye___500lb_GP_Bomb_HD__TER_",
+    "clsid": "{HB_A6E_MK82SE_TER_3x}",
+    "name": "3x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": "876.5"
+  },
+  {
+    "attr": "_3x_Mk_82_Snakeye___500lb_GP_Bomb_HD__TER__",
+    "clsid": "{GD_F100_TER_MK-82_Snakeye_x3}",
+    "name": "3x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": "796.1"
+  },
+  {
+    "attr": "_3x_Mk_82_Snakeye___500lb_GP_Bomb_HD__TER___",
+    "clsid": "{HB_F4E_MK-82_Snakeye_3x}",
+    "name": "3x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": "876.5"
+  },
+  {
+    "attr": "_3x_Mk_83___1000lb_GP_Bomb_LD__MER_",
+    "clsid": "{HB_A6E_MK83_MER_3x_FWD}",
+    "name": "3x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": "1461.8"
+  },
+  {
+    "attr": "_3x_Mk_83___1000lb_GP_Bomb_LD__MER__",
+    "clsid": "{HB_A6E_MK83_MER_3x_AFT}",
+    "name": "3x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": "1461.8"
+  },
+  {
+    "attr": "_3x_Mk_83___1000lb_GP_Bomb_LD__MER___",
+    "clsid": "{HB_F4E_MK-83_MER_3x}",
+    "name": "3x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": "1461.8"
+  },
+  {
+    "attr": "_3x_Mk_83___1000lb_GP_Bomb_LD__MER__Ripple",
+    "clsid": "{HB_F4E_MK-83_MER_3x_Ripple}",
+    "name": "3x Mk-83 - 1000lb GP Bomb LD (MER) Ripple",
+    "weight": "1461.8"
+  },
+  {
+    "attr": "_3x_Mk_83___1000lb_GP_Bomb_LD__TER_",
+    "clsid": "{HB_A6E_MK83_TER_3x}",
+    "name": "3x Mk-83 - 1000lb GP Bomb LD (TER)",
+    "weight": "1490"
+  },
+  {
+    "attr": "_3x_Mk_83___1000lb_GP_Bomb_LD__TER__",
+    "clsid": "{HB_F4E_MK-83_3x}",
+    "name": "3x Mk-83 - 1000lb GP Bomb LD (TER)",
+    "weight": "1490"
+  },
+  {
+    "attr": "_4_x_GBU_27___2000lb_Laser_Guided_Penetrator_Bombs",
+    "clsid": "{B8C99F40-E486-4040-B547-6639172A5D57}",
+    "name": "4 x GBU-27 - 2000lb Laser Guided Penetrator Bombs",
+    "weight": "3936"
+  },
+  {
+    "attr": "_4x_Mk_82___500lb_GP_Bomb_LD__MER_",
+    "clsid": "{HB_A6E_MK82_MER_4x_RIGHT}",
+    "name": "4x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": "1011.8"
+  },
+  {
+    "attr": "_4x_Mk_82___500lb_GP_Bomb_LD__MER__",
+    "clsid": "{HB_A6E_MK82_MER_4x_LEFT}",
+    "name": "4x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": "1011.8"
+  },
+  {
+    "attr": "_4x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER_",
+    "clsid": "{HB_A6E_MK82SE_MER_4x_RIGHT}",
+    "name": "4x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "1097.8"
+  },
+  {
+    "attr": "_4x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER__",
+    "clsid": "{HB_A6E_MK82SE_MER_4x_LEFT}",
+    "name": "4x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "1097.8"
+  },
+  {
+    "attr": "_5_x_Mk_82___500lb_GP_Bombs_LD",
+    "clsid": "{MER-5E_MK82x5}",
+    "name": "5 x Mk-82 - 500lb GP Bombs LD",
+    "weight": "1295.7"
+  },
+  {
+    "attr": "_5_x_Mk_82_Snakeye___500lb_GP_Bomb_HD",
+    "clsid": "{MER-5E_Mk82SNAKEYEx5}",
+    "name": "5 x Mk-82 Snakeye - 500lb GP Bomb HD",
+    "weight": "1250.7"
+  },
+  {
+    "attr": "_5x_Mk_82___500lb_GP_Bomb_LD__MER_",
+    "clsid": "{HB_A6E_MK82_MER_5x_RIGHT}",
+    "name": "5x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": "1239.8"
+  },
+  {
+    "attr": "_5x_Mk_82___500lb_GP_Bomb_LD__MER__",
+    "clsid": "{HB_A6E_MK82_MER_5x_LEFT}",
+    "name": "5x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": "1239.8"
+  },
+  {
+    "attr": "_5x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER_",
+    "clsid": "{HB_A6E_MK82SE_MER_5x}",
+    "name": "5x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "1347.3"
+  },
+  {
+    "attr": "_5x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER__",
+    "clsid": "{HB_A6E_MK82SE_MER_5x_RIGHT}",
+    "name": "5x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "1347.3"
+  },
+  {
+    "attr": "_5x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER___",
+    "clsid": "{HB_A6E_MK82SE_MER_5x_LEFT}",
+    "name": "5x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "1347.3"
+  },
+  {
+    "attr": "_6_x_AGM_86D_on_MER",
+    "clsid": "{45447F82-01B5-4029-A572-9AAD28AF0275}",
+    "name": "6 x AGM-86D on MER",
+    "weight": "10716.7"
+  },
+  {
+    "attr": "_6_x_BetAB_500___500kg_Concrete_Piercing_Bombs_LD",
+    "clsid": "{2B7BDB38-4F45-43F9-BE02-E7B3141F3D24}",
+    "name": "6 x BetAB-500 - 500kg Concrete Piercing Bombs LD",
+    "weight": "2868"
+  },
+  {
+    "attr": "_6_x_FAB_1500_M_54___1500kg_GP_Bombs_LD",
+    "clsid": "{D9179118-E42F-47DE-A483-A6C2EA7B4F38}",
+    "name": "6 x FAB-1500 M-54 - 1500kg GP Bombs LD",
+    "weight": "9000"
+  },
+  {
+    "attr": "_6_x_FAB_500_M_62___500kg_GP_Bombs_LD",
+    "clsid": "{26D2AF37-B0DF-4AB6-9D61-A150FF58A37B}",
+    "name": "6 x FAB-500 M-62 - 500kg GP Bombs LD",
+    "weight": "3000"
+  },
+  {
+    "attr": "_6_x_Mk_82___500lb_GP_Bombs_LD",
+    "clsid": "{027563C9-D87E-4A85-B317-597B510E3F03}",
+    "name": "6 x Mk-82 - 500lb GP Bombs LD",
+    "weight": "1446"
+  },
+  {
+    "attr": "_6x_Mk_82___500lb_GP_Bomb_LD__MER_",
+    "clsid": "{HB_A6E_MK82_MER_6x}",
+    "name": "6x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": "1467.8"
+  },
+  {
+    "attr": "_6x_Mk_82___500lb_GP_Bomb_LD__MER__",
+    "clsid": "{HB_F4E_MK-82_6x}",
+    "name": "6x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": "1467.8"
+  },
+  {
+    "attr": "_6x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD__MER_",
+    "clsid": "{HB_F4E_MK-82AIR_6x}",
+    "name": "6x Mk-82 AIR Ballute - 500lb GP Bomb HD (MER)",
+    "weight": "1551.8"
+  },
+  {
+    "attr": "_6x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER_",
+    "clsid": "{HB_A6E_MK82SE_MER_6x}",
+    "name": "6x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "1596.8"
+  },
+  {
+    "attr": "_6x_Mk_82_Snakeye___500lb_GP_Bomb_HD__MER__",
+    "clsid": "{HB_F4E_MK-82_Snakeye_6x}",
+    "name": "6x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": "1596.8"
+  },
+  {
+    "attr": "_8_x_AGM_84A_Harpoon_ASM",
+    "clsid": "{46ACDCF8-5451-4E26-BDDB-E78D5830E93C}",
+    "name": "8 x AGM-84A Harpoon ASM",
+    "weight": "5292"
+  },
+  {
+    "attr": "_8_x_AGM_86C",
+    "clsid": "{8_x_AGM_86C}",
+    "name": "8 x AGM-86C",
+    "weight": "17040.6"
+  },
+  {
+    "attr": "_8_x_AGM_86D",
+    "clsid": "{8DCAF3A3-7FCF-41B8-BB88-58DEDA878EDE}",
+    "name": "8 x AGM-86D",
+    "weight": "13040.6"
+  },
+  {
+    "attr": "AGM114x2_OH_58",
+    "clsid": "AGM114x2_OH_58",
+    "name": "AGM-114K * 2",
+    "weight": "250"
+  },
+  {
+    "attr": "AGM_114K_Hellfire",
+    "clsid": "{ee368869-c35a-486a-afe7-284beb7c5d52}",
+    "name": "AGM-114K Hellfire",
+    "weight": "45.3"
+  },
+  {
+    "attr": "AGM_114L",
+    "clsid": "{AGM_114L}",
+    "name": "AGM-114L",
+    "weight": "49"
+  },
+  {
+    "attr": "AGM_119B_Penguin_ASM",
+    "clsid": "{7B8DCEB4-820B-4015-9B48-1028A4195692}",
+    "name": "AGM-119B Penguin ASM",
+    "weight": "300"
+  },
+  {
+    "attr": "AGM_122_Sidearm",
+    "clsid": "{AGM_122_SIDEARM}",
+    "name": "AGM-122 Sidearm",
+    "weight": "98.883056"
+  },
+  {
+    "attr": "AGM_122_Sidearm_",
+    "clsid": "{LAU_7_AGM_122_SIDEARM}",
+    "name": "AGM-122 Sidearm",
+    "weight": "139.706336"
+  },
+  {
+    "attr": "AGM_122A_Sidearm___Light_ARM",
+    "clsid": "{AGM_122}",
+    "name": "AGM-122A Sidearm - Light ARM",
+    "weight": "88"
+  },
+  {
+    "attr": "AGM_12A_Bullpup_MCLOS_ASM__LAU_34_",
+    "clsid": "{AGM_12A}",
+    "name": "AGM-12A Bullpup MCLOS ASM (LAU-34)",
+    "weight": "296"
+  },
+  {
+    "attr": "AGM_12B_Bullpup_MCLOS_ASM__LAU_34_",
+    "clsid": "{AGM_12B}",
+    "name": "AGM-12B Bullpup MCLOS ASM (LAU-34)",
+    "weight": "302"
+  },
+  {
+    "attr": "AGM_12C_Bullpup_MCLOS_ASM",
+    "clsid": "{AGM_12C}",
+    "name": "AGM-12C Bullpup MCLOS ASM",
+    "weight": "811.5"
+  },
+  {
+    "attr": "AGM_130C_9___3000lb_TV__EO__Guided_Missile",
+    "clsid": "{AGM_130C_9}",
+    "name": "AGM-130C-9 - 3000lb TV (EO) Guided Missile",
+    "weight": "None"
+  },
+  {
+    "attr": "AGM_154A___JSOW_CEB__CBU_type_",
+    "clsid": "{AGM-154A}",
+    "name": "AGM-154A - JSOW CEB (CBU-type)",
+    "weight": "485"
+  },
+  {
+    "attr": "AGM_154B___JSOW_Anti_Armour",
+    "clsid": "{AGM-154B}",
+    "name": "AGM-154B - JSOW Anti-Armour",
+    "weight": "485"
+  },
+  {
+    "attr": "AGM_154C___JSOW_Unitary_BROACH",
+    "clsid": "{9BCC2A2B-5708-4860-B1F1-053A18442067}",
+    "name": "AGM-154C - JSOW Unitary BROACH",
+    "weight": "484"
+  },
+  {
+    "attr": "AGM_45A_Shrike_ARM",
+    "clsid": "{AGM_45A}",
+    "name": "AGM-45A Shrike ARM",
+    "weight": "180"
+  },
+  {
+    "attr": "AGM_45A_Shrike_ARM__LAU_34_",
+    "clsid": "{LAU_34_AGM_45A}",
+    "name": "AGM-45A Shrike ARM (LAU-34)",
+    "weight": "219"
+  },
+  {
+    "attr": "AGM_45B_Shrike_ARM",
+    "clsid": "{AGM_45B}",
+    "name": "AGM-45B Shrike ARM",
+    "weight": "185"
+  },
+  {
+    "attr": "AGM_62_Walleye_I___Guided_Weapon_Mk_1__TV_Guided_",
+    "clsid": "{AGM_62_I}",
+    "name": "AGM-62 Walleye I - Guided Weapon Mk 1 (TV Guided)",
+    "weight": "510"
+  },
+  {
+    "attr": "AGM_62_Walleye_II___Guided_Weapon_Mk_5__TV_Guided_",
+    "clsid": "{C40A1E3A-DD05-40D9-85A4-217729E37FAE}",
+    "name": "AGM-62 Walleye II - Guided Weapon Mk 5 (TV Guided)",
+    "weight": "1061"
+  },
+  {
+    "attr": "AGM_65A___Maverick_A__TV_Guided___LAU_117_",
+    "clsid": "{HB_F4E_AGM-65A_LAU117}",
+    "name": "AGM-65A - Maverick A (TV Guided) (LAU-117)",
+    "weight": "269.5"
+  },
+  {
+    "attr": "AGM_65B___Maverick_B__TV_Guided___LAU_117_",
+    "clsid": "{HB_F4E_AGM-65B_LAU117}",
+    "name": "AGM-65B - Maverick B (TV Guided) (LAU-117)",
+    "weight": "269.5"
+  },
+  {
+    "attr": "AGM_65D___Maverick_D__IIR_ASM_",
+    "clsid": "{444BA8AE-82A7-4345-842E-76154EFCCA47}",
+    "name": "AGM-65D - Maverick D (IIR ASM)",
+    "weight": "218"
+  },
+  {
+    "attr": "AGM_65D___Maverick_D__IIR_ASM___LAU_117_",
+    "clsid": "{HB_F4E_AGM-65D_LAU117}",
+    "name": "AGM-65D - Maverick D (IIR ASM) (LAU-117)",
+    "weight": "269.5"
+  },
+  {
+    "attr": "AGM_65E___Maverick_E__Laser_ASM___Lg_Whd_",
+    "clsid": "{F16A4DE0-116C-4A71-97F0-2CF85B0313EF}",
+    "name": "AGM-65E - Maverick E (Laser ASM - Lg Whd)",
+    "weight": "286"
+  },
+  {
+    "attr": "AGM_65G___Maverick_G__IIR_ASM___Lg_Whd___LAU_117_",
+    "clsid": "{HB_F4E_AGM-65G_LAU117}",
+    "name": "AGM-65G - Maverick G (IIR ASM - Lg Whd) (LAU-117)",
+    "weight": "360"
+  },
+  {
+    "attr": "AGM_65K___Maverick_K__CCD_Imp_ASM_",
+    "clsid": "{69DC8AE7-8F77-427B-B8AA-B19D3F478B65}",
+    "name": "AGM-65K - Maverick K (CCD Imp ASM)",
+    "weight": "298"
+  },
+  {
+    "attr": "AGM_78_Standard_ARM",
+    "clsid": "{HB_A6E_AGM_78}",
+    "name": "AGM-78 Standard ARM",
+    "weight": "645.9"
+  },
+  {
+    "attr": "AGM_78A_Standard_ARM",
+    "clsid": "{AGM_78A}",
+    "name": "AGM-78A Standard ARM",
+    "weight": "615"
+  },
+  {
+    "attr": "AGM_78B_Standard_ARM",
+    "clsid": "{AGM_78B}",
+    "name": "AGM-78B Standard ARM",
+    "weight": "620"
+  },
+  {
+    "attr": "AGM_84A_Harpoon_ASM",
+    "clsid": "{8B7CADF9-4954-46B3-8CFB-93F2F5B90B03}",
+    "name": "AGM-84A Harpoon ASM",
+    "weight": "661.5"
+  },
+  {
+    "attr": "AGM_84D_Harpoon_AShM",
+    "clsid": "{AGM_84D}",
+    "name": "AGM-84D Harpoon AShM",
+    "weight": "540"
+  },
+  {
+    "attr": "AGM_84E_Harpoon_SLAM__Stand_Off_Land_Attack_Missile_",
+    "clsid": "{AF42E6DF-9A60-46D8-A9A0-1708B241AADB}",
+    "name": "AGM-84E Harpoon/SLAM (Stand-Off Land-Attack Missile)",
+    "weight": "628"
+  },
+  {
+    "attr": "AGM_84E_Harpoon_SLAM__Stand_Off_Land_Attack_Missile__",
+    "clsid": "{AGM_84E}",
+    "name": "AGM-84E Harpoon/SLAM (Stand-Off Land-Attack Missile)",
+    "weight": "628"
+  },
+  {
+    "attr": "AGM_84H_SLAM_ER__Expanded_Response_",
+    "clsid": "{AGM_84H}",
+    "name": "AGM-84H SLAM-ER (Expanded Response)",
+    "weight": "675"
+  },
+  {
+    "attr": "AGM_86C",
+    "clsid": "{AGM_86C}",
+    "name": "AGM-86C",
+    "weight": "2050"
+  },
+  {
+    "attr": "AGM_86D",
+    "clsid": "{769A15DF-6AFB-439F-9B24-5B7A45C59D16}",
+    "name": "AGM-86D",
+    "weight": "1450"
+  },
+  {
+    "attr": "AGM_88C_HARM___High_Speed_Anti_Radiation_Missile",
+    "clsid": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C9C}",
+    "name": "AGM-88C HARM - High Speed Anti-Radiation Missile",
+    "weight": "361"
+  },
+  {
+    "attr": "AGM_88C_HARM___High_Speed_Anti_Radiation_Missile_",
+    "clsid": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+    "name": "AGM-88C HARM - High Speed Anti-Radiation Missile",
+    "weight": "406.4"
+  },
+  {
+    "attr": "AN_ASQ_213_HTS___HARM_Targeting_System",
+    "clsid": "{AN_ASQ_213}",
+    "name": "AN/ASQ-213 HTS - HARM Targeting System",
+    "weight": "57.2"
+  },
+  {
+    "attr": "APU_6___6_x_9M127_Vikhr___ATGM__LOSBR__Tandem_HEAT_Frag",
+    "clsid": "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+    "name": "APU-6 - 6 x 9M127 Vikhr - ATGM, LOSBR, Tandem HEAT/Frag",
+    "weight": "416.25"
+  },
+  {
+    "attr": "APU_68___S_24B___240mm_UnGd_Rkt__235kg__HE_Frag___Low_Smk_",
+    "clsid": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+    "name": "APU-68 - S-24B - 240mm UnGd Rkt, 235kg, HE/Frag, (Low Smk)",
+    "weight": "295"
+  },
+  {
+    "attr": "APU_68___S_24B___240mm_UnGd_Rkt__235kg__HE_Frag___Low_Smk__",
+    "clsid": "{ROCKETS_S24B_BDZ-UMK2-B}",
+    "name": "APU-68 - S-24B - 240mm UnGd Rkt, 235kg, HE/Frag, (Low Smk)",
+    "weight": "350"
+  },
+  {
+    "attr": "APU_68UM3___S_24B___240mm_UnGd_Rkt__235kg__HE_Frag___Low_Smk_",
+    "clsid": "{APU_68_S-24}",
+    "name": "APU-68UM3 - S-24B - 240mm UnGd Rkt, 235kg, HE/Frag, (Low Smk)",
+    "weight": "273.5"
+  },
+  {
+    "attr": "APU_8___8_x_9M127_Vikhr___ATGM__LOSBR__Tandem_HEAT_Frag",
+    "clsid": "{F789E86A-EE2E-4E6B-B81E-D5E5F903B6ED}",
+    "name": "APU-8 - 8 x 9M127 Vikhr - ATGM, LOSBR, Tandem HEAT/Frag",
+    "weight": "535"
+  },
+  {
+    "attr": "AUF_2___2_x_GBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{AUF2_GBU12}",
+    "name": "AUF 2 - 2 x GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "634"
+  },
+  {
+    "attr": "AUF_2___2_x_Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{AUF2_MK82}",
+    "name": "AUF 2 - 2 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "536"
+  },
+  {
+    "attr": "AUF2_GBU_12_x_2",
+    "clsid": "{M2KC_RAFAUT_GBU12}",
+    "name": "AUF2 GBU-12 x 2",
+    "weight": "621"
+  },
+  {
+    "attr": "AUF2_MK_82_Air_x_2",
+    "clsid": "{M2KC_RAFAUT_MK82A}",
+    "name": "AUF2 MK-82 Air x 2",
+    "weight": "525"
+  },
+  {
+    "attr": "AUF2_MK_82_Snakeyes_x_2",
+    "clsid": "{M2KC_RAFAUT_MK82S}",
+    "name": "AUF2 MK-82 Snakeyes x 2",
+    "weight": "525"
+  },
+  {
+    "attr": "AUF2_MK_82_x_2",
+    "clsid": "{M2KC_RAFAUT_MK82}",
+    "name": "AUF2 MK-82 x 2",
+    "weight": "525"
+  },
+  {
+    "attr": "BETAB_500M___479_kg__bomb__penetrating",
+    "clsid": "{BETAB-500M}",
+    "name": "BETAB-500M - 479 kg, bomb, penetrating",
+    "weight": "479"
+  },
+  {
+    "attr": "BETAB_500S___425_kg__bomb__penetrating",
+    "clsid": "{BETAB-500S}",
+    "name": "BETAB-500S - 425 kg, bomb, penetrating",
+    "weight": "425"
+  },
+  {
+    "attr": "BRU_33_with_2_x_GBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{BRU33_2X_GBU-12}",
+    "name": "BRU-33 with 2 x GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "645"
+  },
+  {
+    "attr": "BRU_33_with_2_x_GBU_16___1000lb_Laser_Guided_Bomb",
+    "clsid": "{BRU33_2X_GBU-16}",
+    "name": "BRU-33 with 2 x GBU-16 - 1000lb Laser Guided Bomb",
+    "weight": "1117"
+  },
+  {
+    "attr": "BRU_33_with_2_x_Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{BRU33_2X_MK-82}",
+    "name": "BRU-33 with 2 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "547"
+  },
+  {
+    "attr": "BRU_33_with_2_x_Mk_82_Snakeye___500lb_GP_Bomb_HD",
+    "clsid": "{BRU33_2X_MK-82_Snakeye}",
+    "name": "BRU-33 with 2 x Mk-82 Snakeye - 500lb GP Bomb HD",
+    "weight": "590"
+  },
+  {
+    "attr": "BRU_33_with_2_x_Mk_82Y___500lb_GP_Chute_Retarded_HD",
+    "clsid": "{BRU33_2X_MK-82Y}",
+    "name": "BRU-33 with 2 x Mk-82Y - 500lb GP Chute Retarded HD",
+    "weight": "555"
+  },
+  {
+    "attr": "BRU_33_with_2_x_Mk_83___1000lb_GP_Bomb_LD",
+    "clsid": "{BRU33_2X_MK-83}",
+    "name": "BRU-33 with 2 x Mk-83 - 1000lb GP Bomb LD",
+    "weight": "999"
+  },
+  {
+    "attr": "BRU_33_with_2_x_Mk_83_AIR__BSU_85____1000_lb_GP_Chute_Retarded_Bomb_HD",
+    "clsid": "{BRU33_2X_MK-83AIR}",
+    "name": "BRU-33 with 2 x Mk-83 AIR (BSU-85) - 1000 lb GP Chute Retarded Bomb HD",
+    "weight": "1043.6"
+  },
+  {
+    "attr": "BRU_41A_with_6_x_Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{BRU41_6X_MK-82}",
+    "name": "BRU-41A with 6 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "1495.913"
+  },
+  {
+    "attr": "BRU_42_with_1_x_GBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{BRU42_1X_GBU-12}",
+    "name": "BRU-42 with 1 x GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "333.25"
+  },
+  {
+    "attr": "BRU_42_with_1_x_Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{BRU42_1X_MK-82}",
+    "name": "BRU-42 with 1 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "284.25"
+  },
+  {
+    "attr": "BRU_42_with_1_x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD",
+    "clsid": "{BRU42_1X_MK-82AIR}",
+    "name": "BRU-42 with 1 x Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "298.25"
+  },
+  {
+    "attr": "BRU_42_with_2_x_GBU_10___2000lb_Laser_Guided_Bombs",
+    "clsid": "{62BE78B1-9258-48AE-B882-279534C0D278}",
+    "name": "BRU-42 with 2 x GBU-10 - 2000lb Laser Guided Bombs",
+    "weight": "1974.25"
+  },
+  {
+    "attr": "BRU_42_with_2_x_GBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{BRU42_2X_GBU-12_L}",
+    "name": "BRU-42 with 2 x GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "610.25"
+  },
+  {
+    "attr": "BRU_42_with_2_x_GBU_12___500lb_Laser_Guided_Bomb_",
+    "clsid": "{BRU42_2X_GBU-12_R}",
+    "name": "BRU-42 with 2 x GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "610.25"
+  },
+  {
+    "attr": "BRU_42_with_2_x_GBU_27___2000lb_Laser_Guided_Penetrator_Bombs",
+    "clsid": "{EB969276-1922-4ED1-A5CB-18590F45D7FE}",
+    "name": "BRU-42 with 2 x GBU-27 - 2000lb Laser Guided Penetrator Bombs",
+    "weight": "2038.25"
+  },
+  {
+    "attr": "BRU_42_with_2_x_Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{BRU42_2X_MK-82_L}",
+    "name": "BRU-42 with 2 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "512.25"
+  },
+  {
+    "attr": "BRU_42_with_2_x_Mk_82___500lb_GP_Bomb_LD_",
+    "clsid": "{BRU42_2X_MK-82_R}",
+    "name": "BRU-42 with 2 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "512.25"
+  },
+  {
+    "attr": "BRU_42_with_2_x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD",
+    "clsid": "{BRU42_2X_MK-82AIR_L}",
+    "name": "BRU-42 with 2 x Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "540.25"
+  },
+  {
+    "attr": "BRU_42_with_2_x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD_",
+    "clsid": "{BRU42_2X_MK-82AIR_R}",
+    "name": "BRU-42 with 2 x Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "540.25"
+  },
+  {
+    "attr": "BRU_42_3_GBU_12",
+    "clsid": "BRU-42_3*GBU-12",
+    "name": "BRU-42 with 3 x GBU-12 - 500lb Laser Guided Bombs",
+    "weight": "887.25"
+  },
+  {
+    "attr": "BRU_42_with_3_x_GBU_16___1000lb_Laser_Guided_Bombs",
+    "clsid": "{88D49E04-78DF-4F08-B47E-B81247A9E3C5}",
+    "name": "BRU-42 with 3 x GBU-16 - 1000lb Laser Guided Bombs",
+    "weight": "1595.25"
+  },
+  {
+    "attr": "BRU_42_with_3_x_Mk_82___500lb_GP_Bombs_LD",
+    "clsid": "{60CC734F-0AFA-4E2E-82B8-93B941AB11CF}",
+    "name": "BRU-42 with 3 x Mk-82 - 500lb GP Bombs LD",
+    "weight": "740.25"
+  },
+  {
+    "attr": "BRU_42_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bombs_HD",
+    "clsid": "{BRU-42_3*Mk-82AIR}",
+    "name": "BRU-42 with 3 x Mk-82 AIR Ballute - 500lb GP Bombs HD",
+    "weight": "782.25"
+  },
+  {
+    "attr": "BRU_55_with_2_x_AGM_154A___JSOW_CEB__CBU_type_",
+    "clsid": "{BRU55_2*AGM-154A}",
+    "name": "BRU-55 with 2 x AGM-154A - JSOW CEB (CBU-type)",
+    "weight": "1057.5"
+  },
+  {
+    "attr": "BRU_55_with_2_x_AGM_154C___JSOW_Unitary_BROACH",
+    "clsid": "{BRU55_2*AGM-154C}",
+    "name": "BRU-55 with 2 x AGM-154C - JSOW Unitary BROACH",
+    "weight": "1055.5"
+  },
+  {
+    "attr": "BRU_55_with_2_x_GBU_32_V_2_B___JDAM__1000lb_GPS_Guided_Bomb",
+    "clsid": "{BRU55_2*GBU-32}",
+    "name": "BRU-55 with 2 x GBU-32(V)2/B - JDAM, 1000lb GPS Guided Bomb",
+    "weight": "1025"
+  },
+  {
+    "attr": "BRU_55_with_2_x_GBU_38___JDAM__500lb_GPS_Guided_Bomb",
+    "clsid": "{BRU55_2*GBU-38}",
+    "name": "BRU-55 with 2 x GBU-38 - JDAM, 500lb GPS Guided Bomb",
+    "weight": "573"
+  },
+  {
+    "attr": "BRU_57_with_2_x_AGM_154A___JSOW_CEB__CBU_type_",
+    "clsid": "{BRU57_2*AGM-154A}",
+    "name": "BRU-57 with 2 x AGM-154A - JSOW CEB (CBU-type)",
+    "weight": "1082"
+  },
+  {
+    "attr": "BRU_57_with_2_x_AGM_154B___JSOW_Anti_Armour",
+    "clsid": "{BRU57_2*AGM-154B}",
+    "name": "BRU-57 with 2 x AGM-154B - JSOW Anti-Armour",
+    "weight": "1082"
+  },
+  {
+    "attr": "BRU_57_with_2_x_GBU_38___JDAM__500lb_GPS_Guided_Bomb",
+    "clsid": "{BRU57_2*GBU-38}",
+    "name": "BRU-57 with 2 x GBU-38 - JDAM, 500lb GPS Guided Bomb",
+    "weight": "573"
+  },
+  {
+    "attr": "BetAB_500___500_kg_Concrete_Piercing_Bomb_LD",
+    "clsid": "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
+    "name": "BetAB-500 - 500 kg Concrete Piercing Bomb LD",
+    "weight": "476"
+  },
+  {
+    "attr": "BetAB_500___500_kg_Concrete_Piercing_Bomb_LD_",
+    "clsid": "{AB_BETAB-500_BDZ-UMK2-B}",
+    "name": "BetAB-500 - 500 kg Concrete Piercing Bomb LD",
+    "weight": "531"
+  },
+  {
+    "attr": "BetAB_500ShP___500_kg_Concrete_Piercing_Bomb_HD_w_booster",
+    "clsid": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+    "name": "BetAB-500ShP - 500 kg Concrete Piercing Bomb HD w booster",
+    "weight": "380"
+  },
+  {
+    "attr": "BetAB_500ShP___500_kg_Concrete_Piercing_Bomb_HD_w_booster_",
+    "clsid": "{AB_BETAB-500SHP_BDZ-UMK2-B}",
+    "name": "BetAB-500ShP - 500 kg Concrete Piercing Bomb HD w booster",
+    "weight": "435"
+  },
+  {
+    "attr": "C_701IR",
+    "clsid": "{DIS_C-701IR}",
+    "name": "C-701IR",
+    "weight": "170"
+  },
+  {
+    "attr": "DIS_C_701IR",
+    "clsid": "DIS_C-701IR",
+    "name": "C-701IR",
+    "weight": "170"
+  },
+  {
+    "attr": "C_701T",
+    "clsid": "{DIS_C-701T}",
+    "name": "C-701T",
+    "weight": "170"
+  },
+  {
+    "attr": "DIS_C_701T",
+    "clsid": "DIS_C-701T",
+    "name": "C-701T",
+    "weight": "170"
+  },
+  {
+    "attr": "C_802AK",
+    "clsid": "{C_802AK}",
+    "name": "C-802AK",
+    "weight": "600"
+  },
+  {
+    "attr": "DIS_C_802AK",
+    "clsid": "DIS_C-802AK",
+    "name": "C-802AK",
+    "weight": "765"
+  },
+  {
+    "attr": "MK_82_28",
+    "clsid": "MK_82*28",
+    "name": "CBM - 28 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "7819.4"
+  },
+  {
+    "attr": "CBM___28_x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD",
+    "clsid": "{CBM_Mk82AIR}",
+    "name": "CBM - 28 x Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "8211.4"
+  },
+  {
+    "attr": "CLB_30___Mk_83___1000lb_GP_Bomb_LD",
+    "clsid": "{CLB30_MK83}",
+    "name": "CLB 30 - Mk-83 - 1000lb GP Bomb LD",
+    "weight": "499"
+  },
+  {
+    "attr": "CLB_4___4_x_Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{CLB4_MK82}",
+    "name": "CLB 4 - 4 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "1095"
+  },
+  {
+    "attr": "CLB_4___4_x_Mk_82_Snakeye___500lb_GP_Bomb_HD",
+    "clsid": "{CLB4_MK82S}",
+    "name": "CLB 4 - 4 x Mk-82 Snakeye - 500lb GP Bomb HD",
+    "weight": "1181"
+  },
+  {
+    "attr": "CSRL___8_x_GBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{CSRL_GBU12}",
+    "name": "CSRL - 8 x GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "3656.6"
+  },
+  {
+    "attr": "CSRL___8_x_GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb",
+    "clsid": "{CSRL_GBU31V1}",
+    "name": "CSRL - 8 x GBU-31(V)1/B - JDAM, 2000lb GPS Guided Bomb",
+    "weight": "8840.6"
+  },
+  {
+    "attr": "CSRL___8_x_GBU_31_V_3_B___JDAM__2000lb_GPS_Guided_Penetrator_Bomb",
+    "clsid": "{CSRL_GBU31V3}",
+    "name": "CSRL - 8 x GBU-31(V)3/B - JDAM, 2000lb GPS Guided Penetrator Bomb",
+    "weight": "9128.6"
+  },
+  {
+    "attr": "CSRL___8_x_GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb",
+    "clsid": "{CSRL_GBU38V1}",
+    "name": "CSRL - 8 x GBU-38(V)1/B - JDAM, 500lb GPS Guided Bomb",
+    "weight": "3465.4"
+  },
+  {
+    "attr": "CSRL___8_x_GBU_54_V_1_B___LJDAM__500lb_Laser__GPS_Guided_Bomb_LD",
+    "clsid": "{CSRL_GBU54V1}",
+    "name": "CSRL - 8 x GBU-54(V)1/B - LJDAM, 500lb Laser & GPS Guided Bomb LD",
+    "weight": "3465.4"
+  },
+  {
+    "attr": "FAB_100_x_4",
+    "clsid": "{FAB-100-4}",
+    "name": "FAB-100 x 4",
+    "weight": "465"
+  },
+  {
+    "attr": "FAB_100M",
+    "clsid": "FAB_100M",
+    "name": "FAB-100M - 100kg GP Bomb LD",
+    "weight": "100"
+  },
+  {
+    "attr": "I16_FAB_100SV",
+    "clsid": "I16_FAB_100SV",
+    "name": "FAB-100SV",
+    "weight": "100"
+  },
+  {
+    "attr": "FAB_1500_M_54___1500kg_GP_Bomb_LD",
+    "clsid": "{40AA4ABE-D6EB-4CD6-AEFE-A1A0477B24AB}",
+    "name": "FAB-1500 M-54 - 1500kg GP Bomb LD",
+    "weight": "1392"
+  },
+  {
+    "attr": "FAB_250_M54___235_kg__bomb__parachute",
+    "clsid": "{FAB-250-M54}",
+    "name": "FAB-250 M54 - 235 kg, bomb, parachute",
+    "weight": "235"
+  },
+  {
+    "attr": "FAB_250_M54_TU___235_kg__bomb__parachute",
+    "clsid": "{FAB-250-M54-TU}",
+    "name": "FAB-250 M54 TU - 235 kg, bomb, parachute",
+    "weight": "235"
+  },
+  {
+    "attr": "FAB_250M_62___250_kg_GP_Bomb_LD",
+    "clsid": "{FAB_250_M62}",
+    "name": "FAB-250M-62 - 250 kg GP Bomb LD",
+    "weight": "227"
+  },
+  {
+    "attr": "FAB_250M_62___250_kg_GP_Bomb_LD_",
+    "clsid": "{AB_FAB-250-M62_BDZ-UMK2-B}",
+    "name": "FAB-250M-62 - 250 kg GP Bomb LD",
+    "weight": "282"
+  },
+  {
+    "attr": "FAB_50",
+    "clsid": "FAB_50",
+    "name": "FAB-50 - 50kg GP Bomb LD",
+    "weight": "50"
+  },
+  {
+    "attr": "FAB_500_M54___474_kg__bomb__free_fall",
+    "clsid": "{FAB-500-M54}",
+    "name": "FAB-500 M54 - 474 kg, bomb, free-fall",
+    "weight": "474"
+  },
+  {
+    "attr": "FAB_500_M54_TU___480_kg__bomb__parachute",
+    "clsid": "{FAB-500-M54-TU}",
+    "name": "FAB-500 M54 TU - 480 kg, bomb, parachute",
+    "weight": "480"
+  },
+  {
+    "attr": "FAB_500_SL___515_kg__bomb__parachute",
+    "clsid": "{FAB-500-SL}",
+    "name": "FAB-500 SL - 515 kg, bomb, parachute",
+    "weight": "515"
+  },
+  {
+    "attr": "FAB_500_TA___477_kg__bomb__free_fall",
+    "clsid": "{FAB-500-TA}",
+    "name": "FAB-500 TA - 477 kg, bomb, free-fall",
+    "weight": "477"
+  },
+  {
+    "attr": "FAB_500M_62___500_kg_GP_Bomb_LD",
+    "clsid": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+    "name": "FAB-500M-62 - 500 kg GP Bomb LD",
+    "weight": "520"
+  },
+  {
+    "attr": "FAB_500M_62___500_kg_GP_Bomb_LD_",
+    "clsid": "{AB_FAB-500_BDZ-UMK2-B}",
+    "name": "FAB-500M-62 - 500 kg GP Bomb LD",
+    "weight": "575"
+  },
+  {
+    "attr": "DIS_GB6",
+    "clsid": "DIS_GB6",
+    "name": "GB-6",
+    "weight": "672"
+  },
+  {
+    "attr": "DIS_GB6_HE",
+    "clsid": "DIS_GB6_HE",
+    "name": "GB-6-HE",
+    "weight": "672"
+  },
+  {
+    "attr": "DIS_GB6_TSP",
+    "clsid": "DIS_GB6_TSP",
+    "name": "GB-6-SFW",
+    "weight": "672"
+  },
+  {
+    "attr": "DIS_GBU_10",
+    "clsid": "DIS_GBU_10",
+    "name": "GBU-10",
+    "weight": "1162"
+  },
+  {
+    "attr": "GBU_10",
+    "clsid": "{BRU-32 GBU-10}",
+    "name": "GBU-10",
+    "weight": "997.38"
+  },
+  {
+    "attr": "GBU_10___2",
+    "clsid": "{CFT_L_GBU_10_x_2}",
+    "name": "GBU-10 * 2",
+    "weight": "1918"
+  },
+  {
+    "attr": "GBU_10___2_",
+    "clsid": "{CFT_R_GBU_10_x_2}",
+    "name": "GBU-10 * 2",
+    "weight": "1918"
+  },
+  {
+    "attr": "GBU_10___2000lb_Laser_Guided_Bomb",
+    "clsid": "{51F9AAE5-964F-4D21-83FB-502E3BFE5F8A}",
+    "name": "GBU-10 - 2000lb Laser Guided Bomb",
+    "weight": "959"
+  },
+  {
+    "attr": "DIS_GBU_12",
+    "clsid": "DIS_GBU_12",
+    "name": "GBU-12",
+    "weight": "275"
+  },
+  {
+    "attr": "GBU_12",
+    "clsid": "{BRU-32 GBU-12}",
+    "name": "GBU-12",
+    "weight": "332.38"
+  },
+  {
+    "attr": "GBU_12___2",
+    "clsid": "{CFT_L_GBU_12_x_2}",
+    "name": "GBU-12 * 2",
+    "weight": "550"
+  },
+  {
+    "attr": "GBU_12___2_",
+    "clsid": "{CFT_R_GBU_12_x_2}",
+    "name": "GBU-12 * 2",
+    "weight": "550"
+  },
+  {
+    "attr": "GBU_12___4",
+    "clsid": "{CFT_L_GBU_12_x_4}",
+    "name": "GBU-12 * 4",
+    "weight": "1100"
+  },
+  {
+    "attr": "GBU_12___4_",
+    "clsid": "{CFT_R_GBU_12_x_4}",
+    "name": "GBU-12 * 4",
+    "weight": "1100"
+  },
+  {
+    "attr": "GBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}",
+    "name": "GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "277"
+  },
+  {
+    "attr": "GBU_15_V1___2000_lb_TV_Guided_Bomb",
+    "clsid": "{GBU-15V1}",
+    "name": "GBU-15 V1 - 2000 lb TV Guided Bomb",
+    "weight": "1136"
+  },
+  {
+    "attr": "GBU_15_V_1_B___2000lb_TV__EO__Guided_Bomb",
+    "clsid": "{GBU_15_V_1B}",
+    "name": "GBU-15(V)1/B - 2000lb TV (EO) Guided Bomb",
+    "weight": "1123"
+  },
+  {
+    "attr": "GBU_15_V_31_B___2000lb_TV__EO__Guided_Bomb",
+    "clsid": "{GBU_15_V_31B}",
+    "name": "GBU-15(V)31/B - 2000lb TV (EO) Guided Bomb",
+    "weight": "1125"
+  },
+  {
+    "attr": "DIS_GBU_16",
+    "clsid": "DIS_GBU_16",
+    "name": "GBU-16",
+    "weight": "564"
+  },
+  {
+    "attr": "GBU_16",
+    "clsid": "{BRU-32 GBU-16}",
+    "name": "GBU-16",
+    "weight": "621.38"
+  },
+  {
+    "attr": "GBU_16___1000lb_Laser_Guided_Bomb",
+    "clsid": "{0D33DDAE-524F-4A4E-B5B8-621754FE3ADE}",
+    "name": "GBU-16 - 1000lb Laser Guided Bomb",
+    "weight": "513"
+  },
+  {
+    "attr": "GBU_24",
+    "clsid": "{BRU-32 GBU-24}",
+    "name": "GBU-24",
+    "weight": "1107.38"
+  },
+  {
+    "attr": "GBU_24A_B_Paveway_III___2000lb_Laser_Guided_Bomb",
+    "clsid": "{34759BBC-AF1E-4AEE-A581-498FF7A6EBCE}",
+    "name": "GBU-24A/B Paveway III - 2000lb Laser Guided Bomb",
+    "weight": "1087"
+  },
+  {
+    "attr": "GBU_24B_B_Paveway_III___2000lb_Laser_Guided_Bomb",
+    "clsid": "{GBU-24}",
+    "name": "GBU-24B/B Paveway III - 2000lb Laser Guided Bomb",
+    "weight": "1087"
+  },
+  {
+    "attr": "GBU_27___2",
+    "clsid": "{CFT_R_GBU_27_x_2}",
+    "name": "GBU-27 * 2",
+    "weight": "1982"
+  },
+  {
+    "attr": "GBU_27___2000lb_Laser_Guided_Penetrator_Bomb",
+    "clsid": "{EF0A9419-01D6-473B-99A3-BEBDB923B14D}",
+    "name": "GBU-27 - 2000lb Laser Guided Penetrator Bomb",
+    "weight": "1200"
+  },
+  {
+    "attr": "GBU_28___5000lb_Laser_Guided_Penetrator_Bomb",
+    "clsid": "{F06B775B-FC70-44B5-8A9F-5B5E2EB839C7}",
+    "name": "GBU-28 - 5000lb Laser Guided Penetrator Bomb",
+    "weight": "2130"
+  },
+  {
+    "attr": "GBU_31_V_1_B___2",
+    "clsid": "{CFT_L_GBU_31_x_2}",
+    "name": "GBU-31(V)1/B * 2",
+    "weight": "1788"
+  },
+  {
+    "attr": "GBU_31_V_1_B___2_",
+    "clsid": "{CFT_R_GBU_31_x_2}",
+    "name": "GBU-31(V)1/B * 2",
+    "weight": "1788"
+  },
+  {
+    "attr": "GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb",
+    "clsid": "{GBU-31}",
+    "name": "GBU-31(V)1/B - JDAM, 2000lb GPS Guided Bomb",
+    "weight": "934"
+  },
+  {
+    "attr": "GBU_31_V_2_B___JDAM__2000lb_GPS_Guided_Bomb",
+    "clsid": "{GBU_31_V_2B}",
+    "name": "GBU-31(V)2/B - JDAM, 2000lb GPS Guided Bomb",
+    "weight": "934"
+  },
+  {
+    "attr": "GBU_31_V_2_B___JDAM__2000lb_GPS_Guided_Bomb_",
+    "clsid": "{BRU-32 GBU_31_V_2B}",
+    "name": "GBU-31(V)2/B - JDAM, 2000lb GPS Guided Bomb",
+    "weight": "991.38"
+  },
+  {
+    "attr": "GBU_31_V_3_B___2",
+    "clsid": "{CFT_L_GBU_31V3B_x_2}",
+    "name": "GBU-31(V)3/B * 2",
+    "weight": "1962"
+  },
+  {
+    "attr": "GBU_31_V_3_B___2_",
+    "clsid": "{CFT_R_GBU_31V3B_x_2}",
+    "name": "GBU-31(V)3/B * 2",
+    "weight": "1962"
+  },
+  {
+    "attr": "GBU_31_V_3_B___JDAM__2000lb_GPS_Guided_Penetrator_Bomb",
+    "clsid": "{GBU-31V3B}",
+    "name": "GBU-31(V)3/B - JDAM, 2000lb GPS Guided Penetrator Bomb",
+    "weight": "981"
+  },
+  {
+    "attr": "GBU_31_V_4_B___JDAM__2000lb_GPS_Guided_Penetrator_Bomb",
+    "clsid": "{GBU_31_V_4B}",
+    "name": "GBU-31(V)4/B - JDAM, 2000lb GPS Guided Penetrator Bomb",
+    "weight": "970"
+  },
+  {
+    "attr": "GBU_31_V_4_B___JDAM__2000lb_GPS_Guided_Penetrator_Bomb_",
+    "clsid": "{BRU-32 GBU_31_V_4B}",
+    "name": "GBU-31(V)4/B - JDAM, 2000lb GPS Guided Penetrator Bomb",
+    "weight": "1027.38"
+  },
+  {
+    "attr": "GBU_32_V_2_B___JDAM__1000lb_GPS_Guided_Bomb",
+    "clsid": "{GBU_32_V_2B}",
+    "name": "GBU-32(V)2/B - JDAM, 1000lb GPS Guided Bomb",
+    "weight": "467"
+  },
+  {
+    "attr": "GBU_38___3",
+    "clsid": "{CFT_L_GBU_38_x_3}",
+    "name": "GBU-38 * 3",
+    "weight": "723"
+  },
+  {
+    "attr": "GBU_38___3_",
+    "clsid": "{CFT_R_GBU_38_x_3}",
+    "name": "GBU-38 * 3",
+    "weight": "723"
+  },
+  {
+    "attr": "GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb",
+    "clsid": "{GBU-38}",
+    "name": "GBU-38(V)1/B - JDAM, 500lb GPS Guided Bomb",
+    "weight": "241"
+  },
+  {
+    "attr": "GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb_",
+    "clsid": "{BRU-32 GBU-38}",
+    "name": "GBU-38(V)1/B - JDAM, 500lb GPS Guided Bomb",
+    "weight": "298.38"
+  },
+  {
+    "attr": "GBU_39",
+    "clsid": "{GBU-39}",
+    "name": "GBU-39",
+    "weight": "130"
+  },
+  {
+    "attr": "GBU_43",
+    "clsid": "{GBU-43}",
+    "name": "GBU-43",
+    "weight": "9840"
+  },
+  {
+    "attr": "GBU_54_V_1_B___LJDAM__500lb_Laser__GPS_Guided_Bomb_LD",
+    "clsid": "{GBU_54_V_1B}",
+    "name": "GBU-54(V)1/B - LJDAM, 500lb Laser & GPS Guided Bomb LD",
+    "weight": "253"
+  },
+  {
+    "attr": "GBU_54B___3",
+    "clsid": "{CFT_L_GBU_54_x_3}",
+    "name": "GBU-54B * 3",
+    "weight": "759"
+  },
+  {
+    "attr": "GBU_54B___3_",
+    "clsid": "{CFT_R_GBU_54_x_3}",
+    "name": "GBU-54B * 3",
+    "weight": "759"
+  },
+  {
+    "attr": "GBU_8_B_HOBOS___2000_lb_TV_Guided_Bomb",
+    "clsid": "{GBU_8_B}",
+    "name": "GBU-8/B HOBOS - 2000 lb TV Guided Bomb",
+    "weight": "1027"
+  },
+  {
+    "attr": "DIS_GBU_12_DUAL_GDJ_II19_L",
+    "clsid": "DIS_GBU_12_DUAL_GDJ_II19_L",
+    "name": "GDJ-II19 - 2 x GBU-12",
+    "weight": "629"
+  },
+  {
+    "attr": "DIS_GBU_12_DUAL_GDJ_II19_R",
+    "clsid": "DIS_GBU_12_DUAL_GDJ_II19_R",
+    "name": "GDJ-II19 - 2 x GBU-12",
+    "weight": "629"
+  },
+  {
+    "attr": "DIS_MK_82_DUAL_GDJ_II19_L",
+    "clsid": "DIS_MK_82_DUAL_GDJ_II19_L",
+    "name": "GDJ-II19 - 2 x Mk-82",
+    "weight": "561"
+  },
+  {
+    "attr": "DIS_MK_82_DUAL_GDJ_II19_R",
+    "clsid": "DIS_MK_82_DUAL_GDJ_II19_R",
+    "name": "GDJ-II19 - 2 x Mk-82",
+    "weight": "561"
+  },
+  {
+    "attr": "DIS_MK_82S_DUAL_GDJ_II19_L",
+    "clsid": "DIS_MK_82S_DUAL_GDJ_II19_L",
+    "name": "GDJ-II19 - 2 x Mk-82 SnakeEye",
+    "weight": "543"
+  },
+  {
+    "attr": "DIS_MK_82S_DUAL_GDJ_II19_R",
+    "clsid": "DIS_MK_82S_DUAL_GDJ_II19_R",
+    "name": "GDJ-II19 - 2 x Mk-82 SnakeEye",
+    "weight": "543"
+  },
+  {
+    "attr": "HSAB___2_x_GBU_28___5000lb_Laser_Guided_Penetrator_Bomb",
+    "clsid": "{HSAB_2x_GBU28}",
+    "name": "HSAB - 2 x GBU-28 - 5000lb Laser Guided Penetrator Bomb",
+    "weight": "5348.6"
+  },
+  {
+    "attr": "HSAB___4_x_AGM_84D_Harpoon_AShM",
+    "clsid": "{HSAB_4x_AGM84D_L}",
+    "name": "HSAB - 4 x AGM-84D Harpoon AShM",
+    "weight": "3248.6"
+  },
+  {
+    "attr": "HSAB___4_x_AGM_84D_Harpoon_AShM_",
+    "clsid": "{HSAB_4x_AGM84D_R}",
+    "name": "HSAB - 4 x AGM-84D Harpoon AShM",
+    "weight": "3248.6"
+  },
+  {
+    "attr": "HSAB___5_x_GBU_10___2000lb_Laser_Guided_Bomb",
+    "clsid": "{HSAB_5x_GBU10}",
+    "name": "HSAB - 5 x GBU-10 - 2000lb Laser Guided Bomb",
+    "weight": "5883.6"
+  },
+  {
+    "attr": "HSAB___5_x_GBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{HSAB_5x_GBU12}",
+    "name": "HSAB - 5 x GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "2473.6"
+  },
+  {
+    "attr": "HSAB___6_x_AGM_154A___JSOW_CEB__CBU_type_",
+    "clsid": "{HSAB_6x_AGM154A_L}",
+    "name": "HSAB - 6 x AGM-154A - JSOW CEB (CBU-type)",
+    "weight": "3998.6"
+  },
+  {
+    "attr": "HSAB___6_x_AGM_154A___JSOW_CEB__CBU_type__",
+    "clsid": "{HSAB_6x_AGM154A_R}",
+    "name": "HSAB - 6 x AGM-154A - JSOW CEB (CBU-type)",
+    "weight": "3998.6"
+  },
+  {
+    "attr": "HSAB___6_x_GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb",
+    "clsid": "{HSAB_6x_GBU31V1_L}",
+    "name": "HSAB - 6 x GBU-31(V)1/B - JDAM, 2000lb GPS Guided Bomb",
+    "weight": "6638.6"
+  },
+  {
+    "attr": "HSAB___6_x_GBU_31_V_1_B___JDAM__2000lb_GPS_Guided_Bomb_",
+    "clsid": "{HSAB_6x_GBU31V1_R}",
+    "name": "HSAB - 6 x GBU-31(V)1/B - JDAM, 2000lb GPS Guided Bomb",
+    "weight": "6638.6"
+  },
+  {
+    "attr": "HSAB___6_x_GBU_31_V_3_B___JDAM__2000lb_GPS_Guided_Penetrator_Bomb",
+    "clsid": "{HSAB_6x_GBU31V3_L}",
+    "name": "HSAB - 6 x GBU-31(V)3/B - JDAM, 2000lb GPS Guided Penetrator Bomb",
+    "weight": "6854.6"
+  },
+  {
+    "attr": "HSAB___6_x_GBU_31_V_3_B___JDAM__2000lb_GPS_Guided_Penetrator_Bomb_",
+    "clsid": "{HSAB_6x_GBU31V3_R}",
+    "name": "HSAB - 6 x GBU-31(V)3/B - JDAM, 2000lb GPS Guided Penetrator Bomb",
+    "weight": "6854.6"
+  },
+  {
+    "attr": "HSAB___6_x_GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb",
+    "clsid": "{HSAB_6x_GBU38V1_L}",
+    "name": "HSAB - 6 x GBU-38(V)1/B - JDAM, 500lb GPS Guided Bomb",
+    "weight": "2607.2"
+  },
+  {
+    "attr": "HSAB___6_x_GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb_",
+    "clsid": "{HSAB_6x_GBU38V1_R}",
+    "name": "HSAB - 6 x GBU-38(V)1/B - JDAM, 500lb GPS Guided Bomb",
+    "weight": "2607.2"
+  },
+  {
+    "attr": "HSAB___6_x_Mk_84___2000lb_GP_Bomb_LD",
+    "clsid": "{696CFFC4-0BDE-42A8-BE4B-0BE3D9DD723C}",
+    "name": "HSAB - 6 x Mk-84 - 2000lb GP Bomb LD",
+    "weight": "6536.6"
+  },
+  {
+    "attr": "HSAB___8_x_GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb",
+    "clsid": "{HSAB_8x_GBU38V1_L}",
+    "name": "HSAB - 8 x GBU-38(V)1/B - JDAM, 500lb GPS Guided Bomb",
+    "weight": "3113.4"
+  },
+  {
+    "attr": "HSAB___8_x_GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb_",
+    "clsid": "{HSAB_8x_GBU38V1_R}",
+    "name": "HSAB - 8 x GBU-38(V)1/B - JDAM, 500lb GPS Guided Bomb",
+    "weight": "3113.4"
+  },
+  {
+    "attr": "HSAB___8_x_GBU_54_V_1_B___LJDAM__500lb_Laser__GPS_Guided_Bomb_LD",
+    "clsid": "{HSAB_8x_GBU54V1_L}",
+    "name": "HSAB - 8 x GBU-54(V)1/B - LJDAM, 500lb Laser & GPS Guided Bomb LD",
+    "weight": "3113.4"
+  },
+  {
+    "attr": "HSAB___8_x_GBU_54_V_1_B___LJDAM__500lb_Laser__GPS_Guided_Bomb_LD_",
+    "clsid": "{HSAB_8x_GBU54V1_R}",
+    "name": "HSAB - 8 x GBU-54(V)1/B - LJDAM, 500lb Laser & GPS Guided Bomb LD",
+    "weight": "3113.4"
+  },
+  {
+    "attr": "HSAB___9_x_Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{585D626E-7F42-4073-AB70-41E728C333E2}",
+    "name": "HSAB - 9 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "3140.6"
+  },
+  {
+    "attr": "HSAB___9_x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD",
+    "clsid": "{HSAB_Mk82AIR}",
+    "name": "HSAB - 9 x Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "3266.6"
+  },
+  {
+    "attr": "HSAB_with_6_x_AGM_84",
+    "clsid": "{HSAB-6xAGM-84}",
+    "name": "HSAB with 6 x AGM-84",
+    "weight": "5054.6"
+  },
+  {
+    "attr": "KAB_1500Kr___1500kg_TV_Guided_Bomb",
+    "clsid": "{KAB_1500Kr_LOADOUT}",
+    "name": "KAB-1500Kr - 1500kg TV Guided Bomb",
+    "weight": "1525"
+  },
+  {
+    "attr": "KAB_1500L___1500kg_Laser_Guided_Bomb",
+    "clsid": "{39821727-F6E2-45B3-B1F0-490CC8921D1E}",
+    "name": "KAB-1500L - 1500kg Laser Guided Bomb",
+    "weight": "1560"
+  },
+  {
+    "attr": "KAB_1500LG_Pr___1500kg_Laser_Guided_Penetrator_Bomb",
+    "clsid": "{KAB_1500LG_LOADOUT}",
+    "name": "KAB-1500LG-Pr - 1500kg Laser Guided Penetrator Bomb",
+    "weight": "1525"
+  },
+  {
+    "attr": "KAB_500Kr___500kg_TV_Guided_Bomb",
+    "clsid": "{E2C426E3-8B10-4E09-B733-9CDC26520F48}",
+    "name": "KAB-500Kr - 500kg TV Guided Bomb",
+    "weight": "560"
+  },
+  {
+    "attr": "KAB_500LG___500kg_Laser_Guided_Bomb",
+    "clsid": "{BA565F89-2373-4A84-9502-A0E017D3A44A}",
+    "name": "KAB-500LG - 500kg Laser Guided Bomb",
+    "weight": "534"
+  },
+  {
+    "attr": "KAB_500S___500kg_GPS_Guided_Bomb",
+    "clsid": "{KAB_500S_LOADOUT}",
+    "name": "KAB-500S - 500kg GPS Guided Bomb",
+    "weight": "500"
+  },
+  {
+    "attr": "Kh_25ML__AS_10_Karen____300kg__ASM__Semi_Act_Laser",
+    "clsid": "{X-25ML}",
+    "name": "Kh-25ML (AS-10 Karen) - 300kg, ASM, Semi-Act Laser",
+    "weight": "360"
+  },
+  {
+    "attr": "Kh_25ML__AS_10_Karen____300kg__ASM__Semi_Act_Laser_",
+    "clsid": "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+    "name": "Kh-25ML (AS-10 Karen) - 300kg, ASM, Semi-Act Laser",
+    "weight": "360"
+  },
+  {
+    "attr": "Kh_25ML__AS_10_Karen____300kg__ASM__Semi_Act_Laser__",
+    "clsid": "{79D73885-0801-45a9-917F-C90FE1CE3DFC}",
+    "name": "Kh-25ML (AS-10 Karen) - 300kg, ASM, Semi-Act Laser",
+    "weight": "360"
+  },
+  {
+    "attr": "Kh_25MP__AS_12_Kegler____320kg__ARM__Pas_Rdr",
+    "clsid": "{Kh-25MP}",
+    "name": "Kh-25MP (AS-12 Kegler) - 320kg, ARM, Pas Rdr",
+    "weight": "355"
+  },
+  {
+    "attr": "Kh_25MPU__Updated_AS_12_Kegler____320kg__ARM__IN__Pas_Rdr",
+    "clsid": "{X-25MPU}",
+    "name": "Kh-25MPU (Updated AS-12 Kegler) - 320kg, ARM, IN & Pas Rdr",
+    "weight": "370"
+  },
+  {
+    "attr": "Kh_25MPU__Updated_AS_12_Kegler____320kg__ARM__IN__Pas_Rdr_",
+    "clsid": "{E86C5AA5-6D49-4F00-AD2E-79A62D6DDE26}",
+    "name": "Kh-25MPU (Updated AS-12 Kegler) - 320kg, ARM, IN & Pas Rdr",
+    "weight": "370"
+  },
+  {
+    "attr": "Kh_25MPU__Updated_AS_12_Kegler____320kg__ARM__IN__Pas_Rdr__",
+    "clsid": "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+    "name": "Kh-25MPU (Updated AS-12 Kegler) - 320kg, ARM, IN & Pas Rdr",
+    "weight": "370"
+  },
+  {
+    "attr": "Kh_25MR__AS_10_Karen____300kg__ASM__10km__RC_Guided",
+    "clsid": "{292960BB-6518-41AC-BADA-210D65D5073C}",
+    "name": "Kh-25MR (AS-10 Karen) - 300kg, ASM, 10km, RC Guided",
+    "weight": "360"
+  },
+  {
+    "attr": "Kh_25MR__AS_10_Karen____300kg__ASM__RC_Guided",
+    "clsid": "{X-25MR}",
+    "name": "Kh-25MR (AS-10 Karen) - 300kg, ASM, RC Guided",
+    "weight": "360"
+  },
+  {
+    "attr": "Kh_29L__AS_14_Kedge____657kg__ASM__Semi_Act_Laser",
+    "clsid": "{X-29L}",
+    "name": "Kh-29L (AS-14 Kedge) - 657kg, ASM, Semi-Act Laser",
+    "weight": "660"
+  },
+  {
+    "attr": "Kh_29L__AS_14_Kedge____657kg__ASM__Semi_Act_Laser_",
+    "clsid": "{3468C652-E830-4E73-AFA9-B5F260AB7C3D}",
+    "name": "Kh-29L (AS-14 Kedge) - 657kg, ASM, Semi-Act Laser",
+    "weight": "846"
+  },
+  {
+    "attr": "Kh_29L__AS_14_Kedge____657kg__ASM__Semi_Act_Laser__",
+    "clsid": "{D4A8D9B9-5C45-42e7-BBD2-0E54F8308432}",
+    "name": "Kh-29L (AS-14 Kedge) - 657kg, ASM, Semi-Act Laser",
+    "weight": "846"
+  },
+  {
+    "attr": "Kh_29T__AS_14_Kedge____670kg__ASM__TV_Guided",
+    "clsid": "{X-29T}",
+    "name": "Kh-29T (AS-14 Kedge) - 670kg, ASM, TV Guided",
+    "weight": "690"
+  },
+  {
+    "attr": "Kh_29T__AS_14_Kedge____670kg__ASM__TV_Guided_",
+    "clsid": "{B4FC81C9-B861-4E87-BBDC-A1158E648EBF}",
+    "name": "Kh-29T (AS-14 Kedge) - 670kg, ASM, TV Guided",
+    "weight": "876"
+  },
+  {
+    "attr": "Kh_29T__AS_14_Kedge____670kg__ASM__TV_Guided__",
+    "clsid": "{601C99F7-9AF3-4ed7-A565-F8B8EC0D7AAC}",
+    "name": "Kh-29T (AS-14 Kedge) - 670kg, ASM, TV Guided",
+    "weight": "876"
+  },
+  {
+    "attr": "Kh_31A__AS_17_Krypton____610kg__AShM__IN__Act_Rdr",
+    "clsid": "{4D13E282-DF46-4B23-864A-A9423DFDE504}",
+    "name": "Kh-31A (AS-17 Krypton) - 610kg, AShM, IN & Act Rdr",
+    "weight": "796"
+  },
+  {
+    "attr": "Kh_31A__AS_17_Krypton____610kg__AShM__IN__Act_Rdr_",
+    "clsid": "{4D13E282-DF46-4B23-864A-A9423DFDE50A}",
+    "name": "Kh-31A (AS-17 Krypton) - 610kg, AShM, IN & Act Rdr",
+    "weight": "796"
+  },
+  {
+    "attr": "Kh_31A__AS_17_Krypton____610kg__AShM__IN__Act_Rdr__",
+    "clsid": "{X-31A}",
+    "name": "Kh-31A (AS-17 Krypton) - 610kg, AShM, IN & Act Rdr",
+    "weight": "610"
+  },
+  {
+    "attr": "Kh_31P__AS_17_Krypton____600kg__ARM__IN__Pas_Rdr",
+    "clsid": "{D8F2C90B-887B-4B9E-9FE2-996BC9E9AF03}",
+    "name": "Kh-31P (AS-17 Krypton) - 600kg, ARM, IN & Pas Rdr",
+    "weight": "786"
+  },
+  {
+    "attr": "Kh_31P__AS_17_Krypton____600kg__ARM__IN__Pas_Rdr_",
+    "clsid": "{D8F2C90B-887B-4B9E-9FE2-996BC9E9AF0A}",
+    "name": "Kh-31P (AS-17 Krypton) - 600kg, ARM, IN & Pas Rdr",
+    "weight": "786"
+  },
+  {
+    "attr": "Kh_31P__AS_17_Krypton____600kg__ARM__IN__Pas_Rdr__",
+    "clsid": "{X-31P}",
+    "name": "Kh-31P (AS-17 Krypton) - 600kg, ARM, IN & Pas Rdr",
+    "weight": "600"
+  },
+  {
+    "attr": "Kh_58U__AS_11_Kilter____640kg__ARM__IN__Pas_Rdr",
+    "clsid": "{FE382A68-8620-4AC0-BDF5-709BFE3977D7}",
+    "name": "Kh-58U (AS-11 Kilter) - 640kg, ARM, IN & Pas Rdr",
+    "weight": "836"
+  },
+  {
+    "attr": "Kh_58U__AS_11_Kilter____640kg__ARM__IN__Pas_Rdr_",
+    "clsid": "{B5CA9846-776E-4230-B4FD-8BCC9BFB1676}",
+    "name": "Kh-58U (AS-11 Kilter) - 640kg, ARM, IN & Pas Rdr",
+    "weight": "836"
+  },
+  {
+    "attr": "LAU_117_AGM_65A",
+    "clsid": "LAU_117_AGM_65A",
+    "name": "LAU-117 with AGM-65A - Maverick A (TV Guided)",
+    "weight": "269.5"
+  },
+  {
+    "attr": "LAU_117_AGM_65B",
+    "clsid": "LAU_117_AGM_65B",
+    "name": "LAU-117 with AGM-65B - Maverick B (TV Guided)",
+    "weight": "269.5"
+  },
+  {
+    "attr": "LAU_117_with_AGM_65D___Maverick_D__IIR_ASM_",
+    "clsid": "{444BA8AE-82A7-4345-842E-76154EFCCA46}",
+    "name": "LAU-117 with AGM-65D - Maverick D (IIR ASM)",
+    "weight": "277"
+  },
+  {
+    "attr": "LAU_117_with_AGM_65E___Maverick_E__Laser_ASM___Lg_Whd_",
+    "clsid": "{F16A4DE0-116C-4A71-97F0-2CF85B0313EC}",
+    "name": "LAU-117 with AGM-65E - Maverick E (Laser ASM - Lg Whd)",
+    "weight": "345"
+  },
+  {
+    "attr": "LAU_117_AGM_65L",
+    "clsid": "LAU_117_AGM_65L",
+    "name": "LAU-117 with AGM-65E2/L - Maverick E2/L (Laser Guided ASM)",
+    "weight": "351"
+  },
+  {
+    "attr": "LAU_117_AGM_65F",
+    "clsid": "LAU_117_AGM_65F",
+    "name": "LAU-117 with AGM-65F - Maverick F (IIR ASM)",
+    "weight": "360"
+  },
+  {
+    "attr": "LAU_117_AGM_65G",
+    "clsid": "LAU_117_AGM_65G",
+    "name": "LAU-117 with AGM-65G - Maverick G (IIR ASM - Lg Whd)",
+    "weight": "360"
+  },
+  {
+    "attr": "LAU_117_AGM_65H",
+    "clsid": "LAU_117_AGM_65H",
+    "name": "LAU-117 with AGM-65H - Maverick H (CCD Imp ASM)",
+    "weight": "267"
+  },
+  {
+    "attr": "LAU_117_with_AGM_65K___Maverick_K__CCD_Imp_ASM_",
+    "clsid": "{69DC8AE7-8F77-427B-B8AA-B19D3F478B66}",
+    "name": "LAU-117 with AGM-65K - Maverick K (CCD Imp ASM)",
+    "weight": "357"
+  },
+  {
+    "attr": "LAU_117_A_with_AGM_65D___Maverick_D__IIR_ASM_",
+    "clsid": "{LAU_117A_AGM_65D}",
+    "name": "LAU-117/A with AGM-65D - Maverick D (IIR ASM)",
+    "weight": "277"
+  },
+  {
+    "attr": "LAU_117_A_with_AGM_65G___Maverick_G__IIR_ASM___Lrg_Whd_",
+    "clsid": "{LAU_117A_AGM_65G}",
+    "name": "LAU-117/A with AGM-65G - Maverick G (IIR ASM - Lrg Whd)",
+    "weight": "360"
+  },
+  {
+    "attr": "LAU_117_A_with_AGM_65H___Maverick_H__CCD_Imp_ASM_",
+    "clsid": "{LAU_117A_AGM_65H}",
+    "name": "LAU-117/A with AGM-65H - Maverick H (CCD Imp ASM)",
+    "weight": "267"
+  },
+  {
+    "attr": "LAU_117_A_with_AGM_65K___Maverick_K__CCD_Imp_ASM_",
+    "clsid": "{LAU_117A_AGM_65K}",
+    "name": "LAU-117/A with AGM-65K - Maverick K (CCD Imp ASM)",
+    "weight": "356"
+  },
+  {
+    "attr": "LAU_118A___AGM_45A_Shrike_ARM",
+    "clsid": "{LAU118_AGM_45A}",
+    "name": "LAU-118A - AGM-45A Shrike ARM",
+    "weight": "222.4"
+  },
+  {
+    "attr": "LAU_118A___AGM_45B_Shrike_ARM",
+    "clsid": "{3E6B632D-65EB-44D2-9501-1C2D04515405}",
+    "name": "LAU-118A - AGM-45B Shrike ARM",
+    "weight": "222.4"
+  },
+  {
+    "attr": "LAU_88_AGM_65D_ONE",
+    "clsid": "LAU_88_AGM_65D_ONE",
+    "name": "LAU-88 with 1 x AGM-65D - Maverick D (IIR ASM)",
+    "weight": "429"
+  },
+  {
+    "attr": "LAU_88_AGM_65H",
+    "clsid": "LAU_88_AGM_65H",
+    "name": "LAU-88 with 1 x AGM-65H - Maverick H (CCD Imp ASM)",
+    "weight": "419"
+  },
+  {
+    "attr": "LAU_88_with_2_x_AGM_65D___Maverick_D__IIR_ASM_",
+    "clsid": "{E6A6262A-CA08-4B3D-B030-E1A993B98452}",
+    "name": "LAU-88 with 2 x AGM-65D - Maverick D (IIR ASM)",
+    "weight": "647"
+  },
+  {
+    "attr": "LAU_88_with_2_x_AGM_65D___Maverick_D__IIR_ASM__",
+    "clsid": "{E6A6262A-CA08-4B3D-B030-E1A993B98453}",
+    "name": "LAU-88 with 2 x AGM-65D - Maverick D (IIR ASM)",
+    "weight": "647"
+  },
+  {
+    "attr": "LAU_88_with_2_x_AGM_65E___Maverick_E__Laser_ASM___Lg_Whd_",
+    "clsid": "{2CC29C7A-E863-411C-8A6E-BD6F0E730548}",
+    "name": "LAU-88 with 2 x AGM-65E - Maverick E (Laser ASM - Lg Whd)",
+    "weight": "783"
+  },
+  {
+    "attr": "LAU_88_with_2_x_AGM_65E___Maverick_E__Laser_ASM___Lg_Whd__",
+    "clsid": "{2CC29C7A-E863-411C-8A6E-BD6F0E730547}",
+    "name": "LAU-88 with 2 x AGM-65E - Maverick E (Laser ASM - Lg Whd)",
+    "weight": "783"
+  },
+  {
+    "attr": "LAU_88_AGM_65H_2_L",
+    "clsid": "LAU_88_AGM_65H_2_L",
+    "name": "LAU-88 with 2 x AGM-65H - Maverick H (CCD Imp ASM)",
+    "weight": "627"
+  },
+  {
+    "attr": "LAU_88_AGM_65H_2_R",
+    "clsid": "LAU_88_AGM_65H_2_R",
+    "name": "LAU-88 with 2 x AGM-65H - Maverick H (CCD Imp ASM)",
+    "weight": "627"
+  },
+  {
+    "attr": "LAU_88_with_2_x_AGM_65K___Maverick_K__CCD_Imp_ASM_",
+    "clsid": "{D7670BC7-881B-4094-906C-73879CF7EB28}",
+    "name": "LAU-88 with 2 x AGM-65K - Maverick K (CCD Imp ASM)",
+    "weight": "807"
+  },
+  {
+    "attr": "LAU_88_with_2_x_AGM_65K___Maverick_K__CCD_Imp_ASM__",
+    "clsid": "{D7670BC7-881B-4094-906C-73879CF7EB27}",
+    "name": "LAU-88 with 2 x AGM-65K - Maverick K (CCD Imp ASM)",
+    "weight": "807"
+  },
+  {
+    "attr": "LAU_88_with_3_x_AGM_65D___Maverick_D__IIR_ASM_",
+    "clsid": "{DAC53A2F-79CA-42FF-A77A-F5649B601308}",
+    "name": "LAU-88 with 3 x AGM-65D - Maverick D (IIR ASM)",
+    "weight": "865"
+  },
+  {
+    "attr": "LAU_88_with_3_x_AGM_65E___Maverick_E__Laser_ASM___Lg_Whd_",
+    "clsid": "{71AAB9B8-81C1-4925-BE50-1EF8E9899271}",
+    "name": "LAU-88 with 3 x AGM-65E - Maverick E (Laser ASM - Lg Whd)",
+    "weight": "1069"
+  },
+  {
+    "attr": "LAU_88_AGM_65H_3",
+    "clsid": "LAU_88_AGM_65H_3",
+    "name": "LAU-88 with 3 x AGM-65H - Maverick H (CCD Imp ASM)",
+    "weight": "835"
+  },
+  {
+    "attr": "LAU_88_with_3_x_AGM_65K___Maverick_K__CCD_Imp_ASM_",
+    "clsid": "{907D835F-E650-4154-BAFD-C656882555C0}",
+    "name": "LAU-88 with 3 x AGM-65K - Maverick K (CCD Imp ASM)",
+    "weight": "1105"
+  },
+  {
+    "attr": "LAU_88_A_with_3_x_AGM_65D___Maverick_D__IIR_ASM_",
+    "clsid": "{LAU_88A_AGM_65Dx3}",
+    "name": "LAU-88/A with 3 x AGM-65D - Maverick D (IIR ASM)",
+    "weight": "865"
+  },
+  {
+    "attr": "LAU_88_A_with_3_x_AGM_65H___Maverick_H__CCD_Imp_ASM_",
+    "clsid": "{LAU_88A_AGM_65Hx3}",
+    "name": "LAU-88/A with 3 x AGM-65H - Maverick H (CCD Imp ASM)",
+    "weight": "835"
+  },
+  {
+    "attr": "LAU_88_A_with_3_x_AGM_65K___Maverick_K__CCD_Imp_ASM_",
+    "clsid": "{LAU_88A_AGM_65Kx3}",
+    "name": "LAU-88/A with 3 x AGM-65K - Maverick K (CCD Imp ASM)",
+    "weight": "1102"
+  },
+  {
+    "attr": "M299___1_x_AGM_114K_Hellfire__Port",
+    "clsid": "{M299_1xAGM_114K_OUTBOARD_PORT}",
+    "name": "M299 - 1 x AGM-114K Hellfire, Port",
+    "weight": "109.8"
+  },
+  {
+    "attr": "M299___1_x_AGM_114K_Hellfire__Starboard",
+    "clsid": "{M299_1xAGM_114K_OUTBOARD_STARBOARD}",
+    "name": "M299 - 1 x AGM-114K Hellfire, Starboard",
+    "weight": "109.8"
+  },
+  {
+    "attr": "M299___1_x_AGM_114K__3_x_AGM_114L_Hellfire__Port",
+    "clsid": "{M299_1xAGM_114K_3xAGM_114L_PRT}",
+    "name": "M299 - 1 x AGM-114K, 3 x AGM-114L Hellfire, Port",
+    "weight": "257.3"
+  },
+  {
+    "attr": "M299___1_x_AGM_114K__3_x_AGM_114L_Hellfire__Starboard",
+    "clsid": "{M299_1xAGM_114K_3xAGM_114L_STRBRD}",
+    "name": "M299 - 1 x AGM-114K, 3 x AGM-114L Hellfire, Starboard",
+    "weight": "257.3"
+  },
+  {
+    "attr": "M299___1_x_AGM_114L_Hellfire__Port",
+    "clsid": "{M299_1xAGM_114L_OUTBOARD_PORT}",
+    "name": "M299 - 1 x AGM-114L Hellfire, Port",
+    "weight": "113.9"
+  },
+  {
+    "attr": "M299___1_x_AGM_114L_Hellfire__Starboard",
+    "clsid": "{M299_1xAGM_114L_OUTBOARD_STARBOARD}",
+    "name": "M299 - 1 x AGM-114L Hellfire, Starboard",
+    "weight": "113.9"
+  },
+  {
+    "attr": "M299___2_x_AGM_114K_Hellfire",
+    "clsid": "{M299_2xAGM_114K}",
+    "name": "M299 - 2 x AGM-114K Hellfire",
+    "weight": "154.7"
+  },
+  {
+    "attr": "M299___2_x_AGM_114K__2_x_AGM_114L_Hellfire",
+    "clsid": "{M299_2xAGM_114K_2xAGM_114L}",
+    "name": "M299 - 2 x AGM-114K, 2 x AGM-114L Hellfire",
+    "weight": "253.7"
+  },
+  {
+    "attr": "M299___2_x_AGM_114L_Hellfire",
+    "clsid": "{M299_2xAGM_114L}",
+    "name": "M299 - 2 x AGM-114L Hellfire",
+    "weight": "162.9"
+  },
+  {
+    "attr": "M299___3_x_AGM_114K_Hellfire__Port",
+    "clsid": "{M299_3xAGM_114K_OUTBOARD_PORT}",
+    "name": "M299 - 3 x AGM-114K Hellfire, Port",
+    "weight": "199.6"
+  },
+  {
+    "attr": "M299___3_x_AGM_114K_Hellfire__Starboard",
+    "clsid": "{M299_3xAGM_114K_OUTBOARD_STARBOARD}",
+    "name": "M299 - 3 x AGM-114K Hellfire, Starboard",
+    "weight": "199.6"
+  },
+  {
+    "attr": "M299___3_x_AGM_114K__1_x_AGM_114L_Hellfire__Port",
+    "clsid": "{M299_3xAGM_114K_1xAGM_114L_PRT}",
+    "name": "M299 - 3 x AGM-114K, 1 x AGM-114L Hellfire, Port",
+    "weight": "250.1"
+  },
+  {
+    "attr": "M299___3_x_AGM_114K__1_x_AGM_114L_Hellfire__Starboard",
+    "clsid": "{M299_3xAGM_114K_1xAGM_114L_STRBRD}",
+    "name": "M299 - 3 x AGM-114K, 1 x AGM-114L Hellfire, Starboard",
+    "weight": "250.1"
+  },
+  {
+    "attr": "M299___3_x_AGM_114L_Hellfire__Port",
+    "clsid": "{M299_3xAGM_114L_OUTBOARD_PORT}",
+    "name": "M299 - 3 x AGM-114L Hellfire, Port",
+    "weight": "211.9"
+  },
+  {
+    "attr": "M299___3_x_AGM_114L_Hellfire__Starboard",
+    "clsid": "{M299_3xAGM_114L_OUTBOARD_STARBOARD}",
+    "name": "M299 - 3 x AGM-114L Hellfire, Starboard",
+    "weight": "211.9"
+  },
+  {
+    "attr": "M299___4_x_AGM_114K_Hellfire",
+    "clsid": "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}",
+    "name": "M299 - 4 x AGM-114K Hellfire",
+    "weight": "244.5"
+  },
+  {
+    "attr": "M299___4_x_AGM_114L_Hellfire",
+    "clsid": "{M299_4xAGM_114L}",
+    "name": "M299 - 4 x AGM-114L Hellfire",
+    "weight": "260.9"
+  },
+  {
+    "attr": "MAK79_3_Mk_82",
+    "clsid": "{MAK79_MK82 3L}",
+    "name": "MAK79 3 Mk-82",
+    "weight": "753"
+  },
+  {
+    "attr": "MAK79_3_Mk_82_",
+    "clsid": "{MAK79_MK82 3R}",
+    "name": "MAK79 3 Mk-82",
+    "weight": "753"
+  },
+  {
+    "attr": "MAK79_3_Mk_82_SnakeEye",
+    "clsid": "{MAK79_MK82SE 3L}",
+    "name": "MAK79 3 Mk-82 SnakeEye",
+    "weight": "753"
+  },
+  {
+    "attr": "MAK79_3_Mk_82_SnakeEye_",
+    "clsid": "{MAK79_MK82SE 3R}",
+    "name": "MAK79 3 Mk-82 SnakeEye",
+    "weight": "753"
+  },
+  {
+    "attr": "MAK79_3_Mk_82AIR",
+    "clsid": "{MAK79_MK82AIR 3L}",
+    "name": "MAK79 3 Mk-82AIR",
+    "weight": "753"
+  },
+  {
+    "attr": "MAK79_3_Mk_82AIR_",
+    "clsid": "{MAK79_MK82AIR 3R}",
+    "name": "MAK79 3 Mk-82AIR",
+    "weight": "753"
+  },
+  {
+    "attr": "MAK79_3_Mk_83",
+    "clsid": "{MAK79_MK83 3L}",
+    "name": "MAK79 3 Mk-83",
+    "weight": "1371"
+  },
+  {
+    "attr": "MAK79_3_Mk_83_",
+    "clsid": "{MAK79_MK83 3R}",
+    "name": "MAK79 3 Mk-83",
+    "weight": "1371"
+  },
+  {
+    "attr": "MAK79_4_Mk_82",
+    "clsid": "{MAK79_MK82 4}",
+    "name": "MAK79 4 Mk-82",
+    "weight": "1004"
+  },
+  {
+    "attr": "MAK79_4_Mk_82_SnakeEye",
+    "clsid": "{MAK79_MK82SE 4}",
+    "name": "MAK79 4 Mk-82 SnakeEye",
+    "weight": "1004"
+  },
+  {
+    "attr": "MAK79_4_Mk_82AIR",
+    "clsid": "{MAK79_MK82AIR 4}",
+    "name": "MAK79 4 Mk-82AIR",
+    "weight": "1004"
+  },
+  {
+    "attr": "MAK79_Mk_83",
+    "clsid": "{MAK79_MK83 1R}",
+    "name": "MAK79 Mk-83",
+    "weight": "457"
+  },
+  {
+    "attr": "MAK79_Mk_83_",
+    "clsid": "{MAK79_MK83 1L}",
+    "name": "MAK79 Mk-83",
+    "weight": "457"
+  },
+  {
+    "attr": "MBD2_67U___4_x_OFAB_100_120___100_kg_GP_Bomb_LD",
+    "clsid": "{5A1AC2B4-CA4B-4D09-A1AF-AC52FBC4B60B}",
+    "name": "MBD2-67U - 4 x OFAB-100-120 - 100 kg GP Bomb LD",
+    "weight": "557"
+  },
+  {
+    "attr": "MBD2_67U___4_x_OFAB_100_120___100_kg_GP_Bomb_LD_",
+    "clsid": "{29A828E2-C6BB-11d8-9897-000476191836}",
+    "name": "MBD2-67U - 4 x OFAB-100-120 - 100 kg GP Bomb LD",
+    "weight": "557"
+  },
+  {
+    "attr": "MBD3_with_3_x_BetAB_500___500kg_Concrete_Piercing_Bombs_LD",
+    "clsid": "{005E70F5-C3EA-4E95-A148-C1044C42D845}",
+    "name": "MBD3 with 3 x BetAB-500 - 500kg Concrete Piercing Bombs LD",
+    "weight": "1566"
+  },
+  {
+    "attr": "MBD3_with_3_x_FAB_100___100kg_GP_Bombs_LD",
+    "clsid": "{CEE04106-B9AA-46B4-9CD1-CD3FDCF0CE78}",
+    "name": "MBD3 with 3 x FAB-100 - 100kg GP Bombs LD",
+    "weight": "360"
+  },
+  {
+    "attr": "MBD3_with_3_x_FAB_250___250kg_GP_Bombs_LD",
+    "clsid": "{D109EE9C-A1B7-4F1C-8D87-631C293A1D26}",
+    "name": "MBD3 with 3 x FAB-250 - 250kg GP Bombs LD",
+    "weight": "810"
+  },
+  {
+    "attr": "MBD3_with_3_x_FAB_500_M_62___500kg_GP_Bombs_LD",
+    "clsid": "{A1E85991-B58E-4E92-AE91-DED6DC85B2E7}",
+    "name": "MBD3 with 3 x FAB-500 M-62 - 500kg GP Bombs LD",
+    "weight": "1560"
+  },
+  {
+    "attr": "MBD3_U2T_with_2_x_FAB_1500_M_54___1500kg_GP_Bombs_LD",
+    "clsid": "{7C5F0F5F-0A0B-46E8-937C-8922303E39A8}",
+    "name": "MBD3-U2T with 2 x FAB-1500 M-54 - 1500kg GP Bombs LD",
+    "weight": "3100"
+  },
+  {
+    "attr": "MBD3_U2T_1_with_2_x_BetAB_500___500_kg_Concrete_Piercing_Bomb_LD",
+    "clsid": "{AB_2xBETAB-500_MBD3-U2T}",
+    "name": "MBD3-U2T-1 with 2 x BetAB-500 - 500 kg Concrete Piercing Bomb LD",
+    "weight": "1007"
+  },
+  {
+    "attr": "MBD3_U2T_1_with_2_x_FAB_250M_62___250_kg_GP_Bomb_LD",
+    "clsid": "{AB_2xFAB-250-M62_MBD3-U2T}",
+    "name": "MBD3-U2T-1 with 2 x FAB-250M-62 - 250 kg GP Bomb LD",
+    "weight": "509"
+  },
+  {
+    "attr": "MBD3_U2T_1_with_2_x_FAB_500M_62___500_kg_GP_Bomb_LD",
+    "clsid": "{AB_2xFAB-500_MBD3-U2T}",
+    "name": "MBD3-U2T-1 with 2 x FAB-500M-62 - 500 kg GP Bomb LD",
+    "weight": "1095"
+  },
+  {
+    "attr": "MBD3_U2T_1_with_2_x_OFAB_250_270___250_kg_GP_Bomb_LD",
+    "clsid": "{AB_2xFAB-250_MBD3-U2T}",
+    "name": "MBD3-U2T-1 with 2 x OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "587"
+  },
+  {
+    "attr": "MBD3_U4T___4_x_OFAB_250_270___250_kg_GP_Bomb_LD",
+    "clsid": "{6A367BB4-327F-4A04-8D9E-6D86BDC98E7E}",
+    "name": "MBD3-U4T - 4 x OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "1060"
+  },
+  {
+    "attr": "MBD3_U6_68___2_x_OFAB_250_270___250_kg_GP_Bomb_LD",
+    "clsid": "{E659C4BE-2CD8-4472-8C08-3F28ACB61A8A}",
+    "name": "MBD3-U6-68 - 2 x OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "680"
+  },
+  {
+    "attr": "MBD3_U6_68___3_x_OFAB_250_270___250_kg_GP_Bomb_LD",
+    "clsid": "{MBD3_U6_3*FAB-250_fwd}",
+    "name": "MBD3-U6-68 - 3 x OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "946"
+  },
+  {
+    "attr": "MBD3_U6_68___4_x_OFAB_250_270___250_kg_GP_Bomb_LD",
+    "clsid": "{3E35F8C1-052D-11d6-9191-00A0249B6F00}",
+    "name": "MBD3-U6-68 - 4 x OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "1212"
+  },
+  {
+    "attr": "MBD3_U6_68___4_x_OFAB_250_270___250_kg_GP_Bomb_LD_",
+    "clsid": "{MBD3_U6_4*FAB-250_fwd}",
+    "name": "MBD3-U6-68 - 4 x OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "1212"
+  },
+  {
+    "attr": "MBD3_U6_68___5_x_OFAB_250_270___250_kg_GP_Bomb_LD",
+    "clsid": "{MBD3_U6_5*FAB-250}",
+    "name": "MBD3-U6-68 - 5 x OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "1478"
+  },
+  {
+    "attr": "MBD3_U6_68___6_x_FAB_500M_62___500_kg_GP_Bomb_LD",
+    "clsid": "{FA673F4C-D9E4-4993-AA7A-019A92F3C005}",
+    "name": "MBD3-U6-68 - 6 x FAB-500M-62 - 500 kg GP Bomb LD",
+    "weight": "3268"
+  },
+  {
+    "attr": "MBD3_U6_68___6_x_OFAB_100_120___100_kg_GP_Bomb_LD",
+    "clsid": "{F99BEC1A-869D-4AC7-9730-FBA0E3B1F5FC}",
+    "name": "MBD3-U6-68 - 6 x OFAB-100-120 - 100 kg GP Bomb LD",
+    "weight": "886"
+  },
+  {
+    "attr": "MBD3_U6_68___6_x_OFAB_250_270___250_kg_GP_Bomb_LD",
+    "clsid": "{53BE25A4-C86C-4571-9BC0-47D668349595}",
+    "name": "MBD3-U6-68 - 6 x OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "1744"
+  },
+  {
+    "attr": "MBD3_U6_68_with_6_x_BetAB_500___500kg_Concrete_Piercing_Bombs_LD",
+    "clsid": "{436C6FB9-8BF2-46B6-9DC4-F55ABF3CD1EC}",
+    "name": "MBD3-U6-68 with 6 x BetAB-500 - 500kg Concrete Piercing Bombs LD",
+    "weight": "3060"
+  },
+  {
+    "attr": "MBD3_U6_68_with_6_x_BetAB_500ShP___500kg_Concrete_Piercing_HD_w_booster_Bombs",
+    "clsid": "{E96E1EDD-FF3F-47CF-A959-576C3B682955}",
+    "name": "MBD3-U6-68 with 6 x BetAB-500ShP - 500kg Concrete Piercing HD w booster Bombs",
+    "weight": "3060"
+  },
+  {
+    "attr": "MBD3_U6_68_with_6_x_FAB_500_M_62___500kg_GP_Bombs_LD",
+    "clsid": "{0D945D78-542C-4E9B-9A17-9B5008CC8D39}",
+    "name": "MBD3-U6-68 with 6 x FAB-500 M-62 - 500kg GP Bombs LD",
+    "weight": "3060"
+  },
+  {
+    "attr": "MBD3_U9M___9_x_OFAB_250_270___250_kg_GP_Bomb_LD",
+    "clsid": "{E1AAE713-5FC3-4CAA-9FF5-3FDCFB899E33}",
+    "name": "MBD3-U9M - 9 x OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "2310"
+  },
+  {
+    "attr": "MBD3_U9M_with_9_x_FAB_100___100kg_GP_Bombs_LD",
+    "clsid": "{5F1C54C0-0ABD-4868-A883-B52FF9FCB422}",
+    "name": "MBD3-U9M with 9 x FAB-100 - 100kg GP Bombs LD",
+    "weight": "960"
+  },
+  {
+    "attr": "MER2_with_2_x_Mk_82___500lb_GP_Bombs_LD",
+    "clsid": "{D5D51E24-348C-4702-96AF-97A714E72697}",
+    "name": "MER2 with 2 x Mk-82 - 500lb GP Bombs LD",
+    "weight": "565"
+  },
+  {
+    "attr": "MER2_with_2_x_Mk_83___1000lb_GP_Bombs_LD",
+    "clsid": "{18617C93-78E7-4359-A8CE-D754103EDF63}",
+    "name": "MER2 with 2 x Mk-83 - 1000lb GP Bombs LD",
+    "weight": "1017"
+  },
+  {
+    "attr": "MER6_with_6_x_Mk_82___500lb_GP_Bombs_LD",
+    "clsid": "{1C97B4A0-AA3B-43A8-8EE7-D11071457185}",
+    "name": "MER6 with 6 x Mk-82 - 500lb GP Bombs LD",
+    "weight": "1506"
+  },
+  {
+    "attr": "MK_84___2",
+    "clsid": "{CFT_R_MK84LD_x_2}",
+    "name": "MK-84 * 2",
+    "weight": "1788"
+  },
+  {
+    "attr": "MPRL___4_x_AGM_154A___JSOW_CEB__CBU_type_",
+    "clsid": "{MPRL_4x_AGM154A}",
+    "name": "MPRL - 4 x AGM-154A - JSOW CEB (CBU-type)",
+    "weight": "2700.9"
+  },
+  {
+    "attr": "MPRL___4_x_AGM_154C___JSOW_Unitary_BROACH",
+    "clsid": "{AABA1A14-78A1-4E85-94DD-463CF75BD9E4}",
+    "name": "MPRL - 4 x AGM-154C - JSOW Unitary BROACH",
+    "weight": "2700.9"
+  },
+  {
+    "attr": "GBU_31_8",
+    "clsid": "GBU-31*8",
+    "name": "MPRL - 8 x GBU-31(V)1/B - JDAM, 2000lb GPS Guided Bomb",
+    "weight": "8160.9"
+  },
+  {
+    "attr": "GBU_31V3B_8",
+    "clsid": "GBU-31V3B*8",
+    "name": "MPRL - 8 x GBU-31(V)3/B - JDAM, 2000lb GPS Guided Penetrator Bomb",
+    "weight": "8448.9"
+  },
+  {
+    "attr": "B_1B_Mk_84_8",
+    "clsid": "B-1B_Mk-84*8",
+    "name": "MPRL - 8 x Mk-84 - 2000lb GP Bomb LD",
+    "weight": "8024.9"
+  },
+  {
+    "attr": "MPRL___8_x_Mk_84_AIR__BSU_50____2000_lb_GP_Chute_Retarded_Bomb_HD",
+    "clsid": "{MPRL_Mk84AIR}",
+    "name": "MPRL - 8 x Mk-84 AIR (BSU-50) - 2000 lb GP Chute Retarded Bomb HD",
+    "weight": "8054.5"
+  },
+  {
+    "attr": "Mk_82",
+    "clsid": "{BRU-32 MK-82}",
+    "name": "Mk-82",
+    "weight": "298.38"
+  },
+  {
+    "attr": "Mk_82___2",
+    "clsid": "{CFT_L_MK82LD_x_2}",
+    "name": "Mk-82 * 2",
+    "weight": "482"
+  },
+  {
+    "attr": "Mk_82___2_",
+    "clsid": "{CFT_R_MK82LD_x_2}",
+    "name": "Mk-82 * 2",
+    "weight": "482"
+  },
+  {
+    "attr": "Mk_82___3",
+    "clsid": "{CFT_L_MK82LD_x_3}",
+    "name": "Mk-82 * 3",
+    "weight": "723"
+  },
+  {
+    "attr": "Mk_82___3_",
+    "clsid": "{CFT_R_MK82LD_x_3}",
+    "name": "Mk-82 * 3",
+    "weight": "723"
+  },
+  {
+    "attr": "Mk_82___6",
+    "clsid": "{CFT_L_MK82LD_x_6}",
+    "name": "Mk-82 * 6",
+    "weight": "1446"
+  },
+  {
+    "attr": "Mk_82___6_",
+    "clsid": "{CFT_R_MK82LD_x_6}",
+    "name": "Mk-82 * 6",
+    "weight": "1446"
+  },
+  {
+    "attr": "Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+    "name": "Mk-82 - 500lb GP Bomb LD",
+    "weight": "228"
+  },
+  {
+    "attr": "Mk_82_AIR___2",
+    "clsid": "{CFT_L_MK82AR_x_2}",
+    "name": "Mk-82 AIR * 2",
+    "weight": "482"
+  },
+  {
+    "attr": "Mk_82_AIR___2_",
+    "clsid": "{CFT_R_MK82AR_x_2}",
+    "name": "Mk-82 AIR * 2",
+    "weight": "482"
+  },
+  {
+    "attr": "Mk_82_AIR___3",
+    "clsid": "{CFT_L_MK82AR_x_3}",
+    "name": "Mk-82 AIR * 3",
+    "weight": "723"
+  },
+  {
+    "attr": "Mk_82_AIR___3_",
+    "clsid": "{CFT_R_MK82AR_x_3}",
+    "name": "Mk-82 AIR * 3",
+    "weight": "723"
+  },
+  {
+    "attr": "Mk_82_AIR___6",
+    "clsid": "{CFT_L_MK82AR_x_6}",
+    "name": "Mk-82 AIR * 6",
+    "weight": "1446"
+  },
+  {
+    "attr": "Mk_82_AIR___6_",
+    "clsid": "{CFT_R_MK82AR_x_6}",
+    "name": "Mk-82 AIR * 6",
+    "weight": "1446"
+  },
+  {
+    "attr": "Mk_82_AIR_Ballute___500lb_GP_Bomb_HD",
+    "clsid": "{Mk82AIR}",
+    "name": "Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "242"
+  },
+  {
+    "attr": "Mk_82_SnakeEye",
+    "clsid": "{BRU-32 MK-82SE}",
+    "name": "Mk-82 SnakeEye",
+    "weight": "298.38"
+  },
+  {
+    "attr": "Mk_82_SnakeEye___2",
+    "clsid": "{CFT_L_MK82SE_x_2}",
+    "name": "Mk-82 SnakeEye * 2",
+    "weight": "482"
+  },
+  {
+    "attr": "Mk_82_SnakeEye___2_",
+    "clsid": "{CFT_R_MK82SE_x_2}",
+    "name": "Mk-82 SnakeEye * 2",
+    "weight": "482"
+  },
+  {
+    "attr": "Mk_82_SnakeEye___3",
+    "clsid": "{CFT_L_MK82SE_x_3}",
+    "name": "Mk-82 SnakeEye * 3",
+    "weight": "723"
+  },
+  {
+    "attr": "Mk_82_SnakeEye___3_",
+    "clsid": "{CFT_R_MK82SE_x_3}",
+    "name": "Mk-82 SnakeEye * 3",
+    "weight": "723"
+  },
+  {
+    "attr": "Mk_82_SnakeEye___6",
+    "clsid": "{CFT_L_MK82SE_x_6}",
+    "name": "Mk-82 SnakeEye * 6",
+    "weight": "1446"
+  },
+  {
+    "attr": "Mk_82_SnakeEye___6_",
+    "clsid": "{CFT_R_MK82SE_x_6}",
+    "name": "Mk-82 SnakeEye * 6",
+    "weight": "1446"
+  },
+  {
+    "attr": "Mk_82_Snakeye___500lb_GP_Bomb_HD",
+    "clsid": "{Mk82SNAKEYE}",
+    "name": "Mk-82 Snakeye - 500lb GP Bomb HD",
+    "weight": "249.5"
+  },
+  {
+    "attr": "Mk_82AIR",
+    "clsid": "{BRU-32 MK-82AIR}",
+    "name": "Mk-82AIR",
+    "weight": "298.38"
+  },
+  {
+    "attr": "Mk_82Y___500lb_GP_Chute_Retarded_HD",
+    "clsid": "{Mk_82Y}",
+    "name": "Mk-82Y - 500lb GP Chute Retarded HD",
+    "weight": "232"
+  },
+  {
+    "attr": "Mk_83",
+    "clsid": "{BRU-32 MK-83}",
+    "name": "Mk-83",
+    "weight": "504.38"
+  },
+  {
+    "attr": "Mk_83_",
+    "clsid": "{BRU42_MK83 RS}",
+    "name": "Mk-83",
+    "weight": "575"
+  },
+  {
+    "attr": "Mk_83__",
+    "clsid": "{BRU3242_MK83 RS}",
+    "name": "Mk-83",
+    "weight": "632.38"
+  },
+  {
+    "attr": "Mk_83___",
+    "clsid": "{PHXBRU3242_MK83 RS}",
+    "name": "Mk-83",
+    "weight": "632.38"
+  },
+  {
+    "attr": "Mk_83____",
+    "clsid": "{BRU42_MK83 LS}",
+    "name": "Mk-83",
+    "weight": "575"
+  },
+  {
+    "attr": "Mk_83_____",
+    "clsid": "{BRU3242_MK83 LS}",
+    "name": "Mk-83",
+    "weight": "632.38"
+  },
+  {
+    "attr": "Mk_83______",
+    "clsid": "{PHXBRU3242_MK83 LS}",
+    "name": "Mk-83",
+    "weight": "632.38"
+  },
+  {
+    "attr": "Mk_83___1000lb_GP_Bomb_LD",
+    "clsid": "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
+    "name": "Mk-83 - 1000lb GP Bomb LD",
+    "weight": "454"
+  },
+  {
+    "attr": "Mk_83_AIR__BSU_85____1000_lb_GP_Chute_Retarded_Bomb_HD",
+    "clsid": "{Mk_83AIR}",
+    "name": "Mk-83 AIR (BSU-85) - 1000 lb GP Chute Retarded Bomb HD",
+    "weight": "476.3"
+  },
+  {
+    "attr": "Mk_83CT",
+    "clsid": "{Mk_83CT}",
+    "name": "Mk-83CT",
+    "weight": "454"
+  },
+  {
+    "attr": "Mk_84",
+    "clsid": "{BRU-32 MK-84}",
+    "name": "Mk-84",
+    "weight": "951.38"
+  },
+  {
+    "attr": "Mk_84___2",
+    "clsid": "{CFT_L_MK84LD_x_2}",
+    "name": "Mk-84 * 2",
+    "weight": "1788"
+  },
+  {
+    "attr": "Mk_84___2000lb_GP_Bomb_LD",
+    "clsid": "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}",
+    "name": "Mk-84 - 2000lb GP Bomb LD",
+    "weight": "894"
+  },
+  {
+    "attr": "Mk_84_AIR__BSU_50____2000_lb_GP_Chute_Retarded_Bomb_HD",
+    "clsid": "{Mk_84AIR_GP}",
+    "name": "Mk-84 AIR (BSU-50) - 2000 lb GP Chute Retarded Bomb HD",
+    "weight": "911.7"
+  },
+  {
+    "attr": "Mk_84_AIR__BSU_50____2000_lb_TP_Chute_Retarded_Bomb_HD",
+    "clsid": "{Mk_84AIR_TP}",
+    "name": "Mk-84 AIR (BSU-50) - 2000 lb TP Chute Retarded Bomb HD",
+    "weight": "911.7"
+  },
+  {
+    "attr": "Mk_84_AIR___2",
+    "clsid": "{CFT_L_MK84AR_x_2}",
+    "name": "Mk-84 AIR * 2",
+    "weight": "1788"
+  },
+  {
+    "attr": "Mk_84_AIR___2_",
+    "clsid": "{CFT_R_MK84AR_x_2}",
+    "name": "Mk-84 AIR * 2",
+    "weight": "1788"
+  },
+  {
+    "attr": "Mk_84_AIR_TP___2",
+    "clsid": "{CFT_L_BDU56AR_x_2}",
+    "name": "Mk-84 AIR TP * 2",
+    "weight": "1788"
+  },
+  {
+    "attr": "Mk_84_AIR_TP___2_",
+    "clsid": "{CFT_R_BDU56AR_x_2}",
+    "name": "Mk-84 AIR TP * 2",
+    "weight": "1788"
+  },
+  {
+    "attr": "OFAB_100_Jupiter___100kg_GP_Bomb_HD",
+    "clsid": "{OFAB_100_Jupiter}",
+    "name": "OFAB-100 Jupiter - 100kg GP Bomb HD",
+    "weight": "121"
+  },
+  {
+    "attr": "OFAB_100_120___100_kg_GP_Bomb_LD",
+    "clsid": "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+    "name": "OFAB-100-120 - 100 kg GP Bomb LD",
+    "weight": "123"
+  },
+  {
+    "attr": "OFAB_100_120_TU_x_4",
+    "clsid": "{OFAB-100-120-TU}",
+    "name": "OFAB-100-120-TU x 4",
+    "weight": "557"
+  },
+  {
+    "attr": "OFAB_250_270___250_kg_GP_Bomb_LD",
+    "clsid": "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+    "name": "OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "266"
+  },
+  {
+    "attr": "OFAB_250_270___250_kg_GP_Bomb_LD_",
+    "clsid": "{AB_FAB-250_BDZ-UMK2-B}",
+    "name": "OFAB-250-270 - 250 kg GP Bomb LD",
+    "weight": "321"
+  },
+  {
+    "attr": "Rb_75A__AGM_65A_Maverick___TV_ASM_",
+    "clsid": "{RB75}",
+    "name": "Rb-75A (AGM-65A Maverick) (TV ASM)",
+    "weight": "248.1"
+  },
+  {
+    "attr": "Rb_75B__AGM_65B_Maverick___TV_ASM_",
+    "clsid": "{RB75B}",
+    "name": "Rb-75B (AGM-65B Maverick) (TV ASM)",
+    "weight": "248.1"
+  },
+  {
+    "attr": "Rb_75T__AGM_65A_Maverick___TV_ASM_Lg_HE_Whd_",
+    "clsid": "{RB75T}",
+    "name": "Rb-75T (AGM-65A Maverick) (TV ASM Lg HE Whd)",
+    "weight": "332.6"
+  },
+  {
+    "attr": "S_24A__21____180_kg__cumulative_unguided_rocket",
+    "clsid": "{S-24A}",
+    "name": "S-24A (21) - 180 kg, cumulative unguided rocket",
+    "weight": "235"
+  },
+  {
+    "attr": "S_24B__21____180_kg__fragmented_unguided_rocket",
+    "clsid": "{S-24B}",
+    "name": "S-24B (21) - 180 kg, fragmented unguided rocket",
+    "weight": "235"
+  },
+  {
+    "attr": "S_24B___240mm_UnGd_Rkt__235kg__HE_Frag___Low_Smk_",
+    "clsid": "{1FA14DEA-8CDB-45AD-88A8-EC068DF1E65A}",
+    "name": "S-24B - 240mm UnGd Rkt, 235kg, HE/Frag, (Low Smk)",
+    "weight": "235"
+  },
+  {
+    "attr": "SECBM___3_x_GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb",
+    "clsid": "{SECBM_3x_GBU38V1}",
+    "name": "SECBM - 3 x GBU-38(V)1/B - JDAM, 500lb GPS Guided Bomb",
+    "weight": "2036.6"
+  },
+  {
+    "attr": "SECBM___3_x_GBU_54_V_1_B___LJDAM__500lb_Laser__GPS_Guided_Bomb_LD",
+    "clsid": "{SECBM_3x_GBU54V1}",
+    "name": "SECBM - 3 x GBU-54(V)1/B - LJDAM, 500lb Laser & GPS Guided Bomb LD",
+    "weight": "2036.6"
+  },
+  {
+    "attr": "SECBM___6_x_GBU_38_V_1_B___JDAM__500lb_GPS_Guided_Bomb",
+    "clsid": "{SECBM_6x_GBU38V1}",
+    "name": "SECBM - 6 x GBU-38(V)1/B - JDAM, 500lb GPS Guided Bomb",
+    "weight": "2795.9"
+  },
+  {
+    "attr": "SECBM___6_x_GBU_54_V_1_B___LJDAM__500lb_Laser__GPS_Guided_Bomb_LD",
+    "clsid": "{SECBM_6x_GBU54V1}",
+    "name": "SECBM - 6 x GBU-54(V)1/B - LJDAM, 500lb Laser & GPS Guided Bomb LD",
+    "weight": "2795.9"
+  },
+  {
+    "attr": "TER_9A_with_2_x_GBU_12___500lb_Laser_Guided_Bomb",
+    "clsid": "{TER_9A_2L*GBU-12}",
+    "name": "TER-9A with 2 x GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "601.6"
+  },
+  {
+    "attr": "TER_9A_with_2_x_GBU_12___500lb_Laser_Guided_Bomb_",
+    "clsid": "{TER_9A_2R*GBU-12}",
+    "name": "TER-9A with 2 x GBU-12 - 500lb Laser Guided Bomb",
+    "weight": "601.6"
+  },
+  {
+    "attr": "TER_9A_with_2_x_Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{TER_9A_2L*MK-82}",
+    "name": "TER-9A with 2 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "503.6"
+  },
+  {
+    "attr": "TER_9A_with_2_x_Mk_82___500lb_GP_Bomb_LD_",
+    "clsid": "{TER_9A_2R*MK-82}",
+    "name": "TER-9A with 2 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "503.6"
+  },
+  {
+    "attr": "TER_9A_with_2_x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD",
+    "clsid": "{TER_9A_2L*MK-82AIR}",
+    "name": "TER-9A with 2 x Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "531.6"
+  },
+  {
+    "attr": "TER_9A_with_2_x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD_",
+    "clsid": "{TER_9A_2R*MK-82AIR}",
+    "name": "TER-9A with 2 x Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "531.6"
+  },
+  {
+    "attr": "TER_9A_with_2_x_Mk_82_Snakeye___500lb_GP_Bomb_HD",
+    "clsid": "{TER_9A_2L*MK-82_Snakeye}",
+    "name": "TER-9A with 2 x Mk-82 Snakeye - 500lb GP Bomb HD",
+    "weight": "546.6"
+  },
+  {
+    "attr": "TER_9A_with_2_x_Mk_82_Snakeye___500lb_GP_Bomb_HD_",
+    "clsid": "{TER_9A_2R*MK-82_Snakeye}",
+    "name": "TER-9A with 2 x Mk-82 Snakeye - 500lb GP Bomb HD",
+    "weight": "546.6"
+  },
+  {
+    "attr": "TER_9A_with_3_x_Mk_82___500lb_GP_Bomb_LD",
+    "clsid": "{TER_9A_3*MK-82}",
+    "name": "TER-9A with 3 x Mk-82 - 500lb GP Bomb LD",
+    "weight": "731.6"
+  },
+  {
+    "attr": "TER_9A_with_3_x_Mk_82_AIR_Ballute___500lb_GP_Bomb_HD",
+    "clsid": "{TER_9A_3*MK-82AIR}",
+    "name": "TER-9A with 3 x Mk-82 AIR Ballute - 500lb GP Bomb HD",
+    "weight": "773.6"
+  },
+  {
+    "attr": "TER_9A_with_3_x_Mk_82_Snakeye___500lb_GP_Bomb_HD",
+    "clsid": "{TER_9A_3*MK-82_Snakeye}",
+    "name": "TER-9A with 3 x Mk-82 Snakeye - 500lb GP Bomb HD",
+    "weight": "796.1"
+  }
+]

@@ -1,0 +1,135 @@
+from datetime import datetime
+import random
+import math
+from enum import Enum
+from typing import Any, Dict, List, Optional
+from dcs import mapping, terrain
+
+
+class Wind:
+    def __init__(self, direction=0, speed=0):
+        self.direction = direction
+        self.speed = speed
+
+    def dict(self):
+        return {"speed": self.speed, "dir": self.direction}
+
+
+class Halo:
+    class Preset(Enum):
+        Off = "off"
+        Auto = "auto"
+        OnAllMediums = "AtmoHighClouds"
+        OnHighVolumetricClouds = "VolumetricOnly"
+        CirrusAndHighVolumetricClouds = "HighClouds"
+        Cirrus = "CirrusOnly"
+
+        def __str__(self) -> str:
+            return str(self.value)
+
+    class Crystals(Enum):
+        '''Crystals are only required if not using Auto or Off Halo Presets.'''
+        AllKinds = "AllKinds"
+        BasicHaloCircle = "BasicHaloCircle"
+        BasicHaloWithSundogs = "BasicHaloWithSundogs"
+        BasicSundogsTangents = "BasicSundogsTangents"
+        SundogsArcs = "SundogsArcs"
+        Tangents = "Tangents"
+
+        def __str__(self) -> str:
+            return str(self.value)
+
+    def __init__(self, preset: Preset = Preset.Auto, crystals: Optional[Crystals] = None) -> None:
+        self.preset = preset
+        self.crystals = crystals
+
+    def validate_halo(self) -> None:
+        if self.preset is (Halo.Preset.Auto or Halo.Preset.Off) and self.crystals is not None:
+            raise ValueError(
+                f"Halo preset: {self.preset} cannot have a crystals value.")
+
+        if self.preset is not (Halo.Preset.Auto or Halo.Preset.Off) and self.crystals is None:
+            raise ValueError(
+                f"Halo preset: {self.preset} must have a crystals value.")
+
+    def dict(self):
+        if self.crystals:
+            return {"crystalsPreset": f"{self.crystals}", "preset": f"{self.preset}"}
+        else:
+            return {"preset": f"{self.preset}"}
+
+    def _make_halo_dict(self):
+        self.validate_halo()
+        return self.dict()
+
+
+class Cyclone:
+    def __init__(self):
+        self.pressure_spread = 0.0
+        self.centerZ = 0.0
+        self.ellipticity = 0.0
+        self.rotation = 0.0
+        self.pressure_excess = 0
+        self.centerX = 0.0
+
+    def dict(self):
+        d = {
+            "pressure_spread": self.pressure_spread,
+            "pressure_excess": self.pressure_excess,
+            "centerZ": self.centerZ,
+            "ellipticity": self.ellipticity,
+            "rotation": self.rotation,
+            "centerX": self.centerX
+        }
+        return d
+
+    def __repr__(self):
+        return self.__class__.__name__ + '(' + str(self.dict()) + ')'
+
+
+class CloudPreset:
+    def __init__(self, name: str, ui_name: str, description: str, min_base: int,
+                 max_base: int) -> None:
+        self.name = name
+        self.ui_name = ui_name
+        self.description = description
+        self.min_base = min_base
+        self.max_base = max_base
+
+    def validate_base(self, base: int) -> None:
+        if not self.min_base <= base <= self.max_base:
+            raise ValueError(
+                f"Cloud base {base}m is out of range for {self.name}. Must be between "
+                f"{self.min_base}m and {self.max_base}m.")
+
+    @classmethod
+    def by_name(cls, name: str) -> "CloudPreset":
+        from dcs.cloud_presets import Clouds
+        return Clouds.from_name(name).value
+
+
+class Weather:
+    class BaricSystem(Enum):
+        Cyclone = 0
+        AntiCyclone = 1
+        None_ = 2
+
+    class Preceptions(Enum):
+        None_ = 0
+        Rain = 1
+        Thunderstorm = 2
+
+    def __init__(self, terrain):
+        self.terrain = terrain
+        self.atmosphere_type = 0
+        self.wind_at_ground = Wind()
+        self.wind_at_2000 = Wind()
+        self.wind_at_8000 = Wind()
+        self.enable_fog = False
+        self.halo = Halo()
+        self.turbulence_at_ground = 0
+        self.season_temperature = 20.0
+        self.type_weather = 0
+        self.qnh = 760.0
+        self.cyclones = []
+  

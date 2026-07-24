@@ -1,0 +1,395 @@
+[
+  {
+    "type": "AH-1W",
+    "displayName": "AH-1W",
+    "module": null,
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Escort",
+      "AFAC",
+      "Anti-ship Strike"
+    ],
+    "categories": [],
+    "fuel": 1250,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "AH-64A",
+    "displayName": "AH-64A",
+    "module": null,
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Escort",
+      "AFAC",
+      "Anti-ship Strike"
+    ],
+    "categories": [],
+    "fuel": 1157,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "AH-64D",
+    "displayName": "AH-64D",
+    "module": null,
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Escort",
+      "AFAC",
+      "Anti-ship Strike"
+    ],
+    "categories": [],
+    "fuel": 1157,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "AH-64D_BLK_II",
+    "displayName": "AH-64D BLK.II",
+    "module": "AH-64D BLK.II AI",
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Escort",
+      "AFAC",
+      "Anti-ship Strike"
+    ],
+    "categories": [],
+    "fuel": 1140,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "CH-47D",
+    "displayName": "CH-47D",
+    "module": null,
+    "tasks": [
+      "Transport"
+    ],
+    "categories": [],
+    "fuel": 3600,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "CH-47Fbl1",
+    "displayName": "CH-47F",
+    "module": "CH-47F bl.1 AI",
+    "tasks": [
+      "Reconnaissance",
+      "Escort",
+      "Transport",
+      "CAS"
+    ],
+    "categories": [],
+    "fuel": 3054.592,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "CH-53E",
+    "displayName": "CH-53E",
+    "module": null,
+    "tasks": [
+      "Transport"
+    ],
+    "categories": [],
+    "fuel": 2880,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "CHAP_TigerUHT",
+    "displayName": "EC-665 Tiger UHT [CH]",
+    "module": "Currenthill Assets Pack",
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Escort",
+      "AFAC",
+      "Anti-ship Strike",
+      "Transport",
+      "Reconnaissance"
+    ],
+    "categories": [],
+    "fuel": 1420,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Ka-27",
+    "displayName": "Ka-27",
+    "module": null,
+    "tasks": [
+      "Transport"
+    ],
+    "categories": [],
+    "fuel": 2616,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Ka-50",
+    "displayName": "Ka-50",
+    "module": "Ka-50 Black Shark",
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Escort",
+      "AFAC",
+      "Anti-ship Strike"
+    ],
+    "categories": [],
+    "fuel": 1450,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Ka-50_3",
+    "displayName": "Ka-50 III",
+    "module": "Ka-50 Black Shark",
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Escort",
+      "AFAC",
+      "Anti-ship Strike"
+    ],
+    "categories": [],
+    "fuel": 1450,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Mi-24P",
+    "displayName": "Mi-24P",
+    "module": "Mi-24P AI by Eagle Dynamics",
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Escort",
+      "Transport",
+      "AFAC",
+      "Anti-ship Strike"
+    ],
+    "categories": [],
+    "fuel": 1701,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Mi-24V",
+    "displayName": "Mi-24V",
+    "module": null,
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Escort",
+      "Transport",
+      "AFAC",
+      "Anti-ship Strike"
+    ],
+    "categories": [],
+    "fuel": 1704,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Mi-26",
+    "displayName": "Mi-26",
+    "module": null,
+    "tasks": [
+      "Transport"
+    ],
+    "categories": [],
+    "fuel": 9600,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Mi-28N",
+    "displayName": "Mi-28N [CH]",
+    "module": "Currenthill Assets Pack",
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Escort",
+      "AFAC",
+      "Anti-ship Strike",
+      "Transport",
+      "Reconnaissance"
+    ],
+    "categories": [],
+    "fuel": 1500,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Mi-8MT",
+    "displayName": "Mi-8MTV2",
+    "module": null,
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Transport",
+      "AFAC",
+      "Anti-ship Strike"
+    ],
+    "categories": [],
+    "fuel": 1929,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "OH-58D",
+    "displayName": "OH-58D",
+    "module": null,
+    "tasks": [
+      "AFAC",
+      "Transport",
+      "Ground Attack",
+      "Escort",
+      "Anti-ship Strike"
+    ],
+    "categories": [],
+    "fuel": 454,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "OH58D",
+    "displayName": "OH-58D(R)",
+    "module": "OH58D AI by Polychop-Simulations",
+    "tasks": [
+      "CAP",
+      "CAS",
+      "Ground Attack",
+      "AFAC",
+      "Escort",
+      "Transport",
+      "Anti-ship Strike",
+      "Reconnaissance"
+    ],
+    "categories": [],
+    "fuel": 333.69,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "SA342L",
+    "displayName": "SA342L",
+    "module": "SA342 AI by Polychop-Simulations",
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "AFAC",
+      "Escort",
+      "Reconnaissance"
+    ],
+    "categories": [],
+    "fuel": 416.33,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "SA342M",
+    "displayName": "SA342M",
+    "module": "SA342 AI by Polychop-Simulations",
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "AFAC",
+      "Escort",
+      "Reconnaissance"
+    ],
+    "categories": [],
+    "fuel": 416.33,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "SA342Minigun",
+    "displayName": "SA342Minigun",
+    "module": "SA342 AI by Polychop-Simulations",
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "AFAC",
+      "Escort",
+      "Reconnaissance"
+    ],
+    "categories": [],
+    "fuel": 416.33,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "SA342Mistral",
+    "displayName": "SA342Mistral",
+    "module": "SA342 AI by Polychop-Simulations",
+    "tasks": [
+      "AFAC",
+      "Escort",
+      "Reconnaissance"
+    ],
+    "categories": [],
+    "fuel": 416.33,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "SH-3W",
+    "displayName": "SH-3W",
+    "module": null,
+    "tasks": [
+      "Transport"
+    ],
+    "categories": [],
+    "fuel": 2132,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "SH-60B",
+    "displayName": "SH-60B",
+    "module": null,
+    "tasks": [
+      "Anti-ship Strike",
+      "Transport"
+    ],
+    "categories": [],
+    "fuel": 1100,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "UH-1H",
+    "displayName": "UH-1H",
+    "module": null,
+    "tasks": [
+      "CAS",
+      "Ground Attack",
+      "Transport"
+    ],
+    "categories": [],
+    "fuel": 631,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "UH-60A",
+    "displayName": "UH-60A",
+    "module": null,
+    "tasks": [
+      "Transport"
+    ],
+    "categories": [],
+    "fuel": 1100,
+    "detection_range": null,
+    "threat_range": null
+  }
+]

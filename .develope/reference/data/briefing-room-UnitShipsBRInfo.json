@@ -1,0 +1,485 @@
+[
+  {
+    "type": "speedboat",
+    "families": [
+      "ShipSpeedboat"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "message": "Ship has been effectively removed from the game do not classify as a carrier",
+    "type": "VINSON",
+    "families": [
+      "ShipSpeedboat"
+    ],
+    "lowPolly": true,
+    "immovable": false
+  },
+  {
+    "type": "ara_vdm",
+    "families": [
+      "ShipCarrierCATOBAR",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "PERRY",
+    "families": [
+      "ShipFrigate",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "TICONDEROG",
+    "families": [
+      "ShipCruiser",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "ALBATROS",
+    "families": [
+      "ShipFrigate"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "KUZNECOW",
+    "families": [
+      "ShipCarrierSTOBAR",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "MOLNIYA",
+    "families": [
+      "ShipFrigate"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "MOSCOW",
+    "families": [
+      "ShipCruiser",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "NEUSTRASH",
+    "families": [
+      "ShipFrigate",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "PIOTR",
+    "families": [
+      "ShipCruiser",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "REZKY",
+    "families": [
+      "ShipFrigate"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "ELNYA",
+    "families": [
+      "ShipTransport"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Dry-cargo ship-2",
+    "families": [
+      "ShipTransport"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Dry-cargo ship-1",
+    "families": [
+      "ShipTransport"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "ZWEZDNY",
+    "families": [
+      "ShipTransport"
+    ],
+    "lowPolly": true,
+    "immovable": false
+  },
+  {
+    "type": "KILO",
+    "families": [
+      "ShipSubmarine"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "IMPROVED_KILO",
+    "families": [
+      "ShipSubmarine"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "SOM",
+    "families": [
+      "ShipSubmarine"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "CV_1143_5",
+    "families": [
+      "ShipCarrierSTOBAR",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "CastleClass_01",
+    "families": [
+      "ShipFrigate",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "HarborTug",
+    "families": [
+      "ShipTransport"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "hms_invincible",
+    "families": [
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "leander-gun-achilles",
+    "families": [
+      "ShipFrigate",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "leander-gun-andromeda",
+    "families": [
+      "ShipFrigate",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "leander-gun-ariadne",
+    "families": [
+      "ShipFrigate",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "leander-gun-condell",
+    "families": [
+      "ShipFrigate",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "leander-gun-lynch",
+    "families": [
+      "ShipFrigate",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Ship_Tilde_Supply",
+    "families": [
+      "ShipTransport"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "santafe",
+    "families": [
+      "ShipSubmarine"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "HandyWind",
+    "families": [
+      "ShipTransport",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "atconveyor",
+    "families": [
+      "ShipTransport",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Seawise_Giant",
+    "families": [
+      "ShipTransport",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "La_Combattante_II",
+    "families": [
+      "ShipFrigate"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "BDK-775",
+    "families": [
+      "ShipFrigate"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "CVN_71",
+    "families": [
+      "ShipCarrierCATOBAR",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "CVN_72",
+    "families": [
+      "ShipCarrierCATOBAR",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "CVN_73",
+    "families": [
+      "ShipCarrierCATOBAR",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Stennis",
+    "families": [
+      "ShipCarrierCATOBAR",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "CVN_75",
+    "families": [
+      "ShipCarrierCATOBAR",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "USS_Arleigh_Burke_IIa",
+    "families": [
+      "ShipCruiser",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "LHA_Tarawa",
+    "families": [
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Essex",
+    "families": [
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Type_052B",
+    "families": [
+      "ShipFrigate",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Type_054A",
+    "families": [
+      "ShipFrigate",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Type_052C",
+    "families": [
+      "ShipFrigate"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Type_093",
+    "families": [
+      "ShipSubmarine"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Type_071",
+    "families": [
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Forrestal",
+    "families": [
+      "ShipCarrierCATOBAR",
+      "ShipCarrierSTOVL"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "LST_Mk2",
+    "families": [
+      "ShipTransport"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "USS_Samuel_Chase",
+    "families": [
+      "ShipTransport"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Higgins_boat",
+    "families": [
+      "ShipSpeedboat"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Uboat_VIIC",
+    "families": [
+      "ShipSubmarine"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Schnellboot_type_S130",
+    "families": [
+      "ShipSpeedboat"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "CHAP_Project22160",
+    "families": [
+      "ShipFrigate"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "CHAP_Project22160_TorM2KM",
+    "families": [
+      "ShipFrigate"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  },
+  {
+    "type": "Type_021_1",
+    "families": [
+      "ShipFrigate"
+    ],
+    "lowPolly": false,
+    "immovable": false
+  }
+]

@@ -1,0 +1,929 @@
+[
+  {
+    "type": "ALBATROS",
+    "displayName": "Corvette 1124M Grisha [CH]",
+    "module": "Currenthill Assets Pack",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 30000,
+    "threat_range": 16000
+  },
+  {
+    "type": "BDK-775",
+    "displayName": "LS Ropucha",
+    "module": "TechWeaponPack",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 25000,
+    "threat_range": 6000
+  },
+  {
+    "type": "CHAP_Project22160",
+    "displayName": "Patrol Ship 22160 Vasily Bykov [CH]",
+    "module": "Currenthill Assets Pack",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 80000,
+    "threat_range": 7000
+  },
+  {
+    "type": "CHAP_Project22160_TorM2KM",
+    "displayName": "Patrol ship 22160 Vasily Bykov with Tor M2KM [CH]",
+    "module": "Currenthill Assets Pack",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 80000,
+    "threat_range": 25000
+  },
+  {
+    "type": "CVN_71",
+    "displayName": "CVN-71 Theodore Roosevelt",
+    "module": "USS_Nimitz",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Catapult"
+      },
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "AircraftCarrier With Arresting Gear"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 50000,
+    "threat_range": 25000
+  },
+  {
+    "type": "CVN_72",
+    "displayName": "CVN-72 Abraham Lincoln",
+    "module": "USS_Nimitz",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Catapult"
+      },
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "AircraftCarrier With Arresting Gear"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 50000,
+    "threat_range": 25000
+  },
+  {
+    "type": "CVN_73",
+    "displayName": "CVN-73 George Washington",
+    "module": "USS_Nimitz",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Catapult"
+      },
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "AircraftCarrier With Arresting Gear"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 50000,
+    "threat_range": 25000
+  },
+  {
+    "type": "CVN_75",
+    "displayName": "CVN-75 Harry S. Truman",
+    "module": "USS_Nimitz",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Catapult"
+      },
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "AircraftCarrier With Arresting Gear"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 50000,
+    "threat_range": 25000
+  },
+  {
+    "type": "CV_1143_5",
+    "displayName": "CV 1143.5 Admiral Kuznetsov(2017)",
+    "module": "TAVKR 1143 High Detail",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Tramplin"
+      },
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "AircraftCarrier With Arresting Gear"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 25000,
+    "threat_range": 12000
+  },
+  {
+    "type": "CastleClass_01",
+    "displayName": "Castle Class",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 25000,
+    "threat_range": 3000
+  },
+  {
+    "type": "Dry-cargo ship-1",
+    "displayName": "Bulker Yakushev",
+    "module": null,
+    "tasks": [],
+    "categories": null,
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Dry-cargo ship-2",
+    "displayName": "Cargo Ivanov",
+    "module": null,
+    "tasks": [],
+    "categories": null,
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "ELNYA",
+    "displayName": "Tanker Elnya 160",
+    "module": null,
+    "tasks": [],
+    "categories": null,
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Essex",
+    "displayName": "Essex Class Carrier 1944",
+    "module": "World War II PTO Units by Magnitude 3 LLC",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 25000,
+    "threat_range": 15000
+  },
+  {
+    "type": "Forrestal",
+    "displayName": "CV-59 Forrestal",
+    "module": "F-14B AI by Heatblur Simulations",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Catapult"
+      },
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "AircraftCarrier With Arresting Gear"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 50000,
+    "threat_range": 25000
+  },
+  {
+    "type": "HandyWind",
+    "displayName": "Bulker Handy Wind",
+    "module": "TechWeaponPack",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "HarborTug",
+    "displayName": "Harbor Tug",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": null,
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Higgins_boat",
+    "displayName": "Boat LCVP Higgins",
+    "module": "WWII Armour and Technics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 3000,
+    "threat_range": 1000
+  },
+  {
+    "type": "IMPROVED_KILO",
+    "displayName": "SSK 636 Improved Kilo",
+    "module": null,
+    "tasks": [],
+    "categories": null,
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "KILO",
+    "displayName": "SSK 877V Kilo",
+    "module": null,
+    "tasks": [],
+    "categories": null,
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "KUZNECOW",
+    "displayName": "CV 1143.5 Admiral Kuznetsov",
+    "module": null,
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Tramplin"
+      },
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "AircraftCarrier With Arresting Gear"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 25000,
+    "threat_range": 12000
+  },
+  {
+    "type": "LHA_Tarawa",
+    "displayName": "LHA-1 Tarawa",
+    "module": "AV-8B N/A AI by RAZBAM Sims",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Tramplin"
+      },
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 150000,
+    "threat_range": 20000
+  },
+  {
+    "type": "LST_Mk2",
+    "displayName": "LST Mk.II",
+    "module": "WWII Armour and Technics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": 4000
+  },
+  {
+    "type": "La_Combattante_II",
+    "displayName": "FAC La Combattante IIa",
+    "module": "TechWeaponPack",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 19000,
+    "threat_range": 4000
+  },
+  {
+    "type": "MOLNIYA",
+    "displayName": "Corvette 1241.1 Molniya",
+    "module": null,
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 21000,
+    "threat_range": 2000
+  },
+  {
+    "type": "MOSCOW",
+    "displayName": "Cruiser 1164 Moskva",
+    "module": null,
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 160000,
+    "threat_range": 75000
+  },
+  {
+    "type": "NEUSTRASH",
+    "displayName": "Frigate 11540 Neustrashimy",
+    "module": null,
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 27000,
+    "threat_range": 12000
+  },
+  {
+    "type": "PERRY",
+    "displayName": "FFG Oliver Hazard Perry",
+    "module": null,
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 150000,
+    "threat_range": 100000
+  },
+  {
+    "type": "PIOTR",
+    "displayName": "Battlecruiser 1144.2 Pyotr Velikiy",
+    "module": null,
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 250000,
+    "threat_range": 190000
+  },
+  {
+    "type": "REZKY",
+    "displayName": "Frigate 1135M Rezky",
+    "module": null,
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 30000,
+    "threat_range": 16000
+  },
+  {
+    "type": "SOM",
+    "displayName": "SSK 641B Tango",
+    "module": null,
+    "tasks": [],
+    "categories": null,
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Schnellboot_type_S130",
+    "displayName": "Boat Schnellboot type S130",
+    "module": "WWII Armour and Technics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 10000,
+    "threat_range": 4000
+  },
+  {
+    "type": "Seawise_Giant",
+    "displayName": "Tanker Seawise Giant",
+    "module": "TechWeaponPack",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Ship_Tilde_Supply",
+    "displayName": "Supply Ship MV Tilde",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "Stennis",
+    "displayName": "CVN-74 John C. Stennis",
+    "module": "USS_Nimitz",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Catapult"
+      },
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "AircraftCarrier With Arresting Gear"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 50000,
+    "threat_range": 25000
+  },
+  {
+    "type": "TICONDEROG",
+    "displayName": "CG Ticonderoga",
+    "module": null,
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 150000,
+    "threat_range": 100000
+  },
+  {
+    "type": "Type_021_1",
+    "displayName": "Type 021-1 Missile Boat",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 30000,
+    "threat_range": 4000
+  },
+  {
+    "type": "Type_052B",
+    "displayName": "Type 052B Destroyer",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 100000,
+    "threat_range": 30000
+  },
+  {
+    "type": "Type_052C",
+    "displayName": "Type 052C Destroyer",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 260000,
+    "threat_range": 150000
+  },
+  {
+    "type": "Type_054A",
+    "displayName": "Type 054A Frigate",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 160000,
+    "threat_range": 45000
+  },
+  {
+    "type": "Type_071",
+    "displayName": "Type 071 Amphibious Transport Dock",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      },
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Tramplin"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 300000,
+    "threat_range": 150000
+  },
+  {
+    "type": "Type_093",
+    "displayName": "Type 093 Attack Submarine",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 42000,
+    "threat_range": 42000
+  },
+  {
+    "type": "USS_Arleigh_Burke_IIa",
+    "displayName": "DDG Arleigh Burke IIa",
+    "module": "USS_Nimitz",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 150000,
+    "threat_range": 100000
+  },
+  {
+    "type": "USS_Samuel_Chase",
+    "displayName": "LS Samuel Chase",
+    "module": "WWII Armour and Technics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": 15000
+  },
+  {
+    "type": "Uboat_VIIC",
+    "displayName": "U-boat VIIC U-flak",
+    "module": "WWII Armour and Technics",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 20000,
+    "threat_range": 4000
+  },
+  {
+    "type": "VINSON",
+    "displayName": "CVN-70 Carl Vinson",
+    "module": null,
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Catapult"
+      },
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "AircraftCarrier With Arresting Gear"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 30000,
+    "threat_range": 15000
+  },
+  {
+    "type": "ZWEZDNY",
+    "displayName": "Boat Zvezdny type",
+    "module": null,
+    "tasks": [],
+    "categories": null,
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "ara_vdm",
+    "displayName": "ARA Veinticinco de Mayo",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Catapult"
+      },
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "AircraftCarrier With Arresting Gear"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 18000,
+    "threat_range": 5000
+  },
+  {
+    "type": "atconveyor",
+    "displayName": "SS Atlantic Conveyor",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 100000,
+    "threat_range": 74000
+  },
+  {
+    "type": "hms_invincible",
+    "displayName": "HMS Invincible (R05)",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "AircraftCarrier"
+      },
+      {
+        "name": "AircraftCarrier With Tramplin"
+      },
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 100000,
+    "threat_range": 74000
+  },
+  {
+    "type": "leander-gun-achilles",
+    "displayName": "HMS Achilles (F12)",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 180000,
+    "threat_range": 8000
+  },
+  {
+    "type": "leander-gun-andromeda",
+    "displayName": "HMS Andromeda (F57)",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 180000,
+    "threat_range": 140000
+  },
+  {
+    "type": "leander-gun-ariadne",
+    "displayName": "HMS Ariadne (F72)",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 150000,
+    "threat_range": 100000
+  },
+  {
+    "type": "leander-gun-condell",
+    "displayName": "CNS Almirante Condell (PFG-06)",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 150000,
+    "threat_range": 100000
+  },
+  {
+    "type": "leander-gun-lynch",
+    "displayName": "CNS Almirante Lynch (PFG-07)",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      },
+      {
+        "name": "HelicopterCarrier"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 180000,
+    "threat_range": 140000
+  },
+  {
+    "type": "santafe",
+    "displayName": "ARA Santa Fe S-21",
+    "module": "South_Atlantic_Assets",
+    "tasks": [],
+    "categories": null,
+    "fuel": null,
+    "detection_range": null,
+    "threat_range": null
+  },
+  {
+    "type": "speedboat",
+    "displayName": "Boat Armed Hi-speed",
+    "module": null,
+    "tasks": [],
+    "categories": [
+      {
+        "name": "Armed Ship"
+      }
+    ],
+    "fuel": null,
+    "detection_range": 5000,
+    "threat_range": 1000
+  }
+]

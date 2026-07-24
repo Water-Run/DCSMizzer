@@ -1,67 +1,67 @@
-# DCSMizzer Upstream Reference Extracts
+# DCSMizzer development reference (`.develope/reference`)
 
-This directory holds **extracted, git-tracked reference material** distilled from
-the third-party clones under `.develope/upstream/`.
+**This directory is development-only.** Final Agent product docs belong in `Docs/`
+(not here). Everything below is extracted from ignored upstream clones for
+mapping DCS types, coordinates, mission config, and era data.
 
-## What lives where
+## Layout
 
 | Path | Content |
 |------|---------|
-| `aircraft/` | Plane/helicopter type IDs, fuel/speed, pylon counts, unit config writing |
-| `units/` | Ground vehicles, ships, statics, countries |
-| `terrain/` | Theatre strings, projections, airport tables (map meters) |
-| `mission/` | `.miz` structure, waypoints/start types, tasks |
-| `weapons/` | CLSID indexes (AAM curated + full dump) |
-| `upstream/` | Patterns from BriefingRoom, Retribution, MOOSE |
-| `data/` | Machine-readable JSON dumps |
+| `aircraft/` | Plane/heli type ids, fuel/speed, flying-unit config writing |
+| `units/` | Vehicles, ships, statics, countries, ground config, era lists |
+| `terrain/` | Theatre matrix, projections, airports (pydcs + BR extras) |
+| `mission/` | `.miz` structure, waypoints, tasks |
+| `weather/` | Cloud presets + BR weather INI |
+| `payloads/` | Retribution customized loadouts |
+| `weapons/` | AAM / AGM-bomb CLSIDs, weapons-by-decade |
+| `upstream/` | BriefingRoom, Retribution, MOOSE, GTD, mission-maker notes |
+| `data/` | Machine-readable JSON indexes |
 
-## Source clones (not tracked)
+## Upstream clones (gitignored)
 
-`.develope/upstream/*` is **gitignored** (except `README.txt`). Clones keep their
-own licenses and history. Do not redistribute upstream trees as DCSMizzer source.
+`.develope/upstream/*` except `README.txt`. All six ACK projects cloned:
 
-| Project | Path | Survey status |
-|---------|------|---------------|
-| [pydcs](https://github.com/pydcs/dcs) | `upstream/pydcs` | Primary unit/terrain/weapon DB |
-| [dcs-mission-maker](https://github.com/JonathanTurnock/dcs-mission-maker) | `upstream/dcs-mission-maker` | Miz stubs + Zod schemas |
-| [DCS Global Terrain Database](https://github.com/flying-dice/dcs-global-terrain-database) | `upstream/dcs-global-terrain-database` | GeoJSON (Caucasus in-tree) |
-| [BriefingRoom for DCS](https://github.com/DCS-BR-Tools/briefing-room-for-dcs) | `upstream/briefing-room-for-dcs` | Theatres, 802 airbases, situations |
-| [DCS Retribution](https://github.com/dcs-retribution/dcs-retribution) | `upstream/dcs-retribution` | Factions, flight plans, climate |
-| [MOOSE](https://github.com/FlightControl-Master/MOOSE) | `upstream/MOOSE` | Runtime coords + module map |
+pydcs · dcs-mission-maker · dcs-global-terrain-database · briefing-room-for-dcs · dcs-retribution · MOOSE
 
-## Counts (pydcs export snapshot)
+## Snapshot counts
 
 | Dataset | Count |
-|---------|-------|
-| Planes | 143 |
+|---------|------:|
+| Planes (pydcs) | 143 |
 | Helicopters | 26 |
 | Vehicles | 350 |
 | Ships | 57 |
 | Statics | 263 |
 | Countries | 92 |
-| Weapons (all) | 2024 |
-| Airports (11 theatres in pydcs) | 744 |
-| BR airbases (14 theatres) | 802 |
+| Weapons all | 2024 |
+| Weapons AAM curated | 215 |
+| Weapons AGM/bomb curated | 564 |
+| pydcs airports (all maps) | sum of airports-by-theatre |
+| BR airbases | 802 |
+| BR situations | 110 |
+| Retribution customized payloads | 224 |
+| Retribution factions | 131 |
+| Cloud presets | 30 |
 
 ## Coordinate cheat-sheet
 
 | Context | North | East | Alt |
 |---------|-------|------|-----|
-| `.miz` unit / waypoint | `x` | `y` | `alt` |
+| `.miz` unit / WP | `x` | `y` | `alt` |
 | pydcs `Point` | `x` | `y` | — |
-| DCS/MOOSE/BR Vec3 | `x` | `z` | `y` |
+| DCS / MOOSE / BR Vec3 | `x` | `z` | `y` |
 
-Never paste WGS84 lat/lon into mission `x`/`y`.
+Never paste WGS84 into mission `x`/`y`. Join airports by **numeric id** across sources.
 
-## Agent usage
+## Theatre coverage
 
-1. Prefer `data/*.json` for exact lookups.
-2. Prefer markdown guides for config shape and theatre strings.
-3. Never invent type IDs, CLSIDs, or airport IDs — verify here or in upstream clones.
-4. Upstream narrative docs in `upstream/` are patterns, not license to copy code wholesale.
+See [`terrain/theatre-coverage.md`](terrain/theatre-coverage.md).  
+BR/Retribution add **Iraq**, **Afghanistan** (and BR **MarianaIslandsWWII**) beyond current pydcs packages.
 
-## License note
+## Agent rules
 
-Extracted facts (IDs, coordinates, CLSID strings) are DCS/export data mediated by
-upstream open-source projects. Narrative docs here are project notes for Agents.
-Respect each upstream project's license when reading full source trees.
+1. Look up types/CLSIDs/airports here or in upstream — do not invent.
+2. Prefer pydcs for unit/weapon fidelity; BR for multi-map airbase+latlon; Retribution for loadout presets & faction TO&E.
+3. Do not copy upstream code into product paths; extract facts only.
+4. Product-facing docs go to `Docs/` when generation tooling is ready — not this tree.

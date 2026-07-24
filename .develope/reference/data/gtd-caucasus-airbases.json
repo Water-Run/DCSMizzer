@@ -1,0 +1,233 @@
+[
+  {
+    "id": "Anapa-Vityazevo",
+    "name": "Anapa-Vityazevo",
+    "category": "AIRDROME",
+    "lon": 37.359783477556,
+    "lat": 45.013174733772,
+    "elev": 43.00004196167,
+    "dcs_x": -4447.7905273438,
+    "dcs_elev": 43.00004196167,
+    "dcs_z": 244021.984375
+  },
+  {
+    "id": "Krasnodar-Center",
+    "name": "Krasnodar-Center",
+    "category": "AIRDROME",
+    "lon": 38.925202300775,
+    "lat": 45.087429883845,
+    "elev": 30.01003074646,
+    "dcs_x": 11652.913085938,
+    "dcs_elev": 30.01003074646,
+    "dcs_z": 366766.3125
+  },
+  {
+    "id": "Novorossiysk",
+    "name": "Novorossiysk",
+    "category": "AIRDROME",
+    "lon": 37.78622606048,
+    "lat": 44.673329604127,
+    "elev": 40.010040283203,
+    "dcs_x": -40299.0234375,
+    "dcs_elev": 40.010040283203,
+    "dcs_z": 279853.5
+  },
+  {
+    "id": "Krymsk",
+    "name": "Krymsk",
+    "category": "AIRDROME",
+    "lon": 37.985886938697,
+    "lat": 44.961383022734,
+    "elev": 20.010303497314,
+    "dcs_x": -7349.0327148438,
+    "dcs_elev": 20.010303497314,
+    "dcs_z": 293711.96875
+  },
+  {
+    "id": "Maykop-Khanskaya",
+    "name": "Maykop-Khanskaya",
+    "category": "AIRDROME",
+    "lon": 40.021427482236,
+    "lat": 44.671440257355,
+    "elev": 180.01019287109,
+    "dcs_x": -27625.943359375,
+    "dcs_elev": 180.01019287109,
+    "dcs_z": 457047.6875
+  },
+  {
+    "id": "Gelendzhik",
+    "name": "Gelendzhik",
+    "category": "AIRDROME",
+    "lon": 38.004146350528,
+    "lat": 44.567674586004,
+    "elev": 22.009923934937,
+    "dcs_x": -50995.6328125,
+    "dcs_elev": 22.009923934937,
+    "dcs_z": 297848.84375
+  },
+  {
+    "id": "Sochi-Adler",
+    "name": "Sochi-Adler",
+    "category": "AIRDROME",
+    "lon": 39.924231880466,
+    "lat": 43.439378434051,
+    "elev": 30.010034561157,
+    "dcs_x": -165163.28125,
+    "dcs_elev": 30.010034561157,
+    "dcs_z": 460901.53125
+  },
+  {
+    "id": "Krasnodar-Pashkovsky",
+    "name": "Krasnodar-Pashkovsky",
+    "category": "AIRDROME",
+    "lon": 39.203066906325,
+    "lat": 45.046099641543,
+    "elev": 34.010036468506,
+    "dcs_x": 8706.8193359375,
+    "dcs_elev": 34.010036468506,
+    "dcs_z": 388985.71875
+  },
+  {
+    "id": "Sukhumi-Babushara",
+    "name": "Sukhumi-Babushara",
+    "category": "AIRDROME",
+    "lon": 41.142447588488,
+    "lat": 42.852741071635,
+    "elev": 13.338506698608,
+    "dcs_x": -221381.6875,
+    "dcs_elev": 13.338506698608,
+    "dcs_z": 565908.75
+  },
+  {
+    "id": "Gudauta",
+    "name": "Gudauta",
+    "category": "AIRDROME",
+    "lon": 40.564175768401,
+    "lat": 43.124233340197,
+    "elev": 21.01003074646,
+    "dcs_x": -195650.515625,
+    "dcs_elev": 21.01003074646,
+    "dcs_z": 515898.75
+  },
+  {
+    "id": "Batumi",
+    "name": "Batumi",
+    "category": "AIRDROME",
+    "lon": 41.60927548351,
+    "lat": 41.603279859649,
+    "elev": 10.044037818909,
+    "dcs_x": -356437.15625,
+    "dcs_elev": 10.044037818909,
+    "dcs_z": 618210.875
+  },
+  {
+    "id": "Senaki-Kolkhi",
+    "name": "Senaki-Kolkhi",
+    "category": "AIRDROME",
+    "lon": 42.061021312856,
+    "lat": 42.238728081573,
+    "elev": 13.239942550659,
+    "dcs_x": -281903.125,
+    "dcs_elev": 13.239942550659,
+    "dcs_z": 648379.125
+  },
+  {
+    "id": "Kobuleti",
+    "name": "Kobuleti",
+    "category": "AIRDROME",
+    "lon": 41.876483823101,
+    "lat": 41.932105353453,
+    "elev": 18.01001739502,
+    "dcs_x": -317604.90625,
+    "dcs_elev": 18.01001739502,
+    "dcs_z": 636704.125
+  },
+  {
+    "id": "Kutaisi",
+    "name": "Kutaisi",
+    "category": "AIRDROME",
+    "lon": 42.4956840774,
+    "lat": 42.17915393769,
+    "elev": 45.010047912598,
+    "dcs_x": -284582.8125,
+    "dcs_elev": 45.010047912598,
+    "dcs_z": 685029.625
+  },
+  {
+    "id": "Mineralnye Vody",
+    "name": "Mineralnye Vody",
+    "category": "AIRDROME",
+    "lon": 43.100679733081,
+    "lat": 44.218646823807,
+    "elev": 320.01031494141,
+    "dcs_x": -52089.546875,
+    "dcs_elev": 320.01031494141,
+    "dcs_z": 707418.0625
+  },
+  {
+    "id": "Nalchik",
+    "name": "Nalchik",
+    "category": "AIRDROME",
+    "lon": 43.625108736098,
+    "lat": 43.51007143853,
+    "elev": 430.01040649414,
+    "dcs_x": -125487.578125,
+    "dcs_elev": 430.01040649414,
+    "dcs_z": 759560.125
+  },
+  {
+    "id": "Mozdok",
+    "name": "Mozdok",
+    "category": "AIRDROME",
+    "lon": 44.620327262102,
+    "lat": 43.791303250938,
+    "elev": 154.61184692383,
+    "dcs_x": -83329.7890625,
+    "dcs_elev": 154.61184692383,
+    "dcs_z": 835634.6875
+  },
+  {
+    "id": "Tbilisi-Lochini",
+    "name": "Tbilisi-Lochini",
+    "category": "AIRDROME",
+    "lon": 44.946875226153,
+    "lat": 41.674720064437,
+    "elev": 479.69479370117,
+    "dcs_x": -314926.25,
+    "dcs_elev": 479.69479370117,
+    "dcs_z": 895724
+  },
+  {
+    "id": "Soganlug",
+    "name": "Soganlug",
+    "category": "AIRDROME",
+    "lon": 44.947183065317,
+    "lat": 41.641163266787,
+    "elev": 449.41024780273,
+    "dcs_x": -318656.96875,
+    "dcs_elev": 449.41024780273,
+    "dcs_z": 896274.9375
+  },
+  {
+    "id": "Vaziani",
+    "name": "Vaziani",
+    "category": "AIRDROME",
+    "lon": 45.01909093846,
+    "lat": 41.637735936262,
+    "elev": 464.50045776367,
+    "dcs_x": -318191.71875,
+    "dcs_elev": 464.50045776367,
+    "dcs_z": 902331.75
+  },
+  {
+    "id": "Beslan",
+    "name": "Beslan",
+    "category": "AIRDROME",
+    "lon": 44.588922553543,
+    "lat": 43.208500987381,
+    "elev": 524.00579833984,
+    "dcs_x": -148472.40625,
+    "dcs_elev": 524.00579833984,
+    "dcs_z": 842251.75
+  }
+]

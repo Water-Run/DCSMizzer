@@ -1,0 +1,84 @@
+{
+  "pydcs": [
+    "Caucasus",
+    "Falklands",
+    "GermanyCW",
+    "Kola",
+    "MarianaIslands",
+    "Nevada",
+    "Normandy",
+    "PersianGulf",
+    "SinaiMap",
+    "Syria",
+    "TheChannel"
+  ],
+  "briefing_room": [
+    "Afghanistan",
+    "Caucasus",
+    "Falklands",
+    "GermanyCW",
+    "Iraq",
+    "Kola",
+    "MarianaIslands",
+    "MarianaIslandsWWII",
+    "Nevada",
+    "Normandy",
+    "PersianGulf",
+    "SinaiMap",
+    "Syria",
+    "TheChannel"
+  ],
+  "retribution": [
+    "Afghanistan",
+    "Caucasus",
+    "Falklands",
+    "GermanyCW",
+    "Iraq",
+    "Kola",
+    "MarianaIslands",
+    "Nevada",
+    "Normandy",
+    "PersianGulf",
+    "SinaiMap",
+    "Syria",
+    "TheChannel"
+  ],
+  "in_br_not_pydcs": [
+    "Afghanistan",
+    "Iraq",
+    "MarianaIslandsWWII"
+  ],
+  "in_ret_not_pydcs": [
+    "Afghanistan",
+    "Iraq"
+  ],
+  "intersection_all": [
+    "Caucasus",
+    "Falklands",
+    "GermanyCW",
+    "Kola",
+    "MarianaIslands",
+    "Nevada",
+    "Normandy",
+    "PersianGulf",
+    "SinaiMap",
+    "Syria",
+    "TheChannel"
+  ],
+  "union": [
+    "Afghanistan",
+    "Caucasus",
+    "Falklands",
+    "GermanyCW",
+    "Iraq",
+    "Kola",
+    "MarianaIslands",
+    "MarianaIslandsWWII",
+    "Nevada",
+    "Normandy",
+    "PersianGulf",
+    "SinaiMap",
+    "Syria",
+    "TheChannel"
+  ]
+}

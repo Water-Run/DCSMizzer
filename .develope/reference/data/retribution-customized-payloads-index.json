@@ -1,0 +1,2915 @@
+[
+  {
+    "file": "A-10A.lua",
+    "unitType": "A-10A",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "SEAD",
+      "CAP",
+      "STRIKE",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "A-10C.lua",
+    "unitType": "A-10C",
+    "loadout_count": 6,
+    "loadout_names": [
+      "STRIKE",
+      "CAP",
+      "CAS",
+      "ANTISHIP",
+      "SEAD",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "A-10C_2.lua",
+    "unitType": "A-10C II",
+    "loadout_count": 8,
+    "loadout_names": [
+      "AGM-65K*2,GBU-38*4,AIM-9*2,TGP,ECM",
+      "STRIKE",
+      "SEAD",
+      "CAP",
+      "CAS",
+      "New Payload",
+      "ANTISHIP",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "A-20G.lua",
+    "unitType": "A-20G",
+    "loadout_count": 5,
+    "loadout_names": [
+      "ANTISHIP",
+      "STRIKE",
+      "CAS",
+      "CAP",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "A-4E-C.lua",
+    "unitType": "A-4E-C",
+    "loadout_count": 6,
+    "loadout_names": [
+      "STRIKE",
+      "CAP",
+      "CAS",
+      "SEAD",
+      "ANTISHIP",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "A-7E.lua",
+    "unitType": "A-7E",
+    "loadout_count": 7,
+    "loadout_names": [
+      "Retribution SEAD",
+      "Retribution DEAD",
+      "Retribution Strike",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "Retribution BAI",
+      "Retribution CAS"
+    ]
+  },
+  {
+    "file": "A6E.lua",
+    "unitType": "A-6E",
+    "loadout_count": 13,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution SEAD",
+      "Retribution SEAD Sweep",
+      "Retribution DEAD",
+      "Retribution CEAD",
+      "Retribution BAI",
+      "Retribution CAS",
+      "Retribution Anti-ship",
+      "Retribution SEAD Escort",
+      "Retribution Refueling",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "Retribution Armed Recon"
+    ]
+  },
+  {
+    "file": "AH-1W.lua",
+    "unitType": "AH-1W",
+    "loadout_count": 4,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "ANTISHIP",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "AH-64A.lua",
+    "unitType": "AH-64A",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "CAP",
+      "ANTISHIP",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "AH-64D.lua",
+    "unitType": "AH-64D",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "CAP",
+      "ANTISHIP",
+      "SEAD",
+      "STRIKE"
+    ]
+  },
+  {
+    "file": "AH-64D_BLK_II.lua",
+    "unitType": "AH-64D_BLK_II",
+    "loadout_count": 5,
+    "loadout_names": [
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution CAS",
+      "Retribution DEAD",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "AJS37.lua",
+    "unitType": "AJS37",
+    "loadout_count": 7,
+    "loadout_names": [
+      "CAP",
+      "ANTISHIP",
+      "CAS",
+      "STRIKE",
+      "SEAD",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "AV8BNA.lua",
+    "unitType": "AV8BNA",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution SEAD Escort",
+      "Retribution DEAD",
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution CAS",
+      "Retribution SEAD Sweep",
+      "Retribution Strike",
+      "Retribution Anti-ship",
+      "Retribution SEAD"
+    ]
+  },
+  {
+    "file": "AWING.lua",
+    "unitType": "AWING",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Liberation BARCAP",
+      "Liberation TARCAP"
+    ]
+  },
+  {
+    "file": "B-17G.lua",
+    "unitType": "B-17G",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAP",
+      "SEAD",
+      "STRIKE",
+      "ANTISHIP",
+      "CAS",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "B-1B.lua",
+    "unitType": "B-1B",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution OCA/Aircraft",
+      "CAP",
+      "Retribution DEAD",
+      "Retribution BAI",
+      "Retribution OCA/Runway",
+      "SEAD",
+      "CAS",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "B-21.lua",
+    "unitType": "B-21",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution Anti-ship",
+      "Retribution BAI",
+      "Retribution DEAD",
+      "Retribution OCA/Runway",
+      "Retribution CAS",
+      "Retribution SEAD Sweep",
+      "Retribution OCA/Aircraft",
+      "Retribution Armed Recon",
+      "Retribution SEAD",
+      "Retribution Strike"
+    ]
+  },
+  {
+    "file": "B-52H.lua",
+    "unitType": "B-52H",
+    "loadout_count": 6,
+    "loadout_names": [
+      "Retribution BAI",
+      "Retribution DEAD",
+      "Retribution Anti-ship",
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "B2_Spirit.lua",
+    "unitType": "B2_Spirit",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution SEAD",
+      "Retribution DEAD",
+      "Retribution BAI",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "Retribution SEAD Sweep",
+      "Retribution Armed Recon"
+    ]
+  },
+  {
+    "file": "B_47.lua",
+    "unitType": "B_47",
+    "loadout_count": 4,
+    "loadout_names": [
+      "STRIKE",
+      "ANTISHIP",
+      "Retribution OCA/Runway",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "B_58.lua",
+    "unitType": "B_58",
+    "loadout_count": 5,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution Anti-ship",
+      "Retribution DEAD",
+      "Retribution OCA/Runway",
+      "Retribution Armed Recon"
+    ]
+  },
+  {
+    "file": "Bf-109K-4.lua",
+    "unitType": "Bf-109K-4",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution BAI",
+      "Retribution TARCAP",
+      "Retribution DEAD",
+      "Retribution Escort",
+      "Retribution BARCAP",
+      "Retribution Fighter Sweep",
+      "Retribution Strike",
+      "Retribution CAS",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Bronco-OV-10A.lua",
+    "unitType": "Bronco-OV-10A",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "CAS",
+      "STRIKE",
+      "SEAD",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "C-101CC.lua",
+    "unitType": "C-101CC",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "CAS",
+      "ANTISHIP",
+      "STRIKE",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "CH-47Fbl1.lua",
+    "unitType": "CH-47Fbl1",
+    "loadout_count": 1,
+    "loadout_names": [
+      "Retribution Air Assault"
+    ]
+  },
+  {
+    "file": "CH_JAS39C.lua",
+    "unitType": "CH_JAS39C",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution DEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution Escort",
+      "Retribution Anti-ship"
+    ]
+  },
+  {
+    "file": "CH_Ka52.lua",
+    "unitType": "CH_Ka52",
+    "loadout_count": 5,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution DEAD",
+      "Retribution Escort",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "CH_Ka52K.lua",
+    "unitType": "CH_Ka52K",
+    "loadout_count": 6,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution Anti-ship",
+      "Retribution DEAD",
+      "Retribution BAI",
+      "Retribution Escort",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "CH_Mi28N.lua",
+    "unitType": "CH_Mi28N",
+    "loadout_count": 4,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "CH_Su-27P1M.lua",
+    "unitType": "CH_Su-27P1M",
+    "loadout_count": 12,
+    "loadout_names": [
+      "Retribution TARCAP",
+      "Retribution BARCAP",
+      "Retribution CAS",
+      "Retribution Escort",
+      "Retribution BAI",
+      "Retribution SEAD",
+      "Retribution CEAD",
+      "Retribution DEAD",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "Retribution SEAD Sweep",
+      "Retribution Strike"
+    ]
+  },
+  {
+    "file": "CH_Tu-160M2.lua",
+    "unitType": "CH_Tu-160M2",
+    "loadout_count": 3,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution Anti-ship",
+      "BAI"
+    ]
+  },
+  {
+    "file": "CORVETTE.lua",
+    "unitType": "CORVETTE",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Liberation BARCAP",
+      "Liberation TARCAP"
+    ]
+  },
+  {
+    "file": "EA-18G.lua",
+    "unitType": "EA-18G",
+    "loadout_count": 4,
+    "loadout_names": [
+      "Retribution SEAD",
+      "Retribution SEAD Sweep",
+      "Retribution SEAD Escort",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "EA_6B.lua",
+    "unitType": "EA_6B",
+    "loadout_count": 1,
+    "loadout_names": [
+      "Liberation SEAD"
+    ]
+  },
+  {
+    "file": "F-100D.lua",
+    "unitType": "F-100D",
+    "loadout_count": 11,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution Escort",
+      "Retribution CAS",
+      "Retribution SEAD",
+      "Retribution Strike",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway",
+      "Retribution DEAD",
+      "Retribution SEAD Sweep",
+      "Retribution BAI"
+    ]
+  },
+  {
+    "file": "F-117A.lua",
+    "unitType": "F-117A",
+    "loadout_count": 5,
+    "loadout_names": [
+      "STRIKE",
+      "SEAD",
+      "CAS",
+      "ANTISHIP",
+      "CAP"
+    ]
+  },
+  {
+    "file": "F-14A-135-GR-Early.lua",
+    "unitType": "F-14A",
+    "loadout_count": 8,
+    "loadout_names": [
+      "ANTISHIP",
+      "CAS",
+      "STRIKE",
+      "Retribution DEAD",
+      "CAP",
+      "BAI",
+      "Retribution SEAD",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "F-14A-135-GR.lua",
+    "unitType": "F-14A",
+    "loadout_count": 8,
+    "loadout_names": [
+      "ANTISHIP",
+      "CAS",
+      "STRIKE",
+      "Retribution DEAD",
+      "CAP",
+      "BAI",
+      "Retribution SEAD",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "F-14A.lua",
+    "unitType": "F-14A",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAP"
+    ]
+  },
+  {
+    "file": "F-14B.lua",
+    "unitType": "F-14B",
+    "loadout_count": 7,
+    "loadout_names": [
+      "Retribution DEAD",
+      "CAS",
+      "STRIKE",
+      "Retribution SEAD",
+      "CAP",
+      "ANTISHIP",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "F-15C.lua",
+    "unitType": "F-15C",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "CAP",
+      "ANTISHIP",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "F-15D.lua",
+    "unitType": "F-15D",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution Strike",
+      "Retribution CAS",
+      "Retribution TARCAP",
+      "Retribution Escort",
+      "Retribution Fighter Sweep",
+      "Retribution Intercept",
+      "Retribution BAI"
+    ]
+  },
+  {
+    "file": "F-15E.lua",
+    "unitType": "F-15E",
+    "loadout_count": 7,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "STRIKE",
+      "CAP",
+      "Retribution CAS",
+      "ANTISHIP",
+      "SEAD",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "F-15ESE.lua",
+    "unitType": "F-15ESE",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution Escort",
+      "Retribution OCA/Aircraft",
+      "Retribution BAI",
+      "Retribution Fighter Sweep",
+      "Retribution Strike",
+      "Retribution BARCAP",
+      "Retribution CAS",
+      "Retribution TARCAP",
+      "Retribution DEAD",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "F-16A MLU.lua",
+    "unitType": "F-16A MLU",
+    "loadout_count": 7,
+    "loadout_names": [
+      "CAP",
+      "CAS",
+      "STRIKE",
+      "SEAD",
+      "Retribution DEAD",
+      "ANTISHIP",
+      "Retribution SEAD Sweep"
+    ]
+  },
+  {
+    "file": "F-16A.lua",
+    "unitType": "F-16A",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAP",
+      "CAS",
+      "STRIKE",
+      "ANTISHIP",
+      "SEAD",
+      "Retribution SEAD Sweep"
+    ]
+  },
+  {
+    "file": "F-16C_50.lua",
+    "unitType": "F-16C_50",
+    "loadout_count": 15,
+    "loadout_names": [
+      "Retribution TARCAP",
+      "Retribution Anti-ship",
+      "Retribution SEAD Escort",
+      "Retribution Fighter Sweep",
+      "Retribution SEAD Sweep",
+      "Retribution Strike",
+      "Clean",
+      "Retribution OCA/Runway",
+      "Retribution CAS",
+      "Retribution BARCAP",
+      "Retribution OCA/Aircraft",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution BAI",
+      "Retribution SEAD"
+    ]
+  },
+  {
+    "file": "F-16D_50.lua",
+    "unitType": "F-16D_50",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution Ferry",
+      "Retribution Strike",
+      "ANTISHIP",
+      "Retribution SEAD Escort",
+      "CAP",
+      "CAS",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "F-16D_50_NS.lua",
+    "unitType": "F-16D_50_NS",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution Ferry",
+      "Retribution Strike",
+      "ANTISHIP",
+      "Retribution SEAD Escort",
+      "CAP",
+      "CAS",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "F-16D_52.lua",
+    "unitType": "F-16D_52",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution Ferry",
+      "Retribution Strike",
+      "ANTISHIP",
+      "Retribution SEAD Escort",
+      "CAP",
+      "CAS",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "F-16D_52_NS.lua",
+    "unitType": "F-16D_52_NS",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution Ferry",
+      "Retribution Strike",
+      "ANTISHIP",
+      "Retribution SEAD Escort",
+      "CAP",
+      "CAS",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "F-16D_Barak_30.lua",
+    "unitType": "F-16D_Barak_30",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution Ferry",
+      "Retribution Strike",
+      "ANTISHIP",
+      "Retribution SEAD Escort",
+      "CAP",
+      "CAS",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "F-16D_Barak_40.lua",
+    "unitType": "F-16D_Barak_40",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution Ferry",
+      "Retribution Strike",
+      "ANTISHIP",
+      "Retribution SEAD Escort",
+      "CAP",
+      "CAS",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "F-16I.lua",
+    "unitType": "F-16I",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution Ferry",
+      "Retribution Strike",
+      "ANTISHIP",
+      "Retribution SEAD Escort",
+      "CAP",
+      "CAS",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "F-22A.lua",
+    "unitType": "F-22A",
+    "loadout_count": 6,
+    "loadout_names": [
+      "Retribution Escort",
+      "Retribution BARCAP",
+      "Retribution Fighter Sweep",
+      "Retribution TARCAP",
+      "Retribution Intercept",
+      "Retribution Reconnaissance"
+    ]
+  },
+  {
+    "file": "F-4E-45MC.lua",
+    "unitType": "F-4E-45MC",
+    "loadout_count": 13,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution DEAD",
+      "Retribution Strike",
+      "Retribution Escort",
+      "Retribution BARCAP",
+      "Retribution SEAD",
+      "Retribution TARCAP",
+      "Retribution Anti-ship",
+      "Retribution BAI",
+      "Retribution SEAD Escort",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway",
+      "Retribution SEAD Sweep"
+    ]
+  },
+  {
+    "file": "F-4E.lua",
+    "unitType": "F-4E",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution Escort",
+      "Retribution Fighter sweep",
+      "Retribution Strike",
+      "Retribution SEAD",
+      "Retribution TARCAP",
+      "Retribution DEAD",
+      "Retribution BARCAP",
+      "Retribution CAS"
+    ]
+  },
+  {
+    "file": "F-5E-3.lua",
+    "unitType": "F-5E-3",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "SEAD",
+      "CAP",
+      "STRIKE",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "F-5E-3_FC.lua",
+    "unitType": "F-5E FC",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution Escort",
+      "Retribution Fighter Sweep",
+      "Retribution BAI",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "F-86F Sabre.lua",
+    "unitType": "F-86F Sabre",
+    "loadout_count": 9,
+    "loadout_names": [
+      "RUNWAY_ATTACK",
+      "CAS",
+      "CAP",
+      "ANTISHIP",
+      "BAI",
+      "OCA",
+      "STRIKE",
+      "SEAD",
+      "INTERCEPT"
+    ]
+  },
+  {
+    "file": "F-86F_FC.lua",
+    "unitType": "F-86F_FC",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution BAI",
+      "Retribution Fighter Sweep",
+      "Retribution Escort",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "F111C.lua",
+    "unitType": "F111C",
+    "loadout_count": 11,
+    "loadout_names": [
+      "Retribution DEAD",
+      "Retribution Strike",
+      "Retribution Anti-ship",
+      "Retribution OCA/Runway",
+      "Retribution CAS",
+      "Retribution SEAD Sweep",
+      "Retribution OCA/Aircraft",
+      "Retribution Armed Recon",
+      "Retribution BAI",
+      "Retribution SEAD",
+      "Retribution SEAD Escort"
+    ]
+  },
+  {
+    "file": "F4U-1D.lua",
+    "unitType": "F4U-1D",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution Anti-ship",
+      "Retribution Strike",
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution Escort",
+      "Retribution Fighter Sweep",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "FA-18C.lua",
+    "unitType": "FA-18C",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Liberation Strike",
+      "Liberation BARCAP",
+      "Liberation CAS",
+      "Liberation DEAD",
+      "Liberation OCA/Runway",
+      "Liberation Anti-ship",
+      "Liberation SEAD",
+      "Liberation SEAD Escort",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "FA-18C_hornet.lua",
+    "unitType": "FA-18C_hornet",
+    "loadout_count": 11,
+    "loadout_names": [
+      "Retribution DEAD",
+      "Retribution BARCAP",
+      "Retribution SEAD",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution Anti-ship",
+      "Retribution BAI",
+      "Retribution OCA/Runway",
+      "Retribution Ferry",
+      "Retribution SEAD Sweep",
+      "Retribution SEAD Escort"
+    ]
+  },
+  {
+    "file": "FA-18E.lua",
+    "unitType": "FA-18E",
+    "loadout_count": 13,
+    "loadout_names": [
+      "Retribution TARCAP/Escort",
+      "Retribution Anti-ship",
+      "Retribution BAI",
+      "Retribution BARCAP",
+      "Retribution Escort",
+      "Retribution CAS",
+      "Retribution DEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution SEAD Escort",
+      "Retribution SEAD Sweep",
+      "Retribution Strike"
+    ]
+  },
+  {
+    "file": "FA-18F.lua",
+    "unitType": "FA-18F",
+    "loadout_count": 13,
+    "loadout_names": [
+      "Retribution TARCAP/Escort",
+      "Retribution Anti-ship",
+      "Retribution BAI",
+      "Retribution BARCAP",
+      "Retribution Escort",
+      "Retribution CAS",
+      "Retribution DEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution SEAD Escort",
+      "Retribution SEAD Sweep",
+      "Retribution Strike"
+    ]
+  },
+  {
+    "file": "FAUCON.lua",
+    "unitType": "FAUCON",
+    "loadout_count": 1,
+    "loadout_names": [
+      "Liberation BARCAP"
+    ]
+  },
+  {
+    "file": "FW-190A8.lua",
+    "unitType": "FW-190A8",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution Fighter Sweep",
+      "Retribution DEAD",
+      "Retribution OCA/Runway",
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution Escort",
+      "Retribution CAS"
+    ]
+  },
+  {
+    "file": "FW-190D9.lua",
+    "unitType": "FW-190D9",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution TARCAP",
+      "Retribution CAS",
+      "Retribution Escort",
+      "Retribution BARCAP",
+      "Retribution Fighter Sweep",
+      "Retribution BAI",
+      "Retribution DEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "H-6J.lua",
+    "unitType": "H-6J",
+    "loadout_count": 7,
+    "loadout_names": [
+      "Retribution DEAD",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution Anti-ship",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "HUNTER.lua",
+    "unitType": "HUNTER",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Liberation BARCAP",
+      "Liberation TARCAP"
+    ]
+  },
+  {
+    "file": "Hercules.lua",
+    "unitType": "Hercules",
+    "loadout_count": 10,
+    "loadout_names": [
+      "DEAD",
+      "STRIKE",
+      "ANTISHIP",
+      "OCA",
+      "CAS",
+      "SEAD",
+      "CAP",
+      "RUNWAY_STRIKE",
+      "Retribution CAS",
+      "Retribution Air Assault"
+    ]
+  },
+  {
+    "file": "I-16.lua",
+    "unitType": "I-16",
+    "loadout_count": 7,
+    "loadout_names": [
+      "Retribution TARCAP",
+      "Retribution BARCAP",
+      "Retribution Escort",
+      "Retribution Fighter Sweep",
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "J-11A.lua",
+    "unitType": "J-11A",
+    "loadout_count": 6,
+    "loadout_names": [
+      "STRIKE",
+      "ANTISHIP",
+      "CAP",
+      "SEAD",
+      "CAS",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "JAS39Gripen.lua",
+    "unitType": "JAS39Gripen",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAP"
+    ]
+  },
+  {
+    "file": "JAS39Gripen_AG.lua",
+    "unitType": "JAS39Gripen_AG",
+    "loadout_count": 7,
+    "loadout_names": [
+      "OCA",
+      "SEAD",
+      "DEAD",
+      "ANTISHIP",
+      "CAS",
+      "STRIKE",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "JAS39Gripen_BVR.lua",
+    "unitType": "JAS39Gripen_BVR",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAP"
+    ]
+  },
+  {
+    "file": "JF-17.lua",
+    "unitType": "JF-17",
+    "loadout_count": 7,
+    "loadout_names": [
+      "ANTISHIP",
+      "STRIKE",
+      "CAP",
+      "RUNWAY_ATTACK",
+      "CAS",
+      "SEAD",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Ju-88A4.lua",
+    "unitType": "Ju-88A4",
+    "loadout_count": 7,
+    "loadout_names": [
+      "Retribution DEAD",
+      "Retribution Anti-ship",
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution Strike",
+      "Retribution CAS",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Ka-50.lua",
+    "unitType": "Ka-50",
+    "loadout_count": 5,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution DEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "Ka-50_3.lua",
+    "unitType": "Ka-50_3",
+    "loadout_count": 5,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution DEAD",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "L-39C.lua",
+    "unitType": "L-39C",
+    "loadout_count": 5,
+    "loadout_names": [
+      "STRIKE",
+      "CAS",
+      "SEAD",
+      "ANTISHIP",
+      "CAP"
+    ]
+  },
+  {
+    "file": "L-39ZA.lua",
+    "unitType": "L-39ZA",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "CAS",
+      "STRIKE",
+      "ANTISHIP",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "M-2000C.lua",
+    "unitType": "M-2000C",
+    "loadout_count": 7,
+    "loadout_names": [
+      "RUNWAY_ATTACK",
+      "CAS",
+      "STRIKE",
+      "CAP",
+      "ANTISHIP",
+      "SEAD",
+      "DEAD"
+    ]
+  },
+  {
+    "file": "MB-339A.lua",
+    "unitType": "MB-339A",
+    "loadout_count": 4,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "Retribution Strike"
+    ]
+  },
+  {
+    "file": "MQ-9 Reaper.lua",
+    "unitType": "MQ-9 Reaper",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAS"
+    ]
+  },
+  {
+    "file": "Mi-24P.lua",
+    "unitType": "Mi-24P",
+    "loadout_count": 7,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution Strike",
+      "Retribution Antiship",
+      "Retribution SEAD",
+      "Retribution DEAD",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "Mi-24V.lua",
+    "unitType": "Mi-24V",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "ANTISHIP",
+      "SEAD",
+      "CAP",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "Mi-28.lua",
+    "unitType": "Mi-28",
+    "loadout_count": 5,
+    "loadout_names": [
+      "STRIKE",
+      "CAS",
+      "ANTISHIP",
+      "SEAD",
+      "CAP"
+    ]
+  },
+  {
+    "file": "Mi-28N.lua",
+    "unitType": "Mi-28N",
+    "loadout_count": 4,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "Mi-8MT.lua",
+    "unitType": "Mi-8MT",
+    "loadout_count": 5,
+    "loadout_names": [
+      "Retribution Air Assault",
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "MiG-15bis.lua",
+    "unitType": "MiG-15bis",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "CAS",
+      "SEAD",
+      "STRIKE",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "MiG-15bis_FC.lua",
+    "unitType": "MiG-15bis_FC",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution Escort",
+      "Retribution Fighter Sweep",
+      "Retribution BAI",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "MiG-19P.lua",
+    "unitType": "MiG-19P",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "CAP",
+      "SEAD",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "MiG-21bis.lua",
+    "unitType": "MiG-21Bis",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAS",
+      "ANTISHIP",
+      "CAP",
+      "SEAD",
+      "STRIKE",
+      "DEAD"
+    ]
+  },
+  {
+    "file": "MiG-23MLD.lua",
+    "unitType": "MiG-23MLD",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "ANTISHIP",
+      "CAP",
+      "STRIKE",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "MiG-25PD.lua",
+    "unitType": "MiG-25PD",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "STRIKE",
+      "CAS",
+      "ANTISHIP",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "MiG-25RBT.lua",
+    "unitType": "MiG-25RBT",
+    "loadout_count": 5,
+    "loadout_names": [
+      "Retribution DEAD",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution BARCAP",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "MiG-27K.lua",
+    "unitType": "MiG-27K",
+    "loadout_count": 6,
+    "loadout_names": [
+      "SEAD",
+      "STRIKE",
+      "CAS",
+      "ANTISHIP",
+      "CAP",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "MiG-29 Fulcrum.lua",
+    "unitType": "MiG-29A",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "CAP",
+      "ANTISHIP",
+      "SEAD",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "MiG-29A.lua",
+    "unitType": "MiG-29A",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "CAP",
+      "ANTISHIP",
+      "SEAD",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "MiG-29G.lua",
+    "unitType": "MiG-29G",
+    "loadout_count": 6,
+    "loadout_names": [
+      "ANTISHIP",
+      "CAP",
+      "CAS",
+      "SEAD",
+      "STRIKE",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "MiG-29MU2.lua",
+    "unitType": "MiG-29MU2",
+    "loadout_count": 12,
+    "loadout_names": [
+      "Retribution BAI",
+      "Retribution TARCAP",
+      "Retribution BARCAP",
+      "Retribution SEAD",
+      "Retribution Strike",
+      "Retribution OCA/Aircraft",
+      "Retribution DEAD",
+      "Retribution OCA/Runway",
+      "Retribution Escort",
+      "Retribution CEAD",
+      "Retribution SEAD Sweep",
+      "Retribution CAS"
+    ]
+  },
+  {
+    "file": "MiG-29S.lua",
+    "unitType": "MiG-29S",
+    "loadout_count": 6,
+    "loadout_names": [
+      "STRIKE",
+      "CAS",
+      "CAP",
+      "ANTISHIP",
+      "SEAD",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "MiG-31.lua",
+    "unitType": "MiG-31",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "SEAD",
+      "CAS",
+      "STRIKE",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "MiG-31BM.lua",
+    "unitType": "MiG-31BM",
+    "loadout_count": 5,
+    "loadout_names": [
+      "R-77*2 R-37M*4 R27ER*2 ",
+      "R-73*2 R-33*4 3000L tanks*2",
+      "Retribution BARCAP",
+      "Retribution SEAD",
+      "Retribution SEAD Escort"
+    ]
+  },
+  {
+    "file": "Mirage 2000-5.lua",
+    "unitType": "Mirage 2000-5",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "CAS",
+      "STRIKE",
+      "SEAD",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "Mirage-F1B.lua",
+    "unitType": "Mirage-F1B",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution Fighter Sweep",
+      "Retribution OCA/Aircraft",
+      "Retribution BARCAP",
+      "Retribution CAS",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution TARCAP"
+    ]
+  },
+  {
+    "file": "Mirage-F1BE.lua",
+    "unitType": "Mirage-F1BE",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution Fighter Sweep",
+      "Retribution OCA/Aircraft",
+      "Retribution BARCAP",
+      "Retribution CAS",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution TARCAP"
+    ]
+  },
+  {
+    "file": "Mirage-F1C-200.lua",
+    "unitType": "Mirage-F1C-200",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution Fighter Sweep",
+      "Retribution OCA/Aircraft",
+      "Retribution BARCAP",
+      "Retribution CAS",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution TARCAP"
+    ]
+  },
+  {
+    "file": "Mirage-F1CE.lua",
+    "unitType": "Mirage-F1CE",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution Fighter Sweep",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution TARCAP",
+      "Retribution BAI",
+      "Retribution BARCAP"
+    ]
+  },
+  {
+    "file": "Mirage-F1CT.lua",
+    "unitType": "Mirage-F1CT",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution Fighter Sweep",
+      "Retribution OCA/Aircraft",
+      "Retribution BARCAP",
+      "Retribution CAS",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution TARCAP"
+    ]
+  },
+  {
+    "file": "Mirage-F1EE.lua",
+    "unitType": "Mirage-F1EE",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution Fighter Sweep",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution TARCAP",
+      "Retribution BAI",
+      "Retribution BARCAP"
+    ]
+  },
+  {
+    "file": "Mirage-F1EQ.lua",
+    "unitType": "Mirage-F1EQ",
+    "loadout_count": 11,
+    "loadout_names": [
+      "Clean",
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution Fighter Sweep",
+      "Retribution OCA/Aircraft",
+      "Retribution BARCAP",
+      "Retribution CAS",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution TARCAP"
+    ]
+  },
+  {
+    "file": "Mirage-F1M-CE.lua",
+    "unitType": "Mirage-F1M-CE",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution Fighter Sweep",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution TARCAP",
+      "Retribution BAI",
+      "Retribution BARCAP"
+    ]
+  },
+  {
+    "file": "Mirage-F1M-EE.lua",
+    "unitType": "Mirage-F1M-EE",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution Fighter Sweep",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution TARCAP",
+      "Retribution BAI",
+      "Retribution BARCAP"
+    ]
+  },
+  {
+    "file": "MosquitoFBMkVI.lua",
+    "unitType": "MosquitoFBMkVI",
+    "loadout_count": 12,
+    "loadout_names": [
+      "500 lb GP Mk.V*2, 500 lb GP Short tail*2",
+      "Retribution Escort",
+      "Retribution TARCAP",
+      "Retribution OCA/Aircraft",
+      "Retribution Anti-ship",
+      "Retribution Fighter Sweep",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution DEAD",
+      "Retribution OCA/Runway",
+      "Retribution BARCAP"
+    ]
+  },
+  {
+    "file": "OH-58D.lua",
+    "unitType": "OH-58D",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "CAP",
+      "ANTISHIP",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "OH-6A.lua",
+    "unitType": "OH-6A",
+    "loadout_count": 3,
+    "loadout_names": [
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution CAS"
+    ]
+  },
+  {
+    "file": "OH58D.lua",
+    "unitType": "OH58D",
+    "loadout_count": 5,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution DEAD",
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "P-47D-30.lua",
+    "unitType": "P-47D-30",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution TARCAP",
+      "Retribution BARCAP",
+      "Retribution Escort",
+      "Retribution Fighter Sweep",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution DEAD",
+      "Retribution BAI",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "P-47D-30bl1.lua",
+    "unitType": "P-47D-30bl1",
+    "loadout_count": 10,
+    "loadout_names": [
+      "Retribution TARCAP",
+      "Retribution BARCAP",
+      "Retribution Escort",
+      "Retribution Fighter Sweep",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution DEAD",
+      "Retribution BAI",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "P-47D-40.lua",
+    "unitType": "P-47D-40",
+    "loadout_count": 13,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution Escort",
+      "Retribution DEAD",
+      "Retribution BARCAP",
+      "Retribution Strike",
+      "Retribution Fighter Sweep",
+      "Retribution SEAD",
+      "ANTISHIP",
+      "Retribution SEAD Escort",
+      "Retribution CAS",
+      "Retribution TARCAP",
+      "Retribution OCA/Aircraft",
+      "Retribution BAI"
+    ]
+  },
+  {
+    "file": "P-51D-30-NA.lua",
+    "unitType": "P-51D-30-NA",
+    "loadout_count": 11,
+    "loadout_names": [
+      "Retribution OCA/Runway",
+      "Retribution Fighter Sweep",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution Anti-ship",
+      "Retribution BAI",
+      "Retribution DEAD",
+      "Retribution TARCAP",
+      "Retribution BARCAP",
+      "Retribution Escort",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "P-51D.lua",
+    "unitType": "P-51D",
+    "loadout_count": 11,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution TARCAP",
+      "Retribution BARCAP",
+      "Retribution Escort",
+      "Retribution Fighter Sweep",
+      "Retribution Strike",
+      "Retribution Anti-ship",
+      "Retribution DEAD",
+      "Retribution BAI",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "P3C_Orion.lua",
+    "unitType": "P3C_Orion",
+    "loadout_count": 1,
+    "loadout_names": [
+      "Retribution Antiship"
+    ]
+  },
+  {
+    "file": "RQ-1A Predator.lua",
+    "unitType": "RQ-1A Predator",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAS"
+    ]
+  },
+  {
+    "file": "Rafale_A_S.lua",
+    "unitType": "Rafale_A_S",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "ANTISHIP",
+      "CAP",
+      "SEAD",
+      "STRIKE"
+    ]
+  },
+  {
+    "file": "Rafale_B.lua",
+    "unitType": "Rafale_B",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAP",
+      "CAS",
+      "ANTISHIP",
+      "SEAD",
+      "BAI",
+      "STRIKE"
+    ]
+  },
+  {
+    "file": "Rafale_M.lua",
+    "unitType": "Rafale_M",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "CAP",
+      "SEAD",
+      "ANTISHIP",
+      "BAI"
+    ]
+  },
+  {
+    "file": "S-3B.lua",
+    "unitType": "S-3B",
+    "loadout_count": 6,
+    "loadout_names": [
+      "Retribution OCA/Aircraft",
+      "Retribution DEAD",
+      "Retribution Anti-ship",
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution Strike"
+    ]
+  },
+  {
+    "file": "SA342L.lua",
+    "unitType": "SA342L",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "SEAD",
+      "CAS",
+      "ANTISHIP",
+      "STRIKE"
+    ]
+  },
+  {
+    "file": "SA342M.lua",
+    "unitType": "SA342M",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "STRIKE",
+      "CAS",
+      "SEAD",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "SA342Minigun.lua",
+    "unitType": "SA342Minigun",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "SA342Mistral.lua",
+    "unitType": "SA342Mistral",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "SEAD",
+      "CAP",
+      "ANTISHIP",
+      "STRIKE"
+    ]
+  },
+  {
+    "file": "SH-60B.lua",
+    "unitType": "SH-60B",
+    "loadout_count": 1,
+    "loadout_names": [
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "SK-60.lua",
+    "unitType": "SK-60",
+    "loadout_count": 6,
+    "loadout_names": [
+      "Retribution DEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution Strike",
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "SpitfireLFMkIX.lua",
+    "unitType": "SpitfireLFMkIX",
+    "loadout_count": 4,
+    "loadout_names": [
+      "CAP",
+      "STRIKE",
+      "CAS",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "SpitfireLFMkIXCW.lua",
+    "unitType": "SpitfireLFMkIXCW",
+    "loadout_count": 4,
+    "loadout_names": [
+      "CAP",
+      "CAS",
+      "STRIKE",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "Su-17M4.lua",
+    "unitType": "Su-17M4",
+    "loadout_count": 6,
+    "loadout_names": [
+      "STRIKE",
+      "SEAD",
+      "ANTISHIP",
+      "CAP",
+      "CAS",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Su-24M.lua",
+    "unitType": "Su-24M",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution DEAD",
+      "Retribution SEAD Escort",
+      "Retribution CAS",
+      "Retribution SEAD",
+      "Retribution Anti-ship",
+      "Retribution BAI",
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution OCA/Aircraft"
+    ]
+  },
+  {
+    "file": "Su-24MU.lua",
+    "unitType": "Su-24MU",
+    "loadout_count": 6,
+    "loadout_names": [
+      "Retribution BAI",
+      "Retribution DEAD",
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "Retribution OCA/Aircraft",
+      "Retribution CAS"
+    ]
+  },
+  {
+    "file": "Su-25.lua",
+    "unitType": "Su-25",
+    "loadout_count": 6,
+    "loadout_names": [
+      "STRIKE",
+      "CAP",
+      "CAS",
+      "ANTISHIP",
+      "SEAD",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Su-25T.lua",
+    "unitType": "Su-25T",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "CAP",
+      "SEAD",
+      "ANTISHIP",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Su-27.lua",
+    "unitType": "Su-27",
+    "loadout_count": 6,
+    "loadout_names": [
+      "ANTISHIP",
+      "CAP",
+      "STRIKE",
+      "SEAD",
+      "CAS",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Su-30.lua",
+    "unitType": "Su-30",
+    "loadout_count": 6,
+    "loadout_names": [
+      "ANTISHIP",
+      "CAP",
+      "SEAD",
+      "CAS",
+      "STRIKE",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Su-30MKA.lua",
+    "unitType": "Su-30MKA",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution OCA/Runway",
+      "Retribution Strike",
+      "CAP",
+      "Retribution Antiship",
+      "Retribution OCA/Aircraft",
+      "Retribution SEAD",
+      "Retribution BAI",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "Su-30MKI.lua",
+    "unitType": "Su-30MKI",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution Strike",
+      "CAP",
+      "Retribution BAI",
+      "Retribution Antiship",
+      "Retribution CAS",
+      "Retribution SEAD",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "Su-30MKM.lua",
+    "unitType": "Su-30MKM",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution Antiship",
+      "CAP",
+      "Retribution CAS",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "Su-30SM.lua",
+    "unitType": "Su-30SM",
+    "loadout_count": 9,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution Antiship",
+      "CAP",
+      "Retribution CAS",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "Su-33.lua",
+    "unitType": "Su-33",
+    "loadout_count": 6,
+    "loadout_names": [
+      "STRIKE",
+      "SEAD",
+      "CAS",
+      "ANTISHIP",
+      "CAP",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Su-34.lua",
+    "unitType": "Su-34",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAS",
+      "ANTISHIP",
+      "SEAD",
+      "STRIKE",
+      "CAP",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Su-35S.lua",
+    "unitType": "Su-35S",
+    "loadout_count": 3,
+    "loadout_names": [
+      "CAP",
+      "Retribution Intercept",
+      "Retribution SEAD"
+    ]
+  },
+  {
+    "file": "Su-35S_AG.lua",
+    "unitType": "Su-35S-AG",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution Antiship",
+      "Retribution CAS",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway",
+      "Retribution SEAD",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "Su-57.lua",
+    "unitType": "Su-57",
+    "loadout_count": 6,
+    "loadout_names": [
+      "ANTISHIP",
+      "CAP",
+      "SEAD",
+      "CAS",
+      "STRIKE",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Su_15.lua",
+    "unitType": "Su_15",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAP"
+    ]
+  },
+  {
+    "file": "Su_15TM.lua",
+    "unitType": "Su_15TM",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAP"
+    ]
+  },
+  {
+    "file": "TIE.lua",
+    "unitType": "TIE",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAP"
+    ]
+  },
+  {
+    "file": "TIEB.lua",
+    "unitType": "tie_bomber_2",
+    "loadout_count": 6,
+    "loadout_names": [
+      "Liberation Tarcap",
+      "Liberation CAS",
+      "Liberation SEAD",
+      "Retribution BAI",
+      "Retribution Strike",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "TIE_INTER.lua",
+    "unitType": "TIE_INTER",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Liberation BARCAP",
+      "Liberation TARCAP"
+    ]
+  },
+  {
+    "file": "Tornado GR4.lua",
+    "unitType": "Tornado GR4",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution SEAD Escort",
+      "Retribution Strike",
+      "Retribution CAS",
+      "Retribution DEAD",
+      "Retribution Anti-ship",
+      "Retribution OCA/Aircraft",
+      "Retribution SEAD",
+      "Retribution BAI"
+    ]
+  },
+  {
+    "file": "Tornado IDS.lua",
+    "unitType": "Tornado IDS",
+    "loadout_count": 5,
+    "loadout_names": [
+      "ANTISHIP",
+      "CAP",
+      "SEAD",
+      "STRIKE",
+      "CAS"
+    ]
+  },
+  {
+    "file": "Tornado_ADV.lua",
+    "unitType": "Tornado_ADV",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Retribution Escort",
+      "Retribution BARCAP"
+    ]
+  },
+  {
+    "file": "Tu-142.lua",
+    "unitType": "Tu-142",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "SEAD",
+      "STRIKE",
+      "CAP",
+      "ANTISHIP"
+    ]
+  },
+  {
+    "file": "Tu-16.lua",
+    "unitType": "Tu-16",
+    "loadout_count": 4,
+    "loadout_names": [
+      "STRIKE",
+      "ANTISHIP",
+      "SEAD",
+      "CAS"
+    ]
+  },
+  {
+    "file": "Tu-160.lua",
+    "unitType": "Tu-160",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "STRIKE",
+      "SEAD",
+      "ANTISHIP",
+      "CAP"
+    ]
+  },
+  {
+    "file": "Tu-22M3.lua",
+    "unitType": "Tu-22M3",
+    "loadout_count": 6,
+    "loadout_names": [
+      "STRIKE",
+      "CAS",
+      "CAP",
+      "SEAD",
+      "ANTISHIP",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Tu-4K.lua",
+    "unitType": "Tu-4K",
+    "loadout_count": 3,
+    "loadout_names": [
+      "STRIKE",
+      "ANTISHIP",
+      "Retribution OCA/Runway"
+    ]
+  },
+  {
+    "file": "Tu-95MS.lua",
+    "unitType": "Tu-95MS",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "Tu_128M.lua",
+    "unitType": "Tu_128M",
+    "loadout_count": 5,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution Escort",
+      "Retribution Fighter sweep",
+      "Retribution Intercept",
+      "Retribution TARCAP"
+    ]
+  },
+  {
+    "file": "Tu_95K.lua",
+    "unitType": "Tu_95K",
+    "loadout_count": 3,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution Anti-ship",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "UH-1H.lua",
+    "unitType": "UH-1H",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAS",
+      "CAP",
+      "SEAD",
+      "ANTISHIP",
+      "STRIKE",
+      "Retribution Air Assault"
+    ]
+  },
+  {
+    "file": "UH-60L.lua",
+    "unitType": "UH-60L",
+    "loadout_count": 3,
+    "loadout_names": [
+      "Liberation Air Assault",
+      "Liberation Ferry",
+      "Liberation Transport"
+    ]
+  },
+  {
+    "file": "VSN_A6A.lua",
+    "unitType": "VSN_A6A",
+    "loadout_count": 5,
+    "loadout_names": [
+      "STRIKE",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "DEAD",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "VSN_F100.lua",
+    "unitType": "VSN_F100",
+    "loadout_count": 12,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution SEAD",
+      "Retribution SEAD Escort",
+      "Retribution DEAD",
+      "Retribution Anti-ship",
+      "Retribution Escort",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "Retribution Fighter sweep",
+      "Retribution Intercept"
+    ]
+  },
+  {
+    "file": "VSN_F104C.lua",
+    "unitType": "VSN_F104C",
+    "loadout_count": 5,
+    "loadout_names": [
+      "DEAD",
+      "CAS",
+      "CAP",
+      "STRIKE",
+      "OCA"
+    ]
+  },
+  {
+    "file": "VSN_F104G.lua",
+    "unitType": "VSN_F104G",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "DEAD",
+      "CAS",
+      "STRIKE",
+      "OCA"
+    ]
+  },
+  {
+    "file": "VSN_F104S.lua",
+    "unitType": "VSN_F104S",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAP"
+    ]
+  },
+  {
+    "file": "VSN_F104S_AG.lua",
+    "unitType": "VSN_F104S_AG",
+    "loadout_count": 5,
+    "loadout_names": [
+      "DEAD",
+      "CAS",
+      "OCA",
+      "STRIKE",
+      "SEAD"
+    ]
+  },
+  {
+    "file": "VSN_F105D.lua",
+    "unitType": "VSN_F105D",
+    "loadout_count": 12,
+    "loadout_names": [
+      "Retribution TARCAP",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution SEAD",
+      "Retribution Intercept",
+      "Retribution DEAD",
+      "Retribution Escort",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "Retribution SEAD Sweep",
+      "Retribution BAI",
+      "Retribution Anti-ship"
+    ]
+  },
+  {
+    "file": "VSN_F105G.lua",
+    "unitType": "VSN_F105G",
+    "loadout_count": 6,
+    "loadout_names": [
+      "DEAD",
+      "CAS",
+      "STRIKE",
+      "OCA",
+      "SEAD",
+      "Retribution SEAD Escort"
+    ]
+  },
+  {
+    "file": "VSN_F106A.lua",
+    "unitType": "VSN_F106A",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAP"
+    ]
+  },
+  {
+    "file": "VSN_F106B.lua",
+    "unitType": "VSN_F106B",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAP"
+    ]
+  },
+  {
+    "file": "VSN_F35A.lua",
+    "unitType": "VSN_F35A",
+    "loadout_count": 3,
+    "loadout_names": [
+      "Retribution TARCAP",
+      "Retribution BARCAP",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "VSN_F35A_AG.lua",
+    "unitType": "VSN_F35A_AG",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution BAI",
+      "Retribution CAS",
+      "Retribution Armed Recon",
+      "Retribution SEAD Sweep",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "Retribution SEAD Escort",
+      "Retribution Strike"
+    ]
+  },
+  {
+    "file": "VSN_F35B.lua",
+    "unitType": "VSN_F35B",
+    "loadout_count": 3,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "VSN_F35B_AG.lua",
+    "unitType": "VSN_F35B_AG",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution Anti-ship",
+      "Retribution Armed Recon",
+      "Retribution SEAD Sweep",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "Retribution BAI",
+      "Retribution Strike"
+    ]
+  },
+  {
+    "file": "VSN_F35C.lua",
+    "unitType": "VSN_F35C",
+    "loadout_count": 3,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution Escort"
+    ]
+  },
+  {
+    "file": "VSN_F35C_AG.lua",
+    "unitType": "VSN_F35C_AG",
+    "loadout_count": 7,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution Armed Recon",
+      "Retribution SEAD Sweep",
+      "Retribution OCA/Runway",
+      "Retribution OCA/Aircraft",
+      "Retribution BAI",
+      "Retribution Strike"
+    ]
+  },
+  {
+    "file": "VSN_F4B.lua",
+    "unitType": "VSN_F4B",
+    "loadout_count": 6,
+    "loadout_names": [
+      "CAS",
+      "SEAD",
+      "CAP",
+      "STRIKE",
+      "ANTISHIP",
+      "DEAD"
+    ]
+  },
+  {
+    "file": "VSN_F4C.lua",
+    "unitType": "VSN_F4C",
+    "loadout_count": 8,
+    "loadout_names": [
+      "SEAD Sweep",
+      "SEAD",
+      "DEAD",
+      "CAP",
+      "CAS",
+      "STRIKE",
+      "ANTISHIP",
+      "SEAD Escort"
+    ]
+  },
+  {
+    "file": "VSN_F4E.lua",
+    "unitType": "VSN_F4E",
+    "loadout_count": 4,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution Escort",
+      "Retribution SEAD"
+    ]
+  },
+  {
+    "file": "VSN_F84G.lua",
+    "unitType": "VSN_F84G",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAP",
+      "DEAD",
+      "CAS",
+      "STRIKE",
+      "OCA"
+    ]
+  },
+  {
+    "file": "VSN_F9F.lua",
+    "unitType": "VSN_F9F",
+    "loadout_count": 6,
+    "loadout_names": [
+      "STRIKE",
+      "CAP",
+      "CAS",
+      "SEAD",
+      "ANTISHIP",
+      "BAI"
+    ]
+  },
+  {
+    "file": "VSN_MirageIIIC.lua",
+    "unitType": "VSN_MirageIIIC",
+    "loadout_count": 1,
+    "loadout_names": [
+      "Retribution BARCAP"
+    ]
+  },
+  {
+    "file": "VSN_MirageIIIC_AG.lua",
+    "unitType": "VSN_MirageIIIC_AG",
+    "loadout_count": 5,
+    "loadout_names": [
+      "BARCAP",
+      "CAS",
+      "STRIKE",
+      "DEAD",
+      "RUNWAY_ATTACK"
+    ]
+  },
+  {
+    "file": "VSN_MirageIIIS.lua",
+    "unitType": "VSN_MirageIIIS",
+    "loadout_count": 5,
+    "loadout_names": [
+      "BARCAP",
+      "CAS",
+      "STRIKE",
+      "DEAD",
+      "RUNWAY_ATTACK"
+    ]
+  },
+  {
+    "file": "VSN_SEM.lua",
+    "unitType": "VSN_SEM",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "CAP",
+      "ANTISHIP",
+      "STRIKE",
+      "DEAD"
+    ]
+  },
+  {
+    "file": "WingLoong-I.lua",
+    "unitType": "WingLoong-I",
+    "loadout_count": 1,
+    "loadout_names": [
+      "CAS"
+    ]
+  },
+  {
+    "file": "XWING.lua",
+    "unitType": "XWING",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Liberation BARCAP",
+      "Liberation TARCAP"
+    ]
+  },
+  {
+    "file": "YWING.lua",
+    "unitType": "YWING",
+    "loadout_count": 6,
+    "loadout_names": [
+      "Liberation CAS Player",
+      "Liberation CAS",
+      "SEAD",
+      "Retribution BAI",
+      "Retribution Strike",
+      "Retribution DEAD"
+    ]
+  },
+  {
+    "file": "Yak_28.lua",
+    "unitType": "Yak_28",
+    "loadout_count": 7,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution Escort",
+      "Retribution Fighter sweep",
+      "Retribution Intercept",
+      "Retribution TARCAP",
+      "Retribution CAS",
+      "Retribution Armed Recon"
+    ]
+  },
+  {
+    "file": "a_37_dragonfly.lua",
+    "unitType": "a_37_dragonfly",
+    "loadout_count": 5,
+    "loadout_names": [
+      "CAS",
+      "Strike",
+      "BAI",
+      "OCA",
+      "Armed Recon"
+    ]
+  },
+  {
+    "file": "naboo_starfighter.lua",
+    "unitType": "naboo_starfighter",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Liberation CAP",
+      "Liberation ESCORT"
+    ]
+  },
+  {
+    "file": "sh2f.lua",
+    "unitType": "sh2f",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Air Assault",
+      "Antiship"
+    ]
+  },
+  {
+    "file": "tu_22D.lua",
+    "unitType": "tu_22D",
+    "loadout_count": 2,
+    "loadout_names": [
+      "STRIKE",
+      "CAS"
+    ]
+  },
+  {
+    "file": "tu_22KD.lua",
+    "unitType": "tu_22KD",
+    "loadout_count": 5,
+    "loadout_names": [
+      "STRIKE",
+      "CAS",
+      "SEAD",
+      "ANTISHIP",
+      "DEAD"
+    ]
+  },
+  {
+    "file": "uh2a.lua",
+    "unitType": "uh2a",
+    "loadout_count": 1,
+    "loadout_names": [
+      "Air Assault"
+    ]
+  },
+  {
+    "file": "uh2b.lua",
+    "unitType": "uh2b",
+    "loadout_count": 1,
+    "loadout_names": [
+      "Air Assault"
+    ]
+  },
+  {
+    "file": "uh2c.lua",
+    "unitType": "uh2c",
+    "loadout_count": 1,
+    "loadout_names": [
+      "Air Assault"
+    ]
+  },
+  {
+    "file": "vwv_a1_skyraider.lua",
+    "unitType": "vwv_a1_skyraider",
+    "loadout_count": 11,
+    "loadout_names": [
+      "Retribution BAI",
+      "Retribution CAS",
+      "Retribution DEAD",
+      "Retribution SEAD",
+      "Retribution Strike",
+      "Retribution Strike - Toilet",
+      "Retribution Anti-ship",
+      "Retribution OCA/Aircraft",
+      "Retribution OCA/Runway",
+      "Retribution SEAD Sweep",
+      "Retribution Armed Recon"
+    ]
+  },
+  {
+    "file": "vwv_ad4_skyraider.lua",
+    "unitType": "vwv_ad4_skyraider",
+    "loadout_count": 4,
+    "loadout_names": [
+      "Strike",
+      "CAS",
+      "OCA",
+      "Armed Recon"
+    ]
+  },
+  {
+    "file": "vwv_ch46d.lua",
+    "unitType": "vwv_ch46d",
+    "loadout_count": 1,
+    "loadout_names": [
+      "Air Assault"
+    ]
+  },
+  {
+    "file": "vwv_ch46d_late.lua",
+    "unitType": "vwv_ch46d_late",
+    "loadout_count": 1,
+    "loadout_names": [
+      "Air Assault"
+    ]
+  },
+  {
+    "file": "vwv_crusader.lua",
+    "unitType": "vwv_crusader",
+    "loadout_count": 6,
+    "loadout_names": [
+      "Retribution Strike",
+      "Retribution BARCAP",
+      "Retribution TARCAP",
+      "Retribution Escort",
+      "Retribution Fighter sweep",
+      "Retribution Armed Recon"
+    ]
+  },
+  {
+    "file": "vwv_crusader_np.lua",
+    "unitType": "vwv_crusader_np",
+    "loadout_count": 3,
+    "loadout_names": [
+      "CAP",
+      "Strike",
+      "Armed Recon"
+    ]
+  },
+  {
+    "file": "vwv_ec-121.lua",
+    "unitType": "vwv_ec-121",
+    "loadout_count": 1,
+    "loadout_names": [
+      "AEW&C"
+    ]
+  },
+  {
+    "file": "vwv_mig17f.lua",
+    "unitType": "vwv_mig17f",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution Strike",
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution TARCAP",
+      "Retribution Escort",
+      "Retribution Fighter sweep",
+      "Retribution Armed Recon"
+    ]
+  },
+  {
+    "file": "vwv_mig21mf.lua",
+    "unitType": "vwv_mig21mf",
+    "loadout_count": 8,
+    "loadout_names": [
+      "Retribution BARCAP",
+      "Retribution CAS",
+      "Retribution Strike",
+      "Retribution BAI",
+      "Retribution TARCAP",
+      "Retribution Escort",
+      "Retribution Fighter sweep",
+      "Retribution Armed Recon"
+    ]
+  },
+  {
+    "file": "vwv_o-1.lua",
+    "unitType": "vwv_o-1",
+    "loadout_count": 4,
+    "loadout_names": [
+      "Retribution CAS",
+      "Retribution BAI",
+      "Retribution Strike",
+      "Retribution Armed Recon"
+    ]
+  },
+  {
+    "file": "vwv_ra-5.lua",
+    "unitType": "vwv_ra-5",
+    "loadout_count": 3,
+    "loadout_names": [
+      "Retribution Armed Recon",
+      "Retribution Strike",
+      "Retribution Intercept"
+    ]
+  },
+  {
+    "file": "vwv_rf101b.lua",
+    "unitType": "vwv_rf101b",
+    "loadout_count": 1,
+    "loadout_names": [
+      "RECON"
+    ]
+  },
+  {
+    "file": "vwv_sh2f.lua",
+    "unitType": "vwv_sh2f",
+    "loadout_count": 2,
+    "loadout_names": [
+      "Retribution Air Assault",
+      "Retribution Anti-ship"
+    ]
+  }
+]

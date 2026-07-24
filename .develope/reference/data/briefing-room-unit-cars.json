@@ -1,0 +1,2802 @@
+[
+  {
+    "type": "1L13 EWR",
+    "displayName": "EWR 1L13",
+    "module": null,
+    "categories": null,
+    "detection_range": 300000,
+    "threat_range": 0
+  },
+  {
+    "type": "2B11 mortar",
+    "displayName": "Mortar 2B11 120mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 7000
+  },
+  {
+    "type": "2S6 Tunguska",
+    "displayName": "SAM SA-19 Tunguska \"Grison\" ",
+    "module": null,
+    "categories": null,
+    "detection_range": 18000,
+    "threat_range": 8000
+  },
+  {
+    "type": "55G6 EWR",
+    "displayName": "EWR 55G6",
+    "module": null,
+    "categories": null,
+    "detection_range": 400000,
+    "threat_range": 0
+  },
+  {
+    "type": "5p73 s-125 ln",
+    "displayName": "SAM SA-3 S-125 \"Goa\" LN",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 18000
+  },
+  {
+    "type": "AA8",
+    "displayName": "Firefighter Vehicle AA-7.2/60",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "AAV7",
+    "displayName": "APC AAV-7 Amphibious",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "ATMZ-5",
+    "displayName": "Refueler ATMZ-5",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "ATZ-10",
+    "displayName": "Refueler ATZ-10",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "ATZ-5",
+    "displayName": "Refueler ATZ-5",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "ATZ-60_Maz",
+    "displayName": "Refueler ATZ-60 Tractor (MAZ-7410)",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Allies_Director",
+    "displayName": "Allies Rangefinder (DRT)",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 30000,
+    "threat_range": 0
+  },
+  {
+    "type": "B600_drivable",
+    "displayName": "M92 B600 drivable",
+    "module": "Massun92-Assetpack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "BMD-1",
+    "displayName": "IFV BMD-1",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "BMP-1",
+    "displayName": "IFV BMP-1",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "BMP-2",
+    "displayName": "IFV BMP-2",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "BMP-3",
+    "displayName": "IFV BMP-3",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 4000
+  },
+  {
+    "type": "BRDM-2",
+    "displayName": "Scout BRDM-2",
+    "module": "ColdWarAssetsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1600
+  },
+  {
+    "type": "BRDM-2_malyutka",
+    "displayName": "ATGM AT-3 Sagger 9P133",
+    "module": "ColdWarAssetsPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 3000
+  },
+  {
+    "type": "BTR-60",
+    "displayName": "APC BTR-60",
+    "module": "ColdWarAssetsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1600
+  },
+  {
+    "type": "BTR-70",
+    "displayName": "APC BTR-70",
+    "module": "ColdWarAssetsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1600
+  },
+  {
+    "type": "BTR-80",
+    "displayName": "APC BTR-80",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1600
+  },
+  {
+    "type": "BTR-82A",
+    "displayName": "IFV BTR-82A",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2000
+  },
+  {
+    "type": "BTR_D",
+    "displayName": "APC BTR-RD",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "Bedford_MWD",
+    "displayName": "Truck Bedford",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Blitz_36-6700A",
+    "displayName": "Truck Opel Blitz",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Boxcartrinity",
+    "displayName": "Flatcar",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Bunker",
+    "displayName": "Bunker 2",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 800
+  },
+  {
+    "type": "CCKW_353",
+    "displayName": "Truck GMC \"Jimmy\" 6x6",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "CHAP_9K720_Cluster",
+    "displayName": "SRBM 9K720 Iskander CM [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 400000
+  },
+  {
+    "type": "CHAP_9K720_HE",
+    "displayName": "SRBM 9K720 Iskander HE [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 400000
+  },
+  {
+    "type": "CHAP_BMPT",
+    "displayName": "IFV BMPT Terminator [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 7000,
+    "threat_range": 6000
+  },
+  {
+    "type": "CHAP_FV101",
+    "displayName": "LT FV101 Scorpion [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 5000
+  },
+  {
+    "type": "CHAP_FV107",
+    "displayName": "Scout FV107 Scimitar [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 6000,
+    "threat_range": 2500
+  },
+  {
+    "type": "CHAP_IRISTSLM_CP",
+    "displayName": "SAM IRIS-T SLM C2 [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "CHAP_IRISTSLM_LN",
+    "displayName": "SAM IRIS-T SLM LN [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 40000
+  },
+  {
+    "type": "CHAP_IRISTSLM_STR",
+    "displayName": "SAM IRIS-T SLM STR [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 250000,
+    "threat_range": 0
+  },
+  {
+    "type": "CHAP_M1083",
+    "displayName": "Truck M1083 A1P2 MTV [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "CHAP_M1130",
+    "displayName": "IFV M1130 Stryker CV [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "CHAP_M142_ATACMS_M39A1",
+    "displayName": "MLRS M142 HIMARS ATACMS CM [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 300000
+  },
+  {
+    "type": "CHAP_M142_ATACMS_M48",
+    "displayName": "MLRS M142 HIMARS ATACMS HE [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 300000
+  },
+  {
+    "type": "CHAP_M142_GMLRS_M30",
+    "displayName": "MLRS M142 HIMARS GMLRS CM [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 70000
+  },
+  {
+    "type": "CHAP_M142_GMLRS_M31",
+    "displayName": "MLRS M142 HIMARS GMLRS HE [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 70000
+  },
+  {
+    "type": "CHAP_MATV",
+    "displayName": "APC MRAP M-ATV [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "CHAP_PantsirS1",
+    "displayName": "SAM SA-22 Pantsir-S1 \"Greyhound\" [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 36000,
+    "threat_range": 20000
+  },
+  {
+    "type": "CHAP_T64BV",
+    "displayName": "MBT T-64BV Type 2017 [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 4000
+  },
+  {
+    "type": "CHAP_T84OplotM",
+    "displayName": "MBT T-84 Oplot-M [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 8000,
+    "threat_range": 5000
+  },
+  {
+    "type": "CHAP_T90M",
+    "displayName": "MBT T-90M [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 8000,
+    "threat_range": 5000
+  },
+  {
+    "type": "CHAP_TOS1A",
+    "displayName": "MLRS TOS-1A Solntsepyok [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 6000
+  },
+  {
+    "type": "CHAP_TorM2",
+    "displayName": "SAM SA-15 Tor M2 \"Gauntlet\" [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 32000,
+    "threat_range": 16000
+  },
+  {
+    "type": "Centaur_IV",
+    "displayName": "Tk Centaur IV CS",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 6000
+  },
+  {
+    "type": "Challenger2",
+    "displayName": "MBT Challenger II",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3500
+  },
+  {
+    "type": "Chieftain_mk3",
+    "displayName": "MBT Chieftain Mk.3",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3500
+  },
+  {
+    "type": "Churchill_VII",
+    "displayName": "Tk Churchill VII",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "Coach a passenger",
+    "displayName": "Passenger Car",
+    "module": "RailwayObjectsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Coach a platform",
+    "displayName": "Coach Platform",
+    "module": "RailwayObjectsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Coach a tank blue",
+    "displayName": "Tank Car blue",
+    "module": "RailwayObjectsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Coach a tank yellow",
+    "displayName": "Tank Car yellow",
+    "module": "RailwayObjectsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Coach cargo",
+    "displayName": "Freight Van",
+    "module": "RailwayObjectsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Coach cargo open",
+    "displayName": "Open Wagon",
+    "module": "RailwayObjectsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Cobra",
+    "displayName": "Scout Cobra",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "Cromwell_IV",
+    "displayName": "Tk Cromwell IV",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "DRG_Class_86",
+    "displayName": "Loco DRG Class 86",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "DR_50Ton_Flat_Wagon",
+    "displayName": "DR 50-ton flat wagon",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Daimler_AC",
+    "displayName": "Car Daimler Armored",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2000
+  },
+  {
+    "type": "Dog Ear radar",
+    "displayName": "MCC-SR Sborka \"Dog Ear\" SR",
+    "module": null,
+    "categories": null,
+    "detection_range": 35000,
+    "threat_range": 0
+  },
+  {
+    "type": "ES44AH",
+    "displayName": "Loco ES44AH",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Electric locomotive",
+    "displayName": "Loco VL80 Electric",
+    "module": "RailwayObjectsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Elefant_SdKfz_184",
+    "displayName": "SPG Elefant TD",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 6000
+  },
+  {
+    "type": "FPS-117",
+    "displayName": "EWR AN/FPS-117 Radar",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 463000,
+    "threat_range": 0
+  },
+  {
+    "type": "FPS-117 Dome",
+    "displayName": "EWR AN/FPS-117 Radar (domed)",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 400000,
+    "threat_range": 0
+  },
+  {
+    "type": "FPS-117 ECS",
+    "displayName": "EWR AN/FPS-117 ECS",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Flakscheinwerfer_37",
+    "displayName": "SL Flakscheinwerfer 37",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 15000,
+    "threat_range": 15000
+  },
+  {
+    "type": "FuMG-401",
+    "displayName": "EWR FuMG-401 Freya LZ",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 160000,
+    "threat_range": 0
+  },
+  {
+    "type": "FuSe-65",
+    "displayName": "EWR FuSe-65 W\u00fcrzburg-Riese",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 60000,
+    "threat_range": 0
+  },
+  {
+    "type": "GAZ-3307",
+    "displayName": "Truck GAZ-3307",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "GAZ-3308",
+    "displayName": "Truck GAZ-3308",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "GAZ-66",
+    "displayName": "Truck GAZ-66",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "GD-20",
+    "displayName": "GD-20 Lift Truck",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "GPS_Spoofer_Blue",
+    "displayName": "GPS Spoofer NATO",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": null,
+    "threat_range": 0
+  },
+  {
+    "type": "GPS_Spoofer_Red",
+    "displayName": "GPS Spoofer RF",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": null,
+    "threat_range": 0
+  },
+  {
+    "type": "Gepard",
+    "displayName": "SPAAA Gepard",
+    "module": null,
+    "categories": null,
+    "detection_range": 15000,
+    "threat_range": 4000
+  },
+  {
+    "type": "German_covered_wagon_G10",
+    "displayName": "Wagon G10 (Germany)",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "German_tank_wagon",
+    "displayName": "Tank Car (Germany)",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Grad-URAL",
+    "displayName": "MLRS BM-21 Grad 122mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 19000
+  },
+  {
+    "type": "Grad_FDDM",
+    "displayName": "Grad MRL FDDM (FC)",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1000
+  },
+  {
+    "type": "HEMTT TFFT",
+    "displayName": "Firefighter HEMMT TFFT",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "HEMTT_C-RAM_Phalanx",
+    "displayName": "LPWS C-RAM",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 10000,
+    "threat_range": 2000
+  },
+  {
+    "type": "HL_B8M1",
+    "displayName": "MLRS HL with B8M1 80mm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 5000
+  },
+  {
+    "type": "HL_DSHK",
+    "displayName": "Scout HL with DSHK 12.7mm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 1200
+  },
+  {
+    "type": "HL_KORD",
+    "displayName": "Scout HL with KORD 12.7mm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 1200
+  },
+  {
+    "type": "HL_ZU-23",
+    "displayName": "SPAAA HL with ZU-23",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 2500
+  },
+  {
+    "type": "HQ-7_LN_P",
+    "displayName": "HQ-7 SHORAD TELAR (Player)",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 20000,
+    "threat_range": 15000
+  },
+  {
+    "type": "HQ-7_LN_SP",
+    "displayName": "HQ-7B SHORAD TELAR",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 20000,
+    "threat_range": 15000
+  },
+  {
+    "type": "HQ-7_STR_SP",
+    "displayName": "HQ-7B SHORAD SR",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 30000,
+    "threat_range": 0
+  },
+  {
+    "type": "Hawk cwar",
+    "displayName": "SAM Hawk CWAR AN/MPQ-55",
+    "module": null,
+    "categories": null,
+    "detection_range": 70000,
+    "threat_range": 0
+  },
+  {
+    "type": "Hawk ln",
+    "displayName": "SAM Hawk LN M192",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 45000
+  },
+  {
+    "type": "Hawk pcp",
+    "displayName": "SAM Hawk Platoon Command Post (PCP)",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Hawk sr",
+    "displayName": "SAM Hawk SR (AN/MPQ-50)",
+    "module": null,
+    "categories": null,
+    "detection_range": 90000,
+    "threat_range": 0
+  },
+  {
+    "type": "Hawk tr",
+    "displayName": "SAM Hawk TR (AN/MPQ-46)",
+    "module": null,
+    "categories": null,
+    "detection_range": 90000,
+    "threat_range": 0
+  },
+  {
+    "type": "Horch_901_typ_40_kfz_21",
+    "displayName": "LUV Horch 901 Staff Car",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Hummer",
+    "displayName": "LUV HMMWV Jeep",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "IKARUS Bus",
+    "displayName": "Bus IKARUS-280",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Igla manpad INS",
+    "displayName": "MANPADS SA-18 Igla \"Grouse\" Ins",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 5200
+  },
+  {
+    "type": "Infantry AK",
+    "displayName": "Infantry AK-74 Rus ver1",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "Infantry AK Ins",
+    "displayName": "Insurgent AKM",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "Infantry AK ver2",
+    "displayName": "Infantry AK-74 Rus ver2",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "Infantry AK ver3",
+    "displayName": "Infantry AK-74 Rus ver3",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "JTAC",
+    "displayName": "JTAC",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "JagdPz_IV",
+    "displayName": "SPG Jagdpanzer IV TD",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "Jagdpanther_G1",
+    "displayName": "SPG Jagdpanther TD",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5000
+  },
+  {
+    "type": "KAMAZ Truck",
+    "displayName": "Truck KAMAZ 43101",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "KDO_Mod40",
+    "displayName": "AAA Kdo.G.40",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 30000,
+    "threat_range": 0
+  },
+  {
+    "type": "KS-19",
+    "displayName": "AAA KS-19 100mm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 20000
+  },
+  {
+    "type": "KrAZ6322",
+    "displayName": "Truck KrAZ-6322 6x6",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Kub 1S91 str",
+    "displayName": "SAM SA-6 Kub \"Straight Flush\" STR",
+    "module": null,
+    "categories": null,
+    "detection_range": 70000,
+    "threat_range": 0
+  },
+  {
+    "type": "Kub 2P25 ln",
+    "displayName": "SAM SA-6 Kub \"Gainful\" TEL",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 25000
+  },
+  {
+    "type": "Kubelwagen_82",
+    "displayName": "LUV Kubelwagen Jeep",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "L118_Unit",
+    "displayName": "L118 Light Artillery Gun",
+    "module": "South_Atlantic_Assets",
+    "categories": null,
+    "detection_range": 17500,
+    "threat_range": 17200
+  },
+  {
+    "type": "LARC-V",
+    "displayName": "Truck LARC-V",
+    "module": "South_Atlantic_Assets",
+    "categories": null,
+    "detection_range": 500,
+    "threat_range": 0
+  },
+  {
+    "type": "LAV-25",
+    "displayName": "IFV LAV-25",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2500
+  },
+  {
+    "type": "LAZ Bus",
+    "displayName": "Bus LAZ-695",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Land_Rover_101_FC",
+    "displayName": "Truck Land Rover 101 FC",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Land_Rover_109_S3",
+    "displayName": "LUV Land Rover 109",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "LeFH_18-40-105",
+    "displayName": "FH LeFH-18 105mm",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 10500
+  },
+  {
+    "type": "Leclerc",
+    "displayName": "MBT Leclerc",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3500
+  },
+  {
+    "type": "Leopard-2",
+    "displayName": "MBT Leopard-2A6M",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3500
+  },
+  {
+    "type": "Leopard-2A5",
+    "displayName": "MBT Leopard-2A5",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3500
+  },
+  {
+    "type": "Leopard1A3",
+    "displayName": "MBT Leopard 1A3",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2500
+  },
+  {
+    "type": "LiAZ Bus",
+    "displayName": "Bus LiAZ-677",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Locomotive",
+    "displayName": "Loco CHME3T",
+    "module": "RailwayObjectsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "M 818",
+    "displayName": "Truck M939 Heavy",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "M-1 Abrams",
+    "displayName": "MBT M1A2 Abrams",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3500
+  },
+  {
+    "type": "M-109",
+    "displayName": "SPH M109 Paladin 155mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 22000
+  },
+  {
+    "type": "M-113",
+    "displayName": "APC M113",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "M-2 Bradley",
+    "displayName": "IFV M2A2 Bradley",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3800
+  },
+  {
+    "type": "M-60",
+    "displayName": "MBT M60A3 Patton",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 8000
+  },
+  {
+    "type": "M1043 HMMWV Armament",
+    "displayName": "Scout HMMWV",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "M1045 HMMWV TOW",
+    "displayName": "ATGM HMMWV",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3800
+  },
+  {
+    "type": "M1097 Avenger",
+    "displayName": "SAM Avenger (Stinger)",
+    "module": null,
+    "categories": null,
+    "detection_range": 5200,
+    "threat_range": 4500
+  },
+  {
+    "type": "M10_GMC",
+    "displayName": "SPG M10 GMC TD",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 6000
+  },
+  {
+    "type": "M1126 Stryker ICV",
+    "displayName": "IFV M1126 Stryker ICV",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "M1128 Stryker MGS",
+    "displayName": "SPG Stryker MGS",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 4000
+  },
+  {
+    "type": "M1134 Stryker ATGM",
+    "displayName": "ATGM Stryker",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3800
+  },
+  {
+    "type": "M12_GMC",
+    "displayName": "SPH M12 GMC 155mm",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 18300
+  },
+  {
+    "type": "M1A2C_SEP_V3",
+    "displayName": "MBT M1A2C SEP v3 Abrams",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3500
+  },
+  {
+    "type": "M1_37mm",
+    "displayName": "AAA M1 37mm",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5700
+  },
+  {
+    "type": "M2A1-105",
+    "displayName": "FH M2A1 105mm",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 11500
+  },
+  {
+    "type": "M2A1_halftrack",
+    "displayName": "APC M2A1 Halftrack",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "M30_CC",
+    "displayName": "Ammo M30 Cargo Carrier",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "M45_Quadmount",
+    "displayName": "AAA M45 Quadmount HB 12.7mm",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1500
+  },
+  {
+    "type": "M48 Chaparral",
+    "displayName": "SAM Chaparral M48",
+    "module": null,
+    "categories": null,
+    "detection_range": 10000,
+    "threat_range": 8500
+  },
+  {
+    "type": "M4A4_Sherman_FF",
+    "displayName": "Tk M4A4 Sherman Firefly",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "M4_Sherman",
+    "displayName": "Tk M4 Sherman",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "M4_Tractor",
+    "displayName": "Tractor M4 High Speed",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "M6 Linebacker",
+    "displayName": "SAM Linebacker - Bradley M6",
+    "module": null,
+    "categories": null,
+    "detection_range": 8000,
+    "threat_range": 4500
+  },
+  {
+    "type": "M8_Greyhound",
+    "displayName": "Scout M8 Greyhound AC",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2000
+  },
+  {
+    "type": "M978 HEMTT Tanker",
+    "displayName": "Refueler M978 HEMTT",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "MAZ-6303",
+    "displayName": "Truck MAZ-6303",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "MCV-80",
+    "displayName": "IFV Warrior ",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2500
+  },
+  {
+    "type": "MJ-1_drivable",
+    "displayName": "M92 MJ-1 drivable",
+    "module": "Massun92-Assetpack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "MLRS",
+    "displayName": "MLRS M270 227mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 32000
+  },
+  {
+    "type": "MLRS FDDM",
+    "displayName": "MRLS FDDM (FC)",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "MTLB",
+    "displayName": "APC MTLB",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1000
+  },
+  {
+    "type": "Marder",
+    "displayName": "IFV Marder",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1500
+  },
+  {
+    "type": "Maschinensatz_33",
+    "displayName": "Maschinensatz 33 Gen",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "MaxxPro_MRAP",
+    "displayName": "APC MRAP MaxxPro",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1200
+  },
+  {
+    "type": "Merkava_Mk4",
+    "displayName": "MBT Merkava IV",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3500
+  },
+  {
+    "type": "NASAMS_Command_Post",
+    "displayName": "SAM NASAMS C2",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "NASAMS_LN_B",
+    "displayName": "SAM NASAMS LN AIM-120B",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 15000
+  },
+  {
+    "type": "NASAMS_LN_C",
+    "displayName": "SAM NASAMS LN AIM-120C",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 15000
+  },
+  {
+    "type": "NASAMS_Radar_MPQ64F1",
+    "displayName": "SAM NASAMS SR MPQ64F1",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 50000,
+    "threat_range": 0
+  },
+  {
+    "type": "Osa 9A33 ln",
+    "displayName": "SAM SA-8 Osa \"Gecko\" TEL",
+    "module": null,
+    "categories": null,
+    "detection_range": 30000,
+    "threat_range": 10300
+  },
+  {
+    "type": "P14_SR",
+    "displayName": "SAM SA-5 S-200 P-14 'Tall king' SR",
+    "module": "ColdWarAssetsPack",
+    "categories": null,
+    "detection_range": 400000,
+    "threat_range": 0
+  },
+  {
+    "type": "P20_drivable",
+    "displayName": "M92 P20 drivable",
+    "module": "Massun92-Assetpack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "PL5EII Loadout",
+    "displayName": "Payload PL-5EII",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "PL8 Loadout",
+    "displayName": "Payload PL-8",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "PLZ05",
+    "displayName": "PLZ-05",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 23500
+  },
+  {
+    "type": "PT_76",
+    "displayName": "LT PT-76",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2000
+  },
+  {
+    "type": "Pak40",
+    "displayName": "FH Pak 40 75mm",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "Paratrooper AKS-74",
+    "displayName": "Paratrooper AKS",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "Paratrooper RPG-16",
+    "displayName": "Paratrooper RPG-16",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "Patriot AMG",
+    "displayName": "SAM Patriot CR (AMG AN/MRC-137)",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Patriot ECS",
+    "displayName": "SAM Patriot ECS",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Patriot EPP",
+    "displayName": "SAM Patriot EPP-III",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Patriot cp",
+    "displayName": "SAM Patriot C2 ICC",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Patriot ln",
+    "displayName": "SAM Patriot LN",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 100000
+  },
+  {
+    "type": "Patriot str",
+    "displayName": "SAM Patriot STR",
+    "module": null,
+    "categories": null,
+    "detection_range": 160000,
+    "threat_range": 0
+  },
+  {
+    "type": "Predator GCS",
+    "displayName": "MCC Predator UAV CP & GCS",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Predator TrojanSpirit",
+    "displayName": "MCC-COMM Predator UAV CL",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Pz_IV_H",
+    "displayName": "Tk PzIV H",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "Pz_V_Panther_G",
+    "displayName": "Tk Panther G (Pz V)",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "QF_37_AA",
+    "displayName": "AAA QF 3.7\"",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 9000
+  },
+  {
+    "type": "RD_75",
+    "displayName": "SAM SA-2 S-75 RD-75 Amazonka RF",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 100000,
+    "threat_range": 0
+  },
+  {
+    "type": "RLS_19J6",
+    "displayName": "SAM SA-5 S-200 ST-68U \"Tin Shield\" SR",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 150000,
+    "threat_range": 0
+  },
+  {
+    "type": "RPC_5N62V",
+    "displayName": "SAM SA-5 S-200 \"Square Pair\" TR",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 400000,
+    "threat_range": 0
+  },
+  {
+    "type": "Roland ADS",
+    "displayName": "SAM Roland ADS",
+    "module": null,
+    "categories": null,
+    "detection_range": 12000,
+    "threat_range": 8000
+  },
+  {
+    "type": "Roland Radar",
+    "displayName": "SAM Roland EWR",
+    "module": null,
+    "categories": null,
+    "detection_range": 35000,
+    "threat_range": 0
+  },
+  {
+    "type": "S-200_Launcher",
+    "displayName": "SAM SA-5 S-200 \"Gammon\" LN",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 255000
+  },
+  {
+    "type": "S-300PS 40B6M tr",
+    "displayName": "SAM SA-10 S-300 \"Grumble\" Flap Lid-A TR",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 160000,
+    "threat_range": 0
+  },
+  {
+    "type": "S-300PS 40B6MD sr",
+    "displayName": "SAM SA-10 S-300 \"Grumble\" Clam Shell SR",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 60000,
+    "threat_range": 0
+  },
+  {
+    "type": "S-300PS 40B6MD sr_19J6",
+    "displayName": "SAM SA-10 S-300 \"Grumble\" Tin Shield SR",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 150000,
+    "threat_range": 0
+  },
+  {
+    "type": "S-300PS 54K6 cp",
+    "displayName": "SAM SA-10 S-300 \"Grumble\" C2",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "S-300PS 5H63C 30H6_tr",
+    "displayName": "SAM SA-10 S-300 \"Grumble\" Flap Lid-B TR",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 120000,
+    "threat_range": 0
+  },
+  {
+    "type": "S-300PS 5P85C ln",
+    "displayName": "SAM SA-10 S-300 \"Grumble\" TEL C",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 120000
+  },
+  {
+    "type": "S-300PS 5P85D ln",
+    "displayName": "SAM SA-10 S-300 \"Grumble\" TEL D",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 120000
+  },
+  {
+    "type": "S-300PS 64H6E sr",
+    "displayName": "SAM SA-10 S-300 \"Grumble\" Big Bird SR",
+    "module": "HeavyMetalCore",
+    "categories": null,
+    "detection_range": 160000,
+    "threat_range": 0
+  },
+  {
+    "type": "S-60_Type59_Artillery",
+    "displayName": "AAA S-60 57mm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 6000
+  },
+  {
+    "type": "SA-11 Buk CC 9S470M1",
+    "displayName": "SAM SA-11 Buk \"Gadfly\" C2 ",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "SA-11 Buk LN 9A310M1",
+    "displayName": "SAM SA-11 Buk \"Gadfly\" Fire Dome TEL",
+    "module": null,
+    "categories": null,
+    "detection_range": 50000,
+    "threat_range": 50000
+  },
+  {
+    "type": "SA-11 Buk SR 9S18M1",
+    "displayName": "SAM SA-11 Buk \"Gadfly\" Snow Drift SR",
+    "module": null,
+    "categories": null,
+    "detection_range": 100000,
+    "threat_range": 0
+  },
+  {
+    "type": "SA-18 Igla comm",
+    "displayName": "MANPADS SA-18 Igla \"Grouse\" C2",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 0
+  },
+  {
+    "type": "SA-18 Igla manpad",
+    "displayName": "MANPADS SA-18 Igla \"Grouse\"",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 5200
+  },
+  {
+    "type": "SA-18 Igla-S comm",
+    "displayName": "MANPADS SA-18 Igla-S \"Grouse\" C2",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 0
+  },
+  {
+    "type": "SA-18 Igla-S manpad",
+    "displayName": "MANPADS SA-18 Igla-S \"Grouse\"",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 5200
+  },
+  {
+    "type": "SAU 2-C9",
+    "displayName": "SPM 2S9 Nona 120mm M",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 7000
+  },
+  {
+    "type": "SAU Akatsia",
+    "displayName": "SPH 2S3 Akatsia 152mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 17000
+  },
+  {
+    "type": "SAU Gvozdika",
+    "displayName": "SPH 2S1 Gvozdika 122mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 15000
+  },
+  {
+    "type": "SAU Msta",
+    "displayName": "SPH 2S19 Msta 152mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 23500
+  },
+  {
+    "type": "SD10 Loadout",
+    "displayName": "Payload SD-10",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "SKP-11",
+    "displayName": "Truck SKP-11 Mobile ATC",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "SK_C_28_naval_gun",
+    "displayName": "Gun 15cm SK C/28 Naval in Bunker",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 20000
+  },
+  {
+    "type": "SNR_75V",
+    "displayName": "SAM SA-2 S-75 \"Fan Song\" TR",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 100000,
+    "threat_range": 0
+  },
+  {
+    "type": "SON_9",
+    "displayName": "AAA Fire Can SON-9",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 55000,
+    "threat_range": 0
+  },
+  {
+    "type": "S_75M_Volhov",
+    "displayName": "SAM SA-2 S-75 \"Guideline\" LN",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 43000
+  },
+  {
+    "type": "S_75_ZIL",
+    "displayName": "S-75 Tractor (ZIL-131)",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Sandbox",
+    "displayName": "Bunker 1",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 800
+  },
+  {
+    "type": "Scud_B",
+    "displayName": "SSM SS-1C Scud-B",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 285000
+  },
+  {
+    "type": "Sd_Kfz_2",
+    "displayName": "LUV Kettenrad",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": null
+  },
+  {
+    "type": "Sd_Kfz_234_2_Puma",
+    "displayName": "Scout Puma AC",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2000
+  },
+  {
+    "type": "Sd_Kfz_251",
+    "displayName": "APC Sd.Kfz.251 Halftrack",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1100
+  },
+  {
+    "type": "Sd_Kfz_7",
+    "displayName": "Tractor Sd.Kfz.7 Art'y Tractor",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": null
+  },
+  {
+    "type": "Silkworm_SR",
+    "displayName": "AShM Silkworm SR",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 200000,
+    "threat_range": 0
+  },
+  {
+    "type": "Smerch",
+    "displayName": "MLRS 9A52 Smerch CM 300mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 70000
+  },
+  {
+    "type": "Smerch_HE",
+    "displayName": "MLRS 9A52 Smerch HE 300mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 70000
+  },
+  {
+    "type": "Soldier AK",
+    "displayName": "Infantry AK-74",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "Soldier M249",
+    "displayName": "Infantry M249",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 700
+  },
+  {
+    "type": "Soldier M4",
+    "displayName": "Infantry M4",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "Soldier M4 GRG",
+    "displayName": "Infantry M4 Georgia",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "Soldier RPG",
+    "displayName": "Infantry RPG",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "Soldier stinger",
+    "displayName": "MANPADS Stinger",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 4500
+  },
+  {
+    "type": "SpGH_Dana",
+    "displayName": "SPH Dana vz77 152mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 18700
+  },
+  {
+    "type": "Stinger comm",
+    "displayName": "MANPADS Stinger C2",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 0
+  },
+  {
+    "type": "Stinger comm dsr",
+    "displayName": "MANPADS Stinger C2 Desert",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 0
+  },
+  {
+    "type": "Strela-1 9P31",
+    "displayName": "SAM SA-9 Strela 1 \"Gaskin\" TEL",
+    "module": "ColdWarAssetsPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 4200
+  },
+  {
+    "type": "Strela-10M3",
+    "displayName": "SAM SA-13 Strela 10M3 \"Gopher\" TEL",
+    "module": null,
+    "categories": null,
+    "detection_range": 8000,
+    "threat_range": 5000
+  },
+  {
+    "type": "Stug_III",
+    "displayName": "SPG StuG III G AG",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "Stug_IV",
+    "displayName": "SPG StuG IV AG",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "SturmPzIV",
+    "displayName": "SPG Brummbaer AG",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 4500
+  },
+  {
+    "type": "Suidae",
+    "displayName": "Suidae",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "T-34-85",
+    "displayName": "Tk T-34-85",
+    "module": "ColdWarAssetsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5200
+  },
+  {
+    "type": "T-55",
+    "displayName": "MBT T-55",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2500
+  },
+  {
+    "type": "T-72B",
+    "displayName": "MBT T-72B",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 4000
+  },
+  {
+    "type": "T-72B3",
+    "displayName": "MBT T-72B3",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 4000
+  },
+  {
+    "type": "T-80B",
+    "displayName": "MBT T-80B",
+    "module": "ColdWarAssetsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5000
+  },
+  {
+    "type": "T-80UD",
+    "displayName": "MBT T-80U",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5000
+  },
+  {
+    "type": "T-90",
+    "displayName": "MBT T-90A [CH]",
+    "module": "Currenthill Assets Pack",
+    "categories": null,
+    "detection_range": 6000,
+    "threat_range": 5000
+  },
+  {
+    "type": "T155_Firtina",
+    "displayName": "SPH T155 Firtina 155mm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 41000
+  },
+  {
+    "type": "T62M",
+    "displayName": "MBT T-62M",
+    "module": "ColdWarAssetsPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5200
+  },
+  {
+    "type": "TACAN_beacon",
+    "displayName": "Beacon TACAN Portable TTS 3030",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "TPZ",
+    "displayName": "APC TPz Fuchs ",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1000
+  },
+  {
+    "type": "TYPE-59",
+    "displayName": "MT Type 59",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2500
+  },
+  {
+    "type": "TZ-22_KrAZ",
+    "displayName": "Refueler TZ-22 Tractor (KrAZ-258B1)",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Tankcartrinity",
+    "displayName": "Tank Cartrinity",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Tetrarch",
+    "displayName": "Tk Tetrach",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2000
+  },
+  {
+    "type": "Tiger_I",
+    "displayName": "Tk Tiger 1",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3000
+  },
+  {
+    "type": "Tiger_II_H",
+    "displayName": "Tk Tiger II",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 6000
+  },
+  {
+    "type": "Tigr_233036",
+    "displayName": "LUV Tigr",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Tor 9A331",
+    "displayName": "SAM SA-15 Tor \"Gauntlet\"",
+    "module": null,
+    "categories": null,
+    "detection_range": 25000,
+    "threat_range": 12000
+  },
+  {
+    "type": "Trolley bus",
+    "displayName": "ZIU-9 Trolley",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "TugHarlan_drivable",
+    "displayName": "M92 Tug Harlan drivable",
+    "module": "Massun92-Assetpack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Type_3_80mm_AA",
+    "displayName": "AAA 80mm Type 3 Flak",
+    "module": "World War II PTO Units by Magnitude 3 LLC",
+    "categories": null,
+    "detection_range": 10000,
+    "threat_range": 3200
+  },
+  {
+    "type": "Type_88_75mm_AA",
+    "displayName": "AAA 75mm Type 88 Flak",
+    "module": "World War II PTO Units by Magnitude 3 LLC",
+    "categories": null,
+    "detection_range": 10000,
+    "threat_range": 3500
+  },
+  {
+    "type": "Type_89_I_Go",
+    "displayName": "Tk Type 89 I Go",
+    "module": "World War II PTO Units by Magnitude 3 LLC",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 3000
+  },
+  {
+    "type": "Type_94_25mm_AA_Truck",
+    "displayName": "AAA 25mm x 2 Type 94 Truck",
+    "module": "World War II PTO Units by Magnitude 3 LLC",
+    "categories": null,
+    "detection_range": 10000,
+    "threat_range": 3500
+  },
+  {
+    "type": "Type_94_Truck",
+    "displayName": "Truck Type 94",
+    "module": "World War II PTO Units by Magnitude 3 LLC",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Type_96_25mm_AA",
+    "displayName": "AAA 25mm x 2 Type 96",
+    "module": "World War II PTO Units by Magnitude 3 LLC",
+    "categories": null,
+    "detection_range": 10000,
+    "threat_range": 3500
+  },
+  {
+    "type": "Type_98_Ke_Ni",
+    "displayName": "Tk Type 98 Ke Ni",
+    "module": "World War II PTO Units by Magnitude 3 LLC",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 3000
+  },
+  {
+    "type": "Type_98_So_Da",
+    "displayName": "APC Type 98 So Da",
+    "module": "World War II PTO Units by Magnitude 3 LLC",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "UAZ-469",
+    "displayName": "LUV UAZ-469 Jeep",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Uragan_BM-27",
+    "displayName": "MLRS 9K57 Uragan BM-27 220mm",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 35800
+  },
+  {
+    "type": "Ural ATsP-6",
+    "displayName": "Firefighter Ural ATsP-6",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Ural-375",
+    "displayName": "Truck Ural-4320",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Ural-375 PBU",
+    "displayName": "Truck Ural-4320 MCC",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Ural-375 ZU-23",
+    "displayName": "AAA ZU-23 on Ural-4320",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 2500
+  },
+  {
+    "type": "Ural-375 ZU-23 Insurgent",
+    "displayName": "AAA ZU-23 on Ural-4320 Insurgent",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 2500
+  },
+  {
+    "type": "Ural-4320 APA-5D",
+    "displayName": "GPU APA-5D on Ural 4320",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Ural-4320-31",
+    "displayName": "Truck Ural-4320-31 Arm'd",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Ural-4320T",
+    "displayName": "Truck Ural-4320T",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "VAB_Mephisto",
+    "displayName": "ATGM VAB Mephisto",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3800
+  },
+  {
+    "type": "VAZ Car",
+    "displayName": "Car VAZ-2109",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Vulcan",
+    "displayName": "SPAAA Vulcan M163",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 2000
+  },
+  {
+    "type": "Wellcarnsc",
+    "displayName": "Well Car",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "Wespe124",
+    "displayName": "SPH Sd.Kfz.124 Wespe 105mm",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 10500
+  },
+  {
+    "type": "Willys_MB",
+    "displayName": "Car Willys Jeep",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "ZBD04A",
+    "displayName": "ZBD-04A",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 4800
+  },
+  {
+    "type": "ZIL-131 KUNG",
+    "displayName": "Truck ZIL-131 (C2)",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "ZIL-135",
+    "displayName": "Truck ZIL-135",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "ZIL-4331",
+    "displayName": "Truck ZIL-4331",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "ZSU-23-4 Shilka",
+    "displayName": "SPAAA ZSU-23-4 Shilka \"Gun Dish\"",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 2500
+  },
+  {
+    "type": "ZSU_57_2",
+    "displayName": "SPAAA ZSU-57-2",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 7000
+  },
+  {
+    "type": "ZTZ96B",
+    "displayName": "ZTZ-96B",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5000
+  },
+  {
+    "type": "ZU-23 Closed Insurgent",
+    "displayName": "AAA ZU-23 Insurgent Closed Emplacement",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 2500
+  },
+  {
+    "type": "ZU-23 Emplacement",
+    "displayName": "AAA ZU-23 Emplacement",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 2500
+  },
+  {
+    "type": "ZU-23 Emplacement Closed",
+    "displayName": "AAA ZU-23 Closed Emplacement",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 2500
+  },
+  {
+    "type": "ZU-23 Insurgent",
+    "displayName": "AAA ZU-23 Insurgent Emplacement",
+    "module": null,
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 2500
+  },
+  {
+    "type": "ZiL-131 APA-80",
+    "displayName": "GPU APA-80 on ZIL-131",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "bofors40",
+    "displayName": "AAA Bofors 40mm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2000
+  },
+  {
+    "type": "fire_control",
+    "displayName": "Bunker with Fire Control Center",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 1100
+  },
+  {
+    "type": "flak18",
+    "displayName": "AAA 8,8cm Flak 18",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5000
+  },
+  {
+    "type": "flak30",
+    "displayName": "AAA Flak 38 20mm",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2500
+  },
+  {
+    "type": "flak36",
+    "displayName": "AAA 8,8cm Flak 36",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5000
+  },
+  {
+    "type": "flak37",
+    "displayName": "AAA 8,8cm Flak 37",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5000
+  },
+  {
+    "type": "flak38",
+    "displayName": "AAA Flak-Vierling 38 Quad 20mm",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2500
+  },
+  {
+    "type": "flak41",
+    "displayName": "AAA 8,8cm Flak 41",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 5000
+  },
+  {
+    "type": "gaz-66_civil",
+    "displayName": "Truck GAZ-66 civil",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "generator_5i57",
+    "displayName": "Diesel Power Station 5I57A",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "house1arm",
+    "displayName": "Barracks armed",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 800
+  },
+  {
+    "type": "house2arm",
+    "displayName": "Watch tower armed",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 800
+  },
+  {
+    "type": "houseA_arm",
+    "displayName": "Building armed",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 800
+  },
+  {
+    "type": "hy_launcher",
+    "displayName": "AShM SS-N-2 Silkworm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 100000,
+    "threat_range": 100000
+  },
+  {
+    "type": "kamaz_tent_civil",
+    "displayName": "Truck KAMAZ-43101 civil",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "leopard-2A4",
+    "displayName": "MBT Leopard-2A4",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3500
+  },
+  {
+    "type": "leopard-2A4_trs",
+    "displayName": "MBT Leopard-2A4 Trs",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 3500
+  },
+  {
+    "type": "outpost",
+    "displayName": "Outpost",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 800
+  },
+  {
+    "type": "outpost_road",
+    "displayName": "Road outpost",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 800
+  },
+  {
+    "type": "outpost_road_l",
+    "displayName": "Road outpost_L",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "outpost_road_r",
+    "displayName": "Road outpost-R",
+    "module": null,
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 800
+  },
+  {
+    "type": "p-19 s-125 sr",
+    "displayName": "SAM SA-2/3/5 P19 \"Flat Face\" SR ",
+    "module": null,
+    "categories": null,
+    "detection_range": 160000,
+    "threat_range": 0
+  },
+  {
+    "type": "prmg_gp_beacon",
+    "displayName": "PRMG Glidepath car",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "prmg_loc_beacon",
+    "displayName": "PRMG Localizer car",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "r11_volvo_drivable",
+    "displayName": "M92 R11 Volvo drivable",
+    "module": "Massun92-Assetpack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "rapier_fsa_blindfire_radar",
+    "displayName": "SAM Rapier Blindfire TR",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 30000,
+    "threat_range": 0
+  },
+  {
+    "type": "rapier_fsa_launcher",
+    "displayName": "SAM Rapier LN",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 30000,
+    "threat_range": 6800
+  },
+  {
+    "type": "rapier_fsa_optical_tracker_unit",
+    "displayName": "SAM Rapier Tracker",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 20000,
+    "threat_range": 0
+  },
+  {
+    "type": "rsbn_beacon",
+    "displayName": "RSBN car",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "snr s-125 tr",
+    "displayName": "SAM SA-3 S-125 \"Low Blow\" TR",
+    "module": null,
+    "categories": null,
+    "detection_range": 100000,
+    "threat_range": 0
+  },
+  {
+    "type": "soldier_mauser98",
+    "displayName": "Infantry Mauser 98",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "soldier_wwii_br_01",
+    "displayName": "Infantry SMLE No.4 Mk-1",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "soldier_wwii_us",
+    "displayName": "Infantry M1 Garand",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 500
+  },
+  {
+    "type": "tacr2a",
+    "displayName": "Firefighter RAF Rescue",
+    "module": "South_Atlantic_Assets",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "tt_B8M1",
+    "displayName": "MLRS LC with B8M1 80mm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 5000
+  },
+  {
+    "type": "tt_DSHK",
+    "displayName": "Scout LC with DSHK 12.7mm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 1200
+  },
+  {
+    "type": "tt_KORD",
+    "displayName": "Scout LC with KORD 12.7mm",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 5000,
+    "threat_range": 1200
+  },
+  {
+    "type": "tt_ZU-23",
+    "displayName": "SPAAA LC with ZU-23",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 2500
+  },
+  {
+    "type": "ural_4230_civil_b",
+    "displayName": "Truck Ural-4320 civil",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "ural_4230_civil_t",
+    "displayName": "Truck Ural-4320T civil",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "ural_atz5_civil",
+    "displayName": "Refueler ATZ-5 civil",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "v1_launcher",
+    "displayName": "V-1 Launch Ramp",
+    "module": "WWII Armour and Technics",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  },
+  {
+    "type": "zil-131_civil",
+    "displayName": "Truck ZiL-131 civil",
+    "module": "TechWeaponPack",
+    "categories": null,
+    "detection_range": 0,
+    "threat_range": 0
+  }
+]

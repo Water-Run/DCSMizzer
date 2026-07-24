@@ -1,0 +1,215 @@
+[
+  {
+    "type": "Mi-24V",
+    "families": [
+      "HelicopterAttack",
+      "HelicopterTransport"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  },
+  {
+    "type": "Mi-8MT",
+    "families": [
+      "HelicopterTransport",
+      "HelicopterUtility",
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "Mi-26",
+    "families": [
+      "HelicopterTransport"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  },
+  {
+    "type": "Ka-27",
+    "families": [
+      "HelicopterTransport"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  },
+  {
+    "type": "UH-60A",
+    "families": [
+      "HelicopterTransport"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  },
+  {
+    "type": "CH-53E",
+    "families": [
+      "HelicopterTransport"
+    ],
+    "lowPolly": true,
+    "playerControllable": false
+  },
+  {
+    "type": "CH-47D",
+    "families": [
+      "HelicopterTransport"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  },
+  {
+    "type": "CH-47Fbl1",
+    "families": [
+      "HelicopterTransport"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "SH-3W",
+    "families": [
+      "HelicopterTransport"
+    ],
+    "lowPolly": true,
+    "playerControllable": false
+  },
+  {
+    "type": "AH-64A",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  },
+  {
+    "type": "AH-64D",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  },
+  {
+    "type": "AH-1W",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  },
+  {
+    "type": "SH-60B",
+    "families": [
+      "HelicopterUtility"
+    ],
+    "lowPolly": true,
+    "playerControllable": false
+  },
+  {
+    "type": "UH-1H",
+    "families": [
+      "HelicopterUtility",
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "Mi-28N",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  },
+  {
+    "type": "OH-58D",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  },
+  {
+    "type": "OH58D",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "AH-64D_BLK_II",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "Ka-50",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "Ka-50_3",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "Mi-24P",
+    "families": [
+      "HelicopterAttack",
+      "HelicopterTransport"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "SA342M",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "SA342L",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "SA342Mistral",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "SA342Minigun",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": true
+  },
+  {
+    "type": "CHAP_TigerUHT",
+    "families": [
+      "HelicopterAttack"
+    ],
+    "lowPolly": false,
+    "playerControllable": false
+  }
+]

@@ -1,0 +1,5459 @@
+{
+  "A-10C II": {
+    "file": "A-10C_2.lua",
+    "unitType": "A-10C II",
+    "loadouts": [
+      {
+        "name": "AGM-65K*2,GBU-38*4,AIM-9*2,TGP,ECM",
+        "pylons": [
+          {
+            "CLSID": "ALQ_184",
+            "num": 1
+          },
+          {
+            "CLSID": "{69DC8AE7-8F77-427B-B8AA-B19D3F478B66}",
+            "num": 3
+          },
+          {
+            "CLSID": "{GBU_54_V_1B}",
+            "num": 4
+          },
+          {
+            "CLSID": "{GBU-38}",
+            "num": 5
+          },
+          {
+            "CLSID": "{GBU-38}",
+            "num": 7
+          },
+          {
+            "CLSID": "{GBU-38}",
+            "num": 8
+          },
+          {
+            "CLSID": "{69DC8AE7-8F77-427B-B8AA-B19D3F478B66}",
+            "num": 9
+          },
+          {
+            "CLSID": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}",
+            "num": 10
+          },
+          {
+            "CLSID": "{DB434044-F5D0-4F1F-9BA9-B73027E18DD3}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          31,
+          2,
+          32
+        ]
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{DB434044-F5D0-4F1F-9BA9-B73027E18DD3}",
+            "num": 11
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 1
+          },
+          {
+            "CLSID": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}",
+            "num": 10
+          },
+          {
+            "CLSID": "{GBU-31}",
+            "num": 8
+          },
+          {
+            "CLSID": "{GBU-31}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "{DB434044-F5D0-4F1F-9BA9-B73027E18DD3}",
+            "num": 11
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 1
+          },
+          {
+            "CLSID": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}",
+            "num": 10
+          },
+          {
+            "CLSID": "{DAC53A2F-79CA-42FF-A77A-F5649B601308}",
+            "num": 9
+          },
+          {
+            "CLSID": "{DAC53A2F-79CA-42FF-A77A-F5649B601308}",
+            "num": 3
+          },
+          {
+            "CLSID": "{LAU-131 - 7 AGR-20 M282}",
+            "num": 2
+          },
+          {
+            "CLSID": "{LAU-131 - 7 AGR-20 M282}",
+            "num": 8
+          },
+          {
+            "CLSID": "{LAU-131 - 7 AGR-20 M282}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{DB434044-F5D0-4F1F-9BA9-B73027E18DD3}",
+            "num": 11
+          },
+          {
+            "CLSID": "{DB434044-F5D0-4F1F-9BA9-B73027E18DD3}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "ALQ_184",
+            "num": 1
+          },
+          {
+            "CLSID": "{DB434044-F5D0-4F1F-9BA9-B73027E18DD3}",
+            "num": 11
+          },
+          {
+            "CLSID": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}",
+            "num": 10
+          },
+          {
+            "CLSID": "{LAU-131 - 7 AGR-20 M282}",
+            "num": 8
+          },
+          {
+            "CLSID": "{E6A6262A-CA08-4B3D-B030-E1A993B98453}",
+            "num": 9
+          },
+          {
+            "CLSID": "{E6A6262A-CA08-4B3D-B030-E1A993B98452}",
+            "num": 3
+          },
+          {
+            "CLSID": "{LAU-131 - 7 AGR-20 M282}",
+            "num": 4
+          },
+          {
+            "CLSID": "{LAU-131 - 7 AGR-20A}",
+            "num": 2
+          },
+          {
+            "CLSID": "{GBU_54_V_1B}",
+            "num": 7
+          },
+          {
+            "CLSID": "{GBU_54_V_1B}",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "New Payload",
+        "pylons": [
+          {
+            "CLSID": "{LAU-131x3 - 7 AGR-20A}",
+            "num": 8
+          },
+          {
+            "CLSID": "{LAU-131x3 - 7 AGR-20 M282}",
+            "num": 9
+          },
+          {
+            "CLSID": "{LAU-131x3 - 7 AGR-20A}",
+            "num": 4
+          },
+          {
+            "CLSID": "{LAU-131x3 - 7 AGR-20 M282}",
+            "num": 3
+          },
+          {
+            "CLSID": "{LAU-131 - 7 AGR-20A}",
+            "num": 2
+          },
+          {
+            "CLSID": "{LAU-131 - 7 AGR-20A}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{DB434044-F5D0-4F1F-9BA9-B73027E18DD3}",
+            "num": 11
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 1
+          },
+          {
+            "CLSID": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}",
+            "num": 10
+          },
+          {
+            "CLSID": "LAU_117_AGM_65G",
+            "num": 9
+          },
+          {
+            "CLSID": "LAU_117_AGM_65G",
+            "num": 3
+          },
+          {
+            "CLSID": "{51F9AAE5-964F-4D21-83FB-502E3BFE5F8A}",
+            "num": 4
+          },
+          {
+            "CLSID": "{51F9AAE5-964F-4D21-83FB-502E3BFE5F8A}",
+            "num": 8
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "{DB434044-F5D0-4F1F-9BA9-B73027E18DD3}",
+            "num": 11
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 1
+          },
+          {
+            "CLSID": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}",
+            "num": 10
+          },
+          {
+            "CLSID": "{GBU-31V3B}",
+            "num": 8
+          },
+          {
+            "CLSID": "{GBU-31V3B}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      }
+    ]
+  },
+  "AJS37": {
+    "file": "AJS37.lua",
+    "unitType": "AJS37",
+    "loadouts": [
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{Robot74}",
+            "num": 5
+          },
+          {
+            "CLSID": "{Robot74}",
+            "num": 3
+          },
+          {
+            "CLSID": "{AKAN}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AKAN}",
+            "num": 2
+          },
+          {
+            "CLSID": "{VIGGEN_X-TANK}",
+            "num": 4
+          },
+          {
+            "CLSID": "{Robot24}",
+            "num": 7
+          },
+          {
+            "CLSID": "{Robot24}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{Rb15}",
+            "num": 6
+          },
+          {
+            "CLSID": "{Rb15}",
+            "num": 2
+          },
+          {
+            "CLSID": "{Robot74}",
+            "num": 3
+          },
+          {
+            "CLSID": "{Robot74}",
+            "num": 5
+          },
+          {
+            "CLSID": "{VIGGEN_X-TANK}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          30
+        ]
+      },
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "{RB75}",
+            "num": 5
+          },
+          {
+            "CLSID": "{RB75}",
+            "num": 3
+          },
+          {
+            "CLSID": "{RB75}",
+            "num": 2
+          },
+          {
+            "CLSID": "{RB75}",
+            "num": 6
+          },
+          {
+            "CLSID": "{Robot24J}",
+            "num": 1
+          },
+          {
+            "CLSID": "{Robot24J}",
+            "num": 7
+          },
+          {
+            "CLSID": "{VIGGEN_X-TANK}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          32,
+          2,
+          31
+        ]
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{M71BOMB}",
+            "num": 6
+          },
+          {
+            "CLSID": "{M71BOMB}",
+            "num": 5
+          },
+          {
+            "CLSID": "{M71BOMB}",
+            "num": 3
+          },
+          {
+            "CLSID": "{M71BOMB}",
+            "num": 2
+          },
+          {
+            "CLSID": "{VIGGEN_X-TANK}",
+            "num": 4
+          },
+          {
+            "CLSID": "{Robot24J}",
+            "num": 7
+          },
+          {
+            "CLSID": "{Robot24J}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          32
+        ]
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "{BK90MJ1}",
+            "num": 2
+          },
+          {
+            "CLSID": "{BK90MJ1}",
+            "num": 6
+          },
+          {
+            "CLSID": "{VIGGEN_X-TANK}",
+            "num": 4
+          },
+          {
+            "CLSID": "{Robot74}",
+            "num": 5
+          },
+          {
+            "CLSID": "{Robot74}",
+            "num": 3
+          }
+        ],
+        "tasks": [
+          1,
+          32
+        ]
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "{VIGGEN_X-TANK}",
+            "num": 4
+          },
+          {
+            "CLSID": "{M71BOMBD}",
+            "num": 3
+          },
+          {
+            "CLSID": "{M71BOMBD}",
+            "num": 5
+          },
+          {
+            "CLSID": "{M71BOMBD}",
+            "num": 2
+          },
+          {
+            "CLSID": "{M71BOMBD}",
+            "num": 6
+          },
+          {
+            "CLSID": "{Robot24J}",
+            "num": 1
+          },
+          {
+            "CLSID": "{Robot24J}",
+            "num": 7
+          }
+        ],
+        "tasks": [
+          1,
+          34
+        ]
+      },
+      {
+        "name": "Retribution OCA/Aircraft",
+        "pylons": [
+          {
+            "CLSID": "{VIGGEN_X-TANK}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BK90MJ1}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BK90MJ1}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BK90MJ1}",
+            "num": 2
+          },
+          {
+            "CLSID": "{BK90MJ1}",
+            "num": 6
+          },
+          {
+            "CLSID": "{Robot24J}",
+            "num": 1
+          },
+          {
+            "CLSID": "{Robot24J}",
+            "num": 7
+          }
+        ],
+        "tasks": [
+          1,
+          34
+        ]
+      }
+    ]
+  },
+  "F-14B": {
+    "file": "F-14B.lua",
+    "unitType": "F-14B",
+    "loadouts": [
+      {
+        "name": "Retribution DEAD",
+        "pylons": [
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 10
+          },
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 1
+          },
+          {
+            "CLSID": "{PHXBRU3242_2*LAU10 LS}",
+            "num": 2
+          },
+          {
+            "CLSID": "{PHXBRU3242_2*LAU10 RS}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 8
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 3
+          },
+          {
+            "CLSID": "{AIM_54C_Mk60}",
+            "num": 7
+          },
+          {
+            "CLSID": "{BELLY AIM-7MH}",
+            "num": 5
+          },
+          {
+            "CLSID": "{AIM_54C_Mk60}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 10
+          },
+          {
+            "CLSID": "{F14-LANTIRN-TP}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 8
+          },
+          {
+            "CLSID": "{BRU-32 GBU-12}",
+            "num": 7
+          },
+          {
+            "CLSID": "{BRU-32 GBU-12}",
+            "num": 6
+          },
+          {
+            "CLSID": "{BRU-32 GBU-12}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BRU-32 GBU-12}",
+            "num": 4
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 3
+          },
+          {
+            "CLSID": "{SHOULDER AIM-7MH}",
+            "num": 2
+          },
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          10,
+          2,
+          11,
+          3,
+          18,
+          4,
+          19
+        ]
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 10
+          },
+          {
+            "CLSID": "{F14-LANTIRN-TP}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 8
+          },
+          {
+            "CLSID": "{BRU-32 GBU-16}",
+            "num": 7
+          },
+          {
+            "CLSID": "{BRU-32 GBU-16}",
+            "num": 6
+          },
+          {
+            "CLSID": "{BRU-32 GBU-16}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BRU-32 GBU-16}",
+            "num": 4
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 3
+          },
+          {
+            "CLSID": "{SHOULDER AIM_54C_Mk60 L}",
+            "num": 2
+          },
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          10,
+          2,
+          11,
+          3,
+          18,
+          4,
+          19
+        ]
+      },
+      {
+        "name": "Retribution SEAD",
+        "pylons": [
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 10
+          },
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 1
+          },
+          {
+            "CLSID": "{SHOULDER AIM_54C_Mk60 L}",
+            "num": 2
+          },
+          {
+            "CLSID": "{SHOULDER AIM_54C_Mk60 R}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 8
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BRU3242_ADM141}",
+            "num": 7
+          },
+          {
+            "CLSID": "{BRU3242_ADM141}",
+            "num": 6
+          },
+          {
+            "CLSID": "{BRU3242_ADM141}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BRU3242_ADM141}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 10
+          },
+          {
+            "CLSID": "{SHOULDER AIM-7MH}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 8
+          },
+          {
+            "CLSID": "{AIM_54C_Mk60}",
+            "num": 7
+          },
+          {
+            "CLSID": "{AIM_54C_Mk60}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AIM_54C_Mk60}",
+            "num": 5
+          },
+          {
+            "CLSID": "{AIM_54C_Mk60}",
+            "num": 4
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 3
+          },
+          {
+            "CLSID": "{SHOULDER AIM-7MH}",
+            "num": 2
+          },
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          10,
+          2,
+          11,
+          3,
+          18,
+          4,
+          19
+        ]
+      },
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 10
+          },
+          {
+            "CLSID": "{F14-LANTIRN-TP}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 8
+          },
+          {
+            "CLSID": "{BRU3242_ADM141}",
+            "num": 7
+          },
+          {
+            "CLSID": "{BRU-32 GBU-24}",
+            "num": 6
+          },
+          {
+            "CLSID": "{BRU3242_ADM141}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BRU-32 GBU-24}",
+            "num": 4
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 3
+          },
+          {
+            "CLSID": "{SHOULDER AIM_54C_Mk60 L}",
+            "num": 2
+          },
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          10,
+          2,
+          11,
+          3,
+          18,
+          4,
+          19
+        ]
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 10
+          },
+          {
+            "CLSID": "{SHOULDER AIM-7MH}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 8
+          },
+          {
+            "CLSID": "{MAK79_MK82 4}",
+            "num": 4
+          },
+          {
+            "CLSID": "{F14-300gal}",
+            "num": 3
+          },
+          {
+            "CLSID": "{SHOULDER AIM-7MH}",
+            "num": 2
+          },
+          {
+            "CLSID": "{LAU-138 wtip - AIM-9M}",
+            "num": 1
+          },
+          {
+            "CLSID": "{MAK79_MK82 4}",
+            "num": 7
+          },
+          {
+            "CLSID": "{MAK79_MK82 3R}",
+            "num": 6
+          },
+          {
+            "CLSID": "{MAK79_MK82 3L}",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          32,
+          2,
+          31,
+          3,
+          34,
+          4,
+          33
+        ]
+      }
+    ]
+  },
+  "F-15C": {
+    "file": "F-15C.lua",
+    "unitType": "F-15C",
+    "loadouts": [
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+            "num": 1
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 3
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 5
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 6
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 7
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 10
+          },
+          {
+            "CLSID": "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          18,
+          2,
+          19,
+          3,
+          11
+        ]
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+            "num": 1
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 3
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 5
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 6
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 7
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 10
+          },
+          {
+            "CLSID": "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          18,
+          2,
+          19,
+          3,
+          11
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+            "num": 1
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 3
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 5
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 6
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 7
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 10
+          },
+          {
+            "CLSID": "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          18,
+          2,
+          19,
+          3,
+          11
+        ]
+      },
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+            "num": 1
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 3
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 5
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 6
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 7
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 10
+          },
+          {
+            "CLSID": "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          18,
+          2,
+          19,
+          3,
+          11
+        ]
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+            "num": 1
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 3
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 5
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 6
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 7
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{E1F29B21-F291-4589-9FD8-3272EEC69506}",
+            "num": 10
+          },
+          {
+            "CLSID": "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          18,
+          2,
+          19,
+          3,
+          11
+        ]
+      }
+    ]
+  },
+  "F-16C_50": {
+    "file": "F-16C_50.lua",
+    "unitType": "F-16C_50",
+    "loadouts": [
+      {
+        "name": "Retribution TARCAP",
+        "pylons": [
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 5
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution Anti-ship",
+        "pylons": [
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{BRU57_2*AGM-154A}",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 5
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BRU57_2*AGM-154A}",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          },
+          {
+            "CLSID": "{AN_ASQ_213}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution SEAD Escort",
+        "pylons": [
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 3
+          },
+          {
+            "CLSID": "LAU_117_AGM_65G",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 5
+          },
+          {
+            "CLSID": "{AN_ASQ_213}",
+            "num": 10
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution Fighter Sweep",
+        "pylons": [
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 5
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution SEAD Sweep",
+        "pylons": [
+          {
+            "CLSID": "LAU_117_AGM_65G",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 5
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "LAU_117_AGM_65G",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          },
+          {
+            "CLSID": "{AN_ASQ_213}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution Strike",
+        "pylons": [
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{GBU-31V3B}",
+            "num": 7
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 5
+          },
+          {
+            "CLSID": "{GBU-31V3B}",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{AN_ASQ_213}",
+            "num": 10
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Clean",
+        "pylons": [
+          {
+            "CLSID": "<CLEAN>",
+            "num": 8
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 7
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 3
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{GBU-31V3B}",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "{GBU-31V3B}",
+            "num": 3
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 5
+          },
+          {
+            "CLSID": "{AN_ASQ_213}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution CAS",
+        "pylons": [
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          },
+          {
+            "CLSID": "{DAC53A2F-79CA-42FF-A77A-F5649B601308}",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{DAC53A2F-79CA-42FF-A77A-F5649B601308}",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 5
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_ASQ_213}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution BARCAP",
+        "pylons": [
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 5
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution OCA/Aircraft",
+        "pylons": [
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{GBU-31V3B}",
+            "num": 7
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "{GBU-31V3B}",
+            "num": 3
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 5
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_ASQ_213}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution Escort",
+        "pylons": [
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 5
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution DEAD",
+        "pylons": [
+          {
+            "CLSID": "LAU_117_AGM_65G",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 5
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "LAU_117_AGM_65G",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          },
+          {
+            "CLSID": "{AN_ASQ_213}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution BAI",
+        "pylons": [
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{BRU57_2*CBU-105}",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 5
+          },
+          {
+            "CLSID": "{BRU57_2*CBU-105}",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{AN_ASQ_213}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "Retribution SEAD",
+        "pylons": [
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 7
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 6
+          },
+          {
+            "CLSID": "ALQ_184",
+            "num": 5
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}",
+            "num": 4
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 3
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 1
+          },
+          {
+            "CLSID": "{AN_AAQ_33}",
+            "num": 11
+          },
+          {
+            "CLSID": "{AN_ASQ_213}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      }
+    ]
+  },
+  "F-4E-45MC": {
+    "file": "F-4E-45MC.lua",
+    "unitType": "F-4E-45MC",
+    "loadouts": [
+      {
+        "name": "Retribution CAS",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{AGM_62_I}",
+            "num": 13
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 12
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_PAVE_SPIKE_FAST_ON_ADAPTER_IN_AERO7}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "{AGM_62_I}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_600_GAL}",
+            "num": 7
+          },
+          {
+            "CLSID": "{HB_F4EAGM-65D_LAU88_3x_Right}",
+            "num": 11
+          },
+          {
+            "CLSID": "{HB_F4EAGM-65D_LAU88_3x_Left}",
+            "num": 3
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution DEAD",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{LAU_34_AGM_45A}",
+            "num": 13
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 12
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_ALQ-131_ON_ADAPTER_IN_AERO7}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "{LAU_34_AGM_45A}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_600_GAL}",
+            "num": 7
+          },
+          {
+            "CLSID": "{HB_F4E_AGM-65G_LAU117}",
+            "num": 11
+          },
+          {
+            "CLSID": "{HB_F4E_AGM-65G_LAU117}",
+            "num": 3
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution Strike",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{34759BBC-AF1E-4AEE-A581-498FF7A6EBCE}",
+            "num": 13
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 12
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_PAVE_SPIKE_FAST_ON_ADAPTER_IN_AERO7}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "{34759BBC-AF1E-4AEE-A581-498FF7A6EBCE}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_600_GAL}",
+            "num": 7
+          },
+          {
+            "CLSID": "{34759BBC-AF1E-4AEE-A581-498FF7A6EBCE}",
+            "num": 3
+          },
+          {
+            "CLSID": "{34759BBC-AF1E-4AEE-A581-498FF7A6EBCE}",
+            "num": 11
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution Escort",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_370_GAL_R}",
+            "num": 13
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 12
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 2
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 4
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_370_GAL}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution BARCAP",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_370_GAL_R}",
+            "num": 13
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 12
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 2
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 4
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_370_GAL}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution SEAD",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{LAU_34_AGM_45A}",
+            "num": 13
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 12
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_ALQ-131_ON_ADAPTER_IN_AERO7}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "{LAU_34_AGM_45A}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_600_GAL}",
+            "num": 7
+          },
+          {
+            "CLSID": "{LAU_34_AGM_45A}",
+            "num": 11
+          },
+          {
+            "CLSID": "{LAU_34_AGM_45A}",
+            "num": 3
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution TARCAP",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_370_GAL_R}",
+            "num": 13
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 12
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 2
+          },
+          {
+            "CLSID": "{AIM-9M}",
+            "num": 4
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_370_GAL}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution Anti-ship",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 13
+          },
+          {
+            "CLSID": "{C40A1E3A-DD05-40D9-85A4-217729E37FAE}",
+            "num": 11
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 10
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 12
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_ALQ-131_ON_ADAPTER_IN_AERO7}",
+            "num": 6
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{C40A1E3A-DD05-40D9-85A4-217729E37FAE}",
+            "num": 3
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 1
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_600_GAL}",
+            "num": 7
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution BAI",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 13
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 12
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_ALQ-131_ON_ADAPTER_IN_AERO7}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_600_GAL}",
+            "num": 7
+          },
+          {
+            "CLSID": "{HB_F4EAGM-65D_LAU88_3x_Right}",
+            "num": 11
+          },
+          {
+            "CLSID": "{HB_F4EAGM-65D_LAU88_3x_Left}",
+            "num": 3
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution SEAD Escort",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{LAU_34_AGM_45A}",
+            "num": 13
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 12
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_ALQ-131_ON_ADAPTER_IN_AERO7}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "{LAU_34_AGM_45A}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_600_GAL}",
+            "num": 7
+          },
+          {
+            "CLSID": "{HB_F4E_AGM-65G_LAU117}",
+            "num": 11
+          },
+          {
+            "CLSID": "{HB_F4E_AGM-65G_LAU117}",
+            "num": 3
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution OCA/Aircraft",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{GBU_8_B}",
+            "num": 13
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 12
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_PAVE_SPIKE_FAST_ON_ADAPTER_IN_AERO7}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "{GBU_8_B}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_600_GAL}",
+            "num": 7
+          },
+          {
+            "CLSID": "{GBU_8_B}",
+            "num": 11
+          },
+          {
+            "CLSID": "{GBU_8_B}",
+            "num": 3
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_370_GAL_R}",
+            "num": 13
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 12
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_ALQ-131_ON_ADAPTER_IN_AERO7}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_370_GAL}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          },
+          {
+            "CLSID": "{HB_F4E_BLU-107B_6x}",
+            "num": 7
+          },
+          {
+            "CLSID": "{HB_F4E_BLU-107B_3x}",
+            "num": 11
+          },
+          {
+            "CLSID": "{HB_F4E_BLU-107B_3x}",
+            "num": 3
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution SEAD Sweep",
+        "pylons": [
+          {
+            "CLSID": "{HB_ALE_40_30_60}",
+            "num": 14
+          },
+          {
+            "CLSID": "{LAU_34_AGM_45A}",
+            "num": 13
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 12
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 10
+          },
+          {
+            "CLSID": "{HB_ALQ-131_ON_ADAPTER_IN_AERO7}",
+            "num": 6
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 4
+          },
+          {
+            "CLSID": "{LAU_34_AGM_45A}",
+            "num": 1
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 8
+          },
+          {
+            "CLSID": "{HB_F4E_AIM-7M}",
+            "num": 9
+          },
+          {
+            "CLSID": "{F4_SARGENT_TANK_600_GAL}",
+            "num": 7
+          },
+          {
+            "CLSID": "{HB_F4E_AGM-65G_LAU117}",
+            "num": 11
+          },
+          {
+            "CLSID": "{HB_F4E_AGM-65G_LAU117}",
+            "num": 3
+          }
+        ],
+        "tasks": []
+      }
+    ]
+  },
+  "F-5E-3": {
+    "file": "F-5E-3.lua",
+    "unitType": "F-5E-3",
+    "loadouts": [
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "{AIM-9P5}",
+            "num": 7
+          },
+          {
+            "CLSID": "{AIM-9P5}",
+            "num": 1
+          },
+          {
+            "CLSID": "{PTB-150GAL}",
+            "num": 4
+          },
+          {
+            "CLSID": "{LAU68_FFAR_MK5HEAT}",
+            "num": 5
+          },
+          {
+            "CLSID": "{LAU68_FFAR_MK5HEAT}",
+            "num": 3
+          },
+          {
+            "CLSID": "{LAU68_FFAR_MK5HEAT}",
+            "num": 2
+          },
+          {
+            "CLSID": "{LAU68_FFAR_MK5HEAT}",
+            "num": 6
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "{AIM-9P5}",
+            "num": 7
+          },
+          {
+            "CLSID": "{AIM-9P5}",
+            "num": 1
+          },
+          {
+            "CLSID": "{PTB-150GAL}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 2
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 6
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{AIM-9P5}",
+            "num": 7
+          },
+          {
+            "CLSID": "{AIM-9P5}",
+            "num": 1
+          },
+          {
+            "CLSID": "{PTB-150GAL}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{AIM-9P5}",
+            "num": 7
+          },
+          {
+            "CLSID": "{AIM-9P5}",
+            "num": 1
+          },
+          {
+            "CLSID": "{0395076D-2F77-4420-9D33-087A4398130B}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 2
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 6
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{AIM-9P5}",
+            "num": 7
+          },
+          {
+            "CLSID": "{AIM-9P5}",
+            "num": 1
+          },
+          {
+            "CLSID": "{PTB-150GAL}",
+            "num": 4
+          },
+          {
+            "CLSID": "{LAU68_FFAR_MK5HEAT}",
+            "num": 5
+          },
+          {
+            "CLSID": "{LAU68_FFAR_MK5HEAT}",
+            "num": 3
+          },
+          {
+            "CLSID": "{LAU68_FFAR_MK5HEAT}",
+            "num": 2
+          },
+          {
+            "CLSID": "{LAU68_FFAR_MK5HEAT}",
+            "num": 6
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      }
+    ]
+  },
+  "FA-18C_hornet": {
+    "file": "FA-18C_hornet.lua",
+    "unitType": "FA-18C_hornet",
+    "loadouts": [
+      {
+        "name": "Retribution DEAD",
+        "pylons": [
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 7
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BRU55_2*AGM-154C}",
+            "num": 8
+          },
+          {
+            "CLSID": "{BRU55_2*AGM-154C}",
+            "num": 2
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          11,
+          2,
+          31
+        ]
+      },
+      {
+        "name": "Retribution BARCAP",
+        "pylons": [
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 3
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 7
+          },
+          {
+            "CLSID": "LAU-115_2*LAU-127_AIM-120C",
+            "num": 8
+          },
+          {
+            "CLSID": "LAU-115_2*LAU-127_AIM-120C",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          11,
+          2,
+          18,
+          3,
+          19,
+          4,
+          10
+        ]
+      },
+      {
+        "name": "Retribution SEAD",
+        "pylons": [
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BRU_42A_x3_ADM_141A}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BRU_42A_x3_ADM_141A}",
+            "num": 7
+          },
+          {
+            "CLSID": "{BRU_42A_x3_ADM_141A}",
+            "num": 2
+          },
+          {
+            "CLSID": "{BRU_42A_x3_ADM_141A}",
+            "num": 8
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          29
+        ]
+      },
+      {
+        "name": "Retribution CAS",
+        "pylons": [
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "LAU_117_AGM_65F",
+            "num": 2
+          },
+          {
+            "CLSID": "LAU_117_AGM_65F",
+            "num": 8
+          },
+          {
+            "CLSID": "LAU_117_AGM_65F",
+            "num": 7
+          },
+          {
+            "CLSID": "LAU_117_AGM_65F",
+            "num": 3
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "Retribution Strike",
+        "pylons": [
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{GBU_31_V_2B}",
+            "num": 2
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 3
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 7
+          },
+          {
+            "CLSID": "{GBU_31_V_2B}",
+            "num": 8
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          11,
+          2,
+          32,
+          3,
+          33
+        ]
+      },
+      {
+        "name": "Retribution Anti-ship",
+        "pylons": [
+          {
+            "CLSID": "{AGM_84D}",
+            "num": 8
+          },
+          {
+            "CLSID": "{AGM_84D}",
+            "num": 7
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{AGM_84D}",
+            "num": 3
+          },
+          {
+            "CLSID": "{AGM_84D}",
+            "num": 2
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          11,
+          2,
+          30
+        ]
+      },
+      {
+        "name": "Retribution BAI",
+        "pylons": [
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "LAU_117_AGM_65F",
+            "num": 2
+          },
+          {
+            "CLSID": "LAU_117_AGM_65F",
+            "num": 8
+          },
+          {
+            "CLSID": "LAU_117_AGM_65F",
+            "num": 7
+          },
+          {
+            "CLSID": "LAU_117_AGM_65F",
+            "num": 3
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 5
+          },
+          {
+            "CLSID": "{GBU_31_V_4B}",
+            "num": 7
+          },
+          {
+            "CLSID": "{GBU_31_V_4B}",
+            "num": 3
+          },
+          {
+            "CLSID": "{GBU_31_V_4B}",
+            "num": 2
+          },
+          {
+            "CLSID": "{GBU_31_V_4B}",
+            "num": 8
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          34
+        ]
+      },
+      {
+        "name": "Retribution Ferry",
+        "pylons": [
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 3
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 7
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 8
+          },
+          {
+            "CLSID": "<CLEAN>",
+            "num": 2
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          11,
+          2,
+          18,
+          3,
+          19,
+          4,
+          10
+        ]
+      },
+      {
+        "name": "Retribution SEAD Sweep",
+        "pylons": [
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 3
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 7
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 2
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 8
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 5
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 3
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 7
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 2
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 8
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 5
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "Retribution SEAD Escort",
+        "pylons": [
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 9
+          },
+          {
+            "CLSID": "{5CE2FF2A-645A-4197-B48D-8720AC69394F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+            "num": 6
+          },
+          {
+            "CLSID": "{AN_ASQ_228}",
+            "num": 4
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 3
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 7
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 2
+          },
+          {
+            "CLSID": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}",
+            "num": 8
+          },
+          {
+            "CLSID": "{FPU_8A_FUEL_TANK}",
+            "num": 5
+          }
+        ],
+        "tasks": []
+      }
+    ]
+  },
+  "JF-17": {
+    "file": "JF-17.lua",
+    "unitType": "JF-17",
+    "loadouts": [
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "DIS_WMD7",
+            "num": 4
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 1
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 7
+          },
+          {
+            "CLSID": "DIS_SD-10_DUAL_R",
+            "num": 6
+          },
+          {
+            "CLSID": "DIS_SD-10_DUAL_L",
+            "num": 2
+          },
+          {
+            "CLSID": "DIS_C-802AK",
+            "num": 3
+          },
+          {
+            "CLSID": "DIS_C-802AK",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          10,
+          2,
+          11,
+          3,
+          19
+        ]
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "DIS_LS_6_500",
+            "num": 6
+          },
+          {
+            "CLSID": "DIS_LS_6_500",
+            "num": 5
+          },
+          {
+            "CLSID": "DIS_LS_6_500",
+            "num": 3
+          },
+          {
+            "CLSID": "DIS_LS_6_500",
+            "num": 2
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 1
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 7
+          }
+        ],
+        "tasks": [
+          1,
+          10,
+          2,
+          11,
+          3,
+          19
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "DIS_TANK800",
+            "num": 5
+          },
+          {
+            "CLSID": "DIS_TANK800",
+            "num": 3
+          },
+          {
+            "CLSID": "DIS_SPJ_POD",
+            "num": 4
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 1
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 7
+          },
+          {
+            "CLSID": "DIS_SD-10_DUAL_R",
+            "num": 6
+          },
+          {
+            "CLSID": "DIS_SD-10_DUAL_L",
+            "num": 2
+          }
+        ],
+        "tasks": [
+          1,
+          10,
+          2,
+          11,
+          3,
+          19
+        ]
+      },
+      {
+        "name": "RUNWAY_ATTACK",
+        "pylons": [
+          {
+            "CLSID": "DIS_TYPE200_DUAL_R",
+            "num": 6
+          },
+          {
+            "CLSID": "DIS_TANK800",
+            "num": 5
+          },
+          {
+            "CLSID": "DIS_TANK800",
+            "num": 3
+          },
+          {
+            "CLSID": "DIS_TYPE200_DUAL_L",
+            "num": 2
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 1
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 7
+          },
+          {
+            "CLSID": "DIS_WMD7",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          10,
+          2,
+          11,
+          3,
+          19
+        ]
+      },
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "DIS_WMD7",
+            "num": 4
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 1
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 7
+          },
+          {
+            "CLSID": "DIS_BRM1_90",
+            "num": 6
+          },
+          {
+            "CLSID": "DIS_BRM1_90",
+            "num": 2
+          }
+        ],
+        "tasks": [
+          1,
+          10,
+          2,
+          11,
+          3,
+          19
+        ]
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "DIS_SPJ_POD",
+            "num": 4
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 1
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 7
+          },
+          {
+            "CLSID": "DIS_LD-10_DUAL_R",
+            "num": 6
+          },
+          {
+            "CLSID": "DIS_LD-10_DUAL_L",
+            "num": 2
+          },
+          {
+            "CLSID": "DIS_TANK800",
+            "num": 3
+          },
+          {
+            "CLSID": "DIS_TANK800",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          10,
+          2,
+          11,
+          3,
+          19
+        ]
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 7
+          },
+          {
+            "CLSID": "DIS_PL-5EII",
+            "num": 1
+          },
+          {
+            "CLSID": "DIS_TYPE200_DUAL_L",
+            "num": 2
+          },
+          {
+            "CLSID": "DIS_TYPE200_DUAL_R",
+            "num": 6
+          },
+          {
+            "CLSID": "DIS_TANK800",
+            "num": 4
+          },
+          {
+            "CLSID": "DIS_TYPE200",
+            "num": 5
+          },
+          {
+            "CLSID": "DIS_TYPE200",
+            "num": 3
+          }
+        ],
+        "tasks": [
+          1,
+          34
+        ]
+      }
+    ]
+  },
+  "Ka-50": {
+    "file": "Ka-50.lua",
+    "unitType": "Ka-50",
+    "loadouts": [
+      {
+        "name": "Retribution CAS",
+        "pylons": [
+          {
+            "CLSID": "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+            "num": 4
+          },
+          {
+            "CLSID": "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+            "num": 1
+          },
+          {
+            "CLSID": "B_8V20A_OFP2",
+            "num": 3
+          },
+          {
+            "CLSID": "B_8V20A_OFP2",
+            "num": 2
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "Retribution BAI",
+        "pylons": [
+          {
+            "CLSID": "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+            "num": 4
+          },
+          {
+            "CLSID": "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+            "num": 1
+          },
+          {
+            "CLSID": "B_8V20A_OFP2",
+            "num": 3
+          },
+          {
+            "CLSID": "B_8V20A_OFP2",
+            "num": 2
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "Retribution DEAD",
+        "pylons": [
+          {
+            "CLSID": "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+            "num": 4
+          },
+          {
+            "CLSID": "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+            "num": 1
+          },
+          {
+            "CLSID": "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+            "num": 3
+          },
+          {
+            "CLSID": "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+            "num": 2
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "Retribution OCA/Aircraft",
+        "pylons": [
+          {
+            "CLSID": "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+            "num": 4
+          },
+          {
+            "CLSID": "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+            "num": 1
+          },
+          {
+            "CLSID": "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+            "num": 3
+          },
+          {
+            "CLSID": "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+            "num": 2
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "Retribution Escort",
+        "pylons": [
+          {
+            "CLSID": "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+            "num": 4
+          },
+          {
+            "CLSID": "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+            "num": 1
+          },
+          {
+            "CLSID": "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+            "num": 3
+          },
+          {
+            "CLSID": "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+            "num": 2
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      }
+    ]
+  },
+  "M-2000C": {
+    "file": "M-2000C.lua",
+    "unitType": "M-2000C",
+    "loadouts": [
+      {
+        "name": "RUNWAY_ATTACK",
+        "pylons": [
+          {
+            "CLSID": "{Eclair}",
+            "num": 10
+          },
+          {
+            "CLSID": "{MMagicII}",
+            "num": 9
+          },
+          {
+            "CLSID": "{MMagicII}",
+            "num": 1
+          },
+          {
+            "CLSID": "{M2KC_RAFAUT_MK82}",
+            "num": 8
+          },
+          {
+            "CLSID": "{M2KC_RAFAUT_MK82}",
+            "num": 2
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 7
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 6
+          },
+          {
+            "CLSID": "{M2KC_RPL_522}",
+            "num": 5
+          }
+        ],
+        "tasks": [
+          1,
+          34
+        ]
+      },
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "{Matra155RocketPod}",
+            "num": 9
+          },
+          {
+            "CLSID": "{Matra155RocketPod}",
+            "num": 1
+          },
+          {
+            "CLSID": "{Matra155RocketPod}",
+            "num": 8
+          },
+          {
+            "CLSID": "{Matra155RocketPod}",
+            "num": 2
+          },
+          {
+            "CLSID": "{M2KC_RPL_522}",
+            "num": 5
+          },
+          {
+            "CLSID": "{Eclair}",
+            "num": 10
+          },
+          {
+            "CLSID": "{Mk82SNAKEYE}",
+            "num": 7
+          },
+          {
+            "CLSID": "{Mk82SNAKEYE}",
+            "num": 3
+          },
+          {
+            "CLSID": "{Mk82SNAKEYE}",
+            "num": 4
+          },
+          {
+            "CLSID": "{Mk82SNAKEYE}",
+            "num": 6
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{MMagicII}",
+            "num": 9
+          },
+          {
+            "CLSID": "{MMagicII}",
+            "num": 1
+          },
+          {
+            "CLSID": "{M2KC_RAFAUT_MK82}",
+            "num": 8
+          },
+          {
+            "CLSID": "{M2KC_RAFAUT_MK82}",
+            "num": 2
+          },
+          {
+            "CLSID": "{M2KC_RPL_522}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 6
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 7
+          },
+          {
+            "CLSID": "{Eclair}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{MMagicII}",
+            "num": 9
+          },
+          {
+            "CLSID": "{MMagicII}",
+            "num": 1
+          },
+          {
+            "CLSID": "{Matra_S530D}",
+            "num": 8
+          },
+          {
+            "CLSID": "{Matra_S530D}",
+            "num": 2
+          },
+          {
+            "CLSID": "{M2KC_RPL_522}",
+            "num": 5
+          },
+          {
+            "CLSID": "{Eclair}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{MMagicII}",
+            "num": 9
+          },
+          {
+            "CLSID": "{MMagicII}",
+            "num": 1
+          },
+          {
+            "CLSID": "{M2KC_RAFAUT_MK82}",
+            "num": 8
+          },
+          {
+            "CLSID": "{M2KC_RAFAUT_MK82}",
+            "num": 2
+          },
+          {
+            "CLSID": "{M2KC_RPL_522}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 6
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+            "num": 7
+          },
+          {
+            "CLSID": "{Eclair}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "{Matra155RocketPod}",
+            "num": 9
+          },
+          {
+            "CLSID": "{Matra155RocketPod}",
+            "num": 1
+          },
+          {
+            "CLSID": "{Matra_S530D}",
+            "num": 8
+          },
+          {
+            "CLSID": "{Matra_S530D}",
+            "num": 2
+          },
+          {
+            "CLSID": "{M2KC_RPL_522}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BLG66_BELOUGA_AC}",
+            "num": 6
+          },
+          {
+            "CLSID": "{BLG66_BELOUGA_AC}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BLG66_BELOUGA_AC}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BLG66_BELOUGA_AC}",
+            "num": 7
+          },
+          {
+            "CLSID": "{Eclair}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "DEAD",
+        "pylons": [
+          {
+            "CLSID": "{Matra155RocketPod}",
+            "num": 9
+          },
+          {
+            "CLSID": "{Matra155RocketPod}",
+            "num": 1
+          },
+          {
+            "CLSID": "{Matra155RocketPod}",
+            "num": 8
+          },
+          {
+            "CLSID": "{Matra155RocketPod}",
+            "num": 2
+          },
+          {
+            "CLSID": "{M2KC_RPL_522}",
+            "num": 5
+          },
+          {
+            "CLSID": "{Eclair}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      }
+    ]
+  },
+  "MiG-21Bis": {
+    "file": "MiG-21bis.lua",
+    "unitType": "MiG-21Bis",
+    "loadouts": [
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "{ASO-2}",
+            "num": 6
+          },
+          {
+            "CLSID": "{S-24B}",
+            "num": 5
+          },
+          {
+            "CLSID": "{UB-32_S5M}",
+            "num": 4
+          },
+          {
+            "CLSID": "{UB-32_S5M}",
+            "num": 2
+          },
+          {
+            "CLSID": "{S-24B}",
+            "num": 1
+          },
+          {
+            "CLSID": "{PTB_490C_MIG21}",
+            "num": 3
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{ASO-2}",
+            "num": 6
+          },
+          {
+            "CLSID": "{S-24B}",
+            "num": 5
+          },
+          {
+            "CLSID": "{Kh-66_Grom}",
+            "num": 4
+          },
+          {
+            "CLSID": "{Kh-66_Grom}",
+            "num": 2
+          },
+          {
+            "CLSID": "{S-24B}",
+            "num": 1
+          },
+          {
+            "CLSID": "{PTB_490C_MIG21}",
+            "num": 3
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{PTB_490C_MIG21}",
+            "num": 3
+          },
+          {
+            "CLSID": "{R-3R}",
+            "num": 2
+          },
+          {
+            "CLSID": "{R-3R}",
+            "num": 4
+          },
+          {
+            "CLSID": "{R-60M 2L}",
+            "num": 1
+          },
+          {
+            "CLSID": "{R-60M 2R}",
+            "num": 5
+          },
+          {
+            "CLSID": "{ASO-2}",
+            "num": 6
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "{ASO-2}",
+            "num": 6
+          },
+          {
+            "CLSID": "{S-24B}",
+            "num": 5
+          },
+          {
+            "CLSID": "{Kh-66_Grom}",
+            "num": 4
+          },
+          {
+            "CLSID": "{Kh-66_Grom}",
+            "num": 2
+          },
+          {
+            "CLSID": "{S-24B}",
+            "num": 1
+          },
+          {
+            "CLSID": "{PTB_490C_MIG21}",
+            "num": 3
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{PTB_800_MIG21}",
+            "num": 3
+          },
+          {
+            "CLSID": "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
+            "num": 2
+          },
+          {
+            "CLSID": "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
+            "num": 4
+          },
+          {
+            "CLSID": "{ASO-2}",
+            "num": 6
+          },
+          {
+            "CLSID": "{R-3S}",
+            "num": 5
+          },
+          {
+            "CLSID": "{R-3S}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          32
+        ]
+      },
+      {
+        "name": "DEAD",
+        "pylons": [
+          {
+            "CLSID": "{ASO-2}",
+            "num": 6
+          },
+          {
+            "CLSID": "{UB-16_S5M}",
+            "num": 5
+          },
+          {
+            "CLSID": "{UB-16_S5M}",
+            "num": 4
+          },
+          {
+            "CLSID": "{UB-16_S5M}",
+            "num": 2
+          },
+          {
+            "CLSID": "{UB-16_S5M}",
+            "num": 1
+          },
+          {
+            "CLSID": "{PTB_490C_MIG21}",
+            "num": 3
+          }
+        ],
+        "tasks": [
+          1,
+          11
+        ]
+      }
+    ]
+  },
+  "MiG-29A": {
+    "file": "MiG-29A.lua",
+    "unitType": "MiG-29A",
+    "loadouts": [
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 7
+          },
+          {
+            "CLSID": "B-8M1 - 20 S-8OFP2",
+            "num": 5
+          },
+          {
+            "CLSID": "B-8M1 - 20 S-8OFP2",
+            "num": 6
+          },
+          {
+            "CLSID": "B-8M1 - 20 S-8OFP2",
+            "num": 3
+          },
+          {
+            "CLSID": "B-8M1 - 20 S-8OFP2",
+            "num": 2
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          30
+        ]
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 2
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 3
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 5
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 6
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 7
+          }
+        ],
+        "tasks": [
+          1,
+          32
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{9B25D316-0434-4954-868F-D51DB1A38DF0}",
+            "num": 3
+          },
+          {
+            "CLSID": "{9B25D316-0434-4954-868F-D51DB1A38DF0}",
+            "num": 5
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 6
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 7
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          10
+        ]
+      },
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 7
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 5
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 6
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 3
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 2
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          30
+        ]
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 7
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 5
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 6
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 3
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 2
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          30
+        ]
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 2
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 3
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 6
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 7
+          }
+        ],
+        "tasks": [
+          1,
+          34
+        ]
+      }
+    ]
+  },
+  "MiG-29S": {
+    "file": "MiG-29S.lua",
+    "unitType": "MiG-29S",
+    "loadouts": [
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+            "num": 1
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 2
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 3
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 5
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 6
+          },
+          {
+            "CLSID": "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+            "num": 7
+          }
+        ],
+        "tasks": [
+          1,
+          32
+        ]
+      },
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          },
+          {
+            "CLSID": "B-8M1 - 20 S-8OFP2",
+            "num": 2
+          },
+          {
+            "CLSID": "B-8M1 - 20 S-8OFP2",
+            "num": 3
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          },
+          {
+            "CLSID": "B-8M1 - 20 S-8OFP2",
+            "num": 5
+          },
+          {
+            "CLSID": "B-8M1 - 20 S-8OFP2",
+            "num": 6
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 7
+          }
+        ],
+        "tasks": [
+          1,
+          32
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          },
+          {
+            "CLSID": "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+            "num": 2
+          },
+          {
+            "CLSID": "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+            "num": 3
+          },
+          {
+            "CLSID": "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+            "num": 5
+          },
+          {
+            "CLSID": "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+            "num": 6
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 7
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          }
+        ],
+        "tasks": [
+          1,
+          10
+        ]
+      },
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+            "num": 1
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 2
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 3
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 5
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 6
+          },
+          {
+            "CLSID": "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+            "num": 7
+          }
+        ],
+        "tasks": [
+          1,
+          32
+        ]
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+            "num": 1
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 2
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 3
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 5
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 6
+          },
+          {
+            "CLSID": "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+            "num": 7
+          }
+        ],
+        "tasks": [
+          1,
+          32
+        ]
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 2
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 3
+          },
+          {
+            "CLSID": "{2BEC576B-CDF5-4B7F-961F-B0FA4312B841}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 6
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 7
+          }
+        ],
+        "tasks": [
+          1,
+          34
+        ]
+      }
+    ]
+  },
+  "Su-25T": {
+    "file": "Su-25T.lua",
+    "unitType": "Su-25T",
+    "loadouts": [
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82C}",
+            "num": 11
+          },
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82D}",
+            "num": 1
+          },
+          {
+            "CLSID": "{0180F983-C14A-11d8-9897-000476191836}",
+            "num": 2
+          },
+          {
+            "CLSID": "{0180F983-C14A-11d8-9897-000476191836}",
+            "num": 10
+          },
+          {
+            "CLSID": "{F72F47E5-C83A-4B85-96ED-D3E46671EE9A}",
+            "num": 7
+          },
+          {
+            "CLSID": "{F72F47E5-C83A-4B85-96ED-D3E46671EE9A}",
+            "num": 5
+          },
+          {
+            "CLSID": "{F789E86A-EE2E-4E6B-B81E-D5E5F903B6ED}",
+            "num": 8
+          },
+          {
+            "CLSID": "{F789E86A-EE2E-4E6B-B81E-D5E5F903B6ED}",
+            "num": 4
+          },
+          {
+            "CLSID": "{B1EF6B0E-3D91-4047-A7A5-A99E7D8B4A8B}",
+            "num": 6
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 9
+          },
+          {
+            "CLSID": "{3858707D-F5D5-4bbb-BDD8-ABB0530EBC7C}",
+            "num": 3
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82D}",
+            "num": 1
+          },
+          {
+            "CLSID": "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+            "num": 2
+          },
+          {
+            "CLSID": "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+            "num": 3
+          },
+          {
+            "CLSID": "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+            "num": 4
+          },
+          {
+            "CLSID": "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+            "num": 5
+          },
+          {
+            "CLSID": "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+            "num": 7
+          },
+          {
+            "CLSID": "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+            "num": 8
+          },
+          {
+            "CLSID": "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+            "num": 9
+          },
+          {
+            "CLSID": "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+            "num": 10
+          },
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82C}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          31
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{682A481F-0CB5-4693-A382-D00DD4A156D7}",
+            "num": 11
+          },
+          {
+            "CLSID": "{682A481F-0CB5-4693-A382-D00DD4A156D7}",
+            "num": 1
+          },
+          {
+            "CLSID": "{CBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{CBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 10
+          },
+          {
+            "CLSID": "{E8D4652F-FD48-45B7-BA5B-2AE05BB5A9CF}",
+            "num": 7
+          },
+          {
+            "CLSID": "{E8D4652F-FD48-45B7-BA5B-2AE05BB5A9CF}",
+            "num": 5
+          }
+        ],
+        "tasks": []
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82D}",
+            "num": 1
+          },
+          {
+            "CLSID": "{CBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+            "num": 3
+          },
+          {
+            "CLSID": "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+            "num": 4
+          },
+          {
+            "CLSID": "{B5CA9846-776E-4230-B4FD-8BCC9BFB1676}",
+            "num": 5
+          },
+          {
+            "CLSID": "{0519A264-0AB6-11d6-9193-00A0249B6F00}",
+            "num": 6
+          },
+          {
+            "CLSID": "{B5CA9846-776E-4230-B4FD-8BCC9BFB1676}",
+            "num": 7
+          },
+          {
+            "CLSID": "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+            "num": 8
+          },
+          {
+            "CLSID": "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+            "num": 9
+          },
+          {
+            "CLSID": "{CBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 10
+          },
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82C}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          29
+        ]
+      },
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82D}",
+            "num": 1
+          },
+          {
+            "CLSID": "{CBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+            "num": 3
+          },
+          {
+            "CLSID": "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+            "num": 4
+          },
+          {
+            "CLSID": "{601C99F7-9AF3-4ed7-A565-F8B8EC0D7AAC}",
+            "num": 5
+          },
+          {
+            "CLSID": "{0519A264-0AB6-11d6-9193-00A0249B6F00}",
+            "num": 6
+          },
+          {
+            "CLSID": "{601C99F7-9AF3-4ed7-A565-F8B8EC0D7AAC}",
+            "num": 7
+          },
+          {
+            "CLSID": "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+            "num": 8
+          },
+          {
+            "CLSID": "{752AF1D2-EBCC-4bd7-A1E7-2357F5601C70}",
+            "num": 9
+          },
+          {
+            "CLSID": "{CBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 10
+          },
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82C}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          29
+        ]
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82D}",
+            "num": 1
+          },
+          {
+            "CLSID": "{CBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 7
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 8
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 9
+          },
+          {
+            "CLSID": "{CBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 10
+          },
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82C}",
+            "num": 11
+          }
+        ],
+        "tasks": [
+          1,
+          34
+        ]
+      }
+    ]
+  },
+  "Su-27": {
+    "file": "Su-27.lua",
+    "unitType": "Su-27",
+    "loadouts": [
+      {
+        "name": "ANTISHIP",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 10
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 9
+          },
+          {
+            "CLSID": "{TWIN_S25}",
+            "num": 8
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 7
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 6
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 5
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 4
+          },
+          {
+            "CLSID": "{TWIN_S25}",
+            "num": 3
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          30
+        ]
+      },
+      {
+        "name": "CAP",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{B79C379A-9E87-4E50-A1EE-7F7E29C2E87A}",
+            "num": 3
+          },
+          {
+            "CLSID": "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+            "num": 4
+          },
+          {
+            "CLSID": "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+            "num": 5
+          },
+          {
+            "CLSID": "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+            "num": 6
+          },
+          {
+            "CLSID": "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+            "num": 7
+          },
+          {
+            "CLSID": "{B79C379A-9E87-4E50-A1EE-7F7E29C2E87A}",
+            "num": 8
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 9
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          18,
+          2,
+          19,
+          3,
+          10,
+          4,
+          11
+        ]
+      },
+      {
+        "name": "STRIKE",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 10
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 9
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 8
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 7
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 6
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 5
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 4
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 3
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          30
+        ]
+      },
+      {
+        "name": "SEAD",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 10
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 9
+          },
+          {
+            "CLSID": "{A0648264-4BC0-4EE8-A543-D119F6BA4257}",
+            "num": 8
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 7
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 6
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 5
+          },
+          {
+            "CLSID": "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+            "num": 4
+          },
+          {
+            "CLSID": "{A0648264-4BC0-4EE8-A543-D119F6BA4257}",
+            "num": 3
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          30
+        ]
+      },
+      {
+        "name": "CAS",
+        "pylons": [
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 10
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 9
+          },
+          {
+            "CLSID": "{TWIN_B13L_5OF}",
+            "num": 8
+          },
+          {
+            "CLSID": "{F99BEC1A-869D-4AC7-9730-FBA0E3B1F5FC}",
+            "num": 7
+          },
+          {
+            "CLSID": "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+            "num": 6
+          },
+          {
+            "CLSID": "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+            "num": 5
+          },
+          {
+            "CLSID": "{F99BEC1A-869D-4AC7-9730-FBA0E3B1F5FC}",
+            "num": 4
+          },
+          {
+            "CLSID": "{TWIN_B13L_5OF}",
+            "num": 3
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 1
+          }
+        ],
+        "tasks": [
+          1,
+          30
+        ]
+      },
+      {
+        "name": "Retribution OCA/Runway",
+        "pylons": [
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82F}",
+            "num": 1
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 2
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 3
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 4
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 5
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 6
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 7
+          },
+          {
+            "CLSID": "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+            "num": 8
+          },
+          {
+            "CLSID": "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+            "num": 9
+          },
+          {
+            "CLSID": "{44EE8698-89F9-48EE-AF36-5FD31896A82A}",
+            "num": 10
+          }
+        ],
+        "tasks": [
+          1,
+          34
+        ]
+      }
+    ]
+  }
+}
