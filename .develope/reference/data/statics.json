@@ -1,0 +1,1843 @@
+[
+  {
+    "class": "_Command_Center",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": ".Command Center",
+    "name": "Command Center"
+  },
+  {
+    "class": "Airshow_Cone",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Airshow_Cone",
+    "name": "Airshow cone"
+  },
+  {
+    "class": "Airshow_Crowd",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Airshow_Crowd",
+    "name": "Airshow Crowd"
+  },
+  {
+    "class": "Barracks_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Barracks 2",
+    "name": "Barracks 2"
+  },
+  {
+    "class": "Boiler_house_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Boiler-house A",
+    "name": "Boiler-house A"
+  },
+  {
+    "class": "Cafe",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Cafe",
+    "name": "Cafe"
+  },
+  {
+    "class": "Chemical_tank_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Chemical tank A",
+    "name": "Chemical tank A"
+  },
+  {
+    "class": "Comms_tower_M",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Comms tower M",
+    "name": "Comms tower M"
+  },
+  {
+    "class": "Container_brown",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container brown",
+    "name": "Container brown"
+  },
+  {
+    "class": "Container_red_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container red 1",
+    "name": "Container red 1"
+  },
+  {
+    "class": "Container_red_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container red 2",
+    "name": "Container red 2"
+  },
+  {
+    "class": "Container_red_3",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container red 3",
+    "name": "Container red 3"
+  },
+  {
+    "class": "Container_white",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container white",
+    "name": "Container white"
+  },
+  {
+    "class": "Electric_power_box",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Electric power box",
+    "name": "Electric power box"
+  },
+  {
+    "class": "FARP_Ammo_Dump_Coating",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FARP Ammo Dump Coating",
+    "name": "FARP Ammo Storage"
+  },
+  {
+    "class": "FARP_CP_Blindage",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FARP CP Blindage",
+    "name": "FARP Command Post"
+  },
+  {
+    "class": "FARP_Fuel_Depot",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FARP Fuel Depot",
+    "name": "FARP Fuel Depot"
+  },
+  {
+    "class": "FARP_Tent",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FARP Tent",
+    "name": "FARP Tent"
+  },
+  {
+    "class": "Farm_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Farm A",
+    "name": "Farm A"
+  },
+  {
+    "class": "Farm_B",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Farm B",
+    "name": "Farm B"
+  },
+  {
+    "class": "Fuel_tank",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Fuel tank",
+    "name": "Fuel tank"
+  },
+  {
+    "class": "Garage_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Garage A",
+    "name": "Garage A"
+  },
+  {
+    "class": "Garage_B",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Garage B",
+    "name": "Garage B"
+  },
+  {
+    "class": "Garage_small_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Garage small A",
+    "name": "Garage small A"
+  },
+  {
+    "class": "Garage_small_B",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Garage small B",
+    "name": "Garage small B"
+  },
+  {
+    "class": "GeneratorF",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "GeneratorF",
+    "name": "GeneratorF"
+  },
+  {
+    "class": "Hangar_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Hangar A",
+    "name": "Hangar A"
+  },
+  {
+    "class": "Hangar_B",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Hangar B",
+    "name": "Hangar B"
+  },
+  {
+    "class": "Landmine",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Landmine",
+    "name": "Landmine"
+  },
+  {
+    "class": "Military_staff",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Military staff",
+    "name": "Military staff"
+  },
+  {
+    "class": "Oil_derrick",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Oil derrick",
+    "name": "Oil derrick"
+  },
+  {
+    "class": "Oil_platform",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Oil platform",
+    "name": "Oil platform"
+  },
+  {
+    "class": "Pump_station",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Pump station",
+    "name": "Pump station"
+  },
+  {
+    "class": "Railway_crossing_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Railway crossing A",
+    "name": "Railway crossing A"
+  },
+  {
+    "class": "Railway_crossing_B",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Railway crossing B",
+    "name": "Railway crossing B"
+  },
+  {
+    "class": "Railway_station",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Railway station",
+    "name": "Railway station"
+  },
+  {
+    "class": "Repair_workshop",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Repair workshop",
+    "name": "Repair workshop"
+  },
+  {
+    "class": "Restaurant_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Restaurant 1",
+    "name": "Restaurant 1"
+  },
+  {
+    "class": "Shelter_B",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Shelter B",
+    "name": "Shelter B"
+  },
+  {
+    "class": "Shelter",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Shelter",
+    "name": "Shelter"
+  },
+  {
+    "class": "Shop",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Shop",
+    "name": "Shop"
+  },
+  {
+    "class": "Small_house_1A_area",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small house 1A area",
+    "name": "Small house 1A area"
+  },
+  {
+    "class": "Small_house_1A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small house 1A",
+    "name": "Small house 1A"
+  },
+  {
+    "class": "Small_house_1B_area",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small house 1B area",
+    "name": "Small house 1B area"
+  },
+  {
+    "class": "Small_house_1B",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small house 1B",
+    "name": "Small house 1B"
+  },
+  {
+    "class": "Small_house_1C_area",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small house 1C area",
+    "name": "Small house 1C area"
+  },
+  {
+    "class": "Small_house_2C",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small house 2C",
+    "name": "Small house 2C"
+  },
+  {
+    "class": "Small_werehouse_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small werehouse 1",
+    "name": "Small warehouse 1"
+  },
+  {
+    "class": "Small_werehouse_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small werehouse 2",
+    "name": "Small warehouse 2"
+  },
+  {
+    "class": "Small_werehouse_3",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small werehouse 3",
+    "name": "Small warehouse 3"
+  },
+  {
+    "class": "Small_werehouse_4",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small werehouse 4",
+    "name": "Small warehouse 4"
+  },
+  {
+    "class": "Subsidiary_structure_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Subsidiary structure 1",
+    "name": "Subsidiary structure 1"
+  },
+  {
+    "class": "Subsidiary_structure_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Subsidiary structure 2",
+    "name": "Subsidiary structure 2"
+  },
+  {
+    "class": "Subsidiary_structure_3",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Subsidiary structure 3",
+    "name": "Subsidiary structure 3"
+  },
+  {
+    "class": "Subsidiary_structure_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Subsidiary structure A",
+    "name": "Subsidiary structure A"
+  },
+  {
+    "class": "Subsidiary_structure_B",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Subsidiary structure B",
+    "name": "Subsidiary structure B"
+  },
+  {
+    "class": "Subsidiary_structure_C",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Subsidiary structure C",
+    "name": "Subsidiary structure C"
+  },
+  {
+    "class": "Subsidiary_structure_D",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Subsidiary structure D",
+    "name": "Subsidiary structure D"
+  },
+  {
+    "class": "Subsidiary_structure_E",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Subsidiary structure E",
+    "name": "Subsidiary structure E"
+  },
+  {
+    "class": "Subsidiary_structure_F",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Subsidiary structure F",
+    "name": "Subsidiary structure F"
+  },
+  {
+    "class": "Subsidiary_structure_G",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Subsidiary structure G",
+    "name": "Subsidiary structure G"
+  },
+  {
+    "class": "Supermarket_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Supermarket A",
+    "name": "Supermarket A"
+  },
+  {
+    "class": "TV_tower",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "TV tower",
+    "name": "TV tower"
+  },
+  {
+    "class": "Tech_combine",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Tech combine",
+    "name": "Tech combine"
+  },
+  {
+    "class": "Tech_hangar_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Tech hangar A",
+    "name": "Tech hangar A"
+  },
+  {
+    "class": "WC",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "WC",
+    "name": "WC"
+  },
+  {
+    "class": "Water_tower_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Water tower A",
+    "name": "Water tower A"
+  },
+  {
+    "class": "Workshop_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Workshop A",
+    "name": "Workshop A"
+  },
+  {
+    "class": "Red_Flag",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Red_Flag",
+    "name": "Mark Flag Red"
+  },
+  {
+    "class": "White_Flag",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "White_Flag",
+    "name": "Mark Flag White"
+  },
+  {
+    "class": "Black_Tyre",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Black_Tyre",
+    "name": "Mark Tyre Black"
+  },
+  {
+    "class": "White_Tyre",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "White_Tyre",
+    "name": "Mark Tyre White"
+  },
+  {
+    "class": "Black_Tyre_RF",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Black_Tyre_RF",
+    "name": "Mark Tyre with Red Flag"
+  },
+  {
+    "class": "Black_Tyre_WF",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Black_Tyre_WF",
+    "name": "Mark Tyre with White Flag"
+  },
+  {
+    "class": "Windsock",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Windsock",
+    "name": "Windsock"
+  },
+  {
+    "class": "Beer_Bomb",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Beer Bomb",
+    "name": "Barrel"
+  },
+  {
+    "class": "Drop_Zone_Marker_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Drop Zone Marker A",
+    "name": "Drop Zone Marker A"
+  },
+  {
+    "class": "Drop_Zone_Marker_B",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Drop Zone Marker B",
+    "name": "Drop Zone Marker B"
+  },
+  {
+    "class": "Drop_Zone_Marker_C",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Drop Zone Marker C",
+    "name": "Drop Zone Marker C"
+  },
+  {
+    "class": "Drop_Zone_Marker_D",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Drop Zone Marker D",
+    "name": "Drop Zone Marker D"
+  },
+  {
+    "class": "Drop_Zone_Marker_E",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Drop Zone Marker E",
+    "name": "Drop Zone Marker E"
+  },
+  {
+    "class": "AM32a_60_01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "AM32a-60_01",
+    "name": "M92 AM32a-60-01"
+  },
+  {
+    "class": "AM32a_60_02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "AM32a-60_02",
+    "name": "M92 AM32a-60-02"
+  },
+  {
+    "class": "APFC_fuel",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "APFC fuel",
+    "name": "M92 APFC fuel"
+  },
+  {
+    "class": "B600",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "B600",
+    "name": "M92 B600"
+  },
+  {
+    "class": "Barrier_A",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Barrier A",
+    "name": "M92 Barrier A"
+  },
+  {
+    "class": "Barrier_B",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Barrier B",
+    "name": "M92 Barrier B"
+  },
+  {
+    "class": "Barrier_C",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Barrier C",
+    "name": "M92 Barrier C"
+  },
+  {
+    "class": "Barrier_D",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Barrier D",
+    "name": "M92 Barrier D"
+  },
+  {
+    "class": "BoomBarrier_open",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "BoomBarrier_open",
+    "name": "M92 Boom Barrier open"
+  },
+  {
+    "class": "BoomBarrier_closed",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "BoomBarrier_closed",
+    "name": "M92 Boom Barrier closed"
+  },
+  {
+    "class": "Building01_PBR",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Building01_PBR",
+    "name": "M92 Building01 PBR"
+  },
+  {
+    "class": "Building02_PBR",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Building02_PBR",
+    "name": "M92 Building02 PBR"
+  },
+  {
+    "class": "Building03_PBR",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Building03_PBR",
+    "name": "M92 Building03 PBR"
+  },
+  {
+    "class": "Building04_PBR",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Building04_PBR",
+    "name": "M92 Building04 PBR"
+  },
+  {
+    "class": "Building05_PBR",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Building05_PBR",
+    "name": "M92 Building05 PBR"
+  },
+  {
+    "class": "Building06_PBR",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Building06_PBR",
+    "name": "M92 Building06 PBR"
+  },
+  {
+    "class": "Building07_PBR",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Building07_PBR",
+    "name": "M92 Building07 PBR"
+  },
+  {
+    "class": "Building08_PBR",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Building08_PBR",
+    "name": "M92 Building08 PBR"
+  },
+  {
+    "class": "Cargo01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Cargo01",
+    "name": "M92 Cargo 01"
+  },
+  {
+    "class": "Cargo02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Cargo02",
+    "name": "M92 Cargo 02"
+  },
+  {
+    "class": "Cargo03",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Cargo03",
+    "name": "M92 Cargo 03"
+  },
+  {
+    "class": "Cargo04",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Cargo04",
+    "name": "M92 Cargo 04"
+  },
+  {
+    "class": "Cargo05",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Cargo05",
+    "name": "M92 Cargo 05"
+  },
+  {
+    "class": "Cargo06",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Cargo06",
+    "name": "M92 Cargo 06"
+  },
+  {
+    "class": "Camouflage01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Camouflage01",
+    "name": "M92 Camouflage 01"
+  },
+  {
+    "class": "Camouflage02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Camouflage02",
+    "name": "M92 Camouflage 02"
+  },
+  {
+    "class": "Camouflage03",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Camouflage03",
+    "name": "M92 Camouflage 03"
+  },
+  {
+    "class": "Camouflage04",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Camouflage04",
+    "name": "M92 Camouflage 04"
+  },
+  {
+    "class": "Camouflage05",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Camouflage05",
+    "name": "M92 Camouflage 05"
+  },
+  {
+    "class": "Camouflage06",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Camouflage06",
+    "name": "M92 Camouflage 06"
+  },
+  {
+    "class": "Camouflage07",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Camouflage07",
+    "name": "M92 Camouflage 07"
+  },
+  {
+    "class": "Cone01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Cone01",
+    "name": "M92 Cone 01"
+  },
+  {
+    "class": "Cone02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Cone02",
+    "name": "M92 Cone 02"
+  },
+  {
+    "class": "Container_10ft",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container_10ft",
+    "name": "M92 Container 10ft"
+  },
+  {
+    "class": "Container_20ft",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container_20ft",
+    "name": "M92 Container 20ft"
+  },
+  {
+    "class": "Container_40ft",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container_40ft",
+    "name": "M92 Container 40ft"
+  },
+  {
+    "class": "Container_watchtower",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container_watchtower",
+    "name": "M92 Container watchtower"
+  },
+  {
+    "class": "Container_watchtower_lights",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container_watchtower_lights",
+    "name": "M92 Container watchtower lights"
+  },
+  {
+    "class": "Container_office",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container_office",
+    "name": "M92 Container office"
+  },
+  {
+    "class": "Container_generator",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Container_generator",
+    "name": "M92 Container generator"
+  },
+  {
+    "class": "ElevatedPlatform_down",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "ElevatedPlatform_down",
+    "name": "M92 Elevated Platform down"
+  },
+  {
+    "class": "ElevatedPlatform_up",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "ElevatedPlatform_up",
+    "name": "M92 Elevated Platform up"
+  },
+  {
+    "class": "FireExtinguisher01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FireExtinguisher01",
+    "name": "M92 Fire Extinguisher 01"
+  },
+  {
+    "class": "FireExtinguisher02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FireExtinguisher02",
+    "name": "M92 Fire Extinguisher 02"
+  },
+  {
+    "class": "FireExtinguisher03",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FireExtinguisher03",
+    "name": "M92 Fire Extinguisher 03"
+  },
+  {
+    "class": "HESCO_generator",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "HESCO_generator",
+    "name": "M92 HESCO generator"
+  },
+  {
+    "class": "HESCO_post_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "HESCO_post_1",
+    "name": "M92 HESCO post 1"
+  },
+  {
+    "class": "HESCO_wallperimeter_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "HESCO_wallperimeter_1",
+    "name": "M92 HESCO wallperimeter 1"
+  },
+  {
+    "class": "HESCO_wallperimeter_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "HESCO_wallperimeter_2",
+    "name": "M92 HESCO wallperimeter 2"
+  },
+  {
+    "class": "HESCO_wallperimeter_3",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "HESCO_wallperimeter_3",
+    "name": "M92 HESCO wallperimeter 3"
+  },
+  {
+    "class": "HESCO_wallperimeter_4",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "HESCO_wallperimeter_4",
+    "name": "M92 HESCO wallperimeter 4"
+  },
+  {
+    "class": "HESCO_wallperimeter_5",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "HESCO_wallperimeter_5",
+    "name": "M92 HESCO wallperimeter 5"
+  },
+  {
+    "class": "HESCO_watchtower_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "HESCO_watchtower_1",
+    "name": "M92 HESCO watchtower 1"
+  },
+  {
+    "class": "HESCO_watchtower_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "HESCO_watchtower_2",
+    "name": "M92 HESCO watchtower 2"
+  },
+  {
+    "class": "HESCO_watchtower_3",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "HESCO_watchtower_3",
+    "name": "M92 HESCO watchtower 3"
+  },
+  {
+    "class": "Jerrycan",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Jerrycan",
+    "name": "M92 Jerrycan"
+  },
+  {
+    "class": "Ladder",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Ladder",
+    "name": "M92 Ladder"
+  },
+  {
+    "class": "LHD_LHA",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "LHD_LHA",
+    "name": "M92 LHD LHA"
+  },
+  {
+    "class": "M32_10C_01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "M32-10C_01",
+    "name": "M92 M32-10C 01"
+  },
+  {
+    "class": "M32_10C_02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "M32-10C_02",
+    "name": "M92 M32-10C 02"
+  },
+  {
+    "class": "M32_10C_03",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "M32-10C_03",
+    "name": "M92 M32-10C 03"
+  },
+  {
+    "class": "M32_10C_04",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "M32-10C_04",
+    "name": "M92 M32-10C 04"
+  },
+  {
+    "class": "MJ_1_01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "MJ-1_01",
+    "name": "M92 MJ-1 01"
+  },
+  {
+    "class": "MJ_1_02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "MJ-1_02",
+    "name": "M92 MJ-1 02"
+  },
+  {
+    "class": "NF_2_LightOn",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "NF-2_LightOn",
+    "name": "M92 NF-2 LightOn"
+  },
+  {
+    "class": "NF_2_LightOff01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "NF-2_LightOff01",
+    "name": "M92 NF-2 LightOff 01"
+  },
+  {
+    "class": "NF_2_LightOff02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "NF-2_LightOff02",
+    "name": "M92 NF-2 LightOff 02"
+  },
+  {
+    "class": "Oil_Barrel",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Oil Barrel",
+    "name": "M92 Oil barrel"
+  },
+  {
+    "class": "Pile_of_Woods",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Pile of Woods",
+    "name": "M92 Pile of woods"
+  },
+  {
+    "class": "P20_01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "P20_01",
+    "name": "M92 P20 01"
+  },
+  {
+    "class": "Revetment_x4",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Revetment_x4",
+    "name": "M92 Revetment x4"
+  },
+  {
+    "class": "Revetment_x8",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Revetment_x8",
+    "name": "M92 Revetment x8"
+  },
+  {
+    "class": "R11_volvo",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "r11_volvo",
+    "name": "M92 R11 Volvo"
+  },
+  {
+    "class": "Sandbag_01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_01",
+    "name": "M92 Sandbag 01"
+  },
+  {
+    "class": "Sandbag_02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_02",
+    "name": "M92 Sandbag 02"
+  },
+  {
+    "class": "Sandbag_03",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_03",
+    "name": "M92 Sandbag 03"
+  },
+  {
+    "class": "Sandbag_04",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_04",
+    "name": "M92 Sandbag 04"
+  },
+  {
+    "class": "Sandbag_05",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_05",
+    "name": "M92 Sandbag 05"
+  },
+  {
+    "class": "Sandbag_06",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_06",
+    "name": "M92 Sandbag 06"
+  },
+  {
+    "class": "Sandbag_07",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_07",
+    "name": "M92 Sandbag 07"
+  },
+  {
+    "class": "Sandbag_08",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_08",
+    "name": "M92 Sandbag 08"
+  },
+  {
+    "class": "Sandbag_09",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_09",
+    "name": "M92 Sandbag 09"
+  },
+  {
+    "class": "Sandbag_10",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_10",
+    "name": "M92 Sandbag 10"
+  },
+  {
+    "class": "Sandbag_11",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_11",
+    "name": "M92 Sandbag 11"
+  },
+  {
+    "class": "Sandbag_12",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_12",
+    "name": "M92 Sandbag 12"
+  },
+  {
+    "class": "Sandbag_13",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_13",
+    "name": "M92 Sandbag 13"
+  },
+  {
+    "class": "Sandbag_15",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_15",
+    "name": "M92 Sandbag 15"
+  },
+  {
+    "class": "Sandbag_16",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_16",
+    "name": "M92 Sandbag 16"
+  },
+  {
+    "class": "Sandbag_17",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Sandbag_17",
+    "name": "M92 Sandbag 17"
+  },
+  {
+    "class": "Shelter01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Shelter01",
+    "name": "M92 Shelter 01"
+  },
+  {
+    "class": "Shelter02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Shelter02",
+    "name": "M92 Shelter 02"
+  },
+  {
+    "class": "TugHarlan",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "TugHarlan",
+    "name": "M92 Tug Harlan"
+  },
+  {
+    "class": "Tent05",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Tent05",
+    "name": "M92 Tent 05"
+  },
+  {
+    "class": "Tent04",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Tent04",
+    "name": "M92 Tent 04"
+  },
+  {
+    "class": "Tent03",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Tent03",
+    "name": "M92 Tent 03"
+  },
+  {
+    "class": "Tent02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Tent02",
+    "name": "M92 Tent 02"
+  },
+  {
+    "class": "Tent01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Tent01",
+    "name": "M92 Tent 01"
+  },
+  {
+    "class": "Toolbox01",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Toolbox01",
+    "name": "M92 Toolbox 01"
+  },
+  {
+    "class": "Toolbox02",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Toolbox02",
+    "name": "M92 Toolbox 02"
+  },
+  {
+    "class": "Twall_x1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Twall_x1",
+    "name": "M92 Twall x1"
+  },
+  {
+    "class": "Twall_x6",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Twall_x6",
+    "name": "M92 Twall x6"
+  },
+  {
+    "class": "Twall_x6_3mts",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Twall_x6_3mts",
+    "name": "M92 Twall x6 3mts"
+  },
+  {
+    "class": "Orca",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Orca",
+    "name": "Orca Whale"
+  },
+  {
+    "class": "WindTurbine",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "WindTurbine",
+    "name": "Wind Turbine"
+  },
+  {
+    "class": "WindTurbine_11",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "WindTurbine_11",
+    "name": "Wind Turbine 2"
+  },
+  {
+    "class": "Billboard_motorized",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "billboard_motorized",
+    "name": "Billboard Motorized"
+  },
+  {
+    "class": "Stanley_LightHouse",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Stanley_LightHouse",
+    "name": "Stanley LightHouse"
+  },
+  {
+    "class": "X_345_Excavator",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "345 Excavator",
+    "name": "Excavator"
+  },
+  {
+    "class": "Tower_Crane",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Tower Crane",
+    "name": "TowerCrane"
+  },
+  {
+    "class": "Small_LightHouse",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Small_LightHouse",
+    "name": "Small_LightHouse"
+  },
+  {
+    "class": "Nodding_Donkey_Pump",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Nodding_Donkey_Pump",
+    "name": "Nodding Donkey Pump"
+  },
+  {
+    "class": "Offshore_WindTurbine",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "offshore WindTurbine",
+    "name": "Offshore Wind Turbine"
+  },
+  {
+    "class": "Offshore_WindTurbine2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "offshore WindTurbine2",
+    "name": "Offshore Wind Turbine 2"
+  },
+  {
+    "class": "FarpHide_small",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FarpHide_small",
+    "name": "FARP Hide Single Small"
+  },
+  {
+    "class": "FarpHide_Med",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FarpHide_Med",
+    "name": "FARP Hide Single Med"
+  },
+  {
+    "class": "FarpHide_Dsmall",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FarpHide_Dsmall",
+    "name": "FARP Hide Double Small"
+  },
+  {
+    "class": "FarpHide_Dmed",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FarpHide_Dmed",
+    "name": "FARP Hide Double Med"
+  },
+  {
+    "class": "Container_40ft_",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "container_40ft",
+    "name": "Container 40ft"
+  },
+  {
+    "class": "Container_20ft_",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "container_20ft",
+    "name": "Container 20ft"
+  },
+  {
+    "class": "FlagPole",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "FlagPole",
+    "name": "Flag Pole"
+  },
+  {
+    "class": "Warning_board_a",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "warning_board_a",
+    "name": "Warning Board: Spy Cannot Escape!"
+  },
+  {
+    "class": "Warning_board_b",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "warning_board_b",
+    "name": "Warning Board: Catch Spy!"
+  },
+  {
+    "class": "Ip_tower",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "ip_tower",
+    "name": "IP Tower"
+  },
+  {
+    "class": "Af_hq",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "af_hq",
+    "name": "HQ Building"
+  },
+  {
+    "class": "Belgian_gate",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Belgian gate",
+    "name": "Belgian gate"
+  },
+  {
+    "class": "Concertina_wire",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Concertina wire",
+    "name": "Concertina wire"
+  },
+  {
+    "class": "Tetrahydra",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Tetrahydra",
+    "name": "Tetrahydra"
+  },
+  {
+    "class": "Hemmkurvenhindernis",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Hemmkurvenhindernis",
+    "name": "Hemmkurvenhindernis"
+  },
+  {
+    "class": "Czech_hedgehogs_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Czech hedgehogs 1",
+    "name": "Czech hedgehogs 1"
+  },
+  {
+    "class": "Czech_hedgehogs_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Czech hedgehogs 2",
+    "name": "Czech hedgehogs 2"
+  },
+  {
+    "class": "Dragonteeth_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Dragonteeth 1",
+    "name": "Dragonteeth 1"
+  },
+  {
+    "class": "Dragonteeth_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Dragonteeth 2",
+    "name": "Dragonteeth 2"
+  },
+  {
+    "class": "Dragonteeth_3",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Dragonteeth 3",
+    "name": "Dragonteeth 3"
+  },
+  {
+    "class": "Dragonteeth_4",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Dragonteeth 4",
+    "name": "Dragonteeth 4"
+  },
+  {
+    "class": "Dragonteeth_5",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Dragonteeth 5",
+    "name": "Dragonteeth 5"
+  },
+  {
+    "class": "Fire_Control_Bunker",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Fire Control Bunker",
+    "name": "Fire control bunker"
+  },
+  {
+    "class": "Haystack_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Haystack 1",
+    "name": "Haystack 1"
+  },
+  {
+    "class": "Haystack_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Haystack 2",
+    "name": "Haystack 2"
+  },
+  {
+    "class": "Haystack_3",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Haystack 3",
+    "name": "Haystack 3"
+  },
+  {
+    "class": "Haystack_4",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Haystack 4",
+    "name": "Haystack 4"
+  },
+  {
+    "class": "Log_posts_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Log posts 1",
+    "name": "Log posts 1"
+  },
+  {
+    "class": "Log_posts_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Log posts 2",
+    "name": "Log posts 2"
+  },
+  {
+    "class": "Log_posts_3",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Log posts 3",
+    "name": "Log posts 3"
+  },
+  {
+    "class": "Log_ramps_1",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Log ramps 1",
+    "name": "Log ramps 1"
+  },
+  {
+    "class": "Log_ramps_2",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Log ramps 2",
+    "name": "Log ramps 2"
+  },
+  {
+    "class": "Log_ramps_3",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Log ramps 3",
+    "name": "Log ramps 3"
+  },
+  {
+    "class": "Siegfried_Line",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Siegfried Line",
+    "name": "Siegfried line"
+  },
+  {
+    "class": "Freya_Shelter_Brick",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Freya_Shelter_Brick",
+    "name": "Freya Shelter Brick"
+  },
+  {
+    "class": "Freya_Shelter_Concrete",
+    "category": "Fortification",
+    "base_type": "StaticType",
+    "id": "Freya_Shelter_Concrete",
+    "name": "Freya Shelter Concrete"
+  },
+  {
+    "class": "Building",
+    "category": "GroundObject",
+    "base_type": "StaticType",
+    "id": "Building",
+    "name": "Building"
+  },
+  {
+    "class": "Bridge",
+    "category": "GroundObject",
+    "base_type": "StaticType",
+    "id": "Bridge",
+    "name": "Bridge"
+  },
+  {
+    "class": "Transport",
+    "category": "GroundObject",
+    "base_type": "StaticType",
+    "id": "Transport",
+    "name": "Transport"
+  },
+  {
+    "class": "Train",
+    "category": "GroundObject",
+    "base_type": "StaticType",
+    "id": "Train",
+    "name": "Train"
+  },
+  {
+    "class": "Warehouse",
+    "category": "Warehouse",
+    "base_type": "StaticType",
+    "id": "Warehouse",
+    "name": "Warehouse"
+  },
+  {
+    "class": "Tank",
+    "category": "Warehouse",
+    "base_type": "StaticType",
+    "id": "Tank",
+    "name": "Tank 1"
+  },
+  {
+    "class": "_Ammunition_depot",
+    "category": "Warehouse",
+    "base_type": "StaticType",
+    "id": ".Ammunition depot",
+    "name": "Ammunition depot"
+  },
+  {
+    "class": "Tank_2",
+    "category": "Warehouse",
+    "base_type": "StaticType",
+    "id": "Tank 2",
+    "name": "Tank 2"
+  },
+  {
+    "class": "Tank_3",
+    "category": "Warehouse",
+    "base_type": "StaticType",
+    "id": "Tank 3",
+    "name": "Tank 3"
+  },
+  {
+    "class": "Barrels_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "barrels_cargo",
+    "name": "Barrels"
+  },
+  {
+    "class": "Fueltank_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "fueltank_cargo",
+    "name": "Fueltank"
+  },
+  {
+    "class": "Oiltank_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "oiltank_cargo",
+    "name": "Oiltank"
+  },
+  {
+    "class": "Uh1h_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "uh1h_cargo",
+    "name": "UH-1H cargo"
+  },
+  {
+    "class": "Ammo_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "ammo_cargo",
+    "name": "Ammo"
+  },
+  {
+    "class": "F_bar_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "f_bar_cargo",
+    "name": "F-shape barrier"
+  },
+  {
+    "class": "M117_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "m117_cargo",
+    "name": "M117 bombs"
+  },
+  {
+    "class": "Iso_container",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "iso_container",
+    "name": "ISO container"
+  },
+  {
+    "class": "Iso_container_small",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "iso_container_small",
+    "name": "ISO container small"
+  },
+  {
+    "class": "Container_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "container_cargo",
+    "name": "Container"
+  },
+  {
+    "class": "Tetrapod_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "tetrapod_cargo",
+    "name": "Tetrapod"
+  },
+  {
+    "class": "Pipes_big_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "pipes_big_cargo",
+    "name": "Pipes big"
+  },
+  {
+    "class": "Pipes_small_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "pipes_small_cargo",
+    "name": "Pipes small"
+  },
+  {
+    "class": "Trunks_small_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "trunks_small_cargo",
+    "name": "Trunks short"
+  },
+  {
+    "class": "Trunks_long_cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "trunks_long_cargo",
+    "name": "Trunks long"
+  },
+  {
+    "class": "Gbu_43b_airdrop",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "gbu_43b_airdrop",
+    "name": "GBU-43 MOAB"
+  },
+  {
+    "class": "Cds_crate",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "cds_crate",
+    "name": "CDS Crate"
+  },
+  {
+    "class": "Cds_barrels",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "cds_barrels",
+    "name": "CDS Barrels"
+  },
+  {
+    "class": "X_463_Pallet",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "463_Pallet",
+    "name": "463 Pallet"
+  },
+  {
+    "class": "M92_Concrete_Barrier_Cargo",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "M92_Concrete_Barrier_Cargo",
+    "name": "Concrete Barrier"
+  },
+  {
+    "class": "M92_MRE_Pallet",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "M92_MRE_Pallet",
+    "name": "MRE Pallet"
+  },
+  {
+    "class": "M92_Ammo_Pallet",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "M92_Ammo_Pallet",
+    "name": "Ammo Pallet"
+  },
+  {
+    "class": "M92_10Ft_Container",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "M92_10Ft_Container",
+    "name": "10ft Container"
+  },
+  {
+    "class": "L118",
+    "category": "Cargo",
+    "base_type": "StaticType",
+    "id": "l118",
+    "name": "L118 Light Artillery"
+  }
+]

@@ -1,0 +1,7133 @@
+[
+  {
+    "type": "A-10A",
+    "displayName": "A-10A",
+    "module": "A-10 Warthog",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 5029,
+    "flares": 120,
+    "chaff": 240,
+    "payload_preset_count": 15
+  },
+  {
+    "type": "A-10C",
+    "displayName": "A-10C",
+    "module": "A-10 Warthog",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 5029,
+    "flares": 120,
+    "chaff": 240,
+    "payload_preset_count": 61
+  },
+  {
+    "type": "A-10C_2",
+    "displayName": "A-10C II",
+    "module": "A-10 Warthog",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 5029,
+    "flares": 240,
+    "chaff": 240,
+    "payload_preset_count": 79
+  },
+  {
+    "type": "A-20G",
+    "displayName": "A-20G",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": null,
+    "fuel": 1500,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 1
+  },
+  {
+    "type": "A-50",
+    "displayName": "A-50",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "AWACS",
+        "OldID": "AWACS",
+        "WorldID": 14
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{D2BC159C-5B7D-40cf-92CD-44DF3E99FAA9}",
+        "Name": ""
+      }
+    ],
+    "fuel": 70000,
+    "flares": 192,
+    "chaff": 192,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "A6E",
+    "displayName": "A-6E",
+    "module": "A-6E AI by Heatblur Simulations",
+    "tasks": [
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Refueling",
+        "OldID": "Refueling",
+        "WorldID": 13
+      }
+    ],
+    "categories": null,
+    "fuel": 7229.8,
+    "flares": 30,
+    "chaff": 30,
+    "payload_preset_count": 24
+  },
+  {
+    "type": "AJS37",
+    "displayName": "AJS37",
+    "module": "AJS37 AI by Heatblur Simulations",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 4476,
+    "flares": 72,
+    "chaff": 1080,
+    "payload_preset_count": 34
+  },
+  {
+    "type": "AV8BNA",
+    "displayName": "AV-8B N/A",
+    "module": "AV-8B N/A AI by RAZBAM Sims",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      }
+    ],
+    "categories": [
+      "{C168A850-3C0B-436a-95B5-C4A015552560}",
+      "Plane"
+    ],
+    "fuel": 3519.423,
+    "flares": 120,
+    "chaff": 60,
+    "payload_preset_count": 35
+  },
+  {
+    "type": "An-26B",
+    "displayName": "An-26B",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      }
+    ],
+    "categories": [],
+    "fuel": 5500,
+    "flares": 384,
+    "chaff": 384,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "An-30M",
+    "displayName": "An-30M",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [],
+    "fuel": 5500,
+    "flares": 192,
+    "chaff": 192,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "B-17G",
+    "displayName": "B-17G",
+    "module": "WWII Armour and Technics",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      }
+    ],
+    "categories": null,
+    "fuel": 7600,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "B-1B",
+    "displayName": "B-1B",
+    "module": "HeavyMetalCore",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      }
+    ],
+    "categories": [],
+    "fuel": 88450,
+    "flares": 48,
+    "chaff": 480,
+    "payload_preset_count": 10
+  },
+  {
+    "type": "B-52H",
+    "displayName": "B-52H",
+    "module": "HeavyMetalCore",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      }
+    ],
+    "categories": [],
+    "fuel": 141135,
+    "flares": 192,
+    "chaff": 1125,
+    "payload_preset_count": 5
+  },
+  {
+    "type": "Bf-109K-4",
+    "displayName": "Bf 109 K-4",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 296,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 3
+  },
+  {
+    "type": "C-101CC",
+    "displayName": "C-101CC",
+    "module": "C-101 Aviojet by AvioDev",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1796,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 26
+  },
+  {
+    "type": "C-101EB",
+    "displayName": "C-101EB",
+    "module": "C-101 Aviojet by AvioDev",
+    "tasks": [
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1796,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 3
+  },
+  {
+    "type": "C-130",
+    "displayName": "C-130",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      }
+    ],
+    "categories": [],
+    "fuel": 20830,
+    "flares": 60,
+    "chaff": 120,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "C-130J-30",
+    "displayName": "C-130J-30",
+    "module": "C-130J AI",
+    "tasks": [
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Refueling",
+        "OldID": "Refueling",
+        "WorldID": 13
+      }
+    ],
+    "categories": [],
+    "fuel": 19692,
+    "flares": 200,
+    "chaff": 220,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "C-17A",
+    "displayName": "C-17A",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      }
+    ],
+    "categories": [],
+    "fuel": 132405,
+    "flares": 60,
+    "chaff": 120,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "C-47",
+    "displayName": "C-47",
+    "module": "WWII Armour and Technics",
+    "tasks": [
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      }
+    ],
+    "categories": null,
+    "fuel": 1470,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "Christen Eagle II",
+    "displayName": "Christen Eagle II",
+    "module": "Christen Eagle II AI by Magnitude 3 LLC",
+    "tasks": [
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [],
+    "fuel": 71,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 1
+  },
+  {
+    "type": "E-2C",
+    "displayName": "E-2D",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "AWACS",
+        "OldID": "AWACS",
+        "WorldID": 14
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{D2BC159C-5B7D-40cf-92CD-44DF3E99FAA9}",
+        "Name": ""
+      }
+    ],
+    "fuel": 5624,
+    "flares": 60,
+    "chaff": 120,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "E-3A",
+    "displayName": "E-3A",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "AWACS",
+        "OldID": "AWACS",
+        "WorldID": 14
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{D2BC159C-5B7D-40cf-92CD-44DF3E99FAA9}",
+        "Name": ""
+      }
+    ],
+    "fuel": 65000,
+    "flares": 60,
+    "chaff": 120,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "F-100D",
+    "displayName": "F-100D",
+    "module": "F-100D AI by GrinnelliDesigns",
+    "tasks": [
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": null,
+    "fuel": 3505.4,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 13
+  },
+  {
+    "type": "F-117A",
+    "displayName": "F-117A",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      }
+    ],
+    "categories": [],
+    "fuel": 8255,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 3
+  },
+  {
+    "type": "F-14A",
+    "displayName": "F-14A",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 7348,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 3
+  },
+  {
+    "type": "F-14A-135-GR",
+    "displayName": "F-14A Late",
+    "module": "F-14B AI by Heatblur Simulations",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      }
+    ],
+    "categories": null,
+    "fuel": 7348,
+    "flares": 60,
+    "chaff": 140,
+    "payload_preset_count": 52
+  },
+  {
+    "type": "F-14A-135-GR-Early",
+    "displayName": "F-14A",
+    "module": "F-14B AI by Heatblur Simulations",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      }
+    ],
+    "categories": null,
+    "fuel": 7348,
+    "flares": 60,
+    "chaff": 140,
+    "payload_preset_count": 52
+  },
+  {
+    "type": "F-14A-95-GR",
+    "displayName": "F-14A Export",
+    "module": "F-14B AI by Heatblur Simulations",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      }
+    ],
+    "categories": null,
+    "fuel": 7348,
+    "flares": 60,
+    "chaff": 140,
+    "payload_preset_count": 34
+  },
+  {
+    "type": "F-14B",
+    "displayName": "F-14B",
+    "module": "F-14B AI by Heatblur Simulations",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      }
+    ],
+    "categories": null,
+    "fuel": 7348,
+    "flares": 60,
+    "chaff": 140,
+    "payload_preset_count": 53
+  },
+  {
+    "type": "F-14BU",
+    "displayName": "F-14B(U)",
+    "module": "F-14B AI by Heatblur Simulations",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      }
+    ],
+    "categories": null,
+    "fuel": 7348,
+    "flares": 60,
+    "chaff": 140,
+    "payload_preset_count": 20
+  },
+  {
+    "type": "F-15C",
+    "displayName": "F-15C",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 6103,
+    "flares": 60,
+    "chaff": 120,
+    "payload_preset_count": 11
+  },
+  {
+    "type": "F-15E",
+    "displayName": "F-15E",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 10246,
+    "flares": 60,
+    "chaff": 120,
+    "payload_preset_count": 31
+  },
+  {
+    "type": "F-15ESE",
+    "displayName": "F-15E S4+",
+    "module": "F-15E AI by RAZBAM",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor",
+      "15"
+    ],
+    "fuel": 10245.529841877513,
+    "flares": 60,
+    "chaff": 120,
+    "payload_preset_count": 20
+  },
+  {
+    "type": "F-16A",
+    "displayName": "F-16A",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 3104,
+    "flares": 30,
+    "chaff": 60,
+    "payload_preset_count": 20
+  },
+  {
+    "type": "F-16A MLU",
+    "displayName": "F-16A MLU",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 3104,
+    "flares": 30,
+    "chaff": 60,
+    "payload_preset_count": 23
+  },
+  {
+    "type": "F-16C bl.50",
+    "displayName": "F-16C bl.50",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 3104,
+    "flares": 45,
+    "chaff": 90,
+    "payload_preset_count": 16
+  },
+  {
+    "type": "F-16C bl.52d",
+    "displayName": "F-16C bl.52d",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 3104,
+    "flares": 45,
+    "chaff": 90,
+    "payload_preset_count": 25
+  },
+  {
+    "type": "F-16C_50",
+    "displayName": "F-16CM bl.50",
+    "module": "F-16C bl.50 AI",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3249,
+    "flares": 60,
+    "chaff": 60,
+    "payload_preset_count": 52
+  },
+  {
+    "type": "F-4E",
+    "displayName": "F-4E",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 4864,
+    "flares": 30,
+    "chaff": 60,
+    "payload_preset_count": 15
+  },
+  {
+    "type": "F-4E-45MC",
+    "displayName": "F-4E-45MC",
+    "module": "F-4E AI by Heatblur Simulations",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 5510.5,
+    "flares": 30,
+    "chaff": 120,
+    "payload_preset_count": 155
+  },
+  {
+    "type": "F-5E",
+    "displayName": "F-5E",
+    "module": "F-5E/E-3 by Belsimtek",
+    "tasks": [
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1996,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 33
+  },
+  {
+    "type": "F-5E-3",
+    "displayName": "F-5E-3",
+    "module": "F-5E/E-3 by Belsimtek",
+    "tasks": [
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 2046,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 34
+  },
+  {
+    "type": "F-5E-3_FC",
+    "displayName": "F-5E FC",
+    "module": "F-5E/E-3 by Belsimtek",
+    "tasks": [
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 2046,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 32
+  },
+  {
+    "type": "F-86F Sabre",
+    "displayName": "F-86F",
+    "module": "F-86F Sabre AI by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1282,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 10
+  },
+  {
+    "type": "F-86F_FC",
+    "displayName": "F-86F FC",
+    "module": "F-86F Sabre AI by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1282,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 10
+  },
+  {
+    "type": "F/A-18A",
+    "displayName": "F/A-18A",
+    "module": "F/A-18C AI",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 4930,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 19
+  },
+  {
+    "type": "F/A-18C",
+    "displayName": "F/A-18C",
+    "module": "F/A-18C AI",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 4900,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 26
+  },
+  {
+    "type": "F4U-1D",
+    "displayName": "F4U-1D",
+    "module": "F4U-1D AI by Magnitude 3 LLC",
+    "tasks": [
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      }
+    ],
+    "categories": null,
+    "fuel": 662,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 10
+  },
+  {
+    "type": "F4U-1D_CW",
+    "displayName": "F4U-1D Mk.IV",
+    "module": "F4U-1D AI by Magnitude 3 LLC",
+    "tasks": [
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      }
+    ],
+    "categories": null,
+    "fuel": 662,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 10
+  },
+  {
+    "type": "FA-18C_hornet",
+    "displayName": "F/A-18C Lot 20",
+    "module": "F/A-18C AI",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 4900,
+    "flares": 60,
+    "chaff": 60,
+    "payload_preset_count": 27
+  },
+  {
+    "type": "FW-190A8",
+    "displayName": "Fw 190 A-8",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 409,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 13
+  },
+  {
+    "type": "FW-190D9",
+    "displayName": "Fw 190 D-9",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 388,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 4
+  },
+  {
+    "type": "Falcon_Gyrocopter",
+    "displayName": "Falcon Assault Gyrocopter",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      }
+    ],
+    "categories": null,
+    "fuel": 54,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "H-6J",
+    "displayName": "H-6J",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      }
+    ],
+    "categories": [],
+    "fuel": 25000,
+    "flares": 120,
+    "chaff": 120,
+    "payload_preset_count": 11
+  },
+  {
+    "type": "Hawk",
+    "displayName": "Hawk",
+    "module": "Hawk T.1A AI by VEAO Simulations",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1272,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "I-16",
+    "displayName": "I-16",
+    "module": "I-16 AI by OctopusG",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 191,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 5
+  },
+  {
+    "type": "IL-76MD",
+    "displayName": "IL-76MD",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      }
+    ],
+    "categories": [],
+    "fuel": 87584,
+    "flares": 96,
+    "chaff": 96,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "IL-78M",
+    "displayName": "IL-78M",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Refueling",
+        "OldID": "Refueling",
+        "WorldID": 13
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{8A302789-A55D-4897-B647-66493FA6826F}",
+        "Name": ""
+      }
+    ],
+    "fuel": 112000,
+    "flares": 96,
+    "chaff": 96,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "J-11A",
+    "displayName": "J-11A",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 9400,
+    "flares": 96,
+    "chaff": 96,
+    "payload_preset_count": 25
+  },
+  {
+    "type": "JF-17",
+    "displayName": "JF-17",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 2325,
+    "flares": 32,
+    "chaff": 36,
+    "payload_preset_count": 71
+  },
+  {
+    "type": "Ju-88A4",
+    "displayName": "Ju 88 A-4",
+    "module": "WWII Armour and Technics",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      }
+    ],
+    "categories": null,
+    "fuel": 2120,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "KC-135",
+    "displayName": "KC-135",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Refueling",
+        "OldID": "Refueling",
+        "WorldID": 13
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{8A302789-A55D-4897-B647-66493FA6826F}",
+        "Name": ""
+      }
+    ],
+    "fuel": 90700,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "KC130",
+    "displayName": "KC-130",
+    "module": "AV-8B N/A AI by RAZBAM Sims",
+    "tasks": [
+      {
+        "Name": "Refueling",
+        "OldID": "Refueling",
+        "WorldID": 13
+      }
+    ],
+    "categories": [
+      "{8A302789-A55D-4897-B647-66493FA6826F}",
+      "Tanker"
+    ],
+    "fuel": 30000,
+    "flares": 60,
+    "chaff": 120,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "KC135MPRS",
+    "displayName": "KC-135MPRS",
+    "module": "AV-8B N/A AI by RAZBAM Sims",
+    "tasks": [
+      {
+        "Name": "Refueling",
+        "OldID": "Refueling",
+        "WorldID": 13
+      }
+    ],
+    "categories": [
+      "{8A302789-A55D-4897-B647-66493FA6826F}",
+      "Tanker"
+    ],
+    "fuel": 90700,
+    "flares": 60,
+    "chaff": 120,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "KJ-2000",
+    "displayName": "KJ-2000",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "AWACS",
+        "OldID": "AWACS",
+        "WorldID": 14
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{D2BC159C-5B7D-40cf-92CD-44DF3E99FAA9}",
+        "Name": ""
+      }
+    ],
+    "fuel": 70000,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "L-39C",
+    "displayName": "L-39C",
+    "module": "L-39C/ZA by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 980,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 7
+  },
+  {
+    "type": "L-39ZA",
+    "displayName": "L-39ZA",
+    "module": "L-39C/ZA by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 980,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 18
+  },
+  {
+    "type": "La-7",
+    "displayName": "La-7",
+    "module": "La-7 AI by OctopusG",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 333,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 2
+  },
+  {
+    "type": "M-2000C",
+    "displayName": "M-2000C",
+    "module": "M-2000C AI by RAZBAM Sims",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3165,
+    "flares": 64,
+    "chaff": 234,
+    "payload_preset_count": 19
+  },
+  {
+    "type": "MB-339A",
+    "displayName": "MB-339A",
+    "module": "MB-339A/PAN AI by IndiaFoxtEcho",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 626,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 18
+  },
+  {
+    "type": "MB-339APAN",
+    "displayName": "MB-339A/PAN",
+    "module": "MB-339A/PAN AI by IndiaFoxtEcho",
+    "tasks": [
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 626,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 9
+  },
+  {
+    "type": "MQ-9 Reaper",
+    "displayName": "MQ-9 Reaper",
+    "module": "MQ-9 Reaper AI",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": null,
+    "fuel": 1300,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 4
+  },
+  {
+    "type": "MiG-15bis",
+    "displayName": "MiG-15bis",
+    "module": "MiG-15bis AI by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1172,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 7
+  },
+  {
+    "type": "MiG-15bis_FC",
+    "displayName": "MiG-15bis FC",
+    "module": "MiG-15bis AI by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1172,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 7
+  },
+  {
+    "type": "MiG-19P",
+    "displayName": "MiG-19P",
+    "module": "MiG-19P AI by RAZBAM",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor",
+      "15"
+    ],
+    "fuel": 1800,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 11
+  },
+  {
+    "type": "MiG-21Bis",
+    "displayName": "MiG-21Bis",
+    "module": "MiG-21Bis AI by Magnitude 3 LLC",
+    "tasks": [
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      }
+    ],
+    "categories": null,
+    "fuel": 2280,
+    "flares": 40,
+    "chaff": 18,
+    "payload_preset_count": 27
+  },
+  {
+    "type": "MiG-23MLD",
+    "displayName": "MiG-23MLD",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 3800,
+    "flares": 60,
+    "chaff": 60,
+    "payload_preset_count": 12
+  },
+  {
+    "type": "MiG-25PD",
+    "displayName": "MiG-25PD",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 15245,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 3
+  },
+  {
+    "type": "MiG-25RBT",
+    "displayName": "MiG-25RBT",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      }
+    ],
+    "categories": [],
+    "fuel": 15245,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 2
+  },
+  {
+    "type": "MiG-27K",
+    "displayName": "MiG-27K",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 4500,
+    "flares": 60,
+    "chaff": 60,
+    "payload_preset_count": 14
+  },
+  {
+    "type": "MiG-29 Fulcrum",
+    "displayName": "MiG-29A Fulcrum",
+    "module": "MiG-29 Fulcrum AI",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3376,
+    "flares": 30,
+    "chaff": 30,
+    "payload_preset_count": 45
+  },
+  {
+    "type": "MiG-29A",
+    "displayName": "MiG-29A",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 3376,
+    "flares": 30,
+    "chaff": 30,
+    "payload_preset_count": 19
+  },
+  {
+    "type": "MiG-29G",
+    "displayName": "MiG-29G",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 3376,
+    "flares": 30,
+    "chaff": 30,
+    "payload_preset_count": 11
+  },
+  {
+    "type": "MiG-29S",
+    "displayName": "MiG-29S",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 3493,
+    "flares": 30,
+    "chaff": 30,
+    "payload_preset_count": 22
+  },
+  {
+    "type": "MiG-31",
+    "displayName": "MiG-31",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 15500,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 4
+  },
+  {
+    "type": "Mirage 2000-5",
+    "displayName": "Mirage 2000-5",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 3160,
+    "flares": 16,
+    "chaff": 112,
+    "payload_preset_count": 8
+  },
+  {
+    "type": "Mirage-F1AD",
+    "displayName": "Mirage F1AD",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "Mirage-F1AZ",
+    "displayName": "Mirage F1AZ",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "Mirage-F1B",
+    "displayName": "Mirage F1B",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3045,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 16
+  },
+  {
+    "type": "Mirage-F1BD",
+    "displayName": "Mirage F1BD",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3045,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 15
+  },
+  {
+    "type": "Mirage-F1BE",
+    "displayName": "Mirage F1BE",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3045,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 21
+  },
+  {
+    "type": "Mirage-F1BQ",
+    "displayName": "Mirage F1BQ",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3045,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 15
+  },
+  {
+    "type": "Mirage-F1C",
+    "displayName": "Mirage F1C",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 16
+  },
+  {
+    "type": "Mirage-F1C-200",
+    "displayName": "Mirage F1C-200",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 16
+  },
+  {
+    "type": "Mirage-F1CE",
+    "displayName": "Mirage F1CE",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 21
+  },
+  {
+    "type": "Mirage-F1CG",
+    "displayName": "Mirage F1CG",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 17
+  },
+  {
+    "type": "Mirage-F1CH",
+    "displayName": "Mirage F1CH",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 16
+  },
+  {
+    "type": "Mirage-F1CJ",
+    "displayName": "Mirage F1CJ",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 16
+  },
+  {
+    "type": "Mirage-F1CK",
+    "displayName": "Mirage F1CK",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 16
+  },
+  {
+    "type": "Mirage-F1CR",
+    "displayName": "Mirage F1CR",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 12
+  },
+  {
+    "type": "Mirage-F1CT",
+    "displayName": "Mirage F1CT",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 15
+  },
+  {
+    "type": "Mirage-F1CZ",
+    "displayName": "Mirage F1CZ",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 16
+  },
+  {
+    "type": "Mirage-F1DDA",
+    "displayName": "Mirage F1DDA",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3045,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 15
+  },
+  {
+    "type": "Mirage-F1ED",
+    "displayName": "Mirage F1ED",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 15
+  },
+  {
+    "type": "Mirage-F1EDA",
+    "displayName": "Mirage F1EDA",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 15
+  },
+  {
+    "type": "Mirage-F1EE",
+    "displayName": "Mirage F1EE",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3246,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 22
+  },
+  {
+    "type": "Mirage-F1EH",
+    "displayName": "Mirage F1EH",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 16
+  },
+  {
+    "type": "Mirage-F1EQ",
+    "displayName": "Mirage F1EQ",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 0,
+    "chaff": 0,
+    "payload_preset_count": 15
+  },
+  {
+    "type": "Mirage-F1JA",
+    "displayName": "Mirage F1JA",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 14
+  },
+  {
+    "type": "Mirage-F1M-CE",
+    "displayName": "Mirage F1M (C.14 1-25/32-51)",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3356,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 20
+  },
+  {
+    "type": "Mirage-F1M-EE",
+    "displayName": "Mirage F1M (C.14 52-73)",
+    "module": "Mirage F1 Assets by Aerges",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 3246,
+    "flares": 15,
+    "chaff": 30,
+    "payload_preset_count": 20
+  },
+  {
+    "type": "MosquitoFBMkVI",
+    "displayName": "Mosquito FB Mk. VI",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1483.1,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 6
+  },
+  {
+    "type": "P-47D-30",
+    "displayName": "P-47D-30",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1007,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 4
+  },
+  {
+    "type": "P-47D-30bl1",
+    "displayName": "P-47D-30 (Early)",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1007,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 2
+  },
+  {
+    "type": "P-47D-40",
+    "displayName": "P-47D-40",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 1007,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 6
+  },
+  {
+    "type": "P-51D",
+    "displayName": "P-51D-25-NA",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 732,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 7
+  },
+  {
+    "type": "P-51D-30-NA",
+    "displayName": "P-51D-30-NA",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 732,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 7
+  },
+  {
+    "type": "QF-4E",
+    "displayName": "QF-4E",
+    "module": "F-4E AI by Heatblur Simulations",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 5510.5,
+    "flares": 30,
+    "chaff": 120,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "RQ-1A Predator",
+    "displayName": "MQ-1A Predator",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [],
+    "fuel": 490,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 1
+  },
+  {
+    "type": "S-3B",
+    "displayName": "S-3B",
+    "module": "HeavyMetalCore",
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{8A302789-A55D-4897-B647-66493FA6826F}",
+        "Name": ""
+      }
+    ],
+    "fuel": 5962,
+    "flares": 30,
+    "chaff": 30,
+    "payload_preset_count": 7
+  },
+  {
+    "type": "S-3B Tanker",
+    "displayName": "S-3B Tanker",
+    "module": "HeavyMetalCore",
+    "tasks": [
+      {
+        "Name": "Refueling",
+        "OldID": "Refueling",
+        "WorldID": 13
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{8A302789-A55D-4897-B647-66493FA6826F}",
+        "Name": ""
+      }
+    ],
+    "fuel": 6887,
+    "flares": 30,
+    "chaff": 30,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "SpitfireLFMkIX",
+    "displayName": "Spitfire LF Mk. IX",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 277.59853044,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "SpitfireLFMkIXCW",
+    "displayName": "Spitfire LF Mk. IX CW",
+    "module": "World War II AI Units by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+      "Interceptor"
+    ],
+    "fuel": 277.59853044,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "Su-17M4",
+    "displayName": "Su-17M4",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 3770,
+    "flares": 64,
+    "chaff": 64,
+    "payload_preset_count": 19
+  },
+  {
+    "type": "Su-24M",
+    "displayName": "Su-24M",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      }
+    ],
+    "categories": [],
+    "fuel": 11700,
+    "flares": 96,
+    "chaff": 96,
+    "payload_preset_count": 34
+  },
+  {
+    "type": "Su-24MR",
+    "displayName": "Su-24MR",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [],
+    "fuel": 11700,
+    "flares": 96,
+    "chaff": 96,
+    "payload_preset_count": 5
+  },
+  {
+    "type": "Su-25",
+    "displayName": "Su-25",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 2835,
+    "flares": 128,
+    "chaff": 128,
+    "payload_preset_count": 30
+  },
+  {
+    "type": "Su-25T",
+    "displayName": "Su-25T",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 3790,
+    "flares": 128,
+    "chaff": 128,
+    "payload_preset_count": 35
+  },
+  {
+    "type": "Su-25TM",
+    "displayName": "Su-25TM",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [],
+    "fuel": 3790,
+    "flares": 128,
+    "chaff": 128,
+    "payload_preset_count": 32
+  },
+  {
+    "type": "Su-27",
+    "displayName": "Su-27",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 9400,
+    "flares": 96,
+    "chaff": 96,
+    "payload_preset_count": 28
+  },
+  {
+    "type": "Su-30",
+    "displayName": "Su-30",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 9400,
+    "flares": 96,
+    "chaff": 96,
+    "payload_preset_count": 31
+  },
+  {
+    "type": "Su-33",
+    "displayName": "Su-33",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "Fighter Sweep",
+        "OldID": "Fighter Sweep",
+        "WorldID": 19
+      },
+      {
+        "Name": "Intercept",
+        "OldID": "Intercept",
+        "WorldID": 10
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      }
+    ],
+    "categories": [
+      {
+        "CLSID": "{78EFB7A2-FD52-4b57-A6A6-3BF0E1D6555F}",
+        "Name": "Interceptor"
+      }
+    ],
+    "fuel": 9500,
+    "flares": 48,
+    "chaff": 48,
+    "payload_preset_count": 23
+  },
+  {
+    "type": "Su-34",
+    "displayName": "Su-34",
+    "module": "Su-34 AI",
+    "tasks": [
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      }
+    ],
+    "categories": null,
+    "fuel": 9800,
+    "flares": 64,
+    "chaff": 64,
+    "payload_preset_count": 20
+  },
+  {
+    "type": "TF-51D",
+    "displayName": "TF-51D",
+    "module": "TF-51D Mustang AI by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": null,
+    "fuel": 501,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "Tornado GR4",
+    "displayName": "Tornado GR4",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [],
+    "fuel": 4663,
+    "flares": 45,
+    "chaff": 90,
+    "payload_preset_count": 5
+  },
+  {
+    "type": "Tornado IDS",
+    "displayName": "Tornado IDS",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [],
+    "fuel": 4663,
+    "flares": 45,
+    "chaff": 90,
+    "payload_preset_count": 8
+  },
+  {
+    "type": "Tu-142",
+    "displayName": "Tu-142",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": [],
+    "fuel": 87000,
+    "flares": 48,
+    "chaff": 48,
+    "payload_preset_count": 1
+  },
+  {
+    "type": "Tu-160",
+    "displayName": "Tu-160",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      }
+    ],
+    "categories": [],
+    "fuel": 171000,
+    "flares": 72,
+    "chaff": 72,
+    "payload_preset_count": 1
+  },
+  {
+    "type": "Tu-22M3",
+    "displayName": "Tu-22M3",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Anti-ship Strike",
+        "OldID": "Antiship Strike",
+        "WorldID": 30
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "Runway Attack",
+        "OldID": "Runway Attack",
+        "WorldID": 34
+      }
+    ],
+    "categories": [],
+    "fuel": 50000,
+    "flares": 48,
+    "chaff": 48,
+    "payload_preset_count": 6
+  },
+  {
+    "type": "Tu-95MS",
+    "displayName": "Tu-95MS [CH]",
+    "module": "Currenthill Assets Pack",
+    "tasks": [
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Pinpoint Strike",
+        "OldID": "Pinpoint Strike",
+        "WorldID": 33
+      },
+      {
+        "Name": "SEAD",
+        "OldID": "SEAD",
+        "WorldID": 29
+      }
+    ],
+    "categories": [
+      "Bomber"
+    ],
+    "fuel": 87000,
+    "flares": 48,
+    "chaff": 48,
+    "payload_preset_count": 6
+  },
+  {
+    "type": "WingLoong-I",
+    "displayName": "WingLoong-I",
+    "module": "China Asset Pack by Deka Ironwork Simulations and Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAS",
+        "OldID": "CAS",
+        "WorldID": 31
+      },
+      {
+        "Name": "Ground Attack",
+        "OldID": "Ground Attack",
+        "WorldID": 32
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      },
+      {
+        "Name": "Reconnaissance",
+        "OldID": "Reconnaissance",
+        "WorldID": 17
+      }
+    ],
+    "categories": null,
+    "fuel": 400,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 1
+  },
+  {
+    "type": "Yak-40",
+    "displayName": "Yak-40",
+    "module": null,
+    "tasks": [
+      {
+        "Name": "Transport",
+        "OldID": "Transport",
+        "WorldID": 35
+      }
+    ],
+    "categories": [],
+    "fuel": 3080,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  },
+  {
+    "type": "Yak-52",
+    "displayName": "Yak-52",
+    "module": "Yak-52 AI by Eagle Dynamics",
+    "tasks": [
+      {
+        "Name": "CAP",
+        "OldID": "CAP",
+        "WorldID": 11
+      },
+      {
+        "Name": "Escort",
+        "OldID": "Escort",
+        "WorldID": 18
+      },
+      {
+        "Name": "AFAC",
+        "OldID": "AFAC",
+        "WorldID": 16
+      }
+    ],
+    "categories": [],
+    "fuel": 87.84,
+    "flares": null,
+    "chaff": null,
+    "payload_preset_count": 0
+  }
+]

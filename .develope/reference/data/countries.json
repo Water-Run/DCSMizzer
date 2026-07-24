@@ -1,0 +1,554 @@
+[
+  {
+    "class": "Russia",
+    "id": 0,
+    "name": "Russia",
+    "shortname": "RUS"
+  },
+  {
+    "class": "Ukraine",
+    "id": 1,
+    "name": "Ukraine",
+    "shortname": "UKR"
+  },
+  {
+    "class": "USA",
+    "id": 2,
+    "name": "USA",
+    "shortname": "USA"
+  },
+  {
+    "class": "Turkey",
+    "id": 3,
+    "name": "Turkey",
+    "shortname": "TUR"
+  },
+  {
+    "class": "UK",
+    "id": 4,
+    "name": "UK",
+    "shortname": "UK"
+  },
+  {
+    "class": "France",
+    "id": 5,
+    "name": "France",
+    "shortname": "FRA"
+  },
+  {
+    "class": "Germany",
+    "id": 6,
+    "name": "Germany",
+    "shortname": "GER"
+  },
+  {
+    "class": "USAFAggressors",
+    "id": 7,
+    "name": "USAF Aggressors",
+    "shortname": "AUSAF"
+  },
+  {
+    "class": "Canada",
+    "id": 8,
+    "name": "Canada",
+    "shortname": "CAN"
+  },
+  {
+    "class": "Spain",
+    "id": 9,
+    "name": "Spain",
+    "shortname": "SPN"
+  },
+  {
+    "class": "TheNetherlands",
+    "id": 10,
+    "name": "The Netherlands",
+    "shortname": "NETH"
+  },
+  {
+    "class": "Belgium",
+    "id": 11,
+    "name": "Belgium",
+    "shortname": "BEL"
+  },
+  {
+    "class": "Norway",
+    "id": 12,
+    "name": "Norway",
+    "shortname": "NOR"
+  },
+  {
+    "class": "Denmark",
+    "id": 13,
+    "name": "Denmark",
+    "shortname": "DEN"
+  },
+  {
+    "class": "Israel",
+    "id": 15,
+    "name": "Israel",
+    "shortname": "ISR"
+  },
+  {
+    "class": "Georgia",
+    "id": 16,
+    "name": "Georgia",
+    "shortname": "GRG"
+  },
+  {
+    "class": "Insurgents",
+    "id": 17,
+    "name": "Insurgents",
+    "shortname": "INS"
+  },
+  {
+    "class": "Abkhazia",
+    "id": 18,
+    "name": "Abkhazia",
+    "shortname": "ABH"
+  },
+  {
+    "class": "SouthOssetia",
+    "id": 19,
+    "name": "South Ossetia",
+    "shortname": "RSO"
+  },
+  {
+    "class": "Italy",
+    "id": 20,
+    "name": "Italy",
+    "shortname": "ITA"
+  },
+  {
+    "class": "Australia",
+    "id": 21,
+    "name": "Australia",
+    "shortname": "AUS"
+  },
+  {
+    "class": "Switzerland",
+    "id": 22,
+    "name": "Switzerland",
+    "shortname": "SUI"
+  },
+  {
+    "class": "Austria",
+    "id": 23,
+    "name": "Austria",
+    "shortname": "AUT"
+  },
+  {
+    "class": "Belarus",
+    "id": 24,
+    "name": "Belarus",
+    "shortname": "BLR"
+  },
+  {
+    "class": "Bulgaria",
+    "id": 25,
+    "name": "Bulgaria",
+    "shortname": "BGR"
+  },
+  {
+    "class": "CzechRepublic",
+    "id": 26,
+    "name": "Czech Republic",
+    "shortname": "CZE"
+  },
+  {
+    "class": "China",
+    "id": 27,
+    "name": "China",
+    "shortname": "CHN"
+  },
+  {
+    "class": "Croatia",
+    "id": 28,
+    "name": "Croatia",
+    "shortname": "HRV"
+  },
+  {
+    "class": "Egypt",
+    "id": 29,
+    "name": "Egypt",
+    "shortname": "EGY"
+  },
+  {
+    "class": "Finland",
+    "id": 30,
+    "name": "Finland",
+    "shortname": "FIN"
+  },
+  {
+    "class": "Greece",
+    "id": 31,
+    "name": "Greece",
+    "shortname": "GRC"
+  },
+  {
+    "class": "Hungary",
+    "id": 32,
+    "name": "Hungary",
+    "shortname": "HUN"
+  },
+  {
+    "class": "India",
+    "id": 33,
+    "name": "India",
+    "shortname": "IND"
+  },
+  {
+    "class": "Iran",
+    "id": 34,
+    "name": "Iran",
+    "shortname": "IRN"
+  },
+  {
+    "class": "Iraq",
+    "id": 35,
+    "name": "Iraq",
+    "shortname": "IRQ"
+  },
+  {
+    "class": "Japan",
+    "id": 36,
+    "name": "Japan",
+    "shortname": "JPN"
+  },
+  {
+    "class": "Kazakhstan",
+    "id": 37,
+    "name": "Kazakhstan",
+    "shortname": "KAZ"
+  },
+  {
+    "class": "NorthKorea",
+    "id": 38,
+    "name": "North Korea",
+    "shortname": "PRK"
+  },
+  {
+    "class": "Pakistan",
+    "id": 39,
+    "name": "Pakistan",
+    "shortname": "PAK"
+  },
+  {
+    "class": "Poland",
+    "id": 40,
+    "name": "Poland",
+    "shortname": "POL"
+  },
+  {
+    "class": "Romania",
+    "id": 41,
+    "name": "Romania",
+    "shortname": "ROU"
+  },
+  {
+    "class": "SaudiArabia",
+    "id": 42,
+    "name": "Saudi Arabia",
+    "shortname": "SAU"
+  },
+  {
+    "class": "Serbia",
+    "id": 43,
+    "name": "Serbia",
+    "shortname": "SRB"
+  },
+  {
+    "class": "Slovakia",
+    "id": 44,
+    "name": "Slovakia",
+    "shortname": "SVK"
+  },
+  {
+    "class": "SouthKorea",
+    "id": 45,
+    "name": "South Korea",
+    "shortname": "KOR"
+  },
+  {
+    "class": "Sweden",
+    "id": 46,
+    "name": "Sweden",
+    "shortname": "SWE"
+  },
+  {
+    "class": "Syria",
+    "id": 47,
+    "name": "Syria",
+    "shortname": "SYR"
+  },
+  {
+    "class": "Yemen",
+    "id": 48,
+    "name": "Yemen",
+    "shortname": "YEM"
+  },
+  {
+    "class": "Vietnam",
+    "id": 49,
+    "name": "Vietnam",
+    "shortname": "VNM"
+  },
+  {
+    "class": "Venezuela",
+    "id": 50,
+    "name": "Venezuela",
+    "shortname": "VEN"
+  },
+  {
+    "class": "Tunisia",
+    "id": 51,
+    "name": "Tunisia",
+    "shortname": "TUN"
+  },
+  {
+    "class": "Thailand",
+    "id": 52,
+    "name": "Thailand",
+    "shortname": "THA"
+  },
+  {
+    "class": "Sudan",
+    "id": 53,
+    "name": "Sudan",
+    "shortname": "SDN"
+  },
+  {
+    "class": "Philippines",
+    "id": 54,
+    "name": "Philippines",
+    "shortname": "PHL"
+  },
+  {
+    "class": "Morocco",
+    "id": 55,
+    "name": "Morocco",
+    "shortname": "MAR"
+  },
+  {
+    "class": "Mexico",
+    "id": 56,
+    "name": "Mexico",
+    "shortname": "MEX"
+  },
+  {
+    "class": "Malaysia",
+    "id": 57,
+    "name": "Malaysia",
+    "shortname": "MYS"
+  },
+  {
+    "class": "Libya",
+    "id": 58,
+    "name": "Libya",
+    "shortname": "LBY"
+  },
+  {
+    "class": "Jordan",
+    "id": 59,
+    "name": "Jordan",
+    "shortname": "JOR"
+  },
+  {
+    "class": "Indonesia",
+    "id": 60,
+    "name": "Indonesia",
+    "shortname": "IDN"
+  },
+  {
+    "class": "Honduras",
+    "id": 61,
+    "name": "Honduras",
+    "shortname": "HND"
+  },
+  {
+    "class": "Ethiopia",
+    "id": 62,
+    "name": "Ethiopia",
+    "shortname": "ETH"
+  },
+  {
+    "class": "Chile",
+    "id": 63,
+    "name": "Chile",
+    "shortname": "CHL"
+  },
+  {
+    "class": "Brazil",
+    "id": 64,
+    "name": "Brazil",
+    "shortname": "BRA"
+  },
+  {
+    "class": "Bahrain",
+    "id": 65,
+    "name": "Bahrain",
+    "shortname": "BHR"
+  },
+  {
+    "class": "ThirdReich",
+    "id": 66,
+    "name": "Third Reich",
+    "shortname": "NZG"
+  },
+  {
+    "class": "Yugoslavia",
+    "id": 67,
+    "name": "Yugoslavia",
+    "shortname": "YUG"
+  },
+  {
+    "class": "USSR",
+    "id": 68,
+    "name": "USSR",
+    "shortname": "SUN"
+  },
+  {
+    "class": "ItalianSocialRepublic",
+    "id": 69,
+    "name": "Italian Social Republic",
+    "shortname": "RSI"
+  },
+  {
+    "class": "Algeria",
+    "id": 70,
+    "name": "Algeria",
+    "shortname": "DZA"
+  },
+  {
+    "class": "Kuwait",
+    "id": 71,
+    "name": "Kuwait",
+    "shortname": "KWT"
+  },
+  {
+    "class": "Qatar",
+    "id": 72,
+    "name": "Qatar",
+    "shortname": "QAT"
+  },
+  {
+    "class": "Oman",
+    "id": 73,
+    "name": "Oman",
+    "shortname": "OMN"
+  },
+  {
+    "class": "UnitedArabEmirates",
+    "id": 74,
+    "name": "United Arab Emirates",
+    "shortname": "ARE"
+  },
+  {
+    "class": "SouthAfrica",
+    "id": 75,
+    "name": "South Africa",
+    "shortname": "RSA"
+  },
+  {
+    "class": "Cuba",
+    "id": 76,
+    "name": "Cuba",
+    "shortname": "CUB"
+  },
+  {
+    "class": "Portugal",
+    "id": 77,
+    "name": "Portugal",
+    "shortname": "PRT"
+  },
+  {
+    "class": "GDR",
+    "id": 78,
+    "name": "GDR",
+    "shortname": "GDR"
+  },
+  {
+    "class": "Lebanon",
+    "id": 79,
+    "name": "Lebanon",
+    "shortname": "LBN"
+  },
+  {
+    "class": "CombinedJointTaskForcesBlue",
+    "id": 80,
+    "name": "Combined Joint Task Forces Blue",
+    "shortname": "BLUE"
+  },
+  {
+    "class": "CombinedJointTaskForcesRed",
+    "id": 81,
+    "name": "Combined Joint Task Forces Red",
+    "shortname": "RED"
+  },
+  {
+    "class": "UnitedNationsPeacekeepers",
+    "id": 82,
+    "name": "United Nations Peacekeepers",
+    "shortname": "UN"
+  },
+  {
+    "class": "Argentina",
+    "id": 83,
+    "name": "Argentina",
+    "shortname": "ARG"
+  },
+  {
+    "class": "Cyprus",
+    "id": 84,
+    "name": "Cyprus",
+    "shortname": "CYP"
+  },
+  {
+    "class": "Slovenia",
+    "id": 85,
+    "name": "Slovenia",
+    "shortname": "SVN"
+  },
+  {
+    "class": "Bolivia",
+    "id": 86,
+    "name": "Bolivia",
+    "shortname": "BOL"
+  },
+  {
+    "class": "Ghana",
+    "id": 87,
+    "name": "Ghana",
+    "shortname": "GHA"
+  },
+  {
+    "class": "Nigeria",
+    "id": 88,
+    "name": "Nigeria",
+    "shortname": "NGA"
+  },
+  {
+    "class": "Peru",
+    "id": 89,
+    "name": "Peru",
+    "shortname": "PER"
+  },
+  {
+    "class": "Ecuador",
+    "id": 90,
+    "name": "Ecuador",
+    "shortname": "ECU"
+  },
+  {
+    "class": "Afghanistan",
+    "id": 91,
+    "name": "Afghanistan",
+    "shortname": "AFG"
+  },
+  {
+    "class": "NewZealand",
+    "id": 92,
+    "name": "New Zealand",
+    "shortname": "NZL"
+  }
+]

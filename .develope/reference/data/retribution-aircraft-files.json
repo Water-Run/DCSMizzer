@@ -1,0 +1,1292 @@
+[
+  {
+    "file": "A-10A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "A-10C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "A-10C_2.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "A-20G.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "A-4E-C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "A-50.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "A-7E.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "A400M_Atlas.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "A6E.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "AH-1W.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "AH-64A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "AH-64D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "AH-64D_BLK_II.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "AJS37.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "AV8BNA.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "AWING.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "An-26B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "An-30M.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "B-17G.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "B-1B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "B-52H.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "B2_Spirit.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "B_47.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "B_58.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Bf-109K-4.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Bronco-OV-10A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "C-101CC.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "C-130.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "C-130J-30.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "C-17A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "C-47.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "C2A_Greyhound.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "C5_Galaxy.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CH-47D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CH-47Fbl1.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CH-53E.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CH_B-21.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CH_JAS39C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CH_Ka52.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CH_Ka52K.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CH_Su-27P1M.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CH_Tu-160M2.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CLP_E7A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "CORVETTE.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "E-2C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "E-3A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "EA-18G.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "EA_6B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-100D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-117A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-14A-135-GR-Early.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-14A-135-GR.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-14A-95-GR.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-14A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-14B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-15C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-15D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-15E.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-15ESE.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-16A MLU.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-16A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-16C_50.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-16D_50.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-16D_50_NS.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-16D_52.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-16D_52_NS.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-16D_Barak_30.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-16D_Barak_40.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-16I.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-22A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-4E-45MC.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-4E.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-5E-3.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-5E-3_FC.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-86F Sabre.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F-86F_FC.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F111C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F4U-1D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "FA-18C_hornet.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "FA-18E.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "FA-18ET.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "FA-18F.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "FA-18FT.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "FAUCON.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "FW-190A8.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "FW-190D9.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "F_A-18C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "H-6J.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "HKP15B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "HUNTER.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Hercules.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "I-16.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "IL-76MD.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "IL-78M.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "J-11A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "JAS39Gripen.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "JAS39Gripen_AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "JAS39Gripen_BVR.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "JF-17.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Ju-88A4.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "KC-135.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "KC130.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "KC130J.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "KC135MPRS.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "KC_10_Extender.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "KC_10_Extender_D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "KJ-2000.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Ka-50.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Ka-50_3.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "L-39ZA.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "M-2000C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MB-339A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MQ-9 Reaper.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mi-24P.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mi-24V.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mi-26.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mi-28N.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mi-8MT.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-15bis.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-15bis_FC.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-19P.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-21Bis.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-23MLD.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-25PD.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-25RBT.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-27K.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-29 Fulcrum.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-29A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-29G.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-29MU2.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-29S.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-31.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MiG-31BM.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mirage 2000-5.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mirage-F1B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mirage-F1BE.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mirage-F1C-200.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mirage-F1CE.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mirage-F1CT.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mirage-F1EE.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mirage-F1EQ.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mirage-F1M-CE.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Mirage-F1M-EE.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "MosquitoFBMkVI.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "OH-58D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "OH-6A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "OH58D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "P-47D-30.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "P-47D-30bl1.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "P-47D-40.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "P-51D-30-NA.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "P-51D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "P3C_Orion.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "RQ-1A Predator.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "S-3B Tanker.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "S-3B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "SA342L.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "SA342M.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "SA342Minigun.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "SA342Mistral.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "SH-60B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "SK-60.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "SpitfireLFMkIX.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "SpitfireLFMkIXCW.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-17M4.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-24M.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-24MR.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-24MU.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-25.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-25T.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-27.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-30.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-30MKA-AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-30MKA.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-30MKI-AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-30MKI.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-30MKM-AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-30MKM.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-30SM-AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-30SM.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-33.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-34.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-35S-AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-35S.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su-57.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su_15.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Su_15TM.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "TIE.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "TIE_INTER.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tornado GR4.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tornado IDS.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tornado_ADV.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tu-142.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tu-16.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tu-160.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tu-22M3.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tu-4K.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tu-95MS.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tu_126.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tu_128M.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Tu_95K.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "UH-1H.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "UH-60A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "UH-60L.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "V22_Osprey.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_A6A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F100.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F104C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F104G.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F104S.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F104S_AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F105D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F105G.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F106A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F106B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F35A.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F35A_AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F35B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F35B_AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F35C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F35C_AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F4B.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F4C.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F84G.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_F9F.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_MirageIIIC.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_MirageIIIC_AG.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_MirageIIIS.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "VSN_SEM.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "WingLoong-I.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "XWING.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "YWING.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Yak-40.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Yak-52.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "Yak_28.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "a_37_dragonfly.yaml",
+    "name": "\"A-37 Dragonfly\"",
+    "dcs_field": "id: a_37_dragonfly"
+  },
+  {
+    "file": "naboo_starfighter.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "sh2f.yaml",
+    "name": "\"SH-2F Seasprite\"",
+    "dcs_field": "id: sh2f"
+  },
+  {
+    "file": "tie_bomber_2.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "tu_22D.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "tu_22KD.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "uh2a.yaml",
+    "name": "\"UH-2A Seasprite\"",
+    "dcs_field": "id: uh2a"
+  },
+  {
+    "file": "uh2b.yaml",
+    "name": "\"UH-2B Seasprite\"",
+    "dcs_field": "id: uh2b"
+  },
+  {
+    "file": "uh2c.yaml",
+    "name": "\"UH-2C Seasprite\"",
+    "dcs_field": "id: uh2c"
+  },
+  {
+    "file": "vwv_a1_skyraider.yaml",
+    "name": null,
+    "dcs_field": "id: vwv_a1_skyraider"
+  },
+  {
+    "file": "vwv_ad4_skyraider.yaml",
+    "name": "Douglas A-1 Skyraider (AD-4)",
+    "dcs_field": "id: vwv_ad4_skyraider"
+  },
+  {
+    "file": "vwv_ch46d.yaml",
+    "name": "Boeing CH-46D Sea Knight",
+    "dcs_field": "id: vwv_ch46d"
+  },
+  {
+    "file": "vwv_ch46d_late.yaml",
+    "name": "Boeing CH-46D Sea Knight (Late Variant)",
+    "dcs_field": "id: vwv_ch46d_late"
+  },
+  {
+    "file": "vwv_crusader.yaml",
+    "name": null,
+    "dcs_field": "id: vwv_crusader"
+  },
+  {
+    "file": "vwv_crusader_np.yaml",
+    "name": "\"F-8E(FN) Crusader\"",
+    "dcs_field": "id: vwv_crusader_np"
+  },
+  {
+    "file": "vwv_ec-121.yaml",
+    "name": "\"Lockheed EC-121D Warning Star\"",
+    "dcs_field": "id: vwv_ec-121"
+  },
+  {
+    "file": "vwv_l-1049.yaml",
+    "name": "\"Lockheed L-1049G Constellation\"",
+    "dcs_field": "id: vwv_l-1049"
+  },
+  {
+    "file": "vwv_mig17f.yaml",
+    "name": null,
+    "dcs_field": "id: vwv_mig17f"
+  },
+  {
+    "file": "vwv_mig21mf.yaml",
+    "name": null,
+    "dcs_field": "id: vwv_mig21mf"
+  },
+  {
+    "file": "vwv_o-1.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "vwv_ra-5.yaml",
+    "name": null,
+    "dcs_field": null
+  },
+  {
+    "file": "vwv_rf101b.yaml",
+    "name": "McDonnell RF-101B Voodoo",
+    "dcs_field": "id: vwv_rf101b"
+  },
+  {
+    "file": "vwv_sh2f.yaml",
+    "name": null,
+    "dcs_field": null
+  }
+]

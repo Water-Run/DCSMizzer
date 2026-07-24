@@ -58,3 +58,12 @@ Suggested Soviet-side fields near East Berlin (from pydcs `germany/airports.py`)
 | 101 | Sperenberg | -257400.23 | -490766.81 | 78 |
 
 Use `airdromeId` = airport `id` in takeoff/landing waypoints.
+
+## Cross-project Vec3 vs mission y
+
+BriefingRoom airbase `pos.DCS` and MOOSE `COORDINATE` use DCS Vec3 (`x` north,
+`y` alt, `z` east). When writing `.miz` unit/waypoint fields, set mission `y`
+from Vec3 `z`. See `upstream/briefing-room.md` and `upstream/moose.md`.
+
+pydcs airport points and BriefingRoom airbase centers may differ by tens of
+meters (reference point choice); **airport `id` is the stable join key**.

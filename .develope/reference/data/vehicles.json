@@ -1,0 +1,3152 @@
+[
+  {
+    "class": "X_2B11_mortar",
+    "category": "Artillery",
+    "id": "2B11 mortar",
+    "name": "Mortar 2B11 120mm",
+    "detection_range": 0.0,
+    "threat_range": 7000.0,
+    "air_weapon_dist": 7000.0
+  },
+  {
+    "class": "SAU_Gvozdika",
+    "category": "Artillery",
+    "id": "SAU Gvozdika",
+    "name": "SPH 2S1 Gvozdika 122mm",
+    "detection_range": 0.0,
+    "threat_range": 15000.0,
+    "air_weapon_dist": 15000.0
+  },
+  {
+    "class": "SAU_Msta",
+    "category": "Artillery",
+    "id": "SAU Msta",
+    "name": "SPH 2S19 Msta 152mm",
+    "detection_range": 0.0,
+    "threat_range": 23500.0,
+    "air_weapon_dist": 23500.0
+  },
+  {
+    "class": "SAU_Akatsia",
+    "category": "Artillery",
+    "id": "SAU Akatsia",
+    "name": "SPH 2S3 Akatsia 152mm",
+    "detection_range": 0.0,
+    "threat_range": 17000.0,
+    "air_weapon_dist": 17000.0
+  },
+  {
+    "class": "SAU_2_C9",
+    "category": "Artillery",
+    "id": "SAU 2-C9",
+    "name": "SPM 2S9 Nona 120mm M",
+    "detection_range": 0.0,
+    "threat_range": 7000.0,
+    "air_weapon_dist": 7000.0
+  },
+  {
+    "class": "M_109",
+    "category": "Artillery",
+    "id": "M-109",
+    "name": "SPH M109 Paladin 155mm",
+    "detection_range": 0.0,
+    "threat_range": 22000.0,
+    "air_weapon_dist": 22000.0
+  },
+  {
+    "class": "SpGH_Dana",
+    "category": "Artillery",
+    "id": "SpGH_Dana",
+    "name": "SPH Dana vz77 152mm",
+    "detection_range": 0.0,
+    "threat_range": 18700.0,
+    "air_weapon_dist": 18700.0
+  },
+  {
+    "class": "Grad_FDDM",
+    "category": "Artillery",
+    "id": "Grad_FDDM",
+    "name": "Grad MRL FDDM (FC)",
+    "detection_range": 0.0,
+    "threat_range": 1000.0,
+    "air_weapon_dist": 1000.0
+  },
+  {
+    "class": "MLRS_FDDM",
+    "category": "Artillery",
+    "id": "MLRS FDDM",
+    "name": "MRLS FDDM (FC)",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "Grad_URAL",
+    "category": "Artillery",
+    "id": "Grad-URAL",
+    "name": "MLRS BM-21 Grad 122mm",
+    "detection_range": 0.0,
+    "threat_range": 19000.0,
+    "air_weapon_dist": 19000.0
+  },
+  {
+    "class": "Uragan_BM_27",
+    "category": "Artillery",
+    "id": "Uragan_BM-27",
+    "name": "MLRS 9K57 Uragan BM-27 220mm",
+    "detection_range": 0.0,
+    "threat_range": 35800.0,
+    "air_weapon_dist": 35800.0
+  },
+  {
+    "class": "Smerch",
+    "category": "Artillery",
+    "id": "Smerch",
+    "name": "MLRS 9A52 Smerch CM 300mm",
+    "detection_range": 0.0,
+    "threat_range": 70000.0,
+    "air_weapon_dist": 70000.0
+  },
+  {
+    "class": "Smerch_HE",
+    "category": "Artillery",
+    "id": "Smerch_HE",
+    "name": "MLRS 9A52 Smerch HE 300mm",
+    "detection_range": 0.0,
+    "threat_range": 70000.0,
+    "air_weapon_dist": 70000.0
+  },
+  {
+    "class": "MLRS",
+    "category": "Artillery",
+    "id": "MLRS",
+    "name": "MLRS M270 227mm",
+    "detection_range": 0.0,
+    "threat_range": 32000.0,
+    "air_weapon_dist": 32000.0
+  },
+  {
+    "class": "CHAP_TOS1A",
+    "category": "Artillery",
+    "id": "CHAP_TOS1A",
+    "name": "MLRS TOS-1A Solntsepyok [CH]",
+    "detection_range": 0.0,
+    "threat_range": 6000.0,
+    "air_weapon_dist": 6000.0
+  },
+  {
+    "class": "CHAP_M142_GMLRS_M30",
+    "category": "Artillery",
+    "id": "CHAP_M142_GMLRS_M30",
+    "name": "MLRS M142 HIMARS GMLRS CM [CH]",
+    "detection_range": 0.0,
+    "threat_range": 70000.0,
+    "air_weapon_dist": 70000.0
+  },
+  {
+    "class": "CHAP_M142_GMLRS_M31",
+    "category": "Artillery",
+    "id": "CHAP_M142_GMLRS_M31",
+    "name": "MLRS M142 HIMARS GMLRS HE [CH]",
+    "detection_range": 0.0,
+    "threat_range": 70000.0,
+    "air_weapon_dist": 70000.0
+  },
+  {
+    "class": "CHAP_M142_ATACMS_M39A1",
+    "category": "Artillery",
+    "id": "CHAP_M142_ATACMS_M39A1",
+    "name": "MLRS M142 HIMARS ATACMS CM [CH]",
+    "detection_range": 0.0,
+    "threat_range": 300000.0,
+    "air_weapon_dist": 300000.0
+  },
+  {
+    "class": "CHAP_M142_ATACMS_M48",
+    "category": "Artillery",
+    "id": "CHAP_M142_ATACMS_M48",
+    "name": "MLRS M142 HIMARS ATACMS HE [CH]",
+    "detection_range": 0.0,
+    "threat_range": 300000.0,
+    "air_weapon_dist": 300000.0
+  },
+  {
+    "class": "L118_Unit",
+    "category": "Artillery",
+    "id": "L118_Unit",
+    "name": "L118 Light Artillery Gun",
+    "detection_range": 17500.0,
+    "threat_range": 17200.0,
+    "air_weapon_dist": 17200.0
+  },
+  {
+    "class": "HL_B8M1",
+    "category": "Artillery",
+    "id": "HL_B8M1",
+    "name": "MLRS HL with B8M1 80mm",
+    "detection_range": 5000.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 5000.0
+  },
+  {
+    "class": "Tt_B8M1",
+    "category": "Artillery",
+    "id": "tt_B8M1",
+    "name": "MLRS LC with B8M1 80mm",
+    "detection_range": 5000.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 5000.0
+  },
+  {
+    "class": "T155_Firtina",
+    "category": "Artillery",
+    "id": "T155_Firtina",
+    "name": "SPH T155 Firtina 155mm",
+    "detection_range": 0.0,
+    "threat_range": 41000.0,
+    "air_weapon_dist": 41000.0
+  },
+  {
+    "class": "PLZ05",
+    "category": "Artillery",
+    "id": "PLZ05",
+    "name": "PLZ-05",
+    "detection_range": 0.0,
+    "threat_range": 23500.0,
+    "air_weapon_dist": 23500.0
+  },
+  {
+    "class": "Wespe124",
+    "category": "Artillery",
+    "id": "Wespe124",
+    "name": "SPH Sd.Kfz.124 Wespe 105mm",
+    "detection_range": 0.0,
+    "threat_range": 10500.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Pak40",
+    "category": "Artillery",
+    "id": "Pak40",
+    "name": "FH Pak 40 75mm",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "LeFH_18_40_105",
+    "category": "Artillery",
+    "id": "LeFH_18-40-105",
+    "name": "FH LeFH-18 105mm",
+    "detection_range": 0.0,
+    "threat_range": 10500.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M12_GMC",
+    "category": "Artillery",
+    "id": "M12_GMC",
+    "name": "SPH M12 GMC 155mm",
+    "detection_range": 0.0,
+    "threat_range": 18300.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M2A1_105",
+    "category": "Artillery",
+    "id": "M2A1-105",
+    "name": "FH M2A1 105mm",
+    "detection_range": 0.0,
+    "threat_range": 11500.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Paratrooper_RPG_16",
+    "category": "Infantry",
+    "id": "Paratrooper RPG-16",
+    "name": "Paratrooper RPG-16",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Paratrooper_AKS_74",
+    "category": "Infantry",
+    "id": "Paratrooper AKS-74",
+    "name": "Paratrooper AKS",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Infantry_AK_Ins",
+    "category": "Infantry",
+    "id": "Infantry AK Ins",
+    "name": "Insurgent AKM",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Soldier_AK",
+    "category": "Infantry",
+    "id": "Soldier AK",
+    "name": "Infantry AK-74",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Infantry_AK",
+    "category": "Infantry",
+    "id": "Infantry AK",
+    "name": "Infantry AK-74 Rus ver1",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Soldier_M249",
+    "category": "Infantry",
+    "id": "Soldier M249",
+    "name": "Infantry M249",
+    "detection_range": 0.0,
+    "threat_range": 700.0,
+    "air_weapon_dist": 700.0
+  },
+  {
+    "class": "Soldier_M4",
+    "category": "Infantry",
+    "id": "Soldier M4",
+    "name": "Infantry M4",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Soldier_M4_GRG",
+    "category": "Infantry",
+    "id": "Soldier M4 GRG",
+    "name": "Infantry M4 Georgia",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Soldier_RPG",
+    "category": "Infantry",
+    "id": "Soldier RPG",
+    "name": "Infantry RPG",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Infantry_AK_ver2",
+    "category": "Infantry",
+    "id": "Infantry AK ver2",
+    "name": "Infantry AK-74 Rus ver2",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Infantry_AK_ver3",
+    "category": "Infantry",
+    "id": "Infantry AK ver3",
+    "name": "Infantry AK-74 Rus ver3",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "JTAC",
+    "category": "Infantry",
+    "id": "JTAC",
+    "name": "JTAC",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Soldier_mauser98",
+    "category": "Infantry",
+    "id": "soldier_mauser98",
+    "name": "Infantry Mauser 98",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Soldier_wwii_br_01",
+    "category": "Infantry",
+    "id": "soldier_wwii_br_01",
+    "name": "Infantry SMLE No.4 Mk-1",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "Soldier_wwii_us",
+    "category": "Infantry",
+    "id": "soldier_wwii_us",
+    "name": "Infantry M1 Garand",
+    "detection_range": 0.0,
+    "threat_range": 500.0,
+    "air_weapon_dist": 500.0
+  },
+  {
+    "class": "X_2S6_Tunguska",
+    "category": "AirDefence",
+    "id": "2S6 Tunguska",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Kub_2P25_ln",
+    "category": "AirDefence",
+    "id": "Kub 2P25 ln",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "X_5p73_s_125_ln",
+    "category": "AirDefence",
+    "id": "5p73 s-125 ln",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "SA_11_Buk_LN_9A310M1",
+    "category": "AirDefence",
+    "id": "SA-11 Buk LN 9A310M1",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Osa_9A33_ln",
+    "category": "AirDefence",
+    "id": "Osa 9A33 ln",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Tor_9A331",
+    "category": "AirDefence",
+    "id": "Tor 9A331",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Strela_10M3",
+    "category": "AirDefence",
+    "id": "Strela-10M3",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Strela_1_9P31",
+    "category": "AirDefence",
+    "id": "Strela-1 9P31",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "SA_11_Buk_CC_9S470M1",
+    "category": "AirDefence",
+    "id": "SA-11 Buk CC 9S470M1",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Patriot_AMG",
+    "category": "AirDefence",
+    "id": "Patriot AMG",
+    "name": "SAM Patriot CR (AMG AN/MRC-137)",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Patriot_ECS",
+    "category": "AirDefence",
+    "id": "Patriot ECS",
+    "name": "SAM Patriot ECS",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Gepard",
+    "category": "AirDefence",
+    "id": "Gepard",
+    "name": "SPAAA Gepard",
+    "detection_range": 15000.0,
+    "threat_range": 4000.0,
+    "air_weapon_dist": 4000.0
+  },
+  {
+    "class": "Hawk_pcp",
+    "category": "AirDefence",
+    "id": "Hawk pcp",
+    "name": "SAM Hawk Platoon Command Post (PCP)",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Vulcan",
+    "category": "AirDefence",
+    "id": "Vulcan",
+    "name": "SPAAA Vulcan M163",
+    "detection_range": 5000.0,
+    "threat_range": 2000.0,
+    "air_weapon_dist": 2000.0
+  },
+  {
+    "class": "Hawk_ln",
+    "category": "AirDefence",
+    "id": "Hawk ln",
+    "name": "SAM Hawk LN M192",
+    "detection_range": 0.0,
+    "threat_range": 45000.0,
+    "air_weapon_dist": 45000.0
+  },
+  {
+    "class": "M48_Chaparral",
+    "category": "AirDefence",
+    "id": "M48 Chaparral",
+    "name": "SAM Chaparral M48",
+    "detection_range": 10000.0,
+    "threat_range": 8500.0,
+    "air_weapon_dist": 8500.0
+  },
+  {
+    "class": "M6_Linebacker",
+    "category": "AirDefence",
+    "id": "M6 Linebacker",
+    "name": "SAM Linebacker - Bradley M6",
+    "detection_range": 8000.0,
+    "threat_range": 4500.0,
+    "air_weapon_dist": 4500.0
+  },
+  {
+    "class": "Patriot_ln",
+    "category": "AirDefence",
+    "id": "Patriot ln",
+    "name": "SAM Patriot LN",
+    "detection_range": 0.0,
+    "threat_range": 100000.0,
+    "air_weapon_dist": 100000.0
+  },
+  {
+    "class": "M1097_Avenger",
+    "category": "AirDefence",
+    "id": "M1097 Avenger",
+    "name": "SAM Avenger (Stinger)",
+    "detection_range": 5200.0,
+    "threat_range": 4500.0,
+    "air_weapon_dist": 4500.0
+  },
+  {
+    "class": "Patriot_EPP",
+    "category": "AirDefence",
+    "id": "Patriot EPP",
+    "name": "SAM Patriot EPP-III",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Patriot_cp",
+    "category": "AirDefence",
+    "id": "Patriot cp",
+    "name": "SAM Patriot C2 ICC",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Roland_ADS",
+    "category": "AirDefence",
+    "id": "Roland ADS",
+    "name": "SAM Roland ADS",
+    "detection_range": 12000.0,
+    "threat_range": 8000.0,
+    "air_weapon_dist": 8000.0
+  },
+  {
+    "class": "Soldier_stinger",
+    "category": "AirDefence",
+    "id": "Soldier stinger",
+    "name": "MANPADS Stinger",
+    "detection_range": 5000.0,
+    "threat_range": 4500.0,
+    "air_weapon_dist": 4500.0
+  },
+  {
+    "class": "Stinger_comm_dsr",
+    "category": "AirDefence",
+    "id": "Stinger comm dsr",
+    "name": "MANPADS Stinger C2 Desert",
+    "detection_range": 5000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Stinger_comm",
+    "category": "AirDefence",
+    "id": "Stinger comm",
+    "name": "MANPADS Stinger C2",
+    "detection_range": 5000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "ZSU_23_4_Shilka",
+    "category": "AirDefence",
+    "id": "ZSU-23-4 Shilka",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "ZU_23_Emplacement_Closed",
+    "category": "AirDefence",
+    "id": "ZU-23 Emplacement Closed",
+    "name": "AAA ZU-23 Closed Emplacement",
+    "detection_range": 5000.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "ZU_23_Emplacement",
+    "category": "AirDefence",
+    "id": "ZU-23 Emplacement",
+    "name": "AAA ZU-23 Emplacement",
+    "detection_range": 5000.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "Ural_375_ZU_23",
+    "category": "AirDefence",
+    "id": "Ural-375 ZU-23",
+    "name": "AAA ZU-23 on Ural-4320",
+    "detection_range": 5000.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "ZU_23_Closed_Insurgent",
+    "category": "AirDefence",
+    "id": "ZU-23 Closed Insurgent",
+    "name": "AAA ZU-23 Insurgent Closed Emplacement",
+    "detection_range": 5000.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "Ural_375_ZU_23_Insurgent",
+    "category": "AirDefence",
+    "id": "Ural-375 ZU-23 Insurgent",
+    "name": "AAA ZU-23 on Ural-4320 Insurgent",
+    "detection_range": 5000.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "ZU_23_Insurgent",
+    "category": "AirDefence",
+    "id": "ZU-23 Insurgent",
+    "name": "AAA ZU-23 Insurgent Emplacement",
+    "detection_range": 5000.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "SA_18_Igla_manpad",
+    "category": "AirDefence",
+    "id": "SA-18 Igla manpad",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "SA_18_Igla_comm",
+    "category": "AirDefence",
+    "id": "SA-18 Igla comm",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "SA_18_Igla_S_manpad",
+    "category": "AirDefence",
+    "id": "SA-18 Igla-S manpad",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "SA_18_Igla_S_comm",
+    "category": "AirDefence",
+    "id": "SA-18 Igla-S comm",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Igla_manpad_INS",
+    "category": "AirDefence",
+    "id": "Igla manpad INS",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "X_1L13_EWR",
+    "category": "AirDefence",
+    "id": "1L13 EWR",
+    "name": "EWR 1L13",
+    "detection_range": 300000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Kub_1S91_str",
+    "category": "AirDefence",
+    "id": "Kub 1S91 str",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "X_55G6_EWR",
+    "category": "AirDefence",
+    "id": "55G6 EWR",
+    "name": "EWR 55G6",
+    "detection_range": 400000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "SA_11_Buk_SR_9S18M1",
+    "category": "AirDefence",
+    "id": "SA-11 Buk SR 9S18M1",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Dog_Ear_radar",
+    "category": "AirDefence",
+    "id": "Dog Ear radar",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Hawk_tr",
+    "category": "AirDefence",
+    "id": "Hawk tr",
+    "name": "SAM Hawk TR (AN/MPQ-46)",
+    "detection_range": 90000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Hawk_sr",
+    "category": "AirDefence",
+    "id": "Hawk sr",
+    "name": "SAM Hawk SR (AN/MPQ-50)",
+    "detection_range": 90000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Patriot_str",
+    "category": "AirDefence",
+    "id": "Patriot str",
+    "name": "SAM Patriot STR",
+    "detection_range": 160000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Hawk_cwar",
+    "category": "AirDefence",
+    "id": "Hawk cwar",
+    "name": "SAM Hawk CWAR AN/MPQ-55",
+    "detection_range": 70000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "P_19_s_125_sr",
+    "category": "AirDefence",
+    "id": "p-19 s-125 sr",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Roland_Radar",
+    "category": "AirDefence",
+    "id": "Roland Radar",
+    "name": "SAM Roland EWR",
+    "detection_range": 35000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Snr_s_125_tr",
+    "category": "AirDefence",
+    "id": "snr s-125 tr",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "P14_SR",
+    "category": "AirDefence",
+    "id": "P14_SR",
+    "name": "SAM SA-5 S-200 P-14 'Tall king' SR",
+    "detection_range": 400000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "CHAP_PantsirS1",
+    "category": "AirDefence",
+    "id": "CHAP_PantsirS1",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "CHAP_IRISTSLM_STR",
+    "category": "AirDefence",
+    "id": "CHAP_IRISTSLM_STR",
+    "name": "SAM IRIS-T SLM STR [CH]",
+    "detection_range": 250000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "CHAP_IRISTSLM_LN",
+    "category": "AirDefence",
+    "id": "CHAP_IRISTSLM_LN",
+    "name": "SAM IRIS-T SLM LN [CH]",
+    "detection_range": 0.0,
+    "threat_range": 40000.0,
+    "air_weapon_dist": 40000.0
+  },
+  {
+    "class": "CHAP_IRISTSLM_CP",
+    "category": "AirDefence",
+    "id": "CHAP_IRISTSLM_CP",
+    "name": "SAM IRIS-T SLM C2 [CH]",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "CHAP_TorM2",
+    "category": "AirDefence",
+    "id": "CHAP_TorM2",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "HEMTT_C_RAM_Phalanx",
+    "category": "AirDefence",
+    "id": "HEMTT_C-RAM_Phalanx",
+    "name": "LPWS C-RAM",
+    "detection_range": 10000.0,
+    "threat_range": 2000.0,
+    "air_weapon_dist": 2000.0
+  },
+  {
+    "class": "S_300PS_5P85C_ln",
+    "category": "AirDefence",
+    "id": "S-300PS 5P85C ln",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "S_300PS_5P85D_ln",
+    "category": "AirDefence",
+    "id": "S-300PS 5P85D ln",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "S_300PS_54K6_cp",
+    "category": "AirDefence",
+    "id": "S-300PS 54K6 cp",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "S_300PS_40B6M_tr",
+    "category": "AirDefence",
+    "id": "S-300PS 40B6M tr",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "S_300PS_64H6E_sr",
+    "category": "AirDefence",
+    "id": "S-300PS 64H6E sr",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "S_300PS_40B6MD_sr_19J6",
+    "category": "AirDefence",
+    "id": "S-300PS 40B6MD sr_19J6",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "S_300PS_5H63C_30H6_tr",
+    "category": "AirDefence",
+    "id": "S-300PS 5H63C 30H6_tr",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "S_300PS_40B6MD_sr",
+    "category": "AirDefence",
+    "id": "S-300PS 40B6MD sr",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Type_3_80mm_AA",
+    "category": "AirDefence",
+    "id": "Type_3_80mm_AA",
+    "name": "AAA 80mm Type 3 Flak",
+    "detection_range": 10000.0,
+    "threat_range": 3200.0,
+    "air_weapon_dist": 3200.0
+  },
+  {
+    "class": "Type_88_75mm_AA",
+    "category": "AirDefence",
+    "id": "Type_88_75mm_AA",
+    "name": "AAA 75mm Type 88 Flak",
+    "detection_range": 10000.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 3500.0
+  },
+  {
+    "class": "Type_96_25mm_AA",
+    "category": "AirDefence",
+    "id": "Type_96_25mm_AA",
+    "name": "AAA 25mm x 2 Type 96",
+    "detection_range": 10000.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 3500.0
+  },
+  {
+    "class": "Type_94_25mm_AA_Truck",
+    "category": "AirDefence",
+    "id": "Type_94_25mm_AA_Truck",
+    "name": "AAA 25mm x 2 Type 94 Truck",
+    "detection_range": 10000.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 3500.0
+  },
+  {
+    "class": "KS_19",
+    "category": "AirDefence",
+    "id": "KS-19",
+    "name": "AAA KS-19 100mm",
+    "detection_range": 0.0,
+    "threat_range": 20000.0,
+    "air_weapon_dist": 20000.0
+  },
+  {
+    "class": "SON_9",
+    "category": "AirDefence",
+    "id": "SON_9",
+    "name": "AAA Fire Can SON-9",
+    "detection_range": 55000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "HL_ZU_23",
+    "category": "AirDefence",
+    "id": "HL_ZU-23",
+    "name": "SPAAA HL with ZU-23",
+    "detection_range": 5000.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "Tt_ZU_23",
+    "category": "AirDefence",
+    "id": "tt_ZU-23",
+    "name": "SPAAA LC with ZU-23",
+    "detection_range": 0.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "NASAMS_Radar_MPQ64F1",
+    "category": "AirDefence",
+    "id": "NASAMS_Radar_MPQ64F1",
+    "name": "SAM NASAMS SR MPQ64F1",
+    "detection_range": 50000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "NASAMS_Command_Post",
+    "category": "AirDefence",
+    "id": "NASAMS_Command_Post",
+    "name": "SAM NASAMS C2",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "NASAMS_LN_B",
+    "category": "AirDefence",
+    "id": "NASAMS_LN_B",
+    "name": "SAM NASAMS LN AIM-120B",
+    "detection_range": 0.0,
+    "threat_range": 15000.0,
+    "air_weapon_dist": 15000.0
+  },
+  {
+    "class": "NASAMS_LN_C",
+    "category": "AirDefence",
+    "id": "NASAMS_LN_C",
+    "name": "SAM NASAMS LN AIM-120C",
+    "detection_range": 0.0,
+    "threat_range": 15000.0,
+    "air_weapon_dist": 15000.0
+  },
+  {
+    "class": "FPS_117_Dome",
+    "category": "AirDefence",
+    "id": "FPS-117 Dome",
+    "name": "EWR AN/FPS-117 Radar (domed)",
+    "detection_range": 400000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "FPS_117_ECS",
+    "category": "AirDefence",
+    "id": "FPS-117 ECS",
+    "name": "EWR AN/FPS-117 ECS",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "FPS_117",
+    "category": "AirDefence",
+    "id": "FPS-117",
+    "name": "EWR AN/FPS-117 Radar",
+    "detection_range": 463000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "RD_75",
+    "category": "AirDefence",
+    "id": "RD_75",
+    "name": "SAM SA-2 S-75 RD-75 Amazonka RF",
+    "detection_range": 100000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "S_75M_Volhov",
+    "category": "AirDefence",
+    "id": "S_75M_Volhov",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "SNR_75V",
+    "category": "AirDefence",
+    "id": "SNR_75V",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "RLS_19J6",
+    "category": "AirDefence",
+    "id": "RLS_19J6",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "RPC_5N62V",
+    "category": "AirDefence",
+    "id": "RPC_5N62V",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "S_200_Launcher",
+    "category": "AirDefence",
+    "id": "S-200_Launcher",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "ZSU_57_2",
+    "category": "AirDefence",
+    "id": "ZSU_57_2",
+    "name": "SPAAA ZSU-57-2",
+    "detection_range": 5000.0,
+    "threat_range": 7000.0,
+    "air_weapon_dist": 7000.0
+  },
+  {
+    "class": "S_60_Type59_Artillery",
+    "category": "AirDefence",
+    "id": "S-60_Type59_Artillery",
+    "name": "AAA S-60 57mm",
+    "detection_range": 5000.0,
+    "threat_range": 6000.0,
+    "air_weapon_dist": 6000.0
+  },
+  {
+    "class": "Generator_5i57",
+    "category": "AirDefence",
+    "id": "generator_5i57",
+    "name": "Diesel Power Station 5I57A",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Rapier_fsa_launcher",
+    "category": "AirDefence",
+    "id": "rapier_fsa_launcher",
+    "name": "SAM Rapier LN",
+    "detection_range": 30000.0,
+    "threat_range": 6800.0,
+    "air_weapon_dist": 6800.0
+  },
+  {
+    "class": "Rapier_fsa_optical_tracker_unit",
+    "category": "AirDefence",
+    "id": "rapier_fsa_optical_tracker_unit",
+    "name": "SAM Rapier Tracker",
+    "detection_range": 20000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Rapier_fsa_blindfire_radar",
+    "category": "AirDefence",
+    "id": "rapier_fsa_blindfire_radar",
+    "name": "SAM Rapier Blindfire TR",
+    "detection_range": 30000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Bofors40",
+    "category": "AirDefence",
+    "id": "bofors40",
+    "name": "AAA Bofors 40mm",
+    "detection_range": 0.0,
+    "threat_range": 2000.0,
+    "air_weapon_dist": 2000.0
+  },
+  {
+    "class": "Flak18",
+    "category": "AirDefence",
+    "id": "flak18",
+    "name": "AAA 8,8cm Flak 18",
+    "detection_range": 0.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 5000.0
+  },
+  {
+    "class": "HQ_7_LN_SP",
+    "category": "AirDefence",
+    "id": "HQ-7_LN_SP",
+    "name": "HQ-7B SHORAD TELAR",
+    "detection_range": 20000.0,
+    "threat_range": 15000.0,
+    "air_weapon_dist": 15000.0
+  },
+  {
+    "class": "HQ_7_LN_P",
+    "category": "AirDefence",
+    "id": "HQ-7_LN_P",
+    "name": "HQ-7 SHORAD TELAR (Player)",
+    "detection_range": 20000.0,
+    "threat_range": 15000.0,
+    "air_weapon_dist": 15000.0
+  },
+  {
+    "class": "HQ_7_STR_SP",
+    "category": "AirDefence",
+    "id": "HQ-7_STR_SP",
+    "name": "HQ-7B SHORAD SR",
+    "detection_range": 30000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Flak30",
+    "category": "AirDefence",
+    "id": "flak30",
+    "name": "AAA Flak 38 20mm",
+    "detection_range": 0.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "Flak36",
+    "category": "AirDefence",
+    "id": "flak36",
+    "name": "AAA 8,8cm Flak 36",
+    "detection_range": 0.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 5000.0
+  },
+  {
+    "class": "Flak37",
+    "category": "AirDefence",
+    "id": "flak37",
+    "name": "AAA 8,8cm Flak 37",
+    "detection_range": 0.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 5000.0
+  },
+  {
+    "class": "Flak38",
+    "category": "AirDefence",
+    "id": "flak38",
+    "name": "AAA Flak-Vierling 38 Quad 20mm",
+    "detection_range": 0.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "KDO_Mod40",
+    "category": "AirDefence",
+    "id": "KDO_Mod40",
+    "name": "AAA Kdo.G.40",
+    "detection_range": 30000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Flakscheinwerfer_37",
+    "category": "AirDefence",
+    "id": "Flakscheinwerfer_37",
+    "name": "SL Flakscheinwerfer 37",
+    "detection_range": 15000.0,
+    "threat_range": 15000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Maschinensatz_33",
+    "category": "AirDefence",
+    "id": "Maschinensatz_33",
+    "name": "Maschinensatz 33 Gen",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Flak41",
+    "category": "AirDefence",
+    "id": "flak41",
+    "name": "AAA 8,8cm Flak 41",
+    "detection_range": 0.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 5000.0
+  },
+  {
+    "class": "FuMG_401",
+    "category": "AirDefence",
+    "id": "FuMG-401",
+    "name": "EWR FuMG-401 Freya LZ",
+    "detection_range": 160000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "FuSe_65",
+    "category": "AirDefence",
+    "id": "FuSe-65",
+    "name": "EWR FuSe-65 W\u00fcrzburg-Riese",
+    "detection_range": 60000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "QF_37_AA",
+    "category": "AirDefence",
+    "id": "QF_37_AA",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Allies_Director",
+    "category": "AirDefence",
+    "id": "Allies_Director",
+    "name": "Allies Rangefinder (DRT)",
+    "detection_range": 30000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M45_Quadmount",
+    "category": "AirDefence",
+    "id": "M45_Quadmount",
+    "name": "AAA M45 Quadmount HB 12.7mm",
+    "detection_range": 0.0,
+    "threat_range": 1500.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "M1_37mm",
+    "category": "AirDefence",
+    "id": "M1_37mm",
+    "name": "AAA M1 37mm",
+    "detection_range": 0.0,
+    "threat_range": 5700.0,
+    "air_weapon_dist": 5700.0
+  },
+  {
+    "class": "Bunker",
+    "category": "Fortification",
+    "id": "Bunker",
+    "name": "Bunker 2",
+    "detection_range": 0.0,
+    "threat_range": 800.0,
+    "air_weapon_dist": 800.0
+  },
+  {
+    "class": "Sandbox",
+    "category": "Fortification",
+    "id": "Sandbox",
+    "name": "Bunker 1",
+    "detection_range": 0.0,
+    "threat_range": 800.0,
+    "air_weapon_dist": 800.0
+  },
+  {
+    "class": "House1arm",
+    "category": "Fortification",
+    "id": "house1arm",
+    "name": "Barracks armed",
+    "detection_range": 0.0,
+    "threat_range": 800.0,
+    "air_weapon_dist": 800.0
+  },
+  {
+    "class": "House2arm",
+    "category": "Fortification",
+    "id": "house2arm",
+    "name": "Watch tower armed",
+    "detection_range": 0.0,
+    "threat_range": 800.0,
+    "air_weapon_dist": 800.0
+  },
+  {
+    "class": "Outpost_road",
+    "category": "Fortification",
+    "id": "outpost_road",
+    "name": "Road outpost",
+    "detection_range": 0.0,
+    "threat_range": 800.0,
+    "air_weapon_dist": 800.0
+  },
+  {
+    "class": "Outpost_road_l",
+    "category": "Fortification",
+    "id": "outpost_road_l",
+    "name": "Road outpost_L",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Outpost_road_r",
+    "category": "Fortification",
+    "id": "outpost_road_r",
+    "name": "Road outpost-R",
+    "detection_range": 0.0,
+    "threat_range": 800.0,
+    "air_weapon_dist": 800.0
+  },
+  {
+    "class": "Outpost",
+    "category": "Fortification",
+    "id": "outpost",
+    "name": "Outpost",
+    "detection_range": 0.0,
+    "threat_range": 800.0,
+    "air_weapon_dist": 800.0
+  },
+  {
+    "class": "HouseA_arm",
+    "category": "Fortification",
+    "id": "houseA_arm",
+    "name": "Building armed",
+    "detection_range": 0.0,
+    "threat_range": 800.0,
+    "air_weapon_dist": 800.0
+  },
+  {
+    "class": "TACAN_beacon",
+    "category": "Fortification",
+    "id": "TACAN_beacon",
+    "name": "Beacon TACAN Portable TTS 3030",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "SK_C_28_naval_gun",
+    "category": "Fortification",
+    "id": "SK_C_28_naval_gun",
+    "name": "Gun 15cm SK C/28 Naval in Bunker",
+    "detection_range": 0.0,
+    "threat_range": 20000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Fire_control",
+    "category": "Fortification",
+    "id": "fire_control",
+    "name": "Bunker with Fire Control Center",
+    "detection_range": 0.0,
+    "threat_range": 1100.0,
+    "air_weapon_dist": 1100.0
+  },
+  {
+    "class": "Ural_4320_APA_5D",
+    "category": "Unarmed",
+    "id": "Ural-4320 APA-5D",
+    "name": "GPU APA-5D on Ural 4320",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "ATMZ_5",
+    "category": "Unarmed",
+    "id": "ATMZ-5",
+    "name": "Refueler ATMZ-5",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "ATZ_10",
+    "category": "Unarmed",
+    "id": "ATZ-10",
+    "name": "Refueler ATZ-10",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "GAZ_3307",
+    "category": "Unarmed",
+    "id": "GAZ-3307",
+    "name": "Truck GAZ-3307",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "GAZ_3308",
+    "category": "Unarmed",
+    "id": "GAZ-3308",
+    "name": "Truck GAZ-3308",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "GAZ_66",
+    "category": "Unarmed",
+    "id": "GAZ-66",
+    "name": "Truck GAZ-66",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M978_HEMTT_Tanker",
+    "category": "Unarmed",
+    "id": "M978 HEMTT Tanker",
+    "name": "Refueler M978 HEMTT",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "HEMTT_TFFT",
+    "category": "Unarmed",
+    "id": "HEMTT TFFT",
+    "name": "Firefighter HEMMT TFFT",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "IKARUS_Bus",
+    "category": "Unarmed",
+    "id": "IKARUS Bus",
+    "name": "Bus IKARUS-280",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "KAMAZ_Truck",
+    "category": "Unarmed",
+    "id": "KAMAZ Truck",
+    "name": "Truck KAMAZ 43101",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "LAZ_Bus",
+    "category": "Unarmed",
+    "id": "LAZ Bus",
+    "name": "Bus LAZ-695",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "LiAZ_Bus",
+    "category": "Unarmed",
+    "id": "LiAZ Bus",
+    "name": "Bus LiAZ-677",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Hummer",
+    "category": "Unarmed",
+    "id": "Hummer",
+    "name": "LUV HMMWV Jeep",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M_818",
+    "category": "Unarmed",
+    "id": "M 818",
+    "name": "Truck M939 Heavy",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "MAZ_6303",
+    "category": "Unarmed",
+    "id": "MAZ-6303",
+    "name": "Truck MAZ-6303",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Predator_GCS",
+    "category": "Unarmed",
+    "id": "Predator GCS",
+    "name": "MCC Predator UAV CP & GCS",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Predator_TrojanSpirit",
+    "category": "Unarmed",
+    "id": "Predator TrojanSpirit",
+    "name": "MCC-COMM Predator UAV CL",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Suidae",
+    "category": "Unarmed",
+    "id": "Suidae",
+    "name": "Suidae",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Tigr_233036",
+    "category": "Unarmed",
+    "id": "Tigr_233036",
+    "name": "LUV Tigr",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Trolley_bus",
+    "category": "Unarmed",
+    "id": "Trolley bus",
+    "name": "ZIU-9 Trolley",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "UAZ_469",
+    "category": "Unarmed",
+    "id": "UAZ-469",
+    "name": "LUV UAZ-469 Jeep",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Ural_ATsP_6",
+    "category": "Unarmed",
+    "id": "Ural ATsP-6",
+    "name": "Firefighter Ural ATsP-6",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Ural_4320_31",
+    "category": "Unarmed",
+    "id": "Ural-4320-31",
+    "name": "Truck Ural-4320-31 Arm'd",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Ural_4320T",
+    "category": "Unarmed",
+    "id": "Ural-4320T",
+    "name": "Truck Ural-4320T",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Ural_375_PBU",
+    "category": "Unarmed",
+    "id": "Ural-375 PBU",
+    "name": "Truck Ural-4320 MCC",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Ural_375",
+    "category": "Unarmed",
+    "id": "Ural-375",
+    "name": "Truck Ural-4320",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "VAZ_Car",
+    "category": "Unarmed",
+    "id": "VAZ Car",
+    "name": "Car VAZ-2109",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "ZiL_131_APA_80",
+    "category": "Unarmed",
+    "id": "ZiL-131 APA-80",
+    "name": "GPU APA-80 on ZIL-131",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "SKP_11",
+    "category": "Unarmed",
+    "id": "SKP-11",
+    "name": "Truck SKP-11 Mobile ATC",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "ZIL_131_KUNG",
+    "category": "Unarmed",
+    "id": "ZIL-131 KUNG",
+    "name": "Truck ZIL-131 (C2)",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "ZIL_4331",
+    "category": "Unarmed",
+    "id": "ZIL-4331",
+    "name": "Truck ZIL-4331",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "KrAZ6322",
+    "category": "Unarmed",
+    "id": "KrAZ6322",
+    "name": "Truck KrAZ-6322 6x6",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "CHAP_M1083",
+    "category": "Unarmed",
+    "id": "CHAP_M1083",
+    "name": "Truck M1083 A1P2 MTV [CH]",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Type_94_Truck",
+    "category": "Unarmed",
+    "id": "Type_94_Truck",
+    "name": "Truck Type 94",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Type_98_So_Da",
+    "category": "Unarmed",
+    "id": "Type_98_So_Da",
+    "name": "APC Type 98 So Da",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "TugHarlan_drivable",
+    "category": "Unarmed",
+    "id": "TugHarlan_drivable",
+    "name": "M92 Tug Harlan drivable",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "B600_drivable",
+    "category": "Unarmed",
+    "id": "B600_drivable",
+    "name": "M92 B600 drivable",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "MJ_1_drivable",
+    "category": "Unarmed",
+    "id": "MJ-1_drivable",
+    "name": "M92 MJ-1 drivable",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "P20_drivable",
+    "category": "Unarmed",
+    "id": "P20_drivable",
+    "name": "M92 P20 drivable",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "R11_volvo_drivable",
+    "category": "Unarmed",
+    "id": "r11_volvo_drivable",
+    "name": "M92 R11 Volvo drivable",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Tacr2a",
+    "category": "Unarmed",
+    "id": "tacr2a",
+    "name": "Firefighter RAF Rescue",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "LARC_V",
+    "category": "Unarmed",
+    "id": "LARC-V",
+    "name": "Truck LARC-V",
+    "detection_range": 500.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "GPS_Spoofer_Blue",
+    "category": "Unarmed",
+    "id": "GPS_Spoofer_Blue",
+    "name": "GPS Spoofer NATO",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "ATZ_5",
+    "category": "Unarmed",
+    "id": "ATZ-5",
+    "name": "Refueler ATZ-5",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "AA8",
+    "category": "Unarmed",
+    "id": "AA8",
+    "name": "Firefighter Vehicle AA-7.2/60",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "TZ_22_KrAZ",
+    "category": "Unarmed",
+    "id": "TZ-22_KrAZ",
+    "name": "Refueler TZ-22 Tractor (KrAZ-258B1)",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "ATZ_60_Maz",
+    "category": "Unarmed",
+    "id": "ATZ-60_Maz",
+    "name": "Refueler ATZ-60 Tractor (MAZ-7410)",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "ZIL_135",
+    "category": "Unarmed",
+    "id": "ZIL-135",
+    "name": "Truck ZIL-135",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "S_75_ZIL",
+    "category": "Unarmed",
+    "id": "S_75_ZIL",
+    "name": "S-75 Tractor (ZIL-131)",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "GPS_Spoofer_Red",
+    "category": "Unarmed",
+    "id": "GPS_Spoofer_Red",
+    "name": "GPS Spoofer RF",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Rsbn_beacon",
+    "category": "Unarmed",
+    "id": "rsbn_beacon",
+    "name": "RSBN car",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Prmg_gp_beacon",
+    "category": "Unarmed",
+    "id": "prmg_gp_beacon",
+    "name": "PRMG Glidepath car",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Prmg_loc_beacon",
+    "category": "Unarmed",
+    "id": "prmg_loc_beacon",
+    "name": "PRMG Localizer car",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Bedford_MWD",
+    "category": "Unarmed",
+    "id": "Bedford_MWD",
+    "name": "Truck Bedford",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Land_Rover_101_FC",
+    "category": "Unarmed",
+    "id": "Land_Rover_101_FC",
+    "name": "Truck Land Rover 101 FC",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Land_Rover_109_S3",
+    "category": "Unarmed",
+    "id": "Land_Rover_109_S3",
+    "name": "LUV Land Rover 109",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Blitz_36_6700A",
+    "category": "Unarmed",
+    "id": "Blitz_36-6700A",
+    "name": "Truck Opel Blitz",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Kamaz_tent_civil",
+    "category": "Unarmed",
+    "id": "kamaz_tent_civil",
+    "name": "Truck KAMAZ-43101 civil",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Ural_atz5_civil",
+    "category": "Unarmed",
+    "id": "ural_atz5_civil",
+    "name": "Refueler ATZ-5 civil",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Ural_4230_civil_b",
+    "category": "Unarmed",
+    "id": "ural_4230_civil_b",
+    "name": "Truck Ural-4320 civil",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Ural_4230_civil_t",
+    "category": "Unarmed",
+    "id": "ural_4230_civil_t",
+    "name": "Truck Ural-4320T civil",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Zil_131_civil",
+    "category": "Unarmed",
+    "id": "zil-131_civil",
+    "name": "Truck ZiL-131 civil",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Gaz_66_civil",
+    "category": "Unarmed",
+    "id": "gaz-66_civil",
+    "name": "Truck GAZ-66 civil",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "GD_20",
+    "category": "Unarmed",
+    "id": "GD-20",
+    "name": "GD-20 Lift Truck",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Kubelwagen_82",
+    "category": "Unarmed",
+    "id": "Kubelwagen_82",
+    "name": "LUV Kubelwagen Jeep",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Sd_Kfz_2",
+    "category": "Unarmed",
+    "id": "Sd_Kfz_2",
+    "name": "LUV Kettenrad",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Sd_Kfz_7",
+    "category": "Unarmed",
+    "id": "Sd_Kfz_7",
+    "name": "Tractor Sd.Kfz.7 Art'y Tractor",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Horch_901_typ_40_kfz_21",
+    "category": "Unarmed",
+    "id": "Horch_901_typ_40_kfz_21",
+    "name": "LUV Horch 901 Staff Car",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "CCKW_353",
+    "category": "Unarmed",
+    "id": "CCKW_353",
+    "name": null,
+    "detection_range": null,
+    "threat_range": null,
+    "air_weapon_dist": null
+  },
+  {
+    "class": "Willys_MB",
+    "category": "Unarmed",
+    "id": "Willys_MB",
+    "name": "Car Willys Jeep",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M30_CC",
+    "category": "Unarmed",
+    "id": "M30_CC",
+    "name": "Ammo M30 Cargo Carrier",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "AAV7",
+    "category": "Armor",
+    "id": "AAV7",
+    "name": "APC AAV-7 Amphibious",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "BMD_1",
+    "category": "Armor",
+    "id": "BMD-1",
+    "name": "IFV BMD-1",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 1000.0
+  },
+  {
+    "class": "BMP_1",
+    "category": "Armor",
+    "id": "BMP-1",
+    "name": "IFV BMP-1",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 1000.0
+  },
+  {
+    "class": "BMP_2",
+    "category": "Armor",
+    "id": "BMP-2",
+    "name": "IFV BMP-2",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 2000.0
+  },
+  {
+    "class": "BMP_3",
+    "category": "Armor",
+    "id": "BMP-3",
+    "name": "IFV BMP-3",
+    "detection_range": 0.0,
+    "threat_range": 4000.0,
+    "air_weapon_dist": 1000.0
+  },
+  {
+    "class": "BRDM_2",
+    "category": "Armor",
+    "id": "BRDM-2",
+    "name": "Scout BRDM-2",
+    "detection_range": 0.0,
+    "threat_range": 1600.0,
+    "air_weapon_dist": 1600.0
+  },
+  {
+    "class": "BTR_D",
+    "category": "Armor",
+    "id": "BTR_D",
+    "name": "APC BTR-RD",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 1000.0
+  },
+  {
+    "class": "Cobra",
+    "category": "Armor",
+    "id": "Cobra",
+    "name": "Scout Cobra",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "LAV_25",
+    "category": "Armor",
+    "id": "LAV-25",
+    "name": "IFV LAV-25",
+    "detection_range": 0.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "M1043_HMMWV_Armament",
+    "category": "Armor",
+    "id": "M1043 HMMWV Armament",
+    "name": "Scout HMMWV",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "M1045_HMMWV_TOW",
+    "category": "Armor",
+    "id": "M1045 HMMWV TOW",
+    "name": "ATGM HMMWV",
+    "detection_range": 0.0,
+    "threat_range": 3800.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M1126_Stryker_ICV",
+    "category": "Armor",
+    "id": "M1126 Stryker ICV",
+    "name": "IFV M1126 Stryker ICV",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "M_113",
+    "category": "Armor",
+    "id": "M-113",
+    "name": "APC M113",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "M1134_Stryker_ATGM",
+    "category": "Armor",
+    "id": "M1134 Stryker ATGM",
+    "name": "ATGM Stryker",
+    "detection_range": 0.0,
+    "threat_range": 3800.0,
+    "air_weapon_dist": 1000.0
+  },
+  {
+    "class": "M_2_Bradley",
+    "category": "Armor",
+    "id": "M-2 Bradley",
+    "name": "IFV M2A2 Bradley",
+    "detection_range": 0.0,
+    "threat_range": 3800.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "MCV_80",
+    "category": "Armor",
+    "id": "MCV-80",
+    "name": "IFV Warrior ",
+    "detection_range": 0.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "MTLB",
+    "category": "Armor",
+    "id": "MTLB",
+    "name": "APC MTLB",
+    "detection_range": 0.0,
+    "threat_range": 1000.0,
+    "air_weapon_dist": 1000.0
+  },
+  {
+    "class": "Marder",
+    "category": "Armor",
+    "id": "Marder",
+    "name": "IFV Marder",
+    "detection_range": 0.0,
+    "threat_range": 1500.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "TPZ",
+    "category": "Armor",
+    "id": "TPZ",
+    "name": "APC TPz Fuchs ",
+    "detection_range": 0.0,
+    "threat_range": 1000.0,
+    "air_weapon_dist": 1000.0
+  },
+  {
+    "class": "Challenger2",
+    "category": "Armor",
+    "id": "Challenger2",
+    "name": "MBT Challenger II",
+    "detection_range": 0.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "Leclerc",
+    "category": "Armor",
+    "id": "Leclerc",
+    "name": "MBT Leclerc",
+    "detection_range": 0.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "M_60",
+    "category": "Armor",
+    "id": "M-60",
+    "name": "MBT M60A3 Patton",
+    "detection_range": 0.0,
+    "threat_range": 8000.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "M1128_Stryker_MGS",
+    "category": "Armor",
+    "id": "M1128 Stryker MGS",
+    "name": "SPG Stryker MGS",
+    "detection_range": 0.0,
+    "threat_range": 4000.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "T_55",
+    "category": "Armor",
+    "id": "T-55",
+    "name": "MBT T-55",
+    "detection_range": 0.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "T_72B",
+    "category": "Armor",
+    "id": "T-72B",
+    "name": "MBT T-72B",
+    "detection_range": 0.0,
+    "threat_range": 4000.0,
+    "air_weapon_dist": 3500.0
+  },
+  {
+    "class": "T_80UD",
+    "category": "Armor",
+    "id": "T-80UD",
+    "name": "MBT T-80U",
+    "detection_range": 0.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 3500.0
+  },
+  {
+    "class": "T_90",
+    "category": "Armor",
+    "id": "T-90",
+    "name": "MBT T-90A [CH]",
+    "detection_range": 6000.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 5000.0
+  },
+  {
+    "class": "Leopard1A3",
+    "category": "Armor",
+    "id": "Leopard1A3",
+    "name": "MBT Leopard 1A3",
+    "detection_range": 0.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "Merkava_Mk4",
+    "category": "Armor",
+    "id": "Merkava_Mk4",
+    "name": "MBT Merkava IV",
+    "detection_range": 0.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "T_34_85",
+    "category": "Armor",
+    "id": "T-34-85",
+    "name": "Tk T-34-85",
+    "detection_range": 0.0,
+    "threat_range": 5200.0,
+    "air_weapon_dist": 1000.0
+  },
+  {
+    "class": "BTR_60",
+    "category": "Armor",
+    "id": "BTR-60",
+    "name": "APC BTR-60",
+    "detection_range": 0.0,
+    "threat_range": 1600.0,
+    "air_weapon_dist": 1600.0
+  },
+  {
+    "class": "BTR_70",
+    "category": "Armor",
+    "id": "BTR-70",
+    "name": "APC BTR-70",
+    "detection_range": 0.0,
+    "threat_range": 1600.0,
+    "air_weapon_dist": 1600.0
+  },
+  {
+    "class": "T62M",
+    "category": "Armor",
+    "id": "T62M",
+    "name": "MBT T-62M",
+    "detection_range": 0.0,
+    "threat_range": 5200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "T_80B",
+    "category": "Armor",
+    "id": "T-80B",
+    "name": "MBT T-80B",
+    "detection_range": 0.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 3500.0
+  },
+  {
+    "class": "BRDM_2_malyutka",
+    "category": "Armor",
+    "id": "BRDM-2_malyutka",
+    "name": "ATGM AT-3 Sagger 9P133",
+    "detection_range": 5000.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 3000.0
+  },
+  {
+    "class": "CHAP_FV107",
+    "category": "Armor",
+    "id": "CHAP_FV107",
+    "name": "Scout FV107 Scimitar [CH]",
+    "detection_range": 6000.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "CHAP_FV101",
+    "category": "Armor",
+    "id": "CHAP_FV101",
+    "name": "LT FV101 Scorpion [CH]",
+    "detection_range": 5000.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "CHAP_T90M",
+    "category": "Armor",
+    "id": "CHAP_T90M",
+    "name": "MBT T-90M [CH]",
+    "detection_range": 8000.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 5000.0
+  },
+  {
+    "class": "CHAP_MATV",
+    "category": "Armor",
+    "id": "CHAP_MATV",
+    "name": "APC MRAP M-ATV [CH]",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "CHAP_T84OplotM",
+    "category": "Armor",
+    "id": "CHAP_T84OplotM",
+    "name": "MBT T-84 Oplot-M [CH]",
+    "detection_range": 8000.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 5000.0
+  },
+  {
+    "class": "CHAP_T64BV",
+    "category": "Armor",
+    "id": "CHAP_T64BV",
+    "name": "MBT T-64BV Type 2017 [CH]",
+    "detection_range": 5000.0,
+    "threat_range": 4000.0,
+    "air_weapon_dist": 4000.0
+  },
+  {
+    "class": "CHAP_M1130",
+    "category": "Armor",
+    "id": "CHAP_M1130",
+    "name": "IFV M1130 Stryker CV [CH]",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "CHAP_BMPT",
+    "category": "Armor",
+    "id": "CHAP_BMPT",
+    "name": "IFV BMPT Terminator [CH]",
+    "detection_range": 7000.0,
+    "threat_range": 6000.0,
+    "air_weapon_dist": 6000.0
+  },
+  {
+    "class": "M1A2C_SEP_V3",
+    "category": "Armor",
+    "id": "M1A2C_SEP_V3",
+    "name": "MBT M1A2C SEP v3 Abrams",
+    "detection_range": 0.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "M_1_Abrams",
+    "category": "Armor",
+    "id": "M-1 Abrams",
+    "name": "MBT M1A2 Abrams",
+    "detection_range": 0.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "MaxxPro_MRAP",
+    "category": "Armor",
+    "id": "MaxxPro_MRAP",
+    "name": "APC MRAP MaxxPro",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "Type_98_Ke_Ni",
+    "category": "Armor",
+    "id": "Type_98_Ke_Ni",
+    "name": "Tk Type 98 Ke Ni",
+    "detection_range": 5000.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 3000.0
+  },
+  {
+    "class": "Type_89_I_Go",
+    "category": "Armor",
+    "id": "Type_89_I_Go",
+    "name": "Tk Type 89 I Go",
+    "detection_range": 5000.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 3000.0
+  },
+  {
+    "class": "HL_DSHK",
+    "category": "Armor",
+    "id": "HL_DSHK",
+    "name": "Scout HL with DSHK 12.7mm",
+    "detection_range": 5000.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "HL_KORD",
+    "category": "Armor",
+    "id": "HL_KORD",
+    "name": "Scout HL with KORD 12.7mm",
+    "detection_range": 5000.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "Tt_DSHK",
+    "category": "Armor",
+    "id": "tt_DSHK",
+    "name": "Scout LC with DSHK 12.7mm",
+    "detection_range": 5000.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "Tt_KORD",
+    "category": "Armor",
+    "id": "tt_KORD",
+    "name": "Scout LC with KORD 12.7mm",
+    "detection_range": 5000.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "M4_Sherman",
+    "category": "Armor",
+    "id": "M4_Sherman",
+    "name": "Tk M4 Sherman",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M2A1_halftrack",
+    "category": "Armor",
+    "id": "M2A1_halftrack",
+    "name": "APC M2A1 Halftrack",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "BTR_80",
+    "category": "Armor",
+    "id": "BTR-80",
+    "name": "APC BTR-80",
+    "detection_range": 0.0,
+    "threat_range": 1600.0,
+    "air_weapon_dist": 1600.0
+  },
+  {
+    "class": "T_72B3",
+    "category": "Armor",
+    "id": "T-72B3",
+    "name": "MBT T-72B3",
+    "detection_range": 0.0,
+    "threat_range": 4000.0,
+    "air_weapon_dist": 3500.0
+  },
+  {
+    "class": "PT_76",
+    "category": "Armor",
+    "id": "PT_76",
+    "name": "LT PT-76",
+    "detection_range": 0.0,
+    "threat_range": 2000.0,
+    "air_weapon_dist": 1000.0
+  },
+  {
+    "class": "BTR_82A",
+    "category": "Armor",
+    "id": "BTR-82A",
+    "name": "IFV BTR-82A",
+    "detection_range": 0.0,
+    "threat_range": 2000.0,
+    "air_weapon_dist": 2000.0
+  },
+  {
+    "class": "Chieftain_mk3",
+    "category": "Armor",
+    "id": "Chieftain_mk3",
+    "name": "MBT Chieftain Mk.3",
+    "detection_range": 0.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "Pz_IV_H",
+    "category": "Armor",
+    "id": "Pz_IV_H",
+    "name": "Tk PzIV H",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Leopard_2A5",
+    "category": "Armor",
+    "id": "Leopard-2A5",
+    "name": "MBT Leopard-2A5",
+    "detection_range": 0.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "Leopard_2",
+    "category": "Armor",
+    "id": "Leopard-2",
+    "name": "MBT Leopard-2A6M",
+    "detection_range": 0.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "Leopard_2A4",
+    "category": "Armor",
+    "id": "leopard-2A4",
+    "name": "MBT Leopard-2A4",
+    "detection_range": 0.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "Leopard_2A4_trs",
+    "category": "Armor",
+    "id": "leopard-2A4_trs",
+    "name": "MBT Leopard-2A4 Trs",
+    "detection_range": 0.0,
+    "threat_range": 3500.0,
+    "air_weapon_dist": 1500.0
+  },
+  {
+    "class": "Sd_Kfz_251",
+    "category": "Armor",
+    "id": "Sd_Kfz_251",
+    "name": "APC Sd.Kfz.251 Halftrack",
+    "detection_range": 0.0,
+    "threat_range": 1100.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "VAB_Mephisto",
+    "category": "Armor",
+    "id": "VAB_Mephisto",
+    "name": "ATGM VAB Mephisto",
+    "detection_range": 0.0,
+    "threat_range": 3800.0,
+    "air_weapon_dist": 3800.0
+  },
+  {
+    "class": "ZTZ96B",
+    "category": "Armor",
+    "id": "ZTZ96B",
+    "name": "ZTZ-96B",
+    "detection_range": 0.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 3500.0
+  },
+  {
+    "class": "ZBD04A",
+    "category": "Armor",
+    "id": "ZBD04A",
+    "name": "ZBD-04A",
+    "detection_range": 0.0,
+    "threat_range": 4800.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "TYPE_59",
+    "category": "Armor",
+    "id": "TYPE-59",
+    "name": "MT Type 59",
+    "detection_range": 0.0,
+    "threat_range": 2500.0,
+    "air_weapon_dist": 1200.0
+  },
+  {
+    "class": "Tiger_I",
+    "category": "Armor",
+    "id": "Tiger_I",
+    "name": "Tk Tiger 1",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Tiger_II_H",
+    "category": "Armor",
+    "id": "Tiger_II_H",
+    "name": "Tk Tiger II",
+    "detection_range": 0.0,
+    "threat_range": 6000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Pz_V_Panther_G",
+    "category": "Armor",
+    "id": "Pz_V_Panther_G",
+    "name": "Tk Panther G (Pz V)",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Jagdpanther_G1",
+    "category": "Armor",
+    "id": "Jagdpanther_G1",
+    "name": "SPG Jagdpanther TD",
+    "detection_range": 0.0,
+    "threat_range": 5000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "JagdPz_IV",
+    "category": "Armor",
+    "id": "JagdPz_IV",
+    "name": "SPG Jagdpanzer IV TD",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Stug_IV",
+    "category": "Armor",
+    "id": "Stug_IV",
+    "name": "SPG StuG IV AG",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "SturmPzIV",
+    "category": "Armor",
+    "id": "SturmPzIV",
+    "name": "SPG Brummbaer AG",
+    "detection_range": 0.0,
+    "threat_range": 4500.0,
+    "air_weapon_dist": 2500.0
+  },
+  {
+    "class": "Sd_Kfz_234_2_Puma",
+    "category": "Armor",
+    "id": "Sd_Kfz_234_2_Puma",
+    "name": "Scout Puma AC",
+    "detection_range": 0.0,
+    "threat_range": 2000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Stug_III",
+    "category": "Armor",
+    "id": "Stug_III",
+    "name": "SPG StuG III G AG",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Elefant_SdKfz_184",
+    "category": "Armor",
+    "id": "Elefant_SdKfz_184",
+    "name": "SPG Elefant TD",
+    "detection_range": 0.0,
+    "threat_range": 6000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Cromwell_IV",
+    "category": "Armor",
+    "id": "Cromwell_IV",
+    "name": "Tk Cromwell IV",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M4A4_Sherman_FF",
+    "category": "Armor",
+    "id": "M4A4_Sherman_FF",
+    "name": "Tk M4A4 Sherman Firefly",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Centaur_IV",
+    "category": "Armor",
+    "id": "Centaur_IV",
+    "name": "Tk Centaur IV CS",
+    "detection_range": 0.0,
+    "threat_range": 6000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Churchill_VII",
+    "category": "Armor",
+    "id": "Churchill_VII",
+    "name": "Tk Churchill VII",
+    "detection_range": 0.0,
+    "threat_range": 3000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Daimler_AC",
+    "category": "Armor",
+    "id": "Daimler_AC",
+    "name": "Car Daimler Armored",
+    "detection_range": 0.0,
+    "threat_range": 2000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Tetrarch",
+    "category": "Armor",
+    "id": "Tetrarch",
+    "name": "Tk Tetrach",
+    "detection_range": 0.0,
+    "threat_range": 2000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M10_GMC",
+    "category": "Armor",
+    "id": "M10_GMC",
+    "name": "SPG M10 GMC TD",
+    "detection_range": 0.0,
+    "threat_range": 6000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M8_Greyhound",
+    "category": "Armor",
+    "id": "M8_Greyhound",
+    "name": "Scout M8 Greyhound AC",
+    "detection_range": 0.0,
+    "threat_range": 2000.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "M4_Tractor",
+    "category": "Armor",
+    "id": "M4_Tractor",
+    "name": "Tractor M4 High Speed",
+    "detection_range": 0.0,
+    "threat_range": 1200.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "CHAP_9K720_HE",
+    "category": "MissilesSS",
+    "id": "CHAP_9K720_HE",
+    "name": "SRBM 9K720 Iskander HE [CH]",
+    "detection_range": 0.0,
+    "threat_range": 400000.0,
+    "air_weapon_dist": 400000.0
+  },
+  {
+    "class": "CHAP_9K720_Cluster",
+    "category": "MissilesSS",
+    "id": "CHAP_9K720_Cluster",
+    "name": "SRBM 9K720 Iskander CM [CH]",
+    "detection_range": 0.0,
+    "threat_range": 400000.0,
+    "air_weapon_dist": 400000.0
+  },
+  {
+    "class": "Scud_B",
+    "category": "MissilesSS",
+    "id": "Scud_B",
+    "name": "SSM SS-1C Scud-B",
+    "detection_range": 0.0,
+    "threat_range": 285000.0,
+    "air_weapon_dist": 285000.0
+  },
+  {
+    "class": "Hy_launcher",
+    "category": "MissilesSS",
+    "id": "hy_launcher",
+    "name": "AShM SS-N-2 Silkworm",
+    "detection_range": 100000.0,
+    "threat_range": 100000.0,
+    "air_weapon_dist": 100000.0
+  },
+  {
+    "class": "Silkworm_SR",
+    "category": "MissilesSS",
+    "id": "Silkworm_SR",
+    "name": "AShM Silkworm SR",
+    "detection_range": 200000.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "SD10_Loadout",
+    "category": "MissilesSS",
+    "id": "SD10 Loadout",
+    "name": "Payload SD-10",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "PL5EII_Loadout",
+    "category": "MissilesSS",
+    "id": "PL5EII Loadout",
+    "name": "Payload PL-5EII",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "PL8_Loadout",
+    "category": "MissilesSS",
+    "id": "PL8 Loadout",
+    "name": "Payload PL-8",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "V1_launcher",
+    "category": "MissilesSS",
+    "id": "v1_launcher",
+    "name": "V-1 Launch Ramp",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Electric_locomotive",
+    "category": "Locomotive",
+    "id": "Electric locomotive",
+    "name": "Rwy. Loco VL80 Electric",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Locomotive",
+    "category": "Locomotive",
+    "id": "Locomotive",
+    "name": "Rwy. Loco CHME3T",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "ES44AH",
+    "category": "Locomotive",
+    "id": "ES44AH",
+    "name": "Rwy. Loco ES44AH",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "DRG_Class_86",
+    "category": "Locomotive",
+    "id": "DRG_Class_86",
+    "name": "Rwy. Loco DRG Class 86 (Germany, WWII)",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Coach_cargo",
+    "category": "Carriage",
+    "id": "Coach cargo",
+    "name": "Rwy. Freight Van",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Coach_cargo_open",
+    "category": "Carriage",
+    "id": "Coach cargo open",
+    "name": "Rwy. Open Wagon",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Coach_a_tank_blue",
+    "category": "Carriage",
+    "id": "Coach a tank blue",
+    "name": "Rwy. Tank Car blue",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Coach_a_tank_yellow",
+    "category": "Carriage",
+    "id": "Coach a tank yellow",
+    "name": "Rwy. Tank Car yellow",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Coach_a_passenger",
+    "category": "Carriage",
+    "id": "Coach a passenger",
+    "name": "Rwy. Passenger Car",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Coach_a_platform",
+    "category": "Carriage",
+    "id": "Coach a platform",
+    "name": "Rwy. Coach Platform",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Boxcartrinity",
+    "category": "Carriage",
+    "id": "Boxcartrinity",
+    "name": "Rwy. Flat Car",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Tankcartrinity",
+    "category": "Carriage",
+    "id": "Tankcartrinity",
+    "name": "Rwy. Tank Cartrinity",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "Wellcarnsc",
+    "category": "Carriage",
+    "id": "Wellcarnsc",
+    "name": "Rwy. Well Car",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "DR_50Ton_Flat_Wagon",
+    "category": "Carriage",
+    "id": "DR_50Ton_Flat_Wagon",
+    "name": "DR 50-ton flat wagon",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "German_covered_wagon_G10",
+    "category": "Carriage",
+    "id": "German_covered_wagon_G10",
+    "name": "Rwy. Wagon G10 (Germany, WWII)",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  },
+  {
+    "class": "German_tank_wagon",
+    "category": "Carriage",
+    "id": "German_tank_wagon",
+    "name": "Rwy. Tank Car (Germany, WWII)",
+    "detection_range": 0.0,
+    "threat_range": 0.0,
+    "air_weapon_dist": 0.0
+  }
+]

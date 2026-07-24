@@ -1,0 +1,1050 @@
+[
+  {
+    "file": "CH_russia_2020.json",
+    "name": "[CH] Russia 2020",
+    "country": "Russia",
+    "aircraft_count": 31,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "Kutaisi_to_Vaziani_red.json",
+    "name": "Red - Kutaisi to Vaziani",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 33,
+    "doctrine": "modern",
+    "has_jtac": false
+  },
+  {
+    "file": "Morocco 2000 onwards.json",
+    "name": "Morocco 2000 onwards",
+    "country": "Morocco",
+    "aircraft_count": 10,
+    "doctrine": "modern",
+    "has_jtac": false
+  },
+  {
+    "file": "NATO_Desert_Storm.json",
+    "name": "NATO Desert Storm",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 32,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "NATO_OIF.json",
+    "name": "NATO OIF",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 37,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "SW_Empire.json",
+    "name": "SW Empire",
+    "country": "Russia",
+    "aircraft_count": 5,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "SW_Rebel_Alliance.json",
+    "name": "SW Rebel Alliance",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 5,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "Spain 2000 onwards.json",
+    "name": "Spain 2000 onwards",
+    "country": "Spain",
+    "aircraft_count": 18,
+    "doctrine": "modern",
+    "has_jtac": true
+  },
+  {
+    "file": "USA 1970 Vietnam War.json",
+    "name": "USA 1970 Vietnam War",
+    "country": "USA",
+    "aircraft_count": 35,
+    "doctrine": "coldwar",
+    "has_jtac": true
+  },
+  {
+    "file": "USA 1971 Vietnam War.json",
+    "name": "1971 USA Vietnam War",
+    "country": "USA",
+    "aircraft_count": 34,
+    "doctrine": "coldwar",
+    "has_jtac": true
+  },
+  {
+    "file": "USSR 1971 Vietnam War.json",
+    "name": "USSR 1971 Vietnam War",
+    "country": "USSR",
+    "aircraft_count": 13,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "US_UK_Falklands.json",
+    "name": "UK/US Falklands Task Force",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 19,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "allies_1940.json",
+    "name": "Allies 1940",
+    "country": "UK",
+    "aircraft_count": 4,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "allies_1944.json",
+    "name": "Allies 1944",
+    "country": "USA",
+    "aircraft_count": 12,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "allies_1944_free.json",
+    "name": "Allies 1944 (Free)",
+    "country": "USA",
+    "aircraft_count": 9,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "argentina_1982.json",
+    "name": "Argentina 1982",
+    "country": "Argentina",
+    "aircraft_count": 11,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "australia_2005.json",
+    "name": "Australia 2005",
+    "country": "Australia",
+    "aircraft_count": 7,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "australia_2009.json",
+    "name": "Australia 2009",
+    "country": "Australia",
+    "aircraft_count": 9,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "bluefor_coldwar.json",
+    "name": "Bluefor Coldwar",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 23,
+    "doctrine": "coldwar",
+    "has_jtac": true
+  },
+  {
+    "file": "bluefor_modern.json",
+    "name": "Bluefor Modern",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 69,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "blufor_current.json",
+    "name": "Blufor Current",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 38,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "blufor_late_coldwar.json",
+    "name": "Blufor Late Cold War (80s)",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 49,
+    "doctrine": "coldwar",
+    "has_jtac": true
+  },
+  {
+    "file": "canada_2005.json",
+    "name": "Canada 2005",
+    "country": "Canada",
+    "aircraft_count": 6,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "china_2010.json",
+    "name": "China 2010",
+    "country": "China",
+    "aircraft_count": 9,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "china_2020.json",
+    "name": "China 2020",
+    "country": "China",
+    "aircraft_count": 9,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "china_argentina_2010.json",
+    "name": "China/Argentina Falklands Occupation Force",
+    "country": "China",
+    "aircraft_count": 12,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "dprk_1950_fictional.json",
+    "name": "North Korea 1950, fictional",
+    "country": "North Korea",
+    "aircraft_count": 5,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "egypt_1973.json",
+    "name": "Egypt 1973",
+    "country": "Egypt",
+    "aircraft_count": 5,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "egypt_2000.json",
+    "name": "Egypt 2000",
+    "country": "Egypt",
+    "aircraft_count": 21,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "egypt_2010s.json",
+    "name": "Egypt 2010's",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 15,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "final_countdown_2.json",
+    "name": "D-Day Allied Forces 1944 and 1990",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 16,
+    "doctrine": "ww2",
+    "has_jtac": true
+  },
+  {
+    "file": "france_1985.json",
+    "name": "France 1985",
+    "country": "France",
+    "aircraft_count": 13,
+    "doctrine": "coldwar",
+    "has_jtac": true
+  },
+  {
+    "file": "france_1995.json",
+    "name": "France 1995",
+    "country": "France",
+    "aircraft_count": 13,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "france_2005.json",
+    "name": "France 2005",
+    "country": "France",
+    "aircraft_count": 13,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "gdr_1985.json",
+    "name": "German Democratic Republic 1985",
+    "country": "GDR",
+    "aircraft_count": 7,
+    "doctrine": "coldwar",
+    "has_jtac": true
+  },
+  {
+    "file": "georgia_2008.json",
+    "name": "Georgia 2008",
+    "country": "Georgia",
+    "aircraft_count": 6,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "germany_1940.json",
+    "name": "Germany 1940",
+    "country": "Third Reich",
+    "aircraft_count": 2,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "germany_1942.json",
+    "name": "Germany 1942",
+    "country": "Third Reich",
+    "aircraft_count": 2,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "germany_1944.json",
+    "name": "Germany 1944",
+    "country": "Third Reich",
+    "aircraft_count": 4,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "germany_1944_free.json",
+    "name": "Germany 1944 (Free)",
+    "country": "Third Reich",
+    "aircraft_count": 3,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "germany_1990.json",
+    "name": "Germany 1990",
+    "country": "Germany",
+    "aircraft_count": 9,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "greece_2005.json",
+    "name": "Greece 2005",
+    "country": "Greece",
+    "aircraft_count": 12,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "india_2010.json",
+    "name": "India 2010",
+    "country": "India",
+    "aircraft_count": 11,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "insurgents.json",
+    "name": "Insurgents",
+    "country": "Insurgents",
+    "aircraft_count": 0,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "insurgents_hard.json",
+    "name": "Insurgents (Hard)",
+    "country": "Insurgents",
+    "aircraft_count": 0,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "iran_1988.json",
+    "name": "Iran 1988",
+    "country": "Iran",
+    "aircraft_count": 7,
+    "doctrine": "coldwar",
+    "has_jtac": true
+  },
+  {
+    "file": "iran_2015.json",
+    "name": "Iran 2015",
+    "country": "Iran",
+    "aircraft_count": 18,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "iraq_1991.json",
+    "name": "Iraq 1991",
+    "country": "Iraq",
+    "aircraft_count": 18,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "israel_1948.json",
+    "name": "Israel 1948",
+    "country": "Israel",
+    "aircraft_count": 6,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "israel_1973.json",
+    "name": "Israel 1973",
+    "country": "Israel",
+    "aircraft_count": 7,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "israel_1982.json",
+    "name": "Israel 1982",
+    "country": "Israel",
+    "aircraft_count": 11,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "israel_2000.json",
+    "name": "Israel 2000",
+    "country": "Israel",
+    "aircraft_count": 18,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "israel_2011_ODS.json",
+    "name": "Israel 2011 for ODS",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 20,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "israel_2012.json",
+    "name": "Israel 2012'ish",
+    "country": "Israel",
+    "aircraft_count": 18,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "israel_2017.json",
+    "name": "Israel 2017",
+    "country": "Israel",
+    "aircraft_count": 15,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "italy_1990.json",
+    "name": "Italy 1990",
+    "country": "Italy",
+    "aircraft_count": 10,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "japan_1944.json",
+    "name": "Japan 1944",
+    "country": "Japan",
+    "aircraft_count": 2,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "japan_2005.json",
+    "name": "Japan 2005",
+    "country": "Japan",
+    "aircraft_count": 10,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "libya_2011.json",
+    "name": "Libya 2011",
+    "country": "Libya",
+    "aircraft_count": 8,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "netherlands_1990.json",
+    "name": "Netherlands 1990",
+    "country": "The Netherlands",
+    "aircraft_count": 9,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "north_korea_2000.json",
+    "name": "North Korea 2000",
+    "country": "North Korea",
+    "aircraft_count": 9,
+    "doctrine": null,
+    "has_jtac": false
+  },
+  {
+    "file": "nva_1970.json",
+    "name": "NVA 1970",
+    "country": "Vietnam",
+    "aircraft_count": 5,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "pakistan_2015.json",
+    "name": "Pakistan 2015",
+    "country": "Pakistan",
+    "aircraft_count": 9,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "peru_1995.json",
+    "name": "Peru 1995",
+    "country": "Peru",
+    "aircraft_count": 5,
+    "doctrine": "modern",
+    "has_jtac": false
+  },
+  {
+    "file": "pmc_russian.json",
+    "name": "Private Military Company - Russian",
+    "country": "Russia",
+    "aircraft_count": 5,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "pmc_russian_hard.json",
+    "name": "Private Military Company - Russian (Hard)",
+    "country": "Russia",
+    "aircraft_count": 6,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "pmc_us.json",
+    "name": "Private Military Company - USA",
+    "country": "USA",
+    "aircraft_count": 6,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "poland_2010.json",
+    "name": "Poland 2010",
+    "country": "Poland",
+    "aircraft_count": 11,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "redfor_china_2010.json",
+    "name": "Redfor (China) 2010",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 24,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "redfor_china_2020.json",
+    "name": "Redfor (China) 2020",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 24,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "redfor_current.json",
+    "name": "Redfor Current",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 30,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "redfor_russia_2010.json",
+    "name": "Redfor (Russia) 2010",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 25,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "redfor_russia_2020.json",
+    "name": "Redfor (Russia) 2020",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 30,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "russia_1955.json",
+    "name": "Russia 1955",
+    "country": "Russia",
+    "aircraft_count": 2,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "russia_1965.json",
+    "name": "Russia 1965",
+    "country": "Russia",
+    "aircraft_count": 6,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "russia_1970_limited_air.json",
+    "name": "Russia 1970 Limited Air",
+    "country": "Russia",
+    "aircraft_count": 4,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "russia_1975 (Mi-24P).json",
+    "name": "Russia 1975 (Mi-24P)",
+    "country": "Russia",
+    "aircraft_count": 14,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "russia_1975.json",
+    "name": "Russia 1975",
+    "country": "Russia",
+    "aircraft_count": 14,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "russia_1980.json",
+    "name": "Russia 1980",
+    "country": "Russia",
+    "aircraft_count": 21,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "russia_1990.json",
+    "name": "Russia 1990",
+    "country": "Russia",
+    "aircraft_count": 19,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "russia_2010.json",
+    "name": "Russia 2010",
+    "country": "Russia",
+    "aircraft_count": 22,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "russia_2020.json",
+    "name": "Russia 2020",
+    "country": "Russia",
+    "aircraft_count": 33,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "soviet_union_1943.json",
+    "name": "Soviet Union 1943",
+    "country": "USSR",
+    "aircraft_count": 2,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "soviet_union_1965.json",
+    "name": "Soviet Union 1965",
+    "country": "USSR",
+    "aircraft_count": 11,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "spain_1990.json",
+    "name": "Spain 1990",
+    "country": "Spain",
+    "aircraft_count": 14,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "spain_2010.json",
+    "name": "Spain 2010",
+    "country": "Spain",
+    "aircraft_count": 12,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "sweden_1970.json",
+    "name": "Sweden 1970s Alternate Universe",
+    "country": "Sweden",
+    "aircraft_count": 4,
+    "doctrine": "coldwar",
+    "has_jtac": false
+  },
+  {
+    "file": "sweden_1980.json",
+    "name": "Sweden 1980",
+    "country": "Sweden",
+    "aircraft_count": 4,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "sweden_1990.json",
+    "name": "Sweden 1990",
+    "country": "Sweden",
+    "aircraft_count": 3,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "sweden_1997.json",
+    "name": "Sweden 1997 Swedish Military Assets",
+    "country": "Sweden",
+    "aircraft_count": 7,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "sweden_2002.json",
+    "name": "Sweden 2002",
+    "country": "Sweden",
+    "aircraft_count": 7,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "sweden_2020.json",
+    "name": "Sweden 2020 Swedish Military Assets",
+    "country": "Sweden",
+    "aircraft_count": 8,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "syria_1948.json",
+    "name": "Syria 1948",
+    "country": "Syria",
+    "aircraft_count": 2,
+    "doctrine": "ww2",
+    "has_jtac": null
+  },
+  {
+    "file": "syria_1967.json",
+    "name": "Syria 1967",
+    "country": "Syria",
+    "aircraft_count": 5,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "syria_1967_with_ww2_weapons.json",
+    "name": "Syria 1967 (With WW2 Weapons)",
+    "country": "Syria",
+    "aircraft_count": 5,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "syria_1973.json",
+    "name": "Syria 1973",
+    "country": "Syria",
+    "aircraft_count": 5,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "syria_1982.json",
+    "name": "Syria 1982",
+    "country": "Syria",
+    "aircraft_count": 6,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "syria_2011.json",
+    "name": "Syria 2011",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 14,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "syria_2012.json",
+    "name": "Syria 2012'ish",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 15,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "taliban_2001.json",
+    "name": "Toyota Al Gaib 2001",
+    "country": "Insurgents",
+    "aircraft_count": 0,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "turkey_2005.json",
+    "name": "Turkey 2005",
+    "country": "Turkey",
+    "aircraft_count": 16,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "uae_2005.json",
+    "name": "United Arab Emirates 2005",
+    "country": "United Arab Emirates",
+    "aircraft_count": 10,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "uae_2015.json",
+    "name": "United Arab Emirates 2015",
+    "country": "United Arab Emirates",
+    "aircraft_count": 15,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "uk_1944.json",
+    "name": "United Kingdom 1944",
+    "country": "UK",
+    "aircraft_count": 10,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "uk_1990.json",
+    "name": "United Kingdom 1990",
+    "country": "UK",
+    "aircraft_count": 10,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "ukraine_2010.json",
+    "name": "Ukraine 2010",
+    "country": "Ukraine",
+    "aircraft_count": 11,
+    "doctrine": null,
+    "has_jtac": null
+  },
+  {
+    "file": "ukraine_2020.json",
+    "name": "Ukraine 2020",
+    "country": "Ukraine",
+    "aircraft_count": 14,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "unc_1950_fictional.json",
+    "name": "United Nations Command 1950, fictional",
+    "country": "USA",
+    "aircraft_count": 7,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "us_aggressors.json",
+    "name": "USAF Aggressors",
+    "country": "USAF Aggressors",
+    "aircraft_count": 23,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "usa_1944.json",
+    "name": "USA 1944",
+    "country": "USA",
+    "aircraft_count": 9,
+    "doctrine": "ww2",
+    "has_jtac": false
+  },
+  {
+    "file": "usa_1945.json",
+    "name": "USA 1945",
+    "country": "USA",
+    "aircraft_count": 6,
+    "doctrine": "ww2",
+    "has_jtac": null
+  },
+  {
+    "file": "usa_1955.json",
+    "name": "USA 1955",
+    "country": "USA",
+    "aircraft_count": 11,
+    "doctrine": "ww2",
+    "has_jtac": null
+  },
+  {
+    "file": "usa_1960.json",
+    "name": "USA 1960",
+    "country": "USA",
+    "aircraft_count": 15,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "usa_1965.json",
+    "name": "USA 1965",
+    "country": "USA",
+    "aircraft_count": 24,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "usa_1970.json",
+    "name": "USA 1970",
+    "country": "USA",
+    "aircraft_count": 28,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "usa_1975.json",
+    "name": "USA 1975",
+    "country": "USA",
+    "aircraft_count": 26,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "usa_1990.json",
+    "name": "USA 1990",
+    "country": "USA",
+    "aircraft_count": 32,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "usa_2005.json",
+    "name": "USA 2005",
+    "country": "USA",
+    "aircraft_count": 37,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "usa_2020.json",
+    "name": "USA 2020",
+    "country": "USA",
+    "aircraft_count": 37,
+    "doctrine": null,
+    "has_jtac": true
+  },
+  {
+    "file": "usn_1985.json",
+    "name": "US Navy 1985",
+    "country": "USA",
+    "aircraft_count": 14,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "usn_2005.json",
+    "name": "US Navy 2005",
+    "country": "USA",
+    "aircraft_count": 10,
+    "doctrine": "modern",
+    "has_jtac": true
+  },
+  {
+    "file": "usn_2009.json",
+    "name": "US Navy 2009",
+    "country": "USA",
+    "aircraft_count": 11,
+    "doctrine": "modern",
+    "has_jtac": true
+  },
+  {
+    "file": "vietcong_1965.json",
+    "name": "Viet Cong 1965",
+    "country": "Vietnam",
+    "aircraft_count": 2,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "vietcong_1970.json",
+    "name": "Viet Cong 1970",
+    "country": "Vietnam",
+    "aircraft_count": 4,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "vietnam_1965.json",
+    "name": "Vietnam 1965",
+    "country": "Vietnam",
+    "aircraft_count": 5,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "vietnam_1970.json",
+    "name": "Vietnam 1970",
+    "country": "Vietnam",
+    "aircraft_count": 10,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "wadiya_2010.json",
+    "name": "Republic of Wadiya 2010",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 21,
+    "doctrine": "coldwar",
+    "has_jtac": null
+  },
+  {
+    "file": "wrl_taskforceblue.json",
+    "name": "WRL - Task Force Blue",
+    "country": "Combined Joint Task Forces Blue",
+    "aircraft_count": 106,
+    "doctrine": "modern",
+    "has_jtac": true
+  },
+  {
+    "file": "wrl_taskforceinsurgent.json",
+    "name": "WRL - Task Force Insurgent",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 106,
+    "doctrine": "modern",
+    "has_jtac": false
+  },
+  {
+    "file": "wrl_taskforcemixed.json",
+    "name": "WRL - Task Force Mixed",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 106,
+    "doctrine": "modern",
+    "has_jtac": false
+  },
+  {
+    "file": "wrl_taskforcered.json",
+    "name": "WRL - Task Force Red",
+    "country": "Combined Joint Task Forces Red",
+    "aircraft_count": 106,
+    "doctrine": "modern",
+    "has_jtac": false
+  }
+]
