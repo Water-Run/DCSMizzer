@@ -40,3 +40,11 @@ All under `.develope/upstream/` (ignored):
 - Upstream full trees (gitignored)
 - Official campaigns under `.develope/official-campaigns/*`
 - Empty `Docs/` product tree (intentionally untouched)
+
+## Reproducible verification
+
+```bash
+python3 .develope/survey/verify_reference_extracts.py
+```
+
+Compares extracts under `.develope/reference/data` to local `.develope/upstream/pydcs` source.
