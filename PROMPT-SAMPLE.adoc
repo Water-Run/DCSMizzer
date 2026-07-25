@@ -19,22 +19,23 @@ This file relies on *AsciiDoc multi-level TOC* (`toc::[]` below, through `====` 
 
 [TIP]
 ====
-* <<quick-missions,Quick Missions>> — procedures / BFM / BVR / A-G ranges / sensors (grindable training + one-shot tasks)
-* <<combat-scenarios,Combat Scenarios>> — full standalone ops
-* <<campaigns,Campaigns>> — multi-mission and <<named-campaigns,Named Long-Form>> (incl. type-evolution)
+* <<quick-training,Quick Training>> — free flight, procedures, short sorties
+* <<mission-scenarios,Mission Scenarios>> — typical single-mission combat
+* <<continuous-training,Continuous Training>> — respawnable skill ranges (F10)
+* <<living-battlespace,Living Battlespace>> — large atmosphere, pick a side and join (one map each)
+* <<campaigns,Campaigns>> — multi-mission and named long-form (incl. type-evolution)
 ====
 
 toc::[]
 
-[[quick-missions]]
-== Quick Missions
+[[quick-training]]
+== Quick Training
 
-[[flight-procedures]]
-=== Flight and Procedures
+Immediate, short practice and brief engagements: free flight, cold starts, procedures, and compact air fights that end when the sortie ends.
 
-==== Free Flight
+=== Free Flight
 
-===== Day Free Flight
+==== Day Free Flight
 
 [source,text]
 ----
@@ -45,7 +46,7 @@ Keep the airspace lived-in but not fake or laggy: military transport/patrol, hel
 Verify era types, fields, realistic routing, staggered timeline, and total unit count; build and validate a .miz and recovery brief.
 ----
 
-===== Night Free Flight
+==== Night Free Flight
 
 [source,text]
 ----
@@ -56,7 +57,7 @@ Build **Cold War Germany** full-fidelity **MiG-29A** night free flight. Moonligh
 Verify field, night weather, era types, routes, staggered timeline, and total unit count; build and validate a .miz and brief.
 ----
 
-===== Scenic Flight
+==== Scenic Flight
 
 [source,text]
 ----
@@ -67,7 +68,7 @@ Generate a **Cold War Germany** full-fidelity **MiG-29A** scenic flight as peace
 Verify map, full-fidelity type, route, staggered timeline, and total unit count; build and validate a .miz and route brief.
 ----
 
-===== Adverse-Weather Flight
+==== Adverse-Weather Flight
 
 [source,text]
 ----
@@ -77,6 +78,8 @@ Make a **Kola** **JF-17** adverse-weather free flight (**real** weather—not li
 
 Check weather, route, era types, staggered timeline, start, and total unit count; build and validate a .miz and brief.
 ----
+
+=== Procedures
 
 ==== Start and Departure
 
@@ -212,296 +215,27 @@ Generate an **Afghanistan** **CH-47F** confined-area landing exercise (full or *
 Verify pads, weight, and weather; build and validate a .miz and landing brief.
 ----
 
-[[bfm-acm]]
-=== Close Air Combat (BFM/ACM)
+=== Aerobatics
 
-*Grindable sparring* (modern guns/IR/BVR): **full-fidelity first** · **red/blue side choice** · **common-type roster** · **F10 continuous sparring/respawn**.  
-*One-shot ordinary missions* (WWII bomber, furball, travelers): fixed script—**no** infinite F10 wave requirement.
-
-==== Guns
-
-===== Modern Guns 1v1 (Red/Blue · Grindable)
+==== Solo Aerobatics
 
 [source,text]
 ----
-Build a **modern standard** guns-only 1v1 **grindable** training (not WWII). Map **Nevada** (or CWG/Caucasus—state in brief).
+Build the weird special ***Traveler II***—**WWII into modern**. Player locks **Spitfire LF Mk. IX** or **P-51D**; anomalously appears over **Nevada** or **Sinai** contemporary airspace with modern traffic (transports, helicopters, distant non-hostile **F-16C** / **F-15C** tracks—**do not** freefire modern jets at the player unless an optional “mis-ID fight” branch is briefed). Player **guns only** (no modern missiles bolted on); ~25–35 min survive/recover/divert. Mix performance and survival: low passes, jet-wake avoidance, wrong-field risk. Active **≤35**; staggered; no mid-air spawns after t=0.
 
-**Red/Blue:** Provide **Blue / Red** choice (client slots or F10 side select); swapping sides swaps player and bandit type pools.  
-**Common roster** (installed only; full-fidelity preferred; FC as adversary/spare OK):  
-- Blue/West: full-fidelity F-16C, F/A-18C, F-14B, F-15E, M-2000C, F-4E, A-10C II, AV-8B; FC F-15C, F-5E FC  
-- Red/East: full-fidelity MiG-29A, JF-17, MiG-21Bis, AJS-37; FC MiG-29S, MiG-29G, Su-27, J-11A, Su-25T  
-**Default example:** Blue F-16C vs Red F-5E FC (or Red full-fidelity MiG-29A vs Blue F-16C). **Guns only**, no missiles; equal-energy head-on; no out-of-bounds or shots at disengaged/chutes.
-
-**Training loop (F10 / respawn):** F10 at least: pick/swap side, Reset geometry, Next Wave, Respawn Player, Respawn Bandit. Infinite sparring; do not force-end after one round. ~8–10 min per round.
-
-Verify roster, red/blue slots, guns, F10; training brief and validate.
+Verify prop airfield fit on modern maps, traffic, mis-ID rules; brief and validate.
 ----
 
-===== WWII Bomber Intercept (One-Shot)
+==== Formation Aerobatics
 
 [source,text]
 ----
-Build a **one-shot ordinary mission**: WWII bomber guns intercept (not grindable).  
-**Asset fact:** DCS **WWII Assets** heavy bombers are essentially **US/Allied**—this mission intercepts an **American bomber stream** (do not invent German heavy bombers).  
-**Default player Germany:** two-ship **Bf 109 K-4** or **Fw 190 A-8** (player lead; lock one or offer both as seats) intercepts escorted US bombers from a continental/forward field; escort may be installed Allied fighters (**P-51D** / **P-47D** / **Spitfire**). Map **The Channel** or **Normandy** (prefer 2.0). **Guns primary**; 1944 dusk thin cloud; break/kill bombers and recover—ends. No friendly/neutral shots. No infinite F10 waves.
+Build Caucasus four-ship **Yak-52** formation aerobatics, player lead; AI holds formation by supported means. Clear afternoon ~40 min: join-up, diamond turns, smoke pass, gentle climb, recovery. Photo helo outside; traffic cleared. No enemies; rejoin if separated; recover on fuel.
 
-Verify WWII bomber units, German fighters, escort, bounds; brief and validate.
+Verify aircraft, formation AI, show box; formation brief and validate.
 ----
 
-===== WWII Multi-Aircraft Furball (One-Shot)
-
-[source,text]
-----
-Build a **one-shot ordinary mission**: WWII multi-aircraft guns furball (not grindable). **Caucasus** or **Marianas WWII**: player **La-7** or **F4U-1D**; airspace holds **Fw 190 A-8**, **Fw 190 D-9**, **Bf 109 K-4**, and friendly props; **guns only**; ~12–15 min one bout, score survival/kills then end. Active **≤35**, staggered entry. Report La-7 EA limits. No infinite F10 wave respawn.
-
-Verify type pool and bounds; furball brief and validate.
-----
-
-==== Infrared Missiles
-
-===== 1v1
-
-[source,text]
-----
-Build Nevada IR 1v1 **grindable** training (**full roster parity with modern guns**).  
-**Red/Blue selectable** (client slots or F10; swap sides swaps type pools).  
-**Common roster** (installed only; full-fidelity preferred)—same as modern guns:  
-- Blue/West: full-fidelity F-16C, F/A-18C, F-14B, F-15E, M-2000C, F-4E, A-10C II, AV-8B; FC F-15C, F-5E FC  
-- Red/East: full-fidelity MiG-29A, JF-17, MiG-21Bis, AJS-37; FC MiG-29S, MiG-29G, Su-27, J-11A, Su-25T  
-**Default example:** Red MiG-29G vs Blue F-5E FC (any full-fidelity pair OK). Limited IR + guns, no radar missiles; visual head-on.
-
-**F10 / respawn:** Pick/swap side, Reset geometry, Next Wave, Respawn Player, Respawn Bandit. Continuous. ~8 min per round.
-
-Verify weapons, red/blue, **full roster**, F10; rules brief and validate.
-----
-
-===== 2v2
-
-[source,text]
-----
-Build Nevada ***Top Gun*** simulation special—**two playable identities** (separate `.miz` files or one mission with red/blue swap—state in brief):  
-1. **Student F-14B** (fixed B, not evolution) two-ship vs aggressor **F-5E FC ×2** with forced **MiG-28-style liveries** (verify livery IDs);  
-2. **Aggressor MiG-28** (**F-5E FC** + MiG-28 livery) two-ship vs student **F-14B** two-ship.  
-TOPGUN/NFWS tone, not politics. Limited IR + guns, no radar missiles; no shots on disengaged/chutes.
-
-**F10 / respawn:** Reset, Next Wave, Respawn, **switch F-14 / MiG-28 identity**; continuous classes. ~12 min per round. Never silently swap F-5E for another airframe as “MiG-28.”
-
-Verify F-14B, F-5E, **MiG-28 liveries**, dual identity, F10; briefs and validate.
-----
-
-===== 1v2
-
-[source,text]
-----
-Build close IR 1v2 **grindable** training (**full roster parity with modern guns**).  
-**Red/Blue selectable**.  
-**Common roster** same as IR 1v1 / modern guns blue-red pools (full-fidelity first, installed only).  
-**Default example:** Red full-fidelity **MiG-29A** (1) vs Blue two **F-16C**; or Blue F-16C (1) vs Red two MiG-29S. Limited IR + guns; bandits split slightly low; evening sun; visual search, prioritization, egress. Map Caucasus or CWG.
-
-**F10 / respawn:** Pick side, Reset, Next two-ship wave, Respawn Player, Respawn bandits. ~10 min per round.
-
-Verify weapons, red/blue, **full roster**, geometry, F10; learning card and validate.
-----
-
-==== Fully Armed Surprise Encounter
-
-[source,text]
-----
-Build **one-shot** weird special ***Traveler I***—**modern into WWII**. Player **F-16C** over Channel/Normandy 1944; prop opposition and **WWII Assets** bombers. ~20–25 min window then end. Active **≤35**. Never upgrade WWII types to modern jets.
-
-Verify cross-era mix and ROE; anomaly brief and validate.
-----
-
-[[bvr-training]]
-=== Beyond-Visual-Range Combat (BVR)
-
-BVR *grindable* training: **full-fidelity first** · **red/blue side choice** · **common-type roster** · **F10 continuous sparring/respawn**.
-
-==== 1v1
-
-[source,text]
-----
-Generate BVR 1v1 **grindable** training (default Persian Gulf; Nevada/CWG OK). **Red/Blue selectable**.  
-**Common roster** (installed only, full-fidelity preferred): Blue—F-16C, F/A-18C, F-15C, F-15E, F-14B, M-2000C, F-4E; Red—full-fidelity MiG-29A, JF-17, MiG-29S, Su-27, J-11A, MiG-21Bis.  
-**Default example:** Red JF-17 vs Blue F-16C. ~45 nm; medium + short-range defensive; limited AWACS; no support/out-of-bounds shots.
-
-**F10 / respawn:** Reset geometry, Next Wave, Respawn Player (training loadout), Respawn Bandit, Swap Sides. Infinite sparring. ~15 min per round.
-
-Verify loads, red/blue, roster, AWACS, F10; frequency card and validate.
-----
-
-==== 2v2
-
-[source,text]
-----
-Build BVR 2v2 **grindable** training (default Marianas open ocean). **Red/Blue selectable**. Default Red **J-11A** section vs Blue **F-14B** section; pick types from BVR common roster. ~55 nm; A-A loads; spacing and targeting practice.
-
-**F10 / respawn:** Reset, Next Wave, Respawn flight, Respawn bandits, Swap Sides. ~18 min per round.
-
-Verify loads, red/blue, roster, F10; tactical brief and validate.
-----
-
-==== 1v2
-
-[source,text]
-----
-Generate BVR 1v2 **grindable** training (default Caucasus). **Red/Blue selectable**. Default Blue full-fidelity **M-2000C** vs two Red **Su-27**; or Red full-fidelity MiG-29A vs two Blue F-16C. Semi-active/medium weapons per verified type.
-
-**F10 / respawn:** Reset pincer, Next wave, Respawn Player, Respawn bandits. ~18 min per round.
-
-Verify sensors, red/blue, roster, F10; control brief and validate.
-----
-
-==== 4v4 with AWACS and Datalink
-
-[source,text]
-----
-Build 4v4 BVR **grindable** training (default CWG multinational exercise). **Red/Blue selectable**. Default Red full-fidelity **MiG-29A** four-ship vs Blue mixed **F-15C/F-16C**; AWACS both sides; no support/neutral shots.
-
-**F10 / respawn:** Reset 4v4, Next package, Respawn own side, Respawn opposite, Swap Sides. ~25 min per round.
-
-Verify loads, AWACS, red/blue, roster, F10; package brief and validate.
-----
-
-==== Defensive Disengagement
-
-[source,text]
-----
-Generate BVR defensive-egress **grindable** training (default Kola). **Default MiG-29S** (Red); other Red-pool full-fidelity/FC OK. Already tracked with inbound shots; no return fire; reach safe route.
-
-**F10 / respawn:** Reset threat, Run Again, Respawn Player. ~15 min per round.
-
-Verify threat geometry, CM, F10; survival brief and validate.
-----
-
-[[air-to-ground-training]]
-=== Air-to-Ground Weapons Training
-
-Category defaults: **(1) full-fidelity first** (named default prefers full-fidelity; free full-fidelity Su-25T counts); **(2) optional aircraft list** (2–4 installed full-fidelity matching this weapon lesson; report unsupported); **(3) F10 continuous practice/respawn** (reset targets/next set, respawn to range entry, reset training loads)—do not force-end after one pass.
-
-==== Cannon Strafing
-
-[source,text]
-----
-Generate **Cold War Germany** gun range. **Default full-fidelity Su-25T**; **optional list**: A-10C II, full-fidelity M-2000C, JF-17, full-fidelity MiG-29A (verify gun/A-G fit). Air-spawn; clear morning axes on trucks, light armor, markers; no return fire; protect convoy/maintenance outside.
-
-**Training loop (F10 / respawn):** F10 reset targets, next set, respawn player to entry, reset loads; continuous passes.
-
-Verify range, safety lines, aircraft list, F10; range brief and validate.
-----
-
-==== Rockets
-
-[source,text]
-----
-Build Sinai rocket training. **Default Mi-24P** (full-fidelity rotor); **optional list**: Ka-50, AH-64D, Su-25T, A-10C II (verify rocket fit). Depart FARP; safe corridor; light vehicles and area targets; protect towns/friendlies.
-
-**Training loop (F10 / respawn):** F10 reset targets, respawn player, re-open window, reset loads; continuous practice.
-
-Verify corridor, range, loads, aircraft list, F10; training brief and validate.
-----
-
-==== CCIP Unguided Bombs
-
-[source,text]
-----
-Generate **Caucasus** CCIP unguided-bomb practice. **Default full-fidelity Su-25T**; **optional list**: A-10C II, JF-17, full-fidelity M-2000C, F/A-18C, full-fidelity MiG-29A (verify CCIP/bombs). Optional same-type wingman; dive circular targets; axis discipline. Report unsupported loads.
-
-**Training loop (F10 / respawn):** F10 reset targets/geometry, respawn player/wingman, reset loads; continuous CCIP.
-
-Verify weapons, boxes, axes, aircraft list, F10; range brief and validate.
-----
-
-==== CCRP Unguided Bombs
-
-[source,text]
-----
-Build **Cold War Germany** CCRP practice. **Default full-fidelity M-2000C**; **optional list**: F-16C, JF-17, F/A-18C, full-fidelity MiG-29A (verify CCRP). Depart field; low-level simulated runway; no interceptors; overfly/rebuild if release fails.
-
-**Training loop (F10 / respawn):** F10 reset target line, respawn player, reset bombs; continuous CCRP.
-
-Verify bombs, target, aircraft list, F10; bomb brief and validate.
-----
-
-==== Cluster Munitions
-
-[source,text]
-----
-Generate **Sinai** cluster/area-effect training. **Default full-fidelity JF-17**; **optional list**: F-16C, F/A-18C, Su-25T, A-10C II (verify area munitions; else report and reframe unguided area profile). Two safe release heights; no return fire.
-
-**Training loop (F10 / respawn):** F10 reset targets, respawn player, reset loads; continuous releases.
-
-Verify weapons, boxes, safety lines, aircraft list, F10; range brief and validate.
-----
-
-==== Laser-Guided Weapons
-
-[source,text]
-----
-Build Marianas laser-guided weapons exercise. **Default full-fidelity F/A-18C**; **optional list**: JF-17, F-16C, full-fidelity M-2000C, A-10C II, F-15E (verify laser/pod). Carrier or land start matching type; JTAC marks targets; re-attack if laser/comms lost.
-
-**Training loop (F10 / respawn):** F10 reset target sequence, respawn player/wingman, JTAC re-mark, reset loads; continuous laser work.
-
-Verify laser, JTAC, recovery, aircraft list, F10; coordination brief and validate.
-----
-
-==== Television or Electro-Optical Weapons
-
-[source,text]
-----
-Generate Caucasus EO/surface-sensor familiarization. **Default full-fidelity JF-17** (or best supported full-fidelity EO); **optional list**: F/A-18C, F-16C, A-10C II, full-fidelity M-2000C; FC **MiG-29S** only as listed spare with documented limits. Hot start; mock radar vehicles/bridge; report unsupported EO—never silent airframe swap.
-
-**Training loop (F10 / respawn):** F10 reset targets, respawn player, retry profile; continuous familiarization.
-
-Verify sensors, targets, aircraft list, F10; validate; document limits.
-----
-
-==== GPS/INS-Guided Weapons
-
-[source,text]
-----
-Build **Nevada** GPS/INS or route/classification familiarization. **Default full-fidelity F-16C** (or F-15E/JF-17 if better GPS fit—state full-fidelity default); **optional list**: F-15E, JF-17, F/A-18C, full-fidelity M-2000C. Depart Nellis area; route to range for search/classify (weapons safe or training release per brief); avoid neutrals/transports.
-
-**Training loop (F10 / respawn):** F10 reset route/targets, respawn player, reset loads; continuous familiarization.
-
-Verify loads, route, aircraft list, F10; route brief and validate.
-----
-
-==== Standoff Weapons
-
-[source,text]
-----
-Generate Marianas open-ocean CAP/BVR and standoff practice. **Default full-fidelity JF-17** or **F/A-18C** (state one full-fidelity default); **optional list**: full-fidelity MiG-29A, J-11A, F-16C, F-15C. Air-spawn with wingman; low-to-medium AI ~50 nm; verified loads; no support/neutral shots.
-
-**Training loop (F10 / respawn):** F10 reset BVR geometry, next wave, respawn player/wingman, respawn bandits; continuous CAP/BVR.
-
-Verify capability, loads, aircraft list, airspace, F10; validate; report unsupported.
-----
-
-==== Anti-Radiation Missiles
-
-[source,text]
-----
-Build **Cold War Germany** RWR/threat-reaction (optional SEAD familiarization). **Default full-fidelity MiG-29A** or **JF-17** (state full-fidelity default); **optional list**: F-16C, F/A-18C, full-fidelity M-2000C, MiG-21Bis as classic spare. Fixed route through search/track/safe simulated missiles; no return fire unless SEAD loads briefed and supported.
-
-**Training loop (F10 / respawn):** F10 reset threat sequence, respawn player, re-run route; continuous threat/SEAD work.
-
-Verify RWR/CM, threat scripts, aircraft list, F10; defensive brief and validate.
-----
-
-==== Anti-Ship Missiles
-
-[source,text]
-----
-Generate Kola coastal **AJS-37** anti-ship training. Low departure with wingman; maritime patrol reports a transport convoy under escort; first ID nearby neutral merchants. Low cloud and sea gusts ~45 min; verified anti-ship weapons, coordinated release, high-speed egress; no enemy fighters this lesson.
-
-Verify anti-ship loads, ID, neutrals; anti-ship brief and validate.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
-----
-
-[[sensors-survivability]]
-=== Sensors and Survivability
+=== Sensors Snapshot
 
 ==== Radar, IRST, and Datalink
 
@@ -523,27 +257,6 @@ Build a **Sinai** **JF-17** targeting-pod and JTAC exercise. Hot start; afternoo
 Verify pod, JTAC talk-on, and loads; coordination brief and validate.
 ----
 
-==== RWR, ECM, and Countermeasures
-
-[source,text]
-----
-Generate **Nevada** **F-16C** defensive-systems training. Fixed range route through search, track, and safe simulated missiles; instructor observes. Broken evening cloud ~30 min; verified RWR, ECM, chaff, flares—no return fire; safe-box reset.
-
-Verify RWR/ECM and threat scripts; defensive brief and validate.
-----
-
-==== Low-Level Penetration
-
-[source,text]
-----
-Build the weird special ***Traveler III***—**modern into Cold War**. Player locks **JF-17** or **F-16C**; anomalously appears on **Cold War Germany** **1980s** corridor; friendlies/foes are Cold War types (full-fidelity **MiG-29A** / **MiG-21** / **F-4E** / **M-2000C**—verify each) under confused ID protocols. Full or brief-limited loads; ~30–40 min to either guided recovery/internment or breakout to an exit window; no civilian towns/airliners. **Never** silently upgrade Cold War types to 5th-gen. Active units typically **≤35**.
-
-Verify cross-era pool, ID/ROE, internment/breakout conditions; anomaly brief and validate.
-----
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
-----
-
 ==== Emergency Recovery
 
 [source,text]
@@ -555,29 +268,41 @@ Verify failure modes, carrier, divert; emergency brief and validate.
 Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
-[[aerobatics-travelers]]
-=== Aerobatics
+[[mission-scenarios]]
+== Mission Scenarios
 
-==== Solo Aerobatics
+Typical single-mission combat: one brief, one package, one ending. Not infinite-range training.
 
-[source,text]
-----
-Build the weird special ***Traveler II***—**WWII into modern**. Player locks **Spitfire LF Mk. IX** or **P-51D**; anomalously appears over **Nevada** or **Sinai** contemporary airspace with modern traffic (transports, helicopters, distant non-hostile **F-16C** / **F-15C** tracks—**do not** freefire modern jets at the player unless an optional “mis-ID fight” branch is briefed). Player **guns only** (no modern missiles bolted on); ~25–35 min survive/recover/divert. Mix performance and survival: low passes, jet-wake avoidance, wrong-field risk. Active **≤35**; staggered; no mid-air spawns after t=0.
+=== One-Shot Air Combat
 
-Verify prop airfield fit on modern maps, traffic, mis-ID rules; brief and validate.
-----
-
-==== Formation Aerobatics
+==== WWII Bomber Intercept (One-Shot)
 
 [source,text]
 ----
-Build Caucasus four-ship **Yak-52** formation aerobatics, player lead; AI holds formation by supported means. Clear afternoon ~40 min: join-up, diamond turns, smoke pass, gentle climb, recovery. Photo helo outside; traffic cleared. No enemies; rejoin if separated; recover on fuel.
+Build a **one-shot ordinary mission**: WWII bomber guns intercept (not grindable).  
+**Asset fact:** DCS **WWII Assets** heavy bombers are essentially **US/Allied**—this mission intercepts an **American bomber stream** (do not invent German heavy bombers).  
+**Default player Germany:** two-ship **Bf 109 K-4** or **Fw 190 A-8** (player lead; lock one or offer both as seats) intercepts escorted US bombers from a continental/forward field; escort may be installed Allied fighters (**P-51D** / **P-47D** / **Spitfire**). Map **The Channel** or **Normandy** (prefer 2.0). **Guns primary**; 1944 dusk thin cloud; break/kill bombers and recover—ends. No friendly/neutral shots. No infinite F10 waves.
 
-Verify aircraft, formation AI, show box; formation brief and validate.
+Verify WWII bomber units, German fighters, escort, bounds; brief and validate.
 ----
 
-[[combat-scenarios]]
-== Combat Scenarios
+==== WWII Multi-Aircraft Furball (One-Shot)
+
+[source,text]
+----
+Build a **one-shot ordinary mission**: WWII multi-aircraft guns furball (not grindable). **Caucasus** or **Marianas WWII**: player **La-7** or **F4U-1D**; airspace holds **Fw 190 A-8**, **Fw 190 D-9**, **Bf 109 K-4**, and friendly props; **guns only**; ~12–15 min one bout, score survival/kills then end. Active **≤35**, staggered entry. Report La-7 EA limits. No infinite F10 wave respawn.
+
+Verify type pool and bounds; furball brief and validate.
+----
+
+==== Fully Armed Surprise Encounter
+
+[source,text]
+----
+Build **one-shot** weird special ***Traveler I***—**modern into WWII**. Player **F-16C** over Channel/Normandy 1944; prop opposition and **WWII Assets** bombers. ~20–25 min window then end. Active **≤35**. Never upgrade WWII types to modern jets.
+
+Verify cross-era mix and ROE; anomaly brief and validate.
+----
 
 === Air Superiority and Air Defense
 
@@ -1122,7 +847,443 @@ Generate Cold War Germany multiplayer air-ground. Ground players run defenders a
 Validate scoring; deliver .miz.
 ----
 
-[[campaigns]]
+[[continuous-training]]
+== Continuous Training
+
+Respawnable skill ranges. Every item below is **grindable**: F10 at least Reset / Next Wave / Respawn Player / Respawn Threat (and Swap Side where red-blue is offered). Do not force-end after one kill or one miss. Verify aircraft, weapons, SAMs, and ships against project data and Tools—never invent CLSIDs or unit type names. Report unsupported items instead of silent swaps.
+
+=== WWII Dogfighting
+
+[source,text]
+----
+Build a **continuous WWII guns dogfighting** range. Map **The Channel**, **Normandy** (prefer 2.0), **Caucasus**, or **Marianas WWII** (state one). **Guns only**; no modern missiles or sensors.
+
+**Pool (installed only):** player and bandit from verified warbirds—e.g. **Bf 109 K-4**, **Fw 190 A-8**, **Fw 190 D-9**, **P-51D**, **P-47D**, **Spitfire**, **F4U-1D**, **La-7**, **I-16** as map/module allow. Optional **WWII Assets** traffic outside the box. Default 1v1 equal-energy merge; optional 1v2 / 2v2 as F10 variants.
+
+**Loop (F10 / respawn):** Reset geometry, Next Wave, Respawn Player, Respawn Bandit(s), optional Swap Side. ~6–10 min per bout; infinite sparring. Active units typically **≤20** in the fight box.
+
+Verify types, map fit, guns, bounds, F10; training brief and validate.
+----
+
+=== 1950s Guns Dogfighting
+
+[source,text]
+----
+Build a **continuous 1950s guns-only** jet dogfighting range. Map **Caucasus** or **Nevada** (state one). **Guns only**—no IR or radar missiles.
+
+**Era pool (installed only):** early jets such as **F-86F**, **MiG-15bis**, and other verified mid-1950s types if available. Default 1v1 equal-energy head-on; optional 1v2 via F10. No anachronistic 4th-gen bandits.
+
+**Loop (F10 / respawn):** Reset geometry, Next Wave, Respawn Player, Respawn Bandit, optional Swap Side. ~8–10 min per bout; continuous.
+
+Verify era types, guns, no missiles, F10; brief and validate.
+----
+
+=== 1970s Guns Dogfighting
+
+[source,text]
+----
+Build a **continuous 1970s guns-only** dogfighting range. Map **Cold War Germany**, **Caucasus**, or **Nevada**. **Guns only**—no IR/radar missiles for this slot (pure gunfighting).
+
+**Era pool (installed only):** e.g. **F-5E FC**, **MiG-21Bis**, **F-4E**, **MiG-19P**, **A-4** or other verified late-60s/70s fighters as available. Default Blue F-5E vs Red MiG-21; full-fidelity preferred when the type exists in-era. Equal-energy merge.
+
+**Loop (F10 / respawn):** Reset, Next Wave, Respawn Player, Respawn Bandit, Swap Side. ~8–10 min per bout; continuous.
+
+Verify era, guns-only loads, F10; brief and validate.
+----
+
+=== 1990s Guns Dogfighting
+
+[source,text]
+----
+Build a **continuous 1990s guns-only** dogfighting range. Map **Cold War Germany**, **Nevada**, or **Caucasus**. **Guns only**—no missiles this slot.
+
+**Era pool (installed only):** e.g. full-fidelity **MiG-29A**, **MiG-29S/G**, **F-16C**, **F-15C**, **M-2000C**, **F/A-18C**, **JF-17** only if treated as contemporary peer for training (or swap to verified 90s types). Default Red full-fidelity MiG-29A vs Blue F-16C. Equal-energy head-on.
+
+**Red/Blue** selectable. **Loop (F10 / respawn):** Reset, Next Wave, Respawn Player, Respawn Bandit, Swap Side. ~8–10 min per bout; continuous.
+
+Verify loads are guns-only, roster, F10; brief and validate.
+----
+
+=== Modern Guns Dogfighting
+
+[source,text]
+----
+Build a **continuous modern guns-only** dogfighting range. Map **Nevada**, **Persian Gulf**, or **Caucasus**. **Guns only**—no missiles.
+
+**Red/Blue** selectable. **Common roster (installed only; full-fidelity first):** Blue—F-16C, F/A-18C, F-15C, F-15E, F-14B, M-2000C, F-4E, A-10C II; Red—full-fidelity MiG-29A, JF-17, MiG-29S/G, Su-27, J-11A, MiG-21Bis, Su-25T. Default Blue F-16C vs Red F-5E FC or full-fidelity MiG-29A. Equal-energy merge; no shots on disengaged/chutes.
+
+**Loop (F10 / respawn):** Pick/swap side, Reset geometry, Next Wave, Respawn Player, Respawn Bandit. ~8–10 min per bout; infinite sparring.
+
+Verify roster, guns, red/blue, F10; training brief and validate.
+----
+
+=== 1960s IR Dogfighting
+
+[source,text]
+----
+Build a **continuous 1960s-era IR dogfighting** range. Map **Nevada**, **Caucasus**, or **Cold War Germany**. Limited **early rear-aspect IR** + guns; **no** radar-guided missiles.
+
+**Era pool (installed only):** e.g. **F-5E FC**, **MiG-21Bis**, **F-4E**, **MiG-19P**—loads restricted to verified early IR (period AIM-9B-class / early Soviet IR as data allows) + gun. Default 1v1 visual merge; optional 1v2 via F10.
+
+**Loop (F10 / respawn):** Reset, Next Wave, Respawn Player (training load), Respawn Bandit. ~8–12 min per bout; continuous. Report if a type cannot carry period IR.
+
+Verify weapons compatibility, era, F10; brief and validate.
+----
+
+=== 1990s IR Dogfighting
+
+[source,text]
+----
+Build a **continuous 1990s IR dogfighting** range. Map **Cold War Germany**, **Nevada**, or **Caucasus**. Limited **all-aspect IR** + guns; **no** radar BVR missiles this slot.
+
+**Era pool (installed only):** full-fidelity **MiG-29A**, **MiG-29S/G**, **F-16C**, **F-15C**, **M-2000C**, **F/A-18C**, **F-14B**, **JF-17** as available—loads with verified 90s IR (e.g. R-73 / AIM-9M-class as data allows) + gun. **Red/Blue** selectable. Default Red MiG-29 vs Blue F-16C.
+
+**Loop (F10 / respawn):** Pick/swap side, Reset, Next Wave, Respawn Player, Respawn Bandit. ~8–12 min per bout; continuous.
+
+Verify IR loads, no BVR radar missiles, F10; brief and validate.
+----
+
+=== Modern IR Dogfighting
+
+[source,text]
+----
+Build a **continuous modern IR dogfighting** range. Map **Nevada**, **Persian Gulf**, or **Marianas**. Limited modern IR + guns; **no** active/semi-active radar BVR missiles this slot.
+
+**Red/Blue** selectable. Same modern fighter roster as modern guns (full-fidelity first, installed only). Default Red full-fidelity MiG-29A or JF-17 vs Blue F-16C / F/A-18C. High-off-boresight / all-aspect IR only as each type’s verified load allows—report gaps.
+
+**Loop (F10 / respawn):** Pick/swap side, Reset, Next Wave, Respawn Player, Respawn Bandit. ~8–12 min per bout; continuous.
+
+Verify modern IR compatibility, red/blue, F10; brief and validate.
+----
+
+=== 1980s BVR
+
+[source,text]
+----
+Build a **continuous 1980s-style BVR** range. Map **Cold War Germany**, **Nevada**, or **Persian Gulf**. Emphasize **semi-active / mid-era** radar missiles + limited IR defend; geometry ~30–50 nm.
+
+**Era pool (installed only):** e.g. **F-15C**, **F-14B**, **F-4E**, **MiG-29S**, full-fidelity **MiG-29A**, **Su-27**, **M-2000C**, **F-16C** with **period-appropriate** BVR loads (semi-active primary where the type historically relied on it—verify each). Optional limited AWACS. **Red/Blue** selectable. Default Red MiG-29 vs Blue F-15C or F-16C.
+
+**Loop (F10 / respawn):** Reset geometry, Next Wave, Respawn Player (BVR training load), Respawn Bandit, Swap Side. ~12–18 min per bout; continuous. No shots on support/neutrals.
+
+Verify era loads, sensors, F10; brief and validate.
+----
+
+=== Modern BVR
+
+[source,text]
+----
+Build a **continuous modern BVR** range. Map **Persian Gulf**, **Marianas**, or **Nevada**. Active and modern medium-range radar missiles + short-range defend as each type allows; geometry ~40–60 nm.
+
+**Red/Blue** selectable. **Roster (installed only, full-fidelity first):** Blue—F-16C, F/A-18C, F-15C, F-15E, F-14B, M-2000C; Red—full-fidelity MiG-29A, JF-17, MiG-29S, Su-27, J-11A. Default Red JF-17 vs Blue F-16C. Limited AWACS; no support/out-of-bounds shots.
+
+**Loop (F10 / respawn):** Reset geometry, Next Wave, Respawn Player, Respawn Bandit, Swap Side. Optional 1v2 / 2v2 waves via F10. ~15–20 min per bout; infinite sparring.
+
+Verify modern BVR loads, red/blue, AWACS, F10; frequency card and validate.
+----
+
+=== Close-Range Evasion
+
+[source,text]
+----
+Build a **continuous close-range evasion** range—player practices **notching, beam, breaks, chaff/flare, and guns defense** against a nearby shooter. Map **Nevada** or **Caucasus** training box.
+
+Player default full-fidelity **MiG-29A**, **F-16C**, or **M-2000C** (optional list of 2–4 installed full-fidelity). Threat: AI fighter in visual / short-range IR or guns only, pressing from stern or beam—**not** a fair 1v1 score fight; success is survive / extend / reset. No ground SAM this slot.
+
+**Loop (F10 / respawn):** Reset geometry (stern convert / beam / high-aspect), Next Threat, Respawn Player, Respawn Shooter. ~5–8 min per bout; continuous.
+
+Verify countermeasures, threat weapons, F10; evasion brief and validate.
+----
+
+=== BVR Evasion (Semi-Active)
+
+[source,text]
+----
+Build a **continuous BVR evasion** range focused on **semi-active radar missile** defense (crank, notch, dive, chaff, beam, support break). Map **Cold War Germany** or **Nevada**.
+
+Player in a verified fighter with RWR (default full-fidelity **MiG-29A** or **F-16C**). Threat AI launches / guides **semi-active** medium-range shots from ~15–30 nm as type data allows—**one primary shooter** per wave; optional second support. Player may not need to kill—grade on survival and missile defeat. Report if semi-active cannot be modeled honestly for a type.
+
+**Loop (F10 / respawn):** Reset intercept geometry, Next Wave (fresh semi-active shot), Respawn Player, Respawn Shooter. ~8–12 min per bout; continuous.
+
+Verify semi-active weapon support, RWR, F10; semi-active defense brief and validate.
+----
+
+=== BVR Evasion (Active)
+
+[source,text]
+----
+Build a **continuous BVR evasion** range focused on **active radar missile** defense (notch, crank, chaff, drag, re-attack timing). Map **Persian Gulf**, **Nevada**, or **Marianas**.
+
+Player default **F-16C**, **JF-17**, or full-fidelity **MiG-29A** with modern RWR/CM. Threat AI employs **active** medium-range missiles as verified loads allow from ~20–40 nm. One shooter per wave; optional pitbull callouts in brief. Survival-focused scoring.
+
+**Loop (F10 / respawn):** Reset geometry, Next Active Shot, Respawn Player, Respawn Shooter. ~8–12 min per bout; continuous.
+
+Verify active-missile loads and countermeasures, F10; active-defense brief and validate.
+----
+
+=== SAM Evasion
+
+[source,text]
+----
+Build a **continuous land-based SAM evasion** range. Map **Caucasus**, **Syria**, or **Cold War Germany** (state one). Player flies a verified strike/fighter (default full-fidelity **MiG-29A**, **JF-17**, **F-16C**, or **Su-25T**) through a **training SAM belt**—mix of short/medium systems appropriate to the map era, **not** an unending wall. Emphasize RWR reaction, notches, terrain mask, expendables, and abort. No requirement to destroy every site each wave (optional SEAD secondary).
+
+**Loop (F10 / respawn):** Reset ingress route, Next SAM layout (or same layout re-armed), Respawn Player at safe start, optional Reset Threat timers. ~10–15 min per run; continuous. Active units keep the range performant—prefer a tight engagement zone over map-wide spam.
+
+Verify SAM types, eras, player CM/RWR, F10; SAM-evasion brief and validate.
+----
+
+=== Naval Air Defense Evasion
+
+[source,text]
+----
+Build a **continuous naval / sea-based air-defense evasion** range. Map **Persian Gulf**, **Marianas**, **South Atlantic**, or **Kola** coastal (state one). Player approaches a **surface group** with verified shipborne AD (cruisers/destroyers/carriers as data allows)—practice RWR, missile warnings, sea-skimming or medium-altitude defeat, and extend. Default player **F/A-18C**, **F-16C**, **JF-17**, or full-fidelity **MiG-29A**. Optional single anti-ship training pass after a clean evade, but primary grade is **survive the AD bubble**.
+
+**Loop (F10 / respawn):** Reset marshal / IP, Next Approach, Respawn Player, re-arm/reset ship magazines as mission allows. ~10–15 min per run; continuous. Keep group size credible and performant.
+
+Verify ship types, naval SAMs/guns, player sensors, F10; naval-AD brief and validate.
+----
+
+[[living-battlespace]]
+== Living Battlespace
+
+[NOTE]
+====
+Large, credible battlefield atmosphere—not a single fixed package with one win condition.
+* **Scale:** on the order of **100+** active units (air + ground + sea as the map allows); keep a tight war zone for performance.
+* **Player:** **pick a coalition / side and join** (client slots or briefed side choice). Optional seats list installed full-fidelity first.
+* **Spawn:** the world may already be fighting at **t=0**; later reinforcements prefer parking, ships, and staggered takeoffs—avoid a simultaneous mass air spawn.
+* **Verify** countries, units, ships, and bases with project data and Tools; never invent CLSIDs or type names. Report unsupported items.
+* Era locks below are **mandatory** for that map’s atmosphere.
+====
+
+=== By Theatre
+
+==== Caucasus (Modern · Russia vs Ukraine)
+
+[source,text]
+----
+Build a **living battlespace** on **Caucasus** in a **modern** fictional window (not 1950s—Ukraine and Russia are separate states here).
+
+**Sides:**
+* **Red — Russia:** front and rear fields, Flanker/Fulcrum/Frogfoot family as data allows (full-fidelity **MiG-29A**, **Su-27**, **Su-25T**, etc.), GCI, land AD, armor corridors.
+* **Blue — Ukraine:** fewer bases, lighter fighter presence; **distant Western support** only—**AWACS-class** and **F-16C** (and similar) on **far/high tracks**, thin and not a second main front.
+* **Neutral:** civil corridors, coastal/merchant traffic, observers/aid—no-fire.
+
+**Player:** join Red or Blue (state default seats). ~**100+** active units in a compact theater. No single mandatory package win—survive, pick fights, hold corridors.
+
+Verify units, bases, distant-support ROE, F10 optional side pick; build and validate a .miz and atmosphere brief.
+----
+
+==== Marianas (Modern · China vs US + Japan)
+
+[source,text]
+----
+Build a **living battlespace** on modern **Marianas** / **Mariana Islands**.
+
+**Sides:**
+* **Red — China (core):** shore-based heavy fighters (**J-11A**, Flanker family, etc. as installed), maritime aviation pressure, island/field activity.
+* **Blue — United States + Japan (core):** US carrier/expeditionary air (e.g. **F/A-18C**, **F-14B** if used) and Japanese participation with **C-130J**, **F-16C**, **F-4E** (and other verified types)—Japan is a real coalition wing, not scenery.
+* **Neutral:** civil air and shipping.
+
+**Player:** join China or US/Japan seats. Large ocean multi-axis traffic; ~**100+** units. Pick a side and join the war—no single fixed strike package requirement.
+
+Verify carrier/field fit, Japanese types, ROE; build and validate a .miz and brief.
+----
+
+==== Marianas WWII (US vs Japan · limited Germany)
+
+[source,text]
+----
+Build a **living battlespace** on **Marianas WWII**.
+
+**Sides:**
+* **Blue — United States:** carrier/land prop fighters (**F4U-1D**, **P-51D**, etc. as installed), task-force atmosphere, amphibious fringe.
+* **Red — Japan:** defending fields, intercept and anti-ship pressure with verified WWII types only—**do not invent** unavailable bombers or jets.
+* **Germany (limited):** small, identifiable detachment (**Bf 109** / **Fw 190** if modules allow)—flavor, not a third superpower.
+* **Neutral-style ROE:** hospital/merchant ships if present.
+
+**Player:** join US, Japan, or the small German detachment. Guns-era air war; staggered deck and field activity. ~**100+** units in a tight island fight box where performance allows.
+
+Verify WWII Assets/types, map, ROE; build and validate a .miz and brief.
+----
+
+==== Nevada (Modern Red Flag · US Aggressors)
+
+[source,text]
+----
+Build a **living battlespace** on **Nevada** (NTTR) as a **large Red Flag–style exercise**, not a nation-state war.
+
+**Sides:**
+* **Blue — US (and invited) training wings:** modern fighters as installed (**F-16C**, **F-15C**, **F/A-18C**, full-fidelity types, etc.).
+* **Red — US Aggressor / adversary squadrons:** **F-5E FC** (including MiG-28-style liveries if verified), FC Flankers/Fulcrums, dissimilar threats.
+* **Neutral:** range control, safety corridors, civil reroutes, range helos/utility.
+
+**Player:** join Blue wing or Red aggressor. Multiple ranges active at once; ~**100+** units of range traffic and sparring—not world war mobilization.
+
+Verify aggressor liveries, range geometry, ROE; build and validate a .miz and brief.
+----
+
+==== Cold War Germany (1980s · semi-active era)
+
+[source,text]
+----
+Build a **living battlespace** on **Cold War Germany** locked to the **1980s** (third-generation, **pre-active-missile default**—AIM-7 / semi-active medium-range character).
+
+**Sides:**
+* **Red — East Germany + USSR:** full-fidelity **MiG-29A**, other Pact fighters as data allows, dense AD, armor corridors.
+* **Blue — USA + West Germany + France:** **F-15C**, **F-4E**, **M-2000C**, etc.; AWACS/tankers in depth.
+* **Neutral:** civil traffic, border observers—fratricide/border breach is political failure.
+
+**Player:** join Pact or NATO seat. Corridor/Fulda-belt density; ~**100+** units. Loads emphasize **semi-active BVR + IR/guns**, not modern active-missile walls unless briefly justified and verified.
+
+Verify era loads, countries, bases, ROE; build and validate a .miz and brief.
+----
+
+==== Sinai (1970s · second-generation)
+
+[source,text]
+----
+Build a **living battlespace** on **Sinai** locked to the **1970s** (second-generation fighters: **F-4**, **MiG-21**, **Mirage F1**, **F-5**, etc.).
+
+**Sides:**
+* **Side A — Egypt + Pakistan + Russia + China:** Egyptian host fields; Pakistani, Russian, and Chinese expeditionary/advisory air as installed types allow (keep the **air picture 70s**—if later types appear, only as thin late/advisory color, not the default mass).
+* **Side B — Israel + United States + France:** Israeli quality core with US and French participation on the Israeli side. Prefer **F-4E**, **Mirage F1**, **F-5**, **MiG-21**-era peers; only use later jets if the brief explicitly justifies a thin exception.
+* **Neutral:** civil, canal-related traffic, observers.
+
+**Player:** pick A or B. Desert–canal continuous pressure; ~**100+** units. **Core air war feel is 1970s**, not a 2020s active-missile wall.
+
+Verify era-appropriate types and loads, coalitions, ROE; build and validate a .miz and brief.
+----
+
+==== Persian Gulf (Modern · US Navy vs Iran)
+
+[source,text]
+----
+Build a **living battlespace** on **Persian Gulf**. **Modern** crisis window.
+
+**Sides:**
+* **Blue — United States Navy (lead actor):** carrier air wing atmosphere (**F/A-18C**, **F-14B** as used), AEW, fleet AD, tankers offshore.
+* **Red — Iran (lead opponent):** shore AD, fast-attack/ship threats, mixed fighters as **verified** units allow—never invent Iran-only types that do not exist in data.
+* **Thin partners:** optional regional friends on either side—do not steal the USN-vs-Iran center.
+* **Neutral (critical):** dense civil corridors, tankers, ports—no-fire; blue-on-civil is failure.
+
+**Player:** join USN or Iranian/shore side. ~**100+** units in the strait/coast belt.
+
+Verify ships, naval AD, aircraft, ROE; build and validate a .miz and brief.
+----
+
+==== Syria (1990s · mid-90s)
+
+[source,text]
+----
+Build a **living battlespace** on **Syria** locked to a **mid-1990s (about 1995)** fictional window—not a news-headline clone.
+
+**Sides:**
+* **Red — Syrian government atmosphere + Russia:** Su/MiG family as era allows (**MiG-29**, **Su-27**, **MiG-21**, **Su-25**), fortress fields, land AD.
+* **Blue — United States** (+ thin coalition if needed): **F-16C**, **F-15C**, limited packages, tankers/AWACS on the safe side.
+* **Neutral:** cities, camps, aid corridors, civil—large no-fire zones.
+
+**Player:** join Red or Blue. Broken airspace, urban constraints; ~**100+** units. 1990s loadouts (IR + semi-active / early modern as verified)—not pure active-missile spam.
+
+Verify era, units, ROE, cities; build and validate a .miz and brief.
+----
+
+==== The Channel (WWII)
+
+[source,text]
+----
+Build a **living battlespace** on **The Channel** (WWII).
+
+**Sides:**
+* **Red — Germany:** **Bf 109**, **Fw 190 A-8/D-9**, coastal and forward fields.
+* **Blue — United Kingdom** (+ **limited United States**): **Spitfire**, **P-51D** / **P-47D** as installed, patrol and escort density.
+* **ROE:** fishing/hospital-ship class neutrals if present.
+
+**Player:** join German or Allied seat. Short-range high-density intercept/escort atmosphere; ~**100+** units where performance allows.
+
+Verify WWII types, map, ROE; build and validate a .miz and brief.
+----
+
+==== Normandy (WWII)
+
+[source,text]
+----
+Build a **living battlespace** on **Normandy** (prefer **Normandy 2.0**).
+
+**Sides:**
+* **Red — Germany:** interceptors, mobile flak/AD atmosphere, rear fields.
+* **Blue — United Kingdom + United States:** tactical air, escort fighters, interdiction pressure.
+* **Assets:** **WWII Assets Pack** bomber streams, columns, rail pressure as data allows.
+
+**Player:** join German or Allied seat. Beach–rail–bridge continuous A2G/A2A pressure; ~**100+** units. Distinct from Channel (invasion land battle belt vs pure Channel fight).
+
+Verify Normandy 2.0, WWII Assets, ROE; build and validate a .miz and brief.
+----
+
+==== Kola (Modern · US + Nordic vs Russia)
+
+[source,text]
+----
+Build a **living battlespace** on **Kola**. Modern / post–Cold War high-north crisis (fictional).
+
+**Sides:**
+* **Blue — United States + Nordic:** **AJS-37** must be a **playable atmosphere seat** (low-level / anti-ship character); US **F-16C** / **F-15C** and similar; optional thin other NATO.
+* **Red — Russia:** shore Flanker/Fulcrum/Frogfoot family, northern fleet AD atmosphere, coastal fields.
+* **Neutral:** sparse civil, fishing/research shipping.
+
+**Player:** join Blue (including AJS-37) or Red. Weather and long-range feel; ~**100+** units in a performant coastal box.
+
+Verify AJS-37, Russian types, ships, weather, ROE; build and validate a .miz and brief.
+----
+
+==== South Atlantic (1950s · first-generation)
+
+[source,text]
+----
+Build a **living battlespace** on **South Atlantic** locked to the **1950s** (first-generation jets: **F-86F**, **MiG-15bis**, guns-primary).
+
+**Sides:**
+* **Blue / Red:** two opposing 1950s coalitions in a **southern-hemisphere** crisis or large exercise frame (fictional—not a literal Falklands 1982 remake). **Argentine warships** (verified DCS ship types) must appear as a visible naval presence on the appropriate side.
+* Air order of battle is **early jet**—not a fourth-gen wall; trainers only as thin color, not the main cast (this map carries the **1950s** atmosphere mark).
+* **Neutral:** merchants, fishing.
+
+**Player:** pick a side; early-jet CAP, intercept, and limited ship action. Scale toward **100+** if performance allows, but keep the fight **period-correct** and readable.
+
+Verify 1950s types, Argentine ships, map, ROE; build and validate a .miz and brief.
+----
+
+==== Afghanistan (Modern · US vs Russia + local opposition)
+
+[source,text]
+----
+Build a **living battlespace** on **Afghanistan** (full map; task area may state **Southwest** or **East Afghanistan** modules if used).
+
+**Sides:**
+* **Blue — United States** (+ thin coalition): fixed-wing strike/CAP, attack and utility helos, airlift/CSAR corridors.
+* **Red — Russia (clear presence, not a cameo)** plus **local opposition** atmosphere: Russian air/aviation footprint where types fit, plus irregular AD, columns, valley threats as data allows.
+* **Neutral:** villages, roads, NGO/civil—strict ROE.
+
+**Player:** join US or Russian/local-opposition related seats. Persistent low-intensity mountain war density; ~**100+** units with ground and rotor weight.
+
+Verify regional modules, Russian presence, helos, ROE; build and validate a .miz and brief.
+----
+
+==== Iraq (Modern · US-led vs local opposition)
+
+[source,text]
+----
+Build a **living battlespace** on **Iraq** (full map; **Iraq North** may be the tasked region—state in manifest).
+
+**Sides:**
+* **Blue — United States** (+ host-nation / coalition atmosphere): CAP, strike, tankers/AWACS on the safe side.
+* **Red — local opposition** (+ optional thin regional support): mobile AD, remnant armor, irregular threats—**Russia is not required** here (avoid cloning Afghanistan/Syria).
+* **Neutral:** cities, oil infrastructure, civil road/air—strict ROE.
+
+**Player:** join Blue or opposition seats. Hot, dusty, urban-constrained; ~**100+** units. Join a shift—not conquer the whole country in one package.
+
+Verify Iraq/Iraq North, units, ROE; build and validate a .miz and brief.
+----
+
 [[campaigns]]
 == Campaigns
 
