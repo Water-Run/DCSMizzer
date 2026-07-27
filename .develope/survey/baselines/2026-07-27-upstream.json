@@ -1,0 +1,108 @@
+{
+  "collected_at": "2026-07-27T07:03:44.894906+00:00",
+  "repositories": [
+    {
+      "branch": "main",
+      "clean": true,
+      "commit_time": "2026-07-24T21:13:26+01:00",
+      "error_code": null,
+      "head": "a5893db7daece0e2c25403c34a104057b7365a59",
+      "in_sync": true,
+      "license_evidence": [
+        "LICENSE"
+      ],
+      "name": "briefing_room",
+      "remote_checked": true,
+      "remote_head": "a5893db7daece0e2c25403c34a104057b7365a59",
+      "remote_kind": "network",
+      "remote_url": "https://github.com/DCS-BR-Tools/briefing-room-for-dcs",
+      "valid_git": true
+    },
+    {
+      "branch": "main",
+      "clean": true,
+      "commit_time": "2023-02-06T22:56:39Z",
+      "error_code": null,
+      "head": "d58c7a38d3f0a681bde67bed21868b6d3ecd9bb8",
+      "in_sync": true,
+      "license_evidence": [
+        "package.json#license=ISC"
+      ],
+      "name": "gtd",
+      "remote_checked": true,
+      "remote_head": "d58c7a38d3f0a681bde67bed21868b6d3ecd9bb8",
+      "remote_kind": "network",
+      "remote_url": "https://github.com/flying-dice/dcs-global-terrain-database",
+      "valid_git": true
+    },
+    {
+      "branch": "master",
+      "clean": true,
+      "commit_time": "2023-11-15T00:13:51Z",
+      "error_code": null,
+      "head": "48b2841b4f72ba32be217f3e618cfa3cec6c8f28",
+      "in_sync": true,
+      "license_evidence": [
+        "package.json#license=MIT"
+      ],
+      "name": "mission_maker",
+      "remote_checked": true,
+      "remote_head": "48b2841b4f72ba32be217f3e618cfa3cec6c8f28",
+      "remote_kind": "network",
+      "remote_url": "https://github.com/JonathanTurnock/dcs-mission-maker",
+      "valid_git": true
+    },
+    {
+      "branch": "dev",
+      "clean": true,
+      "commit_time": "2026-07-26T10:31:33-04:00",
+      "error_code": null,
+      "head": "e9b2387e2b45ad33ebf872623f88b40cf4d53625",
+      "in_sync": true,
+      "license_evidence": [
+        "LICENSE"
+      ],
+      "name": "retribution",
+      "remote_checked": true,
+      "remote_head": "e9b2387e2b45ad33ebf872623f88b40cf4d53625",
+      "remote_kind": "network",
+      "remote_url": "https://github.com/dcs-retribution/dcs-retribution",
+      "valid_git": true
+    },
+    {
+      "branch": "master-ng",
+      "clean": true,
+      "commit_time": "2026-07-26T09:50:00+02:00",
+      "error_code": null,
+      "head": "de3dc95c92c6b8f28d1037a3e7bd2d4c2b4d8655",
+      "in_sync": true,
+      "license_evidence": [
+        "LICENSE"
+      ],
+      "name": "moose",
+      "remote_checked": true,
+      "remote_head": "de3dc95c92c6b8f28d1037a3e7bd2d4c2b4d8655",
+      "remote_kind": "network",
+      "remote_url": "https://github.com/FlightControl-Master/MOOSE",
+      "valid_git": true
+    },
+    {
+      "branch": "master",
+      "clean": true,
+      "commit_time": "2026-06-29T09:14:40+02:00",
+      "error_code": null,
+      "head": "412952c5ad5688783d8d53830280f316dbe311ff",
+      "in_sync": true,
+      "license_evidence": [
+        "LICENSE.txt"
+      ],
+      "name": "pydcs",
+      "remote_checked": true,
+      "remote_head": "412952c5ad5688783d8d53830280f316dbe311ff",
+      "remote_kind": "network",
+      "remote_url": "https://github.com/pydcs/dcs",
+      "valid_git": true
+    }
+  ],
+  "schema": "dcsmizzer.upstream-survey/v1"
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "dcsmizzer.runtime-boundary/v1",
+  "recorded_at": "2026-07-27",
+  "policy": "user_prohibited_dcs_launch",
+  "dcs_launch_allowed": false,
+  "checks": {
+    "mission_load": {
+      "status": "not_run",
+      "runtime_valid_claim_allowed": false
+    },
+    "mission_editor_resave": {
+      "status": "not_run",
+      "runtime_valid_claim_allowed": false
+    },
+    "initialized_registry_export": {
+      "status": "not_run",
+      "runtime_valid_claim_allowed": false
+    },
+    "per_terrain_airbase_export": {
+      "status": "not_run",
+      "runtime_valid_claim_allowed": false
+    }
+  },
+  "completion_rule": "Static survey completion must not be described as DCS runtime validation."
+}

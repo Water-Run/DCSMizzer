@@ -1,0 +1,124 @@
+{
+  "schema": "dcsmizzer.corpus-survey/v1",
+  "collected_at": "2026-07-27T06:28:09Z",
+  "totals": {
+    "file_instances": 1060,
+    "unique_content": 909,
+    "miz_instances": 1050,
+    "cmp_instances": 10
+  },
+  "roots": [
+    {
+      "name": "install",
+      "kind": "dcs_install",
+      "version": "2.9.28.26283",
+      "exists": true,
+      "errors": 0,
+      "file_instances": 653,
+      "miz_instances": 648,
+      "cmp_instances": 5,
+      "root_unique_content": 653,
+      "net_new_content": 653,
+      "archive": {
+        "valid_zip": 648,
+        "invalid_zip": 0,
+        "safe": 648,
+        "unsafe": 0,
+        "crc_passed": 648,
+        "crc_failed": 0,
+        "crc_skipped": 0,
+        "duplicate_member_extras": 19,
+        "unsafe_path_entries": 0,
+        "encrypted_entries": 0,
+        "diagnostics": {
+          "duplicate_member": 19,
+          "missing_core_member": 9
+        }
+      }
+    },
+    {
+      "name": "saved",
+      "kind": "saved_games",
+      "version": "local@2026-07-27",
+      "exists": true,
+      "errors": 0,
+      "file_instances": 76,
+      "miz_instances": 76,
+      "cmp_instances": 0,
+      "root_unique_content": 76,
+      "net_new_content": 76,
+      "archive": {
+        "valid_zip": 76,
+        "invalid_zip": 0,
+        "safe": 76,
+        "unsafe": 0,
+        "crc_passed": 76,
+        "crc_failed": 0,
+        "crc_skipped": 0,
+        "duplicate_member_extras": 0,
+        "unsafe_path_entries": 0,
+        "encrypted_entries": 0,
+        "diagnostics": {}
+      }
+    },
+    {
+      "name": "official",
+      "kind": "official_mirror",
+      "version": "DCSWorld-subset@2.9.28.26283",
+      "exists": true,
+      "errors": 0,
+      "file_instances": 149,
+      "miz_instances": 144,
+      "cmp_instances": 5,
+      "root_unique_content": 149,
+      "net_new_content": 0,
+      "archive": {
+        "valid_zip": 144,
+        "invalid_zip": 0,
+        "safe": 144,
+        "unsafe": 0,
+        "crc_passed": 144,
+        "crc_failed": 0,
+        "crc_skipped": 0,
+        "duplicate_member_extras": 10,
+        "unsafe_path_entries": 0,
+        "encrypted_entries": 0,
+        "diagnostics": {
+          "duplicate_member": 10
+        }
+      }
+    },
+    {
+      "name": "upstream",
+      "kind": "upstream",
+      "version": "BR:a5893db7;GTD:d58c7a38;DMM:48b2841b;RET:e9b2387e;MOOSE:de3dc95c;pydcs:412952c5",
+      "exists": true,
+      "errors": 0,
+      "file_instances": 182,
+      "miz_instances": 182,
+      "cmp_instances": 0,
+      "root_unique_content": 180,
+      "net_new_content": 180,
+      "archive": {
+        "valid_zip": 182,
+        "invalid_zip": 0,
+        "safe": 182,
+        "unsafe": 0,
+        "crc_passed": 182,
+        "crc_failed": 0,
+        "crc_skipped": 0,
+        "duplicate_member_extras": 0,
+        "unsafe_path_entries": 0,
+        "encrypted_entries": 0,
+        "diagnostics": {}
+      }
+    }
+  ],
+  "overlaps": [
+    {
+      "left": "install",
+      "right": "official",
+      "shared_content": 149
+    }
+  ]
+}

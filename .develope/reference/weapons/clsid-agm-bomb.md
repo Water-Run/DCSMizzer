@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # Air-to-ground weapons CLSID (curated extract)
 
 Curated from pydcs weapons_data: **564** unique CLSIDs (AGM/GBU/bombs/ASM-oriented).

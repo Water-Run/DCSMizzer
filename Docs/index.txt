@@ -1,0 +1,42 @@
+DCSMIZZER MODEL START HERE
+
+Project state:
+  Survey/groundwork is complete for static evidence.
+  Read-only inspection and current-install static lookup tools exist.
+  Mission and campaign generation are NOT implemented.
+  Product tools do not launch DCS; runtime validation is NOT implemented.
+
+Repository boundary:
+  Tools/ contains Python programs and their Python tests.
+  Docs/ contains model-facing documentation and routing contracts.
+  .develope/ contains survey evidence, reproducible baselines, and development
+  records; it is not the product tool interface.
+
+Mandatory routing:
+  1. Read capabilities.md.
+  2. Run: python Tools/dcsmizzer.py capabilities
+  3. For scenario requests, extract constraints with workflow.md.
+  4. Resolve each exact fact under evidence.md.
+  5. Use mission-format.md only for observed structure, never as proof that
+     generation exists.
+  6. Use validation.md to label archive/parse/static/runtime states.
+  7. Use tools.md for commands and JSON contracts.
+
+Non-negotiable:
+  - Do not invent DCS type IDs, CLSIDs, task IDs, airbase IDs, coordinates,
+    runway/parking IDs, module support, or weapon compatibility.
+  - Do not silently substitute aircraft, map, weapon, coalition, start type,
+    era, player count, duration, weather, or mission type.
+  - Current installed DCS/static data outranks upstream references.
+  - Default payload presets do not prove complete pylon compatibility.
+  - Legacy .develope/reference files are frozen historical evidence.
+  - Never claim .miz generation or runtime validity until corresponding
+    product facilities actually run.
+
+Documents:
+  capabilities.md     What exists and what does not
+  workflow.md         Model workflow and scenario constraint contract
+  evidence.md         Authority, versioning, conflicts, exact-data routing
+  mission-format.md   Observed MIZ/CMP structure and safe handling
+  validation.md       Validation levels, completion rules, report template
+  tools.md            Commands, outputs, exit codes, examples

@@ -1,0 +1,402 @@
+{
+  "airfield_static_evidence": [
+    {
+      "plaintext_candidate_files": 0,
+      "terrain": "Caucasus"
+    },
+    {
+      "plaintext_candidate_files": 0,
+      "terrain": "GermanyColdWar"
+    },
+    {
+      "plaintext_candidate_files": 0,
+      "terrain": "Kola"
+    },
+    {
+      "plaintext_candidate_files": 0,
+      "terrain": "Sinai"
+    }
+  ],
+  "authority_order": [
+    "initialized DCS/Mission Editor database at recorded version",
+    "current installed DCS static source where data-only",
+    "current parsed missions for observed compatibility",
+    "commit-bound upstream references",
+    "legacy frozen reference snapshots"
+  ],
+  "collected_at": "2026-07-27T07:20:05.435469+00:00",
+  "countries": {
+    "calls": 92,
+    "count": 92,
+    "duplicate_identifiers": [],
+    "identifiers": [
+      "RUSSIA",
+      "UKRAINE",
+      "USA",
+      "TURKEY",
+      "UK",
+      "FRANCE",
+      "GERMANY",
+      "AGGRESSORS",
+      "CANADA",
+      "SPAIN",
+      "THE_NETHERLANDS",
+      "BELGIUM",
+      "NORWAY",
+      "DENMARK",
+      "ISRAEL",
+      "GEORGIA",
+      "INSURGENTS",
+      "ABKHAZIA",
+      "SOUTH_OSETIA",
+      "ITALY",
+      "AUSTRALIA",
+      "SWITZERLAND",
+      "AUSTRIA",
+      "BELARUS",
+      "BULGARIA",
+      "CHEZH_REPUBLIC",
+      "CHINA",
+      "CROATIA",
+      "EGYPT",
+      "FINLAND",
+      "GREECE",
+      "HUNGARY",
+      "INDIA",
+      "IRAN",
+      "IRAQ",
+      "JAPAN",
+      "KAZAKHSTAN",
+      "NORTH_KOREA",
+      "PAKISTAN",
+      "POLAND",
+      "ROMANIA",
+      "SAUDI_ARABIA",
+      "SERBIA",
+      "SLOVAKIA",
+      "SOUTH_KOREA",
+      "SWEDEN",
+      "SYRIA",
+      "YEMEN",
+      "VIETNAM",
+      "VENEZUELA",
+      "TUNISIA",
+      "THAILAND",
+      "SUDAN",
+      "PHILIPPINES",
+      "MOROCCO",
+      "MEXICO",
+      "MALAYSIA",
+      "LIBYA",
+      "JORDAN",
+      "INDONESIA",
+      "HONDURAS",
+      "ETHIOPIA",
+      "CHILE",
+      "BRAZIL",
+      "BAHRAIN",
+      "THIRDREICH",
+      "YUGOSLAVIA",
+      "USSR",
+      "ITALIAN_SOCIAL_REPUBLIC",
+      "ALGERIA",
+      "KUWAIT",
+      "QATAR",
+      "OMAN",
+      "UNITED_ARAB_EMIRATES",
+      "SOUTH_AFRICA",
+      "CUBA",
+      "PORTUGAL",
+      "GDR",
+      "LEBANON",
+      "CJTF_BLUE",
+      "CJTF_RED",
+      "UN_PEACEKEEPERS",
+      "ARGENTINA",
+      "CYPRUS",
+      "SLOVENIA",
+      "BOLIVIA",
+      "GHANA",
+      "NIGERIA",
+      "PERU",
+      "ECUADOR",
+      "AFGHANISTAN",
+      "NEW ZEALAND"
+    ],
+    "source": "Scripts/Database/db_countries.lua",
+    "source_sha256": "a041bd0686a0c32de0501e1d7304369a4fd03442c9d970954c7f7adf9b6450a5"
+  },
+  "coverage": {
+    "airbases_runways_parking": {
+      "reason": "Installed terrain packages do not expose a complete uniform plaintext airfield database; DCS runtime APIs must be queried for each terrain.",
+      "status": "per_terrain_runtime_export_required",
+      "terrains": [
+        "Caucasus",
+        "GermanyColdWar",
+        "Kola",
+        "Sinai"
+      ]
+    },
+    "country_identifiers": {
+      "count": 92,
+      "source": "Scripts/Database/db_countries.lua",
+      "status": "current_install_static_source_verified"
+    },
+    "installed_modules": {
+      "limitation": "Directory presence and entry.lua state do not prove account entitlement or runtime activation.",
+      "status": "filesystem_and_entry_state_verified"
+    },
+    "task_capabilities": {
+      "reason": "Task tables and per-unit capabilities are resolved in the initialized Mission Editor database.",
+      "status": "runtime_registry_export_required"
+    },
+    "unit_type_registry": {
+      "reason": "Definitions are executable plugin Lua assembled by DCS; static file presence is not the initialized registry.",
+      "status": "runtime_registry_export_required"
+    },
+    "weapon_pylon_compatibility": {
+      "presets_are_compatibility": false,
+      "reason": "UnitPayloads are exact default presets, but they are not the authoritative store-to-station compatibility matrix.",
+      "status": "runtime_registry_export_required",
+      "verified_preset_files": 62
+    }
+  },
+  "dcs": {
+    "edition": "Steam",
+    "executable_sha256": "503233879ebb6be3d375d35a1da8605ccc5bc644f1c1f33d15bf90e201e2a73e",
+    "product_version": "2.9.28.26283"
+  },
+  "installed_module_directories": {
+    "aircraft": [
+      {
+        "declared_state": "installed",
+        "directory": "F-16C",
+        "entry_present": true,
+        "self_ids": [
+          "F-16C bl.50"
+        ],
+        "update_ids": [
+          "F-16C"
+        ]
+      },
+      {
+        "declared_state": "installed",
+        "directory": "JF-17",
+        "entry_present": true,
+        "self_ids": [
+          "JF-17 by Deka Ironwork Simulations"
+        ],
+        "update_ids": [
+          "DEKA_JF-17"
+        ]
+      },
+      {
+        "declared_state": "installed",
+        "directory": "M-2000C",
+        "entry_present": true,
+        "self_ids": [
+          "M-2000C by RAZBAM Sims"
+        ],
+        "update_ids": [
+          "RAZBAM_M-2000C"
+        ]
+      },
+      {
+        "declared_state": "installed",
+        "directory": "MiG-29-Fulcrum",
+        "entry_present": true,
+        "self_ids": [
+          "MiG-29A by Eagle Dynamics"
+        ],
+        "update_ids": [
+          "MIG-29-FULCRUM"
+        ]
+      },
+      {
+        "declared_state": "installed",
+        "directory": "Su-25T",
+        "entry_present": true,
+        "self_ids": [],
+        "update_ids": []
+      },
+      {
+        "declared_state": "installed",
+        "directory": "TF-51D",
+        "entry_present": true,
+        "self_ids": [
+          "TF-51D Mustang by Eagle Dynamics"
+        ],
+        "update_ids": []
+      }
+    ],
+    "campaigns": [
+      {
+        "declared_state": null,
+        "directory": "M2000C Red Flag",
+        "entry_present": true,
+        "self_ids": [],
+        "update_ids": [
+          "BALTICDRAGON_M2000C-REDFLAG_campaign"
+        ]
+      }
+    ],
+    "terrains": [
+      {
+        "declared_state": null,
+        "directory": "Caucasus",
+        "entry_present": true,
+        "self_ids": [
+          "Caucasus"
+        ],
+        "update_ids": []
+      },
+      {
+        "declared_state": null,
+        "directory": "GermanyColdWar",
+        "entry_present": true,
+        "self_ids": [
+          "GermanyCW"
+        ],
+        "update_ids": []
+      },
+      {
+        "declared_state": null,
+        "directory": "Kola",
+        "entry_present": true,
+        "self_ids": [
+          "Kola"
+        ],
+        "update_ids": []
+      },
+      {
+        "declared_state": null,
+        "directory": "Sinai",
+        "entry_present": true,
+        "self_ids": [
+          "SinaiMap"
+        ],
+        "update_ids": []
+      }
+    ]
+  },
+  "payload_presets": {
+    "encodings": {
+      "utf-8": 62
+    },
+    "failures": {},
+    "files": 62,
+    "parsed": 62,
+    "presets": 614,
+    "pylon_assignments": 4605,
+    "source": "MissionEditor/data/scripts/UnitPayloads/*.lua",
+    "task_ids": [
+      10,
+      11,
+      15,
+      16,
+      17,
+      18,
+      19,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "unique_clsids": 186
+  },
+  "release_cross_check": {
+    "release_date": "2026-07-22",
+    "status": "matches_official_release",
+    "url": "https://www.digitalcombatsimulator.com/en/news/changelog/release/2.9.28.26283/",
+    "version": "2.9.28.26283"
+  },
+  "schema": "dcsmizzer.dcs-installation-survey/v1",
+  "static_definition_evidence": {
+    "aircraft_registration_files": 62,
+    "loadout_declaration_files": 110,
+    "lua_files": 4228,
+    "pylon_declaration_files": 61,
+    "surface_unit_registration_files": 81,
+    "task_declaration_files": 67,
+    "weapon_declaration_files": 94
+  },
+  "steam": {
+    "appid": "223750",
+    "buildid": "24331355",
+    "installdir": "DCSWorld",
+    "installed_depots": [
+      {
+        "depot_id": "1090850",
+        "dlcappid": "1090850",
+        "manifest": "7143132179866918856",
+        "size": "1579362661"
+      },
+      {
+        "depot_id": "1199120",
+        "dlcappid": "1199120",
+        "manifest": "3768358256482281702",
+        "size": "1296675036"
+      },
+      {
+        "depot_id": "223751",
+        "manifest": "7682065462619954199",
+        "size": "254503671666"
+      },
+      {
+        "depot_id": "223758",
+        "manifest": "3281905414734377109",
+        "size": "2"
+      },
+      {
+        "depot_id": "2320360",
+        "dlcappid": "2320360",
+        "manifest": "3009417338060088315",
+        "size": "88112292657"
+      },
+      {
+        "depot_id": "245597",
+        "dlcappid": "411892",
+        "manifest": "6960956556663882556",
+        "size": "2"
+      },
+      {
+        "depot_id": "2778890",
+        "dlcappid": "2778890",
+        "manifest": "2080901718526434665",
+        "size": "147071052864"
+      },
+      {
+        "depot_id": "3164870",
+        "dlcappid": "3164870",
+        "manifest": "4421707236750776102",
+        "size": "4628451263"
+      },
+      {
+        "depot_id": "3570230",
+        "dlcappid": "3570230",
+        "manifest": "2058594919361180525",
+        "size": "138212451026"
+      },
+      {
+        "depot_id": "411892",
+        "dlcappid": "411892",
+        "manifest": "1787887366787871354",
+        "size": "2716948767"
+      },
+      {
+        "depot_id": "890250",
+        "dlcappid": "890250",
+        "manifest": "3311636883116542154",
+        "size": "462290723"
+      }
+    ],
+    "lastupdated": "1784901045",
+    "name": "DCS World Steam Edition",
+    "size_on_disk": "638583196667",
+    "target_build_id": "24331355",
+    "update_result": "0"
+  }
+}

@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # DCS Global Terrain Database — extract
 
 Source: `dcs-global-terrain-database` (in-repo data is **Caucasus-focused**).

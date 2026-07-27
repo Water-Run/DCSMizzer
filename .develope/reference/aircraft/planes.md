@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # Plane type index (pydcs)
 Source: `pydcs/dcs/planes.py` (generated from DCS export).  
 **Use `id` as the unit `type` string in mission files.**

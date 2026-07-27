@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # Waypoints and start states
 
 Source: `dcs-mission-maker/mission-stubs/coalition/country/plane/group/*.json`

@@ -6,6 +6,18 @@
 Agents to read and `Tools` for Agents to call. Run your Coding Agent in this
 directory, describe the combat scenario you want in natural language, and have
 it generated for you.  
+
+Repository boundary: `Tools/` contains callable Python programs and their
+Python tests; `Docs/` contains model-facing documentation. Development surveys,
+baselines, and evidence records remain under `.develope/`.
+
+> **Current status (2026-07-27): survey/groundwork.** `Tools` currently provide
+> read-only MIZ/CMP inspection and current-install static evidence lookup.
+> Mission/campaign generation, complete runtime registry export, Mission Editor
+> resave, and DCS runtime validation are not implemented. Read
+> [`Docs/index.txt`](./Docs/index.txt) and run
+> `python Tools/dcsmizzer.py capabilities` before relying on a capability.
+
 A good Prompt is the foundation of a high-quality combat scenario. See the
 [Prompt examples](./PROMPT-SAMPLE.adoc) to learn how to write an effective
 Prompt.
@@ -62,6 +74,10 @@ codex
 Ask the model to read the project and generate the combat scenario you want.
 For example:
 
+> The example below describes the target product workflow. In the current
+> groundwork phase, the model must preserve the specification and report the
+> missing generator/runtime capabilities instead of fabricating a `.miz`.
+
 ```txt
 Read the project's Docs and Tools, and generate a two-player MiG-29A
 interception mission on the Cold War Germany map.
@@ -93,4 +109,3 @@ validation report.
 Then wait for the atmosphere lottery result.
 
 > *Thanks for making our dreams come true.*
-
