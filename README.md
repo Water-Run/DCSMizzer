@@ -1,7 +1,7 @@
 <h1 align="center">DCSMizzer</h1>
 
 <p align="center">
-[中文 README](./README-zh.md)
+  <a href="./README-zh.md">中文 README</a>
 </p>
 
 `DCSMizzer` is an LLM-oriented DCS combat generator. It provides `Docs` for

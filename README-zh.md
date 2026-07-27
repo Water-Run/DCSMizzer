@@ -1,7 +1,7 @@
 <h1 align="center">DCSMizzer</h1>
 
 <p align="center">
-[英文README](./README.md)
+  <a href="./README.md">英文README</a>
 </p>
 
 `DCSMizzer`是一个面向LLM的DCS战斗生成器. 提供`Docs`供Agent阅读, 以及`Tools`供Agent调用. 在此目录运行你的Coding Agent, 用自然语言表述并生成你想要的战斗.  

@@ -30,6 +30,16 @@ well-formed source blocks, control characters, and leaked internal engineering
 language. It validates repository documentation only; it does not validate a
 mission or campaign.
 
+Repository-local document link validation:
+
+```powershell
+python Tools\validate_document_links.py
+```
+
+This checks Markdown, HTML-anchor, and AsciiDoc links in the repository-facing
+documents. It rejects missing local targets and Markdown links embedded in raw
+HTML blocks, which render as text instead of clickable links.
+
 ## `capabilities`
 
 ```powershell
