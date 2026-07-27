@@ -31,7 +31,7 @@
 
 | 项目 | 值 |
 |---|---|
-| 工作区 | `D:\Coding\DCSMizzer` |
+| 工作区 | 本机仓库工作区（绝对路径已脱敏） |
 | 分支 | `main` |
 | 调查开始提交 | `bd303a8` |
 | 远端 | `https://github.com/Water-Run/DCSMizzer.git` |
@@ -49,12 +49,12 @@
 
 | 逻辑名称 | 实际根 | 用途 |
 |---|---|---|
-| DCS 安装 | `D:\SteamLibrary\steamapps\common\DCSWorld` | 当前安装任务、战役和版本 |
+| DCS 安装 | 当前本机 DCS 安装（绝对路径已脱敏） | 当前安装任务、战役和版本 |
 | Saved Games | `%USERPROFILE%\Saved Games\DCS` | 用户任务与下载/实验任务 |
 | 官方战役镜像 | `.develope/official-campaigns/DCSWorld` | 便于只读研究的安装目录副本 |
 | 上游样例 | `.develope/upstream` | 六个第三方项目内的测试、模板和样例任务 |
 
-对 `C:\` 与 `D:\` 进行了包含隐藏/忽略项的 `.miz`、`.cmp` 扩展名扫描。扫描得到
+对本机可访问固定卷进行了包含隐藏/忽略项的 `.miz`、`.cmp` 扩展名扫描。扫描得到
 1,089 个后缀匹配路径，其中 1,059 个位于上述活动证据根，另外 30 个为：
 
 - 回收站内 27 个 `.miz` 后缀对象：15 个仍是有效 ZIP，12 个是回收站元数据或
@@ -66,7 +66,7 @@
 
 ### 4.2 覆盖限制
 
-- 只扫描了本机 `C:`、`D:` 固定卷；未扫描断开的移动盘、网络共享、云端仅在线文件
+- 只扫描了当时可访问的本机固定卷（卷标已脱敏）；未扫描断开的移动盘、网络共享、云端仅在线文件
   或其他用户配置文件。
 - 只发现 `%USERPROFILE%\Saved Games\DCS`，未发现可纳入的其他 `DCS*`
   Saved Games 根；未来机器可能同时存在 Open Beta、Dedicated Server 等目录。

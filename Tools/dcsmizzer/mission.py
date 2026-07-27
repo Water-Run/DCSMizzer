@@ -5,7 +5,7 @@ import zipfile
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path, PurePosixPath
-from typing import Any
+from typing import Any, BinaryIO
 
 from .archive import CORE_MEMBERS
 from .lua import (
@@ -93,8 +93,67 @@ class MizObservation:
     stats: MissionStats
 
 
+def observe_miz_without_member_reads(
+    path: Path | BinaryIO,
+    *,
+    blocked_error_code: str = "archive_content_blocked",
+) -> MizObservation:
+    """Return central-directory observations without opening any member."""
+
+    try:
+        if not isinstance(path, Path):
+            path.seek(0)
+        with zipfile.ZipFile(path) as archive:
+            infos_by_name: dict[str, list[zipfile.ZipInfo]] = {}
+            for info in archive.infolist():
+                infos_by_name.setdefault(info.filename, []).append(info)
+            members: list[LuaMemberObservation] = []
+            for name in CORE_MEMBERS:
+                infos = infos_by_name.get(name)
+                if not infos:
+                    members.append(
+                        LuaMemberObservation(
+                            name=name,
+                            present=False,
+                            parsed=False,
+                            error_code="missing",
+                        )
+                    )
+                    continue
+                info = infos[-1]
+                members.append(
+                    LuaMemberObservation(
+                        name=name,
+                        present=True,
+                        parsed=False,
+                        error_code=(
+                            "encrypted_member"
+                            if info.flag_bits & 0x1
+                            else blocked_error_code
+                        ),
+                    )
+                )
+    except (OSError, zipfile.BadZipFile):
+        members = [
+            LuaMemberObservation(
+                name=name,
+                present=False,
+                parsed=False,
+                error_code="bad_zip",
+            )
+            for name in CORE_MEMBERS
+        ]
+    return MizObservation(
+        parse_valid=False,
+        members=tuple(members),
+        mission_version=None,
+        theatre=None,
+        stats=MissionStats(),
+    )
+
+
 def analyse_miz(
-    path: Path,
+    path: Path | BinaryIO,
     *,
     limits: LuaLimits | None = None,
 ) -> MizObservation:
@@ -103,6 +162,8 @@ def analyse_miz(
     values: dict[str, LuaTable] = {}
 
     try:
+        if not isinstance(path, Path):
+            path.seek(0)
         with zipfile.ZipFile(path) as archive:
             infos_by_name: dict[str, list[zipfile.ZipInfo]] = {}
             for info in archive.infolist():
@@ -129,6 +190,16 @@ def analyse_miz(
                             present=True,
                             parsed=False,
                             error_code="input_limit",
+                        )
+                    )
+                    continue
+                if info.flag_bits & 0x1:
+                    member_observations.append(
+                        LuaMemberObservation(
+                            name=name,
+                            present=True,
+                            parsed=False,
+                            error_code="encrypted_member",
                         )
                     )
                     continue
@@ -169,6 +240,19 @@ def analyse_miz(
                             present=True,
                             parsed=False,
                             error_code=type(error).__name__,
+                        )
+                    )
+                except RuntimeError:
+                    member_observations.append(
+                        LuaMemberObservation(
+                            name=name,
+                            present=True,
+                            parsed=False,
+                            error_code=(
+                                "encrypted_member"
+                                if info.flag_bits & 0x1
+                                else "archive_member_runtime_error"
+                            ),
                         )
                     )
     except (OSError, zipfile.BadZipFile):
@@ -367,11 +451,11 @@ def _mission_stats(
 def _collect_task_ids(value: Any, counts: Counter[str]) -> None:
     if not isinstance(value, LuaTable):
         return
-    for field in value.fields:
-        if field.key == "id" and isinstance(field.value, str):
-            counts[field.value] += 1
-        if isinstance(field.value, LuaTable):
-            _collect_task_ids(field.value, counts)
+    for lua_field in value.fields:
+        if lua_field.key == "id" and isinstance(lua_field.value, str):
+            counts[lua_field.value] += 1
+        if isinstance(lua_field.value, LuaTable):
+            _collect_task_ids(lua_field.value, counts)
 
 
 def _count_named_fields(
@@ -381,11 +465,11 @@ def _count_named_fields(
 ) -> None:
     if not isinstance(value, LuaTable):
         return
-    for field in value.fields:
-        if isinstance(field.key, str) and field.key in names:
-            counts[field.key] += 1
-        if isinstance(field.value, LuaTable):
-            _count_named_fields(field.value, names, counts)
+    for lua_field in value.fields:
+        if isinstance(lua_field.key, str) and lua_field.key in names:
+            counts[lua_field.key] += 1
+        if isinstance(lua_field.value, LuaTable):
+            _count_named_fields(lua_field.value, names, counts)
 
 
 def _collect_matching_strings(
@@ -395,11 +479,11 @@ def _collect_matching_strings(
 ) -> None:
     if not isinstance(value, LuaTable):
         return
-    for field in value.fields:
-        if isinstance(field.value, str) and field.value in candidates:
-            matches.add(field.value)
-        elif isinstance(field.value, LuaTable):
-            _collect_matching_strings(field.value, candidates, matches)
+    for lua_field in value.fields:
+        if isinstance(lua_field.value, str) and lua_field.value in candidates:
+            matches.add(lua_field.value)
+        elif isinstance(lua_field.value, LuaTable):
+            _collect_matching_strings(lua_field.value, candidates, matches)
 
 
 def _table(value: Any) -> LuaTable:

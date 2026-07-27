@@ -4,7 +4,10 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from Tools.validate_document_links import validate_document_links
+from Tools.validate_document_links import (
+    _default_documents,
+    validate_document_links,
+)
 
 
 class DocumentLinkValidationTests(unittest.TestCase):
@@ -75,6 +78,71 @@ class DocumentLinkValidationTests(unittest.TestCase):
 
         self.assertTrue(
             any("README.md" in issue for issue in issues),
+            issues,
+        )
+
+    def test_default_documents_include_nested_references(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            reference = root / "Docs" / "reference" / "details.md"
+            reference.parent.mkdir(parents=True)
+            reference.write_text("# Details\n", encoding="utf-8")
+
+            documents = _default_documents(root)
+
+        self.assertIn(reference, documents)
+
+    def test_accepts_existing_markdown_fragments(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            guide = root / "guide.md"
+            guide.write_text(
+                "# Complete-profile runtime shell\n\n"
+                "## Repeated heading\n\n"
+                "## Repeated heading\n",
+                encoding="utf-8",
+            )
+            readme = root / "README.md"
+            readme.write_text(
+                "[Shell](guide.md#complete-profile-runtime-shell)\n"
+                "[Second](guide.md#repeated-heading-1)\n",
+                encoding="utf-8",
+            )
+
+            issues = validate_document_links([readme])
+
+        self.assertEqual([], issues)
+
+    def test_accepts_same_document_and_html_fragments(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            readme = Path(directory) / "README.md"
+            readme.write_text(
+                "# Start here\n\n"
+                '<a id="explicit-target"></a>\n\n'
+                "[Heading](#start-here)\n"
+                "[Explicit](#explicit-target)\n",
+                encoding="utf-8",
+            )
+
+            issues = validate_document_links([readme])
+
+        self.assertEqual([], issues)
+
+    def test_rejects_missing_markdown_fragments(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            guide = root / "guide.md"
+            guide.write_text("# Existing\n", encoding="utf-8")
+            readme = root / "README.md"
+            readme.write_text(
+                "[Missing](guide.md#not-present)\n",
+                encoding="utf-8",
+            )
+
+            issues = validate_document_links([readme])
+
+        self.assertTrue(
+            any("missing local fragment" in issue for issue in issues),
             issues,
         )
 

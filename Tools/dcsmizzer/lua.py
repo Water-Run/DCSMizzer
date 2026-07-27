@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import re
 from dataclasses import dataclass
 from typing import Any
@@ -357,6 +358,8 @@ class _Parser:
             digits = raw.lstrip("+-")[2:]
             return sign * int(digits, 16)
         value = float(raw)
+        if not math.isfinite(value):
+            self._syntax("non-finite number")
         return int(value) if value.is_integer() and "." not in raw and "e" not in raw.lower() else value
 
     def _parse_short_string(self) -> str:

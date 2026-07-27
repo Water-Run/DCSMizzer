@@ -50,6 +50,7 @@ luac.out
 *.temp
 *.bak
 *.orig
+tmp/
 
 # Generated mission output
 output/

@@ -1,42 +1,42 @@
-DCSMIZZER MODEL START HERE
+DCSMIZZER MODEL ROUTER
 
-Project state:
-  Survey/groundwork is complete for static evidence.
-  Read-only inspection and current-install static lookup tools exist.
-  Mission and campaign generation are NOT implemented.
-  Product tools do not launch DCS; runtime validation is NOT implemented.
+Status: low-level MIZ toolkit; not a natural-language planner or DCS runtime
+validator. No product command starts DCS or Mission Editor.
 
-Repository boundary:
-  Tools/ contains Python programs and their Python tests.
-  Docs/ contains model-facing documentation and routing contracts.
-  .develope/ contains survey evidence, reproducible baselines, and development
-  records; it is not the product tool interface.
+Typical read path:
+  README or README-zh -> this file -> quickstart.md -> exact reference only
 
-Mandatory routing:
-  1. Read capabilities.md.
-  2. Run: python Tools/dcsmizzer.py capabilities
-  3. For scenario requests, extract constraints with workflow.md.
-  4. Resolve each exact fact under evidence.md.
-  5. Use mission-format.md only for observed structure, never as proof that
-     generation exists.
-  6. Use validation.md to label archive/parse/static/runtime states.
-  7. Use tools.md for commands and JSON contracts.
+Start:
+  1. Read quickstart.md.
+  2. Run `python Tools/dcsmizzer.py capabilities`.
+  3. Run `<command> --help` before relying on an option or output shape.
+  4. If the user named a map, terrain-coverage MUST use `--terrain`. If no map
+     was named, use its compact default catalog, then query one exact terrain.
+  5. Keep discovery bounded: catalog -> exact type/airport -> one
+     station/parking/preset. Use the explicit `--details` or `--full` shown by
+     current help, and redirect detailed JSON to a work file.
+     Keep normal model-visible evidence within a 128 KiB cumulative working
+     set; record selected values, not every raw response.
+  6. Write full audit/build/verify/inspect JSON to files. Use
+     `report-summary PATH` for bounded review; it does not rerun validation.
 
-Non-negotiable:
-  - Do not invent DCS type IDs, CLSIDs, task IDs, airbase IDs, coordinates,
-    runway/parking IDs, module support, or weapon compatibility.
-  - Do not silently substitute aircraft, map, weapon, coalition, start type,
-    era, player count, duration, weather, or mission type.
-  - Current installed DCS/static data outranks upstream references.
-  - Default payload presets do not prove complete pylon compatibility.
-  - Legacy .develope/reference files are frozen historical evidence.
-  - Never claim .miz generation or runtime validity until corresponding
-    product facilities actually run.
+Hard rules:
+  - Never invent or silently substitute an internal type, CLSID, task, country,
+    theatre, coordinate, airdrome, parking, station, module, or cloud preset.
+  - Evidence and a self-consistent spec do not prove DCS runtime behavior.
+  - Use complete_scenario for a user mission. Current product reports always
+    keep runtime_valid null. Report any separately authorized external DCS load
+    as separate evidence; it does not change the product's validation claim.
 
-Documents:
-  capabilities.md     What exists and what does not
-  workflow.md         Model workflow and scenario constraint contract
-  evidence.md         Authority, versioning, conflicts, exact-data routing
-  mission-format.md   Observed MIZ/CMP structure and safe handling
-  validation.md       Validation levels, completion rules, report template
-  tools.md            Commands, outputs, exit codes, examples
+Read only what the decision needs:
+  quickstart.md       bounded end-to-end path and document routing
+  capabilities.md     implemented/partial/unavailable boundary
+  terrain-coverage.md recorded theatre source/projection matrix and query gate
+  terrain-physical.md point/placement/landmark/corridor/airfield evidence gate
+  workflow.md         sequence and decision gates
+  evidence.md         authority, provenance, and conflict policy
+  tools.md            command router; CLI --help is authoritative
+  reference/upstream-source-commands.md locked source-cache preparation/status
+  build-spec.md       normative JSON-to-MIZ construction contract
+  validation.md       validation meanings and completion claims
+  mission-format.md   raw MIZ/CMP structure and diagnosis; optional

@@ -4,6 +4,7 @@ import zipfile
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath, PureWindowsPath
+from typing import BinaryIO
 
 from .model import ArchiveInspection, Diagnostic
 
@@ -19,10 +20,10 @@ CORE_MEMBERS: tuple[str, ...] = (
 
 @dataclass(frozen=True)
 class ArchivePolicy:
-    max_members: int = 20_000
-    max_member_uncompressed: int = 1 * 1024 * 1024 * 1024
-    max_total_uncompressed: int = 8 * 1024 * 1024 * 1024
-    max_compression_ratio: float = 2_000.0
+    max_members: int = 4_096
+    max_member_uncompressed: int = 128 * 1024 * 1024
+    max_total_uncompressed: int = 512 * 1024 * 1024
+    max_compression_ratio: float = 250.0
 
     def __post_init__(self) -> None:
         if self.max_members <= 0:
@@ -36,13 +37,14 @@ class ArchivePolicy:
 
 
 def inspect_miz(
-    path: Path,
+    path: Path | BinaryIO,
     *,
     policy: ArchivePolicy | None = None,
     verify_crc: bool = True,
 ) -> ArchiveInspection:
     selected_policy = policy or ArchivePolicy()
     try:
+        _rewind_stream(path)
         with zipfile.ZipFile(path) as archive:
             infos = archive.infolist()
             names = [info.filename for info in infos]
@@ -56,7 +58,7 @@ def inspect_miz(
                     diagnostics.append(
                         Diagnostic(
                             "duplicate_member",
-                            severity="warning",
+                            severity="error",
                         )
                     )
 
@@ -64,9 +66,11 @@ def inspect_miz(
             encrypted_entries = 0
             compressed_bytes = 0
             uncompressed_bytes = 0
+            policy_violation = False
 
             if len(infos) > selected_policy.max_members:
                 diagnostics.append(Diagnostic("member_count_limit"))
+                policy_violation = True
 
             for info in infos:
                 compressed_bytes += info.compress_size
@@ -79,6 +83,7 @@ def inspect_miz(
                     diagnostics.append(Diagnostic("encrypted_member"))
                 if info.file_size > selected_policy.max_member_uncompressed:
                     diagnostics.append(Diagnostic("member_size_limit"))
+                    policy_violation = True
                 if (
                     info.file_size > 0
                     and info.compress_size > 0
@@ -86,9 +91,11 @@ def inspect_miz(
                     > selected_policy.max_compression_ratio
                 ):
                     diagnostics.append(Diagnostic("compression_ratio_limit"))
+                    policy_violation = True
 
             if uncompressed_bytes > selected_policy.max_total_uncompressed:
                 diagnostics.append(Diagnostic("total_size_limit"))
+                policy_violation = True
 
             present_core = tuple(name for name in CORE_MEMBERS if name in name_counts)
             for _missing in (name for name in CORE_MEMBERS if name not in name_counts):
@@ -101,7 +108,10 @@ def inspect_miz(
 
             crc_status = "skipped"
             if verify_crc:
-                if encrypted_entries:
+                pre_crc_error = any(
+                    item.severity == "error" for item in diagnostics
+                )
+                if policy_violation or pre_crc_error:
                     crc_status = "not_checked"
                 else:
                     try:
@@ -142,6 +152,19 @@ def inspect_miz(
             encrypted_entries=0,
             diagnostics=(Diagnostic("bad_zip"),),
         )
+
+
+def _rewind_stream(path: Path | BinaryIO) -> None:
+    if not isinstance(path, Path):
+        path.seek(0)
+
+
+def is_safe_archive_member_name(name: str) -> bool:
+    """Return whether a member name is a nonempty relative POSIX path."""
+
+    if not name or "\x00" in name or name.endswith(("/", "\\")):
+        return False
+    return not _unsafe_member_path(name)
 
 
 def _unsafe_member_path(name: str) -> bool:
