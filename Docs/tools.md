@@ -19,6 +19,17 @@ This is the direct-script form of `dcsmizzer.py inspect`. No construction
 script is published yet because mission and campaign construction are not
 implemented.
 
+Repository Prompt-catalog validation:
+
+```powershell
+python Tools\validate_prompt_samples.py
+```
+
+This checks the bilingual user-facing Prompt examples for matching structure,
+well-formed source blocks, control characters, and leaked internal engineering
+language. It validates repository documentation only; it does not validate a
+mission or campaign.
+
 ## `capabilities`
 
 ```powershell

@@ -11,27 +11,67 @@
 
 link:README.md[Back to README]
 
+[IMPORTANT]
+====
+**This file is written directly for DCSMizzer's end users.**
+
+Every `[source,text]` block is an example of user input that can be given to the finished program. It is not an internal model instruction, form, or fixed template. Copy and adapt an example, or start with a single sentence; include only the map, aircraft, gameplay, atmosphere, difficulty, player count, or deliverables that actually matter to you.
+
+The finished program is responsible for technical checks such as airfields, units, weapons, pylons, coordinates, and mission-file structure. You do not need to know or specify implementation details unless you intentionally want to constrain them.
+====
+
 [NOTE]
 ====
-These examples show how a user might describe a desired DCS simulation in natural language. They are neither forms nor fixed templates; include only the details that matter to the request.
-They describe the target product workflow. During the current groundwork phase, generation and runtime validation are not implemented; preserve the requested specification and report the capability gap rather than fabricating a `.miz`.
-This file relies on *AsciiDoc multi-level TOC* (`toc::[]` below, through heading depth 5 via `:toclevels: 5`)—use the reader/IDE outline or rendered Contents, not a flat Markdown list.
+These examples describe the target product workflow. The project remains in its groundwork phase, so generation and runtime validation are not implemented yet; the program should preserve the user's specification and report capability gaps rather than fabricate a `.miz`.
 ====
 
 [TIP]
 ====
-*AsciiDoc TOC* (`toc::[]` below, depth 5) is the navigation index—use the IDE outline or rendered Contents.
+The *AsciiDoc TOC* (`toc::[]` below, depth 5) is the navigation index—use the IDE outline or rendered Contents.
 
+* <<getting-started,Start Here>> — one-sentence, standard, and detailed requests
 * <<quick-training,Quick Training>> — free flight, procedures, short sorties
 * <<mission-scenarios,Mission Scenarios>> — typical single-mission combat
 * <<continuous-training,Continuous Training>> — grindable ranges
-** Guns (WWII → modern) · IR (60s → modern) · BVR (80s / modern) · Evasion (WVR / BVR SA / BVR ARH / SAM / naval AD)
+** Guns (WWII → modern) · IR (60s → modern) · BVR (80s / modern) · Evasion (WVR / BVR SA / BVR ARH / SAM / naval AD) · air-to-ground weapons
 * <<living-battlespace,Living Battlespace>> — large atmosphere, pick a side (one map each)
 ** Era marks: South Atlantic 50s · Sinai 70s · Cold War Germany 80s · Syria 95s · others modern/WWII as titled
 * <<campaigns,Campaigns>> — <<type-evolution-campaigns,type-evolution ladders>> + <<single-map-campaigns,single-map single-aircraft>>
 ====
 
 toc::[]
+
+[[getting-started]]
+== Start Here
+
+A prompt has no required length. All three styles below are valid: with fewer details, the finished program makes more design decisions; with more details, the result follows a more specific vision.
+
+=== One Sentence
+
+[source,text]
+----
+Generate a two-ship F-16C interception mission on Caucasus: cold start, overcast weather, about 45 minutes, and moderate difficulty.
+----
+
+=== Standard Request
+
+[source,text]
+----
+Build a single-player MiG-21Bis interception mission on Cold War Germany. Set it on an autumn evening in the 1970s. The player and one AI wingman scramble from an East German airfield to intercept a low-flying strike package.
+
+Make it about 50 minutes long and moderately difficult, focusing on ground-controlled interception, visual identification, one main engagement, and a safe recovery. Add light period-appropriate airfield activity and provide a clear mission briefing.
+----
+
+=== Detailed Request
+
+[source,text]
+----
+I want a two-player cooperative mission on Sinai. Both players fly JF-17s, cold-starting from a rear airfield to suppress a medium-range air-defense site for an M-2000C strike package.
+
+Set the mission at summer dawn with low haze. Villages and neutral road traffic are close to the target area. The hostile radar should shut down intermittently and be protected by short-range defenses and decoy sites. The players need to keep the main threat ineffective during an approximately 20-minute strike window, but they do not have to destroy every unit.
+
+The mission should last about 75 minutes and be challenging without spawning enemies abruptly at close range. Let the players recover even after mission failure. Provide a two-player briefing with clear roles, radio information, and success/failure conditions, then generate and check a playable `.miz`. If a requirement genuinely cannot be implemented, explain it instead of silently changing the aircraft or map.
+----
 
 [[quick-training]]
 == Quick Training
@@ -46,7 +86,7 @@ Immediate, short practice and brief engagements: free flight, cold starts, proce
 ----
 Create a daytime **Sinai** **TF-51D** free flight. TF-51D is a **modern retired Mustang** trainer/display aircraft (not WWII combat). Clear light wind; start hot with an AI wingman from a verified Sinai/Suez-area field; fly ~40 minutes on a **plausible VFR/sightseeing route** along canal, coast, and **pyramid/Cairo-direction visual points** within map visibility—follow real corridors, coastline, and common visual landmarks; no random zigzag waypoint spam.
 
-Keep the airspace lived-in but not fake or laggy: military transport/patrol, helicopter transit, light prop or trainers in the pattern, distant non-hostile fighter training—**diverse multi-layer mix**; sparse civil. Types must **match contemporary/display era**. **Performance & scale:** active units typically **≤35** (light air + ground); free flight must not go large-scale (hard cap **100** is not a free-flight target). **Spawn & timeline (free flight):** only at **t=0** may a few aircraft already be airborne on routes; after that **no mid-air spawns**—later traffic starts from parking/taxi with **staggered takeoffs**, never a simultaneous mass launch. No mandatory waypoints, enemies, or win condition; return, go-around, restart anytime.
+Keep the airspace lived-in but not fake or laggy: military transport/patrol, helicopter transit, light prop or trainers in the pattern, distant non-hostile fighter training—**diverse multi-layer mix**; sparse civil. Types must **match contemporary/display era**. **Performance & scale:** prioritize smooth performance and a readable scene, using only enough activity to create atmosphere. **Spawn & timeline (free flight):** a few aircraft may already be airborne at mission start; later traffic should preferably start from parking or taxi with **staggered takeoffs**, avoiding visible pop-in or a simultaneous mass launch. No mandatory waypoints, enemies, or win condition; return, go-around, restart anytime.
 
 Verify era types, fields, realistic routing, staggered timeline, and total unit count; build and validate a .miz and recovery brief.
 ----
@@ -55,9 +95,9 @@ Verify era types, fields, realistic routing, staggered timeline, and total unit 
 
 [source,text]
 ----
-Build **Cold War Germany** full-fidelity **MiG-29A** night free flight. Moonlight thin cloud; depart East German runway with a friendly ship; ~35–40 minutes on a **plausible night route** over corridor lights and the border belt (real corridors/field lighting, not random zigzags).
+Build **Cold War Germany** full-fidelity **MiG-29A** night free flight. Moonlight thin cloud; depart East German runway with an AI wingman; ~35–40 minutes on a **plausible night route** over corridor lights and the border belt (real corridors/field lighting, not random zigzags).
 
-**Diverse but restrained** traffic: transport corridors, helicopter pads, distant friendly night fighter training, ground taxi and lights; sparse civil. Types must **match Cold War East German timeframe**. **Performance & scale:** active units typically **≤35**. **Spawn & timeline:** only at **t=0** may a few aircraft already be on routes; after that **no mid-air spawns**—ground delayed start, **staggered takeoffs**. No combat, waypoints, or win condition; go-around, divert, restart.
+**Diverse but restrained** traffic: transport corridors, helicopter pads, distant friendly night fighter training, ground taxi and lights; sparse civil. Types must **match Cold War East German timeframe**. **Performance & scale:** prioritize smooth performance and a readable scene. **Spawn & timeline:** a few aircraft may already be on routes at mission start; later traffic should preferably use delayed ground starts and **staggered takeoffs**, avoiding visible pop-in. No combat, waypoints, or win condition; go-around, divert, restart.
 
 Verify field, night weather, era types, routes, staggered timeline, and total unit count; build and validate a .miz and brief.
 ----
@@ -68,7 +108,7 @@ Verify field, night weather, era types, routes, staggered timeline, and total un
 ----
 Generate a **Cold War Germany** full-fidelity **MiG-29A** scenic flight as peacetime East German route familiarization / border-corridor VFR (**not hot war, not post-reunification German MiG-29G**). Start hot with a wingman from an East German field; ~45 minutes autumn scattered cloud on a **plausible VFR/sightseeing route** (valleys, corridors, common visual points).
 
-**Diverse** but restrained: friendly transports, low helicopters, non-hostile fighter passes outside ranges, road/field activity; sparse civil. Types must **match Cold War East German timeframe**. **Performance & scale:** active units typically **≤35**. **Spawn & timeline:** only at **t=0** may a few aircraft already be on routes; after that **no mid-air spawns**—ground delayed start, **staggered takeoffs**. No enemies or win condition; early recovery and relaunch allowed.
+**Diverse** but restrained: friendly transports, low helicopters, non-hostile fighter passes outside ranges, road/field activity; sparse civil. Types must **match Cold War East German timeframe**. **Performance & scale:** prioritize smooth performance and a readable scene. **Spawn & timeline:** a few aircraft may already be on routes at mission start; later traffic should preferably use delayed ground starts and **staggered takeoffs**, avoiding visible pop-in. No enemies or win condition; early recovery and relaunch allowed.
 
 Verify map, full-fidelity type, route, staggered timeline, and total unit count; build and validate a .miz and route brief.
 ----
@@ -79,7 +119,7 @@ Verify map, full-fidelity type, route, staggered timeline, and total unit count;
 ----
 Make a **Kola** **JF-17** adverse-weather free flight (**real** weather—not light-mist sightseeing). Low cloud, blowing snow/crosswind, limited visibility; cold or hot start with AI wingman from a verified field; ~35–40 minutes on a **plausible coastal/fjord VFR or low IFR-transition route**; early recovery or divert OK. No combat, no win condition.
 
-**Diverse, restrained** traffic: pattern/transport, helicopters, distant non-hostile fighters; sparse civil. Types **contemporary Nordic/training**. **Performance & scale:** active units typically **≤35**. **Spawn & timeline:** only at **t=0** may a few aircraft already be on routes; after that **no mid-air spawns**—ground delayed start, **staggered takeoffs**.
+**Diverse, restrained** traffic: pattern/transport, helicopters, distant non-hostile fighters; sparse civil. Types **contemporary Nordic/training**. **Performance & scale:** prioritize smooth performance and a readable scene. **Spawn & timeline:** a few aircraft may already be on routes at mission start; later traffic should preferably use delayed ground starts and **staggered takeoffs**, avoiding visible pop-in.
 
 Check weather, route, era types, staggered timeline, start, and total unit count; build and validate a .miz and brief.
 ----
@@ -105,7 +145,7 @@ Verify parking, taxi, radios, routes, aircraft list, F10; beginner brief and val
 
 [source,text]
 ----
-Build a hot-start / local departure exercise on **Iraq** (full or **Iraq North**). **Default seat: full-fidelity F-16C** (or full-fidelity M-2000C—state default); **optional list** may include F-100D, JF-17, full-fidelity MiG-29A if installed. Hot morning haze; depart verified military field with AI wingman; navigation, formation, local recovery; high friendly transport; no enemies.
+Build a hot-start / local departure exercise on **Iraq** (full or **Iraq North**). **Default seat: full-fidelity F-16C** (or full-fidelity M-2000C—state default); **optional list** may include F-100D, JF-17, full-fidelity MiG-29A if installed. Hot morning haze; depart verified military field with AI wingman; navigation, formation, local recovery; a friendly transport passing overhead; no enemies.
 
 **Training loop (F10 / respawn):** F10 reset sortie, hot-start player respawn, reset wingman; continuous local work.
 
@@ -116,7 +156,7 @@ Confirm map, start, list support, AI routes, F10; brief and validate.
 
 [source,text]
 ----
-Build **Caucasus** runway takeoff / climb-profile exercise. **Default full-fidelity Su-25T**; **optional list**: full-fidelity M-2000C, JF-17, A-10C II, etc. Overcast morning; climb profile, training waypoints, follow instructor home; transport departs after you. Go-around or divert OK; no enemies.
+Build **Caucasus** runway takeoff / climb-profile exercise. **Default free Su-25T** (not a full-fidelity cockpit module); **optional list**: full-fidelity M-2000C, JF-17, A-10C II, etc. Overcast morning; climb profile, training waypoints, follow instructor home; transport departs after you. Go-around or divert OK; no enemies.
 
 **Training loop (F10 / respawn):** F10 reset takeoff lesson, respawn to runway/taxi, reset instructor; continuous profiles.
 
@@ -167,15 +207,13 @@ Confirm runway, winds, aircraft list, routes, F10; night brief and validate.
 Generate a Nevada four-ship **Christen Eagle II** formation exercise, player as number two. Hot start near Nellis; morning scattered cloud and light chop; join-up, diamond, tactical spread, recovery ~40 minutes. Light airport traffic and an observation helicopter; no enemies. Allow rejoin or solo go-around if separated.
 
 Verify aircraft, AI formation, and airspace; build and validate a .miz and formation brief.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Air-to-Air Refueling
 
 [source,text]
 ----
-Build **Nevada** **F-16C** aerial refueling. Air-spawn with wingman; controller to tanker; calm day join/contact/disconnect ~40 min. Range routes isolated. Multiple joins; unrefeled recovery to Nellis OK. Verify compatibility.
+Build **Nevada** **F-16C** aerial refueling. Air-spawn with wingman; controller to tanker; calm day join/contact/disconnect ~40 min. Range routes isolated. Multiple joins; recovery to Nellis without refueling is OK. Verify compatibility.
 
 Verify tanking and routes; procedure brief and validate.
 ----
@@ -207,15 +245,13 @@ Verify pad and AI demo; basics brief and validate.
 Build a Syria **Mi-24P** nap-of-earth flight. Hot start with a friendly Mi-8 from a forward field; ~35 minutes along valleys, village edges, and cover in morning mist and light wind. Observation posts score only—no combat. Follow friend, free route, early recovery, or land and restart.
 
 Verify routes and safe altitudes; build and validate a .miz and NOE brief.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ===== Confined-Area Landing
 
 [source,text]
 ----
-Generate an **Afghanistan** **CH-47F** confined-area landing exercise (full or **Southwest/East Afghanistan** task area—state in manifest). Hot afternoon mountain gusts; depart a FARP with a light friendly helo; attempt three progressive valley pads ~45 minutes at verified safe gross weight. No enemies; allow go-around, skip pad, or recover.
+Generate an **Afghanistan** **CH-47F** confined-area landing exercise (full or **Southwest/East Afghanistan** task area—state in the briefing). Hot afternoon mountain gusts; depart a FARP with a light friendly helo; attempt three progressive valley pads ~45 minutes at verified safe gross weight. No enemies; allow go-around, skip pad, or recover.
 
 Verify pads, weight, and weather; build and validate a .miz and landing brief.
 ----
@@ -226,7 +262,7 @@ Verify pads, weight, and weather; build and validate a .miz and landing brief.
 
 [source,text]
 ----
-Build the weird special ***Traveler II***—**WWII into modern**. Player locks **Spitfire LF Mk. IX** or **P-51D**; anomalously appears over **Nevada** or **Sinai** contemporary airspace with modern traffic (transports, helicopters, distant non-hostile **F-16C** / **F-15C** tracks—**do not** freefire modern jets at the player unless an optional “mis-ID fight” branch is briefed). Player **guns only** (no modern missiles bolted on); ~25–35 min survive/recover/divert. Mix performance and survival: low passes, jet-wake avoidance, wrong-field risk. Active **≤35**; staggered; no mid-air spawns after t=0.
+Build the weird special ***Traveler II***—**WWII into modern**. Player locks **Spitfire LF Mk. IX** or **P-51D**; anomalously appears over **Nevada** or **Sinai** contemporary airspace with modern traffic (transports, helicopters, distant non-hostile **F-16C** / **F-15C** tracks—**do not** let modern jets fire freely at the player unless an optional “mis-ID fight” branch is briefed). Player **guns only** (no modern missiles bolted on); ~25–35 min survive/recover/divert. Mix performance and survival: low passes, jet-wake avoidance, wrong-field risk. Keep traffic restrained; later flights should preferably depart from airfields in staggered intervals without visible pop-in.
 
 Verify prop airfield fit on modern maps, traffic, mis-ID rules; brief and validate.
 ----
@@ -249,8 +285,6 @@ Verify aircraft, formation AI, show box; formation brief and validate.
 Generate Cold War Germany full-fidelity **MiG-29A** sensor exercise. Exercise area holds friendly MiG-29A, adversaries, neutral transports, and airliners; GCI gives limited cues. Thin afternoon cloud ~35 min; classify with verified radar, IRST, and datalink—weapons cold. Re-observe after mis-ID; recover or reset when done.
 
 Verify sensors and traffic; classification brief and validate.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Targeting Pod and JTAC
@@ -269,8 +303,6 @@ Verify pod, JTAC talk-on, and loads; coordination brief and validate.
 Give me a Marianas **F-14** emergency recovery (**F-14A / F-14B / F-14B(U)** per installed verified IDs; default B, B(U) OK if owned). Two-crew with wingman on patrol when a project-supported engine fails with hydraulic issues. Wingman escorts; carrier recovering friendlies; land divert available; clear to scattered cloud ~30 min. Decide jettison, checklists, and approach choice; no enemies.
 
 Verify failure modes, carrier, divert; emergency brief and validate.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 [[mission-scenarios]]
@@ -295,7 +327,7 @@ Verify WWII bomber units, German fighters, escort, bounds; brief and validate.
 
 [source,text]
 ----
-Build a **one-shot ordinary mission**: WWII multi-aircraft guns furball (not grindable). **Caucasus** or **Marianas WWII**: player **La-7** or **F4U-1D**; airspace holds **Fw 190 A-8**, **Fw 190 D-9**, **Bf 109 K-4**, and friendly props; **guns only**; ~12–15 min one bout, score survival/kills then end. Active **≤35**, staggered entry. Report La-7 EA limits. No infinite F10 wave respawn.
+Build a **one-shot ordinary mission**: WWII multi-aircraft guns furball (not grindable). **Caucasus** or **Marianas WWII**: player **La-7** or **F4U-1D**; airspace holds **Fw 190 A-8**, **Fw 190 D-9**, **Bf 109 K-4**, and friendly props; **guns only**; ~12–15 min one bout, score survival/kills then end. Keep the participating force compact and use staggered entry. Report La-7 EA limits. No infinite F10 wave respawn.
 
 Verify type pool and bounds; furball brief and validate.
 ----
@@ -304,7 +336,7 @@ Verify type pool and bounds; furball brief and validate.
 
 [source,text]
 ----
-Build **one-shot** weird special ***Traveler I***—**modern into WWII**. Player **F-16C** over Channel/Normandy 1944; prop opposition and **WWII Assets** bombers. ~20–25 min window then end. Active **≤35**. Never upgrade WWII types to modern jets.
+Build **one-shot** weird special ***Traveler I***—**modern into WWII**. Player **F-16C** over Channel/Normandy 1944; prop opposition and **WWII Assets** bombers. ~20–25 min window then end. Keep the participating force compact. Never upgrade WWII types to modern jets.
 
 Verify cross-era mix and ROE; anomaly brief and validate.
 ----
@@ -317,7 +349,7 @@ Verify cross-era mix and ROE; anomaly brief and validate.
 ----
 Generate summer-1988 **Cold War Germany** full-fidelity **MiG-29A** scramble intercept. Cold-start with AI wingman from an East German field; **Mirage F1** strike under **M-2000C** escort crosses low cloud toward military targets near East Berlin; A-50 and GCI provide tracks without fighting for you. Intercept before release; recover or divert within ~70 min; ID first; no neutrals/civil.
 
-Deliver .miz, brief, and validation from project data.
+Deliver a playable .miz, a complete briefing, and check results.
 ----
 
 ==== Strike-Package Interception
@@ -345,8 +377,6 @@ Build scramble/engagement brief; validate timing.
 Create Sinai four-ship **M-2000C** TARCAP. Launch from a rear base at dawn ahead of friendly **JF-17** precision strike; clear enemy CAP and hold while they attack a military radar. Reserves may launch from a second field; neutrals divert along the coast. No-fly boundary enforced; success when the strike completes and withdraws; ~80 min.
 
 Output grouped briefs; validate timing and triggers.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Fighter Sweep
@@ -365,8 +395,6 @@ Check chase-line and fuel logic in the .miz.
 Build four-ship full-fidelity **M-2000C** escort over cloudy Sinai for two low **Mirage F1** attacking a rear military warehouse. Limited AWACS and tanker windows; interceptors inbound, more from alternate fields on egress; towns and civil corridors no-fire. Close or detached escort player choice; success when strikers complete and withdraw; ~90 min.
 
 Validate formation and recovery; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Airbase Defense
@@ -414,8 +442,6 @@ Deliver CAS brief; validate safety line.
 Generate hot afternoon Sinai two-player **AH-64D** immediate CAS. Respond from a hold for a friendly recon team; JTAC builds talk-on and clearance. Enemy vehicles move along village edges near friendlies and civilian traffic; dust cuts ID range. Fire only after confirmation; ~55 min; request readbacks or shift targets.
 
 Validate 9-line and ID logic; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== BAI
@@ -434,8 +460,6 @@ Validate ID and no-fire lines; deliver .miz.
 Generate Syria mountain **OH-58D** armed reconnaissance hunting suspected missile teams and supply vehicles. Dawn launch with AI wingman from a FARP; ground patrols and friendly UAV give incomplete cues. Enemy may displace or use unarmed vehicles as deception. Success is find, mark, and egress—not kills; ~60 min.
 
 Validate find/report logic; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Pinpoint Strike
@@ -463,8 +487,6 @@ Verify support; generate and validate .miz.
 Build 1980s Cold War Germany **AJS-37** low-level airfield strike. Four players terrain-follow through mist across the FEBA onto runway intersections and isolated attack aircraft; friendly fighters only brief cover. Shared civil facilities; mobile AD may relocate after first pass. Coordinate one release window; ~80 min.
 
 Validate low routes and targets; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Armored-Formation Attack
@@ -474,8 +496,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Generate Kola bad-weather two-ship **Su-25T** armor-mass attack. Enemy armor massed on frozen roads under SPAAG and short-range AD. Friendly UAV only early; **Su-27** CAP cannot guarantee air superiority. Suppress escorts or flank; ~70 min.
 
 Validate weather and target box; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Infrastructure Attack
@@ -496,8 +516,6 @@ Validate damage and recovery.
 Generate two-player **JF-17** SEAD on Sinai suppressing medium AD for a following **M-2000C** strike. Dawn cold start; AWACS SA; radars cycle and hide behind short-range systems; decoy sites may eat first shots. Keep the threat ineffective for the full ~18 min strike window—not necessarily destroyed; no boundary violation.
 
 Generate and validate .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== DEAD
@@ -536,8 +554,6 @@ Validate find/ID; deliver .miz.
 Generate Kola dawn four-ship **AJS-37** anti-ship strike against an escort group steaming a fjord. Maritime recon last-known with time error; friendly fighters only brief cover; neutral fishing boats nearby; enemy CAP may launch after you cross the coast. ~85 min coordinated low entry and release.
 
 Validate ID, neutrals, loads; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Coastal Strike
@@ -562,11 +578,9 @@ Validate channel traffic and threats; deliver .miz.
 
 [source,text]
 ----
-Build four-player **F/A-18C** fleet defense as a CVBG night-transits Marianas. Two CAP pairs; E-2 and tanker support; two anti-ship waves at different altitudes/axes, second may ride residual tracks; neutral airliner nearby. ~100 min; verify Supercarrier if required.
+Build four-player **F/A-18C** fleet defense as a carrier battle group transits the Marianas at night. Two CAP pairs; E-2 and tanker support; two anti-ship waves at different altitudes and axes, with the second possibly hiding among residual tracks; neutral airliner nearby. ~100 min; verify Supercarrier if required.
 
 Validate sectors and recovery; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Amphibious Support
@@ -576,8 +590,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Generate South Atlantic two-ship **AV-8B** amphibious support. Dawn launch from LHA; first suppress coastal guns blocking landing craft, then JTAC-directed support against mobile AD and armor reserves. Friendly helos transit low through the target area. ROE strict; ~80 min.
 
 Validate amphibious timeline; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 === Helicopter and Special Operations
@@ -589,8 +601,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Build Caucasus dawn **Mi-8MTV2** air assault: multiple transports under **Mi-24P** escort deliver infantry to a pass strongpoint. Player leads the package—low route, landing order, extract signal. Brief artillery prep may fail if outposts warn; force alternate LZ. ~70 min.
 
 Validate landing and escort; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Troop Insertion
@@ -600,8 +610,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Generate **UH-1H** night insertion of SOF near a Syrian village behind the line. Two-ship low through concealed valleys; limited moon and low cloud. Friendly UAV only updated once before launch; neutral ambulance traffic on nearby roads. Hold a tight window and avoid exposure; ~65 min.
 
 Validate window and ID; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Troop Extraction
@@ -611,8 +619,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Build rainy Caucasus **Mi-8MTV2** extraction of a four-man recon team surrounded. Launch with AI wingman from a FARP; team radio reports enemy closing; primary LZ may die to artillery; friendly **Su-25T** only one short suppression window. ~60 min pick up and return.
 
 Validate pick-up and cover; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Cargo Transport
@@ -622,8 +628,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Generate Kola blizzard **CH-47F** heavy cargo lift of artillery and ammo from rear base to a mountain position. Share loads with an AI transport; friendly patrols guard the route, but enemy recon may force a last-minute offload change. Low cloud and crosswind make hover hard; ~75 min.
 
 Validate weight and offload points; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Battlefield Resupply
@@ -633,8 +637,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Build Marianas dusk **UH-1H** battlefield resupply to three dispersed island positions with ammo and medical stores. Two-ship from a ship FARP; friendly patrol craft give route intel; light weapons on some shores; one offload may displace. Choose fast or covered routing; ~70 min.
 
 Validate three-island timing; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Combat Search and Rescue
@@ -644,8 +646,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Generate two-ship **UH-1H** CSAR for a pilot down behind Sinai lines. One searches/picks up, one covers; friendly **M-2000C** only suppress enemy fighters for a 12-minute window. Ground search closes; civilian vehicles nearby. Confirm ID before weapons on personnel; displace rendezvous if compromised; ~65 min.
 
 Validate pick-up, cover, return; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Helicopter Escort
@@ -655,8 +655,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Build Caucasus afternoon two-ship **AH-64D** escort for a **Mi-8** package through two ambush valleys. Ground recon only confirms some AAA, MANPADS, and armed vehicles; friendly artillery can suppress one preplanned box. Enemy may wait until transports enter the canyon; ~70 min.
 
 Validate escort timing; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Helicopter Hunt
@@ -677,19 +675,15 @@ Validate find and engagement; deliver .miz.
 Build cloudy Sinai **Mirage F1** tactical recon along the border recording three suspected deployment areas. Two-ship scout/escort; friendly **M-2000C** on distant standby. Enemy fighters and short-range AD react to clear violations; neutral observer convoy near second target. Hold assigned height/heading; weapons tight; return with ≥2 intel sets within ~75 min.
 
 Validate tracks and ID; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== AFAC/JTAC
 
 [source,text]
 ----
-Generate two-player **A-10C II** airborne FAC supporting a Caucasus ground counterattack. One observes, marks, and passes 9-lines; the other attacks only on clear clearance. Friendly artillery and **F-16C** enter at different times; enemy vehicles may hug friendlies or ruin fields. ~80 min.
+Generate two-player **A-10C II** airborne FAC supporting a Caucasus ground counterattack. One observes, marks, and passes 9-lines; the other attacks only on clear clearance. Friendly artillery and **F-16C** enter at different times; enemy vehicles may stay close to friendly forces or hide among ruins. ~80 min.
 
 Validate 9-line and clearance logic; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== AEW&C Support
@@ -717,8 +711,6 @@ Validate tanker/fuel logic; deliver .miz.
 Build Marianas night recovery support. Four player **F/A-18C** returning from combat, two critical fuel; recovery tanker holds near the force; thunderstorms intermittently close the deck; damaged AI jet requests priority. Prioritize gas, holds, and diversions; ~50 min. Verify Supercarrier if required.
 
 Validate recovery logic; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Battlefield Surveillance
@@ -728,8 +720,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Generate **OH-58D** battlefield surveillance on Cold War Germany tracking hostile convoys, artillery, and mobile AD. Dusk two-ship from a FARP; friendly ground recon and **M-2000C** patrol give limited cover; neutral road traffic remains. Enemy may stop or enter woods if detected. Stay covert, maintain contact, report updated coords—not kills; ~65 min.
 
 Validate find/report; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Show of Force
@@ -750,8 +740,6 @@ Validate ROE; deliver .miz and ROE brief.
 Generate Combined Arms position defense: command armor, ATGM, and AD holding a Caucasus valley junction. Friendly **A-10C** one timed window; **Mi-8** CASEVAC. Enemy recon, armor assault, and reserves in three phases with possible flank infiltration. Hold the junction ~90 min.
 
 Validate hold and support logic; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Capture a Strongpoint
@@ -779,8 +767,6 @@ Validate support and capture; deliver .miz.
 Build Kola two-ship **Ka-50** convoy escort for supply vehicles on a snowy fjord road to a radar site under low cloud. Friendly patrols cleared part of the route; ambush teams, suspected mines, and scattered AD still force stops or detours; neutral ambulance nearby. Deliver safely ~70 min.
 
 Validate convoy AI and threats; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Convoy Interdiction
@@ -790,8 +776,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Generate two-ship full-fidelity **MiG-29A** convoy interdiction on Sinai roads mixed with ordinary traffic that may split. AWACS SA; **OH-58D** observer only confirms command vehicle and AD in a short window; fighters may scramble after the attack. Towns and civilian traffic hard no-fire; cut the convoy and recover ~70 min.
 
 Validate ID and no-fire; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Joint Fire Support
@@ -801,8 +785,6 @@ Keep light living traffic or battlefield activity without burying the skill focu
 Build Marianas joint fire support: **F/A-18C**, **A-10C II**, ground artillery, and human or AI JTAC on one coastal defense line. Four players split SEAD/suppression and CAS; friendly landing force advances; mobile AD and armor may displace and re-engage. ~100 min.
 
 Validate timing and 9-lines; deliver .miz.
-
-Keep light living traffic or battlefield activity without burying the skill focus; put success/fail in the brief. Verify aircraft, map, and units in project data before generation—never invent CLSIDs or coordinates.
 ----
 
 ==== Large Multi-Package Operation
@@ -855,7 +837,7 @@ Validate scoring; deliver .miz.
 [[continuous-training]]
 == Continuous Training
 
-Respawnable skill ranges. Every leaf below is **grindable**: F10 at least Reset / Next Wave / Respawn Player / Respawn Threat (and Swap Side where red-blue is offered). Do not force-end after one kill or one miss. Verify aircraft, weapons, SAMs, and ships against project data and Tools—never invent CLSIDs or type names. Report unsupported items instead of silent swaps.
+Respawnable skill ranges. Every example below asks for at least Reset / Next Wave / Respawn Player / Respawn Threat in F10, plus Swap Side where red-blue play is offered. Do not force-end the session after one kill or one miss. If an aircraft, weapon, air-defense system, or ship is genuinely unsuitable, explain why instead of silently substituting something else.
 
 === Guns Dogfighting
 
@@ -867,7 +849,7 @@ Build a **continuous WWII guns dogfighting** range. Map **The Channel**, **Norma
 
 **Pool (installed only):** player and bandit from verified warbirds—e.g. **Bf 109 K-4**, **Fw 190 A-8**, **Fw 190 D-9**, **P-51D**, **P-47D**, **Spitfire**, **F4U-1D**, **La-7**, **I-16** as map/module allow. Optional **WWII Assets** traffic outside the box. Default 1v1 equal-energy merge; optional 1v2 / 2v2 as F10 variants.
 
-**Loop (F10 / respawn):** Reset geometry, Next Wave, Respawn Player, Respawn Bandit(s), optional Swap Side. ~6–10 min per bout; infinite sparring. Active units typically **≤20** in the fight box.
+**Loop (F10 / respawn):** Reset geometry, Next Wave, Respawn Player, Respawn Bandit(s), optional Swap Side. ~6–10 min per bout; infinite sparring. Keep the fight box compact enough for smooth repeated practice.
 
 Verify types, map fit, guns, bounds, F10; training brief and validate.
 ----
@@ -891,7 +873,7 @@ Verify era types, guns, no missiles, F10; brief and validate.
 ----
 Build a **continuous 1970s guns-only** dogfighting range. Map **Cold War Germany**, **Caucasus**, or **Nevada**. **Guns only**—no IR/radar missiles for this slot (pure gunfighting).
 
-**Era pool (installed only):** e.g. **F-5E FC**, **MiG-21Bis**, **F-4E**, **MiG-19P**, **A-4** or other verified late-60s/70s fighters as available. Default Blue F-5E vs Red MiG-21; full-fidelity preferred when the type exists in-era. Equal-energy merge.
+**Era pool (installed only):** e.g. **F-5E FC**, **MiG-21Bis**, **F-4E**, **MiG-19P** or other verified late-60s/70s fighters as available. Default Blue F-5E vs Red MiG-21; full-fidelity preferred when the type exists in-era. Equal-energy merge.
 
 **Loop (F10 / respawn):** Reset, Next Wave, Respawn Player, Respawn Bandit, Swap Side. ~8–10 min per bout; continuous.
 
@@ -904,7 +886,7 @@ Verify era, guns-only loads, F10; brief and validate.
 ----
 Build a **continuous 1990s guns-only** dogfighting range. Map **Cold War Germany**, **Nevada**, or **Caucasus**. **Guns only**—no missiles this slot.
 
-**Era pool (installed only):** e.g. full-fidelity **MiG-29A**, **MiG-29S/G**, **F-16C**, **F-15C**, **M-2000C**, **F/A-18C**, **JF-17** only if treated as contemporary peer for training (or swap to verified 90s types). Default Red full-fidelity MiG-29A vs Blue F-16C. Equal-energy head-on.
+**Era pool (installed only):** e.g. full-fidelity **MiG-29A**, **MiG-29S/G**, **F-16C**, **F-15C**, **M-2000C**, **F/A-18C**. Default Red full-fidelity MiG-29A vs Blue F-16C. Equal-energy head-on.
 
 **Red/Blue** selectable. **Loop (F10 / respawn):** Reset, Next Wave, Respawn Player, Respawn Bandit, Swap Side. ~8–10 min per bout; continuous.
 
@@ -945,7 +927,7 @@ Verify weapons compatibility, era, F10; brief and validate.
 ----
 Build a **continuous 1990s IR dogfighting** range. Map **Cold War Germany**, **Nevada**, or **Caucasus**. Limited **all-aspect IR** + guns; **no** radar BVR missiles this slot.
 
-**Era pool (installed only):** full-fidelity **MiG-29A**, **MiG-29S/G**, **F-16C**, **F-15C**, **M-2000C**, **F/A-18C**, **F-14B**, **JF-17** as available—loads with verified 90s IR (e.g. R-73 / AIM-9M-class as data allows) + gun. **Red/Blue** selectable. Default Red MiG-29 vs Blue F-16C.
+**Era pool (installed only):** full-fidelity **MiG-29A**, **MiG-29S/G**, **F-16C**, **F-15C**, **M-2000C**, **F/A-18C**, **F-14B** as available—loads with verified 90s IR (e.g. R-73 / AIM-9M-class as data allows) + gun. **Red/Blue** selectable. Default Red MiG-29 vs Blue F-16C.
 
 **Loop (F10 / respawn):** Pick/swap side, Reset, Next Wave, Respawn Player, Respawn Bandit. ~8–12 min per bout; continuous.
 
@@ -1056,16 +1038,92 @@ Build a **continuous naval / sea-based air-defense evasion** range. Map **Persia
 Verify ship types, naval SAMs/guns, player sensors, F10; naval-AD brief and validate.
 ----
 
+=== Air-to-Ground Weapon Training
+
+Each example below focuses one practice session on a single delivery method. The user can specify the aircraft, weapon family, targets, weather, and reset behavior; the finished program is responsible for confirming actual loadout compatibility.
+
+==== Gun and Rockets
+
+[source,text]
+----
+Build a **Nevada** **A-10C II** gun and unguided-rocket range. Start hot in daylight. Present soft targets, light armor, and clearly marked range vehicles in sequence, with only one target group active per round so I can practice ingress, attack, safe escape, and re-entry.
+
+F10 should provide Reset Range, Next Target Type, and Hot-Start Respawn. Let me abort or recover, and do not end the mission after one miss. Include safe altitudes, attack headings, and no-fire areas in the briefing.
+----
+
+==== CCIP and CCRP
+
+[source,text]
+----
+Generate a **Nevada** **F-16C** unguided-bomb range for separate CCIP and CCRP practice. Use clear weather and fixed range targets far from populated areas. Give each mode its own route and release window, beginning with single-weapon practice before a two-ship coordination round.
+
+F10 should reset targets, switch between CCIP and CCRP lessons, and let the player rejoin. Explain entry parameters, escape directions, and hit criteria in the briefing; do not force-end after one release.
+----
+
+==== Cluster Munitions
+
+[source,text]
+----
+Build a **Caucasus** **F-16C** cluster-munition range using a supported CBU-87 or CBU-97 loadout. Place dispersed soft targets and parked armor inside the range, with a clearly marked no-fire area nearby to practice target selection and footprint control.
+
+Keep each target group compact. F10 should reset targets, switch the weapon lesson, and restart the player. State the wind, release window, safe escape direction, and collateral-damage criteria in the briefing.
+----
+
+==== Laser-Guided Weapons
+
+[source,text]
+----
+Generate a **Sinai** **A-10C II** laser-guided weapon range. In the first round, the player self-designates a fixed target with the targeting pod. In the second, a JTAC provides laser designation. In the third, use a suitable laser-guided weapon against a moving target.
+
+Focus on target confirmation, laser-code coordination, release, and re-attack rather than a large battle. F10 should reset each round and restore the player. Include JTAC communications, no-fire areas, and success/failure conditions in the briefing.
+----
+
+==== Electro-Optical Sensor and Pod
+
+[source,text]
+----
+Build a **Sinai** **JF-17** WMD-7 targeting-pod range. Start hot and search, identify, and track fixed and moving targets in a desert training area. Fly a weapons-safe identification pass first, then make one precision attack on a confirmed target.
+
+Add a few plausible non-target vehicles to require positive identification. F10 should reset targets, switch between fixed and moving-target lessons, and respawn the player. State the range boundary and abort criteria in the briefing.
+----
+
+==== GPS/INS-Guided Weapons
+
+[source,text]
+----
+Generate a **Persian Gulf** **F-16C** JDAM range. The player handles three pre-planned fixed targets, with one target coordinate updated through the briefing after takeoff. Use cloud cover so the lesson does not depend on continuous visual contact.
+
+Include single-weapon releases, different ingress headings, and a safe recovery. F10 should reset targets and restart the lesson. Provide target information, coordinate format, release order, and hit criteria, but do not let AI complete the attack for the player.
+----
+
+==== Anti-Radiation Missile
+
+[source,text]
+----
+Build a **Sinai** **F-16C** AGM-88 HARM range. A training air-defense site should use several behaviors: continuously radiating, shutting down briefly, and presenting a decoy emitter. The player must decide whether to fire, when to abort, and how to exit safely without an ideal signal.
+
+F10 should select the next radar behavior, reset the site, and restore the player. Grade correct threat identification and safe completion of the attack flow rather than destruction of the entire air-defense network.
+----
+
+==== Anti-Ship Weapon
+
+[source,text]
+----
+Generate a **Kola** **AJS-37** RB-15F anti-ship range. The player enters low toward the outer fjords, searches around the surface group's last known position, plans the missile route, and launches while keeping neutral shipping outside the attack.
+
+Provide a basic lesson without fighter opposition and an advanced lesson with a light air threat. F10 should reset the surface group's position, switch lessons, and restore the player. State target-identification rules, no-fire areas, launch window, and escape route in the briefing.
+----
+
 [[living-battlespace]]
 == Living Battlespace
 
 [NOTE]
 ====
 Large, credible battlefield atmosphere—not a single fixed package with one win condition.
-* **Scale:** on the order of **100+** active units (air + ground + sea as the map allows); keep a tight war zone for performance.
+* **Scale:** keep the theater persistently active while prioritizing smooth performance and readable situations; prefer a dense local war zone to units scattered across the whole map.
 * **Player:** **pick a coalition / side and join** (client slots or briefed side choice). Optional seats list installed full-fidelity first.
 * **Spawn:** the world may already be fighting at **t=0**; later reinforcements prefer parking, ships, and staggered takeoffs—avoid a simultaneous mass air spawn.
-* **Verify** countries, units, ships, and bases with project data and Tools; never invent CLSIDs or type names. Report unsupported items.
+* **Availability:** if a country, unit, ship, base, or player seat cannot be used, explain the limitation instead of silently substituting it.
 * **Era locks** in each map title are mandatory for that atmosphere.
 * **TOC:** each map is a top leaf under this chapter (===) for direct navigation.
 ====
@@ -1081,7 +1139,7 @@ Build a **living battlespace** on **Caucasus** in a **modern** fictional window 
 * **Blue — Ukraine:** fewer bases, lighter fighter presence; **distant Western support** only—**AWACS-class** and **F-16C** (and similar) on **far/high tracks**, thin and not a second main front.
 * **Neutral:** civil corridors, coastal/merchant traffic, observers/aid—no-fire.
 
-**Player:** join Red or Blue (state default seats). ~**100+** active units in a compact theater. No single mandatory package win—survive, pick fights, hold corridors.
+**Player:** join Red or Blue (state default seats). Keep a compact theater persistently active while preserving smooth performance. No single mandatory package win—survive, pick fights, hold corridors.
 
 Verify units, bases, distant-support ROE, F10 optional side pick; build and validate a .miz and atmosphere brief.
 ----
@@ -1097,7 +1155,7 @@ Build a **living battlespace** on modern **Marianas** / **Mariana Islands**.
 * **Blue — United States + Japan (core):** US carrier/expeditionary air (e.g. **F/A-18C**, **F-14B** if used) and Japanese participation with **C-130J**, **F-16C**, **F-4E** (and other verified types)—Japan is a real coalition wing, not scenery.
 * **Neutral:** civil air and shipping.
 
-**Player:** join China or US/Japan seats. Large ocean multi-axis traffic; ~**100+** units. Pick a side and join the war—no single fixed strike package requirement.
+**Player:** join China or US/Japan seats. Keep large-ocean, multi-axis traffic active while preserving smooth performance. Pick a side and join the war—no single fixed strike package requirement.
 
 Verify carrier/field fit, Japanese types, ROE; build and validate a .miz and brief.
 ----
@@ -1114,7 +1172,7 @@ Build a **living battlespace** on **Marianas WWII**.
 * **Germany (limited):** small, identifiable detachment (**Bf 109** / **Fw 190** if modules allow)—flavor, not a third superpower.
 * **Neutral-style ROE:** hospital/merchant ships if present.
 
-**Player:** join US, Japan, or the small German detachment. Guns-era air war; staggered deck and field activity. ~**100+** units in a tight island fight box where performance allows.
+**Player:** join US, Japan, or the small German detachment. Guns-era air war with staggered deck and field activity; keep the island fight box as dense as performance allows.
 
 Verify WWII Assets/types, map, ROE; build and validate a .miz and brief.
 ----
@@ -1130,7 +1188,7 @@ Build a **living battlespace** on **Nevada** (NTTR) as a **large Red Flag–styl
 * **Red — US Aggressor / adversary squadrons:** **F-5E FC** (including MiG-28-style liveries if verified), FC Flankers/Fulcrums, dissimilar threats.
 * **Neutral:** range control, safety corridors, civil reroutes, range helos/utility.
 
-**Player:** join Blue wing or Red aggressor. Multiple ranges active at once; ~**100+** units of range traffic and sparring—not world war mobilization.
+**Player:** join Blue wing or Red aggressor. Keep multiple ranges active at once, with dense but performance-conscious traffic and sparring—not world war mobilization.
 
 Verify aggressor liveries, range geometry, ROE; build and validate a .miz and brief.
 ----
@@ -1146,7 +1204,7 @@ Build a **living battlespace** on **Cold War Germany** locked to the **1980s** (
 * **Blue — USA + West Germany + France:** **F-15C**, **F-4E**, **M-2000C**, etc.; AWACS/tankers in depth.
 * **Neutral:** civil traffic, border observers—fratricide/border breach is political failure.
 
-**Player:** join Pact or NATO seat. Corridor/Fulda-belt density; ~**100+** units. Loads emphasize **semi-active BVR + IR/guns**, not modern active-missile walls unless briefly justified and verified.
+**Player:** join Pact or NATO seat. Keep the corridor/Fulda belt persistently active while preserving smooth performance. Loads emphasize **semi-active BVR + IR/guns**, not modern active-missile walls unless briefly justified and verified.
 
 Verify era loads, countries, bases, ROE; build and validate a .miz and brief.
 ----
@@ -1162,7 +1220,7 @@ Build a **living battlespace** on **Sinai** locked to the **1970s** (second-gene
 * **Side B — Israel + United States + France:** Israeli quality core with US and French participation on the Israeli side. Prefer **F-4E**, **Mirage F1**, **F-5**, **MiG-21**-era peers; only use later jets if the brief explicitly justifies a thin exception.
 * **Neutral:** civil, canal-related traffic, observers.
 
-**Player:** pick A or B. Desert–canal continuous pressure; ~**100+** units. **Core air war feel is 1970s**, not a 2020s active-missile wall.
+**Player:** pick A or B. Keep continuous pressure along the desert–canal axis while preserving smooth performance. **Core air war feel is 1970s**, not a 2020s active-missile wall.
 
 Verify era-appropriate types and loads, coalitions, ROE; build and validate a .miz and brief.
 ----
@@ -1179,7 +1237,7 @@ Build a **living battlespace** on **Persian Gulf**. **Modern** crisis window.
 * **Thin partners:** optional regional friends on either side—do not steal the USN-vs-Iran center.
 * **Neutral (critical):** dense civil corridors, tankers, ports—no-fire; blue-on-civil is failure.
 
-**Player:** join USN or Iranian/shore side. ~**100+** units in the strait/coast belt.
+**Player:** join USN or Iranian/shore side. Keep the strait and coastal belt persistently active while preserving smooth performance.
 
 Verify ships, naval AD, aircraft, ROE; build and validate a .miz and brief.
 ----
@@ -1195,7 +1253,7 @@ Build a **living battlespace** on **Syria** locked to a **mid-1990s (about 1995)
 * **Blue — United States** (+ thin coalition if needed): **F-16C**, **F-15C**, limited packages, tankers/AWACS on the safe side.
 * **Neutral:** cities, camps, aid corridors, civil—large no-fire zones.
 
-**Player:** join Red or Blue. Broken airspace, urban constraints; ~**100+** units. 1990s loadouts (IR + semi-active / early modern as verified)—not pure active-missile spam.
+**Player:** join Red or Blue. Keep the fractured, urban-constrained airspace persistently active while preserving smooth performance. Use 1990s loadouts (IR + semi-active / early modern as verified)—not pure active-missile spam.
 
 Verify era, units, ROE, cities; build and validate a .miz and brief.
 ----
@@ -1211,7 +1269,7 @@ Build a **living battlespace** on **The Channel** (WWII).
 * **Blue — United Kingdom** (+ **limited United States**): **Spitfire**, **P-51D** / **P-47D** as installed, patrol and escort density.
 * **ROE:** fishing/hospital-ship class neutrals if present.
 
-**Player:** join German or Allied seat. Short-range high-density intercept/escort atmosphere; ~**100+** units where performance allows.
+**Player:** join German or Allied seat. Keep short-range intercept and escort activity as dense as performance allows.
 
 Verify WWII types, map, ROE; build and validate a .miz and brief.
 ----
@@ -1227,7 +1285,7 @@ Build a **living battlespace** on **Normandy** (prefer **Normandy 2.0**).
 * **Blue — United Kingdom + United States:** tactical air, escort fighters, interdiction pressure.
 * **Assets:** **WWII Assets Pack** bomber streams, columns, rail pressure as data allows.
 
-**Player:** join German or Allied seat. Beach–rail–bridge continuous A2G/A2A pressure; ~**100+** units. Distinct from Channel (invasion land battle belt vs pure Channel fight).
+**Player:** join German or Allied seat. Keep continuous A2G/A2A pressure along the beach–rail–bridge belt while preserving smooth performance. Distinct from Channel (invasion land battle belt vs pure Channel fight).
 
 Verify Normandy 2.0, WWII Assets, ROE; build and validate a .miz and brief.
 ----
@@ -1243,7 +1301,7 @@ Build a **living battlespace** on **Kola**. Modern / post–Cold War high-north 
 * **Red — Russia:** shore Flanker/Fulcrum/Frogfoot family, northern fleet AD atmosphere, coastal fields.
 * **Neutral:** sparse civil, fishing/research shipping.
 
-**Player:** join Blue (including AJS-37) or Red. Weather and long-range feel; ~**100+** units in a performant coastal box.
+**Player:** join Blue (including AJS-37) or Red. Emphasize weather and long-range operations; keep the coastal box dense but within a smooth performance budget.
 
 Verify AJS-37, Russian types, ships, weather, ROE; build and validate a .miz and brief.
 ----
@@ -1259,7 +1317,7 @@ Build a **living battlespace** on **South Atlantic** locked to the **1950s** (fi
 * Air order of battle is **early jet**—not a fourth-gen wall; trainers only as thin color, not the main cast (this map carries the **1950s** atmosphere mark).
 * **Neutral:** merchants, fishing.
 
-**Player:** pick a side; early-jet CAP, intercept, and limited ship action. Scale toward **100+** if performance allows, but keep the fight **period-correct** and readable.
+**Player:** pick a side; early-jet CAP, intercept, and limited ship action. Scale up when performance allows, but keep the fight **period-correct** and readable.
 
 Verify 1950s types, Argentine ships, map, ROE; build and validate a .miz and brief.
 ----
@@ -1275,7 +1333,7 @@ Build a **living battlespace** on **Afghanistan** (full map; task area may state
 * **Red — Russia (clear presence, not a cameo)** plus **local opposition** atmosphere: Russian air/aviation footprint where types fit, plus irregular AD, columns, valley threats as data allows.
 * **Neutral:** villages, roads, NGO/civil—strict ROE.
 
-**Player:** join US or Russian/local-opposition related seats. Persistent low-intensity mountain war density; ~**100+** units with ground and rotor weight.
+**Player:** join US or Russian/local-opposition related seats. Keep the mountain war persistent, low-intensity, and smooth, with greater weight on ground and rotary-wing activity.
 
 Verify regional modules, Russian presence, helos, ROE; build and validate a .miz and brief.
 ----
@@ -1284,14 +1342,14 @@ Verify regional modules, Russian presence, helos, ROE; build and validate a .miz
 
 [source,text]
 ----
-Build a **living battlespace** on **Iraq** (full map; **Iraq North** may be the tasked region—state in manifest).
+Build a **living battlespace** on **Iraq** (full map; **Iraq North** may be the tasked region—state in the briefing).
 
 **Sides:**
 * **Blue — United States** (+ host-nation / coalition atmosphere): CAP, strike, tankers/AWACS on the safe side.
 * **Red — local opposition** (+ optional thin regional support): mobile AD, remnant armor, irregular threats—**Russia is not required** here (avoid cloning Afghanistan/Syria).
 * **Neutral:** cities, oil infrastructure, civil road/air—strict ROE.
 
-**Player:** join Blue or opposition seats. Hot, dusty, urban-constrained; ~**100+** units. Join a shift—not conquer the whole country in one package.
+**Player:** join Blue or opposition seats. Keep the hot, dusty, urban-constrained theater persistently active while preserving smooth performance. Join a shift—not conquer the whole country in one package.
 
 Verify Iraq/Iraq North, units, ROE; build and validate a .miz and brief.
 ----
@@ -1301,17 +1359,17 @@ Verify Iraq/Iraq North, units, ROE; build and validate a .miz and brief.
 
 [IMPORTANT]
 ====
-Campaigns are **long, complete stories** with **detailed Prompts**. Two families:
+Campaigns are **long, complete stories** with **detailed Prompts**. These examples show how a user can describe story scope, fixed aircraft, map order, and continuity; remove anything you do not care about. Two families:
 
 1. **Type-evolution (multi-map):** one player type **per act**, maps change by act, never mix generations in one mission.
 2. **Single-map single-aircraft (exactly 25):** **one map** and **one player aircraft** for the entire campaign—both **hard-locked unique** (no player choice of type or map); still multi-mission narrative depth.
 
-**Shared delivery contract** (every campaign):
-* Top-tier long-running model (e.g. Fable or GPT-5.6-Ultra). Outline-only is **not** completion.
-* Read Docs, inspect Tools; verify modules, terrains, era, units, weapons, bases, coordinates. Never invent CLSIDs or internal type names; report unsupported items.
-* Build campaign bible (story spine, characters, chapters), OOB, state ledger, dependency graph.
-* Generate and validate every reachable .miz; audit continuity. Image Gen: cover, patch, key-mission art, ending art—not chart authority.
-* Output output/campaigns/<slug>/ with missions/, riefings/, state/ or progression/, rtwork/, alidation-reports/, and a manifest (**act/mission · aircraft · map · titles**).
+**These examples expect:**
+
+* A complete playable campaign, not only a mission outline.
+* A `.miz` and full briefing for every mission, with characters, equipment, losses, choices, and results kept continuous.
+* A campaign overview, chapter plan, and progression record, with optional cover, patch, key-mission, and ending artwork.
+* A clear explanation when something genuinely cannot be implemented, without silently changing aircraft, maps, or act order.
 ====
 
 [[type-evolution-campaigns]]
@@ -1336,9 +1394,9 @@ Create the long type-evolution campaign **Compliance Training** (Chinese title *
 
 **Structure.** 12–16 missions total (~2–4 per act), 45–70 min each, ~12–18 h play. Persist grades, violations, weather scrub counts, and instructor trust. Two major safety violations fail the course. No nation-scale war required.
 
-**Maps.** Follow the hard-locked act→aircraft→map table above in the bible and manifest; **no** alternate player maps or aircraft.
+**Maps.** Follow the hard-locked act→aircraft→map table above in the campaign overview; **no** alternate player maps or aircraft.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify every aircraft and map; bible + OOB + state + deps; generate and validate every `.miz`; continuity audit. Output `output/campaigns/compliance-training/`. Image Gen cover/patch/key/ending. Report unsupported modules; never silent substitute.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Soviet Swifts
@@ -1347,7 +1405,7 @@ Create the long type-evolution campaign **Compliance Training** (Chinese title *
 ----
 Create the long type-evolution campaign **Soviet Swifts** (Chinese title **苏维埃雨燕**). **Cross-map**, multi-act Soviet fighter lineage—complete personal and historical-atmosphere story (fiction; history only as tone).
 
-**Theme.** One pilot’s (and one regiment’s) life along the red-star ladder: wooden fighters to Fulcrum. Callsigns, letters home, political officers, and the sound of engines changing. Title energy: swifts over rivers and steppe—not a dry textbook.
+**Theme.** One pilot’s (and one regiment’s) life along the red-star ladder: wooden fighters to Fulcrum. Call signs, letters home, political officers, and the sound of engines changing. Title energy: swifts over rivers and steppe—not a dry textbook.
 
 **Chain (one type per act; never mix generations in one mission):**
 1. **I-16** — **It Started Many Years Ago…** / **从很多年前开始…** — map **Caucasus** (hard-locked). Early monoplane era feel, guns, rough fields.
@@ -1360,7 +1418,7 @@ Create the long type-evolution campaign **Soviet Swifts** (Chinese title **苏�
 
 **Structure.** 14–20 missions, 50–80 min, ~16–24 h. Persist pilots, airframes, political reliability, and losses. Follow the hard-locked act table for maps/eras. Fiction boundaries explicit; no real-world victory claims. **No** alternate player aircraft or maps.
 
-**Delivery.** Long-running model end to end; bible with character arc; act·type·map table in manifest; validate every `.miz`. Output `output/campaigns/soviet-swifts/`. Image Gen cover/patch/key/ending. Report unsupported types (e.g. La-7); never silent substitute.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Journey of Rejuvenation
@@ -1381,7 +1439,7 @@ Create the long type-evolution campaign **Journey of Rejuvenation** (Chinese tit
 
 **Structure.** 12–18 missions, 50–80 min, ~14–22 h. Persist pilots, tech “generation pride,” and losses. Follow the hard-locked theatres above. One type and one map per act; conversion briefs between acts. **No** alternates.
 
-**Delivery.** Long-running model end to end; shared-spine optional with other ladders only if explicitly separate outputs. Output `output/campaigns/journey-of-rejuvenation/`. Image Gen cover/patch/key/ending. Report unsupported; never silent substitute.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== The Sky Belongs to Us
@@ -1402,7 +1460,7 @@ Create the long type-evolution campaign **The Sky Belongs to Us** (Chinese title
 
 **Structure.** 14–20 missions, 50–85 min, ~16–24 h. Persist squadron characters, airframe losses, and peacetime vs wartime tone shifts. Follow the hard-locked multi-map table above. Explicit fiction boundaries where history is only atmosphere. **No** alternate player aircraft or maps. **No F-5** player acts.
 
-**Delivery.** Long-running model end to end; act·type·map table mandatory (hard-locked only); validate every `.miz`. Output `output/campaigns/the-sky-belongs-to-us/`. Image Gen cover/patch/key/ending. **Do not** insert F-5E as a player act. Report unsupported; never silent substitute; **no player choice of aircraft or map**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Tomcat Journey
@@ -1421,7 +1479,7 @@ Create the long type-evolution campaign **Tomcat Journey** (Chinese title **雄�
 
 **Structure.** 12–16 missions, 55–90 min, ~14–20 h. Persist RIO/crew stories where the module supports two-seat narrative; deck cycle, tanker, and AEW as atmosphere. Follow the hard-locked three-map chain. Supercarrier verified when used. **No** alternate player aircraft, variants, or maps.
 
-**Delivery.** Long-running model end to end; strict variant lock table in manifest; validate every `.miz`. Output `output/campaigns/tomcat-journey/`. Image Gen cover/patch/key/ending. Report unsupported F-14 variants; never silent substitute.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 [[single-map-campaigns]]
@@ -1441,7 +1499,7 @@ Create the long single-map single-aircraft campaign **Fulcrum Front** (Chinese *
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/fulcrum-front/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Viper High North
@@ -1456,7 +1514,7 @@ Create the long single-map single-aircraft campaign **Viper High North** (Chines
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/viper-high-north/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Thunder Pakistan
@@ -1465,13 +1523,13 @@ Create the long single-map single-aircraft campaign **Viper High North** (Chines
 ----
 Create the long single-map single-aircraft campaign **Thunder Pakistan** (Chinese **雷电巴基斯坦**).
 
-**Lock.** Player **JF-17** only. Map **Afghanistan** only, used as a **declared geographic stand-in** for a fictional Pakistan border war (DCS has no Pakistan terrain—state this in the brief/manifest). Fixed type, fixed map; no dual aircraft or alternate map.
+**Lock.** Player **JF-17** only. Map **Afghanistan** only, used as a **declared geographic stand-in** for a fictional Pakistan border war (DCS has no Pakistan terrain—state this in the brief). Fixed type, fixed map; no dual aircraft or alternate map.
 
-**Story.** Home-defense and limited counter-air/strike along a tense border: datalink, precision, ROE politics, and the pride of a lightweight fighter punched above its weight. Opposition uses verified peer types (Su/MiG/F-16 family as era allows). Fiction only—no real-world victory claims.
+**Story.** Home-defense and limited counter-air/strike along a tense border: datalink, precision, ROE politics, and the pride of a lightweight fighter proving what it can do under pressure. Opposition uses verified peer types. Fiction only—no real-world victory claims.
 
 **Structure.** 8–11 missions, 50–75 min, ~9–13 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/thunder-pakistan/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Mirage Watch
@@ -1486,7 +1544,7 @@ Create the long single-map single-aircraft campaign **Mirage Watch** (Chinese **
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/mirage-watch/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Persian Fulcrum
@@ -1501,7 +1559,7 @@ Create the long single-map single-aircraft campaign **Persian Fulcrum** (Chinese
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/persian-fulcrum/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== The Germans' MiG
@@ -1516,7 +1574,7 @@ Create the long single-map single-aircraft campaign **The Germans' MiG** (Chines
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/germans-mig/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Late Civil War
@@ -1525,13 +1583,13 @@ Create the long single-map single-aircraft campaign **The Germans' MiG** (Chines
 ----
 Create the long single-map single-aircraft campaign **Late Civil War** (Chinese **迟到的内战**).
 
-**Lock.** Player **MiG-29S** only (**Ukrainian** seat). Map **Caucasus** only. Window **2022** technical fiction: **Ukraine vs Russia** using Caucasus as declared stand-in geography. Wholly fictional OOBs; no real-world victory claims. Fixed type, fixed map.
+**Lock.** Player **MiG-29S** only (**Ukrainian** seat). Map **Caucasus** only. Window **2022** technical fiction: **Ukraine vs Russia** using Caucasus as declared stand-in geography. Wholly fictional force compositions; no real-world victory claims. Fixed type, fixed map.
 
 **Story.** Same-drawing-board Fulcrums on both sides of a line. Dispersal, CAP over radars and corridors, SEAD escort, and the exhaustion of a war that arrived late and stays. Russian opposition is verified AI only—player does not switch sides.
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/late-civil-war/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Strait Crisis
@@ -1546,7 +1604,7 @@ Create the long single-map single-aircraft campaign **Strait Crisis** (Chinese *
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/strait-crisis-flanker/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Iron Bird
@@ -1561,7 +1619,7 @@ Create the long single-map single-aircraft campaign **Iron Bird** (Chinese **铁
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/iron-bird/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Desperation
@@ -1576,7 +1634,7 @@ Create the long single-map single-aircraft campaign **Desperation** (Chinese **�
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/desperation/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Pyramid Tour
@@ -1591,7 +1649,7 @@ Create the long single-map single-aircraft campaign **Pyramid Tour** (Chinese **
 
 **Structure.** 5–7 missions, 40–60 min, ~4–7 h. Score nav/discipline, not kills. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/pyramid-tour/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Caucasus Frogfoot
@@ -1606,7 +1664,7 @@ Create the long single-map single-aircraft campaign **Caucasus Frogfoot** (Chine
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/caucasus-frogfoot/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Top Gun
@@ -1621,7 +1679,7 @@ Create the long single-map single-aircraft campaign **Top Gun** (Chinese **壮�
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/top-gun/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Phantom over Fulda
@@ -1636,7 +1694,7 @@ Create the long single-map single-aircraft campaign **Phantom over Fulda** (Chin
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/phantom-over-fulda/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Thunder in the Fjords
@@ -1651,7 +1709,7 @@ Create the long single-map single-aircraft campaign **Thunder in the Fjords** (C
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/thunder-in-the-fjords/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Channel Spitfire
@@ -1666,7 +1724,7 @@ Create the long single-map single-aircraft campaign **Channel Spitfire** (Chines
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/channel-spitfire/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Desert Longbow
@@ -1681,7 +1739,7 @@ Create the long single-map single-aircraft campaign **Desert Longbow** (Chinese 
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/desert-longbow/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Hind Valley
@@ -1696,7 +1754,7 @@ Create the long single-map single-aircraft campaign **Hind Valley** (Chinese **�
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/hind-valley/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Island Huey
@@ -1711,7 +1769,7 @@ Create the long single-map single-aircraft campaign **Island Huey** (Chinese **�
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/island-huey/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Thunderbolt Normandy
@@ -1726,7 +1784,7 @@ Create the long single-map single-aircraft campaign **Thunderbolt Normandy** (Ch
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/thunderbolt-normandy/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Mustang Channel
@@ -1741,7 +1799,7 @@ Create the long single-map single-aircraft campaign **Mustang Channel** (Chinese
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/mustang-channel/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Eagle Shift
@@ -1756,7 +1814,7 @@ Create the long single-map single-aircraft campaign **Eagle Shift** (Chinese **�
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/eagle-shift/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Spear of the Islands
@@ -1771,7 +1829,7 @@ Create the long single-map single-aircraft campaign **Spear of the Islands** (Ch
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/spear-of-the-islands/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Fishbed Summer
@@ -1786,7 +1844,7 @@ Create the long single-map single-aircraft campaign **Fishbed Summer** (Chinese 
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/fishbed-summer/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
 
 ==== Sabre Morning
@@ -1801,5 +1859,5 @@ Create the long single-map single-aircraft campaign **Sabre Morning** (Chinese *
 
 **Structure.** 8–12 missions, 50–80 min, ~9–14 h. Persist characters, airframes, and campaign state. Short hard mission titles.
 
-**Delivery.** Long-running model end to end: Docs/Tools; verify aircraft, map, units, weapons, bases, coords; bible + OOB + state + deps; validate every `.miz`; continuity audit. Output `output/campaigns/sabre-morning/` (missions, briefings, state, artwork, validation-reports, manifest with **mission · aircraft · map**). Image Gen cover/patch/key/ending—not chart authority. Report unsupported items; **never silent substitute**; **aircraft and map are fixed—no player selection**.
+**Deliverables.** Generate a complete playable campaign rather than only an outline, including every mission, full briefings, a progression record, and cover, patch, key-mission, and ending artwork. Keep characters, equipment, and outcomes continuous. If a requirement genuinely cannot be implemented, explain it instead of silently changing the player aircraft or map.
 ----
