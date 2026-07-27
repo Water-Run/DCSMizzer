@@ -14,6 +14,7 @@ link:README.md[Back to README]
 [NOTE]
 ====
 These examples show how a user might describe a desired DCS simulation in natural language. They are neither forms nor fixed templates; include only the details that matter to the request.
+They describe the target product workflow. During the current groundwork phase, generation and runtime validation are not implemented; preserve the requested specification and report the capability gap rather than fabricating a `.miz`.
 This file relies on *AsciiDoc multi-level TOC* (`toc::[]` below, through heading depth 5 via `:toclevels: 5`)—use the reader/IDE outline or rendered Contents, not a flat Markdown list.
 ====
 

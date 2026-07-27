@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # Ships index (pydcs)
 
 Source: `pydcs/dcs/ships.py`. Total: **57** ship types.

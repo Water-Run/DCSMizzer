@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # Weather configuration reference
 
 ## pydcs cloud presets (`mission.weather.clouds.preset`)

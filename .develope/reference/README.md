@@ -1,8 +1,14 @@
 # DCSMizzer development reference (`.develope/reference`)
 
 **This directory is development-only.** Final Agent product docs belong in `Docs/`
-(not here). Everything below is extracted from ignored upstream clones for
-mapping DCS types, coordinates, mission config, and era data.
+(not here).
+
+The files in `data/` are **legacy frozen survey snapshots, not current DCS
+truth**. Their original one-off extractors are unavailable. Every file is now
+bound to a source project, source path, frozen commit, byte count, and SHA-256
+in [`provenance.json`](provenance.json); those source paths have been checked
+against the recorded commits. Use the current installation and upstream survey
+baselines under `../survey/baselines/` when deciding whether a fact is current.
 
 ## Layout
 
@@ -16,7 +22,8 @@ mapping DCS types, coordinates, mission config, and era data.
 | `payloads/` | Retribution customized loadouts |
 | `weapons/` | AAM / AGM-bomb CLSIDs, weapons-by-decade |
 | `upstream/` | BriefingRoom, Retribution, MOOSE, GTD, mission-maker notes |
-| `data/` | Machine-readable JSON indexes |
+| `data/` | Frozen legacy machine-readable indexes; never implicit current truth |
+| `provenance.json` | File-by-file frozen-commit provenance and validation |
 
 ## Upstream clones (gitignored)
 
@@ -24,9 +31,12 @@ mapping DCS types, coordinates, mission config, and era data.
 
 pydcs · dcs-mission-maker · dcs-global-terrain-database · briefing-room-for-dcs · dcs-retribution · MOOSE
 
-## Snapshot counts
+## Frozen snapshot counts
 
-| Dataset | Count |
+These counts describe only the legacy files recorded in `provenance.json`.
+They are retained to explain the old survey, not to claim current coverage.
+
+| Legacy dataset | Frozen count |
 |---------|------:|
 | Planes (pydcs) | 143 |
 | Helicopters | 26 |
@@ -56,12 +66,15 @@ Never paste WGS84 into mission `x`/`y`. Join airports by **numeric id** across s
 
 ## Theatre coverage
 
-See [`terrain/theatre-coverage.md`](terrain/theatre-coverage.md).  
-BR/Retribution add **Iraq**, **Afghanistan** (and BR **MarianaIslandsWWII**) beyond current pydcs packages.
+See [`terrain/theatre-coverage.md`](terrain/theatre-coverage.md) for the frozen
+comparison. Do not infer current installed-map or upstream coverage from it.
 
 ## Agent rules
 
-1. Look up types/CLSIDs/airports here or in upstream — do not invent.
-2. Prefer pydcs for unit/weapon fidelity; BR for multi-map airbase+latlon; Retribution for loadout presets & faction TO&E.
-3. Do not copy upstream code into product paths; extract facts only.
-4. Product-facing docs go to `Docs/` when generation tooling is ready — not this tree.
+1. Verify exact current identifiers against the recorded DCS installation
+   source or a version-matched runtime export; do not invent them.
+2. Treat pydcs, BriefingRoom, Retribution, MOOSE, GTD, and mission-maker as
+   commit-bound reference evidence, never as the current local authority.
+3. Treat `data/` as frozen legacy evidence only.
+4. Do not copy upstream code into product paths; extract facts only.
+5. Product-facing docs go to `Docs/` only after all survey gates admit them.

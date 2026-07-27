@@ -1,0 +1,804 @@
+{
+  "datasets": [
+    {
+      "bytes": 156299,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "airports-by-theatre.json",
+      "sha256": "b6b7f6b9ffb90545fa0f4738380d742e311ac0e09bfa4c81c9a7448d68eca6aa",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/terrain/*/airports.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 398300,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-airbases.json",
+      "sha256": "cce7146a90f7f6373f75b9d9a2ce7118de2ff239db6c07ce41bd859276a0fb78",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/TheatersAirbases.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 24775,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-default-unit-lists.json",
+      "sha256": "c2aad10d19f3ef653ef4106640abcc269d42b21c7b4646d78971f4e1164cd688",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "Database/DefaultUnitLists/*.ini"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 38278,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-situations-index.json",
+      "sha256": "b85fc6332184322d75121cbccdb5d2b6b0f22012dcdcc928cd0713f9ce2179e8",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/Situations/*.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 37,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-spawn-points-index.json",
+      "sha256": "67059881e963a00ffd2a05dd173d115fea79f9893e6cddd3c13af30d6e35a723",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/TheaterSpawnPoints/*.json.gz"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 2980,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-terrain-bounds.json",
+      "sha256": "1e6bfb3c8291ab5954e94a5f91ffcf3d24b5f885a364958eab1a5af04f88f29b",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/TheaterTerrainBounds/*.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 6800,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-theaters.json",
+      "sha256": "5342944cb19feb2071871b31a573933acc8e0ab3a22032827cdb9580af260bc5",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "Database/Theaters/*.ini",
+            "DatabaseJSON/TheaterTerrainBounds/*.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 67605,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-unit-cars.json",
+      "sha256": "5f2b705fe93f5aa835a507be362ab4bff252c6454bd384bbe40ee9f7cbf56e40",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/UnitCars.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 7810,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-unit-helicopters.json",
+      "sha256": "77c439b6e6eff16d65d26ad5ad5b6001d18d3fc2d9fd306dc9fe4c8fb0759f26",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/UnitHelicopters.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 58801,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-unit-planes-summary.json",
+      "sha256": "bd198b2f9a541a502caa68b7267cf318a14bd561b2b8b86ee3671f7170c43137",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/UnitPlanes.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 148123,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-unit-planes.json",
+      "sha256": "326d79b1f81622a027e765f7c3cc8dfe26141c6a1013577348772df3722d8da1",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/UnitPlanes.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 19669,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-unit-ships.json",
+      "sha256": "e8993dc3ec1a736b8a409a8d43f9500c05a26d3561f08d9112f3339d9330eaa6",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/UnitShips.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 51068,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-UnitCarsBRInfo.json",
+      "sha256": "f757a603749a2a3e3413fe2a883a148fb2e6a19b85cb42c30547d8030b81562d",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/UnitCarsBRInfo.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 3923,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-UnitHelicoptersBRInfo.json",
+      "sha256": "ac1e0aed5c50df69ce2f311689edd48186638ed533f8ddd508c805a8d020e255",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/UnitHelicoptersBRInfo.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 24415,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-UnitPlanesBRInfo.json",
+      "sha256": "848a96ddb7630420835fe29b216de2477c83124b44a4295f786204ebf513210a",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/UnitPlanesBRInfo.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 8598,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-UnitShipsBRInfo.json",
+      "sha256": "32c3d842ab430c9ef642c02127c0a21815bd0670ad138f809da0a4ceb5ee8863",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/UnitShipsBRInfo.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 37836,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-weapons-by-date.json",
+      "sha256": "34aa5681a8f41dcd0b0331f62c4ac50f63888ede89e382c1016c1d1e55b175d0",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "DatabaseJSON/WeaponsByDate.json"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 3313,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "briefing-room-weather-presets.json",
+      "sha256": "424044d1027007437247ffdfdd762e9b7ed05e9483358dbfe030046a64361b8b",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "Database/WeatherPresets/*.ini"
+          ],
+          "project": "briefing_room"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 9315,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "countries.json",
+      "sha256": "6ee71daac0b1dcf7b1fc2a1e6d8c839ec1a7da40fce1392391ffbf499ef2875c",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/countries.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 5669,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "gtd-caucasus-airbases.json",
+      "sha256": "aa724997c911f67093b503afb6943e86c0d1c3cff357e4b09147189bca07ad40",
+      "sources": [
+        {
+          "commit": "d58c7a38d3f0a681bde67bed21868b6d3ecd9bb8",
+          "paths": [
+            "src/caucasus/aerodromes.json"
+          ],
+          "project": "gtd"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 54315,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "gtd-caucasus-beacons.json",
+      "sha256": "88edb0e55507750a33bdc982849d72300ec5b4abe0f27d57e5443bb8e203cba0",
+      "sources": [
+        {
+          "commit": "d58c7a38d3f0a681bde67bed21868b6d3ecd9bb8",
+          "paths": [
+            "src/caucasus/beacons.json"
+          ],
+          "project": "gtd"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 2083,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "gtd-geojson-schema-head.txt",
+      "sha256": "3edb30475e6bf28d1c08a45d02abc3851cc3e766fd918e9e814a9be374fa51bb",
+      "sources": [
+        {
+          "commit": "d58c7a38d3f0a681bde67bed21868b6d3ecd9bb8",
+          "paths": [
+            "scripts/geojson.schema.json"
+          ],
+          "project": "gtd"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 2207,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "helicopters.json",
+      "sha256": "2d3e2fc042efbed5364b071e4e63698e7997d9f421b30b6998c2ccc51166d9a0",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/helicopters.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 1690,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "mission-maker-callnames.json",
+      "sha256": "9d079302de48d1f9991fd9c7805a1ceeac3b6f918d378990fce6b8a176ecba09",
+      "sources": [
+        {
+          "commit": "48b2841b4f72ba32be217f3e618cfa3cec6c8f28",
+          "paths": [
+            "src/me_db.ts"
+          ],
+          "project": "mission_maker"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 1472,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "mission-maker-me-db-planes.json",
+      "sha256": "60d81cb8d3e3ede7e1dc2ce639a8433d7f3b378acbaea3f343e89e55605e3e38",
+      "sources": [
+        {
+          "commit": "48b2841b4f72ba32be217f3e618cfa3cec6c8f28",
+          "paths": [
+            "src/me_db.ts"
+          ],
+          "project": "mission_maker"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 20103,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "planes.json",
+      "sha256": "6dead941169d9e6d99364b6da0ff9b4d930f3f99424ce811c8066e390d1b3ff0",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/planes.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 1841,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "projections.json",
+      "sha256": "50c3f3a73cb8dfbb5ee7b17d8252d11c5fa63e980e35f506f50827aef267abc8",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/terrain/*/projection.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 1784,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "pydcs-beacons-module-head.txt",
+      "sha256": "176d2422e28623d41290be3602f8cd1e7560e1327b784b2da12da1d677873427",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/beacons.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 6941,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "pydcs-cloud-presets.json",
+      "sha256": "12e7c1d4c0f083884ff56bbd9ce9927d394660416781a3fdc29c15dd0927faa8",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/cloud_presets.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 4134,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "pydcs-weather-module-notes.txt",
+      "sha256": "b4254f4f3b694477c9d3a196cabee8d35a99ebfa1867d365701d98d85697bbee",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/weather.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 21906,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "retribution-aircraft-files.json",
+      "sha256": "5dc0792f8123b876be1fee0dc07323d5fd385a0eac35ce62e74187563015d806",
+      "sources": [
+        {
+          "commit": "b7493d016f3c2c65d3a1ba73efdf0861d9c2dd7e",
+          "paths": [
+            "resources/units/aircraft/*.yaml"
+          ],
+          "project": "retribution"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 61346,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "retribution-customized-payloads-index.json",
+      "sha256": "86e3d5d7c755ce4e839313e8309f4165a99dc3ba1b535c70d0ad32569906685c",
+      "sources": [
+        {
+          "commit": "b7493d016f3c2c65d3a1ba73efdf0861d9c2dd7e",
+          "paths": [
+            "resources/customized_payloads/*.lua"
+          ],
+          "project": "retribution"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 124759,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "retribution-customized-payloads-priority.json",
+      "sha256": "ea806c98701f6dadb8ba34033ca865f11bd025d62f2f33ddc107f718941254aa",
+      "sources": [
+        {
+          "commit": "b7493d016f3c2c65d3a1ba73efdf0861d9c2dd7e",
+          "paths": [
+            "resources/customized_payloads/*.lua"
+          ],
+          "project": "retribution"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 23848,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "retribution-factions-index.json",
+      "sha256": "a4d17b5e7bf26006eafcd7ed0c2a5c628110bb8d437e0f8609515c0b3a9a969b",
+      "sources": [
+        {
+          "commit": "b7493d016f3c2c65d3a1ba73efdf0861d9c2dd7e",
+          "paths": [
+            "resources/factions/*.json"
+          ],
+          "project": "retribution"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 2,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "retribution-payloads-index.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sources": [
+        {
+          "commit": "b7493d016f3c2c65d3a1ba73efdf0861d9c2dd7e",
+          "paths": [
+            "resources/payloads/_directory_for_payloads"
+          ],
+          "project": "retribution"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 2,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "retribution-payloads-priority.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sources": [
+        {
+          "commit": "b7493d016f3c2c65d3a1ba73efdf0861d9c2dd7e",
+          "paths": [
+            "resources/payloads/_directory_for_payloads"
+          ],
+          "project": "retribution"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 13912,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "retribution-theater-info.yaml.json",
+      "sha256": "24d3ce0fc4a6f11bf9f37f438bd910944472037e7e4cd5aa7209b1383b61eedc",
+      "sources": [
+        {
+          "commit": "b7493d016f3c2c65d3a1ba73efdf0861d9c2dd7e",
+          "paths": [
+            "resources/theaters/*/info.yaml"
+          ],
+          "project": "retribution"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 15174,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "ships.json",
+      "sha256": "417decd065bcc0bccdd8646900fd7a6e8a5da7cd5d8b4845ad1a1071184022e7",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/ships.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 43505,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "statics.json",
+      "sha256": "8e725e10985448ea4ea95ef58722c479b194a12a5a6c00c69ace7479758c4657",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/statics.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 1383,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "theatre-coverage-matrix.json",
+      "sha256": "2b51e6e40011ebf4d7de66608d88ccf4f75e077cdd5dc97453e8834ffe28f2f8",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/terrain/*"
+          ],
+          "project": "pydcs"
+        },
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "Database/Theaters/*.ini"
+          ],
+          "project": "briefing_room"
+        },
+        {
+          "commit": "b7493d016f3c2c65d3a1ba73efdf0861d9c2dd7e",
+          "paths": [
+            "resources/theaters/*/info.yaml"
+          ],
+          "project": "retribution"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 15038,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "upstream-survey-meta.json",
+      "sha256": "aac8a576f372e23384a1052ccba6bda594d52d4a43bf86aec9e3b6af3556256e",
+      "sources": [
+        {
+          "commit": "a5893db7daece0e2c25403c34a104057b7365a59",
+          "paths": [
+            "Database/Theaters/*.ini",
+            "DatabaseJSON/TheaterTerrainBounds/*.json"
+          ],
+          "project": "briefing_room"
+        },
+        {
+          "commit": "b7493d016f3c2c65d3a1ba73efdf0861d9c2dd7e",
+          "paths": [
+            "resources/factions/*.json",
+            "resources/units/aircraft/*.yaml"
+          ],
+          "project": "retribution"
+        },
+        {
+          "commit": "27fa920a8fd49c589565f819ede31914254b9e9e",
+          "paths": [
+            "Moose Development/Moose/**/*.lua"
+          ],
+          "project": "moose"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 75603,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "vehicles.json",
+      "sha256": "59cce917543626ccf423432e0527e5c6e21c13885fb23ae00c95362ce16b18f6",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/vehicles.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 35526,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "weapons-aam.json",
+      "sha256": "c8c574befe093de1085cbcbb94e02711cfcf3ba0b68f0057772b5a5d8bc725d8",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/weapons_data.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 99637,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "weapons-agm-bomb.json",
+      "sha256": "cd6a60603f7785d9b763d15e1f6a73370f6f979f1a0963a62c417bbe2ce9404a",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/weapons_data.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    },
+    {
+      "bytes": 351182,
+      "extractor": "legacy-one-off/unavailable",
+      "frozen_at": "2026-07-25T10:18:57+08:00",
+      "path": "weapons-index.json",
+      "sha256": "be5446f84e4ea0efea53675f6404c9bd168c5b538425a1880f49ca5f6d73ecc0",
+      "sources": [
+        {
+          "commit": "412952c5ad5688783d8d53830280f316dbe311ff",
+          "paths": [
+            "dcs/weapons_data.py"
+          ],
+          "project": "pydcs"
+        }
+      ],
+      "status": "legacy_frozen"
+    }
+  ],
+  "schema": "dcsmizzer.reference-provenance/v1",
+  "source_path_errors": [],
+  "status": "legacy_frozen_not_current",
+  "unmapped": []
+}

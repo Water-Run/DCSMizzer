@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # Ground vehicles index (pydcs)
 
 Source: `pydcs/dcs/vehicles.py`. Total: **350** unit types in **9** categories.

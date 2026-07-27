@@ -3,6 +3,16 @@
 [英文README](./README.md)
 
 `DCSMizzer`是一个面向LLM的DCS战斗生成器. 提供`Docs`供Agent阅读, 以及`Tools`供Agent调用. 在此目录运行你的Coding Agent, 用自然语言表述并生成你想要的战斗.  
+
+目录边界：`Tools/`只保存可调用的Python程序及其Python测试；`Docs/`保存
+面向模型直接阅读的文档。开发测绘、基线和证据记录保留在`.develope/`。
+
+> **当前状态（2026-07-27）：测绘/基础建设阶段。** `Tools`目前只提供只读
+> MIZ/CMP检查和当前安装静态证据查询；任务/战役生成、完整运行时数据库导出、
+> 任务编辑器重存和DCS运行验证均未实现。使用前先读
+> [`Docs/index.txt`](./Docs/index.txt)，并运行
+> `python Tools/dcsmizzer.py capabilities`。
+
 良好的Prompt是生成高质量战斗的基础: 你可以参考[Prompt示例](./PROMPT-SAMPLE-zh.adoc)学习如何写一个有效的Prompt.
 另一个基础是一个基础性能足够强大的模型, 最好有多模态(比如生成战役图片)和联网搜索等能力. 就个人而言, CodeX订阅GPT-5.6 sol是一个好的选择.  
 项目使用`GPL`协议开源与[GitHub](https://github.com/Water-Run/DCSMizzer). 感谢这些项目, 提供了测绘的基础:

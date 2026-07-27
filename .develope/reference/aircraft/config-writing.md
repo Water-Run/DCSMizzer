@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # Aircraft unit config writing (mission JSON/Lua shape)
 
 Derived from pydcs unit models and `dcs-mission-maker` plane-group stubs.

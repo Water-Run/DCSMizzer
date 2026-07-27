@@ -1,52 +1,72 @@
 # DCSMizzer 开发测绘索引
 
-本目录保存 DCSMizzer 在开发阶段形成的调查记录、证据账本和能力边界。
-它们是未来编写 `Docs/` 与实现 `Tools/` 的上游材料，不是产品文档，也不代表
-对应能力已经实现。
+这里保存项目测绘的证据、可重现程序和历史决策。它不是产品 API；
+模型直接使用的只读入口位于仓库根目录的 `Tools/` 和 `Docs/`。
 
-本轮测绘冻结于 **2026-07-26（Asia/Shanghai）**，基线为：
+## 当前测绘（2026-07-27）
 
-- 本机 Steam DCS World `2.9.28.26283`；
-- 648 个安装任务、76 个 Saved Games 任务、144 个官方战役镜像任务和
-  181 个上游样例任务；
-- 跨活动目录去重后 903 个独立 `.miz` 内容；
-- 5 个独立 `.cmp` 战役描述文件；
-- 6 个已快进更新、保持干净的上游仓库。
+最终结论与边界见 [`REPORT-2026-07-27.md`](REPORT-2026-07-27.md)。
 
-## 本轮文档
+| 文件 | 证据范围 |
+|---|---|
+| [`baselines/2026-07-27-corpus.json`](baselines/2026-07-27-corpus.json) | MIZ/CMP 实例、内容去重、ZIP 安全、CRC 和来源重叠 |
+| [`baselines/2026-07-27-semantic.json`](baselines/2026-07-27-semantic.json) | 安全 Lua 数据解析和匿名化 MIZ/CMP 语义统计 |
+| [`baselines/2026-07-27-upstream.json`](baselines/2026-07-27-upstream.json) | 6 个上游 Git 仓库的远端、分支、提交、工作树和许可证 |
+| [`../reference/provenance.json`](../reference/provenance.json) | 45 份旧参考数据的冻结提交与源文件映射 |
+| [`baselines/2026-07-27-dcs-installation.json`](baselines/2026-07-27-dcs-installation.json) | 当前 DCS/Steam 版本、已安装模块、静态数据源和覆盖边界 |
+| [`baselines/2026-07-27-runtime-boundary.json`](baselines/2026-07-27-runtime-boundary.json) | 静态验证与未执行运行时验证的明确分界 |
 
-建议按以下顺序阅读：
+本轮实际覆盖 1,050 个 `.miz` 实例和 10 个 `.cmp` 实例；按内容去重后为
+904 个 `.miz` 和 5 个 `.cmp`。6 个上游仓库和 45 份旧参考数据都已绑定
+可追溯版本。默认报告不包含本机绝对路径、私有任务名、简报正文、
+逐文件任务哈希或 Steam 账号标识。
 
-1. [证据与版本账本](2026-07-26-evidence-ledger.md)
-   说明搜索范围、DCS 与上游版本、证据层级、版权边界和未覆盖项。
-2. [MIZ/CMP 语料地图](2026-07-26-miz-cmp-corpus-map.md)
-   给出哈希去重、ZIP 结构、编码、解析率、版本、地图、语义规模和异常。
-3. [任务模型与设计规律](2026-07-26-mission-model-and-design-patterns.md)
-   从真实任务归纳数据图、任务/航路点/触发器/简报/战役组织方式及生成约束。
-4. [上游能力地图](2026-07-26-upstream-capability-map.md)
-   记录六个项目实际存在的入口、数据模型、适用范围、限制和许可。
-5. [Docs/Tools 开发源图](2026-07-26-docs-tools-source-map.md)
-   把测绘证据转换为后续文档与工具的优先级、验收门和待补证据。
+### 重现与检查
 
-## 与既有材料的关系
+从仓库根目录运行完整测绘测试：
 
-- [2026-07-24 上游参考提取记录](2026-07-24-upstream-reference-extract.md)
-  是 `.develope/reference/` 快照的历史生成记录。
-- [`.develope/reference/`](../reference/README.md) 是从上游提取的局部开发快照；
-  它有版本和覆盖边界，不能替代当前安装数据、真实任务或上游源码。
-- 本轮文档没有把官方任务、战役、简报、图片、声音或上游源码复制进仓库，
-  只提交结构、计数、版本、哈希关系和归纳结论。
+```powershell
+python -m unittest discover -s .develope\survey -t .develope\survey -p test_*.py
+```
 
-## 状态词约定
+测绘 CLI：
 
-- **已验证**：实际读取相应文件或源码，并运行了文档所述检查。
-- **样本结论**：只对记录的语料和版本成立，不能自动外推到未安装模块或未来版本。
-- **设计要求**：由已验证事实推导出的后续实现约束，尚不表示工具已经存在。
-- **运行时未验证**：没有在 DCS 中加载、飞行或执行对应内容，不能宣称可玩性成立。
+```powershell
+python .develope\survey\run_survey.py --help
+python .develope\survey\run_survey.py corpus --help
+python .develope\survey\run_survey.py semantic --help
+python .develope\survey\run_survey.py upstream --help
+python .develope\survey\run_survey.py legacy-reference --help
+python .develope\survey\run_survey.py dcs --help
+```
 
-## 本轮明确未做
+`corpus` 和 `semantic` 命令要求显式传入 `NAME:KIND=PATH` 根目录。
+路径只存在于进程内存，报告只记录公开的 `NAME` 标签。
 
-- 未修改 `Docs/`、`Tools/`、根 `AGENTS.md` 或 README；
-- 未实现解析器、生成器、验证器或命令行工具；
-- 未启动 DCS 做运行时验证；
-- 未提交 `.miz`、`.cmp`、任务资源或上游仓库内容。
+### 安全与结论边界
+
+- ZIP 成员原位读取，不解包；检查 CRC、路径穿越、加密、重复成员、成员数、
+  展开尺寸和压缩比。
+- Lua 只由项目解析器当作数据解析，绝不执行；任务脚本、触发脚本和初始化脚本
+  只计数，不运行。
+- 上游克隆只作为只读证据。
+- DCS 安装测绘只读取静态文件和可执行文件版本元数据，不启动 DCS。
+- 按用户要求，不启动 DCS；运行时探针未执行，也不构成任何运行时有效性证据。
+
+`archive-valid`、`parse-valid`、`static-valid` 和 `runtime-valid` 是相互独立的
+状态。2026-07-27 基线只在最终报告记载的覆盖范围内建立前三类证据，
+没有建立运行时有效性。
+
+## 历史测绘与决策记录
+
+以下文件保留方法、推理和决策演进。其数字、上游提交和当时的能力描述，
+凡与 2026-07-27 基线冲突，均以当前基线为准：
+
+- [`2026-07-26-evidence-ledger.md`](2026-07-26-evidence-ledger.md)
+- [`2026-07-26-miz-cmp-corpus-map.md`](2026-07-26-miz-cmp-corpus-map.md)
+- [`2026-07-26-mission-model-and-design-patterns.md`](2026-07-26-mission-model-and-design-patterns.md)
+- [`2026-07-26-upstream-capability-map.md`](2026-07-26-upstream-capability-map.md)
+- [`2026-07-26-docs-tools-source-map.md`](2026-07-26-docs-tools-source-map.md)
+- [`2026-07-24-upstream-reference-extract.md`](2026-07-24-upstream-reference-extract.md)
+
+历史文件不是当前 DCS 数据库，也不能单独证明功能已实现或验证。

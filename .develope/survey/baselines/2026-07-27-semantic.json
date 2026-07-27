@@ -1,0 +1,1042 @@
+{
+  "schema": "dcsmizzer.semantic-survey/v1",
+  "collected_at": "2026-07-27T07:21:07Z",
+  "totals": {
+    "miz_instances": 1050,
+    "miz_parse_valid": 1050,
+    "cmp_instances": 10,
+    "cmp_parse_valid": 10
+  },
+  "roots": [
+    {
+      "name": "install",
+      "kind": "dcs_install",
+      "version": "2.9.28.26283",
+      "exists": true,
+      "errors": 0,
+      "miz": {
+        "instances": 648,
+        "parse_valid": 648,
+        "core_members": {
+          "l10n/DEFAULT/dictionary": {
+            "present": 647,
+            "parsed": 647,
+            "encodings": {
+              "utf-8": 647
+            },
+            "errors": {
+              "missing": 1
+            }
+          },
+          "l10n/DEFAULT/mapResource": {
+            "present": 647,
+            "parsed": 647,
+            "encodings": {
+              "utf-8": 647
+            },
+            "errors": {
+              "missing": 1
+            }
+          },
+          "mission": {
+            "present": 648,
+            "parsed": 648,
+            "encodings": {
+              "utf-8": 648
+            },
+            "errors": {}
+          },
+          "options": {
+            "present": 641,
+            "parsed": 641,
+            "encodings": {
+              "utf-8": 641
+            },
+            "errors": {
+              "missing": 7
+            }
+          },
+          "warehouses": {
+            "present": 648,
+            "parsed": 648,
+            "encodings": {
+              "utf-8": 648
+            },
+            "errors": {}
+          }
+        },
+        "versions": {
+          "6": 1,
+          "11": 17,
+          "12": 1,
+          "13": 15,
+          "14": 98,
+          "16": 40,
+          "17": 1,
+          "18": 1,
+          "19": 84,
+          "20": 20,
+          "22": 162,
+          "23": 208
+        },
+        "theatres": {
+          "Afghanistan": 30,
+          "Caucasus": 319,
+          "GermanyCW": 41,
+          "Iraq": 26,
+          "Kola": 27,
+          "MarianaIslands": 30,
+          "MarianaIslandsWWII": 4,
+          "Nevada": 69,
+          "Normandy": 20,
+          "PersianGulf": 48,
+          "SinaiMap": 12,
+          "Syria": 22
+        },
+        "stats": {
+          "groups": {
+            "helicopter": 1055,
+            "plane": 8188,
+            "ship": 634,
+            "static": 60132,
+            "vehicle": 11241
+          },
+          "units": {
+            "helicopter": 1489,
+            "plane": 11325,
+            "ship": 859,
+            "static": 60138,
+            "vehicle": 37331
+          },
+          "waypoints": {
+            "helicopter": 5269,
+            "plane": 31253,
+            "ship": 3034,
+            "static": 60132,
+            "vehicle": 15091
+          },
+          "human_slots": {
+            "Client": 36,
+            "Player": 633
+          },
+          "pylon_assignments": 37554,
+          "pylons_with_clsid": 37554,
+          "payload_unique_clsids": 399,
+          "trigger_rules": 14834,
+          "trigger_conditions": 23017,
+          "trigger_actions": 31739,
+          "script_actions": 72,
+          "goals": 2446,
+          "dictionary_entries": 248121,
+          "resource_mappings": 12011,
+          "briefing_characters": 467937,
+          "resource_extensions": {
+            ".jpeg": 31,
+            ".jpg": 480,
+            ".lua": 23,
+            ".ogg": 10008,
+            ".png": 681,
+            ".wav": 788
+          },
+          "missing_resource_members": 78,
+          "referenced_missing_resources": 77,
+          "unreferenced_missing_resources": 1,
+          "warehouse_airports": 23156,
+          "warehouse_objects": 1009,
+          "late_activation_groups": 5405,
+          "uncontrolled_groups": 2670,
+          "uncontrollable_groups": 177,
+          "modern_fields": {
+            "DTC": 190,
+            "coldAtStart": 16218,
+            "dataCartridge": 11,
+            "datalinks": 450,
+            "dynSpawnTemplate": 5463
+          },
+          "waypoint_actions": {
+            "": 60132,
+            "Cone": 631,
+            "Custom": 74,
+            "Diamond": 27,
+            "EchelonL": 4,
+            "EchelonR": 12,
+            "Fly Over Point": 419,
+            "From Ground Area": 48,
+            "From Ground Area Hot": 13,
+            "From Parking Area": 3249,
+            "From Parking Area Hot": 1123,
+            "From Runway": 1314,
+            "Landing": 4049,
+            "LandingReFuAr": 1571,
+            "Off Road": 12146,
+            "On Railroads": 12,
+            "On Road": 1865,
+            "Rank": 310,
+            "Turning Point": 27770,
+            "Vee": 10
+          },
+          "waypoint_task_ids": {
+            "AWACS": 128,
+            "ActivateBeacon": 170,
+            "ActivateGCI": 27,
+            "ActivateICLS": 21,
+            "ActivateLink4": 15,
+            "ActivateRSBN": 1447,
+            "Aerobatics": 217,
+            "AttackGroup": 613,
+            "AttackMapObject": 9,
+            "AttackUnit": 110,
+            "Bombing": 324,
+            "BombingRunway": 14,
+            "ComboTask": 54558,
+            "ControlledTask": 896,
+            "Disembarking": 1,
+            "EPLRS": 2866,
+            "EWR": 140,
+            "EmbarkToTransport": 6,
+            "Embarking": 3,
+            "EngageGroup": 91,
+            "EngageTargets": 2065,
+            "EngageTargetsInZone": 833,
+            "EngageUnit": 21,
+            "Escort": 27,
+            "FAC": 11,
+            "FAC_AttackGroup": 9,
+            "FAC_EngageGroup": 12,
+            "FireAtPoint": 599,
+            "Follow": 67,
+            "GoToWaypoint": 438,
+            "GroundEscort": 1,
+            "Hold": 50,
+            "Land": 78,
+            "LoadingShip": 115,
+            "Option": 23533,
+            "Orbit": 937,
+            "RecoveryTanker": 1,
+            "Refueling": 9,
+            "SMOKE_ON_OFF": 25,
+            "Script": 44,
+            "SetCallsign": 48,
+            "SetFrequency": 674,
+            "SetFrequencyForUnit": 7,
+            "SetImmortal": 212,
+            "SetInvisible": 2186,
+            "SetUnlimitedFuel": 28,
+            "Strafing": 1,
+            "SwitchWaypoint": 1965,
+            "Tanker": 153,
+            "TransmitMessage": 33,
+            "WrappedAction": 33416
+          },
+          "top_level_fields": {
+            "coalition": 648,
+            "coalitions": 648,
+            "currentKey": 648,
+            "customFormations": 5,
+            "date": 637,
+            "descriptionBlueTask": 648,
+            "descriptionNeutralsTask": 583,
+            "descriptionRedTask": 648,
+            "descriptionText": 648,
+            "drawings": 185,
+            "ext_loader": 16,
+            "failures": 648,
+            "forcedOptions": 648,
+            "goals": 648,
+            "groundControl": 648,
+            "initScript": 2,
+            "initScriptFile": 11,
+            "map": 648,
+            "maxDictId": 647,
+            "needModules": 23,
+            "pictureFileNameB": 648,
+            "pictureFileNameN": 614,
+            "pictureFileNameR": 648,
+            "pictureFileNameServer": 244,
+            "requiredModules": 625,
+            "resourceCounter": 1,
+            "result": 648,
+            "sortie": 647,
+            "start_time": 648,
+            "theatre": 648,
+            "trig": 648,
+            "triggers": 648,
+            "trigrules": 648,
+            "usedModules": 17,
+            "version": 648,
+            "weather": 648
+          }
+        }
+      },
+      "cmp": {
+        "instances": 5,
+        "parse_valid": 5,
+        "encodings": {
+          "utf-8": 5
+        },
+        "versions": {
+          "1": 5
+        },
+        "stages": 69,
+        "mission_references": 144,
+        "resolved_references": 144,
+        "missing_references": 0,
+        "interval_overlaps": 50,
+        "interval_gaps": 0,
+        "invalid_intervals": 0,
+        "missing_start_stage": 0,
+        "top_level_keys": {
+          "description": 5,
+          "description_CN": 2,
+          "description_DE": 1,
+          "description_EN": 4,
+          "description_ES": 1,
+          "description_FR": 1,
+          "description_KO": 1,
+          "description_RU": 2,
+          "description_СS": 1,
+          "directory": 5,
+          "fullPath": 5,
+          "name": 5,
+          "name_CN": 2,
+          "name_DE": 1,
+          "name_EN": 4,
+          "name_ES": 1,
+          "name_FR": 1,
+          "name_KO": 1,
+          "name_RU": 2,
+          "name_СS": 1,
+          "necessaryUnits": 5,
+          "picture": 5,
+          "pictureFailed": 4,
+          "pictureFailed_CN": 1,
+          "pictureFailed_EN": 3,
+          "pictureFailed_RU": 1,
+          "pictureSuccess": 4,
+          "pictureSuccess_CN": 1,
+          "pictureSuccess_EN": 3,
+          "pictureSuccess_RU": 1,
+          "picture_CN": 2,
+          "picture_DE": 1,
+          "picture_EN": 4,
+          "picture_ES": 1,
+          "picture_FR": 1,
+          "picture_KO": 1,
+          "picture_RU": 2,
+          "picture_СS": 1,
+          "stages": 5,
+          "startStage": 5,
+          "version": 5
+        },
+        "errors": {}
+      }
+    },
+    {
+      "name": "saved",
+      "kind": "saved_games",
+      "version": "local@2026-07-27",
+      "exists": true,
+      "errors": 0,
+      "miz": {
+        "instances": 76,
+        "parse_valid": 76,
+        "core_members": {
+          "l10n/DEFAULT/dictionary": {
+            "present": 76,
+            "parsed": 76,
+            "encodings": {
+              "utf-8": 76
+            },
+            "errors": {}
+          },
+          "l10n/DEFAULT/mapResource": {
+            "present": 76,
+            "parsed": 76,
+            "encodings": {
+              "utf-8": 76
+            },
+            "errors": {}
+          },
+          "mission": {
+            "present": 76,
+            "parsed": 76,
+            "encodings": {
+              "cp1251": 5,
+              "utf-8": 71
+            },
+            "errors": {}
+          },
+          "options": {
+            "present": 76,
+            "parsed": 76,
+            "encodings": {
+              "utf-8": 76
+            },
+            "errors": {}
+          },
+          "warehouses": {
+            "present": 76,
+            "parsed": 76,
+            "encodings": {
+              "utf-8": 76
+            },
+            "errors": {}
+          }
+        },
+        "versions": {
+          "19": 2,
+          "23": 74
+        },
+        "theatres": {
+          "GermanyCW": 32,
+          "Kola": 17,
+          "MarianaIslands": 7,
+          "SinaiMap": 20
+        },
+        "stats": {
+          "groups": {
+            "helicopter": 167,
+            "plane": 1599,
+            "ship": 25,
+            "vehicle": 114
+          },
+          "units": {
+            "helicopter": 185,
+            "plane": 1879,
+            "ship": 25,
+            "vehicle": 114
+          },
+          "waypoints": {
+            "helicopter": 1377,
+            "plane": 11827,
+            "ship": 25,
+            "vehicle": 114
+          },
+          "human_slots": {
+            "Client": 232,
+            "Player": 44
+          },
+          "pylon_assignments": 10250,
+          "pylons_with_clsid": 10250,
+          "payload_unique_clsids": 364,
+          "trigger_rules": 12,
+          "trigger_conditions": 10,
+          "trigger_actions": 16,
+          "script_actions": 4,
+          "goals": 0,
+          "dictionary_entries": 376,
+          "resource_mappings": 0,
+          "briefing_characters": 0,
+          "resource_extensions": {},
+          "missing_resource_members": 0,
+          "referenced_missing_resources": 0,
+          "unreferenced_missing_resources": 0,
+          "warehouse_airports": 8962,
+          "warehouse_objects": 16,
+          "late_activation_groups": 0,
+          "uncontrolled_groups": 0,
+          "uncontrollable_groups": 0,
+          "modern_fields": {
+            "DTC": 129,
+            "coldAtStart": 114,
+            "datalinks": 127,
+            "dynSpawnTemplate": 1762
+          },
+          "waypoint_actions": {
+            "Fly Over Point": 18,
+            "From Ground Area Hot": 1,
+            "From Parking Area": 332,
+            "From Parking Area Hot": 89,
+            "From Runway": 161,
+            "Landing": 533,
+            "LandingReFuAr": 2,
+            "Off Road": 114,
+            "Turning Point": 12093
+          },
+          "waypoint_task_ids": {
+            "AWACS": 28,
+            "ActivateBeacon": 22,
+            "ComboTask": 13343,
+            "EPLRS": 516,
+            "EWR": 4,
+            "EngageTargets": 782,
+            "FAC": 3,
+            "Option": 5646,
+            "SwitchWaypoint": 4,
+            "Tanker": 31,
+            "WrappedAction": 6188
+          },
+          "top_level_fields": {
+            "coalition": 76,
+            "coalitions": 76,
+            "currentKey": 76,
+            "customFormations": 2,
+            "date": 76,
+            "descriptionBlueTask": 76,
+            "descriptionNeutralsTask": 74,
+            "descriptionRedTask": 76,
+            "descriptionText": 76,
+            "failures": 76,
+            "forcedOptions": 76,
+            "goals": 76,
+            "groundControl": 76,
+            "map": 76,
+            "maxDictId": 76,
+            "pictureFileNameB": 76,
+            "pictureFileNameN": 76,
+            "pictureFileNameR": 76,
+            "pictureFileNameServer": 74,
+            "requiredModules": 74,
+            "result": 76,
+            "sortie": 76,
+            "start_time": 76,
+            "theatre": 76,
+            "trig": 76,
+            "triggers": 76,
+            "trigrules": 76,
+            "version": 76,
+            "weather": 76
+          }
+        }
+      },
+      "cmp": {
+        "instances": 0,
+        "parse_valid": 0,
+        "encodings": {},
+        "versions": {},
+        "stages": 0,
+        "mission_references": 0,
+        "resolved_references": 0,
+        "missing_references": 0,
+        "interval_overlaps": 0,
+        "interval_gaps": 0,
+        "invalid_intervals": 0,
+        "missing_start_stage": 0,
+        "top_level_keys": {},
+        "errors": {}
+      }
+    },
+    {
+      "name": "official",
+      "kind": "official_mirror",
+      "version": "DCSWorld-subset@2.9.28.26283",
+      "exists": true,
+      "errors": 0,
+      "miz": {
+        "instances": 144,
+        "parse_valid": 144,
+        "core_members": {
+          "l10n/DEFAULT/dictionary": {
+            "present": 144,
+            "parsed": 144,
+            "encodings": {
+              "utf-8": 144
+            },
+            "errors": {}
+          },
+          "l10n/DEFAULT/mapResource": {
+            "present": 144,
+            "parsed": 144,
+            "encodings": {
+              "utf-8": 144
+            },
+            "errors": {}
+          },
+          "mission": {
+            "present": 144,
+            "parsed": 144,
+            "encodings": {
+              "utf-8": 144
+            },
+            "errors": {}
+          },
+          "options": {
+            "present": 144,
+            "parsed": 144,
+            "encodings": {
+              "utf-8": 144
+            },
+            "errors": {}
+          },
+          "warehouses": {
+            "present": 144,
+            "parsed": 144,
+            "encodings": {
+              "utf-8": 144
+            },
+            "errors": {}
+          }
+        },
+        "versions": {
+          "14": 96,
+          "19": 19,
+          "20": 9,
+          "22": 13,
+          "23": 7
+        },
+        "theatres": {
+          "Caucasus": 125,
+          "Nevada": 16,
+          "PersianGulf": 3
+        },
+        "stats": {
+          "groups": {
+            "helicopter": 315,
+            "plane": 736,
+            "ship": 37,
+            "static": 12276,
+            "vehicle": 6728
+          },
+          "units": {
+            "helicopter": 558,
+            "plane": 1384,
+            "ship": 56,
+            "static": 12276,
+            "vehicle": 20960
+          },
+          "waypoints": {
+            "helicopter": 2468,
+            "plane": 4098,
+            "ship": 97,
+            "static": 12276,
+            "vehicle": 9012
+          },
+          "human_slots": {
+            "Player": 144
+          },
+          "pylon_assignments": 9724,
+          "pylons_with_clsid": 9724,
+          "payload_unique_clsids": 211,
+          "trigger_rules": 7144,
+          "trigger_conditions": 10431,
+          "trigger_actions": 10963,
+          "script_actions": 11,
+          "goals": 2167,
+          "dictionary_entries": 124282,
+          "resource_mappings": 7217,
+          "briefing_characters": 189149,
+          "resource_extensions": {
+            ".jpg": 272,
+            ".lua": 5,
+            ".ogg": 6426,
+            ".png": 210,
+            ".wav": 304
+          },
+          "missing_resource_members": 50,
+          "referenced_missing_resources": 49,
+          "unreferenced_missing_resources": 1,
+          "warehouse_airports": 2984,
+          "warehouse_objects": 446,
+          "late_activation_groups": 307,
+          "uncontrolled_groups": 172,
+          "uncontrollable_groups": 90,
+          "modern_fields": {
+            "coldAtStart": 2852,
+            "datalinks": 8,
+            "dynSpawnTemplate": 19
+          },
+          "waypoint_actions": {
+            "": 12276,
+            "Cone": 610,
+            "Custom": 29,
+            "Diamond": 12,
+            "Fly Over Point": 215,
+            "From Ground Area Hot": 1,
+            "From Parking Area": 495,
+            "From Parking Area Hot": 45,
+            "From Runway": 148,
+            "Landing": 624,
+            "LandingReFuAr": 2,
+            "Off Road": 6795,
+            "On Railroads": 3,
+            "On Road": 1291,
+            "Rank": 266,
+            "Turning Point": 5133,
+            "Vee": 6
+          },
+          "waypoint_task_ids": {
+            "AWACS": 39,
+            "ActivateBeacon": 43,
+            "Aerobatics": 15,
+            "AttackGroup": 28,
+            "AttackUnit": 17,
+            "Bombing": 56,
+            "BombingRunway": 1,
+            "ComboTask": 15596,
+            "ControlledTask": 655,
+            "EPLRS": 958,
+            "EWR": 18,
+            "EmbarkToTransport": 5,
+            "Embarking": 2,
+            "EngageGroup": 29,
+            "EngageTargets": 669,
+            "EngageTargetsInZone": 707,
+            "EngageUnit": 9,
+            "Escort": 2,
+            "FAC": 6,
+            "FAC_AttackGroup": 2,
+            "FireAtPoint": 538,
+            "Follow": 50,
+            "GoToWaypoint": 35,
+            "GroundEscort": 1,
+            "Hold": 17,
+            "Land": 37,
+            "Option": 2095,
+            "Orbit": 400,
+            "Refueling": 1,
+            "SMOKE_ON_OFF": 1,
+            "SetCallsign": 13,
+            "SetFrequency": 219,
+            "SetImmortal": 164,
+            "SetInvisible": 205,
+            "SetUnlimitedFuel": 1,
+            "SwitchWaypoint": 390,
+            "Tanker": 55,
+            "TransmitMessage": 26,
+            "WrappedAction": 4115
+          },
+          "top_level_fields": {
+            "coalition": 144,
+            "coalitions": 144,
+            "currentKey": 144,
+            "customFormations": 1,
+            "date": 144,
+            "descriptionBlueTask": 144,
+            "descriptionNeutralsTask": 144,
+            "descriptionRedTask": 144,
+            "descriptionText": 144,
+            "drawings": 44,
+            "ext_loader": 16,
+            "failures": 144,
+            "forcedOptions": 144,
+            "goals": 144,
+            "groundControl": 144,
+            "initScript": 1,
+            "map": 144,
+            "maxDictId": 144,
+            "pictureFileNameB": 144,
+            "pictureFileNameN": 144,
+            "pictureFileNameR": 144,
+            "pictureFileNameServer": 9,
+            "requiredModules": 144,
+            "result": 144,
+            "sortie": 144,
+            "start_time": 144,
+            "theatre": 144,
+            "trig": 144,
+            "triggers": 144,
+            "trigrules": 144,
+            "version": 144,
+            "weather": 144
+          }
+        }
+      },
+      "cmp": {
+        "instances": 5,
+        "parse_valid": 5,
+        "encodings": {
+          "utf-8": 5
+        },
+        "versions": {
+          "1": 5
+        },
+        "stages": 69,
+        "mission_references": 144,
+        "resolved_references": 144,
+        "missing_references": 0,
+        "interval_overlaps": 50,
+        "interval_gaps": 0,
+        "invalid_intervals": 0,
+        "missing_start_stage": 0,
+        "top_level_keys": {
+          "description": 5,
+          "description_CN": 2,
+          "description_DE": 1,
+          "description_EN": 4,
+          "description_ES": 1,
+          "description_FR": 1,
+          "description_KO": 1,
+          "description_RU": 2,
+          "description_СS": 1,
+          "directory": 5,
+          "fullPath": 5,
+          "name": 5,
+          "name_CN": 2,
+          "name_DE": 1,
+          "name_EN": 4,
+          "name_ES": 1,
+          "name_FR": 1,
+          "name_KO": 1,
+          "name_RU": 2,
+          "name_СS": 1,
+          "necessaryUnits": 5,
+          "picture": 5,
+          "pictureFailed": 4,
+          "pictureFailed_CN": 1,
+          "pictureFailed_EN": 3,
+          "pictureFailed_RU": 1,
+          "pictureSuccess": 4,
+          "pictureSuccess_CN": 1,
+          "pictureSuccess_EN": 3,
+          "pictureSuccess_RU": 1,
+          "picture_CN": 2,
+          "picture_DE": 1,
+          "picture_EN": 4,
+          "picture_ES": 1,
+          "picture_FR": 1,
+          "picture_KO": 1,
+          "picture_RU": 2,
+          "picture_СS": 1,
+          "stages": 5,
+          "startStage": 5,
+          "version": 5
+        },
+        "errors": {}
+      }
+    },
+    {
+      "name": "upstream",
+      "kind": "upstream",
+      "version": "BR:a5893db7;GTD:d58c7a38;DMM:48b2841b;RET:e9b2387e;MOOSE:de3dc95c;pydcs:412952c5",
+      "exists": true,
+      "errors": 0,
+      "miz": {
+        "instances": 182,
+        "parse_valid": 182,
+        "core_members": {
+          "l10n/DEFAULT/dictionary": {
+            "present": 182,
+            "parsed": 182,
+            "encodings": {
+              "utf-8": 182
+            },
+            "errors": {}
+          },
+          "l10n/DEFAULT/mapResource": {
+            "present": 182,
+            "parsed": 182,
+            "encodings": {
+              "utf-8": 182
+            },
+            "errors": {}
+          },
+          "mission": {
+            "present": 182,
+            "parsed": 182,
+            "encodings": {
+              "utf-8": 182
+            },
+            "errors": {}
+          },
+          "options": {
+            "present": 182,
+            "parsed": 182,
+            "encodings": {
+              "utf-8": 182
+            },
+            "errors": {}
+          },
+          "warehouses": {
+            "present": 182,
+            "parsed": 182,
+            "encodings": {
+              "utf-8": 182
+            },
+            "errors": {}
+          }
+        },
+        "versions": {
+          "11": 4,
+          "12": 1,
+          "14": 1,
+          "15": 1,
+          "17": 3,
+          "18": 5,
+          "19": 7,
+          "20": 83,
+          "22": 51,
+          "23": 26
+        },
+        "theatres": {
+          "Afghanistan": 5,
+          "Caucasus": 59,
+          "Falklands": 9,
+          "GermanyCW": 2,
+          "Iraq": 1,
+          "Kola": 4,
+          "MarianaIslands": 13,
+          "Nevada": 17,
+          "Normandy": 16,
+          "PersianGulf": 23,
+          "SinaiMap": 7,
+          "Syria": 23,
+          "TheChannel": 3
+        },
+        "stats": {
+          "groups": {
+            "helicopter": 77,
+            "plane": 1394,
+            "ship": 479,
+            "static": 4834,
+            "vehicle": 9185
+          },
+          "units": {
+            "helicopter": 112,
+            "plane": 1806,
+            "ship": 530,
+            "static": 4834,
+            "vehicle": 10294
+          },
+          "waypoints": {
+            "helicopter": 186,
+            "plane": 28219,
+            "ship": 3069,
+            "static": 4834,
+            "vehicle": 56653
+          },
+          "human_slots": {
+            "Client": 446,
+            "Player": 5
+          },
+          "pylon_assignments": 1095,
+          "pylons_with_clsid": 1095,
+          "payload_unique_clsids": 99,
+          "trigger_rules": 101,
+          "trigger_conditions": 117,
+          "trigger_actions": 360,
+          "script_actions": 33,
+          "goals": 26,
+          "dictionary_entries": 36261,
+          "resource_mappings": 277,
+          "briefing_characters": 12544,
+          "resource_extensions": {
+            ".jpg": 16,
+            ".lua": 29,
+            ".ogg": 206,
+            ".png": 4,
+            ".wav": 22
+          },
+          "missing_resource_members": 3,
+          "referenced_missing_resources": 3,
+          "unreferenced_missing_resources": 0,
+          "warehouse_airports": 6568,
+          "warehouse_objects": 2599,
+          "late_activation_groups": 341,
+          "uncontrolled_groups": 1,
+          "uncontrollable_groups": 2,
+          "modern_fields": {
+            "coldAtStart": 5051,
+            "dataCartridge": 4,
+            "datalinks": 1,
+            "dynSpawnTemplate": 5
+          },
+          "waypoint_actions": {
+            "": 4834,
+            "Cone": 5,
+            "Fly Over Point": 16,
+            "From Ground Area": 7,
+            "From Parking Area": 168,
+            "From Parking Area Hot": 9,
+            "From Runway": 10,
+            "Landing": 9,
+            "Off Road": 48443,
+            "On Railroads": 5,
+            "On Road": 3603,
+            "Rank": 2,
+            "Turning Point": 35849,
+            "Vee": 1
+          },
+          "waypoint_task_ids": {
+            "AWACS": 7,
+            "ActivateBeacon": 94,
+            "ActivateICLS": 20,
+            "ActivateLink4": 10,
+            "Aerobatics": 3,
+            "AttackGroup": 2,
+            "Bombing": 1,
+            "BombingRunway": 1,
+            "CarpetBombing": 4,
+            "ComboTask": 88123,
+            "ControlledTask": 10,
+            "DeactivateBeacon": 2,
+            "EPLRS": 4077,
+            "EWR": 441,
+            "EngageGroup": 2,
+            "EngageTargets": 1113,
+            "EngageTargetsInZone": 3,
+            "Escort": 5,
+            "FAC_EngageGroup": 3,
+            "FireAtPoint": 2,
+            "Follow": 2,
+            "FollowBigFormation": 8,
+            "Hold": 40,
+            "Option": 3413,
+            "Orbit": 60,
+            "Refueling": 2,
+            "SMOKE_ON_OFF": 2,
+            "Script": 4,
+            "ScriptFile": 2,
+            "SetFrequency": 2,
+            "SetFrequencyForUnit": 2,
+            "SetImmortal": 21,
+            "SetInvisible": 41,
+            "StopTransmission": 2,
+            "SwitchWaypoint": 38,
+            "Tanker": 11,
+            "WrappedAction": 7730
+          },
+          "top_level_fields": {
+            "coalition": 182,
+            "coalitions": 182,
+            "currentKey": 182,
+            "date": 179,
+            "descriptionBlueTask": 182,
+            "descriptionNeutralsTask": 145,
+            "descriptionRedTask": 182,
+            "descriptionText": 182,
+            "drawings": 101,
+            "failures": 182,
+            "forcedOptions": 182,
+            "goals": 182,
+            "groundControl": 182,
+            "map": 182,
+            "maxDictId": 182,
+            "needModules": 5,
+            "pictureFileNameB": 182,
+            "pictureFileNameN": 162,
+            "pictureFileNameR": 182,
+            "pictureFileNameServer": 33,
+            "requiredModules": 162,
+            "resourceCounter": 3,
+            "result": 182,
+            "sortie": 182,
+            "start_time": 182,
+            "theatre": 182,
+            "trig": 182,
+            "triggers": 182,
+            "trigrules": 182,
+            "usedModules": 5,
+            "version": 182,
+            "weather": 182
+          }
+        }
+      },
+      "cmp": {
+        "instances": 0,
+        "parse_valid": 0,
+        "encodings": {},
+        "versions": {},
+        "stages": 0,
+        "mission_references": 0,
+        "resolved_references": 0,
+        "missing_references": 0,
+        "interval_overlaps": 0,
+        "interval_gaps": 0,
+        "invalid_intervals": 0,
+        "missing_start_stage": 0,
+        "top_level_keys": {},
+        "errors": {}
+      }
+    }
+  ]
+}

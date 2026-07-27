@@ -1,5 +1,7 @@
 # Upstream reference extract log (2026-07-24)
 
+> Historical survey: figures, upstream commits, and capability status are superseded by the reproducible 2026-07-27 baselines; this file remains as a method and decision record.
+
 ## Goal
 
 Complete surveying of six acknowledged upstream projects; write **git-tracked**

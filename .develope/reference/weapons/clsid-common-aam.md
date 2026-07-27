@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # Common air-to-air missiles (CLSID)
 
 Source: `pydcs/dcs/weapons_data.py` (generated from DCS export).

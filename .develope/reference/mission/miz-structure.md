@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # DCS `.miz` structure (config writing)
 
 A `.miz` file is a **ZIP** archive of Lua tables and resources. Core members:

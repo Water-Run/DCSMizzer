@@ -1,3 +1,5 @@
+> **Legacy frozen survey:** This file is version-bound historical evidence. Read .develope/reference/README.md and provenance.json; do not treat it as current DCS truth.
+
 # Payload presets (Retribution customized)
 
 Source: `dcs-retribution/resources/customized_payloads/*.lua` (**224** airframes).
