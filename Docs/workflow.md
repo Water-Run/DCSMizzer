@@ -12,7 +12,8 @@ Do not start designing from memory and retrofit evidence later.
 The required construction sequence is:
 
 ```text
-upstream-status -> upstream-prepare only if needed -> upstream-status
+capabilities -> evidence-readiness (snapshot first when absent)
+  -> upstream-status -> upstream-prepare only if needed -> upstream-status
   -> terrain-catalog -> terrain-coverage
   -> exact terrain/unit/airbase/parking/payload/weather queries
   -> physical placement/corridor evidence where required
@@ -58,16 +59,21 @@ Run:
 
 ```powershell
 python Tools\dcsmizzer.py capabilities
+python Tools\dcsmizzer.py evidence-readiness --help
 python Tools\dcsmizzer.py upstream-status --cache-root output\upstream
 ```
 
 For a MIZ request, the available product operation is low-level assembly from a
 complete build spec. The Agent remains responsible for research, scenario
-design, and authoring the complete low-level tables. Campaign generation and
-runtime validation are unavailable.
+design, and authoring the complete low-level tables. Natural-language plan
+compilation and campaign generation are unavailable. Exact-MIZ runtime
+validation exists only through the explicit-opt-in isolated bridge and is
+ready only after a passing version/hash-bound collection.
 
-Implementation and readiness are separate. An implemented upstream reader is
-not ready evidence until `upstream-status` exits zero. If it does not, run
+Implementation and readiness are separate. When a current content-addressed
+bundle exists, `evidence-readiness` must pass every domain used by the decision;
+otherwise create and verify a snapshot first. An implemented upstream reader
+is not ready evidence until `upstream-status` exits zero. If it does not, run
 `upstream-prepare --cache-root output\upstream`, then rerun status. Only
 `upstream-prepare` may contact the network or write that cache; add `--offline`
 to forbid network access. The fixed locks and failure semantics are in the

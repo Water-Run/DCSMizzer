@@ -18,6 +18,7 @@ change a specified map, variant, weapon, start, player count, or mission type.
 
 ```powershell
 python Tools\dcsmizzer.py capabilities
+python Tools\dcsmizzer.py evidence-readiness --help
 python Tools\dcsmizzer.py upstream-status --cache-root output\upstream
 python Tools\dcsmizzer.py terrain-catalog --help
 python Tools\dcsmizzer.py terrain-coverage --help
@@ -27,6 +28,26 @@ python Tools\dcsmizzer.py terrain-coverage --help
 `capabilities --details` only when the current decision needs the full
 machine-readable boundary; [capabilities.md](capabilities.md) is the
 human-readable counterpart.
+
+When a current content-addressed bundle already exists, run
+`evidence-readiness` for the exact decision domains before querying individual
+records. If no bundle exists, create one from the current installation and
+locked upstream cache, then verify it:
+
+```powershell
+python Tools\dcsmizzer.py evidence-snapshot `
+  --dcs-root "D:\path\to\DCSWorld" `
+  --bundle-root output\evidence-bundles `
+  --cache-root output\upstream
+
+python Tools\dcsmizzer.py evidence-verify `
+  output\evidence-bundles\BUNDLE_SHA256
+```
+
+A dirty producer, partial domain, stale fingerprint, or incomparable source
+scope remains non-ready even when the bundle's bytes verify. See the
+[evidence lifecycle command details](reference/evidence-lifecycle-commands.md)
+only when snapshot, drift, or readiness behavior needs review.
 
 If `upstream-status` is nonzero, prepare the fixed source lock, then check it
 again:

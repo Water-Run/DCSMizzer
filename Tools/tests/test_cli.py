@@ -234,7 +234,8 @@ class ToolCliTests(unittest.TestCase):
         help_text = _build_parser().format_help()
 
         self.assertIn(
-            "capabilities -> evidence queries -> audit-spec -> build-miz -> verify-miz",
+            "capabilities -> evidence-readiness -> evidence queries -> "
+            "audit-spec -> build-miz -> verify-miz",
             help_text,
         )
         self.assertIn("0  Query succeeded", help_text)

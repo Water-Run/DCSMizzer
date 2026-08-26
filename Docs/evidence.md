@@ -24,6 +24,7 @@ release, product, and patch facts. They do not replace installed internal IDs.
 | Needed fact | Product route | Coverage boundary |
 |---|---|---|
 | Locked pydcs/BriefingRoom source readiness | `upstream-status`; `upstream-prepare` only when not ready | Exact fixed remote/branch/commit/tree and clean cache state; implementation alone is not readiness |
+| Reproducible evidence snapshot, drift, and readiness | `evidence-snapshot`, `evidence-verify`, `evidence-diff`, `evidence-readiness` | Exact local bundle bytes and finite source scopes; verification does not authenticate the original producer or upgrade static evidence to runtime authority |
 | Installed version and module directories | `dcs-static` | File presence, not entitlement or activation |
 | Plugin ID, literal flyable type, and literal service country/year | `dcs-modules` | Static matching module sources only; absence can remain unresolved |
 | Country identifier and numeric ID | `dcs-countries` | Current installed `db_countries.lua`, including reserved ID gaps |
@@ -60,6 +61,34 @@ release, product, and patch facts. They do not replace installed internal IDs.
 
 Command routing and links to bounded on-demand references are in
 [tools.md](tools.md); current CLI help remains the syntax authority.
+
+## Content-addressed evidence lifecycle
+
+`evidence-snapshot` collects the current static installation, countries,
+module declarations, default-payload observations, weather presets, every
+installed terrain's static airfield radio/beacon view, current capability
+matrix, and an optional locked-upstream status. Two complete passes must match
+before it creates a canonical local bundle. The manifest binds a clean or
+dirty producer commit, DCS product/distribution/build, executable/API hashes,
+artifact schemas, exact bytes, authority labels, coverage, failures, and a
+collection run ID. The directory name is its manifest content address.
+
+`evidence-verify` recomputes the address and every artifact record, rejects
+extra files, and rederives coverage labels from the bound reports. It proves
+byte integrity and membership, not external authorship. `evidence-diff`
+normalizes comparable domains; a changed source scope is explicitly
+`incomparable_basis`. `evidence-readiness` then compares a verified bundle
+with two matching new read-only collections and conservatively combines the
+bundle and current coverage states. Fresh static bytes remain `partial` when
+the underlying source cannot prove entitlement, full payload compatibility,
+or a complete initialized airfield registry. A dirty producer or partial
+collection cannot pass even an otherwise-current required domain.
+
+Bundle contents remain under ignored local output and are not redistribution-
+approved. The general bundle currently covers static and upstream reports;
+runtime/terrain evidence still retains its dedicated exact manifests and must
+be integrated before M0 can be considered complete. See
+[evidence-lifecycle-commands.md](reference/evidence-lifecycle-commands.md).
 
 ## Installed static-source scope
 

@@ -109,6 +109,35 @@ _CAPABILITIES: dict[str, Any] = {
             "authority remains below version-matched installed DCS data",
         ],
     },
+    "evidence_lifecycle": {
+        "status": "implemented_static_bundle_and_drift_gate",
+        "commands": [
+            "evidence-snapshot",
+            "evidence-verify",
+            "evidence-diff",
+            "evidence-readiness",
+        ],
+        "provides": [
+            "two-pass stable current-install and optional locked-upstream "
+            "collection",
+            "local-only content-addressed bundles with exact report hashes",
+            "canonical manifest, producer commit, source authority, coverage, "
+            "and collection outcome binding",
+            "tamper, extra-file, source-drift, partial-coverage, and dirty-"
+            "producer failure gates",
+            "machine-readable historical installation/domain comparison",
+            "current, stale, incomparable, absent, partial, and blocked "
+            "readiness states",
+        ],
+        "boundaries": [
+            "bundle verification authenticates bytes and bindings, not who "
+            "originally produced a report",
+            "current static evidence does not become initialized registry or "
+            "runtime evidence",
+            "dirty or partial bundles cannot pass a required readiness gate",
+            "raw local evidence bundles remain ignored and unredistributed",
+        ],
+    },
     "observed_miz_registry": {
         "status": "implemented",
         "provides": [

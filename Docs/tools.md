@@ -52,6 +52,7 @@ compact catalog -> exact type or airport -> one preset, station, or parking
 | Need | Commands | Open only if help is insufficient |
 |---|---|---|
 | Capability boundary | `capabilities` (compact status matrix; `--details` for the full machine report) | [capabilities.md](capabilities.md) |
+| Content-addressed evidence, historical drift, and current readiness | `evidence-snapshot`, `evidence-verify`, `evidence-diff`, `evidence-readiness` | [evidence lifecycle command details](reference/evidence-lifecycle-commands.md) |
 | Locked upstream cache readiness/preparation | `upstream-status`, `upstream-prepare` | [upstream source command details](reference/upstream-source-commands.md) |
 | Official product cards versus unique theatre IDs | `terrain-catalog` | [physical terrain routing](terrain-physical.md) |
 | Current installed version, modules, countries, weather, payload presets/fingerprints, airbases, native MiG-29A GCI | `dcs-static`, `dcs-modules`, `dcs-countries`, `dcs-cloud-presets`, `dcs-weather`, `dcs-payload-index`, `dcs-payloads`, `dcs-payload-match`, `dcs-airbases`, `dcs-gci` | [installed-data command details](reference/installed-data-commands.md) |
@@ -77,6 +78,7 @@ meanings, use [validation.md](validation.md).
 
 ```text
 capabilities
+  -> evidence-readiness (or evidence-snapshot when no current bundle exists)
   -> upstream-status (upstream-prepare only when not ready)
   -> terrain-catalog + filtered terrain-coverage
   -> exact terrain/unit/airbase/parking/payload/weather evidence
@@ -86,6 +88,9 @@ capabilities
 ```
 
 Query commands, including `upstream-status`, are read-only.
+`evidence-snapshot` is the sole evidence-bundle writer and creates only a new
+content-addressed directory below its explicit local bundle root; verify,
+diff, and readiness are read-only.
 `upstream-prepare` is the only command that may contact the network or write
 the locked source cache. `terrain-probe-script` and
 `terrain-probe-extract` write only their requested output; they do not execute

@@ -77,18 +77,23 @@ After the runtime bridge, terrain-probe MIZ instrumenter, coordinate
 hardening, pydcs pin promotion, and coastline-planning work were integrated,
 the release candidate passed:
 
-- 400 product tests, with one Windows-only open-path replacement race test
+- 422 product tests, with one Windows-only open-path replacement race test
   skipped because the platform denies replacing that already-open temporary
   path;
 - all 37 survey tests;
 - all Ruff `E`, `F`, and `B` checks over product code and tests;
 - Python bytecode compilation over product and survey code;
 - 147 source blocks and 186 headings in each bilingual Prompt catalog;
-- all links in 22 repository-facing documentation files;
+- all links in 23 repository-facing documentation files;
 - Lua 5.5 syntax checks for the rendered runtime Hook and both generated
   Sinai/Caucasus terrain probes;
 - both locked upstream-cache profiles, including pydcs
   `e20f328390aecaac2a7f82444b4f5a96ac6bb2c3`, with zero unusable sources.
+- the content-addressed evidence lifecycle's stable-pass, tamper, canonical-
+  manifest, unexpected-file, wrong-domain-schema, producer/source-race,
+  transactional preflight, current-coverage, content-level payload/upstream-
+  lock drift, dirty-producer, partial-collection, historical-drift, stale-
+  domain, and CLI exit-code fixtures.
 
 The DCS runtime limits recorded below remain external validation gaps; passing
 the static release suite does not upgrade the blocked exact-MIZ probes to V2
@@ -193,6 +198,18 @@ source does not make an incompatible claim and the remaining uncertainty is
 visible.
 
 ## M0: evidence lifecycle and reproducible baselines
+
+**Implementation status (2026-08-26): static lifecycle implemented; exit gate
+partially satisfied.** Product commands now perform two-pass stable collection
+into local content-addressed bundles, verify canonical manifests and exact
+artifact membership/hashes, compare recognized historical/current evidence,
+and gate current/stale/incomparable/partial/blocked decision domains. Dirty
+producers, partial collection, changed inputs, and incompatible source scopes
+fail closed. The recorded `2.9.28.26283` baseline versus current
+`2.9.28.26385` comparison is now machine-generated rather than prose-only.
+Initialized runtime/terrain exports are not yet ingested into the general
+bundle, and ordinary unbundled reports do not yet carry a bundle reference, so
+M0 is not marked complete.
 
 ### Goal
 

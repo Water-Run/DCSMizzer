@@ -40,6 +40,8 @@ Read only what the decision needs:
   evidence.md         authority, provenance, and conflict policy
   tools.md            command router; CLI --help is authoritative
   reference/upstream-source-commands.md locked source-cache preparation/status
+  reference/evidence-lifecycle-commands.md content-addressed snapshots, drift,
+                       verification, and readiness gates
   reference/runtime-commands.md isolated DCS preparation/run/collection
   build-spec.md       normative JSON-to-MIZ construction contract
   validation.md       validation meanings and completion claims

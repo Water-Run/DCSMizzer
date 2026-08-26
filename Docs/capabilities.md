@@ -14,6 +14,7 @@ python Tools\dcsmizzer.py capabilities
 | Facility | What it establishes |
 |---|---|
 | Locked upstream cache management | Read-only `upstream-status` and the sole network/cache writer `upstream-prepare` verify the fixed pydcs and BriefingRoom remote, branch, commit, tree, clean-worktree, and license contract without executing either project |
+| Evidence lifecycle | Two-pass stable collection into local content-addressed bundles; canonical manifest and exact artifact membership/hash verification; legacy/current DCS domain diff; and current/stale/incomparable/partial/blocked readiness gates with dirty-producer rejection |
 | MIZ inspection | ZIP/path policy, optional CRC, safe parsing of five core Lua data members, and anonymous mission statistics |
 | CMP inspection | Safe campaign-table parsing, stage and interval checks, and relative MIZ-reference presence |
 | Current-install inventory | Executable/Steam version when discoverable, installed module directories, country source, and declared static-source coverage |
@@ -50,14 +51,18 @@ python Tools\dcsmizzer.py capabilities
 | Build-spec evidence audit | Full-graph terrain identity and provenance gates; exact five-category type plus current country/cloud/task/pylon/service/payload/property/parking/GCI checks; complete authored-coordinate inventory; source-self-consistent bounds checks; per-airport/per-slot primary-to-secondary fallback; version-aware pydcs parking resolution; cross-source conflict propagation; and sanitized provenance |
 
 Most evidence queries are read-only. Commands that write or launch declare the
-boundary explicitly: `upstream-prepare` writes the caller-selected locked
-source cache; `build-miz` writes a mission archive; `terrain-probe-script`,
+boundary explicitly: `evidence-snapshot` writes a new content-addressed local
+bundle below its caller-selected root; `upstream-prepare` writes the caller-
+selected locked source cache; `build-miz` writes a mission archive;
+`terrain-probe-script`,
 `terrain-probe-instrument`, and `terrain-probe-extract` write only their named
-outputs. These explicit-file writers refuse an existing target unless
-`--force` is supplied. `runtime-prepare` creates only a new isolated Saved
-Games profile. `runtime-run` previews by default and launches DCS only with its
-authorization flag. No command launches Mission Editor, and the probe commands
-do not execute generated Lua by themselves.
+outputs. Named-artifact writers refuse an existing target unless `--force` is
+supplied. Evidence snapshots instead reuse only an already verified identical
+content address; upstream preparation mutates only a recognized clean cache.
+`runtime-prepare` creates only a new isolated Saved Games profile.
+`runtime-run` previews by default and launches DCS only with its authorization
+flag. No command launches Mission Editor, and the probe commands do not execute
+generated Lua by themselves.
 
 Implementation is not readiness. `capabilities` can report an implemented
 facility while an external DCS install, physical-evidence file, real-mission

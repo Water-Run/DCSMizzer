@@ -29,6 +29,13 @@ from .dcs_static import (
     payload_report,
     static_install_report,
 )
+from .evidence import (
+    compare_evidence,
+    create_evidence_snapshot,
+    evidence_readiness,
+    required_evidence_domains,
+    verify_evidence_bundle,
+)
 from .gci import gci_evidence_report, gci_report_complete
 from .mission import (
     MissionStats,
@@ -110,6 +117,37 @@ def main(
         if args.command == "capabilities":
             report = capabilities_report()
             exit_code = 0
+        elif args.command == "evidence-snapshot":
+            report = create_evidence_snapshot(
+                args.dcs_root,
+                args.bundle_root,
+                cache_root=args.cache_root,
+            )
+            exit_code = (
+                0
+                if report["validation"]["bundle_valid"] is True
+                and report["validation"]["reproducible_producer"] is True
+                and report["validation"]["collection_complete"] is True
+                else 1
+            )
+        elif args.command == "evidence-verify":
+            report = verify_evidence_bundle(args.bundle)
+            exit_code = 0 if report["validation"]["bundle_valid"] is True else 1
+        elif args.command == "evidence-diff":
+            report = compare_evidence(args.before, args.after)
+            exit_code = 0
+        elif args.command == "evidence-readiness":
+            report = evidence_readiness(
+                args.bundle,
+                args.dcs_root,
+                cache_root=args.cache_root,
+                required_domains=args.required_domain,
+            )
+            exit_code = (
+                0
+                if report["validation"]["all_required_domains_ready"] is True
+                else 1
+            )
         elif args.command == "upstream-status":
             report = upstream_status_report(args.cache_root)
             exit_code = 0 if upstream_report_usable(report) else 1
@@ -770,8 +808,8 @@ def _build_parser() -> argparse.ArgumentParser:
         description="Model-facing DCS evidence, construction, and validation",
         epilog=(
             "Recommended model workflow:\n"
-            "  capabilities -> evidence queries -> audit-spec -> build-miz "
-            "-> verify-miz -> inspect\n"
+            "  capabilities -> evidence-readiness -> evidence queries -> "
+            "audit-spec -> build-miz -> verify-miz -> inspect\n"
             "  Redirect full audit/build/verify/inspect JSON to files; review "
             "them with report-summary.\n"
             "  Report any unavailable runtime checks.\n\n"
@@ -883,6 +921,101 @@ def _build_parser() -> argparse.ArgumentParser:
         "Authority: product-declared capability matrix.",
     )
     add_view_options(capabilities)
+
+    evidence_snapshot = add_command(
+        "evidence-snapshot",
+        "Collect two stable read-only passes over the current DCS static "
+        "evidence and optional locked upstream cache, then write one local "
+        "content-addressed bundle. Authority: exact collected bytes and "
+        "reported finite source scopes; no DCS process is started.",
+    )
+    evidence_snapshot.add_argument(
+        "--dcs-root",
+        type=Path,
+        required=True,
+        help=dcs_root_help,
+    )
+    evidence_snapshot.add_argument(
+        "--bundle-root",
+        type=Path,
+        required=True,
+        help=(
+            "Explicit local-only output root. A missing final root is created "
+            "only when its safe parent already exists."
+        ),
+    )
+    evidence_snapshot.add_argument(
+        "--cache-root",
+        type=Path,
+        help=(
+            "Optional explicit acknowledged-upstream cache to bind into the "
+            "same snapshot; it is read only."
+        ),
+    )
+
+    evidence_verify = add_command(
+        "evidence-verify",
+        "Verify a content-addressed evidence bundle's safe file set, exact "
+        "hashes, schemas, authority labels, manifest binding, and directory "
+        "identity without trusting report claims.",
+    )
+    evidence_verify.add_argument(
+        "bundle",
+        type=Path,
+        help="Exact content-addressed evidence bundle directory.",
+    )
+
+    evidence_diff = add_command(
+        "evidence-diff",
+        "Compare two verified evidence bundles or recognized installation "
+        "reports and identify version, source-scope, and domain invalidation "
+        "without silently treating incomparable coverage as equal.",
+    )
+    evidence_diff.add_argument(
+        "before",
+        type=Path,
+        help="Earlier evidence bundle directory or recognized JSON report.",
+    )
+    evidence_diff.add_argument(
+        "after",
+        type=Path,
+        help="Later evidence bundle directory or recognized JSON report.",
+    )
+
+    evidence_ready = add_command(
+        "evidence-readiness",
+        "Verify a bundle and compare its normalized domains with two matching "
+        "read-only passes over the current DCS/upstream state. Current but "
+        "partial static authority remains partial and cannot pass a required "
+        "production decision.",
+    )
+    evidence_ready.add_argument(
+        "bundle",
+        type=Path,
+        help="Exact content-addressed evidence bundle directory.",
+    )
+    evidence_ready.add_argument(
+        "--dcs-root",
+        type=Path,
+        required=True,
+        help=dcs_root_help,
+    )
+    evidence_ready.add_argument(
+        "--cache-root",
+        type=Path,
+        help="Optional current acknowledged-upstream cache to compare read only.",
+    )
+    evidence_ready.add_argument(
+        "--require",
+        dest="required_domain",
+        action="append",
+        choices=required_evidence_domains(),
+        default=[],
+        help=(
+            "Required decision domain; repeat as needed. The default gates "
+            "installation, countries, modules, payloads, weather, and airfields."
+        ),
+    )
 
     upstream_status = add_command(
         "upstream-status",
