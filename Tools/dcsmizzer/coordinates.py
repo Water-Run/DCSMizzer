@@ -14,6 +14,10 @@ from .dcs_static import _load_airfield_beacons
 WGS84_A = 6_378_137.0
 WGS84_E2 = 0.0066943799901413165
 WGS84_EP2 = WGS84_E2 / (1.0 - WGS84_E2)
+WGS84_F = 1.0 / 298.257223563
+WGS84_B = WGS84_A * (1.0 - WGS84_F)
+MAX_TM_LONGITUDE_DELTA_DEGREES = 30.0
+MAX_GEODESIC_DISTANCE_M = 20_000_000.0
 UTM_CENTRAL_MERIDIANS = tuple(range(-177, 180, 6))
 
 
@@ -44,6 +48,8 @@ def coordinate_report(
     longitude: float | None = None,
     map_x: float | None = None,
     map_y: float | None = None,
+    offset_bearing_deg: float | None = None,
+    offset_distance_m: float | None = None,
 ) -> dict[str, Any]:
     """Return a fitted projection and optional forward/inverse conversion."""
 
@@ -55,11 +61,20 @@ def coordinate_report(
         raise ValueError("latitude and longitude must be supplied together")
     if inverse_requested and (map_x is None or map_y is None):
         raise ValueError("x and y must be supplied together")
+    offset_requested = offset_bearing_deg is not None or offset_distance_m is not None
+    if offset_requested and (
+        offset_bearing_deg is None or offset_distance_m is None
+    ):
+        raise ValueError("offset bearing and distance must be supplied together")
+    if offset_requested and not forward_requested:
+        raise ValueError("a geodesic offset requires latitude and longitude")
     for name, value in (
         ("latitude", latitude),
         ("longitude", longitude),
         ("x", map_x),
         ("y", map_y),
+        ("offset bearing", offset_bearing_deg),
+        ("offset distance", offset_distance_m),
     ):
         if value is not None and _finite_float(value) is None:
             raise ValueError(f"{name} must be finite")
@@ -67,6 +82,10 @@ def coordinate_report(
         raise ValueError("latitude must be between -90 and 90")
     if longitude is not None and not -180.0 <= longitude <= 180.0:
         raise ValueError("longitude must be between -180 and 180")
+    if offset_distance_m is not None and not (
+        0.0 <= offset_distance_m <= MAX_GEODESIC_DISTANCE_M
+    ):
+        raise ValueError("offset distance must be between 0 and 20000000 metres")
 
     selected, beacon_path, records, malformed = _load_airfield_beacons(
         dcs_root,
@@ -93,6 +112,11 @@ def coordinate_report(
             sum(error**2 for error in inverse_errors) / len(inverse_errors)
         )
         inverse_max_error = max(inverse_errors)
+        holdout_errors = _airfield_holdout_errors(samples, fit.central_meridian)
+        holdout_rms_error = math.sqrt(
+            sum(error**2 for error in holdout_errors) / len(holdout_errors)
+        )
+        holdout_max_error = max(holdout_errors)
     except (ArithmeticError, ValueError) as error:
         raise ValueError(
             "terrain projection inverse validation is outside the supported "
@@ -104,26 +128,62 @@ def coordinate_report(
         or not 0.99 <= fit.scale_factor <= 1.01
         or fit.max_error_m > 25.0
         or inverse_max_error > 25.0
+        or holdout_max_error > 25.0
     ):
         raise ValueError("terrain projection could not be validated within 25 metres")
 
     conversion: dict[str, Any] | None = None
     if latitude is not None and longitude is not None:
+        converted_latitude = latitude
+        converted_longitude = longitude
+        geodesic_offset: dict[str, Any] | None = None
+        if offset_bearing_deg is not None and offset_distance_m is not None:
+            (
+                converted_latitude,
+                converted_longitude,
+                final_bearing,
+            ) = geodesic_destination(
+                latitude,
+                longitude,
+                offset_bearing_deg,
+                offset_distance_m,
+            )
+            geodesic_offset = {
+                "algorithm": "WGS84 Vincenty direct",
+                "distance_m": offset_distance_m,
+                "initial_bearing_deg": offset_bearing_deg % 360.0,
+                "final_bearing_deg": final_bearing,
+                "destination": {
+                    "latitude": converted_latitude,
+                    "longitude": converted_longitude,
+                },
+            }
         converted_x, converted_y = _checked_latlon_to_map(
-            latitude,
-            longitude,
+            converted_latitude,
+            converted_longitude,
             fit,
         )
         conversion = {
-            "direction": "WGS84_to_mission_local",
+            "direction": (
+                "WGS84_geodesic_offset_to_mission_local"
+                if geodesic_offset is not None
+                else "WGS84_to_mission_local"
+            ),
             "input": {
                 "latitude": latitude,
                 "longitude": longitude,
             },
+            "geodesic_offset": geodesic_offset,
             "output": {
                 "x": converted_x,
                 "y": converted_y,
             },
+            "support": _geographic_support(
+                converted_latitude,
+                converted_longitude,
+                samples,
+                fit.central_meridian,
+            ),
         }
     elif map_x is not None and map_y is not None:
         converted_latitude, converted_longitude = _checked_map_to_latlon(
@@ -141,6 +201,7 @@ def coordinate_report(
                 "latitude": converted_latitude,
                 "longitude": converted_longitude,
             },
+            "support": _map_support(map_x, map_y, samples),
         }
 
     return {
@@ -170,16 +231,27 @@ def coordinate_report(
             "max_error_m": fit.max_error_m,
             "inverse_rms_error_m": inverse_rms_error,
             "inverse_max_error_m": inverse_max_error,
+            "leave_one_airfield_out_rms_error_m": holdout_rms_error,
+            "leave_one_airfield_out_max_error_m": holdout_max_error,
+            "leave_one_airfield_out_samples": len(holdout_errors),
             "next_candidate_rms_error_m": fits[1].rms_error_m,
         },
+        "sample_domain": _sample_domain(samples),
         "conversion": conversion,
         "limitations": [
             "The transform is independently fitted to current installed "
             "static beacon coordinate pairs.",
+            "Leave-one-airfield-out validation tests each airfield against a "
+            "fit that excluded all of that airfield's beacon pairs.",
+            "Conversions outside the beacon sample convex hull are reported "
+            "as extrapolation; only a DCS runtime coordinate check validates "
+            "such a point against the simulator itself.",
             "A converted point is not proof of terrain height, land cover, "
             "airport center, runway, parking, or unit placement validity.",
             "The caller must cite an authoritative WGS84 source for any "
             "requested real-world location.",
+            "A geodesic offset is distance and bearing from the supplied "
+            "anchor; it is not a minimum-distance-to-coastline calculation.",
             "No DCS or Mission Editor process was started.",
         ],
     }
@@ -287,6 +359,308 @@ def _fit_projection(
     )
 
 
+def _airfield_holdout_errors(
+    samples: list[CoordinateSample],
+    central_meridian: int,
+) -> list[float]:
+    """Predict every airfield from a fit that excluded that whole airfield."""
+
+    airfields = sorted({sample.airdrome_id for sample in samples})
+    if len(airfields) < 3:
+        raise ValueError("coordinate holdout validation requires three airfields")
+    errors: list[float] = []
+    for airdrome_id in airfields:
+        training = [
+            sample for sample in samples if sample.airdrome_id != airdrome_id
+        ]
+        held_out = [
+            sample for sample in samples if sample.airdrome_id == airdrome_id
+        ]
+        if len(training) < 3 or not held_out:
+            raise ValueError("coordinate holdout fold has too few samples")
+        fold_fit = _fit_projection(training, central_meridian)
+        for sample in held_out:
+            predicted_x, predicted_y = _latlon_to_map(
+                sample.latitude,
+                sample.longitude,
+                fold_fit,
+            )
+            error = math.hypot(
+                predicted_x - sample.map_x,
+                predicted_y - sample.map_y,
+            )
+            if not math.isfinite(error):
+                raise ValueError("coordinate holdout error is not finite")
+            errors.append(error)
+    if len(errors) != len(samples):
+        raise ValueError("coordinate holdout validation did not cover every sample")
+    return errors
+
+
+def _sample_domain(samples: list[CoordinateSample]) -> dict[str, Any]:
+    geographic_hull = _convex_hull(
+        [(sample.longitude, sample.latitude) for sample in samples]
+    )
+    map_hull = _convex_hull(
+        [(sample.map_y, sample.map_x) for sample in samples]
+    )
+    return {
+        "latitude": {
+            "minimum": min(sample.latitude for sample in samples),
+            "maximum": max(sample.latitude for sample in samples),
+        },
+        "longitude": {
+            "minimum": min(sample.longitude for sample in samples),
+            "maximum": max(sample.longitude for sample in samples),
+        },
+        "mission_x": {
+            "minimum": min(sample.map_x for sample in samples),
+            "maximum": max(sample.map_x for sample in samples),
+        },
+        "mission_y": {
+            "minimum": min(sample.map_y for sample in samples),
+            "maximum": max(sample.map_y for sample in samples),
+        },
+        "geographic_convex_hull_vertices": len(geographic_hull),
+        "mission_convex_hull_vertices": len(map_hull),
+    }
+
+
+def _geographic_support(
+    latitude: float,
+    longitude: float,
+    samples: list[CoordinateSample],
+    central_meridian: int,
+) -> dict[str, Any]:
+    def relative_longitude(value: float) -> float:
+        return ((value - central_meridian + 180.0) % 360.0) - 180.0
+
+    hull = _convex_hull(
+        [
+            (relative_longitude(sample.longitude), sample.latitude)
+            for sample in samples
+        ]
+    )
+    inside = _point_in_convex_polygon(
+        (relative_longitude(longitude), latitude),
+        hull,
+    )
+    nearest = min(
+        samples,
+        key=lambda sample: _surface_distance_m(
+            latitude,
+            longitude,
+            sample.latitude,
+            sample.longitude,
+        ),
+    )
+    return {
+        "classification": (
+            "inside_beacon_sample_convex_hull"
+            if inside
+            else "outside_beacon_sample_convex_hull"
+        ),
+        "extrapolated": not inside,
+        "nearest_sample_distance_m": _surface_distance_m(
+            latitude,
+            longitude,
+            nearest.latitude,
+            nearest.longitude,
+        ),
+        "nearest_sample_airdrome_id": nearest.airdrome_id,
+    }
+
+
+def _map_support(
+    map_x: float,
+    map_y: float,
+    samples: list[CoordinateSample],
+) -> dict[str, Any]:
+    hull = _convex_hull(
+        [(sample.map_y, sample.map_x) for sample in samples]
+    )
+    inside = _point_in_convex_polygon((map_y, map_x), hull)
+    nearest = min(
+        samples,
+        key=lambda sample: math.hypot(
+            map_x - sample.map_x,
+            map_y - sample.map_y,
+        ),
+    )
+    return {
+        "classification": (
+            "inside_beacon_sample_convex_hull"
+            if inside
+            else "outside_beacon_sample_convex_hull"
+        ),
+        "extrapolated": not inside,
+        "nearest_sample_distance_m": math.hypot(
+            map_x - nearest.map_x,
+            map_y - nearest.map_y,
+        ),
+        "nearest_sample_airdrome_id": nearest.airdrome_id,
+    }
+
+
+def _convex_hull(points: list[tuple[float, float]]) -> list[tuple[float, float]]:
+    unique = sorted(set(points))
+    if len(unique) <= 1:
+        return unique
+
+    def cross(
+        origin: tuple[float, float],
+        first: tuple[float, float],
+        second: tuple[float, float],
+    ) -> float:
+        return (
+            (first[0] - origin[0]) * (second[1] - origin[1])
+            - (first[1] - origin[1]) * (second[0] - origin[0])
+        )
+
+    lower: list[tuple[float, float]] = []
+    for point in unique:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], point) <= 0.0:
+            lower.pop()
+        lower.append(point)
+    upper: list[tuple[float, float]] = []
+    for point in reversed(unique):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], point) <= 0.0:
+            upper.pop()
+        upper.append(point)
+    return lower[:-1] + upper[:-1]
+
+
+def _point_in_convex_polygon(
+    point: tuple[float, float],
+    polygon: list[tuple[float, float]],
+) -> bool:
+    if len(polygon) < 3:
+        return False
+    sign = 0
+    for index, first in enumerate(polygon):
+        second = polygon[(index + 1) % len(polygon)]
+        value = (
+            (second[0] - first[0]) * (point[1] - first[1])
+            - (second[1] - first[1]) * (point[0] - first[0])
+        )
+        if abs(value) <= 1e-12:
+            continue
+        current_sign = 1 if value > 0.0 else -1
+        if sign == 0:
+            sign = current_sign
+        elif sign != current_sign:
+            return False
+    return True
+
+
+def geodesic_destination(
+    latitude: float,
+    longitude: float,
+    initial_bearing_deg: float,
+    distance_m: float,
+) -> tuple[float, float, float]:
+    """Solve the WGS-84 direct geodesic with Vincenty's iteration."""
+
+    values = (latitude, longitude, initial_bearing_deg, distance_m)
+    if any(_finite_float(value) is None for value in values):
+        raise ValueError("geodesic inputs must be finite")
+    if not -90.0 < latitude < 90.0:
+        raise ValueError("geodesic anchor latitude must be between -90 and 90")
+    if not -180.0 <= longitude <= 180.0:
+        raise ValueError("geodesic anchor longitude must be between -180 and 180")
+    if not 0.0 <= distance_m <= MAX_GEODESIC_DISTANCE_M:
+        raise ValueError("geodesic distance is outside the supported range")
+
+    alpha1 = math.radians(initial_bearing_deg % 360.0)
+    phi1 = math.radians(latitude)
+    tangent_u1 = (1.0 - WGS84_F) * math.tan(phi1)
+    cosine_u1 = 1.0 / math.sqrt(1.0 + tangent_u1**2)
+    sine_u1 = tangent_u1 * cosine_u1
+    sine_alpha1 = math.sin(alpha1)
+    cosine_alpha1 = math.cos(alpha1)
+    sigma1 = math.atan2(tangent_u1, cosine_alpha1)
+    sine_alpha = cosine_u1 * sine_alpha1
+    cosine_squared_alpha = 1.0 - sine_alpha**2
+    u_squared = cosine_squared_alpha * (
+        (WGS84_A**2 - WGS84_B**2) / WGS84_B**2
+    )
+    coefficient_a = 1.0 + u_squared / 16384.0 * (
+        4096.0 + u_squared * (-768.0 + u_squared * (320.0 - 175.0 * u_squared))
+    )
+    coefficient_b = u_squared / 1024.0 * (
+        256.0 + u_squared * (-128.0 + u_squared * (74.0 - 47.0 * u_squared))
+    )
+    sigma = distance_m / (WGS84_B * coefficient_a)
+    for _iteration in range(200):
+        two_sigma_middle = 2.0 * sigma1 + sigma
+        sine_sigma = math.sin(sigma)
+        cosine_sigma = math.cos(sigma)
+        cosine_two_sigma_middle = math.cos(two_sigma_middle)
+        delta_sigma = coefficient_b * sine_sigma * (
+            cosine_two_sigma_middle
+            + coefficient_b
+            / 4.0
+            * (
+                cosine_sigma * (-1.0 + 2.0 * cosine_two_sigma_middle**2)
+                - coefficient_b
+                / 6.0
+                * cosine_two_sigma_middle
+                * (-3.0 + 4.0 * sine_sigma**2)
+                * (-3.0 + 4.0 * cosine_two_sigma_middle**2)
+            )
+        )
+        updated = distance_m / (WGS84_B * coefficient_a) + delta_sigma
+        if abs(updated - sigma) <= 1e-12:
+            sigma = updated
+            break
+        sigma = updated
+    else:
+        raise ValueError("WGS84 direct geodesic did not converge")
+
+    sine_sigma = math.sin(sigma)
+    cosine_sigma = math.cos(sigma)
+    cosine_two_sigma_middle = math.cos(2.0 * sigma1 + sigma)
+    temporary = (
+        sine_u1 * sine_sigma
+        - cosine_u1 * cosine_sigma * cosine_alpha1
+    )
+    phi2 = math.atan2(
+        sine_u1 * cosine_sigma
+        + cosine_u1 * sine_sigma * cosine_alpha1,
+        (1.0 - WGS84_F)
+        * math.sqrt(sine_alpha**2 + temporary**2),
+    )
+    lambda_value = math.atan2(
+        sine_sigma * sine_alpha1,
+        cosine_u1 * cosine_sigma - sine_u1 * sine_sigma * cosine_alpha1,
+    )
+    coefficient_c = WGS84_F / 16.0 * cosine_squared_alpha * (
+        4.0 + WGS84_F * (4.0 - 3.0 * cosine_squared_alpha)
+    )
+    longitude_delta = lambda_value - (1.0 - coefficient_c) * WGS84_F * sine_alpha * (
+        sigma
+        + coefficient_c
+        * sine_sigma
+        * (
+            cosine_two_sigma_middle
+            + coefficient_c
+            * cosine_sigma
+            * (-1.0 + 2.0 * cosine_two_sigma_middle**2)
+        )
+    )
+    destination_longitude = (
+        math.degrees(math.radians(longitude) + longitude_delta) + 540.0
+    ) % 360.0 - 180.0
+    destination_latitude = math.degrees(phi2)
+    final_bearing = math.degrees(math.atan2(sine_alpha, -temporary)) % 360.0
+    if not all(
+        math.isfinite(value)
+        for value in (destination_latitude, destination_longitude, final_bearing)
+    ):
+        raise ValueError("WGS84 direct geodesic produced a non-finite result")
+    return destination_latitude, destination_longitude, final_bearing
+
+
 def _latlon_to_map(
     latitude: float,
     longitude: float,
@@ -308,6 +682,13 @@ def _checked_latlon_to_map(
     longitude: float,
     fit: ProjectionFit,
 ) -> tuple[float, float]:
+    longitude_delta = (
+        (longitude - fit.central_meridian + 180.0) % 360.0
+    ) - 180.0
+    if abs(latitude) >= 89.0 or abs(longitude_delta) > MAX_TM_LONGITUDE_DELTA_DEGREES:
+        raise ValueError(
+            "coordinate is outside the supported Transverse Mercator domain"
+        )
     try:
         map_x, map_y = _latlon_to_map(latitude, longitude, fit)
     except ArithmeticError as error:
@@ -376,6 +757,13 @@ def _checked_map_to_latlon(
     if not -90.0 <= latitude <= 90.0 or not -180.0 <= longitude <= 180.0:
         raise ValueError(
             "coordinate conversion is outside the supported geographic range"
+        )
+    longitude_delta = (
+        (longitude - fit.central_meridian + 180.0) % 360.0
+    ) - 180.0
+    if abs(latitude) >= 89.0 or abs(longitude_delta) > MAX_TM_LONGITUDE_DELTA_DEGREES:
+        raise ValueError(
+            "coordinate is outside the supported Transverse Mercator domain"
         )
     return latitude, longitude
 
@@ -521,6 +909,7 @@ def _inverse_unscaled(
         longitude_degrees -= (
             north_by_lat * easting_error - east_by_lat * northing_error
         ) / determinant
+    longitude_degrees = (longitude_degrees + 180.0) % 360.0 - 180.0
     return latitude_degrees, longitude_degrees
 
 

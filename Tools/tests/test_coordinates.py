@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import json
+import math
 import sys
 import tempfile
 import unittest
@@ -15,10 +16,12 @@ from dcsmizzer.coordinates import (  # noqa: E402
     ProjectionFit,
     _fit_projection,
     _forward_unscaled,
+    _checked_latlon_to_map,
     _latlon_to_map,
     _map_to_latlon,
     CoordinateSample,
     coordinate_report,
+    geodesic_destination,
 )
 from dcsmizzer.cli import main  # noqa: E402
 
@@ -136,10 +139,20 @@ class CoordinateConversionTests(unittest.TestCase):
         self.assertEqual(report["model"]["central_meridian"], 21)
         self.assertLess(report["validation"]["max_error_m"], 0.01)
         self.assertLess(report["validation"]["inverse_max_error_m"], 0.01)
+        self.assertLess(
+            report["validation"]["leave_one_airfield_out_max_error_m"],
+            0.01,
+        )
+        self.assertEqual(
+            report["validation"]["leave_one_airfield_out_samples"],
+            len(LOCATIONS),
+        )
+        self.assertIn("sample_domain", report)
         self.assertEqual(
             report["conversion"]["direction"],
             "WGS84_to_mission_local",
         )
+        self.assertIn("support", report["conversion"])
         self.assertEqual(exit_code, 0)
         self.assertTrue(cli_report["validation"]["validated"])
 
@@ -148,6 +161,104 @@ class CoordinateConversionTests(unittest.TestCase):
 
         self.assertGreater(northing, 0)
         self.assertLess(easting, 0)
+
+    def test_wgs84_geodesic_offset_and_antimeridian(self) -> None:
+        one_degree_at_equator = 111_319.49079327357
+        latitude, longitude, final_bearing = geodesic_destination(
+            0.0,
+            179.5,
+            90.0,
+            one_degree_at_equator,
+        )
+
+        self.assertAlmostEqual(latitude, 0.0, places=10)
+        self.assertAlmostEqual(longitude, -179.5, places=9)
+        self.assertAlmostEqual(final_bearing, 90.0, places=9)
+
+    def test_projection_round_trip_normalizes_antimeridian(self) -> None:
+        fit = ProjectionFit(
+            central_meridian=177,
+            scale_factor=0.9996,
+            false_easting=500_000,
+            false_northing=0,
+            rms_error_m=0,
+            max_error_m=0,
+        )
+        map_x, map_y = _latlon_to_map(10.0, -179.5, fit)
+        latitude, longitude = _map_to_latlon(map_x, map_y, fit)
+
+        self.assertAlmostEqual(latitude, 10.0, places=6)
+        self.assertAlmostEqual(longitude, -179.5, places=6)
+
+    def test_checked_projection_rejects_pole_and_far_meridian(self) -> None:
+        with self.assertRaisesRegex(ValueError, "Transverse Mercator domain"):
+            _checked_latlon_to_map(90.0, 21.0, KNOWN_FIT)
+        with self.assertRaisesRegex(ValueError, "Transverse Mercator domain"):
+            _checked_latlon_to_map(52.0, 100.0, KNOWN_FIT)
+
+    def test_report_applies_bounded_geodesic_offset(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            dcs_root = Path(temp_dir)
+            terrain = dcs_root / "Mods" / "terrains" / "SyntheticTerrain"
+            terrain.mkdir(parents=True)
+            blocks = []
+            for index, sample in enumerate(synthetic_samples(), start=1):
+                blocks.append(
+                    """
+                    {
+                      beaconId = 'airfield%s_0';
+                      position = { %.9f, 50, %.9f };
+                      positionGeo = { latitude = %.9f, longitude = %.9f };
+                    };
+                    """
+                    % (
+                        index,
+                        sample.map_x,
+                        sample.map_y,
+                        sample.latitude,
+                        sample.longitude,
+                    )
+                )
+            (terrain / "beacons.lua").write_text(
+                "beacons = {\n" + "\n".join(blocks) + "\n}\n",
+                encoding="utf-8",
+            )
+            report = coordinate_report(
+                dcs_root,
+                "SyntheticTerrain",
+                latitude=52.52,
+                longitude=13.405,
+                offset_bearing_deg=270,
+                offset_distance_m=100_000,
+            )
+
+        self.assertEqual(
+            report["conversion"]["direction"],
+            "WGS84_geodesic_offset_to_mission_local",
+        )
+        offset = report["conversion"]["geodesic_offset"]
+        self.assertEqual(offset["distance_m"], 100_000)
+        self.assertEqual(offset["initial_bearing_deg"], 270)
+        self.assertTrue(math.isfinite(report["conversion"]["output"]["x"]))
+
+    def test_report_rejects_partial_or_excessive_offset(self) -> None:
+        with self.assertRaisesRegex(ValueError, "supplied together"):
+            coordinate_report(
+                Path("missing"),
+                "missing",
+                latitude=1,
+                longitude=1,
+                offset_bearing_deg=90,
+            )
+        with self.assertRaisesRegex(ValueError, "between 0 and 20000000"):
+            coordinate_report(
+                Path("missing"),
+                "missing",
+                latitude=1,
+                longitude=1,
+                offset_bearing_deg=90,
+                offset_distance_m=20_000_001,
+            )
 
     def test_extreme_finite_beacon_positions_fail_cleanly_at_cli_boundary(
         self,

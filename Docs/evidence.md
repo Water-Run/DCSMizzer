@@ -45,10 +45,12 @@ release, product, and patch facts. They do not replace installed internal IDs.
 | Candidate ground-placement planning points | `br-spawnpoints` | Planning export only; no terrain, collision, road, or tactical validity |
 | Plane station/store cross-check | `pydcs-aircraft` | Lower-authority generated upstream data, not installed runtime compatibility |
 | Complete authored-spec technical cross-check | `audit-spec` | Finite country/weather/task/pylon/parking evidence audit; no scenario or runtime judgment |
-| Installed WGS-84 ↔ mission-local coordinates | `dcs-coordinates` | Beacon-validated projection; no height, land-cover, or placement proof |
+| Installed WGS-84 ↔ mission-local coordinates | `dcs-coordinates` | Beacon fit with inverse and whole-airfield holdouts plus explicit sample-domain/extrapolation diagnostics; no height, land-cover, coastline geometry, or placement proof |
 | Exported point, footprint, corridor, or landmark checks | `terrain-point`, `placement-check`, `terrain-corridor`, `landmark-search` | Exact initialized-theatre evidence and queried samples only; declared-version provenance does not imply runtime attestation |
 | Derived airfield operating footprint | `airfield-footprint` | Supplied initialized runway/parking/taxi evidence only; derived envelope, not an official boundary |
-| Physical-evidence capture chain | `terrain-probe-script`, manual DCS run, `terrain-probe-extract` | Commands write probe/evidence artifacts but do not launch DCS; mission scripting cannot export airport geometry |
+| Physical-evidence capture chain | `terrain-probe-script`, `terrain-probe-instrument`, authorized exact-MIZ run, `terrain-probe-extract` | Probe commands write only named artifacts; mission scripting cannot export airport geometry |
+| Initialized aggregate registry evidence | `runtime-prepare`, authorized `runtime-run`, `runtime-collect` | Version/process/hash-bound aggregate counts; not complete registry records or a mission-runtime claim |
+| Exact-MIZ V2/V3 evidence | `runtime-prepare`, authorized `runtime-run`, `runtime-collect` | Exact mission hash/name/theatre load, start, interval and declared DCS coordinate checks only; no general behavior or human-playtest proof |
 | Exact-filtered anonymous type/category/task/field-shape relationships | `miz-registry` | Anonymous counts/shapes only from parsed evidence files matching caller-supplied filters |
 | Payload/start/parking/coordinate relationships | `miz-registry` | Observed combinations only, not exhaustive |
 | MIZ/CMP structure and counts | `inspect` | Static evidence, not runtime behavior |

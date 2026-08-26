@@ -58,9 +58,10 @@ compact catalog -> exact type or airport -> one preset, station, or parking
 | Sanitized build inputs | `dcs-options-template`, `dcs-warehouse-template` | [installed-data command details](reference/installed-data-commands.md) |
 | Current-theatre identity and commit-bound terrain/unit/airport/pylon evidence | `terrain-coverage`, `pydcs-terrains`, `pydcs-units`, `pydcs-airports`, `pydcs-aircraft` | [upstream discovery command details](reference/upstream-discovery-commands.md) |
 | BriefingRoom terrain, airbase, parking, and planning points | `br-terrains`, `br-airbases`, `br-spawnpoints` | [upstream discovery command details](reference/upstream-discovery-commands.md) |
-| Physical point, landmark, placement, route-clearance, and airport geometry | `terrain-point`, `landmark-search`, `placement-check`, `terrain-corridor`, `airfield-footprint`, `br-airfield-footprint`; manual producer path `terrain-probe-script`, `terrain-probe-extract` | [physical terrain routing](terrain-physical.md) |
+| Physical point, landmark, placement, route-clearance, and airport geometry | `terrain-point`, `landmark-search`, `placement-check`, `terrain-corridor`, `airfield-footprint`, `br-airfield-footprint`; producer path `terrain-probe-script`, `terrain-probe-instrument`, `terrain-probe-extract` | [physical terrain routing](terrain-physical.md) |
 | MIZ/CMP archive inspection | `inspect`; compatibility entry point `Tools/validate.py` | [mission inspection and registry details](reference/mission-registry-commands.md) |
 | WGS-84 conversion | `dcs-coordinates`, `br-coordinates` | [mission inspection and registry details](reference/mission-registry-commands.md) |
+| Isolated DCS registry or exact-MIZ smoke | `runtime-prepare`, `runtime-run`, `runtime-collect` | [runtime command details](reference/runtime-commands.md) |
 | Anonymous real-MIZ evidence | `miz-registry` | [mission inspection and registry details](reference/mission-registry-commands.md) |
 | Spec evidence gate | `audit-spec` | [construction and validation details](reference/construction-validation-commands.md) |
 | Deterministic artifact and read-back | `build-miz`, `verify-miz` | [construction and validation details](reference/construction-validation-commands.md) |
@@ -88,7 +89,11 @@ Query commands, including `upstream-status`, are read-only.
 `upstream-prepare` is the only command that may contact the network or write
 the locked source cache. `terrain-probe-script` and
 `terrain-probe-extract` write only their requested output; they do not execute
-the generated Lua or start DCS/Mission Editor. `build-miz` writes only its
+the generated Lua or start DCS/Mission Editor. `terrain-probe-instrument`
+writes only a verified disposable derivative and never edits its source MIZ.
+`runtime-prepare` creates only a new `Saved Games\DCSMizzer-*` profile;
+`runtime-run` is dry-run by default and is the sole command that can start DCS,
+after `--authorize-dcs-launch`. `build-miz` writes only its
 requested artifact flow and internal same-directory temporary entries.
 
 All reports are UTF-8 JSON on stdout; usage/source errors go to stderr. Tool

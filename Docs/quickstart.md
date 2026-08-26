@@ -151,8 +151,9 @@ declared-version-bound evidence and run `placement-check` or
 `landmark-search` can prove a returned scenery instance exists, but placement
 also needs producer-declared ground-placement-complete object coverage and
 complete airfield geometry. `terrain-probe-script` can prepare bounded point,
-corridor, and scenery-discovery evidence for an authorized manual mission run,
-and `terrain-probe-extract` can parse its log; neither command starts DCS.
+corridor, and scenery-discovery evidence, `terrain-probe-instrument` can bind
+it to a verified disposable MIZ, and `terrain-probe-extract` can parse its log.
+Only an explicitly authorized `runtime-run` starts DCS.
 Because the mission probe deliberately cannot prove negative collision
 coverage, keep the footprint unresolved unless a stronger initialized export
 is separately supplied.
@@ -251,7 +252,18 @@ explicit limitations. Verify archive/CRC/parsing, round-trip equality,
 resources, structure, contract, trigger/goal presence, role bindings, routes,
 tasks, payloads, starts, recovery, and briefing.
 
-## 6. Report the actual result
+## 6. Optionally establish an exact runtime tier
+
+Static success does not authorize an external process. When DCS validation is
+requested and available, follow
+[runtime-commands.md](reference/runtime-commands.md): prepare a new isolated
+profile, review the dry-run preview, authorize one run, then collect the exact
+hash-bound result. A passing aggregate registry probe is not mission evidence.
+Only a passing mission-smoke collection for `output\mission.miz` establishes
+its declared V2/V3 tier. Do not interrupt another Steam session without
+separate authorization.
+
+## 7. Report the actual result
 
 Read [validation.md](validation.md) for claim meanings. Report the artifact,
 source versions, preserved constraints, checks run, checks not run, and

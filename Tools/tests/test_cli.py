@@ -1227,16 +1227,25 @@ class ToolCliTests(unittest.TestCase):
         self.assertEqual(invalid_limit, 1)
         self.assertIn("limit requires exact airport", invalid_stderr.getvalue())
 
-    def test_tools_tree_contains_only_python_sources(self) -> None:
+    def test_tools_tree_contains_only_python_sources_and_runtime_resource(
+        self,
+    ) -> None:
+        allowed_resources = {
+            Path("dcsmizzer/resources/runtime_hook.lua"),
+        }
         non_python_files = sorted(
             str(path.relative_to(TOOLS_ROOT))
             for path in TOOLS_ROOT.rglob("*")
             if path.is_file()
             and "__pycache__" not in path.parts
             and path.suffix != ".py"
+            and path.relative_to(TOOLS_ROOT) not in allowed_resources
         )
 
         self.assertEqual(non_python_files, [])
+        self.assertTrue(
+            all((TOOLS_ROOT / relative).is_file() for relative in allowed_resources)
+        )
 
     def test_script_entrypoint_emits_utf8_json_on_windows(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -1297,7 +1306,10 @@ class ToolCliTests(unittest.TestCase):
             report["mission_generation"]["status"],
             "implemented_low_level",
         )
-        self.assertEqual(report["dcs_launch"]["status"], "not_implemented")
+        self.assertEqual(
+            report["dcs_launch"]["status"],
+            "implemented_explicit_opt_in_dcs_only",
+        )
         self.assertEqual(report["inspect_miz"]["status"], "implemented")
         self.assertEqual(
             report["complete_unit_registry"]["status"],

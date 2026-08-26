@@ -1,7 +1,8 @@
 DCSMIZZER MODEL ROUTER
 
-Status: low-level MIZ toolkit; not a natural-language planner or DCS runtime
-validator. No product command starts DCS or Mission Editor.
+Status: low-level MIZ toolkit plus an explicit-opt-in isolated DCS runtime
+bridge; not a natural-language planner. Only runtime-run can start DCS, only
+after its authorization flag. No product command starts Mission Editor.
 
 Typical read path:
   README or README-zh -> this file -> quickstart.md -> exact reference only
@@ -24,19 +25,22 @@ Hard rules:
   - Never invent or silently substitute an internal type, CLSID, task, country,
     theatre, coordinate, airdrome, parking, station, module, or cloud preset.
   - Evidence and a self-consistent spec do not prove DCS runtime behavior.
-  - Use complete_scenario for a user mission. Current product reports always
-    keep runtime_valid null. Report any separately authorized external DCS load
-    as separate evidence; it does not change the product's validation claim.
+  - Use complete_scenario for a user mission. Static reports keep runtime_valid
+    null. Only a passing runtime-collect report for the exact MIZ changes that
+    artifact's declared runtime tier.
 
 Read only what the decision needs:
   quickstart.md       bounded end-to-end path and document routing
   capabilities.md     implemented/partial/unavailable boundary
+  development-roadmap.md planned sequence, dependencies, and acceptance gates;
+                       not a current capability claim
   terrain-coverage.md recorded theatre source/projection matrix and query gate
   terrain-physical.md point/placement/landmark/corridor/airfield evidence gate
   workflow.md         sequence and decision gates
   evidence.md         authority, provenance, and conflict policy
   tools.md            command router; CLI --help is authoritative
   reference/upstream-source-commands.md locked source-cache preparation/status
+  reference/runtime-commands.md isolated DCS preparation/run/collection
   build-spec.md       normative JSON-to-MIZ construction contract
   validation.md       validation meanings and completion claims
   mission-format.md   raw MIZ/CMP structure and diagnosis; optional

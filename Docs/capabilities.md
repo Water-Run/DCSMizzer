@@ -36,9 +36,10 @@ python Tools\dcsmizzer.py capabilities
 | Provenance-qualified pydcs aircraft lookup | Safely parsed generated plane pylon/store declarations with Git/source provenance |
 | Provenance-qualified BriefingRoom terrain/airbase lookup | The recorded BriefingRoom snapshot yields 14 theatre IDs, 802 airbases, and 25,730 parking records, including three IDs absent from the recorded pydcs snapshot |
 | Provenance-qualified BriefingRoom spawn lookup | Bounded streaming queries over 5,635,118 candidate planning points in the recorded snapshot |
-| Terrain coordinate conversion | WGS-84 to/from mission-local `x/y` using a projection independently fitted and residual-validated against current installed beacon coordinate pairs |
+| Terrain coordinate conversion | WGS-84 to/from mission-local `x/y` using a projection independently fitted against current installed beacon pairs, with inverse and whole-airfield holdout residuals, sample-domain/extrapolation diagnostics, and bounded WGS-84 geodesic offsets |
 | BriefingRoom-derived coordinate conversion | Lower-authority WGS-84 to/from local `x/y` fitted from commit-bound airbase exports for 13 of 14 theatre IDs; Afghanistan fails closed on duplicate placeholder candidates |
-| Physical-terrain evidence chain | Bounded probe-script generation, hash-bound log extraction, and explicitly theatre/version-bound point, sampled-placement, sampled-corridor, and landmark consumers with an explicit runtime-attestation field; mission-probe object searches are discovery-only and cannot clear placement collisions |
+| Physical-terrain evidence chain | Bounded probe-script generation, verified disposable-MIZ instrumentation, hash-bound log extraction, and explicitly theatre/version-bound point, sampled-placement, sampled-corridor, and landmark consumers with an explicit runtime-attestation field; mission-probe object searches are discovery-only and cannot clear placement collisions |
+| Isolated DCS runtime bridge | Separate prepare/run/collect lifecycle; dry-run default and explicit launch authorization; disposable `DCSMizzer-*` profile; version, executable, process, Hook, mission, and result hash binding; aggregate registry initialization; exact-MIZ load/start/smoke and DCS coordinate checks; bounded exact-process cleanup |
 | Airfield-footprint checks | An operational envelope only from a supplied complete initialized airfield inventory and per-record complete runway/parking/taxi geometry, with a separately labelled commit-bound BriefingRoom planning fallback |
 | Context-bounded report interface | Catalogs default to `dcsmizzer.cli-summary/v1` under a 12 KiB UTF-8 budget; explicit details/full restores complete output; `report-summary` bounds saved-report review after recognizing its schema identifier, without proving shape/authenticity or rerunning validation |
 | Observed MIZ registry | Privacy-preserving anonymous structure, frequency, numeric, relationship, start, airdrome, parking, weather, options, `requiredModules`, and warehouse observations from parsed real missions; exact theatre/unit filters are caller-supplied and only those filter strings are echoed; archive policy is checked before bounded snapshot copying and a stable snapshot passes CRC before parsing |
@@ -47,16 +48,15 @@ python Tools\dcsmizzer.py capabilities
 | MIZ build verification | CRC/archive checks, five-table round trip, handle-bound resource equality checks, finite structural/GCI/task checks, exact sparse global goal-key linkage, and caller-declared global and group-bound scenario-contract checks |
 | Build-spec evidence audit | Full-graph terrain identity and provenance gates; exact five-category type plus current country/cloud/task/pylon/service/payload/property/parking/GCI checks; complete authored-coordinate inventory; source-self-consistent bounds checks; per-airport/per-slot primary-to-secondary fallback; version-aware pydcs parking resolution; cross-source conflict propagation; and sanitized provenance |
 
-Most evidence queries are read-only. Four product commands write explicit
-outputs: `upstream-prepare` writes the caller-selected locked source cache,
-`build-miz` writes a mission archive, `terrain-probe-script` writes a Lua
-probe, and `terrain-probe-extract` writes a physical-evidence JSON file.
-The three explicit-file writers require an output path and refuse an existing
-target unless `--force` is supplied. `upstream-prepare` instead requires an
-explicit cache root and fails closed on a dirty or mismatched checkout.
-`build-miz` uses an internal same-directory temporary entry before the final
-path update. No command launches DCS or Mission Editor, and the probe commands
-do not execute their generated Lua.
+Most evidence queries are read-only. Commands that write or launch declare the
+boundary explicitly: `upstream-prepare` writes the caller-selected locked
+source cache; `build-miz` writes a mission archive; `terrain-probe-script`,
+`terrain-probe-instrument`, and `terrain-probe-extract` write only their named
+outputs. These explicit-file writers refuse an existing target unless
+`--force` is supplied. `runtime-prepare` creates only a new isolated Saved
+Games profile. `runtime-run` previews by default and launches DCS only with its
+authorization flag. No command launches Mission Editor, and the probe commands
+do not execute generated Lua by themselves.
 
 Implementation is not readiness. `capabilities` can report an implemented
 facility while an external DCS install, physical-evidence file, real-mission
@@ -148,11 +148,11 @@ fields. Preserve those fields when reasoning.
 | Complete per-unit task-capability matrix | Requires a version-matched runtime export |
 | Complete store-to-station compatibility | Requires a version-matched runtime export; pydcs and presets are partial evidence |
 | Complete per-terrain airport/runway/parking registry | Requires version-matched terrain/runtime evidence; pydcs and BriefingRoom are provenance-qualified snapshot fallbacks and are commit-bound only when the strict Git gate passes |
-| Automatic initialized export for every installed terrain | Not implemented; probe generation and extraction require a separately authorized manual DCS run, and mission scripting cannot export runway/parking/taxi geometry |
+| Automatic initialized export for every installed terrain | Not implemented; probe generation/instrumentation still require a separately authorized exact-MIZ DCS run, and mission scripting cannot export runway/parking/taxi geometry |
 | Continuous full-map physical terrain, scenery, road, and collision registry | Not implemented; current consumers prove only supplied queried samples and positive object instances, while collision clearance requires separately declared complete coverage |
 | Mission Editor resave | Not implemented |
-| DCS launch or mission-load test | Not implemented |
-| Runtime-valid claim | Unavailable; always report `runtime_valid: null` |
+| DCS launch or mission-load test | Implemented as an explicit-opt-in isolated prepare/run/collect bridge; readiness still depends on the local install, Steam state, entitlement, and a passing exact run |
+| Runtime-valid claim | Available only from a passing `runtime-collect` result for the exact version/hash-bound MIZ and declared V2/V3 checks; static reports remain `runtime_valid: null` |
 
 The absence of those facilities is a completion constraint, not permission to
 guess. If a user-required fact cannot be resolved from current installed data

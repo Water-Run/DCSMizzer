@@ -58,10 +58,12 @@ from .terrain_physical import (
     placement_report,
     terrain_corridor_report,
 )
+from .runtime import collect_runtime, prepare_runtime, run_runtime
 from .terrain_probe import (
     extract_terrain_probe,
     generate_terrain_probe_script,
 )
+from .terrain_probe_miz import instrument_terrain_probe_miz
 from .upstream_cache import (
     prepare_upstreams,
     upstream_report_usable,
@@ -119,6 +121,28 @@ def main(
         elif args.command == "report-summary":
             report = report_summary(args.path)
             exit_code = 0
+        elif args.command == "runtime-prepare":
+            report = prepare_runtime(
+                args.dcs_root,
+                args.saved_games_root,
+                run_id=args.run_id,
+                mode=args.mode,
+                mission=args.mission,
+                coordinate_checks=args.coordinate_checks,
+                smoke_seconds=args.smoke_seconds,
+            )
+            exit_code = 0
+        elif args.command == "runtime-run":
+            report = run_runtime(
+                args.manifest,
+                authorize=args.authorize_dcs_launch,
+                timeout_seconds=args.timeout,
+                terminate_grace_seconds=args.terminate_grace,
+            )
+            exit_code = 0 if report["validation"]["completed"] is True else 1
+        elif args.command == "runtime-collect":
+            report = collect_runtime(args.manifest)
+            exit_code = 0 if report["validation"]["runtime_valid"] is True else 1
         elif args.command == "inspect":
             report, exit_code = _inspect(args.path, skip_crc=args.skip_crc)
         elif args.command == "dcs-static":
@@ -200,6 +224,8 @@ def main(
                 longitude=args.longitude,
                 map_x=args.map_x,
                 map_y=args.map_y,
+                offset_bearing_deg=args.offset_bearing,
+                offset_distance_m=args.offset_distance,
             )
             exit_code = 0
         elif args.command == "dcs-gci":
@@ -527,6 +553,15 @@ def main(
             exit_code = (
                 0 if report["validation"]["evidence_valid"] is True else 1
             )
+        elif args.command == "terrain-probe-instrument":
+            report = instrument_terrain_probe_miz(
+                args.mission,
+                args.request,
+                args.script,
+                args.output,
+                force=args.force,
+            )
+            exit_code = 0
         elif args.command == "terrain-coverage":
             report = combined_terrain_report(
                 args.pydcs_root,
@@ -971,6 +1006,96 @@ def _build_parser() -> argparse.ArgumentParser:
         required=True,
         help=dcs_root_help,
     )
+
+    runtime_prepare = add_command(
+        "runtime-prepare",
+        "Create one hash-bound disposable DCS profile, supported Hook, and "
+        "command preview without launching DCS. Authority: current install, "
+        "exact inputs, and generated evidence manifest.",
+    )
+    runtime_prepare.add_argument(
+        "--dcs-root",
+        type=Path,
+        required=True,
+        help="Root of the DCS installation used by the later authorized run.",
+    )
+    runtime_prepare.add_argument(
+        "--saved-games-root",
+        type=Path,
+        required=True,
+        help="Existing Saved Games root in which to create one DCSMizzer-* profile.",
+    )
+    runtime_prepare.add_argument(
+        "--run-id",
+        required=True,
+        help="Unique lowercase run ID: [a-z0-9][a-z0-9-]{0,47}.",
+    )
+    runtime_prepare.add_argument(
+        "--mode",
+        choices=("registry-probe", "mission-smoke"),
+        required=True,
+        help="Bounded aggregate registry initialization or exact-MIZ smoke run.",
+    )
+    runtime_prepare.add_argument(
+        "--mission",
+        type=Path,
+        help="Exact safe MIZ required by mission-smoke and forbidden otherwise.",
+    )
+    runtime_prepare.add_argument(
+        "--coordinate-checks",
+        type=Path,
+        help=(
+            "Optional dcsmizzer.runtime-coordinate-checks/v1 JSON, bound to "
+            "the mission theatre and checked through the DCS Export API."
+        ),
+    )
+    runtime_prepare.add_argument(
+        "--smoke-seconds",
+        type=float,
+        default=10.0,
+        help="Required stable simulation interval in seconds (1-600; default: 10).",
+    )
+
+    runtime_run = add_command(
+        "runtime-run",
+        "Validate a prepared manifest and preview its exact command by default. "
+        "Only --authorize-dcs-launch starts DCS; timeout cleanup is limited to "
+        "the exact process this command started.",
+    )
+    runtime_run.add_argument(
+        "manifest",
+        type=Path,
+        help="Prepared disposable profile's DCSMizzer/manifest.json.",
+    )
+    runtime_run.add_argument(
+        "--authorize-dcs-launch",
+        action="store_true",
+        help="Explicitly authorize this one external DCS process launch.",
+    )
+    runtime_run.add_argument(
+        "--timeout",
+        type=float,
+        default=600.0,
+        help="Overall process timeout in seconds (5-7200; default: 600).",
+    )
+    runtime_run.add_argument(
+        "--terminate-grace",
+        type=float,
+        default=15.0,
+        help="Grace after exact-process termination before kill (0.1-120).",
+    )
+
+    runtime_collect = add_command(
+        "runtime-collect",
+        "Validate the exact run-ID/version/hash-bound RuntimeResult emitted by "
+        "a prepared run. Authority: immutable manifest, execution record, "
+        "runtime-attested DCS version, and bounded result bytes.",
+    )
+    runtime_collect.add_argument(
+        "manifest",
+        type=Path,
+        help="Prepared disposable profile's DCSMizzer/manifest.json.",
+    )
     add_view_options(payload_index, search=True, limit=True)
 
     payload_match = add_command(
@@ -1155,6 +1280,22 @@ def _build_parser() -> argparse.ArgumentParser:
         dest="map_y",
         type=float,
         help="Mission-local y; provide together with --x for inverse conversion.",
+    )
+    coordinates.add_argument(
+        "--offset-bearing",
+        type=float,
+        help=(
+            "Initial true bearing in degrees for a WGS84 geodesic offset; "
+            "requires latitude, longitude, and --offset-distance."
+        ),
+    )
+    coordinates.add_argument(
+        "--offset-distance",
+        type=float,
+        help=(
+            "WGS84 geodesic distance in metres (0-20000000); requires "
+            "latitude, longitude, and --offset-bearing."
+        ),
     )
 
     gci = add_command(
@@ -1840,6 +1981,42 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Validated dcsmizzer.terrain-physical-evidence/v1 JSON output.",
     )
     terrain_probe_extract.add_argument(
+        "--force",
+        action="store_true",
+        help="Replace an existing safe regular output file.",
+    )
+
+    terrain_probe_instrument = add_command(
+        "terrain-probe-instrument",
+        "Create a verified disposable derivative of one safe MIZ with a "
+        "hash-bound generated terrain-probe script. This command never edits "
+        "the source mission and never launches DCS.",
+    )
+    terrain_probe_instrument.add_argument(
+        "--mission",
+        type=Path,
+        required=True,
+        help="Safe source MIZ to copy and instrument locally.",
+    )
+    terrain_probe_instrument.add_argument(
+        "--request",
+        type=Path,
+        required=True,
+        help="Exact dcsmizzer.terrain-probe-request/v1 JSON used for the script.",
+    )
+    terrain_probe_instrument.add_argument(
+        "--script",
+        type=Path,
+        required=True,
+        help="Exact Lua output previously produced by terrain-probe-script.",
+    )
+    terrain_probe_instrument.add_argument(
+        "--output",
+        type=Path,
+        required=True,
+        help="New disposable instrumented MIZ output path.",
+    )
+    terrain_probe_instrument.add_argument(
         "--force",
         action="store_true",
         help="Replace an existing safe regular output file.",

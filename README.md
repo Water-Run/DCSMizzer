@@ -19,19 +19,25 @@ it generated for you.
 
 > [!IMPORTANT]
 >
-> **Current status (2026-07-31): survey/groundwork.** `Tools` provide MIZ/CMP
+> **Current status (2026-08-26): groundwork with an isolated runtime bridge.** `Tools` provide MIZ/CMP
 > inspection; current-install static and real-mission observed evidence
 > queries; locked upstream-cache preparation and readiness checks; acknowledged
 > commit-bound cross-map terrain, airbase, parking, spawn-point, unit, and
 > pylon queries; current options and warehouse templates; finite common
 > trigger, goal, and timed-text compilation; native MiG-29A GCI evidence;
 > authored-spec evidence auditing; deterministic low-level MIZ assembly;
-> strict complete-scenario structural and contract checks; and read-back
-> verification.
+> strict complete-scenario structural and contract checks; read-back
+> verification; beacon-fitted coordinates with whole-airfield holdouts,
+> extrapolation diagnostics, and WGS-84 geodesic offsets; disposable physical-
+> probe MIZ instrumentation; and an explicit-opt-in isolated DCS runtime bridge.
+> The aggregate registry path has been exercised on DCS 2.9.28.26385; an exact
+> MIZ is runtime-valid only when its own hash-bound collection passes.
 > Natural-language scenario planning, campaign generation, complete runtime
-> registry export, Mission Editor resave, and DCS runtime validation are not
-> implemented. Before use, read [`Docs/index.txt`](./Docs/index.txt) and run
+> registry record export, Mission Editor resave, and general behavioural or
+> human-playtest validation are not implemented. Before use, read [`Docs/index.txt`](./Docs/index.txt) and run
 > `python Tools/dcsmizzer.py capabilities`.
+> The evidence-led development order and acceptance gates are recorded in
+> [`Docs/development-roadmap.md`](./Docs/development-roadmap.md).
 
 **A good Prompt is the foundation of a high-quality combat scenario.** See the
 [**Prompt examples**](./PROMPT-SAMPLE.adoc) to learn how to write an effective

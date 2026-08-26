@@ -9,6 +9,7 @@ from typing import Any
 _CAPABILITIES: dict[str, Any] = {
     "schema": "dcsmizzer.capabilities/v3",
     "survey_basis": "2026-07-30",
+    "implementation_reviewed_on": "2026-08-26",
     "inspect_miz": {
         "status": "implemented",
         "archive_policy": {
@@ -136,7 +137,9 @@ _CAPABILITIES: dict[str, Any] = {
         "status": "implemented_tiered",
         "method": (
             "WGS84 Transverse Mercator independently fitted and residual-"
-            "validated against current installed static beacon pairs"
+            "validated against current installed static beacon pairs, with "
+            "leave-one-airfield-out prediction, sample-domain diagnostics, "
+            "and bounded WGS84 geodesic offsets"
         ),
         "lower_authority_method": (
             "WGS84 Transverse Mercator independently fitted with forward, "
@@ -154,6 +157,7 @@ _CAPABILITIES: dict[str, Any] = {
             "terrain height or land-cover validation",
             "airport centers, runways, or parking",
             "unit placement validity",
+            "minimum distance to a coastline geometry",
         ],
     },
     "terrain_physical_evidence": {
@@ -162,6 +166,8 @@ _CAPABILITIES: dict[str, Any] = {
             "bounded initialized-theatre physical evidence schema with "
             "declared-version provenance and explicit runtime attestation",
             "manual mission-scripting probe generation without launching DCS",
+            "verified disposable MIZ instrumentation that binds the exact "
+            "generated probe script to a mission-start trigger",
             "sandbox-compatible env.info log framing and extraction",
             "height and surface point queries",
             "oriented sampled placement slope/surface plus conservative "
@@ -379,11 +385,31 @@ _CAPABILITIES: dict[str, Any] = {
         "status": "not_implemented",
     },
     "dcs_runtime_validation": {
-        "status": "not_implemented",
+        "status": "implemented_explicit_opt_in",
+        "commands": [
+            "runtime-prepare",
+            "runtime-run",
+            "runtime-collect",
+        ],
+        "provides": [
+            "new disposable Saved Games DCSMizzer-* profiles",
+            "dry-run command previews and explicit one-run launch authorization",
+            "Steam and standalone launch paths with exact process identity binding",
+            "hash-bound aggregate initialized-registry evidence",
+            "exact-MIZ load/start/bounded smoke and DCS Export coordinate checks",
+            "timeout and post-result cleanup limited to the re-attested process",
+        ],
+        "does_not_imply": [
+            "runtime validity without a passing collection for the exact artifact",
+            "AI behaviour, every trigger path, or a human playtest",
+            "Mission Editor resave",
+        ],
     },
     "dcs_launch": {
-        "status": "not_implemented",
-        "reason": "No product command starts DCS or Mission Editor.",
+        "status": "implemented_explicit_opt_in_dcs_only",
+        "dry_run_default": True,
+        "ordinary_saved_games_profiles_modified": False,
+        "mission_editor_launch": "not_implemented",
     },
 }
 

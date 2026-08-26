@@ -74,13 +74,28 @@ python Tools\dcsmizzer.py dcs-coordinates `
   --y -480000
 ```
 
+Derive a point at a bounded WGS-84 distance and initial true bearing from an
+authoritative anchor, then convert that destination:
+
+```powershell
+python Tools\dcsmizzer.py dcs-coordinates `
+  --dcs-root "D:\path\to\DCSWorld" `
+  --terrain "EXACT_INSTALLED_TERRAIN_DIRECTORY" `
+  --latitude 43.6028 --longitude 39.7342 `
+  --offset-bearing 270 --offset-distance 100000
+```
+
 The tool independently fits a WGS-84 Transverse Mercator model to every usable
 map/geodetic coordinate pair in the current installed terrain beacon source.
 It searches the UTM-family central meridians, fits scale and offsets, and
 refuses conversion unless at least three pairs exist, the fitted scale is
 credible, and maximum residual is at most 25 metres. The report includes source
-hash, sample/airfield counts, fitted parameters, RMS/maximum residual, and the
-inverse round-trip residual, plus the next-best candidate residual.
+hash, sample/airfield counts, fitted parameters, RMS/maximum residual, inverse
+round-trip residual, leave-one-airfield-out prediction residual, sample domain,
+per-conversion convex-hull/extrapolation classification, nearest sample
+distance, and the next-best candidate residual. The bounded offset uses the
+WGS-84 Vincenty direct solution. It proves distance and bearing from the given
+anchor, not minimum distance to a coastline geometry.
 
 `x/y` are the horizontal fields used in a mission table. The result does not
 identify terrain height, land cover, airport center, runway, parking, or safe

@@ -11,11 +11,12 @@ mountain clearance, or airport-area geometry affects the mission.
 | Upstream planning snapshot | `terrain-coverage`, `pydcs-*`, `br-*`, `br-airfield-footprint` | Commit-bound identities, projections, airports, parking, and candidate points. BR/pydcs coordinates do not prove height, surface, slope, collision, or mountain clearance. |
 | Initialized DCS physical export | Commands using `--evidence` | Only queried samples/objects/airfields from an initialized DCS terrain, Mission Editor, or mission-scripting export. Theatre and declared version metadata remain explicit; runtime-version attestation is a separate field. Unsampled space remains unknown. |
 
-The repository currently contains bounded physical-evidence consumers and a
-manual probe-script/log-extraction path. It does **not** contain a committed
-runtime physical export, and no product command starts DCS or Mission Editor.
-A planning snapshot or uninitialized export therefore fails physical
-validation.
+The repository currently contains bounded physical-evidence consumers, probe
+generation/extraction, and verified disposable-MIZ instrumentation. It does
+**not** contain a committed runtime physical export. Only the separately
+authorized `runtime-run` command can start DCS; no product command starts
+Mission Editor. A planning snapshot or uninitialized export therefore fails
+physical validation.
 
 The local probe can produce physical evidence only for a theatre that the
 user's DCS installation can load and initialize in a matching mission. If a
@@ -46,7 +47,7 @@ Every physical CLI query requires both `--terrain` and `--dcs-version`. Treat
 a nonzero exit, `evidence.physical_authority=false`, missing sample, ambiguous
 landmark, or truncated/insufficient coverage as unresolved.
 
-## Manual probe path
+## Probe production path
 
 `terrain-probe-script` validates a bounded
 `dcsmizzer.terrain-probe-request/v1` JSON file and writes a Lua probe. Requests
@@ -92,9 +93,23 @@ python Tools\dcsmizzer.py terrain-probe-script --request request.json --dcs-root
 ```
 
 This command only generates the script. It does not execute Lua, start DCS, or
-perform runtime validation. Only after a user explicitly runs that script
-through a matching mission's **DO SCRIPT FILE** action can its framed
-`dcs.log` output be extracted:
+perform runtime validation. `terrain-probe-instrument` can then create a local,
+verified disposable derivative without altering the source MIZ:
+
+```powershell
+python Tools\dcsmizzer.py terrain-probe-instrument `
+  --mission source.miz --request request.json --script probe.lua `
+  --output output\probe-mission.miz
+```
+
+The instrumenter checks the source archive/CRC/core tables, request hash and
+theatre, injects one mission-start **DO SCRIPT FILE** resource, and verifies
+the resulting archive, parse, exact resource bytes, trigger binding, and
+unchanged group/unit and human-slot counts. It also rejects an output path that
+aliases any input, even with `--force`. Do not redistribute a derivative of a
+copyrighted mission. Instrumentation is still not execution; run the exact
+derivative only through the separately authorized runtime bridge, then extract
+its framed `dcs.log` output:
 
 ```powershell
 python Tools\dcsmizzer.py terrain-probe-extract --log dcs.log --request request.json --output terrain-evidence.json

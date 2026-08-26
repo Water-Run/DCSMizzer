@@ -15,10 +15,15 @@ normative input contract.
 | Round-trip-valid | The five parsed core tables exactly equal the complete input spec and the theatre member matches | Whether the supplied tables are legitimate DCS data |
 | Limited-structure-valid | Implemented identity, route, coordinate, pylon, parking, logic, native-GCI, briefing, and resource consistency checks have no errors | Full DCS schema or gameplay behavior |
 | Contract-valid | Every caller-declared count/membership constraint survived the artifact | Constraints the caller forgot to declare |
-| Runtime-valid | A recorded DCS version actually loaded or ran the artifact | Other versions or unsupported modules |
+| V2 DCS-load-valid | A version/hash-bound run loaded the exact filename and theatre | Stable simulation, AI behavior, or another artifact/version |
+| V3 simulation-smoke-valid | V2 plus simulation start and the declared stable interval; declared DCS coordinate checks also pass | Every trigger path, AI tactics, or a human playthrough |
 
-Never collapse these into one ambiguous `valid` statement. The current product
-can establish the first five levels. It cannot establish runtime validity.
+Never collapse these into one ambiguous `valid` statement. Static build and
+inspection establish only the first five static rows. The isolated runtime
+bridge can establish V2/V3 only when `runtime-collect` passes for that exact
+MIZ, DCS version, manifest, execution, and result. An aggregate registry probe
+is runtime evidence about registry initialization, not V2/V3 evidence for a
+mission.
 
 ## Quality profiles and gates
 
