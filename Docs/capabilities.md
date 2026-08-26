@@ -158,7 +158,7 @@ fields. Preserve those fields when reasoning.
 | Automatic initialized export for every installed terrain | Not implemented; probe generation/instrumentation still require a separately authorized exact-MIZ DCS run, and mission scripting cannot export runway/parking/taxi geometry |
 | Continuous full-map physical terrain, scenery, road, and collision registry | Not implemented; current consumers prove only supplied queried samples and positive object instances, while collision clearance requires separately declared complete coverage |
 | Mission Editor resave | Not implemented |
-| DCS launch or mission-load test | Implemented as an explicit-opt-in isolated prepare/run/collect bridge; readiness still depends on the local install, Steam state, entitlement, and a passing exact run |
+| DCS launch or mission-load test | Implemented as an explicit-opt-in isolated prepare/run/collect bridge with Steam app/build/install/state revalidation that tolerates only unselected volatile appmanifest metadata; readiness still depends on the local install, Steam state, entitlement, and a passing exact run |
 | Runtime-valid claim | Available only from a passing `runtime-collect` result for the exact version/hash-bound MIZ and declared V2/V3 checks; static reports remain `runtime_valid: null` |
 
 The absence of those facilities is a completion constraint, not permission to

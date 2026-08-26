@@ -109,3 +109,11 @@ bind the exact run into a general content-addressed bundle. The resulting
 attestation omits absolute paths and raw logs. Pass the same manifest to
 `evidence-readiness` when runtime is a required domain; omission is reported as
 current-check unavailable and never treated as current.
+
+For Steam installations, preparation retains the exact appmanifest size/hash
+as a preparation-time observation, but later preview/run/collection checks the
+selected semantic identity: app ID 223750, build ID, install directory, and
+fully-installed state. Steam legitimately rewrites volatile fields such as
+`LastPlayed` when launching an app; those unselected metadata changes do not
+invalidate a run. A changed app/build/install/state, ambiguous selected field,
+launcher path, launcher hash, DCS executable, or API source still fails closed.

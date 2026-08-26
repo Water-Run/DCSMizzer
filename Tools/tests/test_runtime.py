@@ -94,6 +94,9 @@ class RuntimeBridgeTests(unittest.TestCase):
         api.parent.mkdir()
         api.write_text("Sim.setUserCallbacks\n", encoding="utf-8")
         (self.root / "steamapps" / "appmanifest_223750.acf").write_text(
+            '"appid" "223750"\n'
+            '"StateFlags" "4"\n'
+            '"installdir" "DCSWorld"\n'
             '"LauncherPath" "C:\\\\Steam\\\\Steam.exe"\n'
             '"buildid" "24431605"\n',
             encoding="utf-8",
@@ -117,6 +120,9 @@ class RuntimeBridgeTests(unittest.TestCase):
         (self.dcs_root / "_DCS_Steam").write_text("1\n", encoding="ascii")
         manifest = self.root / "steamapps" / "appmanifest_223750.acf"
         manifest.write_text(
+            '"appid" "223750"\n'
+            '"StateFlags" "4"\n'
+            '"installdir" "DCSWorld"\n'
             f'"LauncherPath" "{str(steam).replace(chr(92), chr(92) * 2)}"\n'
             '"buildid" "24431605"\n',
             encoding="utf-8",
@@ -140,6 +146,23 @@ class RuntimeBridgeTests(unittest.TestCase):
         self.assertEqual(manifest["dcs"]["product_version"], VERSION)
         self.assertEqual(manifest["dcs"]["distribution"], "steam")
         self.assertEqual(manifest["dcs"]["distribution_build"], "24431605")
+        self.assertEqual(
+            manifest["dcs"]["distribution_manifest"]["semantic_identity"],
+            {
+                "schema": runtime.STEAM_MANIFEST_IDENTITY_SCHEMA,
+                "app_id": "223750",
+                "build_id": "24431605",
+                "install_dir_casefold": "dcsworld",
+                "state_flags": 4,
+            },
+        )
+        self.assertEqual(
+            manifest["dcs"]["distribution_manifest"]["verification"],
+            {
+                "raw_hash_scope": "preparation_observation_only",
+                "current_check": "selected_semantic_identity",
+            },
+        )
         self.assertTrue(manifest["profile"]["isolated"])
         self.assertFalse(manifest["safety"]["unsafe_dostring_enabled"])
         hook_text = hook.read_text(encoding="utf-8")
@@ -162,6 +185,70 @@ class RuntimeBridgeTests(unittest.TestCase):
         self.assertTrue(
             (Path(manifest["profile"]["absolute_path"]) / "Tracks").is_dir()
         )
+
+    def test_steam_manifest_volatile_metadata_drift_is_allowed(self) -> None:
+        manifest_path, prepared = self._prepare_steam("steam-volatile")
+        app_manifest = self.root / "steamapps" / "appmanifest_223750.acf"
+        original_hash = prepared["dcs"]["distribution_manifest"]["sha256"]
+        app_manifest.write_text(
+            app_manifest.read_text(encoding="utf-8")
+            + '"LastPlayed" "1787736735"\n',
+            encoding="utf-8",
+        )
+
+        preview = runtime.runtime_preview(manifest_path)
+
+        self.assertTrue(preview["validation"]["inputs_unchanged"])
+        self.assertNotEqual(
+            original_hash,
+            hashlib.sha256(app_manifest.read_bytes()).hexdigest(),
+        )
+
+    def test_steam_manifest_semantic_drift_is_rejected(self) -> None:
+        cases = (
+            ("appid", '"appid" "223750"', '"appid" "999999"', "app or build"),
+            (
+                "state",
+                '"StateFlags" "4"',
+                '"StateFlags" "6"',
+                "fully installed",
+            ),
+            (
+                "install-dir",
+                '"installdir" "DCSWorld"',
+                '"installdir" "OtherWorld"',
+                "install directory",
+            ),
+        )
+        for index, (label, before, after, message) in enumerate(cases):
+            with self.subTest(label=label):
+                manifest_path, _manifest = self._prepare_steam(
+                    f"steam-semantic-{index}"
+                )
+                app_manifest = (
+                    self.root / "steamapps" / "appmanifest_223750.acf"
+                )
+                app_manifest.write_text(
+                    app_manifest.read_text(encoding="utf-8").replace(
+                        before,
+                        after,
+                    ),
+                    encoding="utf-8",
+                )
+                with self.assertRaisesRegex(ValueError, message):
+                    runtime.runtime_preview(manifest_path)
+
+    def test_steam_manifest_duplicate_semantic_field_is_rejected(self) -> None:
+        manifest_path, _manifest = self._prepare_steam("steam-duplicate")
+        app_manifest = self.root / "steamapps" / "appmanifest_223750.acf"
+        app_manifest.write_text(
+            app_manifest.read_text(encoding="utf-8")
+            + '"appid" "223750"\n',
+            encoding="utf-8",
+        )
+
+        with self.assertRaisesRegex(ValueError, "missing or ambiguous"):
+            runtime.runtime_preview(manifest_path)
 
     def test_prepare_rejects_existing_profile_and_hook_tampering(self) -> None:
         report = runtime.prepare_runtime(
@@ -302,6 +389,9 @@ class RuntimeBridgeTests(unittest.TestCase):
         steam.write_bytes(b"fixture steam launcher")
         (self.dcs_root / "_DCS_Steam").write_text("1\n", encoding="ascii")
         (self.root / "steamapps" / "appmanifest_223750.acf").write_text(
+            '"appid" "223750"\n'
+            '"StateFlags" "4"\n'
+            '"installdir" "DCSWorld"\n'
             f'"LauncherPath" "{str(steam).replace(chr(92), chr(92) * 2)}"\n'
             '"buildid" "24431605"\n',
             encoding="utf-8",
@@ -841,6 +931,9 @@ assert(exited)
         steam.write_bytes(b"fixture steam launcher")
         (self.dcs_root / "_DCS_Steam").write_text("1\n", encoding="ascii")
         (self.root / "steamapps" / "appmanifest_223750.acf").write_text(
+            '"appid" "223750"\n'
+            '"StateFlags" "4"\n'
+            '"installdir" "DCSWorld"\n'
             f'"LauncherPath" "{str(steam).replace(chr(92), chr(92) * 2)}"\n'
             '"buildid" "24431605"\n',
             encoding="utf-8",

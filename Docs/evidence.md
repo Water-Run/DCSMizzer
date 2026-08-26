@@ -88,6 +88,9 @@ collection cannot pass even an otherwise-current required domain.
 
 Runtime bindings omit local absolute paths and raw logs while retaining the
 exact manifest/execution/result/log hashes and a bounded result summary.
+For Steam, they also retain the preparation-time raw appmanifest hash and its
+path-free semantic identity; launch-time volatile metadata is not mistaken for
+an app/build/install/state change.
 Physical-terrain bindings validate the raw document and retain its complete
 hash plus coverage hashes/counts without embedding potentially proprietary
 samples, objects, or airfield geometry. Therefore the external raw terrain

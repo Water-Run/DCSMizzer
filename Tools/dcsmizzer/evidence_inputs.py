@@ -15,6 +15,7 @@ from .runtime import (
     MAX_MISSION_BYTES,
     MAX_SOURCE_BYTES,
     RESULT_SCHEMA,
+    STEAM_MANIFEST_IDENTITY_SCHEMA,
     collect_runtime,
 )
 from .terrain_physical import (
@@ -772,10 +773,8 @@ def _runtime_dcs(value: Any) -> dict[str, Any]:
         "runtime API",
         maximum_bytes=MAX_SOURCE_BYTES,
     )
-    distribution_manifest = _optional_source_record(
+    distribution_manifest = _optional_runtime_distribution_manifest(
         source.get("distribution_manifest"),
-        "runtime distribution manifest",
-        maximum_bytes=MAX_SOURCE_BYTES,
     )
     launcher_input = source.get("distribution_launcher")
     launcher = None
@@ -827,18 +826,28 @@ def _validate_runtime_dcs(value: Any) -> None:
         "sim_control_api",
     }:
         raise ValueError("runtime DCS identity shape is invalid")
-    if source.get("distribution") not in {"steam", "standalone"}:
+    distribution = source.get("distribution")
+    if distribution not in {"steam", "standalone"}:
         raise ValueError("runtime distribution is invalid")
+    if distribution == "standalone" and any(
+        source.get(field) is not None
+        for field in (
+            "distribution_build",
+            "distribution_manifest",
+            "distribution_launcher",
+        )
+    ):
+        raise ValueError("standalone runtime DCS identity contains Steam data")
     _optional_text(
         source.get("distribution_build"),
         "runtime distribution build",
         maximum=32,
     )
-    distribution_manifest = _optional_source_record(
+    distribution_manifest = _optional_runtime_distribution_manifest(
         source.get("distribution_manifest"),
-        "runtime distribution manifest",
-        maximum_bytes=MAX_SOURCE_BYTES,
     )
+    if distribution_manifest != source.get("distribution_manifest"):
+        raise ValueError("runtime distribution manifest shape is invalid")
     launcher = source.get("distribution_launcher")
     if launcher is not None:
         launcher_value = _mapping(launcher, "runtime launcher")
@@ -857,24 +866,23 @@ def _validate_runtime_dcs(value: Any) -> None:
         "runtime API",
         maximum_bytes=MAX_SOURCE_BYTES,
     )
-    if source["distribution"] == "steam" and (
+    if distribution == "steam" and (
         source["distribution_build"] is None
         or distribution_manifest is None
         or launcher is None
     ):
         raise ValueError("Steam runtime DCS identity is incomplete")
     if (
-        source["distribution"] == "steam"
+        distribution == "steam"
         and distribution_manifest["relative_path"]
         != "appmanifest_223750.acf"
     ):
         raise ValueError("Steam runtime manifest identity is invalid")
-    if source["distribution"] == "standalone" and (
-        source["distribution_build"] is not None
-        or distribution_manifest is not None
-        or launcher is not None
+    if distribution == "steam" and (
+        distribution_manifest["semantic_identity"]["build_id"]
+        != source["distribution_build"]
     ):
-        raise ValueError("standalone runtime DCS identity contains Steam data")
+        raise ValueError("Steam runtime build identity is inconsistent")
 
 
 def _runtime_mission(value: Any) -> dict[str, Any] | None:
@@ -1305,6 +1313,80 @@ def _source_record(
         ),
         "sha256": _digest(source.get("sha256"), f"{label} hash"),
     }
+
+
+def _runtime_distribution_manifest(value: Any) -> dict[str, Any]:
+    source = _mapping(value, "runtime distribution manifest")
+    if set(source) != {
+        "relative_path",
+        "size_bytes",
+        "sha256",
+        "semantic_identity",
+        "verification",
+    }:
+        raise ValueError("runtime distribution manifest shape is invalid")
+    base = _source_record(
+        source,
+        "runtime distribution manifest",
+        maximum_bytes=MAX_SOURCE_BYTES,
+    )
+    semantic = _mapping(
+        source.get("semantic_identity"),
+        "runtime Steam semantic identity",
+    )
+    if set(semantic) != {
+        "schema",
+        "app_id",
+        "build_id",
+        "install_dir_casefold",
+        "state_flags",
+    } or semantic.get("schema") != STEAM_MANIFEST_IDENTITY_SCHEMA:
+        raise ValueError("runtime Steam semantic identity shape is invalid")
+    if semantic.get("app_id") != "223750":
+        raise ValueError("runtime Steam app identity is invalid")
+    build = _text(
+        semantic.get("build_id"),
+        "runtime Steam build ID",
+        maximum=32,
+    )
+    if re.fullmatch(r"[0-9]+", build) is None:
+        raise ValueError("runtime Steam build ID is invalid")
+    install_dir = _text(
+        semantic.get("install_dir_casefold"),
+        "runtime Steam install directory",
+        maximum=255,
+    )
+    if (
+        install_dir != install_dir.casefold()
+        or install_dir in {".", ".."}
+        or any(character in install_dir for character in "/\\:")
+    ):
+        raise ValueError("runtime Steam install directory is invalid")
+    if semantic.get("state_flags") != 4:
+        raise ValueError("runtime Steam installed state is invalid")
+    verification = source.get("verification")
+    if verification != {
+        "raw_hash_scope": "preparation_observation_only",
+        "current_check": "selected_semantic_identity",
+    }:
+        raise ValueError("runtime Steam manifest verification policy is invalid")
+    return {
+        **base,
+        "semantic_identity": {
+            "schema": STEAM_MANIFEST_IDENTITY_SCHEMA,
+            "app_id": "223750",
+            "build_id": build,
+            "install_dir_casefold": install_dir,
+            "state_flags": 4,
+        },
+        "verification": dict(verification),
+    }
+
+
+def _optional_runtime_distribution_manifest(
+    value: Any,
+) -> dict[str, Any] | None:
+    return None if value is None else _runtime_distribution_manifest(value)
 
 
 def _optional_source_record(

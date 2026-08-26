@@ -52,6 +52,16 @@ class BoundEvidenceInputTests(unittest.TestCase):
             "1" * 64,
         )
         self.assertEqual(
+            report["dcs"]["distribution_manifest"]["semantic_identity"],
+            {
+                "schema": "dcsmizzer.steam-app-identity/v1",
+                "app_id": "223750",
+                "build_id": "24431605",
+                "install_dir_casefold": "dcsworld",
+                "state_flags": 4,
+            },
+        )
+        self.assertEqual(
             report["result_summary"]["registry"]["counts"]["countries"],
             92,
         )
@@ -327,9 +337,16 @@ class BoundEvidenceInputTests(unittest.TestCase):
             return_value=collection,
         ):
             runtime_report = runtime_attestation(self.root / "manifest.json")
+        manifest_policy = copy.deepcopy(runtime_report)
         runtime_report["privacy"]["absolute_paths_recorded"] = True
         with self.assertRaisesRegex(ValueError, "privacy"):
             validate_runtime_attestation(runtime_report)
+
+        manifest_policy["dcs"]["distribution_manifest"]["verification"][
+            "current_check"
+        ] = "raw_hash"
+        with self.assertRaisesRegex(ValueError, "verification policy"):
+            validate_runtime_attestation(manifest_policy)
 
         path = self.root / "terrain.json"
         path.write_text(json.dumps(self._terrain_evidence()), encoding="utf-8")
@@ -367,7 +384,7 @@ class BoundEvidenceInputTests(unittest.TestCase):
             "prepared_utc": "2026-08-26T00:00:00Z",
             "producer": {
                 "name": "DCSMizzer",
-                "version": "0.6.0",
+                "version": "0.6.1",
                 "git_commit": "c" * 40,
                 "git_dirty": False,
             },
@@ -387,6 +404,17 @@ class BoundEvidenceInputTests(unittest.TestCase):
                         "relative_path": "appmanifest_223750.acf",
                         "size_bytes": 10,
                         "sha256": "5" * 64,
+                        "semantic_identity": {
+                            "schema": "dcsmizzer.steam-app-identity/v1",
+                            "app_id": "223750",
+                            "build_id": "24431605",
+                            "install_dir_casefold": "dcsworld",
+                            "state_flags": 4,
+                        },
+                        "verification": {
+                            "raw_hash_scope": "preparation_observation_only",
+                            "current_check": "selected_semantic_identity",
+                        },
                     },
                     "distribution_launcher": {
                         "absolute_path": "C:\\Program Files\\Steam\\steam.exe",

@@ -1035,7 +1035,7 @@ class EvidenceLifecycleTests(unittest.TestCase):
             "prepared_utc": CREATED,
             "producer": {
                 "name": "DCSMizzer",
-                "version": "0.6.0",
+                "version": "0.6.1",
                 "git_commit": "d" * 40,
                 "git_dirty": False,
             },
@@ -1046,6 +1046,17 @@ class EvidenceLifecycleTests(unittest.TestCase):
                     "relative_path": "appmanifest_223750.acf",
                     "size_bytes": 10,
                     "sha256": "6" * 64,
+                    "semantic_identity": {
+                        "schema": "dcsmizzer.steam-app-identity/v1",
+                        "app_id": "223750",
+                        "build_id": "24431605",
+                        "install_dir_casefold": "dcsworld",
+                        "state_flags": 4,
+                    },
+                    "verification": {
+                        "raw_hash_scope": "preparation_observation_only",
+                        "current_check": "selected_semantic_identity",
+                    },
                 },
                 "distribution_launcher": {
                     "size_bytes": 20,

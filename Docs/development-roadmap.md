@@ -77,7 +77,7 @@ After the runtime bridge, terrain-probe MIZ instrumenter, coordinate
 hardening, pydcs pin promotion, and coastline-planning work were integrated,
 the release candidate passed:
 
-- 439 product tests, with one Windows-only open-path replacement race test
+- 442 product tests, with one Windows-only open-path replacement race test
   skipped because the platform denies replacing that already-open temporary
   path;
 - all 37 survey tests;

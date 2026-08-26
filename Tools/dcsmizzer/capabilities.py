@@ -453,6 +453,8 @@ _CAPABILITIES: dict[str, Any] = {
             "new disposable Saved Games DCSMizzer-* profiles",
             "dry-run command previews and explicit one-run launch authorization",
             "Steam and standalone launch paths with exact process identity binding",
+            "Steam appmanifest preparation hashes plus launch-stable semantic "
+            "app/build/install/state revalidation",
             "hash-bound aggregate initialized-registry evidence",
             "exact-MIZ load/start/bounded smoke and DCS Export coordinate checks",
             "timeout and post-result cleanup limited to the re-attested process",

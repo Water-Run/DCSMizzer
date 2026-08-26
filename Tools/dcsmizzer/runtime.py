@@ -26,6 +26,7 @@ from .mission import analyse_miz
 MANIFEST_SCHEMA = "dcsmizzer.evidence-manifest/v1"
 RESULT_SCHEMA = "dcsmizzer.runtime-result/v1"
 COORDINATE_CHECKS_SCHEMA = "dcsmizzer.runtime-coordinate-checks/v1"
+STEAM_MANIFEST_IDENTITY_SCHEMA = "dcsmizzer.steam-app-identity/v1"
 MAX_MANIFEST_BYTES = 2 * 1024 * 1024
 MAX_RESULT_BYTES = 2 * 1024 * 1024
 MAX_COORDINATE_CHECKS_BYTES = 2 * 1024 * 1024
@@ -192,9 +193,11 @@ def prepare_runtime(
     source_api = dcs_root_value / "API" / "Sim_ControlAPI.md"
     source_api_record = _optional_source_record(source_api, dcs_root_value)
     distribution_manifest_record = (
-        _optional_source_record(
+        _steam_app_manifest_record(
             dcs_root_value.parent.parent / "appmanifest_223750.acf",
             dcs_root_value.parent.parent,
+            expected_build=distribution_build,
+            expected_install_dir=dcs_root_value.name,
         )
         if distribution == "steam"
         else None
@@ -1183,15 +1186,15 @@ def _load_and_verify_manifest(
         )
         if manifest_relative.as_posix() != "appmanifest_223750.acf":
             raise ValueError("Steam runtime manifest source path is invalid")
-        _verify_file_record(
+        _verify_steam_app_manifest_record(
             _contained(
                 dcs_root.parent.parent,
                 manifest_relative,
                 "Steam app manifest",
             ),
             distribution_manifest,
-            MAX_SOURCE_BYTES,
-            "Steam app manifest",
+            expected_build=dcs.get("distribution_build"),
+            expected_install_dir=dcs_root.name,
         )
         launcher_record = dcs.get("distribution_launcher")
         if not isinstance(launcher_record, dict):
@@ -1811,6 +1814,149 @@ def _optional_source_record(path: Path, root: Path) -> dict[str, Any] | None:
         "size_bytes": candidate.stat().st_size,
         "sha256": _sha256_file(candidate, MAX_SOURCE_BYTES),
     }
+
+
+def _steam_app_manifest_record(
+    path: Path,
+    root: Path,
+    *,
+    expected_build: Any,
+    expected_install_dir: str,
+) -> dict[str, Any]:
+    candidate = _existing_regular_file(
+        path,
+        "Steam app manifest",
+        maximum_bytes=MAX_SOURCE_BYTES,
+    )
+    payload = _read_regular_file(
+        candidate,
+        MAX_SOURCE_BYTES,
+        "Steam app manifest",
+    )
+    return {
+        "relative_path": candidate.relative_to(root).as_posix(),
+        "size_bytes": len(payload),
+        "sha256": hashlib.sha256(payload).hexdigest(),
+        "semantic_identity": _steam_app_manifest_identity(
+            payload,
+            expected_build=expected_build,
+            expected_install_dir=expected_install_dir,
+        ),
+        "verification": {
+            "raw_hash_scope": "preparation_observation_only",
+            "current_check": "selected_semantic_identity",
+        },
+    }
+
+
+def _verify_steam_app_manifest_record(
+    path: Path,
+    record: dict[str, Any],
+    *,
+    expected_build: Any,
+    expected_install_dir: str,
+) -> None:
+    if set(record) != {
+        "relative_path",
+        "size_bytes",
+        "sha256",
+        "semantic_identity",
+        "verification",
+    }:
+        raise ValueError("Steam app manifest record shape is invalid")
+    size = record.get("size_bytes")
+    digest = record.get("sha256")
+    if (
+        not isinstance(size, int)
+        or isinstance(size, bool)
+        or not 1 <= size <= MAX_SOURCE_BYTES
+        or not isinstance(digest, str)
+        or re.fullmatch(r"[0-9a-f]{64}", digest) is None
+    ):
+        raise ValueError("Steam app manifest preparation identity is invalid")
+    if record.get("verification") != {
+        "raw_hash_scope": "preparation_observation_only",
+        "current_check": "selected_semantic_identity",
+    }:
+        raise ValueError("Steam app manifest verification policy is invalid")
+    candidate = _existing_regular_file(
+        path,
+        "Steam app manifest",
+        maximum_bytes=MAX_SOURCE_BYTES,
+    )
+    payload = _read_regular_file(
+        candidate,
+        MAX_SOURCE_BYTES,
+        "Steam app manifest",
+    )
+    current_identity = _steam_app_manifest_identity(
+        payload,
+        expected_build=expected_build,
+        expected_install_dir=expected_install_dir,
+    )
+    if record.get("semantic_identity") != current_identity:
+        raise ValueError("Steam app manifest semantic identity changed")
+
+
+def _steam_app_manifest_identity(
+    payload: bytes,
+    *,
+    expected_build: Any,
+    expected_install_dir: str,
+) -> dict[str, Any]:
+    build = _required_text(expected_build, "Steam build ID", 32)
+    if re.fullmatch(r"[0-9]+", build) is None:
+        raise ValueError("Steam build ID is invalid")
+    app_id = _steam_app_manifest_field(payload, "appid", maximum=32)
+    observed_build = _steam_app_manifest_field(payload, "buildid", maximum=32)
+    install_dir = _steam_app_manifest_field(payload, "installdir", maximum=255)
+    state_flags_text = _steam_app_manifest_field(
+        payload,
+        "StateFlags",
+        maximum=16,
+    )
+    if app_id != "223750" or observed_build != build:
+        raise ValueError("Steam app manifest app or build identity is invalid")
+    if install_dir.casefold() != expected_install_dir.casefold():
+        raise ValueError("Steam app manifest install directory is invalid")
+    if re.fullmatch(r"[0-9]+", state_flags_text) is None:
+        raise ValueError("Steam app manifest state flags are invalid")
+    state_flags = int(state_flags_text)
+    if state_flags != 4:
+        raise ValueError("Steam DCS app is not in the fully installed state")
+    return {
+        "schema": STEAM_MANIFEST_IDENTITY_SCHEMA,
+        "app_id": app_id,
+        "build_id": observed_build,
+        "install_dir_casefold": install_dir.casefold(),
+        "state_flags": state_flags,
+    }
+
+
+def _steam_app_manifest_field(
+    payload: bytes,
+    name: str,
+    *,
+    maximum: int,
+) -> str:
+    key = re.escape(name.encode("ascii"))
+    matches = re.findall(
+        rb'"' + key + rb'"\s*"([^"\r\n]*)"',
+        payload,
+        flags=re.IGNORECASE,
+    )
+    if len(matches) != 1:
+        raise ValueError(f"Steam app manifest {name} field is missing or ambiguous")
+    try:
+        value = matches[0].decode("utf-8")
+    except UnicodeDecodeError as error:
+        raise ValueError(f"Steam app manifest {name} field is not UTF-8") from error
+    if (
+        not 1 <= len(value) <= maximum
+        or any(ord(character) < 0x20 for character in value)
+    ):
+        raise ValueError(f"Steam app manifest {name} field is invalid")
+    return value
 
 
 def _file_record_if_present(
