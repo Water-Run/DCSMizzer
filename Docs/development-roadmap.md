@@ -400,7 +400,11 @@ passed with no collection failure reasons. That older run was not produced by
 the current clean release candidate and is not reusable as clean current
 runtime evidence. The clean attempt recorded above reached and safely cleaned
 the exact process but was blocked by external Steam authorization before Hook
-initialization. Raw local profiles/logs are not committed.
+initialization. A later login-blocked launch produced no DCS PID and moved the
+Steam app state from exact fully-installed state `4` to `1030`. Version 0.11.1
+retains that transition as blocked evidence only after a valid hash-bound
+execution exists; preview and launch still reject it. Raw local profiles/logs
+are not committed.
 
 ### Goal
 

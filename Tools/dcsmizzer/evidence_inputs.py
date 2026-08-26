@@ -16,6 +16,7 @@ from .runtime import (
     MAX_SOURCE_BYTES,
     RESULT_SCHEMA,
     STEAM_MANIFEST_IDENTITY_SCHEMA,
+    STEAM_STATE_FAILURE_REASON,
     collect_runtime,
 )
 from .terrain_physical import (
@@ -426,6 +427,16 @@ def validate_runtime_attestation(value: Any) -> None:
     reasons = validation["failure_reasons"]
     if validation["runtime_valid"] is not (not reasons):
         raise ValueError("runtime validity and failure reasons are inconsistent")
+    steam_state_failure = STEAM_STATE_FAILURE_REASON in reasons
+    inputs_changed = validation["inputs_unchanged"] is False
+    if (
+        inputs_changed is not steam_state_failure
+        or (steam_state_failure and report["dcs"]["distribution"] != "steam")
+        or (inputs_changed and validation["runtime_valid"] is not False)
+    ):
+        raise ValueError(
+            "runtime input drift is not the bounded Steam state failure"
+        )
     if validation["runtime_valid"] is True and (
         report["runtime_observed"] is not True
         or evidence["result_sha256"] is None

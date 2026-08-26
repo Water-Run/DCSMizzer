@@ -27,6 +27,9 @@ MANIFEST_SCHEMA = "dcsmizzer.evidence-manifest/v1"
 RESULT_SCHEMA = "dcsmizzer.runtime-result/v1"
 COORDINATE_CHECKS_SCHEMA = "dcsmizzer.runtime-coordinate-checks/v1"
 STEAM_MANIFEST_IDENTITY_SCHEMA = "dcsmizzer.steam-app-identity/v1"
+STEAM_STATE_FAILURE_REASON = (
+    "steam_app_manifest_state_not_fully_installed"
+)
 MAX_MANIFEST_BYTES = 2 * 1024 * 1024
 MAX_RESULT_BYTES = 2 * 1024 * 1024
 MAX_COORDINATE_CHECKS_BYTES = 2 * 1024 * 1024
@@ -368,7 +371,9 @@ def prepare_runtime(
 def runtime_preview(manifest_path: Path) -> dict[str, Any]:
     """Validate a prepared run and return its exact non-executing command."""
 
-    manifest, manifest_payload, paths = _load_and_verify_manifest(manifest_path)
+    manifest, manifest_payload, paths, _input_failures = (
+        _load_and_verify_manifest(manifest_path)
+    )
     _require_runtime_producer_current(manifest)
     report = {
         "schema": "dcsmizzer.runtime-preview/v1",
@@ -431,7 +436,9 @@ def run_runtime(
         0.1,
         120.0,
     )
-    manifest, manifest_payload, paths = _load_and_verify_manifest(manifest_path)
+    manifest, manifest_payload, paths, _input_failures = (
+        _load_and_verify_manifest(manifest_path)
+    )
     _require_runtime_producer_current(manifest)
     if not authorize:
         preview = runtime_preview(manifest_path)
@@ -658,8 +665,14 @@ def run_runtime(
         "cleanup_failed": cleanup_failed,
         "dcs_exit_observed": dcs_exit_observed,
         "result_exists": result_exists,
-        "stdout": _file_record_if_present(stdout_path),
-        "stderr": _file_record_if_present(stderr_path),
+        "stdout": _file_record_if_present(
+            stdout_path,
+            maximum_bytes=MAX_LOG_HASH_BYTES,
+        ),
+        "stderr": _file_record_if_present(
+            stderr_path,
+            maximum_bytes=MAX_LOG_HASH_BYTES,
+        ),
     }
     execution_payload = _json_bytes(execution)
     _require_runtime_producer_current(manifest)
@@ -709,9 +722,19 @@ def run_runtime(
 def collect_runtime(manifest_path: Path) -> dict[str, Any]:
     """Validate and bind the exact runtime result for one prepared run."""
 
-    manifest, manifest_payload, paths = _load_and_verify_manifest(manifest_path)
+    manifest, manifest_payload, paths, input_failure_reasons = (
+        _load_and_verify_manifest(
+            manifest_path,
+            allow_post_execution_steam_state_drift=True,
+        )
+    )
     _require_runtime_producer_current(manifest)
     if not paths["execution"].is_file():
+        if input_failure_reasons:
+            raise ValueError(
+                "post-execution Steam state drift cannot be collected "
+                "without a runtime execution record"
+            )
         raise ValueError("runtime execution record is missing")
     execution, execution_payload = _load_json_file(
         paths["execution"],
@@ -722,6 +745,14 @@ def collect_runtime(manifest_path: Path) -> dict[str, Any]:
         raise ValueError("runtime execution schema is not supported")
     if execution.get("run_id") != manifest["run_id"]:
         raise ValueError("runtime execution run ID does not match")
+    if input_failure_reasons:
+        _validate_post_execution_record(
+            execution,
+            execution_payload,
+            manifest=manifest,
+            manifest_payload=manifest_payload,
+            paths=paths,
+        )
     if not paths["result"].is_file():
         report = _collection_report(
             manifest,
@@ -731,7 +762,11 @@ def collect_runtime(manifest_path: Path) -> dict[str, Any]:
             result=None,
             result_payload=None,
             paths=paths,
-            failure_reasons=["runtime_result_missing"],
+            failure_reasons=[
+                *input_failure_reasons,
+                "runtime_result_missing",
+            ],
+            inputs_unchanged=not input_failure_reasons,
         )
         _require_runtime_producer_current(manifest)
         return report
@@ -741,6 +776,7 @@ def collect_runtime(manifest_path: Path) -> dict[str, Any]:
         "runtime result",
     )
     failure_reasons = _validate_runtime_result(result, manifest)
+    failure_reasons.extend(input_failure_reasons)
     report = _collection_report(
         manifest,
         manifest_payload,
@@ -750,9 +786,479 @@ def collect_runtime(manifest_path: Path) -> dict[str, Any]:
         result_payload=result_payload,
         paths=paths,
         failure_reasons=failure_reasons,
+        inputs_unchanged=not input_failure_reasons,
     )
     _require_runtime_producer_current(manifest)
     return report
+
+
+def _validate_post_execution_record(
+    execution: dict[str, Any],
+    execution_payload: bytes,
+    *,
+    manifest: dict[str, Any],
+    manifest_payload: bytes,
+    paths: dict[str, Path],
+) -> None:
+    """Require one complete run_runtime artifact before drift downgrade."""
+
+    expected_fields = {
+        "schema",
+        "run_id",
+        "mode",
+        "manifest_sha256",
+        "started_utc",
+        "finished_utc",
+        "elapsed_seconds",
+        "pid",
+        "launcher_pid",
+        "launcher_kind",
+        "launcher_return_code",
+        "return_code",
+        "classification",
+        "timed_out",
+        "terminated",
+        "killed",
+        "launch_error_type",
+        "ambiguous_new_dcs_pids",
+        "unattested_new_dcs_pids",
+        "untrusted_new_dcs_pids",
+        "process_attestation",
+        "completion_cleanup_requested",
+        "cleanup_identity_lost",
+        "cleanup_failed",
+        "dcs_exit_observed",
+        "result_exists",
+        "stdout",
+        "stderr",
+    }
+    if set(execution) != expected_fields:
+        raise ValueError(
+            "post-execution Steam state drift requires an exact runtime "
+            "execution field set"
+        )
+    if execution_payload != _json_bytes(execution):
+        raise ValueError(
+            "post-execution Steam state drift requires canonical runtime "
+            "execution JSON"
+        )
+    if execution["schema"] != "dcsmizzer.runtime-execution/v1":
+        raise ValueError("runtime execution schema is not supported")
+    if execution["run_id"] != manifest["run_id"]:
+        raise ValueError("runtime execution run ID does not match")
+    expected_manifest_hash = hashlib.sha256(manifest_payload).hexdigest()
+    if (
+        execution["manifest_sha256"] != expected_manifest_hash
+        or execution["mode"] != manifest["mode"]
+    ):
+        raise ValueError(
+            "post-execution Steam state drift requires an exact "
+            "hash-bound runtime execution record"
+        )
+    started = _runtime_execution_timestamp(
+        execution["started_utc"],
+        "runtime execution start timestamp",
+    )
+    finished = _runtime_execution_timestamp(
+        execution["finished_utc"],
+        "runtime execution finish timestamp",
+    )
+    if finished < started:
+        raise ValueError("runtime execution timestamps are inconsistent")
+    _bounded_number(
+        execution["elapsed_seconds"],
+        "runtime execution elapsed_seconds",
+        0.0,
+        MAX_TIMEOUT_SECONDS + 300.0,
+    )
+
+    pid = _runtime_execution_integer(
+        execution["pid"],
+        "runtime execution PID",
+        minimum=1,
+        maximum=(1 << 32) - 1,
+        optional=True,
+    )
+    launcher_pid = _runtime_execution_integer(
+        execution["launcher_pid"],
+        "runtime execution launcher PID",
+        minimum=1,
+        maximum=(1 << 32) - 1,
+        optional=True,
+    )
+    launcher_return_code = _runtime_execution_integer(
+        execution["launcher_return_code"],
+        "runtime execution launcher return code",
+        minimum=-(1 << 31),
+        maximum=(1 << 32) - 1,
+        optional=True,
+    )
+    return_code = _runtime_execution_integer(
+        execution["return_code"],
+        "runtime execution return code",
+        minimum=-(1 << 31),
+        maximum=(1 << 32) - 1,
+        optional=True,
+    )
+    launcher_kind = execution["launcher_kind"]
+    if launcher_kind not in {"direct", "steam_applaunch"} or (
+        launcher_kind != manifest["command"]["launcher_kind"]
+    ):
+        raise ValueError("runtime execution launcher kind is invalid")
+
+    classification = _required_text(
+        execution["classification"],
+        "runtime execution classification",
+        64,
+    )
+    launch_error = execution["launch_error_type"]
+    if launch_error is not None:
+        launch_error = _required_text(
+            launch_error,
+            "runtime execution launch error type",
+            128,
+        )
+        if re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]{0,127}", launch_error) is None:
+            raise ValueError("runtime execution launch error type is invalid")
+
+    boolean_fields = (
+        "timed_out",
+        "terminated",
+        "killed",
+        "completion_cleanup_requested",
+        "cleanup_identity_lost",
+        "cleanup_failed",
+        "dcs_exit_observed",
+        "result_exists",
+    )
+    if any(type(execution[field]) is not bool for field in boolean_fields):
+        raise ValueError("runtime execution Boolean fields are invalid")
+
+    ambiguous = _runtime_execution_pid_list(
+        execution["ambiguous_new_dcs_pids"],
+        "runtime execution ambiguous PID list",
+    )
+    unattested = _runtime_execution_pid_list(
+        execution["unattested_new_dcs_pids"],
+        "runtime execution unattested PID list",
+    )
+    untrusted = _runtime_execution_pid_list(
+        execution["untrusted_new_dcs_pids"],
+        "runtime execution untrusted PID list",
+    )
+    if (ambiguous and len(ambiguous) < 2) or len(unattested) > 1 or (
+        untrusted and len(untrusted) != 1
+    ):
+        raise ValueError("runtime execution PID evidence is inconsistent")
+    if ambiguous and untrusted:
+        raise ValueError("runtime execution PID evidence is contradictory")
+    if pid is not None and (ambiguous or unattested or untrusted):
+        raise ValueError("runtime execution PID evidence is contradictory")
+    if execution["timed_out"] and (ambiguous or untrusted):
+        raise ValueError("runtime execution PID evidence is inconsistent")
+
+    _validate_runtime_process_attestation(
+        execution["process_attestation"],
+        pid=pid,
+        launcher_kind=launcher_kind,
+        manifest=manifest,
+    )
+    _validate_runtime_execution_file_record(
+        execution["stdout"],
+        name="process-stdout.log",
+        current=_file_record_if_present(
+            paths["product_root"] / "process-stdout.log",
+            maximum_bytes=MAX_LOG_HASH_BYTES,
+        ),
+        maximum_bytes=MAX_LOG_HASH_BYTES,
+    )
+    _validate_runtime_execution_file_record(
+        execution["stderr"],
+        name="process-stderr.log",
+        current=_file_record_if_present(
+            paths["product_root"] / "process-stderr.log",
+            maximum_bytes=MAX_LOG_HASH_BYTES,
+        ),
+        maximum_bytes=MAX_LOG_HASH_BYTES,
+    )
+
+    timed_out = execution["timed_out"]
+    terminated = execution["terminated"]
+    killed = execution["killed"]
+    completion_cleanup = execution["completion_cleanup_requested"]
+    cleanup_identity_lost = execution["cleanup_identity_lost"]
+    cleanup_failed = execution["cleanup_failed"]
+    dcs_exit_observed = execution["dcs_exit_observed"]
+    result_exists = execution["result_exists"]
+    process_attestation = execution["process_attestation"]
+
+    if result_exists is not paths["result"].is_file():
+        raise ValueError("runtime execution result presence is inconsistent")
+
+    if (launcher_pid is None) is not (launch_error is not None):
+        raise ValueError("runtime execution launch identity is inconsistent")
+    if (pid is None) is not (process_attestation is None):
+        raise ValueError("runtime execution process attestation is inconsistent")
+    if pid is None and dcs_exit_observed:
+        raise ValueError("runtime execution exit observation is inconsistent")
+    if killed and not terminated:
+        raise ValueError("runtime execution cleanup flags are inconsistent")
+    if completion_cleanup and (
+        launcher_kind != "steam_applaunch"
+        or pid is None
+        or not result_exists
+        or timed_out
+    ):
+        raise ValueError("runtime execution completion cleanup is inconsistent")
+    if cleanup_identity_lost and cleanup_failed:
+        raise ValueError("runtime execution cleanup outcome is contradictory")
+    if (cleanup_identity_lost or cleanup_failed) and dcs_exit_observed:
+        raise ValueError("runtime execution cleanup outcome is inconsistent")
+    if timed_out and pid is not None and not (
+        dcs_exit_observed
+        or terminated
+        or cleanup_identity_lost
+        or cleanup_failed
+    ):
+        raise ValueError("runtime execution timeout cleanup is incomplete")
+    if terminated and not (
+        dcs_exit_observed
+        or killed
+        or cleanup_identity_lost
+        or cleanup_failed
+    ):
+        raise ValueError("runtime execution termination outcome is incomplete")
+    if any(
+        (terminated, killed, cleanup_identity_lost, cleanup_failed)
+    ) and (pid is None or not (timed_out or completion_cleanup)):
+        raise ValueError("runtime execution cleanup outcome is inconsistent")
+
+    if launcher_kind == "direct":
+        if (
+            launcher_return_code is not None
+            or ambiguous
+            or unattested
+            or untrusted
+            or completion_cleanup
+            or cleanup_identity_lost
+        ):
+            raise ValueError("direct runtime execution contains Steam state")
+        if launch_error is None and pid != launcher_pid:
+            raise ValueError("direct runtime execution PID binding is invalid")
+        if launch_error is None and not timed_out and return_code is None:
+            raise ValueError("direct runtime execution outcome is incomplete")
+        if dcs_exit_observed is not (return_code is not None):
+            raise ValueError("direct runtime execution exit state is invalid")
+    else:
+        if return_code is not None:
+            raise ValueError(
+                "Steam runtime execution contains a direct return code"
+            )
+        if pid is not None and not (
+            dcs_exit_observed or timed_out or completion_cleanup
+        ):
+            raise ValueError("Steam runtime execution outcome is incomplete")
+        if completion_cleanup and not (
+            dcs_exit_observed
+            or terminated
+            or cleanup_identity_lost
+            or cleanup_failed
+        ):
+            raise ValueError("runtime execution completion cleanup is incomplete")
+
+    if launch_error is not None and (
+        pid is not None
+        or launcher_return_code is not None
+        or return_code is not None
+        or ambiguous
+        or unattested
+        or untrusted
+        or timed_out
+        or terminated
+        or killed
+        or completion_cleanup
+        or cleanup_identity_lost
+        or cleanup_failed
+        or dcs_exit_observed
+        or result_exists
+    ):
+        raise ValueError("runtime execution launch failure is inconsistent")
+
+    expected_classification = _runtime_execution_classification(execution)
+    if classification != expected_classification:
+        raise ValueError("runtime execution classification is inconsistent")
+
+
+def _runtime_execution_timestamp(value: Any, label: str) -> datetime:
+    text = _required_text(value, label, 20)
+    timestamp_pattern = (
+        r"[0-9]{4}(?:-[0-9]{2}){2}T"
+        r"[0-9]{2}:[0-9]{2}:[0-9]{2}Z"
+    )
+    if re.fullmatch(timestamp_pattern, text) is None:
+        raise ValueError(f"{label} is invalid")
+    try:
+        return datetime.strptime(text, "%Y-%m-%dT%H:%M:%SZ").replace(
+            tzinfo=UTC
+        )
+    except ValueError as error:
+        raise ValueError(f"{label} is invalid") from error
+
+
+def _runtime_execution_integer(
+    value: Any,
+    label: str,
+    *,
+    minimum: int,
+    maximum: int,
+    optional: bool,
+) -> int | None:
+    if value is None and optional:
+        return None
+    if (
+        isinstance(value, bool)
+        or not isinstance(value, int)
+        or not minimum <= value <= maximum
+    ):
+        raise ValueError(f"{label} is invalid")
+    return value
+
+
+def _runtime_execution_pid_list(value: Any, label: str) -> list[int]:
+    if (
+        type(value) is not list
+        or len(value) > 4096
+        or any(
+            isinstance(pid, bool)
+            or not isinstance(pid, int)
+            or not 1 <= pid <= (1 << 32) - 1
+            for pid in value
+        )
+        or value != sorted(set(value))
+    ):
+        raise ValueError(f"{label} is invalid")
+    return value
+
+
+def _validate_runtime_process_attestation(
+    value: Any,
+    *,
+    pid: int | None,
+    launcher_kind: str,
+    manifest: dict[str, Any],
+) -> None:
+    if value is None:
+        if pid is not None:
+            raise ValueError("runtime execution process attestation is missing")
+        return
+    expected_fields = {
+        "attested",
+        "source",
+        "pid",
+        "executable_path",
+        "executable_sha256",
+        "profile_argument_attested",
+        "mission_argument_attested",
+    }
+    if type(value) is not dict or set(value) != expected_fields:
+        raise ValueError("runtime execution process attestation is invalid")
+    expected_source = (
+        "direct_child_process"
+        if launcher_kind == "direct"
+        else "windows_process_identity"
+    )
+    expected_mission_attestation = (
+        True if manifest["inputs"]["mission"] is not None else None
+    )
+    if (
+        value["attested"] is not True
+        or value["source"] != expected_source
+        or type(value["pid"]) is not int
+        or value["pid"] != pid
+        or value["executable_sha256"]
+        != manifest["dcs"]["executable"]["sha256"]
+        or value["profile_argument_attested"] is not True
+        or value["mission_argument_attested"]
+        is not expected_mission_attestation
+    ):
+        raise ValueError("runtime execution process attestation is inconsistent")
+    executable_path = _required_text(
+        value["executable_path"],
+        "runtime execution attested executable path",
+    )
+    try:
+        observed = Path(executable_path).resolve()
+        expected = Path(
+            manifest["dcs"]["executable"]["absolute_path"]
+        ).resolve()
+    except OSError as error:
+        raise ValueError(
+            "runtime execution attested executable path is invalid"
+        ) from error
+    if str(observed).casefold() != str(expected).casefold():
+        raise ValueError("runtime execution attested executable path differs")
+
+
+def _validate_runtime_execution_file_record(
+    value: Any,
+    *,
+    name: str,
+    current: dict[str, Any] | None,
+    maximum_bytes: int,
+) -> None:
+    if (
+        type(value) is not dict
+        or set(value) != {"name", "size_bytes", "sha256"}
+        or value.get("name") != name
+        or isinstance(value.get("size_bytes"), bool)
+        or not isinstance(value.get("size_bytes"), int)
+        or not 0 <= value["size_bytes"] <= maximum_bytes
+        or not isinstance(value.get("sha256"), str)
+        or re.fullmatch(r"[0-9a-f]{64}", value["sha256"]) is None
+    ):
+        raise ValueError(f"runtime execution {name} record is invalid")
+    if value != current:
+        raise ValueError(f"runtime execution {name} record changed")
+
+
+def _runtime_execution_classification(execution: dict[str, Any]) -> str:
+    launcher_kind = execution["launcher_kind"]
+    runtime_started = execution["pid"] is not None
+    if execution["launch_error_type"] is not None:
+        return "process_not_started"
+    if execution["ambiguous_new_dcs_pids"]:
+        return "ambiguous_started_process"
+    if execution["untrusted_new_dcs_pids"]:
+        return "untrusted_started_process"
+    if execution["cleanup_identity_lost"]:
+        return "cleanup_identity_lost"
+    if execution["cleanup_failed"]:
+        return "cleanup_failed"
+    if execution["timed_out"]:
+        return "timeout"
+    if execution["result_exists"] and (
+        (launcher_kind == "direct" and execution["return_code"] == 0)
+        or (
+            launcher_kind == "steam_applaunch"
+            and execution["dcs_exit_observed"]
+        )
+    ):
+        return "normal_completion"
+    if launcher_kind == "direct" and execution["return_code"] not in (
+        None,
+        0,
+    ):
+        return "crash_or_nonzero_exit"
+    if runtime_started and execution["dcs_exit_observed"]:
+        return "exited_without_result"
+    if not runtime_started:
+        if (
+            launcher_kind == "steam_applaunch"
+            and execution["launcher_return_code"] == 0
+        ):
+            return "steam_confirmation_or_startup_pending"
+        return "process_not_started"
+    return "unknown_process_outcome"
 
 
 def _collection_report(
@@ -765,11 +1271,17 @@ def _collection_report(
     result_payload: bytes | None,
     paths: dict[str, Path],
     failure_reasons: list[str],
+    inputs_unchanged: bool = True,
 ) -> dict[str, Any]:
     expected_manifest_hash = hashlib.sha256(manifest_payload).hexdigest()
-    if execution.get("manifest_sha256") != expected_manifest_hash:
+    manifest_hash_matched = (
+        execution.get("manifest_sha256") == expected_manifest_hash
+    )
+    mode_matched = execution.get("mode") == manifest["mode"]
+    execution_bound = manifest_hash_matched and mode_matched
+    if not manifest_hash_matched:
         failure_reasons.append("runtime_execution_manifest_hash_mismatch")
-    if execution.get("mode") != manifest["mode"]:
+    if not mode_matched:
         failure_reasons.append("runtime_execution_mode_mismatch")
     if execution.get("classification") != "normal_completion":
         failure_reasons.append("runtime_execution_not_normal")
@@ -829,9 +1341,9 @@ def _collection_report(
         "result": result,
         "validation": {
             "manifest_valid": True,
-            "inputs_unchanged": True,
+            "inputs_unchanged": inputs_unchanged,
             "hook_unchanged": True,
-            "execution_bound": True,
+            "execution_bound": execution_bound,
             "result_present": result is not None,
             "run_id_matched": result is not None
             and result.get("run_id") == manifest["run_id"],
@@ -1025,7 +1537,15 @@ def _runtime_coordinate_record_valid(
 
 def _load_and_verify_manifest(
     manifest_path: Path,
-) -> tuple[dict[str, Any], bytes, dict[str, Path]]:
+    *,
+    allow_post_execution_steam_state_drift: bool = False,
+) -> tuple[
+    dict[str, Any],
+    bytes,
+    dict[str, Path],
+    tuple[str, ...],
+]:
+    input_failure_reasons: list[str] = []
     manifest, payload = _load_json_file(
         Path(manifest_path),
         MAX_MANIFEST_BYTES,
@@ -1226,7 +1746,7 @@ def _load_and_verify_manifest(
         )
         if manifest_relative.as_posix() != "appmanifest_223750.acf":
             raise ValueError("Steam runtime manifest source path is invalid")
-        _verify_steam_app_manifest_record(
+        steam_state_stable = _verify_steam_app_manifest_record(
             _contained(
                 dcs_root.parent.parent,
                 manifest_relative,
@@ -1235,7 +1755,12 @@ def _load_and_verify_manifest(
             distribution_manifest,
             expected_build=dcs.get("distribution_build"),
             expected_install_dir=dcs_root.name,
+            allow_unstable_state=(
+                allow_post_execution_steam_state_drift
+            ),
         )
+        if not steam_state_stable:
+            input_failure_reasons.append(STEAM_STATE_FAILURE_REASON)
         launcher_record = dcs.get("distribution_launcher")
         if not isinstance(launcher_record, dict):
             raise ValueError("Steam runtime manifest launcher is missing")
@@ -1339,14 +1864,19 @@ def _load_and_verify_manifest(
     ).encode("utf-8")
     if _read_regular_file(hook, MAX_SOURCE_BYTES, "runtime hook") != expected_hook:
         raise ValueError("runtime hook is not the trusted rendered product resource")
-    return manifest, payload, {
-        "profile_root": profile_root,
-        "product_root": product_root,
-        "hook": hook,
-        "result": result,
-        "execution": execution,
-        "executable": executable,
-    }
+    return (
+        manifest,
+        payload,
+        {
+            "profile_root": profile_root,
+            "product_root": product_root,
+            "hook": hook,
+            "result": result,
+            "execution": execution,
+            "executable": executable,
+        },
+        tuple(input_failure_reasons),
+    )
 
 
 def _require_runtime_producer_current(manifest: dict[str, Any]) -> None:
@@ -2229,7 +2759,8 @@ def _verify_steam_app_manifest_record(
     *,
     expected_build: Any,
     expected_install_dir: str,
-) -> None:
+    allow_unstable_state: bool = False,
+) -> bool:
     if set(record) != {
         "relative_path",
         "size_bytes",
@@ -2267,9 +2798,31 @@ def _verify_steam_app_manifest_record(
         payload,
         expected_build=expected_build,
         expected_install_dir=expected_install_dir,
+        require_fully_installed=not allow_unstable_state,
     )
-    if record.get("semantic_identity") != current_identity:
+    prepared_identity = {
+        "schema": STEAM_MANIFEST_IDENTITY_SCHEMA,
+        "app_id": "223750",
+        "build_id": _required_text(expected_build, "Steam build ID", 32),
+        "install_dir_casefold": expected_install_dir.casefold(),
+        "state_flags": 4,
+    }
+    if record.get("semantic_identity") != prepared_identity:
+        raise ValueError("Steam app manifest preparation identity is invalid")
+    if any(
+        current_identity[field] != prepared_identity[field]
+        for field in (
+            "schema",
+            "app_id",
+            "build_id",
+            "install_dir_casefold",
+        )
+    ):
         raise ValueError("Steam app manifest semantic identity changed")
+    state_stable = current_identity["state_flags"] == 4
+    if not state_stable and not allow_unstable_state:
+        raise ValueError("Steam app manifest semantic identity changed")
+    return state_stable
 
 
 def _steam_app_manifest_identity(
@@ -2277,6 +2830,7 @@ def _steam_app_manifest_identity(
     *,
     expected_build: Any,
     expected_install_dir: str,
+    require_fully_installed: bool = True,
 ) -> dict[str, Any]:
     build = _required_text(expected_build, "Steam build ID", 32)
     if re.fullmatch(r"[0-9]+", build) is None:
@@ -2296,7 +2850,7 @@ def _steam_app_manifest_identity(
     if re.fullmatch(r"[0-9]+", state_flags_text) is None:
         raise ValueError("Steam app manifest state flags are invalid")
     state_flags = int(state_flags_text)
-    if state_flags != 4:
+    if require_fully_installed and state_flags != 4:
         raise ValueError("Steam DCS app is not in the fully installed state")
     return {
         "schema": STEAM_MANIFEST_IDENTITY_SCHEMA,

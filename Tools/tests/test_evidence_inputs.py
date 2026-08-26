@@ -108,6 +108,77 @@ class BoundEvidenceInputTests(unittest.TestCase):
         self.assertTrue(report["result_summary"]["failure_present"])
         self.assertEqual(runtime_coverage(report)[0], "blocked")
 
+    def test_post_execution_input_drift_is_retained_as_blocked_evidence(
+        self,
+    ) -> None:
+        collection = self._runtime_collection()
+        collection["dcs_started"] = False
+        collection["evidence"]["result_sha256"] = None
+        collection["execution"].update(
+            {
+                "classification": "process_not_started",
+                "dcs_exit_observed": False,
+                "result_exists": False,
+                "process_attestation": None,
+            }
+        )
+        collection["result"] = None
+        collection["validation"].update(
+            {
+                "inputs_unchanged": False,
+                "result_present": False,
+                "run_id_matched": False,
+                "mode_matched": False,
+                "runtime_version_matched": False,
+                "failure_reasons": [
+                    "runtime_execution_not_normal",
+                    "runtime_result_missing",
+                    "steam_app_manifest_state_not_fully_installed",
+                ],
+                "runtime_valid": False,
+            }
+        )
+        with patch(
+            "dcsmizzer.evidence_inputs.collect_runtime",
+            return_value=collection,
+        ):
+            report = runtime_attestation(self.root / "manifest.json")
+
+        validate_runtime_attestation(report)
+        self.assertFalse(report["runtime_observed"])
+        self.assertIsNone(report["result_summary"])
+        self.assertFalse(report["validation"]["inputs_unchanged"])
+        self.assertIn(
+            "steam_app_manifest_state_not_fully_installed",
+            report["validation"]["failure_reasons"],
+        )
+        self.assertEqual(runtime_coverage(report)[0], "blocked")
+
+        missing_reason = copy.deepcopy(report)
+        missing_reason["validation"]["failure_reasons"].remove(
+            "steam_app_manifest_state_not_fully_installed"
+        )
+        with self.assertRaisesRegex(ValueError, "bounded Steam state failure"):
+            validate_runtime_attestation(missing_reason)
+
+        unchanged_inputs = copy.deepcopy(report)
+        unchanged_inputs["validation"]["inputs_unchanged"] = True
+        with self.assertRaisesRegex(ValueError, "bounded Steam state failure"):
+            validate_runtime_attestation(unchanged_inputs)
+
+        falsely_valid = copy.deepcopy(report)
+        falsely_valid["validation"]["runtime_valid"] = True
+        with self.assertRaises(ValueError):
+            validate_runtime_attestation(falsely_valid)
+
+        standalone = copy.deepcopy(report)
+        standalone["dcs"]["distribution"] = "standalone"
+        standalone["dcs"]["distribution_build"] = None
+        standalone["dcs"]["distribution_manifest"] = None
+        standalone["dcs"]["distribution_launcher"] = None
+        with self.assertRaisesRegex(ValueError, "bounded Steam state failure"):
+            validate_runtime_attestation(standalone)
+
     def test_runtime_attestation_drops_unrecognized_path_from_result(self) -> None:
         collection = self._runtime_collection()
         collection["result"]["registry"]["source"] = (

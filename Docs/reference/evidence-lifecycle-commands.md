@@ -35,11 +35,15 @@ python Tools\dcsmizzer.py evidence-snapshot `
 
 Each runtime manifest is revalidated through the exact runtime collection
 contract. Its attestation retains the manifest/execution/result/log hashes and
-bounded result summary but strips absolute paths and raw logs. Each terrain
-file passes the physical-evidence schema validator; the attestation retains
-the full raw-file hash and coverage hashes/counts but does not embed raw
-samples, scenery objects, or airfield geometry. Retain that external raw file
-locally for later physical queries.
+bounded result summary but strips absolute paths and raw logs. If Steam's
+fully-installed state changes only after a valid hash-bound execution record
+exists, collection preserves that drift as blocked diagnostic evidence rather
+than treating it as a successful run; pre-launch drift and every other
+identity, input, or integrity mismatch remain hard errors. Each terrain file
+passes the physical-evidence schema validator; the attestation retains the
+full raw-file hash and coverage hashes/counts but does not embed raw samples,
+scenery objects, or airfield geometry. Retain that external raw file locally
+for later physical queries.
 
 The output directory is the SHA-256 of the canonical manifest without its
 self-identifying `bundle` field. Every artifact is canonical JSON under

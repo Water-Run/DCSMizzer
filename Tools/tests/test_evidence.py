@@ -255,6 +255,80 @@ class EvidenceLifecycleTests(unittest.TestCase):
         )
         self.assertEqual(runtime_record["status"], "blocked")
 
+    def test_snapshot_cli_seals_post_execution_state_drift_as_blocked(
+        self,
+    ) -> None:
+        blocked = self._runtime_bound()
+        blocked["runtime_observed"] = False
+        blocked["evidence"]["result_sha256"] = None
+        blocked["execution"].update(
+            {
+                "classification": "process_not_started",
+                "dcs_exit_observed": False,
+                "result_exists": False,
+                "process_attested": False,
+                "profile_argument_attested": False,
+                "executable_sha256": None,
+            }
+        )
+        blocked["result_summary"] = None
+        blocked["validation"].update(
+            {
+                "inputs_unchanged": False,
+                "result_present": False,
+                "run_id_matched": False,
+                "mode_matched": False,
+                "runtime_version_matched": False,
+                "failure_reasons": [
+                    "runtime_execution_not_normal",
+                    "runtime_result_missing",
+                    "steam_app_manifest_state_not_fully_installed",
+                ],
+                "runtime_valid": False,
+            }
+        )
+        with self._collection_patches(runtime_bound=blocked):
+            stdout = io.StringIO()
+            stderr = io.StringIO()
+            code = main(
+                [
+                    "evidence-snapshot",
+                    "--dcs-root",
+                    str(self.dcs),
+                    "--bundle-root",
+                    str(self.bundle_root),
+                    "--runtime-manifest",
+                    str(self.root / "runtime-manifest.json"),
+                ],
+                stdout=stdout,
+                stderr=stderr,
+            )
+
+        report = json.loads(stdout.getvalue())
+        self.assertEqual(code, 1)
+        self.assertEqual(stderr.getvalue(), "")
+        self.assertTrue(report["validation"]["bundle_valid"])
+        self.assertFalse(report["validation"]["coverage_unblocked"])
+        bundle = self.bundle_root / report["bundle"]["id"]
+        runtime_report = json.loads(
+            (bundle / "artifacts" / "runtime.fixture-runtime.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertFalse(runtime_report["validation"]["inputs_unchanged"])
+        self.assertFalse(runtime_report["validation"]["runtime_valid"])
+        self.assertIn(
+            "steam_app_manifest_state_not_fully_installed",
+            runtime_report["validation"]["failure_reasons"],
+        )
+        verified = verify_evidence_bundle(bundle)
+        runtime_coverage = next(
+            item
+            for item in verified["coverage"]
+            if item["domain"] == "runtime"
+        )
+        self.assertEqual(runtime_coverage["status"], "blocked")
+
     def test_snapshot_cli_fails_when_bound_upstream_is_blocked(self) -> None:
         blocked_upstream = {
             "schema": "dcsmizzer.acknowledged-upstream-cache/v1",

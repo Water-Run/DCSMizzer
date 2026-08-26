@@ -655,6 +655,226 @@ class RuntimeBridgeTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, message):
                     runtime.runtime_preview(manifest_path)
 
+    def test_collect_retains_only_bound_post_execution_steam_state_drift(
+        self,
+    ) -> None:
+        manifest_path, manifest = self._prepare_steam(
+            "steam-post-execution-state"
+        )
+        manifest_payload = manifest_path.read_bytes()
+        app_manifest = self.root / "steamapps" / "appmanifest_223750.acf"
+
+        def fail_after_steam_state_change(
+            *args: object,
+            **kwargs: object,
+        ) -> None:
+            app_manifest.write_text(
+                app_manifest.read_text(encoding="utf-8").replace(
+                    '"StateFlags" "4"',
+                    '"StateFlags" "1030"',
+                ),
+                encoding="utf-8",
+            )
+            raise FileNotFoundError("simulated Steam launch failure")
+
+        run = runtime.run_runtime(
+            manifest_path,
+            authorize=True,
+            _popen=fail_after_steam_state_change,  # type: ignore[arg-type]
+            _running_pids=list,
+        )
+        self.assertEqual(run["classification"], "process_not_started")
+        with self.assertRaisesRegex(ValueError, "fully installed"):
+            runtime.runtime_preview(manifest_path)
+
+        collection = runtime.collect_runtime(manifest_path)
+
+        self.assertFalse(collection["validation"]["inputs_unchanged"])
+        self.assertFalse(collection["validation"]["runtime_valid"])
+        self.assertIn(
+            "steam_app_manifest_state_not_fully_installed",
+            collection["validation"]["failure_reasons"],
+        )
+        self.assertIn(
+            "runtime_execution_not_normal",
+            collection["validation"]["failure_reasons"],
+        )
+        self.assertEqual(
+            collection["evidence"]["dcs"]["distribution_manifest"][
+                "semantic_identity"
+            ]["state_flags"],
+            4,
+        )
+
+        profile = Path(manifest["profile"]["absolute_path"])
+        execution_path = (
+            profile / manifest["artifacts"]["execution_relative_path"]
+        )
+        execution_payload = execution_path.read_bytes()
+
+        def add_conflicting_pid_evidence(value: dict[str, object]) -> None:
+            value["pid"] = 9001
+            value["ambiguous_new_dcs_pids"] = [9002, 9003]
+
+        execution_mutations = (
+            (
+                "cropped",
+                lambda value: value.pop("stderr"),
+                "exact runtime execution field set",
+            ),
+            (
+                "wrong-boolean-type",
+                lambda value: value.__setitem__("timed_out", 1),
+                "Boolean fields",
+            ),
+            (
+                "invalid-pid-list",
+                lambda value: value.__setitem__(
+                    "unattested_new_dcs_pids",
+                    [True],
+                ),
+                "PID list",
+            ),
+            (
+                "conflicting-pid-evidence",
+                add_conflicting_pid_evidence,
+                "PID evidence is contradictory",
+            ),
+            (
+                "invented-attestation",
+                lambda value: value.__setitem__("process_attestation", {}),
+                "process attestation",
+            ),
+            (
+                "classification-mismatch",
+                lambda value: value.__setitem__(
+                    "classification",
+                    "normal_completion",
+                ),
+                "classification is inconsistent",
+            ),
+            (
+                "log-record-mismatch",
+                lambda value: value["stdout"].__setitem__(
+                    "sha256",
+                    "0" * 64,
+                ),
+                "record changed",
+            ),
+            (
+                "invalid-timestamp",
+                lambda value: value.__setitem__(
+                    "finished_utc",
+                    "not-a-timestamp",
+                ),
+                "timestamp.*invalid",
+            ),
+            (
+                "reversed-timestamps",
+                lambda value: value.__setitem__(
+                    "finished_utc",
+                    "2000-01-01T00:00:00Z",
+                ),
+                "timestamps are inconsistent",
+            ),
+            (
+                "result-presence-mismatch",
+                lambda value: value.__setitem__("result_exists", True),
+                "result presence is inconsistent",
+            ),
+            (
+                "mode-not-bound",
+                lambda value: value.__setitem__(
+                    "mode",
+                    "mission-smoke",
+                ),
+                "exact hash-bound",
+            ),
+            (
+                "manifest-hash-not-bound",
+                lambda value: value.__setitem__(
+                    "manifest_sha256",
+                    "0" * 64,
+                ),
+                "exact hash-bound",
+            ),
+        )
+        for label, mutate, message in execution_mutations:
+            with self.subTest(execution_mutation=label):
+                changed_execution = json.loads(execution_payload)
+                mutate(changed_execution)
+                execution_path.write_bytes(runtime._json_bytes(changed_execution))
+                with self.assertRaisesRegex(ValueError, message):
+                    runtime.collect_runtime(manifest_path)
+                execution_path.write_bytes(execution_payload)
+
+        execution = json.loads(execution_payload)
+        execution_path.write_text(
+            json.dumps(execution, sort_keys=True),
+            encoding="utf-8",
+        )
+        with self.assertRaisesRegex(ValueError, "canonical runtime execution"):
+            runtime.collect_runtime(manifest_path)
+        execution_path.write_bytes(execution_payload)
+
+        log_paths = (
+            execution_path.parent / "process-stdout.log",
+            execution_path.parent / "process-stderr.log",
+        )
+        log_payloads = tuple(path.read_bytes() for path in log_paths)
+        execution = json.loads(execution_payload)
+        execution["stdout"] = None
+        execution["stderr"] = None
+        try:
+            for path in log_paths:
+                path.unlink()
+            execution_path.write_bytes(runtime._json_bytes(execution))
+            with self.assertRaisesRegex(ValueError, "record is invalid"):
+                runtime.collect_runtime(manifest_path)
+        finally:
+            for path, payload in zip(log_paths, log_payloads, strict=True):
+                path.write_bytes(payload)
+            execution_path.write_bytes(execution_payload)
+
+        tampered_manifest = json.loads(manifest_payload)
+        tampered_manifest["created_utc"] = "2026-08-27T12:00:00Z"
+        manifest_path.write_text(
+            json.dumps(tampered_manifest, sort_keys=True),
+            encoding="utf-8",
+        )
+        with self.assertRaisesRegex(ValueError, "exact hash-bound"):
+            runtime.collect_runtime(manifest_path)
+        manifest_path.write_bytes(manifest_payload)
+
+        self.current_producer["commit"] = "b" * 40
+        with self.assertRaisesRegex(ValueError, "producer does not match"):
+            runtime.collect_runtime(manifest_path)
+        self.current_producer["commit"] = PRODUCER_COMMIT
+
+        hook = profile / manifest["artifacts"]["hook"]["relative_path"]
+        hook.write_text(
+            hook.read_text(encoding="utf-8") + "-- changed\n",
+            encoding="utf-8",
+        )
+        with self.assertRaisesRegex(ValueError, "size changed|hash changed"):
+            runtime.collect_runtime(manifest_path)
+
+    def test_collect_does_not_relax_steam_state_without_execution(self) -> None:
+        manifest_path, _manifest = self._prepare_steam(
+            "steam-state-without-execution"
+        )
+        app_manifest = self.root / "steamapps" / "appmanifest_223750.acf"
+        app_manifest.write_text(
+            app_manifest.read_text(encoding="utf-8").replace(
+                '"StateFlags" "4"',
+                '"StateFlags" "1030"',
+            ),
+            encoding="utf-8",
+        )
+
+        with self.assertRaisesRegex(ValueError, "without a runtime execution"):
+            runtime.collect_runtime(manifest_path)
+
     def test_steam_manifest_duplicate_semantic_field_is_rejected(self) -> None:
         manifest_path, _manifest = self._prepare_steam("steam-duplicate")
         app_manifest = self.root / "steamapps" / "appmanifest_223750.acf"
@@ -740,6 +960,7 @@ class RuntimeBridgeTests(unittest.TestCase):
         )
         self.assertEqual(launch_error["classification"], "process_not_started")
         self.assertFalse(launch_error["dcs_started"])
+        self._assert_strict_execution_valid(launch_error_manifest)
 
         for suffix, return_code, expected in (
             ("clean-no-result", 0, "exited_without_result"),
@@ -755,6 +976,7 @@ class RuntimeBridgeTests(unittest.TestCase):
                 )
                 self.assertEqual(report["classification"], expected)
                 self.assertFalse(report["validation"]["completed"])
+                self._assert_strict_execution_valid(manifest_path)
 
     def test_authorized_registry_run_and_collect(self) -> None:
         manifest_path = self._prepare_registry("complete")
@@ -781,6 +1003,60 @@ class RuntimeBridgeTests(unittest.TestCase):
 
         self.assertEqual(run["classification"], "normal_completion")
         self.assertTrue(run["validation"]["completed"])
+        self._assert_strict_execution_valid(manifest_path)
+
+        manifest, manifest_payload, paths, _failures = (
+            runtime._load_and_verify_manifest(manifest_path)
+        )
+        execution, _execution_payload = runtime._load_json_file(
+            paths["execution"],
+            runtime.MAX_RESULT_BYTES,
+            "runtime execution",
+        )
+        execution["return_code"] = None
+        execution["dcs_exit_observed"] = False
+        execution["timed_out"] = True
+        execution["cleanup_identity_lost"] = True
+        execution["classification"] = "cleanup_identity_lost"
+        with self.assertRaisesRegex(ValueError, "contains Steam state"):
+            runtime._validate_post_execution_record(
+                execution,
+                runtime._json_bytes(execution),
+                manifest=manifest,
+                manifest_payload=manifest_payload,
+                paths=paths,
+            )
+
+        execution, _execution_payload = runtime._load_json_file(
+            paths["execution"],
+            runtime.MAX_RESULT_BYTES,
+            "runtime execution",
+        )
+        execution["return_code"] = None
+        execution["dcs_exit_observed"] = False
+        execution["timed_out"] = True
+        execution["classification"] = "timeout"
+        with self.assertRaisesRegex(ValueError, "timeout cleanup is incomplete"):
+            runtime._validate_post_execution_record(
+                execution,
+                runtime._json_bytes(execution),
+                manifest=manifest,
+                manifest_payload=manifest_payload,
+                paths=paths,
+            )
+
+        execution["terminated"] = True
+        with self.assertRaisesRegex(
+            ValueError,
+            "termination outcome is incomplete",
+        ):
+            runtime._validate_post_execution_record(
+                execution,
+                runtime._json_bytes(execution),
+                manifest=manifest,
+                manifest_payload=manifest_payload,
+                paths=paths,
+            )
         self.assertTrue(collected["validation"]["runtime_valid"])
         self.assertEqual(collected["validation"]["failure_reasons"], [])
         self.assertEqual(collected["producer"], manifest["producer"])
@@ -790,7 +1066,8 @@ class RuntimeBridgeTests(unittest.TestCase):
             Path(manifest["profile"]["absolute_path"])
             / manifest["artifacts"]["execution_relative_path"]
         )
-        execution = json.loads(execution_file.read_text(encoding="utf-8"))
+        execution_payload = execution_file.read_bytes()
+        execution = json.loads(execution_payload)
         execution["manifest_sha256"] = "0" * 64
         execution_file.write_text(json.dumps(execution), encoding="utf-8")
         tampered = runtime.collect_runtime(manifest_path)
@@ -798,6 +1075,19 @@ class RuntimeBridgeTests(unittest.TestCase):
             "runtime_execution_manifest_hash_mismatch",
             tampered["validation"]["failure_reasons"],
         )
+        self.assertFalse(tampered["validation"]["execution_bound"])
+        self.assertFalse(tampered["validation"]["runtime_valid"])
+
+        execution_file.write_bytes(execution_payload)
+        execution = json.loads(execution_payload)
+        execution["mode"] = "mission-smoke"
+        execution_file.write_bytes(runtime._json_bytes(execution))
+        tampered = runtime.collect_runtime(manifest_path)
+        self.assertIn(
+            "runtime_execution_mode_mismatch",
+            tampered["validation"]["failure_reasons"],
+        )
+        self.assertFalse(tampered["validation"]["execution_bound"])
         self.assertFalse(tampered["validation"]["runtime_valid"])
 
     def test_steam_launch_binds_the_one_new_dcs_pid(self) -> None:
@@ -850,6 +1140,7 @@ class RuntimeBridgeTests(unittest.TestCase):
         self.assertEqual(report["process"]["launcher_kind"], "steam_applaunch")
         self.assertTrue(report["process"]["process_identity_attested"])
         self.assertTrue(report["validation"]["exact_started_process_cleaned_up"])
+        self._assert_strict_execution_valid(manifest_path)
 
     def test_steam_rejects_new_process_with_wrong_profile_identity(self) -> None:
         manifest_path, manifest = self._prepare_steam("wrong-steam-process")
@@ -872,6 +1163,7 @@ class RuntimeBridgeTests(unittest.TestCase):
         self.assertEqual(report["classification"], "untrusted_started_process")
         self.assertFalse(report["process"]["process_identity_attested"])
         self.assertFalse(report["validation"]["completed"])
+        self._assert_strict_execution_valid(manifest_path)
 
     def test_steam_rejects_ambiguous_new_dcs_processes(self) -> None:
         manifest_path, _manifest = self._prepare_steam("ambiguous-steam-process")
@@ -888,6 +1180,7 @@ class RuntimeBridgeTests(unittest.TestCase):
         self.assertEqual(report["classification"], "ambiguous_started_process")
         self.assertFalse(report["dcs_started"])
         self.assertFalse(report["validation"]["completed"])
+        self._assert_strict_execution_valid(manifest_path)
 
     def test_result_grace_cleans_only_reattested_steam_process(self) -> None:
         manifest_path, manifest = self._prepare_steam("result-cleanup")
@@ -929,6 +1222,7 @@ class RuntimeBridgeTests(unittest.TestCase):
         self.assertTrue(report["process"]["completion_cleanup_requested"])
         self.assertEqual(state["terminated"], [9003])
         self.assertEqual(state["killed"], [])
+        self._assert_strict_execution_valid(manifest_path)
 
     def test_cleanup_refuses_process_after_identity_changes(self) -> None:
         manifest_path, manifest = self._prepare_steam("identity-change")
@@ -977,6 +1271,7 @@ class RuntimeBridgeTests(unittest.TestCase):
 
         self.assertEqual(report["classification"], "cleanup_identity_lost")
         self.assertFalse(report["validation"]["exact_started_process_cleaned_up"])
+        self._assert_strict_execution_valid(manifest_path)
 
     def test_steam_process_attestation_requires_exact_mission_argument(self) -> None:
         manifest = {
@@ -1066,6 +1361,7 @@ class RuntimeBridgeTests(unittest.TestCase):
         self.assertTrue(
             report["validation"]["exact_started_process_cleaned_up"]
         )
+        self._assert_strict_execution_valid(manifest_path)
 
     def test_timeout_reports_cleanup_failure_if_child_survives_kill(self) -> None:
         manifest_path = self._prepare_registry("unstoppable")
@@ -1089,6 +1385,7 @@ class RuntimeBridgeTests(unittest.TestCase):
         self.assertFalse(
             report["validation"]["exact_started_process_cleaned_up"]
         )
+        self._assert_strict_execution_valid(manifest_path)
 
     def test_coordinate_checks_are_bounded_and_rendered_for_mission(self) -> None:
         mission = self.root / "fixture.miz"
@@ -1341,6 +1638,24 @@ assert(exited)
             mode="registry-probe",
         )
         return Path(report["manifest"]["absolute_path"])
+
+    def _assert_strict_execution_valid(self, manifest_path: Path) -> None:
+        manifest, manifest_payload, paths, input_failures = (
+            runtime._load_and_verify_manifest(manifest_path)
+        )
+        self.assertEqual(input_failures, ())
+        execution, execution_payload = runtime._load_json_file(
+            paths["execution"],
+            runtime.MAX_RESULT_BYTES,
+            "runtime execution",
+        )
+        runtime._validate_post_execution_record(
+            execution,
+            execution_payload,
+            manifest=manifest,
+            manifest_payload=manifest_payload,
+            paths=paths,
+        )
 
     def _prepare_steam(self, run_id: str) -> tuple[Path, dict[str, object]]:
         steam = self.root / "Steam" / "Steam.exe"

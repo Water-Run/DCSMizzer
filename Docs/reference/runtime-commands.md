@@ -121,5 +121,12 @@ as a preparation-time observation, but later preview/run/collection checks the
 selected semantic identity: app ID 223750, build ID, install directory, and
 fully-installed state. Steam legitimately rewrites volatile fields such as
 `LastPlayed` when launching an app; those unselected metadata changes do not
-invalidate a run. A changed app/build/install/state, ambiguous selected field,
-launcher path, launcher hash, DCS executable, or API source still fails closed.
+invalidate a run. Preview and launch reject any selected semantic drift. After
+an execution record has already been written and bound to the exact manifest,
+collection may preserve a changed fully-installed state as
+`inputs_unchanged: false` plus a stable failure reason; that report is always
+`runtime_valid: false` and can only become blocked diagnostic evidence. A
+changed app/build/install identity, ambiguous selected field, launcher path,
+launcher hash, DCS executable, API source, malformed execution, or unbound
+execution still fails closed instead of being downgraded to this diagnostic
+case.

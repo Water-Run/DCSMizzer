@@ -522,6 +522,34 @@ to avoid excess game time. This does not invalidate the earlier successful
 aggregate runtime run, but it prevents claiming current-session V2/V3 or
 physical evidence for either disposable mission.
 
+A later clean `0.11.0` retry at commit
+`281d5569d25477b8d99d204928b4be05a3d72aec` bound the exact statically
+verified MIZ SHA-256
+`1c16a957a7c511258250f2a6fde61bafc3be83e906dd3e1c280bd19f2f5faa95`
+and four Caucasus coordinate checks, including the documented 100 km
+planning-water point. The preparation manifest and execution SHA-256 values
+were respectively
+`eec7d06cfc9c402b0b81574020300890c9127b2912509d986e972be264b5de51`
+and `bd7547d158e64f61910854cc9009d83747254f3992fd52247f93a59dbbb61025`.
+Steam exposed only its login window; no authentication UI was automated. The
+bounded 120.134-second launch window ended as `process_not_started`, with no
+DCS PID, result, stdout, or stderr bytes. Steam then reported app state flags
+`1030`, so the exact-state runtime gate rejected collection as not fully
+installed. DCS and Steam were both observed absent after cleanup.
+
+That retry exposed a diagnostic availability gap rather than a false release:
+the launch and runtime-valid gates already failed closed, but a valid
+manifest-bound execution could not be retained as blocked evidence after the
+Steam state transition. Version `0.11.1` keeps preview and launch strict while
+allowing only that post-execution state drift to produce
+`inputs_unchanged: false`, failure reason
+`steam_app_manifest_state_not_fully_installed`, and
+`runtime_valid: false`. Other Steam identity drift, producer/input changes,
+and missing or unbound execution records still hard-fail. The old run cannot
+be rebound by the new producer; the complete 4-to-1030 path is therefore
+covered by product regression rather than promoted to current runtime
+evidence.
+
 The dated product-card survey exposed by `terrain-catalog` records 18 official
 cards mapping to 14 current `mission.theatre` IDs, including explicit regional,
 entitlement, and legacy relationships. The
