@@ -20,6 +20,7 @@ from .spec_audit import (
 
 AUDIT_TRANSCRIPT_SCHEMA = "dcsmizzer.audit-evidence-transcript/v1"
 MAX_JSON_DEPTH = 128
+MAX_JSON_NODES = 1_000_000
 MAX_CALLS = 4096
 MAX_RESPONSES = 4096
 MAX_RESPONSE_BYTES = 16 * 1024 * 1024
@@ -849,10 +850,12 @@ def _normalized_json_bytes(
     initial_depth: int = 1,
 ) -> tuple[Any, bytes]:
     try:
+        node_budget = [0]
         normalized = _normalize_json_tree(
             value,
             depth=initial_depth,
             active=set(),
+            node_budget=node_budget,
         )
         payload = json.dumps(
             normalized,
@@ -893,9 +896,13 @@ def _normalize_json_tree(
     *,
     depth: int,
     active: set[int],
+    node_budget: list[int],
 ) -> Any:
     if depth > MAX_JSON_DEPTH:
         raise ValueError("audit JSON depth limit exceeded")
+    node_budget[0] += 1
+    if node_budget[0] > MAX_JSON_NODES:
+        raise ValueError("audit JSON node limit exceeded")
     if value is None or type(value) in {bool, str, int}:
         return value
     if type(value) is float:
@@ -915,16 +922,21 @@ def _normalize_json_tree(
                     item,
                     depth=depth + 1,
                     active=active,
+                    node_budget=node_budget,
                 )
                 for item in value
             ]
         if any(not isinstance(key, str) for key in value):
             raise ValueError("audit JSON object keys must be strings")
+        node_budget[0] += len(value)
+        if node_budget[0] > MAX_JSON_NODES:
+            raise ValueError("audit JSON node limit exceeded")
         return {
             key: _normalize_json_tree(
                 value[key],
                 depth=depth + 1,
                 active=active,
+                node_budget=node_budget,
             )
             for key in sorted(value)
         }
@@ -968,6 +980,7 @@ def _object_without_duplicate_keys(
 
 def _preflight_json_depth(payload: bytes) -> None:
     depth = 0
+    node_estimate = 1
     in_string = False
     escaped = False
     for value in payload:
@@ -983,12 +996,17 @@ def _preflight_json_depth(payload: bytes) -> None:
             in_string = True
         elif value in (0x7B, 0x5B):  # Opening brace or bracket.
             depth += 1
+            node_estimate += 1
             if depth > MAX_JSON_DEPTH:
                 raise ValueError("audit JSON depth limit exceeded")
+        elif value in (0x2C, 0x3A):  # Comma or colon.
+            node_estimate += 1
         elif value in (0x7D, 0x5D):  # Closing brace or bracket.
             depth -= 1
             if depth < 0:
                 raise ValueError("audit transcript JSON structure is invalid")
+        if node_estimate > MAX_JSON_NODES:
+            raise ValueError("audit JSON node limit exceeded")
     if in_string or depth != 0:
         raise ValueError("audit transcript JSON structure is invalid")
 

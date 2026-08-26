@@ -434,6 +434,7 @@ class AuditTranscriptTests(unittest.TestCase):
 
     def test_limits_are_exact_and_enforced_without_large_allocations(self) -> None:
         self.assertEqual(transcript_module.MAX_JSON_DEPTH, 128)
+        self.assertEqual(transcript_module.MAX_JSON_NODES, 1_000_000)
         self.assertEqual(transcript_module.MAX_CALLS, 4096)
         self.assertEqual(transcript_module.MAX_RESPONSES, 4096)
         self.assertEqual(transcript_module.MAX_RESPONSE_BYTES, 16 * 1024 * 1024)
@@ -535,6 +536,28 @@ class AuditTranscriptTests(unittest.TestCase):
                     "responses": [],
                 }
             )
+
+        dense_result = _result("countries", {}, marker=[0] * 32)
+        with (
+            patch.object(transcript_module, "MAX_JSON_NODES", 16),
+            self.assertRaisesRegex(ValueError, "node limit"),
+        ):
+            transcript_module.build_audit_transcript(
+                [{"kind": "countries", "params": {}, "result": dense_result}]
+            )
+
+        dense_payload = b'{"dense":[' + b",".join([b"0"] * 32) + b"]}"
+        with (
+            patch.object(transcript_module, "MAX_JSON_NODES", 16),
+            patch.object(
+                transcript_module.json,
+                "loads",
+                side_effect=AssertionError("parser must not run"),
+            ) as loads,
+            self.assertRaisesRegex(ValueError, "node limit"),
+        ):
+            transcript_module.parse_audit_transcript(dense_payload)
+        loads.assert_not_called()
 
     def test_capture_live_helper_passes_resource_overrides(self) -> None:
         collected = _result("countries", {})
