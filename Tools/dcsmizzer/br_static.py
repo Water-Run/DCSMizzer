@@ -14,7 +14,6 @@ import heapq
 import ipaddress
 import json
 import math
-import os
 import re
 import subprocess
 from collections import Counter
@@ -22,6 +21,7 @@ from pathlib import Path
 from typing import Any, Iterator
 from urllib.parse import urlsplit, urlunsplit
 
+from .path_safety import canonical_existing_directory
 from .upstream_cache import upstream_source_lock_status
 
 
@@ -928,9 +928,7 @@ def _iter_gzip_json_array(path: Path) -> Iterator[Any]:
 
 
 def _validated_root(path: Path) -> Path:
-    # Collapse lexical "."/".." components without resolving symlinks.  The
-    # latter must remain visible to the strict upstream provenance checks.
-    root = Path(os.path.abspath(os.fspath(path)))
+    root = canonical_existing_directory(path, "BriefingRoom root")
     if not (root / "Database" / "Theaters").is_dir():
         raise ValueError("BriefingRoom root has no Database/Theaters")
     if not (root / "DatabaseJSON" / "TheatersAirbases.json").is_file():

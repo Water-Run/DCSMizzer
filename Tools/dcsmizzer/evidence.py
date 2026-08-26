@@ -40,6 +40,7 @@ from .report_views import (
     _parse_report_json,
     _read_bounded_report,
 )
+from .path_safety import canonical_existing_directory
 from .runtime import (
     MAX_MISSION_BYTES,
     _distribution_identity,
@@ -946,17 +947,7 @@ def _safe_bundle_root(path: Path, *, create: bool) -> Path:
 
 
 def _safe_bundle_directory(path: Path, label: str) -> Path:
-    candidate = path.absolute()
-    try:
-        status_result = candidate.lstat()
-    except OSError as error:
-        raise ValueError(f"{label} does not exist") from error
-    if not stat.S_ISDIR(status_result.st_mode) or _is_reparse(status_result):
-        raise ValueError(f"{label} is not a safe directory")
-    resolved = candidate.resolve()
-    if os.path.normcase(str(candidate)) != os.path.normcase(str(resolved)):
-        raise ValueError(f"{label} must not traverse a link or noncanonical path")
-    return resolved
+    return canonical_existing_directory(path, label)
 
 
 def _artifact_directory_names(path: Path) -> set[str]:
