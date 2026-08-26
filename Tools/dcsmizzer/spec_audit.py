@@ -8,7 +8,12 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from .br_static import br_airbase_report, br_terrain_report
-from .builder import BuildSpec, _require_build_spec_unchanged, load_build_spec
+from .builder import (
+    BuildSpec,
+    _require_build_spec_unchanged,
+    _with_resource_overrides,
+    load_build_spec,
+)
 from .dcs_static import (
     _windows_product_version,
     airbase_beacon_report,
@@ -338,6 +343,7 @@ def audit_build_spec(
     br_root: Path | None = None,
     require_acknowledged_upstreams: bool = False,
     _query_provider: _AuditQueryProvider | None = None,
+    _resource_overrides: Mapping[str, Path] | None = None,
 ) -> tuple[dict[str, Any], bool]:
     """Audit exact technical relationships without executing DCS or upstream."""
 
@@ -350,7 +356,13 @@ def audit_build_spec(
         )
     if not isinstance(query_provider, _AuditQueryProvider):
         raise TypeError("audit query provider must be an internal provider")
-    spec = load_build_spec(spec_path, require_resource_files=True)
+    if _resource_overrides is None:
+        spec = load_build_spec(spec_path, require_resource_files=True)
+    else:
+        spec = _with_resource_overrides(
+            load_build_spec(spec_path, require_resource_files=False),
+            _resource_overrides,
+        )
     mission = spec.tables["mission"]
     mission_year = table(mission.get("date")).get("Year")
     checks: list[dict[str, Any]] = []

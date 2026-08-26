@@ -13,6 +13,7 @@ if str(TOOLS_ROOT) not in sys.path:
     sys.path.insert(0, str(TOOLS_ROOT))
 
 from dcsmizzer import spec_audit as spec_audit_module  # noqa: E402
+from dcsmizzer.builder import BuildSpecError  # noqa: E402
 from dcsmizzer.gci import GCI_STATION_TYPE  # noqa: E402
 from dcsmizzer.spec_audit import audit_build_spec  # noqa: E402
 from tests import test_spec_audit as audit_fixtures  # noqa: E402
@@ -126,6 +127,19 @@ def _full_branch_spec() -> dict[str, object]:
     }
     audit_fixtures._add_bombing_runway_task(spec, 7)
     audit_fixtures._add_bombing_runway_task(spec, 7)
+    return spec
+
+
+def _resource_spec(source: str) -> dict[str, object]:
+    spec = audit_fixtures._parking_spec()
+    spec["mapResource"] = {"briefing": "briefing.bin"}
+    spec["resources"] = [
+        {
+            "member": "briefing.bin",
+            "source": source,
+        }
+    ]
+    spec["expect"]["minimum"]["resource_mappings"] = 1
     return spec
 
 
@@ -353,6 +367,147 @@ class AuditQueryProviderTests(unittest.TestCase):
             )
             for collector in forbidden.values():
                 collector.assert_not_called()
+
+    def test_replay_uses_sealed_resources_for_relative_and_absolute_sources(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            dcs_root = root / "DCS"
+            pydcs_root = root / "pydcs"
+            audit_fixtures.BuildSpecEvidenceAuditTests._write_sources(
+                dcs_root,
+                pydcs_root,
+            )
+            sealed_resource = root / "objects" / "resource.bin"
+            sealed_resource.parent.mkdir()
+            sealed_resource.write_bytes(b"sealed resource content")
+
+            source_variants = {
+                "relative": "missing/original.bin",
+                "absolute": str(root / "missing-absolute" / "original.bin"),
+            }
+            for label, source in source_variants.items():
+                with self.subTest(source_kind=label):
+                    spec_path = root / f"spec-{label}.json"
+                    spec_path.write_text(
+                        json.dumps(_resource_spec(source)),
+                        encoding="utf-8",
+                    )
+                    overrides = {"briefing.bin": sealed_resource}
+
+                    with self.assertRaisesRegex(
+                        BuildSpecError,
+                        "source does not exist or is not a safe regular file",
+                    ):
+                        audit_build_spec(
+                            spec_path,
+                            dcs_root=dcs_root,
+                            installed_terrain=None,
+                            pydcs_root=pydcs_root,
+                            pydcs_terrain="fixture",
+                        )
+
+                    recorder = spec_audit_module._RecordingAuditQueryProvider(
+                        spec_audit_module._LiveAuditQueryProvider(
+                            dcs_root=dcs_root,
+                            pydcs_root=pydcs_root,
+                        )
+                    )
+                    live_report, live_valid = audit_build_spec(
+                        spec_path,
+                        dcs_root=dcs_root,
+                        installed_terrain=None,
+                        pydcs_root=pydcs_root,
+                        pydcs_terrain="fixture",
+                        _query_provider=recorder,
+                        _resource_overrides=overrides,
+                    )
+
+                    replay = spec_audit_module._ReplayAuditQueryProvider(
+                        recorder.transcript()
+                    )
+                    replay_report, replay_valid = audit_build_spec(
+                        spec_path,
+                        dcs_root=root / "missing-dcs",
+                        installed_terrain=None,
+                        pydcs_root=root / "missing-pydcs",
+                        pydcs_terrain="fixture",
+                        _query_provider=replay,
+                        _resource_overrides=overrides,
+                    )
+                    replay.require_consumed()
+
+                    self.assertEqual(live_valid, replay_valid)
+                    self.assertEqual(
+                        _canonical_bytes(live_report),
+                        _canonical_bytes(replay_report),
+                    )
+
+    def test_resource_overrides_require_exact_member_set(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            spec_path = root / "spec.json"
+            spec_path.write_text(
+                json.dumps(_resource_spec("missing/original.bin")),
+                encoding="utf-8",
+            )
+            sealed_resource = root / "resource.bin"
+            sealed_resource.write_bytes(b"sealed")
+            provider = _CountingAuditQueryProvider()
+
+            invalid_overrides = (
+                {},
+                {
+                    "briefing.bin": sealed_resource,
+                    "extra.bin": sealed_resource,
+                },
+            )
+            for overrides in invalid_overrides:
+                with (
+                    self.subTest(members=sorted(overrides)),
+                    self.assertRaisesRegex(
+                        BuildSpecError,
+                        "exact specification member set",
+                    ),
+                ):
+                    audit_build_spec(
+                        spec_path,
+                        dcs_root=root / "missing-dcs",
+                        installed_terrain=None,
+                        pydcs_root=root / "missing-pydcs",
+                        pydcs_terrain="fixture",
+                        _query_provider=provider,
+                        _resource_overrides=overrides,
+                    )
+            self.assertEqual(provider.calls, [])
+
+    def test_resource_override_rejects_unsafe_file(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            spec_path = root / "spec.json"
+            spec_path.write_text(
+                json.dumps(_resource_spec("missing/original.bin")),
+                encoding="utf-8",
+            )
+            unsafe_resource = root / "not-a-file"
+            unsafe_resource.mkdir()
+            provider = _CountingAuditQueryProvider()
+
+            with self.assertRaisesRegex(
+                BuildSpecError,
+                "not a safe regular file",
+            ):
+                audit_build_spec(
+                    spec_path,
+                    dcs_root=root / "missing-dcs",
+                    installed_terrain=None,
+                    pydcs_root=root / "missing-pydcs",
+                    pydcs_terrain="fixture",
+                    _query_provider=provider,
+                    _resource_overrides={"briefing.bin": unsafe_resource},
+                )
+            self.assertEqual(provider.calls, [])
 
     def test_query_kind_and_canonical_parameter_vocabulary_is_closed(
         self,
