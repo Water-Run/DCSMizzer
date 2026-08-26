@@ -99,6 +99,39 @@ The DCS runtime limits recorded below remain external validation gaps; passing
 the static release suite does not upgrade the blocked exact-MIZ probes to V2
 or V3.
 
+### 2026-08-26 clean runtime evidence attempt
+
+The final authorized aggregate attempt used clean producer commit
+`15dc2d1e683c338b725fcb23ae56b199054cc9f7` (`0.6.1`) against DCS
+`2.9.28.26385` / Steam build `24431605`. Its prepared manifest SHA-256 is
+`451216d62e86777451f397b8fa5a6b31723972202894cccd46cfa88165bd5b82`.
+The Steam app manifest's selected app/build/install/state identity remained
+unchanged across the real launch even though launch-time metadata is volatile;
+`runtime-collect` reported `inputs_unchanged: true`.
+
+The exact DCS process and isolated profile argument were attested. DCS then
+reported Steam-authentication SSL error `35`, authorization code `-35`, and no
+cached authorization data before the Hook initialized. The bounded run timed
+out after 152.286 seconds, terminated only its re-attested DCS process, and
+observed process exit with no cleanup failure. The execution record and bounded
+DCS log SHA-256 values are respectively
+`85fad3d366395e234b8da524343fdc41974f3d5c07b809ca831d2188945679b8` and
+`2a7f7abe465a9c890354ee1fdab93797e1d79f5757bd123a6a0e3db39d490762`.
+Collection correctly failed closed with `runtime_execution_not_normal` and
+`runtime_result_missing`.
+
+The privacy-safe blocked attestation is bound into local-only bundle
+`346d0bfd122af95d4bff70d9dc072eb58e8c5c0b2464088474a4e8a0b1b5f700`;
+its canonical manifest SHA-256 is
+`e8b7b974641628f2b5ac184a9322d6cd87e1f323d778d220d4c033ea4ff75fad`.
+All 12 artifacts and 191,582 bytes verify, the two collection passes are
+stable, and no absolute paths or raw logs are embedded. Runtime-required
+readiness exits nonzero with `current:blocked`; bundle integrity therefore does
+not promote the failed run to runtime authority. Exact-MIZ and physical-terrain
+DCS validation were not run after the aggregate initialization failure.
+Synthetic/full-file tests remain lower-tier evidence. DCS and Steam were closed
+after the attempt and their relevant processes were observed absent.
+
 ### Current DCS evidence
 
 The local Steam installation reported:
@@ -283,8 +316,12 @@ statistics, synthetic fixtures, and minimal legally distributable examples.
 now has separate prepare/run/collect commands, disposable `-w` profiles,
 supported GameGUI Hooks, Steam/standalone launch handling, exact process and
 input hash binding, bounded cleanup, and aggregate initialized-registry output.
-A Steam DCS 2.9.28.26385 / build 24431605 aggregate run passed with no
-collection failure reasons. Raw local profiles/logs are not committed.
+A prior development Steam DCS 2.9.28.26385 / build 24431605 aggregate run
+passed with no collection failure reasons. That older run was not produced by
+the current clean release candidate and is not reusable as clean current
+runtime evidence. The clean attempt recorded above reached and safely cleaned
+the exact process but was blocked by external Steam authorization before Hook
+initialization. Raw local profiles/logs are not committed.
 
 ### Goal
 
