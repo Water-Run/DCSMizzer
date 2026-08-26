@@ -177,7 +177,7 @@ class CaptureProvider(_AuditQueryProvider):
 
 
 class ReplayProvider(_AuditQueryProvider):
-    """Replay an exact transcript without consulting any live collector."""
+    """Low-level exact replay; callers must enforce complete consumption."""
 
     def __init__(self, transcript: Any) -> None:
         self._transcript = validate_audit_transcript(transcript)
@@ -260,12 +260,6 @@ def build_audit_transcript(entries: Any) -> dict[str, Any]:
         capture.query(kind, **params)
     provider.require_consumed()
     return capture.transcript()
-
-
-def audit_replay_provider(transcript: Any) -> ReplayProvider:
-    """Return the strict provider used by construction-time audit replay."""
-
-    return ReplayProvider(transcript)
 
 
 def capture_live_audit(

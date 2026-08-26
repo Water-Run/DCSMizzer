@@ -197,7 +197,7 @@ class AuditTranscriptTests(unittest.TestCase):
             transcript,
         )
 
-        replay = transcript_module.audit_replay_provider(transcript)
+        replay = transcript_module.ReplayProvider(transcript)
         for entry in entries:
             self.assertEqual(
                 replay.query(entry["kind"], **entry["params"]),
