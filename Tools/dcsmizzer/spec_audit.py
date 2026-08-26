@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 from collections import defaultdict
+from copy import deepcopy
 from pathlib import Path
-from typing import Any
+from typing import Any, Mapping
 
 from .br_static import br_airbase_report, br_terrain_report
 from .builder import BuildSpec, _require_build_spec_unchanged, load_build_spec
@@ -38,6 +39,295 @@ from .weather import (
 )
 
 
+_AUDIT_QUERY_PARAMETER_NAMES: dict[str, tuple[str, ...]] = {
+    "countries": (),
+    "gci_evidence": (),
+    "weather_constraints_available": (),
+    "weather_constraints": (),
+    "cloud_preset": ("preset",),
+    "pydcs_unit": ("category", "unit_type"),
+    "dcs_payload": ("unit_type",),
+    "dcs_module_index": ("unit_type",),
+    "pydcs_terrains": (),
+    "br_terrains": (),
+    "combined_terrains": (),
+    "installed_product_version": (),
+    "payload_match": (
+        "configured_composition_sha256",
+        "pylons",
+        "unit_type",
+    ),
+    "pydcs_airport": ("airdrome_id", "terrain"),
+    "br_airbase": ("airdrome_id", "terrain"),
+    "dcs_airbase": ("airdrome_id", "terrain"),
+}
+
+
+class _AuditQueryProvider:
+    """Internal, ordered source-query boundary for audit replay."""
+
+    def query(self, kind: str, /, **params: Any) -> dict[str, Any]:
+        canonical = _canonical_audit_query_params(kind, params)
+        result = self._query_canonical(kind, canonical)
+        if not isinstance(result, dict):
+            raise ValueError("audit query result must be an object")
+        return deepcopy(result)
+
+    def _query_canonical(
+        self,
+        kind: str,
+        params: dict[str, Any],
+    ) -> dict[str, Any]:
+        raise NotImplementedError
+
+
+class _LiveAuditQueryProvider(_AuditQueryProvider):
+    """Dispatch the finite audit query vocabulary to current local sources."""
+
+    def __init__(
+        self,
+        *,
+        dcs_root: Path | None = None,
+        pydcs_root: Path | None = None,
+        br_root: Path | None = None,
+    ) -> None:
+        self._dcs_root = dcs_root
+        self._pydcs_root = pydcs_root
+        self._br_root = br_root
+
+    def _query_canonical(
+        self,
+        kind: str,
+        params: dict[str, Any],
+    ) -> dict[str, Any]:
+        if kind == "countries":
+            return countries_report(self._require_dcs_root())
+        if kind == "gci_evidence":
+            return gci_evidence_report(self._require_dcs_root())
+        if kind == "weather_constraints_available":
+            return {
+                "available": _weather_constraints_available(
+                    self._require_dcs_root()
+                )
+            }
+        if kind == "weather_constraints":
+            return weather_constraints_report(self._require_dcs_root())
+        if kind == "cloud_preset":
+            return cloud_preset_report(
+                self._require_dcs_root(),
+                preset=params["preset"],
+            )
+        if kind == "pydcs_unit":
+            return pydcs_unit_report(
+                self._require_pydcs_root(),
+                unit_type=params["unit_type"],
+                category=params["category"],
+            )
+        if kind == "dcs_payload":
+            return payload_report(
+                self._require_dcs_root(),
+                params["unit_type"],
+            )
+        if kind == "dcs_module_index":
+            return module_index_report(
+                self._require_dcs_root(),
+                unit_type=params["unit_type"],
+            )
+        if kind == "pydcs_terrains":
+            return pydcs_terrain_report(self._require_pydcs_root())
+        if kind == "br_terrains":
+            return br_terrain_report(self._require_br_root())
+        if kind == "combined_terrains":
+            return combined_terrain_report(
+                self._require_pydcs_root(),
+                self._require_br_root(),
+            )
+        if kind == "installed_product_version":
+            return {
+                "product_version": _installed_product_version(
+                    self._require_dcs_root()
+                )
+            }
+        if kind == "payload_match":
+            return payload_match_report(
+                self._require_dcs_root(),
+                params["unit_type"],
+                params["pylons"],
+            )
+        if kind == "pydcs_airport":
+            return pydcs_airport_report(
+                self._require_pydcs_root(),
+                params["terrain"],
+                airdrome_id=params["airdrome_id"],
+            )
+        if kind == "br_airbase":
+            return br_airbase_report(
+                self._require_br_root(),
+                params["terrain"],
+                airdrome_id=params["airdrome_id"],
+            )
+        if kind == "dcs_airbase":
+            return airbase_beacon_report(
+                self._require_dcs_root(),
+                params["terrain"],
+                airdrome_id=params["airdrome_id"],
+            )
+        raise AssertionError(f"unhandled audit query kind: {kind}")
+
+    def _require_dcs_root(self) -> Path:
+        if self._dcs_root is None:
+            raise ValueError("audit query requires a DCS root")
+        return self._dcs_root
+
+    def _require_pydcs_root(self) -> Path:
+        if self._pydcs_root is None:
+            raise ValueError("audit query requires a pydcs root")
+        return self._pydcs_root
+
+    def _require_br_root(self) -> Path:
+        if self._br_root is None:
+            raise ValueError("audit query requires a BriefingRoom root")
+        return self._br_root
+
+
+class _RecordingAuditQueryProvider(_AuditQueryProvider):
+    """Record canonical ordered calls while delegating to another provider."""
+
+    def __init__(self, delegate: _AuditQueryProvider) -> None:
+        if not isinstance(delegate, _AuditQueryProvider):
+            raise TypeError("audit query delegate must be a provider")
+        self._delegate = delegate
+        self._entries: list[dict[str, Any]] = []
+
+    def _query_canonical(
+        self,
+        kind: str,
+        params: dict[str, Any],
+    ) -> dict[str, Any]:
+        result = self._delegate.query(kind, **params)
+        self._entries.append(
+            {
+                "kind": kind,
+                "params": deepcopy(params),
+                "result": deepcopy(result),
+            }
+        )
+        return result
+
+    def transcript(self) -> list[dict[str, Any]]:
+        return deepcopy(self._entries)
+
+
+class _ReplayAuditQueryProvider(_AuditQueryProvider):
+    """Replay one exact, finite sequence without consulting live sources."""
+
+    def __init__(self, entries: list[dict[str, Any]]) -> None:
+        if not isinstance(entries, list):
+            raise ValueError("audit query transcript must be an array")
+        self._entries = [
+            _canonical_audit_query_entry(entry) for entry in entries
+        ]
+        self._position = 0
+
+    def _query_canonical(
+        self,
+        kind: str,
+        params: dict[str, Any],
+    ) -> dict[str, Any]:
+        if self._position >= len(self._entries):
+            raise ValueError("audit query replay transcript is exhausted")
+        entry = self._entries[self._position]
+        if entry["kind"] != kind or entry["params"] != params:
+            raise ValueError(
+                "audit query replay order or canonical parameters differ"
+            )
+        self._position += 1
+        return entry["result"]
+
+    def require_consumed(self) -> None:
+        if self._position != len(self._entries):
+            raise ValueError("audit query replay transcript has unused entries")
+
+    @property
+    def remaining(self) -> int:
+        return len(self._entries) - self._position
+
+
+def _canonical_audit_query_entry(entry: Any) -> dict[str, Any]:
+    if not isinstance(entry, dict) or set(entry) != {
+        "kind",
+        "params",
+        "result",
+    }:
+        raise ValueError(
+            "audit query transcript entries require kind, params, and result"
+        )
+    kind = entry["kind"]
+    params = entry["params"]
+    if not isinstance(params, dict):
+        raise ValueError("audit query transcript params must be an object")
+    canonical = _canonical_audit_query_params(kind, params)
+    result = entry["result"]
+    if not isinstance(result, dict):
+        raise ValueError("audit query transcript result must be an object")
+    return {
+        "kind": kind,
+        "params": canonical,
+        "result": deepcopy(result),
+    }
+
+
+def _canonical_audit_query_params(
+    kind: Any,
+    params: Mapping[str, Any],
+) -> dict[str, Any]:
+    if not isinstance(kind, str) or kind not in _AUDIT_QUERY_PARAMETER_NAMES:
+        raise ValueError("unsupported audit query kind")
+    if not isinstance(params, Mapping):
+        raise ValueError("audit query params must be an object")
+    expected = _AUDIT_QUERY_PARAMETER_NAMES[kind]
+    if set(params) != set(expected) or any(
+        not isinstance(key, str) for key in params
+    ):
+        raise ValueError("audit query parameters do not match the kind")
+    canonical = {name: deepcopy(params[name]) for name in expected}
+
+    for name in ("preset", "unit_type", "terrain"):
+        if name in canonical and (
+            not isinstance(canonical[name], str)
+            or not canonical[name]
+        ):
+            raise ValueError(f"audit query {name} must be a nonempty string")
+    if "category" in canonical and canonical["category"] not in CATEGORIES:
+        raise ValueError("audit query category is unsupported")
+    if "airdrome_id" in canonical and (
+        not isinstance(canonical["airdrome_id"], int)
+        or isinstance(canonical["airdrome_id"], bool)
+    ):
+        raise ValueError("audit query airdrome_id must be an integer")
+
+    if kind == "payload_match":
+        digest = canonical["configured_composition_sha256"]
+        if (
+            not isinstance(digest, str)
+            or len(digest) != 64
+            or any(character not in "0123456789abcdef" for character in digest)
+        ):
+            raise ValueError(
+                "audit payload query requires a lowercase SHA-256 digest"
+            )
+        pylons = canonical["pylons"]
+        fingerprint = payload_fingerprint(canonical["unit_type"], pylons)
+        if (
+            fingerprint["configured_composition_sha256"] != digest
+            or fingerprint["normalized"]["pylons"] != pylons
+        ):
+            raise ValueError(
+                "audit payload query pylons are not canonical or digest-bound"
+            )
+    return canonical
+
+
 def audit_build_spec(
     spec_path: Path,
     *,
@@ -47,16 +337,26 @@ def audit_build_spec(
     pydcs_terrain: str | None,
     br_root: Path | None = None,
     require_acknowledged_upstreams: bool = False,
+    _query_provider: _AuditQueryProvider | None = None,
 ) -> tuple[dict[str, Any], bool]:
     """Audit exact technical relationships without executing DCS or upstream."""
 
+    query_provider = _query_provider
+    if query_provider is None:
+        query_provider = _LiveAuditQueryProvider(
+            dcs_root=dcs_root,
+            pydcs_root=pydcs_root,
+            br_root=br_root,
+        )
+    if not isinstance(query_provider, _AuditQueryProvider):
+        raise TypeError("audit query provider must be an internal provider")
     spec = load_build_spec(spec_path, require_resource_files=True)
     mission = spec.tables["mission"]
     mission_year = table(mission.get("date")).get("Year")
     checks: list[dict[str, Any]] = []
     warnings: list[dict[str, Any]] = []
 
-    country_data = countries_report(dcs_root)
+    country_data = query_provider.query("countries")
     countries_by_id = {
         item["id"]: item["identifier"] for item in country_data["entries"]
     }
@@ -91,7 +391,7 @@ def audit_build_spec(
     gci_units = _gci_units(mission)
     gci_data: dict[str, Any] | None = None
     if gci_units:
-        gci_data = gci_evidence_report(dcs_root)
+        gci_data = query_provider.query("gci_evidence")
         _check(
             checks,
             "gci.current_install_evidence",
@@ -135,6 +435,7 @@ def audit_build_spec(
         dcs_root,
         checks,
         warnings,
+        query_provider=query_provider,
     )
 
     unit_types = sorted(
@@ -150,8 +451,8 @@ def audit_build_spec(
     type_evidence: dict[tuple[str, str], dict[str, Any]] = {}
     pydcs_unit_upstream: dict[str, Any] | None = None
     for category, unit_type in unit_types:
-        upstream = pydcs_unit_report(
-            pydcs_root,
+        upstream = query_provider.query(
+            "pydcs_unit",
             unit_type=unit_type,
             category=category,
         )
@@ -169,12 +470,12 @@ def audit_build_spec(
             else None
         )
         current_payload = (
-            payload_report(dcs_root, unit_type)
+            query_provider.query("dcs_payload", unit_type=unit_type)
             if category in {"plane", "helicopter"}
             else None
         )
         module = (
-            module_index_report(dcs_root, unit_type=unit_type)
+            query_provider.query("dcs_module_index", unit_type=unit_type)
             if category in {"plane", "helicopter"}
             else None
         )
@@ -280,7 +581,7 @@ def audit_build_spec(
     # Identity decisions are made from the unfiltered source graph.  An
     # exact package override may select a candidate, but cannot hide another
     # package which claims the same MIZ theatre identity.
-    pydcs_terrain_data = pydcs_terrain_report(pydcs_root)
+    pydcs_terrain_data = query_provider.query("pydcs_terrains")
     all_pydcs_terrain_records = pydcs_terrain_data["terrains"]
     pydcs_override_matches = (
         [
@@ -306,12 +607,16 @@ def audit_build_spec(
         )
 
     br_terrain_query = mission_theatre
-    br_terrain_data = br_terrain_report(br_root) if br_root is not None else None
+    br_terrain_data = (
+        query_provider.query("br_terrains") if br_root is not None else None
+    )
     all_br_terrain_records = (
         br_terrain_data["terrains"] if br_terrain_data is not None else []
     )
     combined_data = (
-        combined_terrain_report(pydcs_root, br_root) if br_root is not None else None
+        query_provider.query("combined_terrains")
+        if br_root is not None
+        else None
     )
     _gate_upstream_provenance(
         "pydcs",
@@ -524,7 +829,9 @@ def audit_build_spec(
             }
         )
 
-    installed_product_version = _installed_product_version(dcs_root)
+    installed_product_version = query_provider.query(
+        "installed_product_version"
+    )["product_version"]
     br_project_version = (
         br_terrain_data["upstream_project_version"]
         if br_terrain_data is not None
@@ -557,6 +864,7 @@ def audit_build_spec(
         mission_year=mission_year,
         checks=checks,
         warnings=warnings,
+        query_provider=query_provider,
     )
     coordinate_inventory = _mission_coordinate_inventory(mission, groups)
     if selected_terrain is not None:
@@ -583,6 +891,7 @@ def audit_build_spec(
             secondary_terrain=selected_terrain["secondary_parking_terrain"],
             checks=checks,
             warnings=warnings,
+            query_provider=query_provider,
         )
     runway_resolutions: list[dict[str, Any]] = []
     if selected_terrain is not None:
@@ -598,6 +907,7 @@ def audit_build_spec(
             secondary_terrain=selected_terrain["secondary_parking_terrain"],
             checks=checks,
             warnings=warnings,
+            query_provider=query_provider,
         )
 
     failed = [item for item in checks if not item["passed"]]
@@ -982,19 +1292,23 @@ def _audit_weather(
     dcs_root: Path,
     checks: list[dict[str, Any]],
     warnings: list[dict[str, Any]],
+    *,
+    query_provider: _AuditQueryProvider | None = None,
 ) -> dict[str, Any]:
+    if query_provider is None:
+        query_provider = _LiveAuditQueryProvider(dcs_root=dcs_root)
     weather = table(mission.get("weather"))
-    constraints_source = (
-        dcs_root / "MissionEditor" / "modules" / "me_weather.lua"
-    )
+    constraints_available = query_provider.query(
+        "weather_constraints_available"
+    )["available"]
     evidence: dict[str, Any] = {
         "authority": "current_install_static_mission_editor_source",
-        "available": constraints_source.is_file(),
+        "available": constraints_available,
         "source": "MissionEditor/modules/me_weather.lua",
         "dcs_started": False,
     }
-    if constraints_source.is_file():
-        constraints = weather_constraints_report(dcs_root)
+    if constraints_available:
+        constraints = query_provider.query("weather_constraints")
         consistency = validate_weather_consistency(weather, constraints)
         evidence.update(
             {
@@ -1039,7 +1353,7 @@ def _audit_weather(
     preset = clouds.get("preset")
     if not isinstance(preset, str):
         return evidence
-    report = cloud_preset_report(dcs_root, preset=preset)
+    report = query_provider.query("cloud_preset", preset=preset)
     records = report["presets"]
     _check(
         checks,
@@ -1080,6 +1394,7 @@ def _audit_mission_groups(
     mission_year: Any,
     checks: list[dict[str, Any]],
     warnings: list[dict[str, Any]],
+    query_provider: _AuditQueryProvider,
 ) -> list[dict[str, Any]]:
     service_checked: set[tuple[str, str | None, int | float | None]] = set()
     payload_match_cache: dict[tuple[str, str], dict[str, Any]] = {}
@@ -1133,6 +1448,7 @@ def _audit_mission_groups(
                 warnings=warnings,
                 cache=payload_match_cache,
                 resolutions=payload_match_resolutions,
+                query_provider=query_provider,
             )
             for pylon_field in table(payload.get("pylons")).numeric_items():
                 pylon = table(pylon_field.value)
@@ -1219,6 +1535,7 @@ def _audit_complete_payload(
     warnings: list[dict[str, Any]],
     cache: dict[tuple[str, str], dict[str, Any]],
     resolutions: list[dict[str, Any]],
+    query_provider: _AuditQueryProvider | None = None,
 ) -> None:
     if not evidence["current_payload_sources"]:
         if not evidence.get(
@@ -1286,10 +1603,15 @@ def _audit_complete_payload(
     )
     match = cache.get(cache_key)
     if match is None:
-        match = payload_match_report(
-            dcs_root,
-            unit_type,
-            assignments,
+        if query_provider is None:
+            query_provider = _LiveAuditQueryProvider(dcs_root=dcs_root)
+        match = query_provider.query(
+            "payload_match",
+            unit_type=unit_type,
+            configured_composition_sha256=fingerprint[
+                "configured_composition_sha256"
+            ],
+            pylons=fingerprint["normalized"]["pylons"],
         )
         cache[cache_key] = match
         resolution = {
@@ -1895,6 +2217,7 @@ def _audit_parking(
     secondary_terrain: str | None,
     checks: list[dict[str, Any]],
     warnings: list[dict[str, Any]],
+    query_provider: _AuditQueryProvider,
 ) -> list[dict[str, Any]]:
     resolutions: list[dict[str, Any]] = []
     by_airdrome: dict[int | float, list[dict[str, Any]]] = defaultdict(list)
@@ -1920,6 +2243,7 @@ def _audit_parking(
             airdrome_id=int(airdrome_id),
             pydcs_root=pydcs_root,
             br_root=br_root,
+            query_provider=query_provider,
         )
         secondary = (
             _airport_source_query(
@@ -1928,6 +2252,7 @@ def _audit_parking(
                 airdrome_id=int(airdrome_id),
                 pydcs_root=pydcs_root,
                 br_root=br_root,
+                query_provider=query_provider,
             )
             if secondary_provider is not None and secondary_terrain is not None
             else None
@@ -1990,9 +2315,9 @@ def _audit_parking(
                 )
         installed_airbases: list[dict[str, Any]] = []
         if installed_terrain is not None:
-            installed = airbase_beacon_report(
-                dcs_root,
-                installed_terrain,
+            installed = query_provider.query(
+                "dcs_airbase",
+                terrain=installed_terrain,
                 airdrome_id=int(airdrome_id),
             )
             installed_airbases = installed["airbases"]
@@ -2195,11 +2520,12 @@ def _airport_source_query(
     airdrome_id: int,
     pydcs_root: Path,
     br_root: Path | None,
+    query_provider: _AuditQueryProvider,
 ) -> dict[str, Any] | None:
     if provider == "pydcs" and terrain is not None:
-        report = pydcs_airport_report(
-            pydcs_root,
-            terrain,
+        report = query_provider.query(
+            "pydcs_airport",
+            terrain=terrain,
             airdrome_id=airdrome_id,
         )
         return {
@@ -2209,9 +2535,9 @@ def _airport_source_query(
             "coverage": report["coverage"],
         }
     if provider == "briefingroom" and terrain is not None and br_root is not None:
-        report = br_airbase_report(
-            br_root,
-            terrain,
+        report = query_provider.query(
+            "br_airbase",
+            terrain=terrain,
             airdrome_id=airdrome_id,
         )
         return {
@@ -2326,6 +2652,7 @@ def _audit_bombing_runways(
     secondary_terrain: str | None,
     checks: list[dict[str, Any]],
     warnings: list[dict[str, Any]],
+    query_provider: _AuditQueryProvider,
 ) -> list[dict[str, Any]]:
     resolutions: list[dict[str, Any]] = []
     for task, path in _walk_lua_tables(mission, "$"):
@@ -2343,6 +2670,7 @@ def _audit_bombing_runways(
             airdrome_id=int(runway_id),
             pydcs_root=pydcs_root,
             br_root=br_root,
+            query_provider=query_provider,
         )
         secondary = (
             _airport_source_query(
@@ -2351,6 +2679,7 @@ def _audit_bombing_runways(
                 airdrome_id=int(runway_id),
                 pydcs_root=pydcs_root,
                 br_root=br_root,
+                query_provider=query_provider,
             )
             if secondary_provider is not None and secondary_terrain is not None
             else None
@@ -2409,9 +2738,9 @@ def _audit_bombing_runways(
                 )
         installed_exact: bool | None = None
         if installed_terrain is not None:
-            installed = airbase_beacon_report(
-                dcs_root,
-                installed_terrain,
+            installed = query_provider.query(
+                "dcs_airbase",
+                terrain=installed_terrain,
                 airdrome_id=int(runway_id),
             )
             installed_exact = len(installed["airbases"]) == 1
@@ -2492,6 +2821,11 @@ def _same_scalar_type(value: Any, expected: Any) -> bool:
     if isinstance(expected, str):
         return isinstance(value, str)
     return False
+
+
+def _weather_constraints_available(dcs_root: Path) -> bool:
+    source = dcs_root / "MissionEditor" / "modules" / "me_weather.lua"
+    return source.is_file()
 
 
 def _installed_product_version(dcs_root: Path) -> str | None:
