@@ -1101,6 +1101,42 @@ class ConstructionProvenanceTests(unittest.TestCase):
                 )
                 collect.assert_not_called()
 
+    def test_output_root_cannot_be_inside_the_producer_repository(self) -> None:
+        dcs, cache, evidence, _construction = self._snapshot_roots(
+            "repository-output"
+        )
+        repository = Path(provenance.__file__).resolve().parents[2]
+        output = repository / f".construction-v1-test-{self.root.name}"
+        self.assertFalse(output.exists())
+
+        with (
+            patch.object(
+                provenance,
+                "_producer_record",
+                return_value=copy.deepcopy(self.producer),
+            ),
+            patch.object(
+                provenance,
+                "current_report_evidence_context",
+                side_effect=AssertionError(
+                    "repository output reached evidence collection"
+                ),
+            ) as collect,
+            self.assertRaisesRegex(ValueError, "protected input path"),
+        ):
+            provenance.create_construction_snapshot(
+                self.spec_path,
+                output,
+                evidence_bundle=evidence,
+                dcs_root=dcs,
+                cache_root=cache,
+                pydcs_terrain="fixture",
+                created_utc=CREATED,
+            )
+
+        collect.assert_not_called()
+        self.assertFalse(output.exists())
+
     def test_gci_station_snapshot_fails_closed_on_audit_failure(self) -> None:
         spec = json.loads(self.spec_path.read_text(encoding="utf-8"))
         country = spec["mission"]["coalition"]["blue"]["country"][0]

@@ -80,6 +80,10 @@ class CaptureProvider(_AuditQueryProvider):
         self._response_sizes: dict[str, int] = {}
         self._query_responses: dict[bytes, str] = {}
 
+    def query(self, kind: str, /, **params: Any) -> dict[str, Any]:
+        _preflight_query_params(kind, params)
+        return super().query(kind, **params)
+
     def _query_canonical(
         self,
         kind: str,
@@ -88,7 +92,17 @@ class CaptureProvider(_AuditQueryProvider):
         if len(self._requests) >= MAX_CALLS:
             raise ValueError("audit transcript query limit exceeded")
         params_envelope, params_bytes = _params_envelope(kind, params)
-        result = self._delegate.query(kind, **params)
+        # Capture already receives canonical params from the outer provider
+        # boundary.  Dispatch internally so an unbounded delegate result is
+        # measured before the base provider can deepcopy it.  The bounded
+        # normalized response below restores the usual detached-result
+        # guarantee, while this small clone prevents a delegate from mutating
+        # the request record through nested parameter aliases.
+        delegate_params = _clone_json(
+            params_envelope["value"],
+            label="audit delegate query params",
+        )
+        result = self._delegate._query_canonical(kind, delegate_params)
         result_value, response_envelope, response_bytes = _response_envelope(
             kind,
             result,
@@ -188,6 +202,10 @@ class ReplayProvider(_AuditQueryProvider):
             for record in self._transcript["responses"]
         }
         self._position = 0
+
+    def query(self, kind: str, /, **params: Any) -> dict[str, Any]:
+        _preflight_query_params(kind, params)
+        return super().query(kind, **params)
 
     def _query_canonical(
         self,
@@ -334,6 +352,11 @@ def replay_audit(
 def validate_audit_transcript(value: Any) -> dict[str, Any]:
     """Validate and return a detached canonical JSON transcript tree."""
 
+    _preflight_in_memory_json(
+        value,
+        maximum_bytes=MAX_TRANSCRIPT_BYTES,
+        label="audit transcript",
+    )
     _validate_transcript_container(value)
     normalized, payload = _normalized_json_bytes(
         value,
@@ -450,6 +473,8 @@ def _params_envelope(
     kind: str,
     params: dict[str, Any],
 ) -> tuple[dict[str, Any], bytes]:
+    params_schema = _params_schema(kind)
+    _preflight_query_params(kind, params, params_schema=params_schema)
     canonical = _canonical_audit_query_params(kind, params)
     if kind == "payload_match":
         fingerprint = payload_fingerprint(
@@ -462,7 +487,7 @@ def _params_envelope(
         ):
             raise ValueError("audit payload query pylons are not canonical")
     envelope = {
-        "schema": _params_schema(kind),
+        "schema": params_schema,
         "kind": kind,
         "value": canonical,
     }
@@ -474,6 +499,25 @@ def _params_envelope(
         raise ValueError("audit query params byte limit exceeded")
     assert isinstance(normalized, dict)
     return normalized, payload
+
+
+def _preflight_query_params(
+    kind: str,
+    params: dict[str, Any],
+    *,
+    params_schema: str | None = None,
+) -> None:
+    if params_schema is None:
+        params_schema = _params_schema(kind)
+    _preflight_in_memory_json(
+        {
+            "schema": params_schema,
+            "kind": kind,
+            "value": params,
+        },
+        maximum_bytes=MAX_QUERY_PARAMS_BYTES,
+        label="audit query params",
+    )
 
 
 def _validate_params_envelope(
@@ -502,9 +546,19 @@ def _response_envelope(
     kind: str,
     result: Any,
 ) -> tuple[dict[str, Any], dict[str, Any], bytes]:
+    result_schema = _result_schema(kind)
+    _preflight_in_memory_json(
+        {
+            "schema": result_schema,
+            "kind": kind,
+            "value": result,
+        },
+        maximum_bytes=MAX_RESPONSE_BYTES,
+        label="audit query response",
+    )
     result_value = _validate_query_result(kind, result)
     envelope = {
-        "schema": _result_schema(kind),
+        "schema": result_schema,
         "kind": kind,
         "value": result_value,
     }
@@ -809,6 +863,15 @@ class _EntryProvider(_AuditQueryProvider):
         result = entry["result"]
         if not isinstance(result, dict):
             raise ValueError("audit transcript entry result must be an object")
+        _preflight_in_memory_json(
+            {
+                "schema": _result_schema(kind),
+                "kind": kind,
+                "value": result,
+            },
+            maximum_bytes=MAX_RESPONSE_BYTES,
+            label="audit query response",
+        )
         return _clone_json(result, label="audit transcript entry result")
 
     def require_consumed(self) -> None:
@@ -875,6 +938,206 @@ def _normalized_json_bytes(
             raise
         raise ValueError(f"{label} is not bounded canonical JSON") from error
     return normalized, payload
+
+
+def _preflight_in_memory_json(
+    value: Any,
+    *,
+    maximum_bytes: int,
+    label: str,
+    initial_depth: int = 1,
+) -> int:
+    """Measure canonical JSON without cloning or materializing encoded bytes."""
+
+    if (
+        isinstance(maximum_bytes, bool)
+        or not isinstance(maximum_bytes, int)
+        or maximum_bytes < 0
+    ):
+        raise ValueError(f"{label} byte limit is invalid")
+    try:
+        node_budget = [0]
+        byte_budget = [0]
+        _measure_json_tree(
+            value,
+            depth=initial_depth,
+            active=set(),
+            node_budget=node_budget,
+            byte_budget=byte_budget,
+            maximum_bytes=maximum_bytes,
+            label=label,
+        )
+    except (
+        OverflowError,
+        RecursionError,
+        TypeError,
+        UnicodeEncodeError,
+        ValueError,
+    ) as error:
+        if isinstance(error, ValueError) and str(error).startswith("audit "):
+            raise
+        raise ValueError(f"{label} is not bounded canonical JSON") from error
+    return byte_budget[0]
+
+
+def _measure_json_tree(
+    value: Any,
+    *,
+    depth: int,
+    active: set[int],
+    node_budget: list[int],
+    byte_budget: list[int],
+    maximum_bytes: int,
+    label: str,
+) -> None:
+    if depth > MAX_JSON_DEPTH:
+        raise ValueError("audit JSON depth limit exceeded")
+    node_budget[0] += 1
+    if node_budget[0] > MAX_JSON_NODES:
+        raise ValueError("audit JSON node limit exceeded")
+    if value is None:
+        _consume_json_bytes(byte_budget, 4, maximum_bytes, label)
+        return
+    if type(value) is bool:
+        _consume_json_bytes(
+            byte_budget,
+            4 if value else 5,
+            maximum_bytes,
+            label,
+        )
+        return
+    if type(value) is str:
+        _measure_json_string(value, byte_budget, maximum_bytes, label)
+        return
+    if type(value) is int:
+        sign_bytes = 1 if value < 0 else 0
+        magnitude = -value if value < 0 else value
+        lower_digits = (
+            1
+            if magnitude == 0
+            else ((magnitude.bit_length() - 1) * 3) // 10 + 1
+        )
+        if byte_budget[0] + sign_bytes + lower_digits > maximum_bytes:
+            raise ValueError(f"{label} byte limit exceeded")
+        _consume_json_bytes(
+            byte_budget,
+            len(str(value)),
+            maximum_bytes,
+            label,
+        )
+        return
+    if type(value) is float:
+        if not math.isfinite(value):
+            raise ValueError("audit JSON contains a non-finite number")
+        _consume_json_bytes(
+            byte_budget,
+            len(repr(value)),
+            maximum_bytes,
+            label,
+        )
+        return
+    if type(value) not in {dict, list}:
+        raise ValueError("audit JSON contains a non-canonical value type")
+
+    identity = id(value)
+    if identity in active:
+        raise ValueError("audit JSON contains a recursive value")
+    active.add(identity)
+    try:
+        if isinstance(value, list):
+            if node_budget[0] + len(value) > MAX_JSON_NODES:
+                raise ValueError("audit JSON node limit exceeded")
+            _consume_json_bytes(
+                byte_budget,
+                2 + max(0, len(value) - 1),
+                maximum_bytes,
+                label,
+            )
+            for item in value:
+                _measure_json_tree(
+                    item,
+                    depth=depth + 1,
+                    active=active,
+                    node_budget=node_budget,
+                    byte_budget=byte_budget,
+                    maximum_bytes=maximum_bytes,
+                    label=label,
+                )
+            return
+
+        node_budget[0] += len(value)
+        if (
+            node_budget[0] > MAX_JSON_NODES
+            or node_budget[0] + len(value) > MAX_JSON_NODES
+        ):
+            raise ValueError("audit JSON node limit exceeded")
+        _consume_json_bytes(
+            byte_budget,
+            2 + max(0, len(value) - 1) + len(value),
+            maximum_bytes,
+            label,
+        )
+        if any(not isinstance(key, str) for key in value):
+            raise ValueError("audit JSON object keys must be strings")
+        for key, item in value.items():
+            _measure_json_string(key, byte_budget, maximum_bytes, label)
+            _measure_json_tree(
+                item,
+                depth=depth + 1,
+                active=active,
+                node_budget=node_budget,
+                byte_budget=byte_budget,
+                maximum_bytes=maximum_bytes,
+                label=label,
+            )
+    finally:
+        active.remove(identity)
+
+
+def _measure_json_string(
+    value: str,
+    byte_budget: list[int],
+    maximum_bytes: int,
+    label: str,
+) -> None:
+    # Every Unicode code point occupies at least one output byte.  This cheap
+    # lower bound rejects oversized single strings without allocating UTF-8.
+    if byte_budget[0] + 2 + len(value) > maximum_bytes:
+        raise ValueError(f"{label} byte limit exceeded")
+    _consume_json_bytes(byte_budget, 2, maximum_bytes, label)
+    for character in value:
+        codepoint = ord(character)
+        if character in {'"', "\\"} or codepoint in {8, 9, 10, 12, 13}:
+            encoded_bytes = 2
+        elif codepoint < 0x20:
+            encoded_bytes = 6
+        elif codepoint < 0x80:
+            encoded_bytes = 1
+        elif codepoint < 0x800:
+            encoded_bytes = 2
+        elif 0xD800 <= codepoint <= 0xDFFF:
+            raise ValueError("audit JSON contains a Unicode surrogate")
+        elif codepoint < 0x10000:
+            encoded_bytes = 3
+        else:
+            encoded_bytes = 4
+        _consume_json_bytes(
+            byte_budget,
+            encoded_bytes,
+            maximum_bytes,
+            label,
+        )
+
+
+def _consume_json_bytes(
+    byte_budget: list[int],
+    amount: int,
+    maximum_bytes: int,
+    label: str,
+) -> None:
+    byte_budget[0] += amount
+    if byte_budget[0] > maximum_bytes:
+        raise ValueError(f"{label} byte limit exceeded")
 
 
 def _canonical_json_bytes(

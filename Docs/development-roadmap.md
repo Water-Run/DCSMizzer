@@ -267,7 +267,8 @@ visible.
 ## M0: evidence lifecycle and reproducible baselines
 
 **Implementation status (2026-08-27): bundle lifecycle, bound attestations,
-and read-only CLI query binding implemented; exit gate partially satisfied.**
+read-only CLI query binding, and v2 construction audit replay implemented;
+exit gate partially satisfied.**
 Product commands now perform
 two-pass stable collection into local content-addressed bundles, verify
 canonical manifests and exact artifact membership/hashes, compare recognized
@@ -294,15 +295,32 @@ recorded `2.9.28.26283` baseline versus current `2.9.28.26385` comparison is
 machine-generated rather than prose-only. The pydcs no-change candidate and the
 16-commit-ahead BriefingRoom candidate were exercised; the latter retained its
 pin because only project-version metadata changed across its 36-path diff.
-New `construction-bundle/v1` traces now content-address the exact spec,
-resources, MIZ, bound audit/build/verify reports, current readiness and bundle
-verification preimages, embedded evidence bundle, producer/toolchain, and a
-recomputed three-stage hash DAG. Exact build bytes and static verification can
-be replayed under the recorded producer/toolchain. M0 is not marked complete
-because v1 does not record and replay every audit subquery decision, legacy
-reports remain unsealed, and the machine-readable support matrix and human
-publication remain independently maintained rather than generated from that
-chain.
+New construction snapshots emit `construction-bundle/v2`. Before publishing,
+the writer requires two byte-identical audit reports and two byte-identical
+ordered transcripts. The transcript format covers all 16 external query kinds
+available to `audit-spec`, binds exact parameters to content-addressed
+responses, and requires ordered, complete consumption during an offline replay
+from sealed spec/resource bytes rather than the original authority roots. The
+bundle then content-addresses those transcript bytes together with the exact
+spec, resources, MIZ, bound audit/build/verify reports, current readiness and
+bundle-verification preimages, embedded evidence bundle, full producer
+identity, and recomputed audit-to-build-to-verify hash DAG.
+
+`construction-verify` always validates v2 static membership, hashes, bindings,
+and pipeline continuity. It replays the audit, rebuilds the MIZ, and repeats
+static verification only when the complete current producer identity matches
+the recorded identity; a different producer can establish historical static
+integrity only. `construction-bundle/v1` remains supported as a legacy format:
+it can replay build/verification with its recorded producer/toolchain but has
+no audit-decision transcript and is never fully reproducible. Content addresses
+are tamper-evidence relative to an externally retained ID, not signatures.
+Both versions keep runtime validity `null`, and native GCI construction remains
+refused until its conditional install/manual/training inputs have a sealed
+evidence domain. M0 is not marked complete because legacy reports remain
+unsealed, current module/payload/airfield evidence remains partial and thus
+keeps `static_release_ready=false`, and the machine-readable support matrix and
+human publication remain independently maintained rather than generated from
+that chain.
 
 The clean reference run from producer commit
 `5fdbeb4df86d0e07d1457e92779375682dc44d87` collected DCS
@@ -365,7 +383,10 @@ statistics, synthetic fixtures, and minimal legally distributable examples.
 - Every report declares whether it is unbound, self-referential, or bound to a
   current evidence bundle, without changing its intrinsic authority tier.
 - Incompatible evidence versions fail closed.
-- Historical reports remain reproducible with their original bundles.
+- A v2 construction remains fully replayable only under its exact full
+  producer identity; another producer verifies historical static integrity
+  without claiming replay or reopening the recorded release gate. Legacy v1
+  and standalone reports retain their explicitly narrower guarantees.
 - A BriefingRoom pin update or retention has a recorded compatibility result.
 
 ## M1: isolated DCS runtime bridge

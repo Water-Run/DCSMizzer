@@ -1163,6 +1163,27 @@ class ReportViewTests(unittest.TestCase):
             {item["code"] for item in miz_summary["reported_failures"]},
         )
 
+    def test_report_summary_recognizes_construction_v2_schemas(self) -> None:
+        schemas = (
+            "dcsmizzer.audit-evidence-transcript/v1",
+            "dcsmizzer.construction-bundle/v2",
+            "dcsmizzer.construction-snapshot/v2",
+            "dcsmizzer.construction-verification/v2",
+        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            for index, schema in enumerate(schemas):
+                with self.subTest(schema=schema):
+                    path = root / f"construction-{index}.json"
+                    path.write_text(json.dumps({"schema": schema}), encoding="utf-8")
+
+                    summary = report_summary(path)
+
+                    self.assertEqual(summary["source_schema"], schema)
+                    self.assertEqual(
+                        summary["view"]["schema_check"], "identifier_only"
+                    )
+
     def test_report_summary_preserves_coordinate_failure_reasons(self) -> None:
         reports = (
             (

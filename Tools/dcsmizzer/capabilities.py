@@ -160,12 +160,12 @@ _CAPABILITIES: dict[str, Any] = {
             "binding context never upgrades the report's intrinsic or runtime "
             "authority, and a failed query is always unusable",
             "legacy standalone build/audit/verify reports remain historically "
-            "unsealed; only an explicit construction-bundle/v1 has the new "
-            "transitive static trace",
+            "unsealed; only an explicit construction bundle has a transitive "
+            "static trace, and only v2 seals the audit query transcript",
         ],
     },
     "construction_provenance": {
-        "status": "implemented_tamper_evident_static_trace",
+        "status": "implemented_replayable_tamper_evident_static_trace",
         "commands": [
             "construction-snapshot",
             "construction-verify",
@@ -177,19 +177,31 @@ _CAPABILITIES: dict[str, Any] = {
             "an embedded exact evidence bundle plus saved readiness and "
             "verification preimages",
             "a recomputed audit-to-build-to-verify hash DAG with exact spec, "
-            "resource, artifact, producer, query, and evidence continuity",
+            "resource, artifact, producer, query, transcript, and evidence "
+            "continuity",
+            "two stable live audit captures followed by strict offline replay "
+            "of a canonical, bounded transcript covering all 16 external "
+            "audit query kinds",
             "strict canonical JSON, exact member sets, safe regular paths, "
             "object hashes, a required trusted output directory, and a "
             "256 MiB total construction-object limit",
-            "byte-exact build replay and static re-verification when the "
-            "recorded DCSMizzer commit and Python/zlib toolchain match",
+            "offline audit-decision replay, byte-exact build replay, and "
+            "static re-verification when the full recorded producer identity "
+            "matches",
         ],
         "boundaries": [
             "the content address is tamper-evident, not a signature or proof "
             "of who produced the bundle",
-            "audit evidence-query decisions are recorded but not replayed in v1",
-            "fully_reproducible and static_release_ready therefore remain false",
-            "V1 static checks never imply DCS load, smoke, playability, or "
+            "legacy v1 bundles record but cannot replay audit evidence-query "
+            "decisions; the default writer emits v2",
+            "a nonmatching producer performs historical byte/hash/DAG checks "
+            "but does not execute audit, build, or verification replay",
+            "v2 fully_reproducible requires exact-producer audit, build, and "
+            "verification replay; historical verification never reopens the "
+            "recorded static release gate",
+            "the trusted construction root must not overlap the producer "
+            "repository or any selected input tree",
+            "static construction checks never imply DCS load, smoke, playability, or "
             "runtime validity",
             "specifications containing a native GCI station are refused until "
             "the install/manual/training inputs have a sealed evidence domain",

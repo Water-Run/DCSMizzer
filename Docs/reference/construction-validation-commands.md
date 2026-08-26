@@ -29,43 +29,85 @@ python Tools\dcsmizzer.py construction-verify `
   > output\construction-verification.json
 ```
 
-`construction-snapshot` requires one clean exact DCSMizzer producer commit.
-It runs the evidence readiness fence before and after two stable `audit-spec`
-passes, builds and reads back a temporary MIZ, verifies the exact spec/resource
-ledger again, and publishes only a content-addressed bundle. The bundle embeds
-the exact evidence bundle and stores canonical objects for the original spec,
-every resource, the bound audit/build/verify reports, readiness and evidence
-verification preimages, and the exact MIZ. Its manifest recomputes an
-audit-to-build-to-verify hash DAG. Construction objects are bounded to 256 MiB
-in total. They are local-only, may contain private or licensed data, and are
-not authorized for redistribution. The caller-selected construction root must
-be a trusted directory not writable by an untrusted concurrent actor. It must
-not equal, contain, or be contained by the selected DCS install, upstream
-cache, evidence bundle, build spec, or resource inputs.
+`construction-snapshot` requires one clean exact DCSMizzer producer commit and
+now emits `dcsmizzer.construction-bundle/v2`. It collects the live audit twice.
+Both the intrinsic audit reports and their canonical ordered transcripts must
+be byte-identical. The v2 transcript vocabulary covers all 16 external query
+kinds that `audit-spec` can issue:
 
-Version 1 refuses a spec containing the native `GCI_station_MiG29`. That audit
-consults installed declarations, official training missions, and a local
-manual; those conditional inputs do not yet have a sealed evidence domain.
-Failing closed prevents the ordinary evidence-ready gate from overstating its
-freshness coverage.
+- `countries`, `gci_evidence`, `weather_constraints_available`, and
+  `weather_constraints`;
+- `cloud_preset`, `pydcs_unit`, `dcs_payload`, and `dcs_module_index`;
+- `pydcs_terrains`, `br_terrains`, `combined_terrains`, and
+  `installed_product_version`;
+- `payload_match`, `pydcs_airport`, `br_airbase`, and `dcs_airbase`.
 
-Exit code 0 from `construction-snapshot` means the bundle, audit, build,
-verification, immediate byte-exact replay, and mandatory current evidence gate
-passed. A failed stage publishes no construction bundle.
-`construction-verify` returns 0 for an intact historical bundle and pipeline
-when its recorded producer is unavailable; when the exact producer/toolchain
-is available, its build and verification replay must also pass. Historical
-integrity does not mean current evidence.
+An individual transcript contains the exact ordered calls actually made for
+that spec, not invented calls for branches the audit did not enter. Each call
+binds strict canonical parameters to a content-addressed response. Duplicate
+keys, non-finite numbers, schema drift, unsupported or out-of-order calls,
+parameter/response mismatches, unreferenced responses, excessive depth/nodes,
+and configured call/response/byte limits fail closed. Repeated identical
+queries may share one response object but may not produce different responses.
 
-The v1 construction trace deliberately reports
-`audit_decision_replay_performed: false`, `fully_reproducible: false`,
-`static_release_ready: false`, and `runtime_valid: null`. It saves and binds
-the audit decision and its current evidence context, but it does not yet
-record every audit subquery preimage needed to execute the audit algorithm
-offline. It also does not launch DCS. A content address detects changes relative
-to a trusted externally retained ID; it is not a signature or proof of the
-original author. Legacy standalone `audit-spec`, `build-miz`, and `verify-miz`
-reports remain readable but are not retroactively sealed.
+Before building, the writer runs the captured decision again from only the
+sealed spec, sealed resource override set, and transcript. It does not consult
+the original DCS installation or upstream authority roots during that replay;
+the request stream must be consumed completely, and the resulting intrinsic
+audit report and verdict must exactly match the capture. It then builds and
+reads back a temporary MIZ, verifies the exact spec/resource ledger, repeats
+the build and static-verification replay, and applies matching evidence,
+spec/resource, and producer fences before publication.
+
+The v2 bundle embeds the exact evidence bundle and stores canonical objects for
+the original spec, every resource, audit transcript, bound audit/build/verify
+reports, readiness and evidence-verification preimages, and exact MIZ. Its
+manifest recomputes an audit-to-build-to-verify hash DAG. Construction objects
+are bounded to 256 MiB in total. They are local-only, may contain private or
+licensed data, and are not authorized for redistribution. The caller-selected
+construction root must be a trusted directory not writable by an untrusted
+concurrent actor. It must not equal, contain, or be contained by the selected
+DCS install, upstream cache, evidence bundle, build spec, or resource inputs.
+It also must not equal, contain, or be contained by the DCSMizzer producer
+repository; otherwise publication itself could invalidate the clean producer
+identity.
+
+Exit code 0 from `construction-snapshot` means the v2 bundle, audit, strict
+offline audit replay, build, byte-exact rebuild, static-verification replay,
+and mandatory current evidence gate all passed. An audit/build/verification
+failure before publication produces no bundle. A valid bundle may still be
+published while the CLI returns 1 when current required evidence is partial;
+in that case `fully_reproducible` can be true while
+`static_release_ready=false`. The present broad baseline remains in exactly
+that non-release-ready state because module declarations, payload observations,
+and installed-terrain airfield views have partial authority.
+
+For `construction-bundle/v2`, `construction-verify` always checks the content
+address, exact object membership and hashes, transcript/report/evidence
+bindings, and pipeline continuity. Audit, build, and static-verification replay
+run only when the current producer record exactly equals the complete recorded
+producer identity, including name, version, commit, dirty state, and toolchain.
+If that identity differs, the replay-performed fields are false, replay-result
+fields are `null`, `fully_reproducible=false`, and a zero exit code means only
+that historical static integrity passed. With the exact producer, all three
+replays must pass for exit code 0. Verification itself never reopens the
+historical release gate: its `static_release_ready` remains false and the
+manifest's original decision is exposed separately as the recorded gate.
+
+`construction-bundle/v1` remains accepted as a legacy format. It can replay
+exact build bytes and static verification under its narrower recorded
+producer/toolchain conditions, but it has no audit-decision transcript and
+therefore remains `fully_reproducible=false` and
+`static_release_ready=false`. Legacy standalone `audit-spec`, `build-miz`, and
+`verify-miz` reports remain readable but are not retroactively sealed.
+
+Both construction versions deliberately keep `runtime_valid: null`; neither
+launches DCS. The writer refuses a spec containing native
+`GCI_station_MiG29`, because that audit branch consults installed declarations,
+official training missions, and a local manual whose conditional inputs do not
+yet have a sealed evidence domain. Finally, a content address detects changes
+relative to a trusted externally retained ID; it is not a signature, proof of
+the original author, or authentication of the producer.
 
 ## `audit-spec`
 

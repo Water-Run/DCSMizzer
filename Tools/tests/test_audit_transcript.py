@@ -224,6 +224,8 @@ class AuditTranscriptTests(unittest.TestCase):
         marker = second["responses"][0]["envelope"]["value"]["marker"]
         self.assertEqual(marker["a"]["nested"], [1, 2])
         self.assertIsNot(marker["a"], marker["b"])
+        self.assertEqual(first_result["marker"]["a"]["nested"], [1, 2])
+        self.assertIs(first_result["marker"]["a"], first_result["marker"]["b"])
 
     def test_repeated_query_with_different_response_fails_without_recording(
         self,
@@ -460,6 +462,116 @@ class AuditTranscriptTests(unittest.TestCase):
         ):
             response_capture.query("countries")
 
+        oversized_delegate = _ScriptedProvider([result])
+        guarded_capture = transcript_module.CaptureProvider(oversized_delegate)
+        with (
+            patch.object(transcript_module, "MAX_RESPONSE_BYTES", 64),
+            patch.object(
+                spec_audit_module,
+                "deepcopy",
+                side_effect=AssertionError("unbounded result copy must not run"),
+            ) as defensive_copy,
+            self.assertRaisesRegex(ValueError, "response byte limit"),
+        ):
+            guarded_capture.query("countries")
+        defensive_copy.assert_not_called()
+        self.assertEqual(len(oversized_delegate.calls), 1)
+        self.assertEqual(guarded_capture.request_count, 0)
+
+        oversized_params = {"preset": "x" * 100}
+        with (
+            patch.object(transcript_module, "MAX_QUERY_PARAMS_BYTES", 32),
+            patch.object(
+                transcript_module,
+                "_canonical_audit_query_params",
+                side_effect=AssertionError("params clone must not run"),
+            ) as canonicalize_params,
+            patch.object(
+                transcript_module.json,
+                "dumps",
+                side_effect=AssertionError("canonical serializer must not run"),
+            ) as params_dumps,
+            self.assertRaisesRegex(ValueError, "params byte limit"),
+        ):
+            transcript_module._params_envelope("cloud_preset", oversized_params)
+        canonicalize_params.assert_not_called()
+        params_dumps.assert_not_called()
+
+        guarded_params_delegate = _ScriptedProvider(
+            [_result("cloud_preset", oversized_params)]
+        )
+        guarded_params_capture = transcript_module.CaptureProvider(
+            guarded_params_delegate
+        )
+        with (
+            patch.object(transcript_module, "MAX_QUERY_PARAMS_BYTES", 32),
+            patch.object(
+                spec_audit_module,
+                "deepcopy",
+                side_effect=AssertionError("unbounded params copy must not run"),
+            ) as params_copy,
+            patch.object(
+                transcript_module.json,
+                "dumps",
+                side_effect=AssertionError("canonical serializer must not run"),
+            ) as public_params_dumps,
+            self.assertRaisesRegex(ValueError, "params byte limit"),
+        ):
+            guarded_params_capture.query(
+                "cloud_preset",
+                **oversized_params,
+            )
+        params_copy.assert_not_called()
+        public_params_dumps.assert_not_called()
+        self.assertEqual(guarded_params_delegate.calls, [])
+        self.assertEqual(guarded_params_capture.request_count, 0)
+
+        oversized_result = _result("countries", {}, marker="x" * 100)
+        with (
+            patch.object(transcript_module, "MAX_RESPONSE_BYTES", 64),
+            patch.object(
+                transcript_module,
+                "_validate_query_result",
+                side_effect=AssertionError("result clone must not run"),
+            ) as validate_result,
+            patch.object(
+                transcript_module.json,
+                "dumps",
+                side_effect=AssertionError("canonical serializer must not run"),
+            ) as result_dumps,
+            self.assertRaisesRegex(ValueError, "response byte limit"),
+        ):
+            transcript_module._response_envelope("countries", oversized_result)
+        validate_result.assert_not_called()
+        result_dumps.assert_not_called()
+
+        oversized_entry = {
+            "kind": "countries",
+            "params": {},
+            "result": oversized_result,
+        }
+        clone_labels: list[str] = []
+        original_clone = transcript_module._clone_json
+
+        def guarded_clone(value: object, *, label: str) -> object:
+            clone_labels.append(label)
+            if label == "audit transcript entry result":
+                raise AssertionError("entry result clone must not run")
+            return original_clone(value, label=label)
+
+        with (
+            patch.object(transcript_module, "MAX_RESPONSE_BYTES", 64),
+            patch.object(
+                transcript_module,
+                "_clone_json",
+                side_effect=guarded_clone,
+            ) as clone_result,
+            self.assertRaisesRegex(ValueError, "response byte limit"),
+        ):
+            transcript_module.build_audit_transcript([oversized_entry])
+        self.assertNotIn("audit transcript entry result", clone_labels)
+        self.assertEqual(clone_result.call_count, 1)
+
         call_delegate = _ScriptedProvider(
             [_result("countries", {}), _result("countries", {})]
         )
@@ -505,6 +617,37 @@ class AuditTranscriptTests(unittest.TestCase):
             self.assertRaisesRegex(ValueError, "byte limit"),
         ):
             transcript_module.validate_audit_transcript(value)
+
+        oversized_transcript = {
+            "schema": "x" * 100,
+            "requests": [],
+            "responses": [],
+        }
+        with (
+            patch.object(transcript_module, "MAX_TRANSCRIPT_BYTES", 32),
+            patch.object(
+                transcript_module,
+                "_validate_transcript_container",
+                side_effect=AssertionError(
+                    "transcript validation must not precede preflight"
+                ),
+            ) as validate_container,
+            patch.object(
+                transcript_module,
+                "_normalized_json_bytes",
+                side_effect=AssertionError("transcript clone must not run"),
+            ) as normalize_transcript,
+            patch.object(
+                transcript_module.json,
+                "dumps",
+                side_effect=AssertionError("canonical serializer must not run"),
+            ) as transcript_dumps,
+            self.assertRaisesRegex(ValueError, "transcript byte limit"),
+        ):
+            transcript_module.validate_audit_transcript(oversized_transcript)
+        validate_container.assert_not_called()
+        normalize_transcript.assert_not_called()
+        transcript_dumps.assert_not_called()
 
         one_entry = _entries()[:1]
         one_transcript = transcript_module.build_audit_transcript(one_entry)
@@ -558,6 +701,49 @@ class AuditTranscriptTests(unittest.TestCase):
         ):
             transcript_module.parse_audit_transcript(dense_payload)
         loads.assert_not_called()
+
+    def test_in_memory_preflight_matches_canonical_utf8_size(self) -> None:
+        values = (
+            None,
+            True,
+            False,
+            0,
+            -123456789,
+            1.25,
+            -0.0,
+            1e20,
+            1e-20,
+            sys.float_info.max,
+            sys.float_info.min,
+            5e-324,
+            'quote"slash\\control\b\f\n\r\t\x00',
+            "é中文😀\u2028",
+            [],
+            [1, "two", None],
+            {},
+            {"é": "😀", "nested": [False, {"control": "\x1f"}]},
+        )
+        for value in values:
+            with self.subTest(value=repr(value)):
+                canonical = json.dumps(
+                    value,
+                    allow_nan=False,
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                    sort_keys=True,
+                ).encode("utf-8")
+                measured = transcript_module._preflight_in_memory_json(
+                    value,
+                    maximum_bytes=len(canonical),
+                    label="audit fixture",
+                )
+                self.assertEqual(measured, len(canonical))
+                with self.assertRaisesRegex(ValueError, "byte limit"):
+                    transcript_module._preflight_in_memory_json(
+                        value,
+                        maximum_bytes=len(canonical) - 1,
+                        label="audit fixture",
+                    )
 
     def test_capture_live_helper_passes_resource_overrides(self) -> None:
         collected = _result("countries", {})

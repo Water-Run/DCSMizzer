@@ -270,14 +270,26 @@ python Tools\dcsmizzer.py construction-verify `
   > output\construction-verification.json
 ```
 
-Both commands keep `runtime_valid: null`. Version 1 can replay exact build
-bytes and static verification with the recorded producer/toolchain, but cannot
-replay every audit subquery decision; it therefore keeps
-`fully_reproducible=false` and `static_release_ready=false`. Keep the bundle
-local because it embeds exact spec, resources, evidence, and MIZ bytes. Use a
-separate trusted construction root; overlap with any input tree is rejected.
-Specs containing a native GCI station are refused until their conditional GCI
-sources have a sealed evidence domain.
+New snapshots are `construction-bundle/v2`. The writer accepts an audit only
+after two identical live reports and transcripts, then strictly consumes the
+sealed transcript in an offline audit replay before building. That transcript
+covers all 16 external query kinds available to `audit-spec`; every call that
+the spec actually causes is order-, parameter-, and response-bound. The
+published verifier repeats audit, build, and static verification only when the
+complete current producer identity matches the manifest. Under a different
+producer it checks static bundle integrity only, leaving replay results unknown
+and `fully_reproducible=false`. Version 1 remains readable legacy evidence and
+has no audit-decision replay.
+
+Both versions keep `runtime_valid: null`. A content address is tamper-evidence
+relative to an externally retained ID, not a signature. Keep the bundle local
+because it embeds exact spec, resources, evidence, transcript, and MIZ bytes.
+Use a separate trusted construction root; overlap with any input tree is
+rejected, as is any root inside or containing the producer repository. Specs
+containing a native GCI station are refused until their conditional GCI
+sources have a sealed evidence domain. The current partial
+module, payload, and airfield evidence still keeps
+`static_release_ready=false`, even when every v2 offline replay succeeds.
 
 The legacy separate reports remain useful for diagnosis and for exporting a
 named MIZ:

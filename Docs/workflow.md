@@ -307,8 +307,13 @@ static trace. It runs the same audit/build/verify pipeline and binds the exact
 spec, resources, MIZ, reports, producer/toolchain, readiness preimage, and
 embedded evidence bundle. See the
 [construction command reference](reference/construction-validation-commands.md).
-Its v1 audit decision is recorded but not replayable offline, so it does not
-claim full reproducibility or static/runtime release readiness.
+New snapshots use v2: two identical live captures seal the ordered audit-query
+transcript, and the writer replays that decision offline before construction.
+The verifier repeats audit, build, and static verification only under the exact
+full producer identity; a different producer checks historical static integrity
+only. Legacy v1 bundles remain readable without audit-decision replay. Neither
+format claims runtime validity, and v2 static release readiness still requires
+the complete current evidence gate.
 
 Use the separate commands below when a named MIZ output or focused diagnostic
 report is required:

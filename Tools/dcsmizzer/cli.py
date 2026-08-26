@@ -21,7 +21,7 @@ from .builder import build_miz, verify_miz
 from .campaign import analyse_cmp
 from .capabilities import capabilities_report
 from .coastline import br_coastline_report
-from .construction_provenance import (
+from .construction_replay import (
     create_construction_snapshot,
     verify_construction_bundle,
 )
@@ -240,9 +240,8 @@ def main(
                 pydcs_terrain=args.pydcs_terrain,
             )
             validation = report["validation"]
-            exit_code = (
-                0
-                if validation.get("bundle_valid") is True
+            snapshot_ready = bool(
+                validation.get("bundle_valid") is True
                 and validation.get("audit_passed") is True
                 and validation.get("build_passed") is True
                 and validation.get("verify_passed") is True
@@ -250,18 +249,44 @@ def main(
                 and validation.get("artifact_rebuilt_exact") is True
                 and validation.get("verification_replayed") is True
                 and validation.get("evidence_ready_for_static_release") is True
-                else 1
             )
+            if report.get("schema") == "dcsmizzer.construction-snapshot/v2":
+                snapshot_ready = bool(
+                    snapshot_ready
+                    and validation.get("audit_decision_replay_available") is True
+                    and validation.get("audit_decision_replay_performed") is True
+                    and validation.get("audit_decision_replay_passed") is True
+                    and validation.get("artifact_rebuild_performed") is True
+                    and validation.get("verification_replay_performed") is True
+                    and validation.get("fully_reproducible") is True
+                    and validation.get("static_release_ready") is True
+                )
+            exit_code = 0 if snapshot_ready else 1
         elif args.command == "construction-verify":
             report = verify_construction_bundle(args.bundle)
             validation = report["validation"]
-            replay_passed = bool(
-                validation["replay_producer_matches"] is not True
-                or (
-                    validation["artifact_rebuilt_exact"] is True
-                    and validation["verification_replayed"] is True
+            exact_producer = validation["replay_producer_matches"] is True
+            if report.get("schema") == "dcsmizzer.construction-verification/v2":
+                replay_passed = bool(
+                    not exact_producer
+                    or (
+                        validation.get("audit_decision_replay_performed") is True
+                        and validation.get("audit_decision_replay_passed") is True
+                        and validation.get("artifact_rebuild_performed") is True
+                        and validation.get("artifact_rebuilt_exact") is True
+                        and validation.get("verification_replay_performed") is True
+                        and validation.get("verification_replayed") is True
+                        and validation.get("fully_reproducible") is True
+                    )
                 )
-            )
+            else:
+                replay_passed = bool(
+                    not exact_producer
+                    or (
+                        validation["artifact_rebuilt_exact"] is True
+                        and validation["verification_replayed"] is True
+                    )
+                )
             exit_code = (
                 0
                 if validation["bundle_valid"] is True
@@ -1519,8 +1544,9 @@ def _build_parser() -> argparse.ArgumentParser:
         "construction-snapshot",
         "Audit, build, verify, and content-address one exact low-level MIZ "
         "construction. The local bundle embeds its exact evidence snapshot "
-        "and construction inputs. Authority: tamper-evident static V1 trace; "
-        "audit-decision and DCS-runtime replay remain unavailable.",
+        "and construction inputs plus a sealed audit transcript. Authority: "
+        "construction-bundle/v2 with exact-producer offline audit, build, and "
+        "static-verification replay; DCS-runtime replay remains unavailable.",
     )
     construction_snapshot.add_argument(
         "spec",
@@ -1569,10 +1595,10 @@ def _build_parser() -> argparse.ArgumentParser:
 
     construction_verify = add_command(
         "construction-verify",
-        "Verify a content-addressed construction bundle and byte-replay its "
-        "build and static verification when the exact producer/toolchain is "
-        "available. Authority: exact saved bytes, hashes, and static replay; "
-        "never audit-decision or DCS-runtime replay.",
+        "Verify construction-bundle/v1 or /v2. V2 replays its sealed audit, "
+        "build, and static verification only under the exact full producer "
+        "identity. Authority: other producers perform static historical "
+        "verification only; DCS-runtime replay remains unavailable.",
     )
     construction_verify.add_argument(
         "bundle",

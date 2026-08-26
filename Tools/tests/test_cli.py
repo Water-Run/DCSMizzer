@@ -1421,6 +1421,10 @@ class ToolCliTests(unittest.TestCase):
             0,
         )
         self.assertEqual(
+            report["construction_provenance"]["status"],
+            "implemented_replayable_tamper_evident_static_trace",
+        )
+        self.assertEqual(
             report["airbase_runway_parking"]["status"],
             "implemented_commit_bound_planning_all_14_theatres",
         )

@@ -126,10 +126,31 @@ package imports do not provide this pre-import bootstrap property.
 
 This binding context is orthogonal to the report's intrinsic authority and
 cannot upgrade static/planning evidence to runtime proof. M0 remains partial.
-New `construction-bundle/v1` traces seal exact audit/build/verify/spec/resource/
-MIZ bytes and evidence preimages, but do not record and replay every audit
-subquery decision; legacy reports remain unsealed. See
-[evidence-lifecycle-commands.md](reference/evidence-lifecycle-commands.md).
+New construction snapshots emit `construction-bundle/v2`. They require two
+identical live audit reports and two identical transcripts before publication.
+The transcript schema covers the complete 16-kind external query vocabulary of
+`audit-spec` and stores every actual ordered request with strict canonical
+parameters and a content-addressed response. Offline replay uses only the
+sealed spec, sealed resources, and transcript; it must issue the same calls in
+the same order, match the parameters and response bindings, and consume the
+entire request stream without returning to the original DCS or upstream roots.
+The exact replayed audit report must equal the captured intrinsic report before
+build and verification proceed.
+
+`construction-verify` validates v2 membership, hashes, evidence/report
+bindings, and pipeline continuity under any producer. Audit, build, and static
+verification replay occur only when the complete current producer identity
+matches the manifest; otherwise their results remain unperformed/unknown and
+the result is historical static integrity only. The v1 construction format is
+still readable legacy evidence but has no audit-decision transcript, while
+standalone legacy reports remain unsealed. Neither version runs DCS, so runtime
+validity remains `null`. Native GCI specs are refused until their conditional
+install/manual/training inputs have a sealed evidence domain. A content address
+is not a signature or producer authentication. Current partial module, payload,
+and airfield evidence also continues to block `static_release_ready`, even for
+an otherwise exact v2 replay. See
+[construction-validation-commands.md](reference/construction-validation-commands.md)
+and [evidence-lifecycle-commands.md](reference/evidence-lifecycle-commands.md).
 
 The evidence reference is CLI transport metadata, not a field inserted into
 the underlying Python report or bundle artifact. When a saved standalone

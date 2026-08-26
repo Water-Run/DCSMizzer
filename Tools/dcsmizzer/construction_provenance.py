@@ -100,7 +100,7 @@ def create_construction_snapshot(
     )
     output_candidate = _construction_root_candidate(
         Path(construction_root),
-        protected=(dcs, cache, pydcs_root, br_root, bundle),
+        protected=(repository, dcs, cache, pydcs_root, br_root, bundle),
     )
 
     spec, spec_payload, resource_payloads, resource_ledger = _capture_inputs(
