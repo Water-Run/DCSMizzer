@@ -14,8 +14,8 @@ TOOLS_ROOT = Path(__file__).resolve().parents[1]
 if str(TOOLS_ROOT) not in sys.path:
     sys.path.insert(0, str(TOOLS_ROOT))
 
-from dcsmizzer.cli import main
-from dcsmizzer.evidence import (
+from dcsmizzer.cli import main  # noqa: E402
+from dcsmizzer.evidence import (  # noqa: E402
     compare_evidence,
     create_evidence_snapshot,
     evidence_readiness,

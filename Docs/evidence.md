@@ -23,7 +23,7 @@ release, product, and patch facts. They do not replace installed internal IDs.
 
 | Needed fact | Product route | Coverage boundary |
 |---|---|---|
-| Locked pydcs/BriefingRoom source readiness | `upstream-status`; `upstream-prepare` only when not ready | Exact fixed remote/branch/commit/tree and clean cache state; implementation alone is not readiness |
+| Locked pydcs/BriefingRoom readiness and candidate review | `upstream-status`; `upstream-prepare` only when not ready; `upstream-promotion-audit` before any pin decision | Exact fixed cache identity plus read-only clean fast-forward/diff/consumer-model review; an audit never authorizes a pin edit |
 | Reproducible evidence snapshot, drift, and readiness | `evidence-snapshot`, `evidence-verify`, `evidence-diff`, `evidence-readiness` | Exact local bundle bytes and finite source scopes; verification does not authenticate the original producer or upgrade static evidence to runtime authority |
 | Installed version and module directories | `dcs-static` | File presence, not entitlement or activation |
 | Plugin ID, literal flyable type, and literal service country/year | `dcs-modules` | Static matching module sources only; absence can remain unresolved |
@@ -248,6 +248,15 @@ The release workflow uses the disposable `output\upstream` cache described in
 product command that may contact the network or write the cache; neither
 command executes upstream code or starts DCS.
 
+`upstream-promotion-audit` supplies the read-only candidate gate. It binds a
+clean candidate to the current lock, proves fast-forward ancestry, hashes the
+complete bounded path diff, rejects replaceable/non-standalone Git state,
+matches the safe consumer checkout to exact index blobs, parses changed
+consumer models twice, and rechecks both repository inputs after the run. It
+never edits a pin. A candidate that changes consumed data must still pass the
+separately recorded repository regression and post-lock evidence lifecycle
+before promotion.
+
 The recorded clean upstream states are:
 
 - pydcs `master` at
@@ -263,6 +272,15 @@ airport with 11 parking records. The newer inspected BriefingRoom tip
 `be5e3663ec6ed2b22db69c22f91c51f150566a91` did not change the terrain bounds,
 spawn points, or airbase export consumed here, so its product pin was retained
 instead of moving merely because the branch advanced.
+
+The implemented promotion audit reproduces those decisions. The current pydcs
+candidate is the exact locked commit with a zero-path diff. The BriefingRoom
+candidate is a clean 16-commit fast-forward with 36 changed paths. Only
+`src/BriefingRoom/BriefingRoom.cs` touches the bounded consumer surface; parsed
+theatre, 802-airbase, 25,730-parking, and 14-bounds component fingerprints are
+unchanged, while only the project-version metadata component differs. The
+audit therefore reports `retain_pin_consumed_model_unchanged`, performs no
+write, and does not authorize a lock update.
 
 The read-only development survey clones were safely fast-forwarded and clean
 at these inspected tips on 2026-08-26:
@@ -630,9 +648,11 @@ decisions come from current tool reports and their source bindings.
 
 `.develope` contains optional maintainer survey material only. It may be
 deleted from a release checkout: product commands and the documented user
-workflow never read it. Legacy `.develope/reference` data is frozen and
-partial, and maintainer-side `.develope/upstream` clones are not product
-inputs. Their provenance does not make them current.
+workflow never read it implicitly. A maintainer may explicitly supply one exact
+`.develope/upstream` checkout to `upstream-promotion-audit`; that candidate is
+review input, not product evidence or an accepted pin. Legacy
+`.develope/reference` data is frozen and partial. Candidate-clone provenance
+does not make it current.
 
 The release source route is the explicit disposable cache prepared and checked
 through `upstream-prepare`/`upstream-status`. Record remote, branch, commit,

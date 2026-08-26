@@ -926,7 +926,10 @@ def _validate_runtime_mission(value: Any) -> None:
         maximum=MAX_MISSION_BYTES,
     )
     _digest(mission.get("sha256"), "runtime mission hash")
-    if mission.get("archive_valid") is not True or mission.get("parse_valid") is not True:
+    if (
+        mission.get("archive_valid") is not True
+        or mission.get("parse_valid") is not True
+    ):
         raise ValueError("runtime mission preparation validity is invalid")
     _text(mission.get("theatre"), "runtime mission theatre", maximum=256)
     for field in ("expected_groups", "expected_units", "expected_player_slots"):

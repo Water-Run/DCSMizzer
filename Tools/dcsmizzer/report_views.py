@@ -101,6 +101,7 @@ KNOWN_REPORT_SCHEMAS = frozenset(
         "dcsmizzer.runtime-attestation/v1",
         "dcsmizzer.terrain-evidence-attestation/v1",
         "dcsmizzer.acknowledged-upstream-cache/v1",
+        "dcsmizzer.upstream-promotion-audit/v1",
         "dcsmizzer.runtime-collection/v1",
         "dcsmizzer.runtime-execution/v1",
         "dcsmizzer.runtime-preparation/v1",
@@ -2291,6 +2292,7 @@ def _report_status(
             "dcsmizzer.terrain-landmarks/v1": "exact_query_usable",
             "dcsmizzer.airfield-footprint/v1": "exact_airfield_usable",
             "dcsmizzer.br-airfield-footprint/v1": "planning_footprint_usable",
+            "dcsmizzer.upstream-promotion-audit/v1": "promotion_audit_passed",
         }
         basis = verdict_keys.get(schema)
         value = validation.get(basis) if basis is not None else None

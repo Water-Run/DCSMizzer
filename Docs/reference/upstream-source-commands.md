@@ -88,10 +88,73 @@ python Tools\dcsmizzer.py upstream-prepare `
 already present inside the supplied cache. Missing locked objects therefore
 fail nonzero; the command never substitutes another revision.
 
+## `upstream-promotion-audit`
+
+Review one clean candidate without advancing the immutable product lock:
+
+```powershell
+python Tools\dcsmizzer.py upstream-promotion-audit `
+  --cache-root output\upstream `
+  --candidate-root output\upstream-candidates\briefing-room-for-dcs `
+  --source BriefingRoom
+```
+
+Both roots are explicit and read only. The command first requires the complete
+baseline cache to pass its existing lock gate. It then requires the candidate
+to be the exact Git top level, clean, on the expected branch or detached, on
+the recognized credential-free remote, locally configured without dangerous
+Git hooks/helpers, complete at every required path, and unchanged in license.
+The checkout must use a standalone, non-shallow object store without replace
+refs, grafts, alternates, or sparse-checkout state. Every tracked consumer file
+must be a safe regular file with normal index flags and bytes matching its Git
+blob; built-in CRLF checkout normalization is accepted only for the known text
+formats. Ignored files that the bounded parser could consume fail the audit.
+The locked commit must exist in the candidate object database and be an
+ancestor of its exact `HEAD`.
+
+The audit records a resource-bounded, complete `--name-status --no-renames`
+path diff, its canonical hash, and the subset of paths DCSMizzer actually
+consumes. Git capture, consumer-file count, individual size, and aggregate
+size limits fail closed instead of silently truncating the decision. A
+consumed pydcs change triggers full static fingerprints over all five unit
+categories, every plane/helicopter task and pylon edge, the weapon and task
+registries, and all parsed terrain/airport/parking summaries. A consumed
+BriefingRoom change fingerprints all theatre declarations, airbases, parking,
+bounds, and project-version evidence; changed spawn-point files are additionally
+streamed and parsed in full. Parser incompleteness or a worsened unresolved
+record count fails closed. Both parsed models must be identical across two
+passes, and the baseline/candidate repository identities are checked again
+after parsing, so ordinary mid-audit changes cannot pass.
+
+The machine decision is intentionally narrower than “upgrade”:
+
+- `no_revision_change`: candidate and lock are identical;
+- `retain_pin_consumed_model_unchanged`: the branch moved, but the bounded data
+  model used by DCSMizzer did not;
+- `candidate_requires_repository_regression`: consumed data changed and the
+  candidate passed the read-only compatibility gate;
+- `reject_candidate`: identity, ancestry, diff, stability, or parser validation
+  failed.
+
+Exit code 0 means the audit is complete and reviewable. It authorizes at most
+the next repository-regression step. `automatic_pin_update` and
+`lock_update_authorized` are always false. Before an explicit lock edit, retain
+the exact audit report, review its relative paths and component hashes, and run
+the complete product, survey, documentation, Prompt, style, and compilation
+suites. After an approved edit, rebuild the disposable cache, require
+`upstream-status` to pass, create a clean evidence snapshot, and inspect its
+diff/readiness result. Exit code 1 means the candidate failed this audit; exit
+code 2 means the invocation or safe inspection could not be completed.
+
+No audit Git query fetches, lazily downloads, checks out, imports, or executes
+upstream content. Candidate acquisition and fast-forward maintenance remain an
+explicit development evidence task outside this product command. A dirty
+checkout is never reset or cleaned automatically.
+
 ## Execution and trust boundary
 
-Neither command imports or executes upstream Python, runs BriefingRoom, starts
-DCS, or starts Mission Editor. Downstream `pydcs-*`, `br-*`, and
+None of these commands imports or executes upstream Python, runs BriefingRoom,
+starts DCS, or starts Mission Editor. Downstream `pydcs-*`, `br-*`, and
 `terrain-coverage` commands continue to parse a bounded set of data and source
 declarations without executing upstream code.
 

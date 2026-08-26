@@ -21,7 +21,8 @@ it generated for you.
 >
 > **Current status (2026-08-26): groundwork with an isolated runtime bridge.** `Tools` provide MIZ/CMP
 > inspection; current-install static and real-mission observed evidence
-> queries; locked upstream-cache preparation and readiness checks; acknowledged
+> queries; locked upstream-cache preparation, readiness, and read-only pin-
+> candidate audits; acknowledged
 > commit-bound cross-map terrain, airbase, parking, spawn-point, unit, and
 > pylon queries; current options and warehouse templates; finite common
 > trigger, goal, and timed-text compilation; native MiG-29A GCI evidence;

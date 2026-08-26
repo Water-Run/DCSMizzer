@@ -13,7 +13,7 @@ TOOLS_ROOT = Path(__file__).resolve().parents[1]
 if str(TOOLS_ROOT) not in sys.path:
     sys.path.insert(0, str(TOOLS_ROOT))
 
-from dcsmizzer.evidence_inputs import (
+from dcsmizzer.evidence_inputs import (  # noqa: E402
     runtime_artifact_name,
     runtime_attestation,
     runtime_coverage,

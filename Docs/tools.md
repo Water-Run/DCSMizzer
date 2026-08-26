@@ -53,7 +53,7 @@ compact catalog -> exact type or airport -> one preset, station, or parking
 |---|---|---|
 | Capability boundary | `capabilities` (compact status matrix; `--details` for the full machine report) | [capabilities.md](capabilities.md) |
 | Content-addressed evidence, historical drift, and current readiness | `evidence-snapshot`, `evidence-verify`, `evidence-diff`, `evidence-readiness` | [evidence lifecycle command details](reference/evidence-lifecycle-commands.md) |
-| Locked upstream cache readiness/preparation | `upstream-status`, `upstream-prepare` | [upstream source command details](reference/upstream-source-commands.md) |
+| Locked upstream cache readiness/preparation and candidate review | `upstream-status`, `upstream-prepare`, `upstream-promotion-audit` | [upstream source command details](reference/upstream-source-commands.md) |
 | Official product cards versus unique theatre IDs | `terrain-catalog` | [physical terrain routing](terrain-physical.md) |
 | Current installed version, modules, countries, weather, payload presets/fingerprints, airbases, native MiG-29A GCI | `dcs-static`, `dcs-modules`, `dcs-countries`, `dcs-cloud-presets`, `dcs-weather`, `dcs-payload-index`, `dcs-payloads`, `dcs-payload-match`, `dcs-airbases`, `dcs-gci` | [installed-data command details](reference/installed-data-commands.md) |
 | Sanitized build inputs | `dcs-options-template`, `dcs-warehouse-template` | [installed-data command details](reference/installed-data-commands.md) |

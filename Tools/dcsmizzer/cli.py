@@ -77,6 +77,10 @@ from .upstream_cache import (
     upstream_report_usable,
     upstream_status_report,
 )
+from .upstream_promotion import (
+    promotion_audit_passed,
+    upstream_promotion_report,
+)
 from .weather import cloud_preset_report, weather_registry_report
 
 
@@ -162,6 +166,13 @@ def main(
                 offline=args.offline,
             )
             exit_code = 0 if upstream_report_usable(report) else 1
+        elif args.command == "upstream-promotion-audit":
+            report = upstream_promotion_report(
+                args.cache_root,
+                args.candidate_root,
+                args.source,
+            )
+            exit_code = 0 if promotion_audit_passed(report) else 1
         elif args.command == "report-summary":
             report = report_summary(args.path)
             exit_code = 0
@@ -1102,6 +1113,38 @@ def _build_parser() -> argparse.ArgumentParser:
             "Do not clone or fetch; only detach a clean recognized checkout "
             "when the acknowledged commit object already exists."
         ),
+    )
+
+    upstream_promotion = add_command(
+        "upstream-promotion-audit",
+        "Read-only, fail-closed review of one clean acknowledged-upstream "
+        "candidate against the current immutable cache pin. Authority: exact "
+        "Git ancestry/diff, license/profile checks, and parsed DCSMizzer "
+        "consumer models; the command never updates a pin.",
+    )
+    upstream_promotion.add_argument(
+        "--cache-root",
+        type=Path,
+        required=True,
+        help=(
+            "Explicit ready acknowledged-upstream cache containing the current "
+            "immutable baseline; read only."
+        ),
+    )
+    upstream_promotion.add_argument(
+        "--candidate-root",
+        type=Path,
+        required=True,
+        help=(
+            "Exact clean candidate checkout root; read only, never fetched, "
+            "checked out, repaired, or echoed."
+        ),
+    )
+    upstream_promotion.add_argument(
+        "--source",
+        choices=("pydcs", "BriefingRoom"),
+        required=True,
+        help="Acknowledged source whose immutable pin is being reviewed.",
     )
 
     report_summary_command = add_command(

@@ -81,6 +81,10 @@ exits zero. If it does not, run
 `upstream-prepare` may contact the network or write that cache; add `--offline`
 to forbid network access. The fixed locks and failure semantics are in the
 [upstream source command details](reference/upstream-source-commands.md).
+Branch movement never changes a product pin by itself. For dependency
+maintenance, run `upstream-promotion-audit` against one exact clean candidate
+checkout, preserve its report, review every consumed-model change, and complete
+the separately recorded repository regression and post-lock evidence sequence.
 
 ## 3. Build an evidence ledger
 

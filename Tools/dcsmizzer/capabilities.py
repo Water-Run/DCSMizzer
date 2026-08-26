@@ -88,10 +88,11 @@ _CAPABILITIES: dict[str, Any] = {
         "upstream_python_executed": False,
     },
     "acknowledged_upstream_cache": {
-        "status": "implemented_explicit_opt_in",
+        "status": "implemented_explicit_opt_in_with_promotion_audit",
         "commands": [
             "upstream-status",
             "upstream-prepare",
+            "upstream-promotion-audit",
         ],
         "provides": [
             "immutable pydcs and BriefingRoom origin, branch, commit, root "
@@ -100,11 +101,14 @@ _CAPABILITIES: dict[str, Any] = {
             "safe clone/fetch/detached-checkout preparation for clean "
             "recognized repositories",
             "offline use of an already available pinned commit object",
+            "read-only fast-forward, full path-diff, license, and consumed-data "
+            "model review before a candidate may enter repository regression",
         ],
         "boundaries": [
             "caller must always supply --cache-root",
             "no implicit .develope path",
             "upstream-status never writes",
+            "a passing promotion audit never edits or authorizes editing a pin",
             "dirty, wrong-remote, linked, and reparse checkouts fail closed",
             "authority remains below version-matched installed DCS data",
         ],

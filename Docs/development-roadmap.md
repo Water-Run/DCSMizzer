@@ -77,7 +77,7 @@ After the runtime bridge, terrain-probe MIZ instrumenter, coordinate
 hardening, pydcs pin promotion, and coastline-planning work were integrated,
 the release candidate passed:
 
-- 442 product tests, with one Windows-only open-path replacement race test
+- 457 product tests, with one Windows-only open-path replacement race test
   skipped because the platform denies replacing that already-open temporary
   path;
 - all 37 survey tests;
@@ -240,12 +240,20 @@ historical/current evidence, and gate
 current/stale/incomparable/partial/blocked decision domains. Exact runtime
 manifests can be revalidated into path-free attestations; physical-terrain
 files can be validated and bound by full source and finite-coverage hashes
-without embedding raw records. Dirty producers, blocked domains, partial
+without embedding raw records. Read-only upstream promotion audits now bind a
+candidate to the current lock, require a clean fast-forward with an unchanged
+license/profile and standalone object store, reject hidden or replaceable Git
+state, hash the complete bounded diff, prove the checked-out consumer bytes
+against their index blobs, compare changed consumer data, and recheck both
+inputs and both parsed models in stable two-pass form. Dirty producers,
+blocked domains, partial
 collection, changed inputs, and incompatible source scopes fail closed. The
 recorded `2.9.28.26283` baseline versus current `2.9.28.26385` comparison is
-machine-generated rather than prose-only. Ordinary unbundled reports do not
-yet carry a bundle reference, and the upstream pin-promotion protocol remains
-incomplete, so M0 is not marked complete.
+machine-generated rather than prose-only. The pydcs no-change candidate and the
+16-commit-ahead BriefingRoom candidate were exercised; the latter retained its
+pin because only project-version metadata changed across its 36-path diff.
+Ordinary unbundled reports do not yet carry a bundle reference, so M0 is not
+marked complete.
 
 The clean reference run from producer commit
 `5fdbeb4df86d0e07d1457e92779375682dc44d87` collected DCS
