@@ -39,6 +39,7 @@ Read only what the decision needs:
   workflow.md         sequence and decision gates
   evidence.md         authority, provenance, and conflict policy
   tools.md            command router; CLI --help is authoritative
+  continuous-validation.md ordinary Windows CI gate and external-DCS boundary
   reference/upstream-source-commands.md locked source-cache preparation/status
   reference/evidence-lifecycle-commands.md content-addressed snapshots, drift,
                        verification, and readiness gates

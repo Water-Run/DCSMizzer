@@ -33,7 +33,8 @@ it generated for you.
 > coastline distance/side checks; two-pass stable, content-addressed local
 > evidence bundles with drift/readiness gates and privacy-safe runtime/terrain
 > attestations; disposable physical-
-> probe MIZ instrumentation; and an explicit-opt-in isolated DCS runtime bridge.
+> probe MIZ instrumentation; a read-only, dependency-pinned Windows CI release
+> gate; and an explicit-opt-in isolated DCS runtime bridge.
 > The aggregate registry path has been exercised on DCS 2.9.28.26385; an exact
 > MIZ is runtime-valid only when its own hash-bound collection passes.
 > Natural-language scenario planning, campaign generation, complete runtime
@@ -42,6 +43,9 @@ it generated for you.
 > `python Tools/dcsmizzer.py capabilities`.
 > The evidence-led development order and acceptance gates are recorded in
 > [`Docs/development-roadmap.md`](./Docs/development-roadmap.md).
+> The ordinary hosted/static gate and its strict separation from authorized
+> local DCS validation are documented in
+> [`Docs/continuous-validation.md`](./Docs/continuous-validation.md).
 
 **A good Prompt is the foundation of a high-quality combat scenario.** See the
 [**Prompt examples**](./PROMPT-SAMPLE.adoc) to learn how to write an effective

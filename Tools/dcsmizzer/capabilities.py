@@ -150,6 +150,23 @@ _CAPABILITIES: dict[str, Any] = {
             "remain current-check unavailable",
         ],
     },
+    "continuous_validation": {
+        "status": "implemented_ordinary_windows_lane",
+        "provides": [
+            "GitHub-hosted Windows product and survey test matrix",
+            "repository document and bilingual Prompt validation",
+            "Ruff E/F/B and Python compilation gates",
+            "commit-pinned official actions and hash-locked Ruff wheel",
+            "read-only permissions, no persisted checkout credentials, and "
+            "bounded timeout/concurrency",
+            "unit-tested exclusion of DCS launch and upstream mutation",
+        ],
+        "does_not_provide": [
+            "DCS load, smoke, behaviour, or human-playtest validity",
+            "current local evidence or installed-module readiness",
+            "proof that repository branch protection requires the check",
+        ],
+    },
     "observed_miz_registry": {
         "status": "implemented",
         "provides": [

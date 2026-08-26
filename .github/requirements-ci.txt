@@ -1,0 +1,3 @@
+# Windows x64 wheel published by PyPI for Ruff 0.16.2.
+ruff==0.16.2 \
+    --hash=sha256:bcabe2f6d0fc7819f1431793005af4e4de7371927d037345bf941252b195b9fa

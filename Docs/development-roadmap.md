@@ -77,7 +77,7 @@ After the runtime bridge, terrain-probe MIZ instrumenter, coordinate
 hardening, pydcs pin promotion, and coastline-planning work were integrated,
 the release candidate passed:
 
-- 457 product tests, with one Windows-only open-path replacement race test
+- 465 product tests, with one Windows-only open-path replacement race test
   skipped because the platform denies replacing that already-open temporary
   path;
 - all 37 survey tests;
@@ -688,6 +688,15 @@ CMP compatibility and campaign continuity.
 - Progression and continuity rules have automated tests.
 
 ## M7: media, release engineering, and recurring verification
+
+**Implementation status (2026-08-26): ordinary CI implemented; external DCS
+lane and media/release publication remain partial.** The checked-in Windows
+workflow uses commit-pinned official actions, exact Python and hash-locked Ruff
+inputs, read-only permissions, bounded concurrency/timeout, and the complete
+product, survey, document, Prompt, Ruff `E/F/B`, and compilation matrix. Its
+contract tests prohibit DCS launch and upstream mutation. This hosted result
+does not substitute for the separately authorized local DCS lane or prove that
+repository branch protection requires the check.
 
 ### Optional media branch
 
