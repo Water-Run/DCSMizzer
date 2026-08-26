@@ -211,6 +211,20 @@ Initialized runtime/terrain exports are not yet ingested into the general
 bundle, and ordinary unbundled reports do not yet carry a bundle reference, so
 M0 is not marked complete.
 
+The clean reference run from producer commit
+`5fdbeb4df86d0e07d1457e92779375682dc44d87` collected DCS
+`2.9.28.26385` / Steam build `24431605` twice without drift or collection
+failure. Its local-only bundle ID is
+`db6717b76df16db77988bc1fb64077dca69f34318d6492b1d7d30293a774bfff`
+and its canonical manifest SHA-256 is
+`41c9c2dfe555cc4d17a7585fe67ed2af66bc6df97f3f5b3d1ae5e594087eb90e`.
+All 11 artifacts and 188,184 bytes verified. Current complete-domain readiness
+passed for installation, countries, weather, capabilities, and both locked
+upstreams. The default broad gate correctly remained non-ready because static
+module declarations, payload observations, and all four installed-terrain
+airfield views are partial authority. The raw bundle remains ignored and was
+not committed.
+
 ### Goal
 
 Make every registry, planning, generation, and validation result traceable to
