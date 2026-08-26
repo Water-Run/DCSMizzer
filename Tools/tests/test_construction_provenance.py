@@ -1309,7 +1309,9 @@ class ConstructionProvenanceTests(unittest.TestCase):
             )
         )
         remove_staging.assert_not_called()
-        verify_bundle.assert_called_once_with(final)
+        verify_bundle.assert_called_once()
+        verified_path = verify_bundle.call_args.args[0]
+        self.assertTrue(os.path.samefile(verified_path, final))
 
     def test_create_snapshot_cleans_staging_after_failed_build(self) -> None:
         dcs, cache, evidence, construction_root = self._snapshot_roots(
