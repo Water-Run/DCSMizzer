@@ -1,8 +1,9 @@
 from __future__ import annotations
 
-import sys
 import io
 import json
+import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -21,6 +22,14 @@ from dcsmizzer_survey.cli import main
 REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
 REFERENCE_DATA = REPOSITORY_ROOT / ".develope" / "reference" / "data"
 UPSTREAM_ROOT = REPOSITORY_ROOT / ".develope" / "upstream"
+LEGACY_REPOSITORIES = {
+    "briefing_room": UPSTREAM_ROOT / "briefing-room-for-dcs",
+    "gtd": UPSTREAM_ROOT / "dcs-global-terrain-database",
+    "mission_maker": UPSTREAM_ROOT / "dcs-mission-maker",
+    "retribution": UPSTREAM_ROOT / "dcs-retribution",
+    "moose": UPSTREAM_ROOT / "MOOSE",
+    "pydcs": UPSTREAM_ROOT / "pydcs",
+}
 
 
 class ReferenceProvenanceTests(unittest.TestCase):
@@ -67,21 +76,57 @@ class ReferenceProvenanceTests(unittest.TestCase):
     def test_every_declared_legacy_source_path_exists_at_its_frozen_commit(self) -> None:
         # Would fail if provenance contains a plausible but invented source path.
         manifest = build_legacy_reference_manifest(REFERENCE_DATA)
-        repositories = {
-            "briefing_room": UPSTREAM_ROOT / "briefing-room-for-dcs",
-            "gtd": UPSTREAM_ROOT / "dcs-global-terrain-database",
-            "mission_maker": UPSTREAM_ROOT / "dcs-mission-maker",
-            "retribution": UPSTREAM_ROOT / "dcs-retribution",
-            "moose": UPSTREAM_ROOT / "MOOSE",
-            "pydcs": UPSTREAM_ROOT / "pydcs",
-        }
+        repositories = self._local_legacy_repositories()
 
         missing = validate_legacy_source_paths(manifest, repositories)
 
         self.assertEqual(missing, [])
 
+    def test_missing_upstream_repositories_fail_closed(self) -> None:
+        manifest = build_legacy_reference_manifest(REFERENCE_DATA)
+        with tempfile.TemporaryDirectory() as temporary:
+            missing_root = Path(temporary)
+            repositories = {
+                project: missing_root / project
+                for project in LEGACY_SOURCE_COMMITS
+            }
+
+            missing = validate_legacy_source_paths(manifest, repositories)
+
+        self.assertTrue(missing)
+        self.assertEqual(
+            {item.split(":", 2)[1] for item in missing},
+            set(LEGACY_SOURCE_COMMITS),
+        )
+        self.assertTrue(all(":<commit:" in item for item in missing))
+
+    def test_cli_legacy_reference_rejects_missing_upstreams(self) -> None:
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        with tempfile.TemporaryDirectory() as temporary:
+            exit_code = main(
+                [
+                    "legacy-reference",
+                    "--data-root",
+                    str(REFERENCE_DATA),
+                    "--upstream-root",
+                    temporary,
+                ],
+                stdout=stdout,
+                stderr=stderr,
+            )
+
+        report = json.loads(stdout.getvalue())
+        self.assertEqual(exit_code, 1)
+        self.assertEqual(stderr.getvalue(), "")
+        self.assertTrue(report["source_path_errors"])
+        self.assertTrue(
+            all(":<commit:" in item for item in report["source_path_errors"])
+        )
+
     def test_cli_legacy_reference_emits_validated_manifest(self) -> None:
         # Would fail if provenance can be generated without validating source paths.
+        self._local_legacy_repositories()
         stdout = io.StringIO()
         stderr = io.StringIO()
 
@@ -105,6 +150,19 @@ class ReferenceProvenanceTests(unittest.TestCase):
             "dcsmizzer.reference-provenance/v1",
         )
         self.assertEqual(report["source_path_errors"], [])
+
+    def _local_legacy_repositories(self) -> dict[str, Path]:
+        absent = sorted(
+            project
+            for project, repository in LEGACY_REPOSITORIES.items()
+            if not repository.is_dir()
+        )
+        if absent:
+            self.skipTest(
+                "requires ignored local upstream evidence roots: "
+                + ", ".join(absent)
+            )
+        return LEGACY_REPOSITORIES
 
 
 if __name__ == "__main__":

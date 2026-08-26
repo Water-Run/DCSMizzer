@@ -31,8 +31,10 @@ workflow.
 The ordinary lane runs:
 
 - the complete product unit-test discovery;
-- the maintainer survey-test discovery when that development tree is present
-  in the repository revision;
+- the maintainer survey-test discovery; the two frozen-commit path audits run
+  when all six ignored, read-only upstream evidence roots are present and are
+  reported as explicit skips in a clean hosted checkout, while the hermetic
+  suite proves that absent roots fail closed;
 - repository document-link and bilingual Prompt-sample validators;
 - Ruff `E`, `F`, and `B` rules over product code and tests;
 - Python bytecode compilation over product and survey code.
@@ -48,6 +50,11 @@ python Tools\validate_prompt_samples.py
 ruff check --select E,F,B Tools\dcsmizzer Tools\tests
 python -m compileall -q Tools
 ```
+
+For the complete local evidence lane, populate the acknowledged clones under
+`.develope/upstream` at the commits recorded by the survey, then run the same
+survey discovery command. Missing clones never produce a validated provenance
+manifest: the CLI returns failure and lists each unavailable commit source.
 
 The CI contract itself has unit tests. They reject movable action references,
 write permissions, credential persistence, unpinned Ruff input, missing release

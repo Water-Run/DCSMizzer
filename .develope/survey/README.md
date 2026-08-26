@@ -29,6 +29,11 @@
 python -m unittest discover -s .develope\survey -t .develope\survey -p test_*.py
 ```
 
+其中两项历史来源路径审计要求 `.develope/upstream` 下六个被忽略的只读
+上游证据根均存在；干净 checkout 会明确跳过这两项环境审计，同时仍会执行
+“来源根缺失必须失败关闭”的独立测试。要取得完整本地证据门禁结果，需先按
+基线记录准备这些固定提交的克隆。
+
 测绘 CLI：
 
 ```powershell
