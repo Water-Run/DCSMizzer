@@ -201,6 +201,24 @@ with `reported_`. Interpret `reported_status.passed` together with
 `reported_status.basis`; this means only that the saved file reports that
 verdict. Nonfatal audit warnings remain in `reported_warnings` and leave
 `reported_validation.review_warnings_clear=false`.
+If validation metadata alone would exceed the output budget, the summary
+samples its fields, preserves `reported_validation_field_count`, and sets
+`view.validation_fields_truncated=true`. It still accepts a valid input within
+the 16 MiB input ceiling. `view.runtime_validation_performed=false` states
+that this command did not run DCS; any non-null runtime verdict found in the
+saved source is exposed separately as the unverified
+`reported_runtime_validation_performed` claim.
+If the saved source contains CLI `evidence_ref` transport metadata, the summary
+copies only its bounded status, bundle/content hash identity, and reported
+production-usable Boolean into `reported_evidence_ref`. It explicitly marks
+those claims unverified and never forwards arbitrary authority, domain, path,
+or limitation fields from the input file. Transport-only hashes are excluded
+from `reported_hashes` and `reported_hash_count`.
+For an ordinary explicit binding, it also recomputes the canonical report
+payload hash after removing top-level `evidence_ref` and exposes
+`intrinsic_report_binding_matches`. A false value proves the saved payload no
+longer matches its reference; a true value detects consistency only and does
+not authenticate a caller-supplied reference.
 Hash-field discovery is diagnostic and traverses at most the
 `view.hash_scan_depth_limit` reported by the summary; absence beyond that
 depth is not proof that the saved report contains no additional hashes.

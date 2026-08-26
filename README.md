@@ -19,7 +19,7 @@ it generated for you.
 
 > [!IMPORTANT]
 >
-> **Current status (2026-08-26): groundwork with an isolated runtime bridge.** `Tools` provide MIZ/CMP
+> **Current status (2026-08-27): groundwork with an isolated runtime bridge.** `Tools` provide MIZ/CMP
 > inspection; current-install static and real-mission observed evidence
 > queries; locked upstream-cache preparation, readiness, and read-only pin-
 > candidate audits; acknowledged
@@ -32,11 +32,17 @@ it generated for you.
 > extrapolation diagnostics, WGS-84 geodesic offsets, and commit-bound planning-
 > coastline distance/side checks; two-pass stable, content-addressed local
 > evidence bundles with drift/readiness gates and privacy-safe runtime/terrain
-> attestations; disposable physical-
+> attestations; uniform CLI evidence-reference states plus fail-closed,
+> pre/post-fenced current-bundle binding, including canonical intrinsic-report
+> hashes, for source-matched read-only queries;
+> disposable physical-
 > probe MIZ instrumentation; a read-only, dependency-pinned Windows CI release
 > gate; and an explicit-opt-in isolated DCS runtime bridge.
-> The aggregate registry path has been exercised on DCS 2.9.28.26385; an exact
-> MIZ is runtime-valid only when its own hash-bound collection passes.
+> The aggregate registry path was exercised on DCS 2.9.28.26385 by an older
+> development producer; the current clean candidate was blocked by Steam
+> authorization before Hook initialization and has no reusable runtime
+> authority. An exact MIZ is runtime-valid only when its own hash-bound
+> collection passes.
 > Natural-language scenario planning, campaign generation, complete runtime
 > registry record export, Mission Editor resave, and general behavioural or
 > human-playtest validation are not implemented. Before use, read [`Docs/index.txt`](./Docs/index.txt) and run

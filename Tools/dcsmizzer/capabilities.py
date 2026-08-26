@@ -9,7 +9,7 @@ from typing import Any
 _CAPABILITIES: dict[str, Any] = {
     "schema": "dcsmizzer.capabilities/v3",
     "survey_basis": "2026-07-30",
-    "implementation_reviewed_on": "2026-08-26",
+    "implementation_reviewed_on": "2026-08-27",
     "inspect_miz": {
         "status": "implemented",
         "archive_policy": {
@@ -114,7 +114,7 @@ _CAPABILITIES: dict[str, Any] = {
         ],
     },
     "evidence_lifecycle": {
-        "status": "implemented_bundle_drift_and_bound_attestation_gate",
+        "status": "implemented_bundle_drift_attestation_and_cli_binding_gate",
         "commands": [
             "evidence-snapshot",
             "evidence-verify",
@@ -136,6 +136,13 @@ _CAPABILITIES: dict[str, Any] = {
             "raw logs omitted",
             "validated physical-terrain attestations binding the full external "
             "source hash and finite coverage",
+            "uniform CLI evidence_ref states for unbound, self-referential, "
+            "and current bundle-bound reports",
+            "immutable command-to-domain gates for 27 read-only query commands",
+            "safe exact source identity checks plus matching pre-query and "
+            "post-query readiness fences",
+            "current clean producer version/commit equality with the bundle "
+            "and compact query, readiness, and per-domain artifact-set hashes",
         ],
         "boundaries": [
             "bundle verification authenticates bytes and bindings, not who "
@@ -148,6 +155,12 @@ _CAPABILITIES: dict[str, Any] = {
             "physical records",
             "runtime or terrain inputs absent from a current readiness pass "
             "remain current-check unavailable",
+            "external binding is rejected for lifecycle, writer, launcher, "
+            "arbitrary-input, and unsupported-source commands",
+            "binding context never upgrades the report's intrinsic or runtime "
+            "authority, and a failed query is always unusable",
+            "historical build/audit/verify reports are not yet transitively "
+            "sealed to the evidence bundle that produced every input",
         ],
     },
     "continuous_validation": {

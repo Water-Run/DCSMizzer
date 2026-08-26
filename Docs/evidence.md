@@ -97,9 +97,43 @@ samples, objects, or airfield geometry. Therefore the external raw terrain
 file must still be retained locally to reproduce later physical queries.
 
 Bundle contents remain under ignored local output and are not redistribution-
-approved. Ordinary unbundled command reports do not yet carry a bundle
-reference, so M0 remains incomplete. See
+approved. Every JSON CLI response now declares an `unbound`, `self`, or
+`bundle-current` evidence-reference state. External current binding is limited
+to source-matched read-only commands with immutable mandatory domains, exact
+current producer equality, and matching readiness fences around the query.
+It binds the path-free query, domain artifact sets, and canonical intrinsic
+report payload SHA-256. A later `report-summary` recomputes the last value and
+must report `intrinsic_report_binding_matches=true` before the saved binding
+claim is reused; this detects content drift but does not authenticate a file
+received from an untrusted party.
+
+The supported `python Tools\dcsmizzer.py ...` entrypoint re-enters Python in
+isolated, no-site mode before importing product modules. Provenance-sensitive
+commands are the evidence snapshot/verify/diff/readiness lifecycle,
+`report-summary`, all three runtime commands, all three terrain-probe producer
+commands, and every invocation carrying `--evidence-bundle`. They require a
+clean ordinary index, reject every ignored or untracked entry under `Tools`,
+and require every tracked
+regular worktree file's Git-canonical content ID to equal its `HEAD` blob
+before the product import. This deliberately accepts only Git's declared text
+line-ending normalization, while `-text`/binary content remains byte-exact.
+The check is fenced and uses isolated Git configuration. The trusted Python
+interpreter, Git executable, operating system, and this small bootstrap remain
+the local trust base; this is content binding for a controlled host, not
+authentication of an entrypoint or machine supplied by an adversary. Direct
+package imports do not provide this pre-import bootstrap property.
+
+This binding context is orthogonal to the report's intrinsic authority and
+cannot upgrade static/planning evidence to runtime proof. M0 remains partial
+because historical audit/build/verify artifacts are not yet transitively
+sealed to every evidence input and reproducible from that chain. See
 [evidence-lifecycle-commands.md](reference/evidence-lifecycle-commands.md).
+
+The evidence reference is CLI transport metadata, not a field inserted into
+the underlying Python report or bundle artifact. When a saved standalone
+report is compared, normalization ignores only this top-level transport field
+so adding it does not create false semantic drift; the standalone file's raw
+SHA-256 still changes and remains visible as exact physical-file identity.
 
 ## Installed static-source scope
 
@@ -147,6 +181,13 @@ call remains listed, and directory presence still does not prove entitlement
 or activation. Exact `--unit-type` reports also include literal
 `declare_service_life` country/year records when present; an empty list leaves
 the era fact unresolved.
+
+External current-bundle binding is deliberately unavailable when
+`--unit-type`, `--service-country`, or `--service-year` is present. Those
+forms recursively read service-life files not represented by the current
+modules snapshot artifact, so the CLI rejects their binding flags before any
+query is dispatched. Their unbound intrinsic report remains usable within its
+declared static scope.
 
 Use `--service-country` and `--service-year` for era-sensitive aircraft
 selection. A filter mismatch returns nonzero and must not be converted into a
@@ -368,7 +409,10 @@ otherwise has one parsed match.
 
 `commit_bound` authority is provenance-gated. Git's reported top-level must
 equal the supplied checkout root exactly, `HEAD` must exist, and the worktree
-must be clean. A dirty checkout becomes `dirty_worktree_snapshot`; a copied
+must be clean. Acknowledged upstream status also rejects ignored worktree
+entries and tracked files carrying `assume-unchanged`, `skip-worktree`, or any
+other nonordinary index tag, so those mechanisms cannot hide query inputs. A
+dirty checkout becomes `dirty_worktree_snapshot`; a copied
 directory, nested subdirectory inheriting a parent repository, or non-Git
 source becomes `unversioned_snapshot`. `audit-spec` reports either downgrade
 as a warning.

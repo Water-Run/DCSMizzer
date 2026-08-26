@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import ast
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -20,6 +22,23 @@ from dcsmizzer import runtime  # noqa: E402
 
 
 VERSION = "2.9.28.26385"
+PRODUCER_COMMIT = "a" * 40
+REAL_GIT_IDENTITY = runtime._git_identity
+PROVENANCE_COMMANDS = frozenset(
+    {
+        "evidence-diff",
+        "evidence-readiness",
+        "evidence-snapshot",
+        "evidence-verify",
+        "report-summary",
+        "runtime-collect",
+        "runtime-prepare",
+        "runtime-run",
+        "terrain-probe-extract",
+        "terrain-probe-instrument",
+        "terrain-probe-script",
+    }
+)
 
 
 class _CompletedProcess:
@@ -108,10 +127,406 @@ class RuntimeBridgeTests(unittest.TestCase):
             return_value=VERSION,
         )
         self.version_patcher.start()
+        self.current_producer = {
+            "commit": PRODUCER_COMMIT,
+            "dirty": False,
+        }
+        self.git_identity_patcher = patch(
+            "dcsmizzer.runtime._git_identity",
+            side_effect=lambda root: dict(self.current_producer),
+        )
+        self.git_identity_patcher.start()
 
     def tearDown(self) -> None:
+        self.git_identity_patcher.stop()
         self.version_patcher.stop()
         self.temporary.cleanup()
+
+    def test_git_identity_rejects_assume_unchanged_source_edits(self) -> None:
+        repository = self.root / "producer"
+        source_root = repository / "Tools"
+        source_root.mkdir(parents=True)
+
+        def git(*arguments: str) -> None:
+            subprocess.run(
+                ["git", "-C", str(repository), *arguments],
+                check=True,
+                capture_output=True,
+            )
+
+        git("init", "--quiet", "--initial-branch=main")
+        git("config", "user.email", "fixture@example.invalid")
+        git("config", "user.name", "Fixture")
+        source = source_root / "producer.py"
+        source.write_text("VALUE = 1\n", encoding="utf-8")
+        git("add", "Tools/producer.py")
+        git("commit", "--quiet", "-m", "fixture")
+        with patch.dict(
+            os.environ,
+            {
+                "GIT_ATTR_NOSYSTEM": "0",
+                "GIT_ATTR_SOURCE": "refs/heads/does-not-exist",
+            },
+        ):
+            self.assertFalse(REAL_GIT_IDENTITY(repository)["dirty"])
+
+        git("update-index", "--assume-unchanged", "Tools/producer.py")
+        source.write_text("VALUE = 2\n", encoding="utf-8")
+
+        self.assertTrue(REAL_GIT_IDENTITY(repository)["dirty"])
+
+    def test_git_identity_rejects_ignored_import_shadow(self) -> None:
+        repository = self.root / "shadow-producer"
+        source_root = repository / "Tools"
+        source_root.mkdir(parents=True)
+
+        def git(*arguments: str) -> None:
+            subprocess.run(
+                ["git", "-C", str(repository), *arguments],
+                check=True,
+                capture_output=True,
+            )
+
+        git("init", "--quiet", "--initial-branch=main")
+        git("config", "user.email", "fixture@example.invalid")
+        git("config", "user.name", "Fixture")
+        (source_root / "entry.py").write_text("VALUE = 1\n", encoding="utf-8")
+        git("add", "Tools/entry.py")
+        git("commit", "--quiet", "-m", "fixture")
+        exclude = repository / ".git" / "info" / "exclude"
+        exclude.write_text(
+            "Tools/json.py\nTools/__pycache__/\n",
+            encoding="utf-8",
+        )
+        self.assertFalse(REAL_GIT_IDENTITY(repository)["dirty"])
+
+        (source_root / "json.py").write_text(
+            "raise RuntimeError('shadow')\n",
+            encoding="utf-8",
+        )
+
+        self.assertTrue(REAL_GIT_IDENTITY(repository)["dirty"])
+
+    def test_git_identity_rejects_ignored_bytecode_cache(self) -> None:
+        repository = self.root / "bytecode-producer"
+        source_root = repository / "Tools"
+        source_root.mkdir(parents=True)
+
+        def git(*arguments: str) -> None:
+            subprocess.run(
+                ["git", "-C", str(repository), *arguments],
+                check=True,
+                capture_output=True,
+            )
+
+        git("init", "--quiet", "--initial-branch=main")
+        git("config", "user.email", "fixture@example.invalid")
+        git("config", "user.name", "Fixture")
+        (source_root / "entry.py").write_text("VALUE = 1\n", encoding="utf-8")
+        git("add", "Tools/entry.py")
+        git("commit", "--quiet", "-m", "fixture")
+        exclude = repository / ".git" / "info" / "exclude"
+        exclude.write_text("Tools/__pycache__/\n", encoding="utf-8")
+        cache = source_root / "__pycache__"
+        cache.mkdir()
+        (cache / "entry.cpython-fixture.pyc").write_bytes(b"cache")
+
+        self.assertTrue(REAL_GIT_IDENTITY(repository)["dirty"])
+
+    def test_git_identity_rejects_filter_hidden_source_edit(self) -> None:
+        repository = self.root / "filtered-producer"
+        source_root = repository / "Tools"
+        source_root.mkdir(parents=True)
+
+        def git(*arguments: str) -> subprocess.CompletedProcess[bytes]:
+            return subprocess.run(
+                ["git", "-C", str(repository), *arguments],
+                check=True,
+                capture_output=True,
+            )
+
+        git("init", "--quiet", "--initial-branch=main")
+        git("config", "user.email", "fixture@example.invalid")
+        git("config", "user.name", "Fixture")
+        source = source_root / "producer.py"
+        source.write_text("VALUE = 'TRUSTED'\n", encoding="utf-8")
+        git("add", "Tools/producer.py")
+        git("commit", "--quiet", "-m", "fixture")
+        git(
+            "config",
+            "--local",
+            "filter.hide.clean",
+            "git show HEAD:Tools/producer.py",
+        )
+        attributes = repository / ".git" / "info" / "attributes"
+        attributes.write_text(
+            "Tools/producer.py filter=hide\n",
+            encoding="utf-8",
+        )
+        source.write_text("VALUE = 'HOSTILE'\n", encoding="utf-8")
+
+        self.assertEqual(
+            git("status", "--porcelain=v1").stdout,
+            b"",
+        )
+        self.assertTrue(REAL_GIT_IDENTITY(repository)["dirty"])
+
+    def test_runtime_chain_requires_the_same_clean_producer_commit(self) -> None:
+        invalid_identities = (
+            ("dirty", {"commit": PRODUCER_COMMIT, "dirty": True}),
+            ("missing", {"commit": None, "dirty": False}),
+            ("malformed", {"commit": "not-a-commit", "dirty": False}),
+        )
+        for label, identity in invalid_identities:
+            with self.subTest(identity=label):
+                self.current_producer.clear()
+                self.current_producer.update(identity)
+                with self.assertRaisesRegex(
+                    ValueError,
+                    "clean commit-bound producer",
+                ):
+                    runtime.prepare_runtime(
+                        self.dcs_root,
+                        self.saved_games,
+                        run_id=f"{label}-producer",
+                        mode="registry-probe",
+                    )
+                self.assertFalse(
+                    (
+                        self.saved_games
+                        / f"DCSMizzer-{label}-producer"
+                    ).exists()
+                )
+
+        self.current_producer.clear()
+        self.current_producer.update(
+            {"commit": PRODUCER_COMMIT, "dirty": False}
+        )
+        manifest_path = self._prepare_registry("producer-drift")
+        self.current_producer["commit"] = "b" * 40
+        for operation in (
+            runtime.runtime_preview,
+            runtime.run_runtime,
+            runtime.collect_runtime,
+        ):
+            with self.subTest(operation=operation.__name__):
+                with self.assertRaisesRegex(ValueError, "producer does not match"):
+                    operation(manifest_path)
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        profile = Path(manifest["profile"]["absolute_path"])
+        execution = profile / manifest["artifacts"]["execution_relative_path"]
+        self.assertFalse(execution.exists())
+
+    def test_prepare_retracts_manifest_if_producer_changes_during_publish(
+        self,
+    ) -> None:
+        identities = iter(
+            (
+                {"commit": PRODUCER_COMMIT, "dirty": False},
+                {"commit": PRODUCER_COMMIT, "dirty": False},
+                {"commit": "b" * 40, "dirty": False},
+            )
+        )
+        with (
+            patch(
+                "dcsmizzer.runtime._git_identity",
+                side_effect=lambda root: next(identities),
+            ),
+            self.assertRaisesRegex(ValueError, "changed during publication"),
+        ):
+            runtime.prepare_runtime(
+                self.dcs_root,
+                self.saved_games,
+                run_id="producer-publish-drift",
+                mode="registry-probe",
+            )
+
+        manifest = (
+            self.saved_games
+            / "DCSMizzer-producer-publish-drift"
+            / "DCSMizzer"
+            / "manifest.json"
+        )
+        self.assertFalse(manifest.exists())
+
+    def test_cli_entrypoint_does_not_read_or_publish_local_bytecode(self) -> None:
+        repository = self.root / "fresh-cli"
+        tools = repository / "Tools"
+        shutil.copytree(
+            TOOLS_ROOT / "dcsmizzer",
+            tools / "dcsmizzer",
+            ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+        )
+        shutil.copy2(TOOLS_ROOT / "dcsmizzer.py", tools / "dcsmizzer.py")
+        (repository / ".gitignore").write_text(
+            "__pycache__/\n*.pyc\n",
+            encoding="utf-8",
+        )
+
+        def git(*arguments: str) -> subprocess.CompletedProcess[bytes]:
+            return subprocess.run(
+                ["git", "-C", str(repository), *arguments],
+                check=True,
+                capture_output=True,
+            )
+
+        git("init", "--quiet", "--initial-branch=main")
+        git("config", "user.email", "fixture@example.invalid")
+        git("config", "user.name", "Fixture")
+        git("add", ".")
+        git("commit", "--quiet", "-m", "fixture")
+        environment = dict(os.environ)
+        environment.pop("PYTHONPATH", None)
+        environment["GIT_ATTR_NOSYSTEM"] = "0"
+        environment["GIT_ATTR_SOURCE"] = "refs/heads/does-not-exist"
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(tools / "dcsmizzer.py"),
+                "capabilities",
+                "--details",
+            ],
+            cwd=self.root,
+            check=False,
+            capture_output=True,
+            env=environment,
+        )
+
+        self.assertEqual(completed.returncode, 0, completed.stderr.decode())
+        self.assertEqual(list(tools.rglob("__pycache__")), [])
+        self.assertEqual(
+            git(
+                "status",
+                "--porcelain=v1",
+                "--ignored=matching",
+                "--untracked-files=all",
+            ).stdout,
+            b"",
+        )
+
+        gated = subprocess.run(
+            [
+                sys.executable,
+                str(tools / "dcsmizzer.py"),
+                "capabilities",
+                "--details",
+                "--evidence-bundle",
+                str(repository / "missing-bundle"),
+                "--evidence-current-dcs-root",
+                str(repository / "missing-dcs"),
+            ],
+            cwd=self.root,
+            check=False,
+            capture_output=True,
+            env=environment,
+        )
+        self.assertEqual(gated.returncode, 2)
+        self.assertNotIn(b"bootstrap error", gated.stderr.lower())
+
+        (repository / ".gitignore").write_text(
+            "__pycache__/\n*.pyc\n# deliberate ordinary-command dirt\n",
+            encoding="utf-8",
+        )
+        terminator_path = subprocess.run(
+            [
+                sys.executable,
+                str(tools / "dcsmizzer.py"),
+                "inspect",
+                "--",
+                "--evidence-bundle=ordinary-file-name",
+            ],
+            cwd=repository,
+            check=False,
+            capture_output=True,
+            env=environment,
+        )
+        self.assertEqual(terminator_path.returncode, 2)
+        self.assertNotIn(b"bootstrap error", terminator_path.stderr.lower())
+
+    def test_cli_bootstrap_rejects_ignored_import_shadow_before_import(self) -> None:
+        repository = self.root / "shadow-cli"
+        tools = repository / "Tools"
+        shutil.copytree(
+            TOOLS_ROOT / "dcsmizzer",
+            tools / "dcsmizzer",
+            ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+        )
+        shutil.copy2(TOOLS_ROOT / "dcsmizzer.py", tools / "dcsmizzer.py")
+        (repository / ".gitignore").write_text(
+            "__pycache__/\n*.pyc\nTools/json.py\n",
+            encoding="utf-8",
+        )
+
+        def git(*arguments: str) -> subprocess.CompletedProcess[bytes]:
+            return subprocess.run(
+                ["git", "-C", str(repository), *arguments],
+                check=True,
+                capture_output=True,
+            )
+
+        git("init", "--quiet", "--initial-branch=main")
+        git("config", "user.email", "fixture@example.invalid")
+        git("config", "user.name", "Fixture")
+        git("add", ".")
+        git("commit", "--quiet", "-m", "fixture")
+        marker = repository / "shadow-executed.txt"
+        (tools / "json.py").write_text(
+            f"open({str(marker)!r}, 'w').write('executed')\n"
+            "raise RuntimeError('ignored import shadow executed')\n",
+            encoding="utf-8",
+        )
+        environment = dict(os.environ)
+        environment.pop("PYTHONPATH", None)
+        entrypoint_tree = ast.parse(
+            (TOOLS_ROOT / "dcsmizzer.py").read_text(encoding="utf-8")
+        )
+        declared: frozenset[str] | None = None
+        for statement in entrypoint_tree.body:
+            if (
+                isinstance(statement, ast.Assign)
+                and any(
+                    isinstance(target, ast.Name)
+                    and target.id == "_PROVENANCE_COMMANDS"
+                    for target in statement.targets
+                )
+                and isinstance(statement.value, ast.Call)
+                and statement.value.args
+            ):
+                declared = frozenset(ast.literal_eval(statement.value.args[0]))
+                break
+        self.assertEqual(declared, PROVENANCE_COMMANDS)
+        cases = (
+            [
+                "capabilities",
+                "--details",
+                "--evidence-bundle",
+                str(repository / "missing-bundle"),
+                "--evidence-current-dcs-root",
+                str(repository / "missing-dcs"),
+            ],
+            [
+                "capabilities",
+                f"--evidence-bundle={repository / 'missing-bundle'}",
+                "--evidence-current-dcs-root",
+                str(repository / "missing-dcs"),
+            ],
+            ["--", "runtime-prepare"],
+            *([command] for command in sorted(PROVENANCE_COMMANDS)),
+        )
+        for arguments in cases:
+            with self.subTest(arguments=arguments):
+                completed = subprocess.run(
+                    [sys.executable, str(tools / "dcsmizzer.py"), *arguments],
+                    cwd=repository,
+                    check=False,
+                    capture_output=True,
+                    env=environment,
+                )
+
+                self.assertEqual(completed.returncode, 2)
+                self.assertIn(b"ignored or untracked", completed.stderr)
+                self.assertFalse(marker.exists())
+        self.assertEqual(list(tools.rglob("__pycache__")), [])
 
     def test_prepare_registry_isolated_hash_bound_and_dry_run(self) -> None:
         steam = self.root / "Steam" / "Steam.exe"
@@ -681,14 +1096,14 @@ class RuntimeBridgeTests(unittest.TestCase):
             json.dumps(
                 {
                     "schema": runtime.COORDINATE_CHECKS_SCHEMA,
-                    "terrain": "Sinai",
+                    "terrain": "SinaiMap",
                     "checks": [
                         {
                             "label": "great-pyramid",
-                            "latitude": 29.9792357,
-                            "longitude": 31.1342019,
-                            "expected_x": -7363.65,
-                            "expected_y": -10783.41,
+                            "latitude": 29.97915,
+                            "longitude": 31.1342194444,
+                            "expected_x": -7373.176364,
+                            "expected_y": -10781.869447,
                             "tolerance_m": 25,
                         }
                     ],
@@ -699,7 +1114,7 @@ class RuntimeBridgeTests(unittest.TestCase):
         archive = SimpleNamespace(valid_zip=True, safe=True, crc_status="passed")
         analysis = SimpleNamespace(
             parse_valid=True,
-            theatre="Sinai",
+            theatre="SinaiMap",
             stats=SimpleNamespace(
                 groups={"plane": 2},
                 units={"plane": 3},
@@ -728,7 +1143,7 @@ class RuntimeBridgeTests(unittest.TestCase):
 
         self.assertEqual(manifest["inputs"]["coordinate_checks"]["checks"], 1)
         self.assertIn("great-pyramid", hook_text)
-        self.assertIn("29.9792357", hook_text)
+        self.assertIn("29.97915", hook_text)
         self.assertIn("local EXPECTED_GROUPS = 2", hook_text)
         self.assertEqual(manifest["inputs"]["mission"]["expected_units"], 3)
         self.assertEqual(report["command_preview"][-1], str(mission.resolve()))
@@ -763,16 +1178,16 @@ class RuntimeBridgeTests(unittest.TestCase):
     def test_runtime_coordinate_record_is_recomputed_not_self_attested(self) -> None:
         expected = {
             "label": "great-pyramid",
-            "latitude": 29.9792357,
-            "longitude": 31.1342019,
-            "expected_x": -7363.65,
-            "expected_y": -10783.41,
+            "latitude": 29.97915,
+            "longitude": 31.1342194444,
+            "expected_x": -7373.176364,
+            "expected_y": -10781.869447,
             "tolerance_m": 25.0,
         }
         observed = {
             **expected,
-            "runtime_x": -7363.60,
-            "runtime_y": -10783.41,
+            "runtime_x": -7373.126364,
+            "runtime_y": -10781.869447,
             "error_m": 0.05,
             "passed": True,
         }
@@ -794,14 +1209,14 @@ class RuntimeBridgeTests(unittest.TestCase):
             json.dumps(
                 {
                     "schema": runtime.COORDINATE_CHECKS_SCHEMA,
-                    "terrain": "Sinai",
+                    "terrain": "SinaiMap",
                     "checks": [
                         {
                             "label": "great-pyramid",
-                            "latitude": 29.9792357,
-                            "longitude": 31.1342019,
-                            "expected_x": -7363.65,
-                            "expected_y": -10783.41,
+                            "latitude": 29.97915,
+                            "longitude": 31.1342194444,
+                            "expected_x": -7373.176364,
+                            "expected_y": -10781.869447,
                             "tolerance_m": 0.1,
                         }
                     ],
@@ -811,7 +1226,7 @@ class RuntimeBridgeTests(unittest.TestCase):
         )
         analysis = SimpleNamespace(
             parse_valid=True,
-            theatre="Sinai",
+            theatre="SinaiMap",
             stats=SimpleNamespace(
                 groups={"plane": 2},
                 units={"plane": 3},
@@ -860,14 +1275,14 @@ local exited = false
 Export = {{
   LoGetVersionInfo = function() return {{ ProductVersion = {{2, 9, 28, 26385}} }} end,
   LoGeoCoordinatesToLoCoordinates = function(longitude, latitude)
-    return {{ x = -7363.65, z = -10783.41 }}
+    return {{ x = -7373.176364, z = -10781.869447 }}
   end,
 }}
 Sim = {{
   setUserCallbacks = function(value) callbacks = value end,
   getRealTime = function() return now end,
   getCurrentMission = function()
-    return {{ theatre = "Sinai", coalition = {{ blue = {{ country = {{
+    return {{ theatre = "SinaiMap", coalition = {{ blue = {{ country = {{
       {{ plane = {{ group = {{
         {{ units = {{ {{}}, {{}} }} }},
         {{ units = {{ {{}} }} }},

@@ -64,7 +64,7 @@ jobs:
         run: python Tools\validate_prompt_samples.py
 
       - name: Run required Ruff rules
-        run: ruff check --select E,F,B Tools\dcsmizzer Tools\tests
+        run: ruff check --select E,F,B Tools\dcsmizzer.py Tools\dcsmizzer Tools\tests
 
       - name: Compile product and survey Python
         run: python -m compileall -q Tools .develope\survey

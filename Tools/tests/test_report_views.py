@@ -19,6 +19,7 @@ from dcsmizzer.report_views import (  # noqa: E402
     output_view,
     report_summary,
 )
+from dcsmizzer.report_provenance import intrinsic_report_sha256  # noqa: E402
 
 
 def windows_stdout_size(value: object) -> int:
@@ -207,7 +208,7 @@ class ReportViewTests(unittest.TestCase):
         rendered = output_view("dcs-modules", report).report
 
         self.assertEqual(len(rendered["modules"]), 1)
-        self.assertEqual(len(rendered["modules"][0]["plugin_ids"]), 20)
+        self.assertEqual(len(rendered["modules"][0]["plugin_ids"]), 12)
         self.assertFalse(rendered["catalog"]["output_truncated"])
         self.assertTrue(rendered["view"]["output_truncated"])
         self.assertTrue(rendered["view"]["nested_output_truncated"])
@@ -218,8 +219,8 @@ class ReportViewTests(unittest.TestCase):
                 {
                     "path": "$.modules[0].plugin_ids",
                     "total_items": 30,
-                    "returned_items": 20,
-                    "omitted_items": 10,
+                    "returned_items": 12,
+                    "omitted_items": 18,
                 }
             ],
         )
@@ -674,7 +675,8 @@ class ReportViewTests(unittest.TestCase):
         self.assertTrue(exact.query_matched)
         self.assertEqual(exact.report["schema"], SUMMARY_SCHEMA)
         self.assertEqual(len(exact.report["presets"]), 1)
-        self.assertEqual(len(exact.report["presets"][0]["pylons"]), 19)
+        self.assertEqual(len(exact.report["presets"][0]["pylons"]), 12)
+        self.assertTrue(exact.report["view"]["nested_output_truncated"])
         self.assertEqual(len(details["presets"]), 100)
         self.assert_bounded(catalog)
         self.assert_bounded(exact.report)
@@ -874,6 +876,143 @@ class ReportViewTests(unittest.TestCase):
             "fixture_warning",
             {item["code"] for item in summary["reported_warnings"]},
         )
+        self.assert_bounded(summary)
+
+    def test_report_summary_preserves_only_bounded_unverified_evidence_ref(
+        self,
+    ) -> None:
+        report = {
+            "schema": "dcsmizzer.capabilities/v3",
+            "evidence_ref": {
+                "schema": "dcsmizzer.report-evidence-ref/v1",
+                "status": "bundle-current",
+                "bundle": {
+                    "id": "a" * 64,
+                    "manifest_sha256": "b" * 64,
+                    "untrusted_extra": "x" * 100_000,
+                },
+                "authority_tier": "untrusted authority claim",
+                "secret_local_path_sha256": "c" * 64,
+                "required_domains": {"untrusted": "x" * 100_000},
+                "limitations": ["x" * 100_000],
+                "validation": {
+                    "usable_for_current_production_decision": True,
+                    "untrusted_extra": "x" * 100_000,
+                },
+            },
+        }
+        expected_report_sha256 = intrinsic_report_sha256(report)
+        report["evidence_ref"]["report_binding"] = {
+            "intrinsic_report_sha256": expected_report_sha256,
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "bound-report.json"
+            path.write_text(json.dumps(report), encoding="utf-8")
+
+            summary = report_summary(path)
+
+        self.assertEqual(
+            summary["reported_evidence_ref"],
+            {
+                "claims_unverified": True,
+                "status": "bundle-current",
+                "bundle": {
+                    "id": "a" * 64,
+                    "manifest_sha256": "b" * 64,
+                },
+                "reported_usable_for_current_production_decision": True,
+                "reported_intrinsic_report_sha256": expected_report_sha256,
+                "intrinsic_report_binding_matches": True,
+            },
+        )
+        self.assertNotIn("authority_tier", summary["reported_evidence_ref"])
+        self.assertNotIn("required_domains", summary["reported_evidence_ref"])
+        self.assertEqual(summary["reported_hash_count"], 0)
+        self.assertEqual(summary["reported_hashes"], [])
+        self.assert_bounded(summary)
+
+    def test_report_summary_separates_reported_runtime_claim_from_own_work(
+        self,
+    ) -> None:
+        report = {
+            "schema": "dcsmizzer.miz-verification/v1",
+            "validation": {
+                "available_checks_passed": True,
+                "runtime_valid": True,
+            },
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "runtime-claim.json"
+            path.write_text(json.dumps(report), encoding="utf-8")
+
+            summary = report_summary(path)
+
+        self.assertTrue(summary["reported_runtime_validation_performed"])
+        self.assertFalse(summary["view"]["runtime_validation_performed"])
+        self.assert_bounded(summary)
+
+    def test_report_summary_rejects_untrusted_evidence_ref_value_shapes(
+        self,
+    ) -> None:
+        report = {
+            "schema": "dcsmizzer.capabilities/v3",
+            "evidence_ref": {
+                "status": {"invented-ready-state": True},
+                "bundle": {
+                    "id": 1,
+                    "manifest_sha256": "not-a-hash",
+                },
+                "validation": {
+                    "usable_for_current_production_decision": 1,
+                },
+            },
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "untrusted-report.json"
+            path.write_text(json.dumps(report), encoding="utf-8")
+
+            summary = report_summary(path)
+
+        self.assertEqual(
+            summary["reported_evidence_ref"],
+            {
+                "claims_unverified": True,
+                "status": None,
+                "bundle": {"id": None, "manifest_sha256": None},
+                "reported_usable_for_current_production_decision": None,
+                "reported_intrinsic_report_sha256": None,
+                "intrinsic_report_binding_matches": None,
+            },
+        )
+        self.assert_bounded(summary)
+
+    def test_report_summary_detects_intrinsic_report_mutation(self) -> None:
+        report = {
+            "schema": "dcsmizzer.capabilities/v3",
+            "capabilities": [{"id": "fixture", "status": "implemented"}],
+        }
+        expected = intrinsic_report_sha256(report)
+        report["evidence_ref"] = {
+            "status": "bundle-current",
+            "bundle": {
+                "id": "a" * 64,
+                "manifest_sha256": "b" * 64,
+            },
+            "report_binding": {"intrinsic_report_sha256": expected},
+            "validation": {"usable_for_current_production_decision": True},
+        }
+        report["capabilities"][0]["status"] = "mutated"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "mutated-report.json"
+            path.write_text(json.dumps(report), encoding="utf-8")
+
+            summary = report_summary(path)
+
+        reference = summary["reported_evidence_ref"]
+        self.assertTrue(
+            reference["reported_usable_for_current_production_decision"]
+        )
+        self.assertFalse(reference["intrinsic_report_binding_matches"])
         self.assert_bounded(summary)
 
     def test_report_summary_does_not_turn_review_warnings_into_failure(
@@ -1175,6 +1314,34 @@ class ReportViewTests(unittest.TestCase):
             summary["view"]["issue_count_basis"],
             "occurrences_before_bounded_deduplication",
         )
+        self.assert_bounded(summary)
+
+    def test_report_summary_truncates_oversized_validation_metadata(self) -> None:
+        validation = {
+            f"validation-field-{index:04}-{'k' * 128}": "v" * 512
+            for index in range(500)
+        }
+        validation["available_checks_passed"] = True
+        report = {
+            "schema": "dcsmizzer.miz-verification/v1",
+            "validation": validation,
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "large-validation.json"
+            path.write_text(json.dumps(report), encoding="utf-8")
+
+            summary = report_summary(path)
+
+        self.assertEqual(
+            summary["reported_validation_field_count"],
+            len(validation),
+        )
+        self.assertTrue(summary["view"]["validation_fields_truncated"])
+        self.assertLess(
+            len(summary["reported_validation"]),
+            len(validation),
+        )
+        self.assertTrue(summary["reported_status"]["passed"])
         self.assert_bounded(summary)
 
 

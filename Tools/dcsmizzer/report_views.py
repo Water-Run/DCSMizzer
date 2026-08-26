@@ -18,10 +18,16 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from .report_provenance import intrinsic_report_sha256
+
 
 SUMMARY_SCHEMA = "dcsmizzer.cli-summary/v1"
 REPORT_SUMMARY_SCHEMA = "dcsmizzer.report-summary/v1"
 SUMMARY_BUDGET_BYTES = 12 * 1024
+SUMMARY_TRANSPORT_RESERVE_BYTES = 4 * 1024
+SUMMARY_CONTENT_BUDGET_BYTES = (
+    SUMMARY_BUDGET_BYTES - SUMMARY_TRANSPORT_RESERVE_BYTES
+)
 DEFAULT_SUMMARY_LIMIT = 20
 MAX_VIEW_LIMIT = 100
 MAX_REPORT_INPUT_BYTES = 16 * 1024 * 1024
@@ -30,6 +36,26 @@ MAX_SUMMARY_TEXT = 256
 MAX_REPORT_ISSUES = 40
 MAX_REPORT_HASHES = 40
 MAX_REPORT_HASH_DEPTH = 12
+MAX_NESTED_SUMMARY_ITEMS = 12
+MAX_REPORT_VALIDATION_FIELDS = 128
+_REPORT_VALIDATION_PRIORITY = (
+    "runtime_valid",
+    "available_checks_passed",
+    "archive_valid",
+    "parse_valid",
+    "evidence_consistent",
+    "static_reference_valid",
+    "validated",
+    "evidence_usable",
+    "sampled_placement_valid",
+    "sampled_corridor_clear",
+    "exact_query_usable",
+    "exact_airfield_usable",
+    "planning_footprint_usable",
+    "promotion_audit_passed",
+    "bundle_valid",
+    "review_warnings_clear",
+)
 
 VIEW_COMMANDS = frozenset(
     {
@@ -273,7 +299,7 @@ def _capabilities_view(
         matched=len(capabilities),
         returned=len(capabilities),
     )
-    if _encoded_size(summary) > SUMMARY_BUDGET_BYTES:
+    if _encoded_size(summary) > SUMMARY_CONTENT_BUDGET_BYTES:
         raise ValueError("capability summary exceeds the model-context budget")
     return OutputView(summary)
 
@@ -287,18 +313,28 @@ def report_summary(path: Path) -> dict[str, Any]:
     if not isinstance(schema, str) or schema not in KNOWN_REPORT_SCHEMAS:
         raise ValueError("JSON input does not use a known dcsmizzer report schema")
 
-    validation = _validation_summary(parsed)
-    failures, failure_count, warnings, warning_count = _report_issues(parsed)
-    hashes, hash_count = _report_hashes(parsed)
+    intrinsic_report = dict(parsed)
+    intrinsic_report.pop("evidence_ref", None)
+    validation, validation_field_count, validation_fields_truncated = (
+        _validation_summary(intrinsic_report)
+    )
+    failures, failure_count, warnings, warning_count = _report_issues(
+        intrinsic_report
+    )
+    hashes, hash_count = _report_hashes(intrinsic_report)
     summary: dict[str, Any] = {
         "schema": REPORT_SUMMARY_SCHEMA,
         "source_schema": schema,
         "input": path.name,
         "input_bytes": len(raw),
         "claims_unverified": True,
-        "reported_identity": _report_identity(parsed),
+        "reported_identity": _report_identity(intrinsic_report),
         "reported_status": _report_status(schema, validation),
         "reported_validation": validation,
+        "reported_validation_field_count": validation_field_count,
+        "reported_runtime_validation_performed": _runtime_performed(
+            intrinsic_report
+        ),
         "reported_failure_count": failure_count,
         "reported_failures": failures,
         "reported_warning_count": warning_count,
@@ -309,7 +345,8 @@ def report_summary(path: Path) -> dict[str, Any]:
             "mode": "summary",
             "budget_bytes": SUMMARY_BUDGET_BYTES,
             "complete_report_read": True,
-            "runtime_validation_performed": _runtime_performed(parsed),
+            "runtime_validation_performed": False,
+            "validation_fields_truncated": validation_fields_truncated,
             "failures_truncated": failure_count > len(failures),
             "warnings_truncated": warning_count > len(warnings),
             "hashes_truncated": hash_count > MAX_REPORT_HASHES,
@@ -321,7 +358,63 @@ def report_summary(path: Path) -> dict[str, Any]:
             "authenticity_check": "not_performed",
         },
     }
+    reported_evidence_ref = _reported_evidence_reference(parsed)
+    if reported_evidence_ref is not None:
+        summary["reported_evidence_ref"] = reported_evidence_ref
     return _fit_report_summary(summary)
+
+
+def _reported_evidence_reference(
+    report: dict[str, Any],
+) -> dict[str, Any] | None:
+    """Expose only bounded, explicitly unverified evidence-binding claims."""
+
+    if "evidence_ref" not in report:
+        return None
+    reference = _mapping(report.get("evidence_ref"))
+    bundle = _mapping(reference.get("bundle"))
+    validation = _mapping(reference.get("validation"))
+    binding = _mapping(reference.get("report_binding"))
+    status = reference.get("status")
+    if not isinstance(status, str) or status not in {
+        "unbound",
+        "self",
+        "bundle-current",
+    }:
+        status = None
+    bundle_id = bundle.get("id")
+    if not isinstance(bundle_id, str) or _HASH.fullmatch(bundle_id) is None:
+        bundle_id = None
+    manifest_sha256 = bundle.get("manifest_sha256")
+    if (
+        not isinstance(manifest_sha256, str)
+        or _HASH.fullmatch(manifest_sha256) is None
+    ):
+        manifest_sha256 = None
+    usable = validation.get("usable_for_current_production_decision")
+    if not isinstance(usable, bool):
+        usable = None
+    reported_report_sha256 = binding.get("intrinsic_report_sha256")
+    if (
+        not isinstance(reported_report_sha256, str)
+        or _HASH.fullmatch(reported_report_sha256) is None
+    ):
+        reported_report_sha256 = None
+    return {
+        "claims_unverified": True,
+        "status": status,
+        "bundle": {
+            "id": bundle_id,
+            "manifest_sha256": manifest_sha256,
+        },
+        "reported_usable_for_current_production_decision": usable,
+        "reported_intrinsic_report_sha256": reported_report_sha256,
+        "intrinsic_report_binding_matches": (
+            intrinsic_report_sha256(report) == reported_report_sha256
+            if reported_report_sha256 is not None
+            else None
+        ),
+    }
 
 
 def _terrain_coverage_view(
@@ -1776,7 +1869,7 @@ def _fit_catalog_summary(
         report,
         path_limit=truncation_path_limit,
     )
-    while _encoded_size(report) > SUMMARY_BUDGET_BYTES:
+    while _encoded_size(report) > SUMMARY_CONTENT_BUDGET_BYTES:
         records = report.get(collection) if collection is not None else None
         if isinstance(records, list) and records:
             records.pop()
@@ -1820,7 +1913,7 @@ def _fit_report_summary(report: dict[str, Any]) -> dict[str, Any]:
         ("reported_failures", "failures_truncated"),
         ("reported_hashes", "hashes_truncated"),
     )
-    while _encoded_size(report) > SUMMARY_BUDGET_BYTES:
+    while _encoded_size(report) > SUMMARY_CONTENT_BUDGET_BYTES:
         changed = False
         for key, truncated_key in shrink_order:
             values = report.get(key)
@@ -1834,6 +1927,15 @@ def _fit_report_summary(report: dict[str, Any]) -> dict[str, Any]:
                 )
                 break
         if changed:
+            continue
+        validation = report.get("reported_validation")
+        if isinstance(validation, dict) and validation:
+            validation.pop(next(reversed(validation)))
+            report["view"]["validation_fields_truncated"] = True
+            _refresh_nested_truncation_metadata(
+                report,
+                path_limit=truncation_path_limit,
+            )
             continue
         if truncation_path_limit > 0:
             truncation_path_limit -= 1
@@ -1998,7 +2100,10 @@ def _clip_value(value: Any, *, depth: int = 0) -> Any:
             )
         return None
     if isinstance(value, list):
-        clipped = [_clip_value(item, depth=depth + 1) for item in value[:20]]
+        clipped = [
+            _clip_value(item, depth=depth + 1)
+            for item in value[:MAX_NESTED_SUMMARY_ITEMS]
+        ]
         if len(value) > len(clipped):
             return _ClippedList(
                 clipped,
@@ -2009,7 +2114,7 @@ def _clip_value(value: Any, *, depth: int = 0) -> Any:
     if isinstance(value, dict):
         clipped_mapping = {
             _clip_text(str(key)): _clip_value(item, depth=depth + 1)
-            for key, item in list(value.items())[:20]
+            for key, item in list(value.items())[:MAX_NESTED_SUMMARY_ITEMS]
         }
         if len(value) > len(clipped_mapping):
             return _ClippedDict(
@@ -2239,30 +2344,52 @@ def _parse_report_json(raw: bytes) -> dict[str, Any]:
     return parsed
 
 
-def _validation_summary(report: dict[str, Any]) -> dict[str, Any]:
+def _validation_summary(
+    report: dict[str, Any],
+) -> tuple[dict[str, Any], int, bool]:
     validation = _mapping(report.get("validation"))
-    output = {
-        str(key): _clip_value(value)
-        for key, value in validation.items()
-        if _is_scalar(value)
-    }
+    output: dict[str, Any] = {}
+    scalar_count = sum(_is_scalar(value) for value in validation.values())
+
+    def add(key: str, value: Any) -> None:
+        clipped_key = _clip_text(str(key))
+        if (
+            clipped_key not in output
+            and len(output) < MAX_REPORT_VALIDATION_FIELDS
+        ):
+            output[clipped_key] = _clip_value(value)
+
+    for key in _REPORT_VALIDATION_PRIORITY:
+        value = validation.get(key)
+        if key in validation and _is_scalar(value):
+            add(key, value)
     structure = _mapping(report.get("limited_structure"))
     if structure:
-        output["limited_structure"] = {
-            key: structure.get(key)
-            for key in ("valid", "error_count", "warning_count")
-            if key in structure
-        }
+        add(
+            "limited_structure",
+            {
+                key: structure.get(key)
+                for key in ("valid", "error_count", "warning_count")
+                if key in structure
+            },
+        )
     contract = _mapping(report.get("contract"))
     if contract:
-        output["contract"] = {
-            "checks": len(_list(contract.get("checks"))),
-            "coverage_warning_count": contract.get(
-                "coverage_warning_count",
-                len(_list(contract.get("coverage_warnings"))),
-            ),
-        }
-    return output
+        add(
+            "contract",
+            {
+                "checks": len(_list(contract.get("checks"))),
+                "coverage_warning_count": contract.get(
+                    "coverage_warning_count",
+                    len(_list(contract.get("coverage_warnings"))),
+                ),
+            },
+        )
+    for key, value in validation.items():
+        if _is_scalar(value):
+            add(str(key), value)
+    field_count = scalar_count + int(bool(structure)) + int(bool(contract))
+    return output, field_count, field_count > len(output)
 
 
 def _report_status(

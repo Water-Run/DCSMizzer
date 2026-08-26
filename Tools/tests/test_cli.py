@@ -111,6 +111,28 @@ def mark_zip_entries_encrypted(path: Path) -> None:
 
 
 class ToolCliTests(unittest.TestCase):
+    def assert_unbound_cli_report(
+        self,
+        rendered: str,
+        expected: dict[str, object],
+        *,
+        command_succeeded: bool,
+    ) -> None:
+        output = json.loads(rendered)
+        reference = output.pop("evidence_ref")
+        self.assertEqual(output, expected)
+        self.assertEqual(reference["status"], "unbound")
+        self.assertIsNone(reference["bundle"])
+        self.assertEqual(
+            reference["validation"]["report_gate_passed"],
+            command_succeeded,
+        )
+        self.assertFalse(
+            reference["validation"][
+                "usable_for_current_production_decision"
+            ]
+        )
+
     def test_argument_errors_use_only_injected_bounded_stderr(self) -> None:
         huge = "x" * 1_000_000
         cases = (
@@ -150,6 +172,27 @@ class ToolCliTests(unittest.TestCase):
                 )
                 self.assertEqual(rendered.count("\n"), 1)
                 self.assertTrue(rendered.endswith("… [truncated]\n"))
+
+    def test_long_options_cannot_abbreviate_evidence_binding(self) -> None:
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+
+        exit_code = main(
+            [
+                "capabilities",
+                "--evidence-bund",
+                "bundle",
+                "--evidence-current-dcs-root",
+                "dcs",
+            ],
+            stdout=stdout,
+            stderr=stderr,
+        )
+
+        self.assertEqual(exit_code, 2)
+        self.assertEqual(stdout.getvalue(), "")
+        self.assertIn("argument error", stderr.getvalue())
+        self.assertIn("--evidence-bund", stderr.getvalue())
 
     def test_error_output_is_single_line_and_byte_bounded(self) -> None:
         stdout = io.StringIO()
@@ -634,7 +677,11 @@ class ToolCliTests(unittest.TestCase):
                     exit_code = main(argv, stdout=stdout)
 
                 self.assertEqual(exit_code, expected_exit)
-                self.assertEqual(json.loads(stdout.getvalue()), report)
+                self.assert_unbound_cli_report(
+                    stdout.getvalue(),
+                    report,
+                    command_succeeded=expected_exit == 0,
+                )
                 query.assert_called_once_with(*call[0], **call[1])
 
     def test_terrain_catalog_distinguishes_products_and_theatres(self) -> None:
@@ -664,7 +711,11 @@ class ToolCliTests(unittest.TestCase):
             )
 
         self.assertEqual(exit_code, 1)
-        self.assertEqual(json.loads(stdout.getvalue()), report)
+        self.assert_unbound_cli_report(
+            stdout.getvalue(),
+            report,
+            command_succeeded=False,
+        )
         catalog.assert_called_once_with(
             terrain=None,
             product="Missing product",
@@ -726,7 +777,11 @@ class ToolCliTests(unittest.TestCase):
             )
 
         self.assertEqual(exit_code, 0)
-        self.assertEqual(json.loads(stdout.getvalue()), script_report)
+        self.assert_unbound_cli_report(
+            stdout.getvalue(),
+            script_report,
+            command_succeeded=True,
+        )
         generate.assert_called_once_with(
             Path("request.json"),
             Path("DCSWorld"),
@@ -753,7 +808,11 @@ class ToolCliTests(unittest.TestCase):
             )
 
         self.assertEqual(exit_code, 0)
-        self.assertEqual(json.loads(stdout.getvalue()), extract_report)
+        self.assert_unbound_cli_report(
+            stdout.getvalue(),
+            extract_report,
+            command_succeeded=True,
+        )
         extract.assert_called_once_with(
             Path("dcs.log"),
             Path("request.json"),
@@ -884,7 +943,11 @@ class ToolCliTests(unittest.TestCase):
             )
 
         self.assertEqual(exit_code, 0)
-        self.assertEqual(json.loads(stdout.getvalue()), report)
+        self.assert_unbound_cli_report(
+            stdout.getvalue(),
+            report,
+            command_succeeded=True,
+        )
         matcher.assert_called_once_with(
             Path("DCSWorld"),
             "Fixture Plane",
@@ -995,7 +1058,11 @@ class ToolCliTests(unittest.TestCase):
             )
 
         self.assertEqual(exit_code, 0)
-        self.assertEqual(json.loads(stdout.getvalue()), report)
+        self.assert_unbound_cli_report(
+            stdout.getvalue(),
+            report,
+            command_succeeded=True,
+        )
         footprint.assert_called_once_with(
             Path("briefing-room"),
             "SinaiMap",
@@ -1104,7 +1171,11 @@ class ToolCliTests(unittest.TestCase):
             )
 
         self.assertEqual(exit_code, 1)
-        self.assertEqual(json.loads(stdout.getvalue()), report)
+        self.assert_unbound_cli_report(
+            stdout.getvalue(),
+            report,
+            command_succeeded=False,
+        )
         coordinate.assert_called_once_with(
             Path("briefing-room"),
             "Kola",
@@ -1303,6 +1374,7 @@ class ToolCliTests(unittest.TestCase):
         report = json.loads(stdout.getvalue())
         self.assertEqual(exit_code, 0)
         self.assertEqual(stderr.getvalue(), "")
+        self.assertEqual(report["implementation_reviewed_on"], "2026-08-27")
         self.assertEqual(
             report["mission_generation"]["status"],
             "implemented_low_level",

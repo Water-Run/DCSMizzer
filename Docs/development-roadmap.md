@@ -100,6 +100,39 @@ The DCS runtime limits recorded below remain external validation gaps; passing
 the static release suite does not upgrade the blocked exact-MIZ probes to V2
 or V3.
 
+### 2026-08-27 local release-candidate verification
+
+After uniform CLI evidence references, current-bundle query fences, strict
+runtime producer continuity, and pre-import provenance gates were added, the
+local Windows release matrix passed:
+
+- 516 product tests, with two explicit skips: the expected Windows open-path
+  replacement race because Windows denies replacing that open temporary path,
+  and the locked mapping-acceptance class when no exact acknowledged upstream
+  cache is selected;
+- all 39 survey tests;
+- all required Ruff `E`, `F`, and `B` checks, including the standalone CLI
+  bootstrap;
+- Python bytecode compilation over product and survey code;
+- 147 source blocks and 186 headings in each bilingual Prompt catalog;
+- all links in 24 repository-facing documentation files.
+
+Focused entrypoint tests cover every provenance-sensitive command, both
+`--evidence-bundle PATH` and `--evidence-bundle=PATH`, option terminators,
+long-option abbreviation rejection, hostile Git attribute environment
+isolation, ignored import shadows, non-repository working directories, and
+runtime producer mismatch before preview/run/collection plus drift during
+preparation publication.
+The 14-theatre planning-coastline matrix was also recomputed from the locked
+BriefingRoom commit: 40 of 84 side/distance combinations passed and 44 failed
+closed, including the documented Caucasus 100 km water-side point. These are
+static/planning checks; the current-session DCS runtime limitations below
+remain unchanged.
+The explicit locked-cache mapping acceptance added for this candidate passed
+all four tests over the 14-theatre aggregate, 13 accepted and one rejected
+coordinate models, the full 84-case coastline matrix, the Caucasus example,
+and the Great Pyramid cross-source conversion.
+
 ### 2026-08-26 clean runtime evidence attempt
 
 The final authorized aggregate attempt used clean producer commit
@@ -233,8 +266,9 @@ visible.
 
 ## M0: evidence lifecycle and reproducible baselines
 
-**Implementation status (2026-08-26): bundle lifecycle and bound attestations
-implemented; exit gate partially satisfied.** Product commands now perform
+**Implementation status (2026-08-27): bundle lifecycle, bound attestations,
+and read-only CLI query binding implemented; exit gate partially satisfied.**
+Product commands now perform
 two-pass stable collection into local content-addressed bundles, verify
 canonical manifests and exact artifact membership/hashes, compare recognized
 historical/current evidence, and gate
@@ -249,12 +283,22 @@ against their index blobs, compare changed consumer data, and recheck both
 inputs and both parsed models in stable two-pass form. Dirty producers,
 blocked domains, partial
 collection, changed inputs, and incompatible source scopes fail closed. The
+CLI attaches a bounded evidence-reference state to every JSON report. For 27
+source-mappable read-only commands, explicit binding fixes mandatory domains,
+requires safe exact current roots and the same clean DCSMizzer version/commit
+as the bundle producer, and compares complete readiness references collected
+before and after the query. A query failure, source drift, unready domain, or
+producer mismatch remains `unbound`; binding never upgrades the report's own
+static, planning, initialized, or runtime authority. The
 recorded `2.9.28.26283` baseline versus current `2.9.28.26385` comparison is
 machine-generated rather than prose-only. The pydcs no-change candidate and the
 16-commit-ahead BriefingRoom candidate were exercised; the latter retained its
 pin because only project-version metadata changed across its 36-path diff.
-Ordinary unbundled reports do not yet carry a bundle reference, so M0 is not
-marked complete.
+M0 is not marked complete because historical audit/build/verify outputs still
+lack a transitive seal over every evidence input and cannot yet be reproduced
+from one complete stored provenance chain. The machine-readable support matrix
+and human publication also remain independently maintained rather than
+generated from that chain.
 
 The clean reference run from producer commit
 `5fdbeb4df86d0e07d1457e92779375682dc44d87` collected DCS
@@ -314,7 +358,8 @@ statistics, synthetic fixtures, and minimal legally distributable examples.
 
 - The `2.9.28.26283` to `2.9.28.26385` drift is represented by evidence diff,
   not merely changed prose.
-- Every report identifies its evidence bundle and authority tier.
+- Every report declares whether it is unbound, self-referential, or bound to a
+  current evidence bundle, without changing its intrinsic authority tier.
 - Incompatible evidence versions fail closed.
 - Historical reports remain reproducible with their original bundles.
 - A BriefingRoom pin update or retention has a recorded compatibility result.

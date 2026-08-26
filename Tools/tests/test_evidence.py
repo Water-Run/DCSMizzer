@@ -16,8 +16,10 @@ if str(TOOLS_ROOT) not in sys.path:
 
 from dcsmizzer.cli import main  # noqa: E402
 from dcsmizzer.evidence import (  # noqa: E402
+    _domain_artifact_bindings,
     compare_evidence,
     create_evidence_snapshot,
+    current_report_evidence_reference,
     evidence_readiness,
     verify_evidence_bundle,
 )
@@ -90,6 +92,35 @@ class EvidenceLifecycleTests(unittest.TestCase):
         rendered = json.dumps(verified)
         self.assertNotIn(str(self.root), rendered)
 
+    def test_module_domain_binding_includes_installation_inventory(self) -> None:
+        verification = {
+            "artifacts": [
+                {
+                    "name": "installation",
+                    "schema": "dcsmizzer.dcs-static/v1",
+                    "size_bytes": 10,
+                    "sha256": "a" * 64,
+                    "verified": True,
+                },
+                {
+                    "name": "modules",
+                    "schema": "dcsmizzer.dcs-module-index/v1",
+                    "size_bytes": 20,
+                    "sha256": "b" * 64,
+                    "verified": True,
+                },
+            ],
+            "coverage": [
+                {"artifact": "installation", "status": "complete"},
+                {"artifact": "modules", "status": "partial"},
+            ],
+        }
+        before = _domain_artifact_bindings(verification, ("modules",))
+        verification["artifacts"][0]["sha256"] = "c" * 64
+        after = _domain_artifact_bindings(verification, ("modules",))
+
+        self.assertNotEqual(before["modules"], after["modules"])
+
     def test_snapshot_and_readiness_bind_runtime_and_terrain_inputs(self) -> None:
         runtime_path = self.root / "runtime-manifest.json"
         terrain_path = self.root / "terrain-evidence.json"
@@ -130,6 +161,67 @@ class EvidenceLifecycleTests(unittest.TestCase):
         self.assertEqual(
             missing_live_input["required_domains"]["runtime"]["states"],
             ["current_check_unavailable:absent"],
+        )
+
+    def test_current_report_reference_binds_query_domains_and_producer(self) -> None:
+        with self._collection_patches():
+            snapshot = create_evidence_snapshot(
+                self.dcs,
+                self.bundle_root,
+                created_utc=CREATED,
+            )
+            bundle = self.bundle_root / snapshot["bundle"]["id"]
+            reference = current_report_evidence_reference(
+                bundle,
+                self.dcs,
+                report_command="dcs-countries",
+                query_sha256="a" * 64,
+                mandatory_domains=["countries"],
+                source_roots_matched=True,
+                required_domains=["countries"],
+            )
+
+            with patch(
+                "dcsmizzer.evidence._git_identity",
+                return_value={"commit": "d" * 40, "dirty": False},
+            ):
+                mismatched = current_report_evidence_reference(
+                    bundle,
+                    self.dcs,
+                    report_command="dcs-countries",
+                    query_sha256="a" * 64,
+                    mandatory_domains=["countries"],
+                    source_roots_matched=True,
+                    required_domains=["countries"],
+                )
+
+        self.assertEqual(reference["status"], "bundle-current")
+        self.assertNotIn("identity", reference)
+        self.assertEqual(
+            reference["report_binding"],
+            {
+                "command": "dcs-countries",
+                "query_sha256": "a" * 64,
+                "mandatory_domains": ["countries"],
+                "source_roots_matched": True,
+            },
+        )
+        self.assertEqual(
+            reference["producer"]["bundle"],
+            reference["producer"]["current"],
+        )
+        self.assertRegex(
+            reference["domain_artifact_bindings"]["countries"],
+            r"^[0-9a-f]{64}$",
+        )
+        self.assertTrue(reference["validation"]["evidence_ready_for_binding"])
+
+        self.assertEqual(mismatched["status"], "unbound")
+        self.assertFalse(
+            mismatched["validation"]["current_producer_matches_bundle"]
+        )
+        self.assertFalse(
+            mismatched["validation"]["evidence_ready_for_binding"]
         )
 
     def test_snapshot_cli_fails_when_bound_runtime_is_blocked(self) -> None:
@@ -248,6 +340,41 @@ class EvidenceLifecycleTests(unittest.TestCase):
         (bundle / "extra.txt").write_text("extra", encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "unmanifested root"):
             verify_evidence_bundle(bundle)
+
+    def test_bundle_artifacts_reject_cli_transport_metadata(self) -> None:
+        with self._collection_patches():
+            report = create_evidence_snapshot(
+                self.dcs,
+                self.bundle_root,
+                created_utc=CREATED,
+            )
+        bundle = self.bundle_root / report["bundle"]["id"]
+        countries = json.loads(
+            (bundle / "artifacts" / "countries.json").read_bytes()
+        )
+        countries["evidence_ref"] = {
+            "schema": "dcsmizzer.report-evidence-ref/v1",
+            "status": "unbound",
+        }
+        rewritten = self._rewrite_bundle(
+            bundle,
+            artifact_name="countries",
+            artifact_payload=self._canonical_bytes(countries),
+        )
+
+        with self.assertRaisesRegex(ValueError, "transport metadata"):
+            verify_evidence_bundle(rewritten)
+
+        contaminated = self._countries()
+        contaminated["evidence_ref"] = {}
+        with self._collection_patches(
+            countries=contaminated
+        ), self.assertRaisesRegex(ValueError, "transport metadata"):
+            create_evidence_snapshot(
+                self.dcs,
+                self.bundle_root / "second",
+                created_utc=CREATED,
+            )
 
     def test_verifier_requires_canonical_manifest_bytes(self) -> None:
         with self._collection_patches():
@@ -505,6 +632,38 @@ class EvidenceLifecycleTests(unittest.TestCase):
         self.assertEqual(country["current_coverage"], "blocked")
         self.assertEqual(country["coverage"], "blocked")
 
+    def test_weather_readiness_rejects_incomplete_or_inconsistent_presets(
+        self,
+    ) -> None:
+        incomplete = self._weather()
+        incomplete["coverage"] = dict(incomplete["coverage"])
+        incomplete["coverage"].update(
+            {
+                "fields_complete_presets": 0,
+                "fields_incomplete_presets": 1,
+                "consistent_presets": 0,
+                "usable_presets": 0,
+            }
+        )
+        with self._collection_patches(weather=incomplete):
+            snapshot = create_evidence_snapshot(
+                self.dcs,
+                self.bundle_root,
+                created_utc=CREATED,
+            )
+            bundle = self.bundle_root / snapshot["bundle"]["id"]
+            readiness = evidence_readiness(
+                bundle,
+                self.dcs,
+                required_domains=["weather"],
+            )
+
+        self.assertFalse(readiness["validation"]["all_required_domains_ready"])
+        self.assertEqual(
+            readiness["required_domains"]["weather"]["states"],
+            ["current:partial"],
+        )
+
     def test_readiness_rejects_sources_that_change_between_live_passes(
         self,
     ) -> None:
@@ -718,6 +877,7 @@ class EvidenceLifecycleTests(unittest.TestCase):
         countries: dict[str, object] | None = None,
         airfields: dict[str, object] | None = None,
         payloads: dict[str, object] | None = None,
+        weather: dict[str, object] | None = None,
         runtime_bound: dict[str, object] | None = None,
         terrain_bound: dict[str, object] | None = None,
         payload_error: Exception | None = None,
@@ -779,7 +939,7 @@ class EvidenceLifecycleTests(unittest.TestCase):
         stack.enter_context(
             patch(
                 "dcsmizzer.evidence.weather_registry_report",
-                return_value=self._weather(),
+                return_value=weather or self._weather(),
             )
         )
         stack.enter_context(
@@ -923,8 +1083,20 @@ class EvidenceLifecycleTests(unittest.TestCase):
             "schema": "dcsmizzer.dcs-weather-presets/v1",
             "authority": "current_install_static_weather_sources",
             "dcs_started": False,
-            "parse_failures": 0,
-            "coverage": {"usable_presets": 1},
+            "filter": {"preset": None, "limit": 128},
+            "parse_failures": [],
+            "coverage": {
+                "source_files": 1,
+                "parsed_presets": 1,
+                "parse_failures": 0,
+                "fields_complete_presets": 1,
+                "fields_incomplete_presets": 0,
+                "consistent_presets": 1,
+                "usable_presets": 1,
+                "matching_presets": 1,
+                "returned_presets": 1,
+                "truncated": False,
+            },
             "presets": [{"id": "Fixture"}],
         }
 

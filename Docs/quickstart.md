@@ -48,6 +48,37 @@ A dirty producer, partial domain, stale fingerprint, or incomparable source
 scope remains non-ready even when the bundle's bytes verify. See the
 [evidence lifecycle command details](reference/evidence-lifecycle-commands.md)
 only when snapshot, drift, or readiness behavior needs review.
+The documented entrypoint isolates Python before product imports and refuses
+provenance-sensitive work on a dirty or Git-canonical-content-mismatched
+checkout; use it rather than importing `dcsmizzer.cli` directly when the
+pre-import producer gate is required.
+Run provenance-sensitive commands from a standalone clone with an ordinary
+root `.git` directory; linked worktrees and submodule source trees are not
+accepted by this gate.
+
+To make a supported read-only query carry a usable current-bundle reference,
+pass its exact current roots and bundle explicitly:
+
+```powershell
+python Tools\dcsmizzer.py dcs-countries `
+  --dcs-root "D:\path\to\DCSWorld" `
+  --evidence-bundle output\evidence-bundles\BUNDLE_SHA256 `
+  --evidence-current-dcs-root "D:\path\to\DCSWorld"
+```
+
+Check `evidence_ref.status` and
+`evidence_ref.validation.usable_for_current_production_decision`; only
+`bundle-current` plus `true` passes this transport gate. `unbound` remains a
+valid report with only its intrinsic authority. The command's mandatory
+domains are fixed and any `--evidence-required-domain` values only add gates.
+Unsupported, writing, launching, or arbitrary-input commands reject external
+binding flags before dispatch. See the lifecycle reference for the complete
+allowlist and upstream/terrain forms.
+The reference includes `report_binding.intrinsic_report_sha256`, calculated
+over the canonical payload without `evidence_ref`. After saving or moving a
+report, run `report-summary` and also require
+`reported_evidence_ref.intrinsic_report_binding_matches=true`; this detects
+content edits but does not authenticate an untrusted file.
 
 When an exact isolated runtime run or initialized physical-terrain export is
 already available, add its `--runtime-manifest` or `--terrain-evidence` path to
@@ -258,8 +289,11 @@ python Tools\dcsmizzer.py report-summary output\verify.json
 16 MiB and emits at most 12 KiB. It does not prove schema shape or
 authenticity and does not rerun audit, build, or verification. Its extracted
 claims use `reported_*` names and `claims_unverified=true`; a reported pass is
-not a new validation result. Do not put the complete saved JSON into model
-context.
+not a new validation result. Oversized validation metadata is sampled and
+disclosed by `view.validation_fields_truncated`; the original field count is
+retained. `view.runtime_validation_performed` is therefore always false, while
+`reported_runtime_validation_performed` describes only the unverified saved
+claim. Do not put the complete saved JSON into model context.
 
 All three commands must exit zero, and their reports must agree. Then run
 `inspect` independently, keep its complete report on disk, and review its

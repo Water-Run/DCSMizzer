@@ -13,8 +13,8 @@ python Tools\dcsmizzer.py capabilities
 
 | Facility | What it establishes |
 |---|---|
-| Locked upstream cache management | Read-only `upstream-status`, the sole network/cache writer `upstream-prepare`, and read-only `upstream-promotion-audit` verify fixed pydcs/BriefingRoom identities and fail-closed candidate ancestry, standalone Git state, exact consumer blobs, full path diff, license, stable inputs, and parsed consumer-model compatibility without executing either project or automatically changing a pin |
-| Evidence lifecycle | Two-pass stable collection into local content-addressed bundles; canonical manifest and exact artifact membership/hash verification; legacy/current DCS domain diff; privacy-safe revalidated runtime and hash-bound physical-terrain attestations; and current/stale/incomparable/partial/blocked readiness gates with dirty-producer rejection |
+| Locked upstream cache management | Read-only `upstream-status`, the sole network/cache writer `upstream-prepare`, and read-only `upstream-promotion-audit` verify fixed pydcs/BriefingRoom identities and fail-closed candidate ancestry, standalone Git state, ignored/untracked/hidden-index worktree inputs, exact consumer blobs, full path diff, license, stable inputs, and parsed consumer-model compatibility without executing either project or automatically changing a pin |
+| Evidence lifecycle | Two-pass stable collection into local content-addressed bundles; canonical manifest and exact artifact membership/hash verification; legacy/current DCS domain diff; privacy-safe revalidated runtime and hash-bound physical-terrain attestations; current/stale/incomparable/partial/blocked readiness gates with dirty-producer rejection; and uniform `unbound`/`self`/`bundle-current` CLI references with immutable command-domain mappings, exact source identities, canonical intrinsic-report hashes, current producer equality, and matching pre/post-query readiness fences for 27 supported read-only commands (service-life module filters fail closed outside current artifact coverage) |
 | MIZ inspection | ZIP/path policy, optional CRC, safe parsing of five core Lua data members, and anonymous mission statistics |
 | CMP inspection | Safe campaign-table parsing, stage and interval checks, and relative MIZ-reference presence |
 | Current-install inventory | Executable/Steam version when discoverable, installed module directories, country source, and declared static-source coverage |
@@ -43,7 +43,7 @@ python Tools\dcsmizzer.py capabilities
 | Physical-terrain evidence chain | Bounded probe-script generation, verified disposable-MIZ instrumentation, hash-bound log extraction, and explicitly theatre/version-bound point, sampled-placement, sampled-corridor, and landmark consumers with an explicit runtime-attestation field; mission-probe object searches are discovery-only and cannot clear placement collisions |
 | Isolated DCS runtime bridge | Separate prepare/run/collect lifecycle; dry-run default and explicit launch authorization; disposable `DCSMizzer-*` profile; version, executable, process, Hook, mission, and result hash binding; aggregate registry initialization; exact-MIZ load/start/smoke and DCS coordinate checks; bounded exact-process cleanup |
 | Airfield-footprint checks | An operational envelope only from a supplied complete initialized airfield inventory and per-record complete runway/parking/taxi geometry, with a separately labelled commit-bound BriefingRoom planning fallback |
-| Context-bounded report interface | Catalogs default to `dcsmizzer.cli-summary/v1` under a 12 KiB UTF-8 budget; explicit details/full restores complete output; `report-summary` bounds saved-report review after recognizing its schema identifier, without proving shape/authenticity or rerunning validation |
+| Context-bounded report interface | Catalogs default to `dcsmizzer.cli-summary/v1` under a 12 KiB UTF-8 budget including reserved evidence-reference transport space; nested summary collections keep at most 12 items; explicit details/full restores complete output; `report-summary` bounds saved-report review and preserves only a compact, explicitly unverified reported evidence reference after recognizing the source schema identifier, without proving shape/authenticity or rerunning validation |
 | Ordinary continuous validation | Read-only GitHub-hosted Windows gate with commit-pinned official actions, exact Python/Ruff inputs, product/survey tests, document and Prompt validators, Ruff `E/F/B`, compilation, explicit timeout/concurrency controls, and a tested prohibition on DCS launch or upstream mutation |
 | Observed MIZ registry | Privacy-preserving anonymous structure, frequency, numeric, relationship, start, airdrome, parking, weather, options, `requiredModules`, and warehouse observations from parsed real missions; exact theatre/unit filters are caller-supplied and only those filter strings are echoed; archive policy is checked before bounded snapshot copying and a stable snapshot passes CRC before parsing |
 | Low-level MIZ assembly | Deterministic data-only Lua serialization and deterministic ZIP packaging from `dcsmizzer.miz-build-spec/v1`, including a finite common trigger/goal/timed-text compiler and handle/identity/SHA-256 binding for resource inputs |
@@ -71,9 +71,23 @@ root, or locked upstream cache is absent. For upstream-backed facilities, only
 `upstream-status --cache-root output\upstream` exiting zero establishes cache
 readiness; directory presence alone does not.
 
+The supported script entrypoint re-enters Python in isolated, no-site mode and
+does not load repository bytecode. Before any evidence
+snapshot/verify/diff/readiness command, `report-summary`, runtime command,
+terrain-probe producer command, or explicit current-bundle query imports
+product modules, it requires an ordinary clean index, rejects every ignored or
+untracked entry under `Tools`, and requires all tracked regular worktree files'
+Git-canonical content
+IDs to match `HEAD`. Declared text line-ending normalization is accepted while
+`-text`/binary content remains byte-exact. This pre-import guarantee applies to
+`Tools\dcsmizzer.py`, not to arbitrary direct package imports, and treats the
+local interpreter, Git executable, operating system, and bootstrap as trusted
+components.
+
 “Commit-bound” is a query-time provenance result, not a permanent label for an
 arbitrary directory. The supplied upstream root must be exactly the Git
-top-level checkout, have a readable `HEAD`, and be clean. A dirty exact
+top-level checkout, have a readable `HEAD`, and be clean, with no ignored
+entries or nonordinary tracked index flags. A dirty exact
 checkout is reported as `dirty_worktree_snapshot`; a nested, parent-inherited,
 or non-Git root is `unversioned_snapshot`. When an acknowledged locked source
 participates in a required determination, `audit-spec` treats an absent,

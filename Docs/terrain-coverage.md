@@ -34,7 +34,7 @@ or runtime proof.
 | `Falklands` | 27 | 26 | pydcs projection |
 | `GermanyCW` | 227 | 227 | pydcs projection |
 | `Iraq` | 20 | — | derived commit-bound BR airbase-export projection |
-| `Kola` | 37 | 36 | pydcs projection |
+| `Kola` | 37 | 37 | pydcs projection |
 | `MarianaIslands` | 8 | 8 | pydcs projection |
 | `MarianaIslandsWWII` | 11 | — | derived commit-bound BR airbase-export projection |
 | `Nevada` | 17 | 17 | pydcs projection |

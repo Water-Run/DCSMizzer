@@ -80,6 +80,22 @@ class UpstreamPromotionTests(unittest.TestCase):
 
     def test_same_revision_is_a_private_no_change_audit(self) -> None:
         candidate = self._candidate("candidate-same")
+
+        report = upstream_promotion_report(
+            self.cache,
+            candidate,
+            "pydcs",
+            manifest=(self.source,),
+        )
+
+        self.assertTrue(report["validation"]["promotion_audit_passed"])
+        self.assertEqual(report["decision"]["recommendation"], "no_revision_change")
+        self.assertEqual(report["revision"]["diff"]["changed_path_count"], 0)
+        self.assertFalse(report["decision"]["lock_update_authorized"])
+        self._assert_private_paths_absent(report)
+
+    def test_ignored_private_bytecode_fails_closed_without_path_leak(self) -> None:
+        candidate = self._candidate("candidate-ignored-bytecode")
         pycache = candidate / "dcs" / "terrain" / "__pycache__"
         pycache.mkdir(parents=True)
         (candidate / ".git" / "info" / "exclude").write_text(
@@ -95,9 +111,9 @@ class UpstreamPromotionTests(unittest.TestCase):
             manifest=(self.source,),
         )
 
-        self.assertTrue(report["validation"]["promotion_audit_passed"])
-        self.assertEqual(report["decision"]["recommendation"], "no_revision_change")
-        self.assertEqual(report["revision"]["diff"]["changed_path_count"], 0)
+        self.assertFalse(report["validation"]["promotion_audit_passed"])
+        self.assertEqual(report["decision"]["recommendation"], "reject_candidate")
+        self.assertIn("candidate_clean_failed", report["failure_reasons"])
         self.assertFalse(report["decision"]["lock_update_authorized"])
         self._assert_private_paths_absent(report)
 
@@ -480,7 +496,16 @@ class UpstreamPromotionTests(unittest.TestCase):
 
         self.assertEqual(exit_code, 0)
         audit.assert_called_once_with(Path("cache"), Path("candidate"), "pydcs")
-        self.assertEqual(json.loads(output.getvalue()), passing)
+        rendered = json.loads(output.getvalue())
+        reference = rendered.pop("evidence_ref")
+        self.assertEqual(rendered, passing)
+        self.assertEqual(reference["status"], "unbound")
+        self.assertTrue(reference["validation"]["report_gate_passed"])
+        self.assertFalse(
+            reference["validation"][
+                "usable_for_current_production_decision"
+            ]
+        )
         error = io.StringIO()
         self.assertEqual(
             main(

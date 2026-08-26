@@ -55,6 +55,10 @@ class UpstreamCacheTests(unittest.TestCase):
             "payload\n",
             encoding="utf-8",
         )
+        (self.seed / ".gitignore").write_text(
+            "__pycache__/\n",
+            encoding="utf-8",
+        )
         license_payload = b"Fixture license text\n"
         (self.seed / "LICENSE").write_bytes(license_payload)
         self._git("add", ".", cwd=self.seed)
@@ -242,6 +246,104 @@ class UpstreamCacheTests(unittest.TestCase):
         self.assertEqual(
             self._git_output("rev-parse", "HEAD", cwd=checkout),
             before,
+        )
+
+    def test_status_rejects_hidden_index_flags_and_ignored_files(self) -> None:
+        for flag in ("--assume-unchanged", "--skip-worktree"):
+            with self.subTest(flag=flag):
+                _, checkout = self._cloned_cache()
+                self._git("update-index", flag, "payload.txt", cwd=checkout)
+                (checkout / "payload.txt").write_text(
+                    "hidden modification\n",
+                    encoding="utf-8",
+                )
+
+                with self._patched_manifest():
+                    report = upstream_status_report(checkout.parent)
+
+                record = report["sources"][0]
+                self.assertFalse(record["validation"]["index_flags_safe"])
+                self.assertFalse(record["validation"]["usable"])
+                self.assertIn(
+                    "unsafe_index_flags",
+                    {error["code"] for error in record["errors"]},
+                )
+
+        _, checkout = self._cloned_cache()
+        ignored = checkout / "data" / "__pycache__" / "projection.pyc"
+        ignored.parent.mkdir()
+        ignored.write_bytes(b"ignored executable fixture")
+        with self._patched_manifest():
+            report = upstream_status_report(checkout.parent)
+
+        record = report["sources"][0]
+        self.assertFalse(record["actual"]["clean"])
+        self.assertFalse(record["validation"]["usable"])
+        self.assertIn(
+            "dirty_worktree",
+            {error["code"] for error in record["errors"]},
+        )
+
+    def test_status_isolates_hostile_git_environment_and_fsmonitor(self) -> None:
+        _, checkout = self._cloned_cache()
+        (checkout / "payload.txt").write_text(
+            "visible modification\n",
+            encoding="utf-8",
+        )
+        hostile = {
+            "GIT_WORK_TREE": str(self.seed),
+            "GIT_CONFIG_COUNT": "1",
+            "GIT_CONFIG_KEY_0": "core.fsmonitor",
+            "GIT_CONFIG_VALUE_0": "hostile-fsmonitor-command",
+        }
+        with self._patched_manifest(), patch.dict(
+            os.environ,
+            hostile,
+            clear=False,
+        ):
+            report = upstream_status_report(checkout.parent)
+
+        record = report["sources"][0]
+        self.assertFalse(record["actual"]["clean"])
+        self.assertFalse(record["validation"]["usable"])
+        self.assertIn(
+            "dirty_worktree",
+            {error["code"] for error in record["errors"]},
+        )
+
+    def test_status_rejects_worktree_filter_and_info_attributes(self) -> None:
+        _, checkout = self._cloned_cache()
+        self._git(
+            "config",
+            "--local",
+            "extensions.worktreeConfig",
+            "true",
+            cwd=checkout,
+        )
+        self._git(
+            "config",
+            "--worktree",
+            "filter.hide.clean",
+            "git show HEAD:payload.txt",
+            cwd=checkout,
+        )
+        (checkout / ".git" / "info" / "attributes").write_text(
+            "payload.txt filter=hide\n",
+            encoding="utf-8",
+        )
+        (checkout / "payload.txt").write_text(
+            "hidden modification\n",
+            encoding="utf-8",
+        )
+        with self._patched_manifest():
+            report = upstream_status_report(checkout.parent)
+
+        record = report["sources"][0]
+        self.assertFalse(record["validation"]["local_config_safe"])
+        self.assertFalse(record["validation"]["usable"])
+        self.assertIn(
+            "unsafe_local_git_config",
+            {error["code"] for error in record["errors"]},
         )
 
     def test_prepare_refuses_dangerous_local_git_config(self) -> None:
@@ -455,6 +557,8 @@ class UpstreamCacheTests(unittest.TestCase):
             patch.dict(
                 os.environ,
                 {
+                    "GIT_ATTR_NOSYSTEM": "0",
+                    "GIT_ATTR_SOURCE": "private-attribute-source",
                     "GIT_CONFIG_GLOBAL": "private-global-config",
                     "GIT_CONFIG_PARAMETERS": "'protocol.file.allow'='always'",
                 },
@@ -478,6 +582,8 @@ class UpstreamCacheTests(unittest.TestCase):
         self.assertIn("protocol.allow=never", command)
         self.assertIn("protocol.https.allow=always", command)
         self.assertEqual(environment["GIT_ALLOW_PROTOCOL"], "https")
+        self.assertEqual(environment["GIT_ATTR_NOSYSTEM"], "1")
+        self.assertNotIn("GIT_ATTR_SOURCE", environment)
         self.assertEqual(environment["GIT_CONFIG_NOSYSTEM"], "1")
         self.assertEqual(environment["GIT_CONFIG_GLOBAL"], os.devnull)
         self.assertNotIn("GIT_CONFIG_PARAMETERS", environment)

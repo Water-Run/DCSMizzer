@@ -67,7 +67,10 @@ class ContinuousValidationContractTests(unittest.TestCase):
             "python -m unittest discover -s .develope\\survey",
             "python Tools\\validate_document_links.py",
             "python Tools\\validate_prompt_samples.py",
-            "ruff check --select E,F,B Tools\\dcsmizzer Tools\\tests",
+            (
+                "ruff check --select E,F,B Tools\\dcsmizzer.py "
+                "Tools\\dcsmizzer Tools\\tests"
+            ),
             "python -m compileall -q Tools .develope\\survey",
         )
         for command in commands:

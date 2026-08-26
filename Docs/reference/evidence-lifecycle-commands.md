@@ -119,3 +119,113 @@ modules, payloads, weather, and every installed-terrain airfield record. It is
 expected to fail while initialized module, payload-compatibility, and complete
 airfield evidence remain unavailable; the detailed states are the actionable
 readiness result.
+
+## Bind one read-only query to current evidence
+
+Every emitted JSON CLI response has an additive top-level
+`dcsmizzer.report-evidence-ref/v1` record. Without explicit binding its status
+is `unbound`; evidence lifecycle reports use `self` for their own bundle or
+readiness identity. Only an explicit, fully passing current binding uses
+`bundle-current`.
+
+For example:
+
+```powershell
+python Tools\dcsmizzer.py dcs-countries `
+  --dcs-root "D:\path\to\DCSWorld" `
+  --details `
+  --evidence-bundle output\evidence-bundles\BUNDLE_SHA256 `
+  --evidence-current-dcs-root "D:\path\to\DCSWorld"
+```
+
+The binding gate verifies the content-addressed bundle and performs the same
+two-pass live readiness collection both before and after the query. It also
+requires the executing DCSMizzer version and clean Git commit to equal the
+bundle producer, compares safe canonical file identities rather than path
+spellings, and binds a path-free query hash plus compact mandatory-domain
+artifact-set hashes. The final transport record also binds the canonical
+intrinsic report payload (all report fields except `evidence_ref`) by SHA-256.
+`report-summary` recomputes that hash for a saved file and reports
+`intrinsic_report_binding_matches`; require `true` before reusing the saved
+binding claim. Any report exit code other than zero downgrades the final state
+to `unbound`; current evidence cannot turn an exact miss or failed check into
+success.
+
+Use the documented `python Tools\dcsmizzer.py ...` entrypoint for this
+property. Before product imports, it re-enters Python with `-I -S`; provenance-
+sensitive invocations then require a clean ordinary index, no ignored or
+untracked content below `Tools`, safe worktree Git metadata, and
+agreement between every tracked regular file's Git-canonical content ID and
+its `HEAD` blob. Declared text line-ending normalization is accepted;
+`-text`/binary content remains byte-exact.
+Consequently the CLI refuses a dirty producer instead of emitting a current
+claim from it. The interpreter, Git executable, operating system, and bootstrap
+itself are trusted local components; the gate does not authenticate an
+untrusted host or an independently supplied copy of the entrypoint.
+
+The fixed provenance-sensitive command set is:
+
+- `evidence-snapshot`, `evidence-verify`, `evidence-diff`, and
+  `evidence-readiness`;
+- `report-summary`;
+- `runtime-prepare`, `runtime-run`, and `runtime-collect`;
+- `terrain-probe-script`, `terrain-probe-instrument`, and
+  `terrain-probe-extract`;
+- any otherwise supported read-only command carrying `--evidence-bundle`.
+
+Help requests do not create or validate evidence and remain available from a
+development worktree. A command option terminator makes later tokens positional,
+so a literal filename such as `inspect -- --evidence-bundle` does not trigger
+the producer gate.
+The gate currently requires a standalone clone whose repository root contains
+an ordinary `.git` directory. Linked Git worktrees and submodule source trees
+use indirect gitdir metadata and are intentionally unsupported for these
+provenance-sensitive entrypoint invocations.
+Tracked paths must be UTF-8 and cannot contain CR or LF because the bounded Git
+hash batch uses newline-delimited paths. Canonical text hashing fixes
+`core.autocrlf` to the platform policy (`true` on Windows, `false` elsewhere),
+so a clean checkout intentionally using a different line-ending policy may be
+rejected and should be recreated with the supported policy.
+
+Mandatory domains cannot be replaced by caller input:
+
+| Read-only command | Mandatory current domains |
+|---|---|
+| `capabilities` | capabilities |
+| `upstream-status`; `pydcs-terrains`, `pydcs-units`, `pydcs-airports`, `pydcs-aircraft`; `br-terrains`, `br-coordinates`, `br-coastline`, `br-airbases`, `br-spawnpoints`, `br-airfield-footprint`; `terrain-coverage` | upstream |
+| `dcs-static` | installation, countries, modules, payloads |
+| `dcs-countries` | countries |
+| `dcs-payload-index` | payloads |
+| `dcs-payloads`, `dcs-payload-match` | installation, payloads |
+| `dcs-modules` | modules |
+| `dcs-weather` | weather |
+| `dcs-airbases` | airfields |
+| `dcs-coordinates` | installation, airfields |
+| `terrain-point`, `placement-check`, `terrain-corridor`, `landmark-search`, `airfield-footprint` | installation, terrain |
+
+`--evidence-required-domain` may only add domains. An added `upstream`,
+`runtime`, or `terrain` domain also requires the corresponding current cache,
+runtime manifest, or terrain-evidence input. DCS queries must use the same
+directory identity as `--evidence-current-dcs-root`; pydcs and BriefingRoom
+queries must use the named children of `--evidence-current-cache-root`.
+Physical queries must use exactly one file identity supplied by
+`--evidence-current-terrain-evidence`.
+`dcs-modules` queries with `--unit-type`, `--service-country`, or
+`--service-year` are rejected before collection because the current module
+artifact does not cover the recursively read service-life files. Unfiltered or
+module-only queries retain the ordinary modules-domain gate.
+
+The presence of binding flags is not a promise that a domain can pass today.
+Static modules, payload compatibility, and airfield coverage remain partial in
+their declared finite scope, so commands requiring those domains return an
+`unbound` result until stronger coverage exists. This is an intentional
+fail-closed diagnostic path.
+
+External binding flags are intentionally absent from evidence lifecycle,
+writer, launcher, arbitrary-input, and source-uncovered commands. This includes
+runtime/probe/build commands, `report-summary`, `inspect`, `audit-spec`,
+`miz-registry`, `dcs-cloud-presets`, GCI/templates, and `terrain-catalog`.
+Unknown future commands therefore default to rejection. The CLI-only
+`evidence_ref` is attached after the underlying Python report is produced; it
+does not alter evidence-bundle artifact bytes or internal report schemas and
+never upgrades static/planning authority to initialized-DCS or runtime proof.

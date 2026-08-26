@@ -498,6 +498,7 @@ def _source_status(
         ("rev-parse", "--show-toplevel"),
         timeout=GIT_QUERY_TIMEOUT_SECONDS,
         redactions=(root, target, source.remote),
+        isolated_config=True,
     )
     if top_level_result.unavailable:
         errors.append(
@@ -545,12 +546,14 @@ def _source_status(
         ("rev-parse", "--verify", "HEAD^{commit}"),
         timeout=GIT_QUERY_TIMEOUT_SECONDS,
         redactions=(root, target, source.remote),
+        isolated_config=True,
     )
     tree_result = _run_git(
         target,
         ("rev-parse", "--verify", "HEAD^{tree}"),
         timeout=GIT_QUERY_TIMEOUT_SECONDS,
         redactions=(root, target, source.remote),
+        isolated_config=True,
     )
     remote_result = _run_git(
         target,
@@ -563,6 +566,7 @@ def _source_status(
         ),
         timeout=GIT_QUERY_TIMEOUT_SECONDS,
         redactions=(root, target, source.remote),
+        isolated_config=True,
     )
     local_config_result = _run_git(
         target,
@@ -576,12 +580,38 @@ def _source_status(
         ),
         timeout=GIT_QUERY_TIMEOUT_SECONDS,
         redactions=(root, target, source.remote),
+        isolated_config=True,
+    )
+    info_attributes_result = _run_git(
+        target,
+        (
+            "rev-parse",
+            "--path-format=absolute",
+            "--git-path",
+            "info/attributes",
+        ),
+        timeout=GIT_QUERY_TIMEOUT_SECONDS,
+        redactions=(root, target, source.remote),
+        isolated_config=True,
+    )
+    worktree_config_result = _run_git(
+        target,
+        (
+            "rev-parse",
+            "--path-format=absolute",
+            "--git-path",
+            "config.worktree",
+        ),
+        timeout=GIT_QUERY_TIMEOUT_SECONDS,
+        redactions=(root, target, source.remote),
+        isolated_config=True,
     )
     branch_result = _run_git(
         target,
         ("symbolic-ref", "--quiet", "--short", "HEAD"),
         timeout=GIT_QUERY_TIMEOUT_SECONDS,
         redactions=(root, target, source.remote),
+        isolated_config=True,
     )
     local_config_keys = (
         tuple(
@@ -598,19 +628,46 @@ def _source_status(
             _dangerous_local_config_key(key)
             for key in local_config_keys
         )
+        and _git_metadata_file_empty(info_attributes_result)
+        and _git_metadata_file_empty(worktree_config_result)
     )
     clean_result = (
         _run_git(
             target,
             (
+                "-c",
+                "core.fsmonitor=false",
+                "-c",
+                "core.untrackedCache=false",
+                "-c",
+                "core.trustctime=true",
+                "-c",
+                "core.checkStat=default",
+                "-c",
+                "core.ignoreStat=false",
+                "-c",
+                f"core.autocrlf={'true' if os.name == 'nt' else 'false'}",
                 "status",
                 "--porcelain=v1",
                 "-z",
                 "--untracked-files=all",
+                "--ignored=matching",
                 "--ignore-submodules=none",
             ),
             timeout=GIT_QUERY_TIMEOUT_SECONDS,
             redactions=(root, target, source.remote),
+            isolated_config=True,
+        )
+        if local_config_safe
+        else _GitResult(returncode=None, stdout="", stderr="")
+    )
+    index_flags_result = (
+        _run_git(
+            target,
+            ("ls-files", "-v", "-z", "--cached", "--"),
+            timeout=GIT_QUERY_TIMEOUT_SECONDS,
+            redactions=(root, target, source.remote),
+            isolated_config=True,
         )
         if local_config_safe
         else _GitResult(returncode=None, stdout="", stderr="")
@@ -634,6 +691,7 @@ def _source_status(
         if clean_result.returncode == 0
         else None
     )
+    index_flags_safe = _tracked_index_flags_safe(index_flags_result)
     detached = branch_result.returncode == 1 and head is not None
     remote_matches = remote == source.remote
     branch_acceptable = branch == source.branch or detached
@@ -651,6 +709,7 @@ def _source_status(
             "head": head,
             "tree": tree,
             "clean": clean,
+            "index_flags_safe": index_flags_safe,
             "local_config_safe": local_config_safe,
         }
     )
@@ -679,6 +738,7 @@ def _source_status(
         and branch_acceptable
         and exact_pin
         and clean is True
+        and index_flags_safe is True
         and validation["exact_checkout_root"] is True
         and local_config_safe
         and profile_complete
@@ -692,6 +752,7 @@ def _source_status(
             "license_matches": license_matches,
             "required_paths_complete": required_complete,
             "profile_complete": profile_complete,
+            "index_flags_safe": index_flags_safe is True,
             "local_config_safe": local_config_safe,
             "usable": usable,
         }
@@ -762,7 +823,16 @@ def _source_status(
                 "message": "local Git configuration is unavailable or unsafe",
             }
         )
-    elif clean is False:
+    elif index_flags_safe is not True:
+        errors.append(
+            {
+                "code": "unsafe_index_flags",
+                "message": (
+                    "tracked files use hidden or unsupported Git index flags"
+                ),
+            }
+        )
+    if local_config_safe and clean is False:
         errors.append(
             {
                 "code": "dirty_worktree",
@@ -837,6 +907,7 @@ def _empty_actual(*, checkout_present: bool) -> dict[str, Any]:
         "head": None,
         "tree": None,
         "clean": None,
+        "index_flags_safe": None,
         "local_config_safe": False,
         "license": {
             "sha256": None,
@@ -858,6 +929,7 @@ def _empty_validation() -> dict[str, bool]:
         "license_matches": False,
         "required_paths_complete": False,
         "profile_complete": False,
+        "index_flags_safe": False,
         "local_config_safe": False,
         "usable": False,
     }
@@ -896,6 +968,13 @@ def _prepare_existing(
             "checkout",
             "refused",
             "existing_checkout_local_config_unsafe",
+        )
+    if validation["index_flags_safe"] is not True:
+        return _operation(
+            source,
+            "checkout",
+            "refused",
+            "existing_checkout_index_flags_unsafe",
         )
     if actual["clean"] is not True:
         return _operation(
@@ -1250,12 +1329,14 @@ def _run_git_command(
                     "GIT_SSH_COMMAND",
                     "GIT_PROXY_COMMAND",
                 }
+                or key.startswith("GIT_ATTR_")
                 or key.startswith("GIT_CONFIG_KEY_")
                 or key.startswith("GIT_CONFIG_VALUE_")
             ):
                 environment.pop(key, None)
         environment.update(
             {
+                "GIT_ATTR_NOSYSTEM": "1",
                 "GIT_CONFIG_COUNT": "0",
                 "GIT_CONFIG_NOSYSTEM": "1",
                 "GIT_CONFIG_GLOBAL": os.devnull,
@@ -1362,6 +1443,28 @@ def _successful_line(result: _GitResult) -> str | None:
         return None
     value = result.stdout.strip()
     return value or None
+
+
+def _tracked_index_flags_safe(result: _GitResult) -> bool | None:
+    if result.returncode != 0:
+        return None
+    records = [record for record in result.stdout.split("\x00") if record]
+    return bool(records) and all(record.startswith("H ") for record in records)
+
+
+def _git_metadata_file_empty(result: _GitResult) -> bool:
+    if result.returncode != 0 or not result.stdout:
+        return False
+    path = Path(result.stdout)
+    status_result = _lstat_optional(path)
+    if status_result is None:
+        return True
+    if _is_link_or_reparse(status_result) or not stat.S_ISREG(status_result.st_mode):
+        return False
+    try:
+        return status_result.st_size == 0 and path.read_bytes() == b""
+    except OSError:
+        return False
 
 
 def _same_checkout_root(value: str, target: Path) -> bool:
@@ -1568,14 +1671,18 @@ def _dangerous_local_config_key(key: str) -> bool:
     ):
         return True
     if folded in {
+        "core.attributesfile",
         "core.alternaterefscommand",
         "core.askpass",
         "core.editor",
         "core.fsmonitor",
         "core.gitproxy",
         "core.hookspath",
+        "core.ignorestat",
         "core.pager",
+        "core.checkstat",
         "core.sshcommand",
+        "core.trustctime",
         "core.worktree",
         "diff.external",
         "gc.recentobjectshook",
@@ -1583,6 +1690,7 @@ def _dangerous_local_config_key(key: str) -> bool:
         "gpg.ssh.program",
         "interactive.difffilter",
         "sequence.editor",
+        "extensions.worktreeconfig",
     }:
         return True
     return folded.endswith(

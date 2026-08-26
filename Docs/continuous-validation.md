@@ -52,7 +52,7 @@ python -m pip install --no-deps --only-binary=:all: --require-hashes -r .github\
 python -m unittest discover -s Tools\tests
 python Tools\validate_document_links.py
 python Tools\validate_prompt_samples.py
-ruff check --select E,F,B Tools\dcsmizzer Tools\tests
+ruff check --select E,F,B Tools\dcsmizzer.py Tools\dcsmizzer Tools\tests
 python -m compileall -q Tools
 ```
 
@@ -60,6 +60,31 @@ For the complete local evidence lane, populate the acknowledged clones under
 `.develope/upstream` at the commits recorded by the survey, then run the same
 survey discovery command. Missing clones never produce a validated provenance
 manifest: the CLI returns failure and lists each unavailable commit source.
+
+The product discovery also contains `test_mapping_acceptance`. It reports one
+explicit skip when the exact acknowledged pydcs and BriefingRoom cache is not
+available under `.develope/upstream`; it never downloads or updates a source.
+When that locked cache is present, the test strictly replays the 14-theatre
+aggregate, all 14 BriefingRoom coordinate fits, the 84-case coastline matrix,
+the exact Caucasus 100-km planning-water example, and the Great Pyramid static
+cross-source conversion. Only aggregate expectations, public example
+coordinates, commit/blob identities, and numeric tolerances are committed;
+third-party terrain and airport data remain in the ignored local checkouts.
+
+For a release acceptance run, make the cache path explicit. An explicit path
+which is missing, dirty, or not at both acknowledged pins is a test failure
+rather than a skip:
+
+```powershell
+$env:DCSMIZZER_MAPPING_ACCEPTANCE_UPSTREAM_ROOT = `
+  (Resolve-Path output\upstream).Path
+python -m unittest Tools.tests.test_mapping_acceptance -v
+Remove-Item Env:DCSMIZZER_MAPPING_ACCEPTANCE_UPSTREAM_ROOT
+```
+
+This remains static/planning acceptance. It does not start DCS or turn a
+coastline mask, coordinate fit, or landmark reference into physical-terrain or
+runtime authority.
 
 The CI contract itself has unit tests. They reject movable action references,
 write permissions, credential persistence, unpinned Ruff input, missing release

@@ -35,12 +35,13 @@ from .evidence_inputs import (
     validate_runtime_attestation,
     validate_terrain_attestation,
 )
+from .path_safety import canonical_existing_directory
+from .report_provenance import REPORT_EVIDENCE_REF_SCHEMA
 from .report_views import (
     KNOWN_REPORT_SCHEMAS,
     _parse_report_json,
     _read_bounded_report,
 )
-from .path_safety import canonical_existing_directory
 from .runtime import (
     MAX_MISSION_BYTES,
     _distribution_identity,
@@ -96,6 +97,9 @@ _ARTIFACT_SCHEMAS = {
     "airfields": frozenset({"dcsmizzer.dcs-airbase-beacons/v1"}),
     "runtime": frozenset({RUNTIME_ATTESTATION_SCHEMA}),
     "terrain": frozenset({TERRAIN_ATTESTATION_SCHEMA}),
+}
+_DOMAIN_ARTIFACT_DEPENDENCIES = {
+    "modules": frozenset({"installation", "modules"}),
 }
 
 
@@ -167,6 +171,10 @@ def create_evidence_snapshot(
     coverage: list[dict[str, Any]] = []
     for name, report in sorted(artifacts.items()):
         _validate_artifact_name(name)
+        if "evidence_ref" in report:
+            raise ValueError(
+                f"evidence artifact {name} contains CLI transport metadata"
+            )
         schema = report.get("schema")
         if not isinstance(schema, str) or schema not in KNOWN_REPORT_SCHEMAS:
             raise ValueError(f"evidence artifact {name} has an unknown report schema")
@@ -324,6 +332,10 @@ def verify_evidence_bundle(bundle_path: Path) -> dict[str, Any]:
         if digest != record["sha256"]:
             raise ValueError(f"evidence artifact {name} hash does not match")
         parsed = _parse_report_json(raw)
+        if "evidence_ref" in parsed:
+            raise ValueError(
+                f"evidence artifact {name} contains CLI transport metadata"
+            )
         if raw != _canonical_bytes(parsed):
             raise ValueError(f"evidence artifact {name} is not canonical JSON")
         if parsed.get("schema") != record["schema"]:
@@ -661,6 +673,201 @@ def required_evidence_domains() -> tuple[str, ...]:
     return tuple(sorted(_REQUIRED_DOMAINS))
 
 
+def current_report_evidence_reference(
+    bundle_path: Path,
+    dcs_root: Path,
+    *,
+    report_command: str,
+    query_sha256: str,
+    mandatory_domains: list[str] | tuple[str, ...],
+    source_roots_matched: bool,
+    cache_root: Path | None = None,
+    required_domains: list[str] | tuple[str, ...] = (),
+    runtime_manifests: list[Path] | tuple[Path, ...] = (),
+    terrain_evidence: list[Path] | tuple[Path, ...] = (),
+) -> dict[str, Any]:
+    """Build a path-free reference after live two-pass readiness validation."""
+
+    required_values = _validate_required_domains(required_domains)
+    mandatory_values = _binding_domains(
+        mandatory_domains,
+        label="mandatory report domains",
+    )
+    if not mandatory_values <= required_values:
+        raise ValueError("mandatory report domains are not all required")
+    if (
+        not isinstance(report_command, str)
+        or re.fullmatch(r"[a-z0-9][a-z0-9-]{0,63}", report_command) is None
+        or not isinstance(query_sha256, str)
+        or _HASH.fullmatch(query_sha256) is None
+        or not isinstance(source_roots_matched, bool)
+    ):
+        raise ValueError("report evidence binding identity is invalid")
+
+    repository = Path(__file__).resolve().parents[2]
+    git_before = _git_identity(repository)
+    initial = verify_evidence_bundle(Path(bundle_path))
+    readiness = evidence_readiness(
+        Path(bundle_path),
+        Path(dcs_root),
+        cache_root=cache_root,
+        required_domains=sorted(required_values),
+        runtime_manifests=runtime_manifests,
+        terrain_evidence=terrain_evidence,
+    )
+    confirmation = verify_evidence_bundle(Path(bundle_path))
+    git_after = _git_identity(repository)
+    if initial != confirmation:
+        raise ValueError("evidence bundle changed while binding a report")
+    if git_before != git_after:
+        raise ValueError("report evidence producer changed while binding")
+
+    required_results = readiness["required_domains"]
+    required_status = {
+        name: item["ready"] is True
+        for name, item in required_results.items()
+    }
+    bundle_producer = initial["producer"]
+    current_producer = {
+        "name": "DCSMizzer",
+        "version": __version__,
+        "git_commit": git_after.get("commit"),
+        "git_dirty": git_after.get("dirty"),
+    }
+    reproducible_current = bool(
+        isinstance(current_producer["git_commit"], str)
+        and re.fullmatch(
+            r"[0-9a-f]{40,64}",
+            current_producer["git_commit"],
+        )
+        and current_producer["git_dirty"] is False
+    )
+    producer_matches = bool(
+        reproducible_current
+        and bundle_producer.get("name") == current_producer["name"]
+        and bundle_producer.get("version") == current_producer["version"]
+        and bundle_producer.get("git_commit") == current_producer["git_commit"]
+        and bundle_producer.get("git_dirty") is False
+    )
+    required_ready = bool(
+        readiness["validation"]["all_required_domains_ready"] is True
+        and all(required_status.values())
+    )
+    current_revalidated = bool(
+        readiness["live_collection"]["passes"] == 2
+        and readiness["live_collection"]["stable_across_passes"] is True
+    )
+    ready = bool(
+        source_roots_matched
+        and required_ready
+        and current_revalidated
+        and reproducible_current
+        and producer_matches
+    )
+    return {
+        "schema": REPORT_EVIDENCE_REF_SCHEMA,
+        "status": "bundle-current" if ready else "unbound",
+        "bundle": {
+            "id": initial["bundle"]["id"],
+            "manifest_sha256": initial["bundle"]["manifest_sha256"],
+        },
+        "authority_tier": (
+            "current_verified_binding_context" if ready else "report_intrinsic_only"
+        ),
+        "producer": {
+            "bundle": bundle_producer,
+            "current": current_producer,
+        },
+        "required_domains": required_status,
+        "domain_artifact_bindings": _domain_artifact_bindings(
+            initial,
+            tuple(required_results),
+        ),
+        "current_readiness": {
+            "schema": readiness["schema"],
+            "canonical_sha256": hashlib.sha256(
+                _canonical_bytes(readiness)
+            ).hexdigest(),
+            "live_collection_passes": readiness["live_collection"]["passes"],
+            "stable_across_passes": readiness["live_collection"][
+                "stable_across_passes"
+            ],
+            "live_collection_failures": len(
+                readiness["live_collection_failures"]
+            ),
+        },
+        "report_binding": {
+            "command": report_command,
+            "query_sha256": query_sha256,
+            "mandatory_domains": sorted(mandatory_values),
+            "source_roots_matched": source_roots_matched,
+        },
+        "limitations": [
+            (
+                "Binding proves current bundle context for the command's mandatory "
+                "domains; report fields retain their own declared authority."
+            ),
+            "Additional caller-required domains participate in the readiness gate.",
+            "Static or planning evidence is never upgraded to DCS runtime validity.",
+        ],
+        "validation": {
+            "bundle_reference_present": True,
+            "bundle_integrity_verified": True,
+            "bundle_stable_during_binding": True,
+            "current_state_revalidated": current_revalidated,
+            "required_domains_ready": required_ready,
+            "reproducible_current_producer": reproducible_current,
+            "current_producer_matches_bundle": producer_matches,
+            "evidence_ready_for_binding": ready,
+        },
+    }
+
+
+def _binding_domains(values: Any, *, label: str) -> frozenset[str]:
+    if (
+        not isinstance(values, (list, tuple))
+        or not values
+        or len(values) > len(_REQUIRED_DOMAINS)
+        or any(not isinstance(value, str) for value in values)
+    ):
+        raise ValueError(f"{label} are invalid")
+    domains = frozenset(values)
+    if len(domains) != len(values) or not domains <= _REQUIRED_DOMAINS:
+        raise ValueError(f"{label} are duplicate or unknown")
+    return domains
+
+
+def _domain_artifact_bindings(
+    verification: dict[str, Any],
+    domains: tuple[str, ...],
+) -> dict[str, str]:
+    coverage = {
+        item["artifact"]: item
+        for item in verification["coverage"]
+        if isinstance(item, dict) and isinstance(item.get("artifact"), str)
+    }
+    output: dict[str, str] = {}
+    for domain in sorted(domains):
+        artifact_domains = _DOMAIN_ARTIFACT_DEPENDENCIES.get(
+            domain,
+            frozenset({domain}),
+        )
+        records = [
+            {
+                "name": item["name"],
+                "schema": item["schema"],
+                "size_bytes": item["size_bytes"],
+                "sha256": item["sha256"],
+                "verified": item["verified"],
+                "coverage": coverage.get(item["name"]),
+            }
+            for item in verification["artifacts"]
+            if _snapshot_artifact_domain(item.get("name")) in artifact_domains
+        ]
+        output[domain] = hashlib.sha256(_canonical_bytes(records)).hexdigest()
+    return output
+
+
 def _collect_snapshot_pass(
     dcs_root: Path,
     cache_root: Path | None,
@@ -835,10 +1042,12 @@ def _coverage_record(name: str, report: dict[str, Any]) -> dict[str, Any]:
             status = "blocked"
             reason = "one or more acknowledged upstream source locks are unusable"
     elif base == "weather":
-        failures = report.get("parse_failures")
-        if failures:
+        if not _weather_coverage_complete(report):
             status = "partial"
-            reason = "one or more current weather sources failed to parse"
+            reason = (
+                "current weather presets are missing, failed, incomplete, "
+                "inconsistent, filtered, or truncated"
+            )
     elif base == "countries":
         duplicates = report.get("duplicate_identifiers")
         if duplicates:
@@ -854,6 +1063,54 @@ def _coverage_record(name: str, report: dict[str, Any]) -> dict[str, Any]:
         "status": status,
         "reason": reason,
     }
+
+
+def _weather_coverage_complete(report: dict[str, Any]) -> bool:
+    coverage = report.get("coverage")
+    failures = report.get("parse_failures")
+    presets = report.get("presets")
+    filters = report.get("filter")
+    if (
+        not isinstance(coverage, dict)
+        or not isinstance(failures, list)
+        or not isinstance(presets, list)
+        or not isinstance(filters, dict)
+        or filters.get("preset") is not None
+    ):
+        return False
+    names = (
+        "source_files",
+        "parsed_presets",
+        "parse_failures",
+        "fields_complete_presets",
+        "fields_incomplete_presets",
+        "consistent_presets",
+        "usable_presets",
+        "matching_presets",
+        "returned_presets",
+    )
+    if any(
+        isinstance(coverage.get(name), bool)
+        or not isinstance(coverage.get(name), int)
+        or coverage[name] < 0
+        for name in names
+    ):
+        return False
+    parsed = coverage["parsed_presets"]
+    failed = coverage["parse_failures"]
+    return bool(
+        coverage["source_files"] > 0
+        and parsed > 0
+        and coverage["source_files"] == parsed + failed
+        and failed == len(failures) == 0
+        and coverage["fields_complete_presets"] == parsed
+        and coverage["fields_incomplete_presets"] == 0
+        and coverage["consistent_presets"] == parsed
+        and coverage["usable_presets"] == parsed
+        and coverage["matching_presets"] == parsed
+        and coverage["returned_presets"] == parsed == len(presets)
+        and coverage.get("truncated") is False
+    )
 
 
 def _artifact_authority(report: dict[str, Any]) -> str:
@@ -1423,6 +1680,14 @@ def _load_evidence_source(
         return _load_evidence_source(path.parent)
     if schema not in KNOWN_REPORT_SCHEMAS:
         raise ValueError("evidence source does not use a recognized schema")
+    # ``evidence_ref`` is CLI transport metadata attached after a report has
+    # been produced.  It is not part of the report's intrinsic evidence and
+    # therefore must not create semantic drift when comparing standalone
+    # reports.  Keep the raw-byte digest in ``reference`` below so physical
+    # file identity remains exact even though normalization ignores this one
+    # top-level transport field.
+    report = dict(report)
+    report.pop("evidence_ref", None)
     return {
         "reference": {
             "kind": "standalone_report",

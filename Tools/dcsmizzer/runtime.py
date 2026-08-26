@@ -54,7 +54,6 @@ def prepare_runtime(
     mission: Path | None = None,
     coordinate_checks: Path | None = None,
     smoke_seconds: float = 10.0,
-    repository_root: Path | None = None,
 ) -> dict[str, Any]:
     """Create one new disposable DCS profile and its immutable run manifest."""
 
@@ -67,6 +66,16 @@ def prepare_runtime(
         MIN_SMOKE_SECONDS,
         MAX_SMOKE_SECONDS,
     )
+    repository = Path(__file__).resolve().parents[2]
+    git = _git_identity(repository)
+    if (
+        not isinstance(git.get("commit"), str)
+        or re.fullmatch(r"[0-9a-f]{40,64}", git["commit"]) is None
+        or git.get("dirty") is not False
+    ):
+        raise ValueError(
+            "runtime preparation requires a clean commit-bound producer"
+        )
     dcs_root_value = _existing_directory(Path(dcs_root), "DCS root")
     saved_games_value = _existing_directory(
         Path(saved_games_root),
@@ -185,11 +194,6 @@ def prepare_runtime(
     ).encode("utf-8")
     _write_new_file(hook_path, rendered_hook)
 
-    repository = (
-        Path(repository_root).resolve()
-        if repository_root is not None
-        else Path(__file__).resolve().parents[2]
-    )
     source_api = dcs_root_value / "API" / "Sim_ControlAPI.md"
     source_api_record = _optional_source_record(source_api, dcs_root_value)
     distribution_manifest_record = (
@@ -202,7 +206,6 @@ def prepare_runtime(
         if distribution == "steam"
         else None
     )
-    git = _git_identity(repository)
     created = _utc_now()
     launcher_record: dict[str, Any] | None = None
     if distribution == "steam":
@@ -310,7 +313,27 @@ def prepare_runtime(
     if len(manifest_payload) > MAX_MANIFEST_BYTES:
         raise ValueError("runtime manifest exceeds the byte limit")
     manifest_path = product_root / "manifest.json"
+    _require_producer_identity(
+        repository,
+        git,
+        "runtime preparation producer changed before publication",
+    )
     _write_new_file(manifest_path, manifest_payload)
+    try:
+        _require_producer_identity(
+            repository,
+            git,
+            "runtime preparation producer changed during publication",
+        )
+    except ValueError:
+        try:
+            manifest_path.unlink()
+        except OSError as error:
+            raise ValueError(
+                "runtime preparation producer changed and the manifest "
+                "could not be retracted"
+            ) from error
+        raise
     return {
         "schema": "dcsmizzer.runtime-preparation/v1",
         "run_id": run_id_value,
@@ -346,7 +369,8 @@ def runtime_preview(manifest_path: Path) -> dict[str, Any]:
     """Validate a prepared run and return its exact non-executing command."""
 
     manifest, manifest_payload, paths = _load_and_verify_manifest(manifest_path)
-    return {
+    _require_runtime_producer_current(manifest)
+    report = {
         "schema": "dcsmizzer.runtime-preview/v1",
         "run_id": manifest["run_id"],
         "mode": manifest["mode"],
@@ -376,6 +400,8 @@ def runtime_preview(manifest_path: Path) -> dict[str, Any]:
             "runtime_started": False,
         },
     }
+    _require_runtime_producer_current(manifest)
+    return report
 
 
 def run_runtime(
@@ -406,6 +432,7 @@ def run_runtime(
         120.0,
     )
     manifest, manifest_payload, paths = _load_and_verify_manifest(manifest_path)
+    _require_runtime_producer_current(manifest)
     if not authorize:
         preview = runtime_preview(manifest_path)
         preview["schema"] = "dcsmizzer.runtime-run/v1"
@@ -635,6 +662,7 @@ def run_runtime(
         "stderr": _file_record_if_present(stderr_path),
     }
     execution_payload = _json_bytes(execution)
+    _require_runtime_producer_current(manifest)
     _write_new_file(paths["execution"], execution_payload)
     completed = classification == "normal_completion"
     return {
@@ -682,6 +710,7 @@ def collect_runtime(manifest_path: Path) -> dict[str, Any]:
     """Validate and bind the exact runtime result for one prepared run."""
 
     manifest, manifest_payload, paths = _load_and_verify_manifest(manifest_path)
+    _require_runtime_producer_current(manifest)
     if not paths["execution"].is_file():
         raise ValueError("runtime execution record is missing")
     execution, execution_payload = _load_json_file(
@@ -694,7 +723,7 @@ def collect_runtime(manifest_path: Path) -> dict[str, Any]:
     if execution.get("run_id") != manifest["run_id"]:
         raise ValueError("runtime execution run ID does not match")
     if not paths["result"].is_file():
-        return _collection_report(
+        report = _collection_report(
             manifest,
             manifest_payload,
             execution,
@@ -704,13 +733,15 @@ def collect_runtime(manifest_path: Path) -> dict[str, Any]:
             paths=paths,
             failure_reasons=["runtime_result_missing"],
         )
+        _require_runtime_producer_current(manifest)
+        return report
     result, result_payload = _load_json_file(
         paths["result"],
         MAX_RESULT_BYTES,
         "runtime result",
     )
     failure_reasons = _validate_runtime_result(result, manifest)
-    return _collection_report(
+    report = _collection_report(
         manifest,
         manifest_payload,
         execution,
@@ -720,6 +751,8 @@ def collect_runtime(manifest_path: Path) -> dict[str, Any]:
         paths=paths,
         failure_reasons=failure_reasons,
     )
+    _require_runtime_producer_current(manifest)
+    return report
 
 
 def _collection_report(
@@ -1006,10 +1039,17 @@ def _load_and_verify_manifest(
     producer = manifest.get("producer")
     if (
         not isinstance(producer, dict)
+        or set(producer) != {"name", "version", "git_commit", "git_dirty"}
         or producer.get("name") != "DCSMizzer"
         or producer.get("version") != __version__
+        or not isinstance(producer.get("git_commit"), str)
+        or re.fullmatch(r"[0-9a-f]{40,64}", producer["git_commit"]) is None
+        or producer.get("git_dirty") is not False
     ):
-        raise ValueError("runtime manifest producer is not this DCSMizzer version")
+        raise ValueError(
+            "runtime manifest producer is not a clean commit-bound "
+            "DCSMizzer version"
+        )
     profile = manifest.get("profile")
     if not isinstance(profile, dict):
         raise ValueError("runtime manifest profile is missing")
@@ -1309,6 +1349,31 @@ def _load_and_verify_manifest(
     }
 
 
+def _require_runtime_producer_current(manifest: dict[str, Any]) -> None:
+    producer = manifest.get("producer")
+    if not isinstance(producer, dict):
+        raise ValueError("runtime manifest producer is invalid")
+    _require_producer_identity(
+        Path(__file__).resolve().parents[2],
+        producer,
+        "current producer does not match the runtime manifest commit",
+    )
+
+
+def _require_producer_identity(
+    repository: Path,
+    expected: dict[str, Any],
+    message: str,
+) -> None:
+    identity = _git_identity(repository)
+    if (
+        identity.get("dirty") is not False
+        or identity.get("commit")
+        != expected.get("git_commit", expected.get("commit"))
+    ):
+        raise ValueError(message)
+
+
 def _validate_coordinate_checks(
     data: dict[str, Any],
     *,
@@ -1466,24 +1531,333 @@ def _distribution_identity(
 
 
 def _git_identity(root: Path) -> dict[str, Any]:
+    environment = os.environ.copy()
+    for key in tuple(environment):
+        if key.startswith(("GIT_ATTR_", "GIT_CONFIG_")) or key in {
+            "GIT_CONFIG",
+            "GIT_CONFIG_PARAMETERS",
+            "GIT_CONFIG_SYSTEM",
+            "GIT_DIR",
+            "GIT_WORK_TREE",
+            "GIT_COMMON_DIR",
+            "GIT_INDEX_FILE",
+            "GIT_OBJECT_DIRECTORY",
+            "GIT_ALTERNATE_OBJECT_DIRECTORIES",
+        }:
+            environment.pop(key, None)
+    environment.update(
+        {
+            "GIT_ATTR_NOSYSTEM": "1",
+            "GIT_CONFIG_GLOBAL": os.devnull,
+            "GIT_CONFIG_NOSYSTEM": "1",
+            "GIT_OPTIONAL_LOCKS": "0",
+            "GIT_NO_LAZY_FETCH": "1",
+            "GIT_NO_REPLACE_OBJECTS": "1",
+        }
+    )
+    command_prefix = (
+        "git",
+        "-c",
+        "core.fsmonitor=false",
+        "-c",
+        "core.untrackedCache=false",
+        "-c",
+        "core.preloadIndex=false",
+        "-c",
+        "core.trustctime=true",
+        "-c",
+        "core.checkStat=default",
+        "-c",
+        "core.ignoreStat=false",
+        "-c",
+        f"core.autocrlf={'true' if os.name == 'nt' else 'false'}",
+        "-C",
+        str(root),
+    )
+
     def run(*args: str) -> str | None:
         try:
             result = subprocess.run(
-                ["git", "-C", str(root), *args],
+                [*command_prefix, *args],
                 check=False,
                 capture_output=True,
                 text=True,
                 encoding="utf-8",
                 errors="replace",
                 timeout=10,
+                env=environment,
             )
         except (OSError, subprocess.TimeoutExpired):
             return None
         return result.stdout.strip() if result.returncode == 0 else None
 
-    commit = run("rev-parse", "HEAD")
-    status = run("status", "--porcelain")
-    return {"commit": commit, "dirty": None if status is None else bool(status)}
+    def run_bytes(*args: str, input_payload: bytes | None = None) -> bytes | None:
+        try:
+            result = subprocess.run(
+                [*command_prefix, *args],
+                check=False,
+                input=input_payload,
+                capture_output=True,
+                timeout=10,
+                env=environment,
+            )
+        except (OSError, subprocess.TimeoutExpired):
+            return None
+        return result.stdout if result.returncode == 0 else None
+
+    commit = run("rev-parse", "--verify", "HEAD^{commit}")
+    status = run(
+        "status",
+        "--porcelain=v1",
+        "-z",
+        "--untracked-files=all",
+        "--ignore-submodules=none",
+    )
+    ignored_status = run(
+        "status",
+        "--porcelain=v1",
+        "-z",
+        "--untracked-files=all",
+        "--ignored=matching",
+        "--ignore-submodules=none",
+    )
+    index = run("ls-files", "-v", "-z", "--cached", "--")
+    local_config = run(
+        "config",
+        "--local",
+        "--no-includes",
+        "--null",
+        "--name-only",
+        "--list",
+    )
+    info_attributes = run(
+        "rev-parse",
+        "--path-format=absolute",
+        "--git-path",
+        "info/attributes",
+    )
+    worktree_config = run(
+        "rev-parse",
+        "--path-format=absolute",
+        "--git-path",
+        "config.worktree",
+    )
+    source_tree = (
+        run_bytes("ls-tree", "-r", "-z", commit, "--", "Tools")
+        if commit is not None
+        else None
+    )
+    index_records = (
+        [record for record in index.split("\x00") if record]
+        if index is not None
+        else []
+    )
+    index_safe = bool(index_records) and all(
+        record.startswith("H ") for record in index_records
+    )
+    ignored_records = (
+        [record for record in ignored_status.split("\x00") if record]
+        if ignored_status is not None
+        else []
+    )
+    ignored_import_roots_safe = not any(
+        _ignored_producer_path_is_executable(record)
+        for record in ignored_records
+        if record.startswith("!! ")
+    )
+    local_config_safe = bool(
+        local_config is not None
+        and not any(
+            _producer_git_config_is_dangerous(key)
+            for key in local_config.split("\x00")
+            if key
+        )
+    )
+    attributes_safe = _producer_metadata_file_empty(info_attributes)
+    worktree_config_safe = _producer_metadata_file_empty(worktree_config)
+    sources_match = _producer_python_sources_match_head(
+        root,
+        source_tree,
+        run_bytes,
+    )
+    commit_after = run("rev-parse", "--verify", "HEAD^{commit}")
+    dirty = (
+        None
+        if any(
+            value is None
+            for value in (
+                commit,
+                commit_after,
+                status,
+                ignored_status,
+                index,
+                local_config,
+                info_attributes,
+                worktree_config,
+                source_tree,
+                sources_match,
+            )
+        )
+        else bool(status)
+        or not index_safe
+        or not ignored_import_roots_safe
+        or not local_config_safe
+        or not attributes_safe
+        or not worktree_config_safe
+        or sources_match is not True
+        or commit != commit_after
+    )
+    return {"commit": commit, "dirty": dirty}
+
+
+def _ignored_producer_path_is_executable(status_record: str) -> bool:
+    relative = status_record[3:].replace("\\", "/")
+    return relative.startswith("Tools/")
+
+
+def _producer_git_config_is_dangerous(key: str) -> bool:
+    folded = key.casefold()
+    return bool(
+        folded.startswith(("filter.", "include.", "includeif."))
+        or folded
+        in {
+            "core.attributesfile",
+            "core.checkstat",
+            "core.fsmonitor",
+            "core.ignorestat",
+            "core.trustctime",
+            "core.worktree",
+            "extensions.worktreeconfig",
+        }
+    )
+
+
+def _producer_metadata_file_empty(value: str | None) -> bool | None:
+    if value is None:
+        return None
+    path = Path(value)
+    try:
+        status_result = path.lstat()
+    except FileNotFoundError:
+        return True
+    except OSError:
+        return None
+    if not stat.S_ISREG(status_result.st_mode) or _is_reparse(status_result):
+        return False
+    try:
+        return path.read_bytes() == b""
+    except OSError:
+        return None
+
+
+def _producer_python_sources_match_head(
+    root: Path,
+    tree_payload: bytes | None,
+    run_bytes: Callable[..., bytes | None],
+) -> bool | None:
+    if tree_payload is None:
+        return None
+    records: list[tuple[str, str]] = []
+    try:
+        for raw in tree_payload.split(b"\x00"):
+            if not raw:
+                continue
+            metadata, encoded_path = raw.split(b"\t", 1)
+            mode, kind, digest = metadata.decode("ascii").split(" ", 2)
+            relative = encoded_path.decode("utf-8")
+            if (
+                kind == "blob"
+                and mode in {"100644", "100755"}
+                and relative.casefold().endswith(".py")
+            ):
+                if not _safe_producer_relative_path(relative):
+                    return False
+                records.append((relative, digest))
+    except (UnicodeError, ValueError):
+        return False
+    if not records:
+        return False
+    digests = sorted({digest for _, digest in records})
+    request = "".join(f"{digest}\n" for digest in digests).encode("ascii")
+    batch = run_bytes("cat-file", "--batch", input_payload=request)
+    blobs = _parse_git_blob_batch(batch, digests)
+    if blobs is None:
+        return None
+    for relative, digest in records:
+        path = root.joinpath(*relative.split("/"))
+        try:
+            before = path.lstat()
+            if (
+                not stat.S_ISREG(before.st_mode)
+                or _is_reparse(before)
+                or before.st_size > MAX_SOURCE_BYTES
+            ):
+                return False
+            payload = path.read_bytes()
+            after = path.lstat()
+        except OSError:
+            return False
+        if (
+            before.st_dev,
+            before.st_ino,
+            before.st_size,
+            before.st_mtime_ns,
+        ) != (
+            after.st_dev,
+            after.st_ino,
+            after.st_size,
+            after.st_mtime_ns,
+        ):
+            return False
+        if payload.replace(b"\r\n", b"\n") != blobs[digest].replace(
+            b"\r\n", b"\n"
+        ):
+            return False
+    return True
+
+
+def _safe_producer_relative_path(value: str) -> bool:
+    parts = value.split("/")
+    return bool(
+        value.startswith("Tools/")
+        and all(part not in {"", ".", ".."} for part in parts)
+        and "\\" not in value
+        and ":" not in value
+        and "\x00" not in value
+    )
+
+
+def _parse_git_blob_batch(
+    payload: bytes | None,
+    expected: list[str],
+) -> dict[str, bytes] | None:
+    if payload is None:
+        return None
+    output: dict[str, bytes] = {}
+    offset = 0
+    try:
+        for requested in expected:
+            header_end = payload.index(b"\n", offset)
+            digest_raw, kind, size_raw = payload[offset:header_end].split(b" ", 2)
+            size = int(size_raw)
+            digest = digest_raw.decode("ascii")
+            if (
+                digest != requested
+                or kind != b"blob"
+                or not 0 <= size <= MAX_SOURCE_BYTES
+            ):
+                return None
+            offset = header_end + 1
+            end = offset + size
+            if end >= len(payload) or payload[end : end + 1] != b"\n":
+                return None
+            output[digest] = payload[offset:end]
+            offset = end + 1
+    except (UnicodeError, ValueError):
+        return None
+    if offset != len(payload):
+        return None
+    return output
 
 
 def _running_dcs_pids() -> list[int]:

@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
 import sys
 from collections.abc import Sequence
 from dataclasses import asdict
@@ -32,6 +34,7 @@ from .dcs_static import (
 from .evidence import (
     compare_evidence,
     create_evidence_snapshot,
+    current_report_evidence_reference,
     evidence_readiness,
     required_evidence_domains,
     verify_evidence_bundle,
@@ -43,13 +46,16 @@ from .mission import (
     observe_miz_without_member_reads,
 )
 from .observed import ObservedRoot, build_observed_registry
+from .path_safety import canonical_existing_directory, canonical_existing_file
 from .pydcs_static import (
     pydcs_aircraft_report,
     pydcs_airport_report,
     pydcs_terrain_report,
     pydcs_unit_report,
 )
+from .report_provenance import attach_report_evidence_ref
 from .report_views import (
+    SUMMARY_BUDGET_BYTES,
     VIEW_COMMANDS,
     output_view,
     report_summary,
@@ -59,6 +65,7 @@ from .templates import options_template_report, warehouse_template_report
 from .terrain_catalog import terrain_catalog_report
 from .terrain_coverage import combined_terrain_report
 from .terrain_physical import (
+    MAX_EVIDENCE_BYTES,
     airfield_footprint_report,
     br_airfield_footprint_report,
     landmark_report,
@@ -88,6 +95,80 @@ DEFAULT_EXACT_PARKING_LIMIT = 8
 MAX_CLI_ERROR_BYTES = 2 * 1024
 _CLI_ERROR_PREFIX = "dcsmizzer tool error: "
 _CLI_ERROR_SUFFIX = "… [truncated]\n"
+_EVIDENCE_BINDING_DOMAINS: dict[str, tuple[str, ...]] = {
+    "capabilities": ("capabilities",),
+    "upstream-status": ("upstream",),
+    "dcs-static": ("countries", "installation", "modules", "payloads"),
+    "dcs-countries": ("countries",),
+    "dcs-payloads": ("installation", "payloads"),
+    "dcs-payload-index": ("payloads",),
+    "dcs-payload-match": ("installation", "payloads"),
+    "dcs-modules": ("modules",),
+    "dcs-airbases": ("airfields",),
+    "dcs-coordinates": ("airfields", "installation"),
+    "dcs-weather": ("weather",),
+    "pydcs-terrains": ("upstream",),
+    "pydcs-units": ("upstream",),
+    "pydcs-airports": ("upstream",),
+    "pydcs-aircraft": ("upstream",),
+    "br-terrains": ("upstream",),
+    "br-coordinates": ("upstream",),
+    "br-coastline": ("upstream",),
+    "br-airbases": ("upstream",),
+    "br-spawnpoints": ("upstream",),
+    "br-airfield-footprint": ("upstream",),
+    "terrain-point": ("installation", "terrain"),
+    "placement-check": ("installation", "terrain"),
+    "terrain-corridor": ("installation", "terrain"),
+    "landmark-search": ("installation", "terrain"),
+    "airfield-footprint": ("installation", "terrain"),
+    "terrain-coverage": ("upstream",),
+}
+_DCS_SOURCE_COMMANDS = frozenset(
+    {
+        "dcs-static",
+        "dcs-countries",
+        "dcs-payloads",
+        "dcs-payload-index",
+        "dcs-payload-match",
+        "dcs-modules",
+        "dcs-airbases",
+        "dcs-coordinates",
+        "dcs-weather",
+    }
+)
+_PYDCS_SOURCE_COMMANDS = frozenset(
+    {"pydcs-terrains", "pydcs-units", "pydcs-airports", "pydcs-aircraft"}
+)
+_BR_SOURCE_COMMANDS = frozenset(
+    {
+        "br-terrains",
+        "br-coordinates",
+        "br-coastline",
+        "br-airbases",
+        "br-spawnpoints",
+        "br-airfield-footprint",
+    }
+)
+_PHYSICAL_SOURCE_COMMANDS = frozenset(
+    {
+        "terrain-point",
+        "placement-check",
+        "terrain-corridor",
+        "landmark-search",
+        "airfield-footprint",
+    }
+)
+_BINDING_ARGUMENTS = frozenset(
+    {
+        "evidence_bundle",
+        "evidence_current_dcs_root",
+        "evidence_current_cache_root",
+        "evidence_required_domain",
+        "evidence_current_runtime_manifest",
+        "evidence_current_terrain_evidence",
+    }
+)
 
 
 class _CliArgumentError(ValueError):
@@ -95,6 +176,10 @@ class _CliArgumentError(ValueError):
 
 
 class _BoundedArgumentParser(argparse.ArgumentParser):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        kwargs.setdefault("allow_abbrev", False)
+        super().__init__(*args, **kwargs)
+
     def error(self, message: str) -> None:
         raise _CliArgumentError(message)
 
@@ -118,6 +203,7 @@ def main(
         return 2
 
     try:
+        binding_plan = _preflight_evidence_binding(args)
         if args.command == "capabilities":
             report = capabilities_report()
             exit_code = 0
@@ -705,7 +791,43 @@ def main(
             report = view.report
             if view.query_matched is False:
                 exit_code = 1
-        stdout.write(_json(report))
+        _json(report)
+        evidence_ref = _command_evidence_reference(args, binding_plan)
+        report = attach_report_evidence_ref(
+            report,
+            evidence_ref,
+            command_succeeded=exit_code == 0,
+        )
+        if (
+            evidence_ref is not None
+            and report["evidence_ref"]["validation"][
+                "usable_for_current_production_decision"
+            ]
+            is not True
+        ):
+            exit_code = 1
+        rendered = _json(report)
+        view = report.get("view")
+        bounded_summary = bool(
+            report.get("schema")
+            in {
+                "dcsmizzer.cli-summary/v1",
+                "dcsmizzer.report-summary/v1",
+                "dcsmizzer.observed-miz-summary/v1",
+            }
+            or (
+                isinstance(view, dict)
+                and view.get("budget_bytes") == SUMMARY_BUDGET_BYTES
+            )
+        )
+        if (
+            bounded_summary
+            and len(rendered.encode("utf-8")) > SUMMARY_BUDGET_BYTES
+        ):
+            raise ValueError(
+                "CLI summary exceeds its byte budget after evidence metadata"
+            )
+        stdout.write(rendered)
         return exit_code
     except OSError as error:
         details = type(error).__name__
@@ -760,6 +882,307 @@ def _visible_error_token(character: str) -> str:
     if 0xD800 <= codepoint <= 0xDFFF:
         return f"\\u{codepoint:04x}"
     return character
+
+
+def _preflight_evidence_binding(
+    args: argparse.Namespace,
+) -> dict[str, Any] | None:
+    bundle = getattr(args, "evidence_bundle", None)
+    supplemental = bool(
+        getattr(args, "evidence_current_dcs_root", None) is not None
+        or getattr(args, "evidence_current_cache_root", None) is not None
+        or getattr(args, "evidence_required_domain", [])
+        or getattr(args, "evidence_current_runtime_manifest", [])
+        or getattr(args, "evidence_current_terrain_evidence", [])
+    )
+    if bundle is None:
+        if supplemental:
+            raise ValueError("evidence binding options require --evidence-bundle")
+        return None
+
+    mandatory = _EVIDENCE_BINDING_DOMAINS.get(args.command)
+    if mandatory is None:
+        raise ValueError("this command does not support external evidence binding")
+    if args.command == "dcs-modules" and any(
+        getattr(args, name, None) is not None
+        for name in ("unit_type", "service_country", "service_year")
+    ):
+        raise ValueError(
+            "service-life module queries are not covered by the current "
+            "evidence bundle domain"
+        )
+    current_dcs_value = getattr(args, "evidence_current_dcs_root", None)
+    if current_dcs_value is None:
+        raise ValueError(
+            "--evidence-bundle requires --evidence-current-dcs-root"
+        )
+    current_dcs = canonical_existing_directory(
+        current_dcs_value,
+        "current DCS evidence root",
+    )
+
+    requested = getattr(args, "evidence_required_domain", [])
+    if len(requested) != len(set(requested)):
+        raise ValueError("additional evidence domains contain a duplicate")
+    required = tuple(sorted(set(mandatory) | set(requested)))
+    current_cache_value = getattr(args, "evidence_current_cache_root", None)
+    current_cache = (
+        canonical_existing_directory(
+            current_cache_value,
+            "current upstream evidence root",
+        )
+        if current_cache_value is not None
+        else None
+    )
+    runtime_inputs = _canonical_binding_files(
+        getattr(args, "evidence_current_runtime_manifest", []),
+        "current runtime evidence",
+    )
+    terrain_inputs = _canonical_binding_files(
+        getattr(args, "evidence_current_terrain_evidence", []),
+        "current terrain evidence",
+    )
+    if "upstream" in required and current_cache is None:
+        raise ValueError("upstream report binding requires the current cache root")
+    if "runtime" in required and not runtime_inputs:
+        raise ValueError("runtime report binding requires a current runtime manifest")
+    if "terrain" in required and not terrain_inputs:
+        raise ValueError("terrain report binding requires current terrain evidence")
+
+    if args.command in _DCS_SOURCE_COMMANDS:
+        args.dcs_root = _require_same_directory(
+            args.dcs_root,
+            current_dcs,
+            "DCS query root",
+        )
+    if args.command == "upstream-status":
+        args.cache_root = _require_same_directory(
+            args.cache_root,
+            current_cache,
+            "upstream query root",
+        )
+    if args.command in _PYDCS_SOURCE_COMMANDS or args.command == "terrain-coverage":
+        args.pydcs_root = _require_same_directory(
+            args.pydcs_root,
+            current_cache / "pydcs",
+            "pydcs query root",
+        )
+    if args.command in _BR_SOURCE_COMMANDS or args.command == "terrain-coverage":
+        args.br_root = _require_same_directory(
+            args.br_root,
+            current_cache / "briefing-room-for-dcs",
+            "BriefingRoom query root",
+        )
+
+    selected_terrain_path: Path | None = None
+    selected_terrain_sha256: str | None = None
+    if args.command in _PHYSICAL_SOURCE_COMMANDS:
+        selected = canonical_existing_file(
+            args.evidence,
+            "terrain query evidence",
+        )
+        args.evidence = selected
+        matching = [
+            path
+            for path in terrain_inputs
+            if path == selected and os.path.samefile(selected, path)
+        ]
+        if len(matching) != 1:
+            raise ValueError(
+                "terrain query evidence must match exactly one current terrain input"
+            )
+        selected_terrain_sha256 = _bounded_file_sha256(
+            selected,
+            maximum_bytes=MAX_EVIDENCE_BYTES,
+            label="terrain query evidence",
+        )
+        selected_terrain_path = selected
+
+    plan: dict[str, Any] = {
+        "bundle": Path(bundle),
+        "current_dcs": current_dcs,
+        "current_cache": current_cache,
+        "required_domains": required,
+        "mandatory_domains": tuple(sorted(mandatory)),
+        "runtime_inputs": runtime_inputs,
+        "terrain_inputs": terrain_inputs,
+        "selected_terrain_path": selected_terrain_path,
+        "selected_terrain_sha256": selected_terrain_sha256,
+        "query_sha256": _evidence_query_sha256(
+            args,
+            selected_terrain_sha256=selected_terrain_sha256,
+        ),
+    }
+    plan["before_reference"] = _binding_reference(plan, args.command)
+    _require_bound_terrain_unchanged(plan)
+    return plan
+
+
+def _command_evidence_reference(
+    args: argparse.Namespace,
+    plan: dict[str, Any] | None,
+) -> dict[str, Any] | None:
+    if plan is None:
+        return None
+    _require_bound_terrain_unchanged(plan)
+    reference = _binding_reference(plan, args.command)
+    _require_bound_terrain_unchanged(plan)
+    if reference != plan["before_reference"]:
+        raise ValueError("evidence state changed while the report was produced")
+    binding = reference.get("report_binding")
+    reference_required = reference.get("required_domains")
+    if (
+        not isinstance(binding, dict)
+        or not isinstance(reference_required, dict)
+        or binding.get("command") != args.command
+        or binding.get("query_sha256") != plan["query_sha256"]
+        or binding.get("mandatory_domains") != list(plan["mandatory_domains"])
+        or binding.get("source_roots_matched") is not True
+        or set(reference_required) != set(plan["required_domains"])
+    ):
+        raise ValueError("report evidence reference does not match its CLI query")
+    return reference
+
+
+def _require_bound_terrain_unchanged(plan: dict[str, Any]) -> None:
+    path = plan.get("selected_terrain_path")
+    expected = plan.get("selected_terrain_sha256")
+    if path is None and expected is None:
+        return
+    if not isinstance(path, Path) or not isinstance(expected, str):
+        raise ValueError("terrain query evidence binding state is invalid")
+    current = _bounded_file_sha256(
+        path,
+        maximum_bytes=MAX_EVIDENCE_BYTES,
+        label="terrain query evidence",
+    )
+    if current != expected:
+        raise ValueError("terrain query evidence changed while producing the report")
+
+
+def _binding_reference(
+    plan: dict[str, Any],
+    command: str,
+) -> dict[str, Any]:
+    return current_report_evidence_reference(
+        plan["bundle"],
+        plan["current_dcs"],
+        report_command=command,
+        query_sha256=plan["query_sha256"],
+        mandatory_domains=plan["mandatory_domains"],
+        source_roots_matched=True,
+        cache_root=plan["current_cache"],
+        required_domains=plan["required_domains"],
+        runtime_manifests=plan["runtime_inputs"],
+        terrain_evidence=plan["terrain_inputs"],
+    )
+
+
+def _canonical_binding_files(
+    values: Sequence[Path],
+    label: str,
+) -> tuple[Path, ...]:
+    if len(values) > 16:
+        raise ValueError(f"{label} accepts at most 16 files")
+    output: list[Path] = []
+    for value in values:
+        path = canonical_existing_file(value, label)
+        if any(os.path.samefile(path, existing) for existing in output):
+            raise ValueError(f"{label} contains a duplicate file identity")
+        output.append(path)
+    return tuple(output)
+
+
+def _require_same_directory(
+    query_value: Path,
+    expected: Path | None,
+    label: str,
+) -> Path:
+    if expected is None:
+        raise ValueError(f"{label} requires a current evidence source root")
+    query = canonical_existing_directory(query_value, label)
+    expected_canonical = canonical_existing_directory(expected, label)
+    try:
+        matches = os.path.samefile(query, expected_canonical)
+    except OSError as error:
+        raise ValueError(f"{label} identity could not be compared") from error
+    if not matches:
+        raise ValueError(f"{label} does not match the current evidence source")
+    return expected_canonical
+
+
+def _evidence_query_sha256(
+    args: argparse.Namespace,
+    *,
+    selected_terrain_sha256: str | None,
+) -> str:
+    values: dict[str, Any] = {}
+    for name, value in sorted(vars(args).items()):
+        if name in _BINDING_ARGUMENTS:
+            continue
+        if name == "evidence" and selected_terrain_sha256 is not None:
+            values[name] = {
+                "role": "bound-terrain-evidence",
+                "sha256": selected_terrain_sha256,
+            }
+        else:
+            values[name] = _query_hash_value(value, path_role=name)
+    try:
+        canonical = json.dumps(
+            values,
+            allow_nan=False,
+            ensure_ascii=False,
+            separators=(",", ":"),
+            sort_keys=True,
+        ).encode("utf-8")
+    except (TypeError, ValueError) as error:
+        raise ValueError("report query contains a non-canonical value") from error
+    return hashlib.sha256(canonical).hexdigest()
+
+
+def _query_hash_value(value: Any, *, path_role: str) -> Any:
+    if isinstance(value, Path):
+        return {"path_role": path_role}
+    if isinstance(value, (list, tuple)):
+        return [
+            _query_hash_value(item, path_role=path_role)
+            for item in value
+        ]
+    if isinstance(value, dict):
+        return {
+            str(key): _query_hash_value(item, path_role=path_role)
+            for key, item in sorted(value.items(), key=lambda pair: str(pair[0]))
+        }
+    if value is None or isinstance(value, (bool, int, float, str)):
+        return value
+    raise ValueError("report query contains an unsupported value")
+
+
+def _bounded_file_sha256(
+    path: Path,
+    *,
+    maximum_bytes: int,
+    label: str,
+) -> str:
+    before = path.stat()
+    if before.st_size < 1 or before.st_size > maximum_bytes:
+        raise ValueError(f"{label} exceeds its size boundary")
+    digest = hashlib.sha256()
+    total = 0
+    with path.open("rb") as stream:
+        while chunk := stream.read(1024 * 1024):
+            total += len(chunk)
+            if total > maximum_bytes:
+                raise ValueError(f"{label} exceeds its size boundary")
+            digest.update(chunk)
+    after = path.stat()
+    identity_fields = ("st_dev", "st_ino", "st_size", "st_mtime_ns")
+    if any(
+        getattr(before, field) != getattr(after, field)
+        for field in identity_fields
+    ):
+        raise ValueError(f"{label} changed while it was hashed")
+    return digest.hexdigest()
 
 
 def _model_facing_parking_limit(
@@ -845,12 +1268,60 @@ def _build_parser() -> argparse.ArgumentParser:
     )
 
     def add_command(name: str, description: str) -> argparse.ArgumentParser:
-        return commands.add_parser(
+        command = commands.add_parser(
             name,
             help=description,
             description=description,
             formatter_class=argparse.RawDescriptionHelpFormatter,
         )
+        if name not in _EVIDENCE_BINDING_DOMAINS:
+            return command
+        command.add_argument(
+            "--evidence-bundle",
+            type=Path,
+            help=(
+                "Bind this exact canonical report payload to a verified "
+                "content-addressed bundle and a live two-pass readiness "
+                "check. Requires "
+                "--evidence-current-dcs-root."
+            ),
+        )
+        command.add_argument(
+            "--evidence-current-dcs-root",
+            type=Path,
+            help="Current DCS installation root used only for binding readiness.",
+        )
+        command.add_argument(
+            "--evidence-current-cache-root",
+            type=Path,
+            help="Optional current acknowledged-upstream cache for binding.",
+        )
+        command.add_argument(
+            "--evidence-required-domain",
+            action="append",
+            default=[],
+            choices=required_evidence_domains(),
+            help=(
+                "Additional complete and current domain for this report binding; "
+                "repeat as needed. These values are unioned with, and cannot "
+                "replace, the command's mandatory domains."
+            ),
+        )
+        command.add_argument(
+            "--evidence-current-runtime-manifest",
+            type=Path,
+            action="append",
+            default=[],
+            help="Optional current runtime manifest for binding readiness.",
+        )
+        command.add_argument(
+            "--evidence-current-terrain-evidence",
+            type=Path,
+            action="append",
+            default=[],
+            help="Optional current physical-terrain evidence for binding readiness.",
+        )
+        return command
 
     details_help = (
         "Emit complete records for the current filters and any source-side "

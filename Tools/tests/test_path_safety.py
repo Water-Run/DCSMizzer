@@ -5,10 +5,52 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from Tools.dcsmizzer.path_safety import canonical_existing_directory
+from Tools.dcsmizzer.path_safety import (
+    canonical_existing_directory,
+    canonical_existing_file,
+)
 
 
 class PathSafetyTests(unittest.TestCase):
+    def test_regular_file_is_returned_in_canonical_form(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            source = Path(temporary) / "fixture.json"
+            source.write_text("{}", encoding="utf-8")
+
+            canonical = canonical_existing_file(source, "fixture")
+
+            self.assertEqual(canonical, source.resolve(strict=True))
+
+    def test_linked_file_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "source.json"
+            source.write_text("{}", encoding="utf-8")
+            alias = root / "alias.json"
+            try:
+                os.symlink(source, alias)
+            except OSError as error:
+                self.skipTest(f"file symlinks unavailable: {error}")
+
+            with self.assertRaisesRegex(ValueError, "link|reparse"):
+                canonical_existing_file(alias, "fixture")
+
+    @unittest.skipUnless(os.name == "nt", "Windows ADS regression")
+    def test_windows_alternate_data_stream_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            source = Path(temporary) / "fixture.json"
+            source.write_text("base", encoding="utf-8")
+            stream = Path(f"{source}:terrain")
+            try:
+                stream.write_text("stream", encoding="utf-8")
+            except OSError as error:
+                self.skipTest(f"alternate data streams unavailable: {error}")
+
+            self.assertTrue(os.path.samefile(source, stream))
+            self.assertNotEqual(source.read_bytes(), stream.read_bytes())
+            with self.assertRaisesRegex(ValueError, "alternate data stream"):
+                canonical_existing_file(stream, "fixture")
+
     def test_regular_directory_is_returned_in_canonical_form(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             source = Path(temporary)

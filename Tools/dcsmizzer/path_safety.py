@@ -32,6 +32,33 @@ def canonical_existing_directory(path: Path, label: str) -> Path:
     return resolved
 
 
+def canonical_existing_file(path: Path, label: str) -> Path:
+    """Return one canonical regular file without following linked components."""
+
+    candidate = _absolute_path(path, label)
+    canonical_parent = canonical_existing_directory(candidate.parent, label)
+    parent_before = canonical_parent.lstat()
+    before = _safe_regular_file(candidate, label)
+    try:
+        resolved = candidate.resolve(strict=True)
+    except (OSError, RuntimeError, ValueError) as error:
+        raise ValueError(f"{label} cannot be resolved") from error
+    after = _safe_regular_file(candidate, label)
+    canonical = _safe_regular_file(resolved, label)
+    parent_after_path = canonical_existing_directory(candidate.parent, label)
+    parent_after = parent_after_path.lstat()
+    if (
+        parent_after_path != canonical_parent
+        or not _same_identity(parent_before, parent_after)
+    ):
+        raise ValueError(f"{label} parent changed while it was validated")
+    if not _same_identity(before, after):
+        raise ValueError(f"{label} changed while it was validated")
+    if resolved.parent != canonical_parent or not _same_identity(after, canonical):
+        raise ValueError(f"{label} resolved to a different file")
+    return resolved
+
+
 def _absolute_path(path: Path, label: str) -> Path:
     try:
         value = os.fspath(path)
@@ -39,6 +66,12 @@ def _absolute_path(path: Path, label: str) -> Path:
         raise ValueError(f"{label} must be a filesystem path") from error
     if not value or "\x00" in value:
         raise ValueError(f"{label} must be a non-empty filesystem path")
+    if os.name == "nt":
+        _, tail = os.path.splitdrive(value)
+        if ":" in tail:
+            raise ValueError(
+                f"{label} must not name a Windows alternate data stream"
+            )
     try:
         return Path(os.path.abspath(value))
     except (OSError, ValueError) as error:
@@ -92,6 +125,18 @@ def _same_identity(first: os.stat_result, second: os.stat_result) -> bool:
         and first.st_ino == second.st_ino
         and first.st_ino != 0
     )
+
+
+def _safe_regular_file(path: Path, label: str) -> os.stat_result:
+    try:
+        status_result = path.lstat()
+    except OSError as error:
+        raise ValueError(f"{label} does not exist") from error
+    if _is_link_or_reparse(status_result):
+        raise ValueError(f"{label} must not be a link or reparse point")
+    if not stat.S_ISREG(status_result.st_mode):
+        raise ValueError(f"{label} is not a safe regular file")
+    return status_result
 
 
 def _is_link_or_reparse(status_result: os.stat_result) -> bool:

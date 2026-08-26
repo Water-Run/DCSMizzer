@@ -32,6 +32,17 @@ compact catalog -> exact type or airport -> one preset, station, or parking
   required. Check `view.output_truncated`; when a single returned record has a
   large nested collection or long text, `view.nested_truncations` reports its
   path and item/character counts.
+- Every JSON CLI response includes a bounded `evidence_ref`. `unbound` means
+  the report retains only its intrinsic authority; `self` describes an
+  evidence lifecycle report itself; only a passing explicit read-only binding
+  is `bundle-current`. Binding-capable commands expose the relevant flags in
+  their own help. Unsupported commands reject those flags before dispatch.
+  Explicit bindings include the canonical intrinsic report SHA-256; for a
+  saved report, `report-summary` must confirm
+  `intrinsic_report_binding_matches=true` before the binding claim is reused.
+  The supported script entrypoint isolates Python first and verifies a clean,
+  Git-canonical `HEAD` worktree before provenance-sensitive product imports;
+  direct package imports do not carry that pre-import guarantee.
 - Keep normal model-visible evidence below a cumulative 128 KiB working-set
   target before spec authoring. Save selected values in the constraint ledger
   and replace broad responses with narrower queries.
@@ -45,7 +56,13 @@ compact catalog -> exact type or airport -> one preset, station, or parking
   JSON.
   `report-summary PATH` accepts JSON with a recognized schema identifier up to
   16 MiB and emits at most 12 KiB without checking authenticity/schema shape
-  or rerunning validation.
+  or rerunning validation. A saved source `evidence_ref` is retained only as a
+  compact `reported_evidence_ref` with `claims_unverified=true`; transport
+  hashes are excluded from intrinsic hash discovery. Oversized validation
+  metadata is sampled with explicit count/truncation fields. Runtime work done
+  by the summary remains false and is separate from any unverified saved
+  runtime claim. A saved intrinsic report hash is recomputed, but the entire
+  saved reference remains unauthenticated (`claims_unverified=true`).
 
 ## Command groups
 

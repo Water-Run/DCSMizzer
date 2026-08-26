@@ -24,6 +24,12 @@ Before preview or launch, the bridge rechecks the DCS executable, Steam
 manifest/launcher when applicable, local Sim Control API, mission, and Hook.
 It reconstructs the Hook from the current trusted product resource and the
 manifest's bounded inputs rather than trusting a self-declared Hook hash.
+Preparation accepts only a clean commit-bound producer and fences that identity
+before and after manifest publication. Preview, run, and collection require the
+current clean producer commit to equal the manifest producer and recheck it at
+the end of their work. A different clean commit of the same package version is
+therefore rejected rather than attributing execution or collection to the
+preparation commit.
 
 ## Aggregate initialized-registry probe
 
