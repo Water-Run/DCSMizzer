@@ -12,15 +12,16 @@ import stat
 import tempfile
 import zipfile
 from collections import defaultdict
-from dataclasses import dataclass
+from collections.abc import Mapping
+from dataclasses import dataclass, replace
 from datetime import date as calendar_date
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any, BinaryIO
 from urllib.parse import urlsplit
 
 from .archive import (
-    ArchivePolicy,
     CORE_MEMBERS,
+    ArchivePolicy,
     inspect_miz,
     is_safe_archive_member_name,
 )
@@ -33,18 +34,17 @@ from .facts import (
     table,
     validate_expectations,
 )
+from .logic import LogicSpecError, compile_logic
 from .lua import LuaDataError, LuaTable, parse_lua_bytes
 from .lua_write import (
     LuaSerializationError,
     dump_lua_assignment,
     json_to_lua,
 )
-from .logic import LogicSpecError, compile_logic
 from .mission import analyse_miz, observe_miz_without_member_reads
 from .path_safety import canonical_existing_file
 from .structure import validate_mission_structure
 from .templates import WAREHOUSE_COALITIONS
-
 
 SPEC_SCHEMA = "dcsmizzer.miz-build-spec/v1"
 BUILD_REPORT_SCHEMA = "dcsmizzer.miz-build/v1"
@@ -315,7 +315,16 @@ def _open_bound_regular_file(
 def _open_bound_resource_input(
     resource: ResourceInput,
 ) -> BoundResourceInput:
-    before = _lstat_optional(resource.source)
+    try:
+        source = canonical_existing_file(
+            resource.source,
+            f"resource {resource.member!r}",
+        )
+    except ValueError as error:
+        raise BuildSpecError(
+            f"resource {resource.member!r} is not a safe regular file"
+        ) from error
+    before = _lstat_optional(source)
     if before is None:
         raise BuildSpecError(f"resource {resource.member!r} does not exist")
     if _is_link_or_reparse(before):
@@ -329,7 +338,7 @@ def _open_bound_resource_input(
     if nofollow:
         flags |= nofollow
     try:
-        descriptor = os.open(resource.source, flags)
+        descriptor = os.open(source, flags)
     except FileNotFoundError as error:
         raise BuildSpecError(
             f"resource {resource.member!r} changed while it was being opened"
@@ -339,7 +348,7 @@ def _open_bound_resource_input(
     stream: BinaryIO | None = None
     try:
         opened = os.fstat(descriptor)
-        after = resource.source.lstat()
+        after = source.lstat()
         if (
             not stat.S_ISREG(opened.st_mode)
             or not stat.S_ISREG(after.st_mode)
@@ -363,7 +372,7 @@ def _open_bound_resource_input(
         final_status = os.fstat(stream.fileno())
         _require_bound_resource_path(
             resource.member,
-            resource.source,
+            source,
             stream,
             opened,
         )
@@ -373,7 +382,7 @@ def _open_bound_resource_input(
             )
         return BoundResourceInput(
             member=resource.member,
-            source=resource.source,
+            source=source,
             stream=stream,
             identity=opened,
             size=opened.st_size,
@@ -748,17 +757,25 @@ def build_miz(
     output_path: Path,
     *,
     force: bool = False,
+    resource_overrides: Mapping[str, Path] | None = None,
 ) -> tuple[dict[str, Any], bool]:
     """Build a MIZ, then read it back and run all available static checks."""
 
-    spec = load_build_spec(spec_path, require_resource_files=False)
+    spec = _with_resource_overrides(
+        load_build_spec(spec_path, require_resource_files=False),
+        resource_overrides,
+    )
     output = _output_path_without_final_resolution(output_path)
     if output.suffix.casefold() != ".miz":
         raise BuildSpecError("output path must use the .miz extension")
-    if output == spec.path:
+    if output == spec.path or (
+        output.exists() and os.path.samefile(output, spec.path)
+    ):
         raise BuildSpecError("output path cannot overwrite the build specification")
     for resource in spec.resources:
-        if output == resource.source:
+        if output == resource.source or (
+            output.exists() and os.path.samefile(output, resource.source)
+        ):
             raise BuildSpecError("output path cannot overwrite a resource input")
     output_status = _lstat_optional(output)
     if output_status is not None and _is_link_or_reparse(output_status):
@@ -889,10 +906,15 @@ def build_miz(
 def verify_miz(
     miz_path: Path,
     spec_path: Path,
+    *,
+    resource_overrides: Mapping[str, Path] | None = None,
 ) -> tuple[dict[str, Any], bool]:
     """Verify an existing MIZ against the complete low-level build spec."""
 
-    spec = load_build_spec(spec_path, require_resource_files=False)
+    spec = _with_resource_overrides(
+        load_build_spec(spec_path, require_resource_files=False),
+        resource_overrides,
+    )
     requested_miz = _output_path_without_final_resolution(miz_path)
     descriptor: int | None = None
     stream: BinaryIO | None = None
@@ -957,6 +979,42 @@ def load_build_spec(
         raise BuildSpecError(
             "build specification exceeds safe processing depth"
         ) from error
+
+
+def _with_resource_overrides(
+    spec: BuildSpec,
+    overrides: Mapping[str, Path] | None,
+) -> BuildSpec:
+    if overrides is None:
+        return spec
+    if not isinstance(overrides, Mapping) or any(
+        not isinstance(member, str) or not isinstance(path, Path)
+        for member, path in overrides.items()
+    ):
+        raise BuildSpecError("resource overrides must map members to paths")
+    expected = set(spec.resource_members)
+    if set(overrides) != expected:
+        raise BuildSpecError(
+            "resource overrides must match the exact specification member set"
+        )
+    canonical: dict[str, Path] = {}
+    for member, path in overrides.items():
+        try:
+            canonical[member] = canonical_existing_file(
+                path,
+                f"resource override {member!r}",
+            )
+        except ValueError as error:
+            raise BuildSpecError(
+                f"resource override {member!r} is not a safe regular file"
+            ) from error
+    return replace(
+        spec,
+        resources=tuple(
+            ResourceInput(member=resource.member, source=canonical[resource.member])
+            for resource in spec.resources
+        ),
+    )
 
 
 def _load_build_spec(
@@ -1111,13 +1169,21 @@ def _load_build_spec(
         if not resource_source.is_absolute():
             resource_source = source.parent / resource_source
         try:
-            resource_source = resource_source.resolve()
-        except (OSError, RuntimeError) as error:
+            resource_source = Path(os.path.abspath(os.fspath(resource_source)))
+        except (OSError, TypeError, ValueError) as error:
             raise BuildSpecError(
                 f"{item_path} source path cannot be resolved"
             ) from error
-        if require_resource_files and not resource_source.is_file():
-            raise BuildSpecError(f"{item_path} source does not exist")
+        if require_resource_files:
+            try:
+                resource_source = canonical_existing_file(
+                    resource_source,
+                    f"{item_path} source",
+                )
+            except ValueError as error:
+                raise BuildSpecError(
+                    f"{item_path} source does not exist or is not a safe regular file"
+                ) from error
         resources.append(ResourceInput(member=member, source=resource_source))
 
     expectations = decoded.get("expect", {})

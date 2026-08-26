@@ -165,6 +165,7 @@ untrusted host or an independently supplied copy of the entrypoint.
 
 The fixed provenance-sensitive command set is:
 
+- `construction-snapshot` and `construction-verify`;
 - `evidence-snapshot`, `evidence-verify`, `evidence-diff`, and
   `evidence-readiness`;
 - `report-summary`;
@@ -223,7 +224,9 @@ fail-closed diagnostic path.
 
 External binding flags are intentionally absent from evidence lifecycle,
 writer, launcher, arbitrary-input, and source-uncovered commands. This includes
-runtime/probe/build commands, `report-summary`, `inspect`, `audit-spec`,
+runtime/probe/build commands, construction provenance commands (whose snapshot
+has its own required internal evidence-bundle contract), `report-summary`,
+`inspect`, `audit-spec`,
 `miz-registry`, `dcs-cloud-presets`, GCI/templates, and `terrain-catalog`.
 Unknown future commands therefore default to rejection. The CLI-only
 `evidence_ref` is attached after the underlying Python report is produced; it

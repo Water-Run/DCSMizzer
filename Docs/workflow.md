@@ -301,6 +301,18 @@ station/CLSID pair, swapped/guessed parking identifiers, or a native GCI
 
 ## 7. Build and verify
 
+When a current content-addressed evidence bundle is available, use
+`construction-snapshot` followed by `construction-verify` as the primary
+static trace. It runs the same audit/build/verify pipeline and binds the exact
+spec, resources, MIZ, reports, producer/toolchain, readiness preimage, and
+embedded evidence bundle. See the
+[construction command reference](reference/construction-validation-commands.md).
+Its v1 audit decision is recorded but not replayable offline, so it does not
+claim full reproducibility or static/runtime release readiness.
+
+Use the separate commands below when a named MIZ output or focused diagnostic
+report is required:
+
 ```powershell
 python Tools\dcsmizzer.py build-miz spec.json output\mission.miz `
   > output\build.json

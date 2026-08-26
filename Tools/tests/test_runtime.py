@@ -26,6 +26,8 @@ PRODUCER_COMMIT = "a" * 40
 REAL_GIT_IDENTITY = runtime._git_identity
 PROVENANCE_COMMANDS = frozenset(
     {
+        "construction-snapshot",
+        "construction-verify",
         "evidence-diff",
         "evidence-readiness",
         "evidence-snapshot",

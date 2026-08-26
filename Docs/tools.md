@@ -83,6 +83,7 @@ compact catalog -> exact type or airport -> one preset, station, or parking
 | Anonymous real-MIZ evidence | `miz-registry` | [mission inspection and registry details](reference/mission-registry-commands.md) |
 | Spec evidence gate | `audit-spec` | [construction and validation details](reference/construction-validation-commands.md) |
 | Deterministic artifact and read-back | `build-miz`, `verify-miz` | [construction and validation details](reference/construction-validation-commands.md) |
+| Content-addressed static construction trace | `construction-snapshot`, `construction-verify` | [construction and validation details](reference/construction-validation-commands.md) |
 | Bounded saved-report review | `report-summary` | [construction and validation details](reference/construction-validation-commands.md) |
 
 For authority or source conflicts, use [evidence.md](evidence.md). For the
@@ -101,7 +102,7 @@ capabilities
   -> exact terrain/unit/airbase/parking/payload/weather evidence
   -> physical placement/corridor evidence where required
   -> dcs-options-template + dcs-warehouse-template
-  -> audit-spec -> build-miz -> verify-miz -> inspect
+  -> construction-snapshot -> construction-verify -> inspect
 ```
 
 Query commands, including `upstream-status`, are read-only.
@@ -119,6 +120,8 @@ writes only a verified disposable derivative and never edits its source MIZ.
 `runtime-run` is dry-run by default and is the sole command that can start DCS,
 after `--authorize-dcs-launch`. `build-miz` writes only its
 requested artifact flow and internal same-directory temporary entries.
+`construction-snapshot` writes one local-only content-addressed construction
+bundle; `construction-verify` is read-only. Neither command launches DCS.
 
 All reports are UTF-8 JSON on stdout; usage/source errors go to stderr. Tool
 errors are normalized to one line and at most 2 KiB, with an explicit

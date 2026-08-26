@@ -8,7 +8,6 @@ import re
 from copy import deepcopy
 from typing import Any
 
-
 REPORT_EVIDENCE_REF_SCHEMA = "dcsmizzer.report-evidence-ref/v1"
 MAX_REPORT_EVIDENCE_REF_BYTES = 3840
 _HASH = re.compile(r"[0-9a-f]{64}\Z")
@@ -96,6 +95,41 @@ def intrinsic_report_sha256(report: dict[str, Any]) -> str:
     except (TypeError, ValueError) as error:
         raise ValueError("CLI report is not canonical JSON") from error
     return hashlib.sha256(payload).hexdigest()
+
+
+def validate_attached_report_evidence_ref(report: dict[str, Any]) -> None:
+    """Validate an explicit reference after CLI transport fields were attached."""
+
+    if not isinstance(report, dict) or not isinstance(report.get("schema"), str):
+        raise ValueError("CLI report has no schema identity")
+    attached = report.get("evidence_ref")
+    if not isinstance(attached, dict):
+        raise ValueError("CLI report has no attached evidence reference")
+    reference = deepcopy(attached)
+    reference.pop("report_authority", None)
+    validation = reference.get("validation")
+    if not isinstance(validation, dict):
+        raise ValueError("attached report evidence reference is invalid")
+    gate_passed = validation.pop("report_gate_passed", None)
+    usable = validation.pop("usable_for_current_production_decision", None)
+    if not isinstance(gate_passed, bool) or not isinstance(usable, bool):
+        raise ValueError("attached report evidence reference is invalid")
+    evidence_ready = validation.get("evidence_ready_for_binding") is True
+    reference["status"] = "bundle-current" if evidence_ready else "unbound"
+    reference["authority_tier"] = (
+        "current_verified_binding_context"
+        if evidence_ready
+        else "report_intrinsic_only"
+    )
+    intrinsic = dict(report)
+    intrinsic.pop("evidence_ref", None)
+    expected = attach_report_evidence_ref(
+        intrinsic,
+        reference,
+        command_succeeded=gate_passed,
+    )
+    if usable is not bool(evidence_ready and gate_passed) or expected != report:
+        raise ValueError("attached report evidence reference is invalid")
 
 
 def _explicit_reference_for_report(

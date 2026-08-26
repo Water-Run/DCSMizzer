@@ -75,6 +75,8 @@ _MAX_TRACKED_FILE_BYTES = 64 * 1024 * 1024
 _MAX_TRACKED_TREE_BYTES = 256 * 1024 * 1024
 _PROVENANCE_COMMANDS = frozenset(
     {
+        "construction-snapshot",
+        "construction-verify",
         "evidence-diff",
         "evidence-readiness",
         "evidence-snapshot",

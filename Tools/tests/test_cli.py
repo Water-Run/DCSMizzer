@@ -278,7 +278,7 @@ class ToolCliTests(unittest.TestCase):
 
         self.assertIn(
             "capabilities -> evidence-readiness -> evidence queries -> "
-            "audit-spec -> build-miz -> verify-miz",
+            "construction-snapshot -> construction-verify",
             help_text,
         )
         self.assertIn("0  Query succeeded", help_text)
@@ -299,11 +299,15 @@ class ToolCliTests(unittest.TestCase):
         self.assertIn("terrain-probe-script", help_text)
         self.assertIn("terrain-probe-extract", help_text)
         self.assertIn("terrain-coverage", help_text)
+        self.assertIn("construction-snapshot", help_text)
+        self.assertIn("construction-verify", help_text)
         self.assertIn("report-summary", help_text)
 
     def test_every_subcommand_help_states_its_authority(self) -> None:
         commands = (
             "capabilities",
+            "construction-snapshot",
+            "construction-verify",
             "report-summary",
             "inspect",
             "dcs-static",

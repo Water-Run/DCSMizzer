@@ -159,8 +159,42 @@ _CAPABILITIES: dict[str, Any] = {
             "arbitrary-input, and unsupported-source commands",
             "binding context never upgrades the report's intrinsic or runtime "
             "authority, and a failed query is always unusable",
-            "historical build/audit/verify reports are not yet transitively "
-            "sealed to the evidence bundle that produced every input",
+            "legacy standalone build/audit/verify reports remain historically "
+            "unsealed; only an explicit construction-bundle/v1 has the new "
+            "transitive static trace",
+        ],
+    },
+    "construction_provenance": {
+        "status": "implemented_tamper_evident_static_trace",
+        "commands": [
+            "construction-snapshot",
+            "construction-verify",
+        ],
+        "provides": [
+            "one content-addressed manifest over exact spec, path-free "
+            "resource member/size/hash bindings, audit/build/verify reports, "
+            "and MIZ bytes",
+            "an embedded exact evidence bundle plus saved readiness and "
+            "verification preimages",
+            "a recomputed audit-to-build-to-verify hash DAG with exact spec, "
+            "resource, artifact, producer, query, and evidence continuity",
+            "strict canonical JSON, exact member sets, safe regular paths, "
+            "object hashes, a required trusted output directory, and a "
+            "256 MiB total construction-object limit",
+            "byte-exact build replay and static re-verification when the "
+            "recorded DCSMizzer commit and Python/zlib toolchain match",
+        ],
+        "boundaries": [
+            "the content address is tamper-evident, not a signature or proof "
+            "of who produced the bundle",
+            "audit evidence-query decisions are recorded but not replayed in v1",
+            "fully_reproducible and static_release_ready therefore remain false",
+            "V1 static checks never imply DCS load, smoke, playability, or "
+            "runtime validity",
+            "specifications containing a native GCI station are refused until "
+            "the install/manual/training inputs have a sealed evidence domain",
+            "objects are local-only and may contain private or licensed input; "
+            "redistribution is not authorized",
         ],
     },
     "continuous_validation": {

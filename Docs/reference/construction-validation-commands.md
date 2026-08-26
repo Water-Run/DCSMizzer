@@ -8,6 +8,65 @@ still come from current CLI help. Return to the
 Full audit/build/verify JSON stays on disk. `report-summary` provides the
 bounded review; it does not repeat any validation.
 
+## Content-addressed construction trace
+
+For a new construction, prefer the all-in-one trace command when the current
+evidence bundle and its acknowledged upstream cache are available:
+
+```powershell
+python Tools\dcsmizzer.py construction-snapshot `
+  path\mission-spec.json `
+  --construction-root "D:\local-only\dcsmizzer-constructions" `
+  --evidence-bundle "D:\local-only\evidence\BUNDLE_ID" `
+  --dcs-root "D:\path\to\DCSWorld" `
+  --cache-root "D:\local-only\upstream" `
+  --installed-terrain "EXACT_INSTALLED_TERRAIN_DIRECTORY" `
+  --pydcs-terrain "EXACT_PYDCS_TERRAIN_PACKAGE" `
+  > output\construction-snapshot.json
+
+python Tools\dcsmizzer.py construction-verify `
+  "D:\local-only\dcsmizzer-constructions\CONSTRUCTION_ID" `
+  > output\construction-verification.json
+```
+
+`construction-snapshot` requires one clean exact DCSMizzer producer commit.
+It runs the evidence readiness fence before and after two stable `audit-spec`
+passes, builds and reads back a temporary MIZ, verifies the exact spec/resource
+ledger again, and publishes only a content-addressed bundle. The bundle embeds
+the exact evidence bundle and stores canonical objects for the original spec,
+every resource, the bound audit/build/verify reports, readiness and evidence
+verification preimages, and the exact MIZ. Its manifest recomputes an
+audit-to-build-to-verify hash DAG. Construction objects are bounded to 256 MiB
+in total. They are local-only, may contain private or licensed data, and are
+not authorized for redistribution. The caller-selected construction root must
+be a trusted directory not writable by an untrusted concurrent actor. It must
+not equal, contain, or be contained by the selected DCS install, upstream
+cache, evidence bundle, build spec, or resource inputs.
+
+Version 1 refuses a spec containing the native `GCI_station_MiG29`. That audit
+consults installed declarations, official training missions, and a local
+manual; those conditional inputs do not yet have a sealed evidence domain.
+Failing closed prevents the ordinary evidence-ready gate from overstating its
+freshness coverage.
+
+Exit code 0 from `construction-snapshot` means the bundle, audit, build,
+verification, immediate byte-exact replay, and mandatory current evidence gate
+passed. A failed stage publishes no construction bundle.
+`construction-verify` returns 0 for an intact historical bundle and pipeline
+when its recorded producer is unavailable; when the exact producer/toolchain
+is available, its build and verification replay must also pass. Historical
+integrity does not mean current evidence.
+
+The v1 construction trace deliberately reports
+`audit_decision_replay_performed: false`, `fully_reproducible: false`,
+`static_release_ready: false`, and `runtime_valid: null`. It saves and binds
+the audit decision and its current evidence context, but it does not yet
+record every audit subquery preimage needed to execute the audit algorithm
+offline. It also does not launch DCS. A content address detects changes relative
+to a trusted externally retained ID; it is not a signature or proof of the
+original author. Legacy standalone `audit-spec`, `build-miz`, and `verify-miz`
+reports remain readable but are not retroactively sealed.
+
 ## `audit-spec`
 
 After authoring and before building, cross-check the complete spec against

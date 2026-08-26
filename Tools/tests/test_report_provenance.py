@@ -7,9 +7,9 @@ from Tools.dcsmizzer.report_provenance import (
     REPORT_EVIDENCE_REF_SCHEMA,
     attach_report_evidence_ref,
     intrinsic_report_sha256,
+    validate_attached_report_evidence_ref,
 )
 from Tools.dcsmizzer.report_views import SUMMARY_BUDGET_BYTES, output_view
-
 
 _BUNDLE_ID = "a" * 64
 _MANIFEST_SHA256 = "b" * 64
@@ -58,6 +58,39 @@ class ReportProvenanceTests(unittest.TestCase):
                 "usable_for_current_production_decision"
             ]
         )
+        validate_attached_report_evidence_ref(output)
+
+    def test_attached_reference_validator_rejects_transport_mutation(self) -> None:
+        output = attach_report_evidence_ref(
+            {"schema": "dcsmizzer.fixture/v1"},
+            self._current_reference(ready=True),
+        )
+        mutations = (
+            (
+                "invalid bundle identity",
+                lambda value: value["evidence_ref"]["bundle"].__setitem__(
+                    "id", "invalid"
+                ),
+            ),
+            (
+                "contradictory usability",
+                lambda value: value["evidence_ref"]["validation"].__setitem__(
+                    "usable_for_current_production_decision", False
+                ),
+            ),
+            (
+                "wrong report authority",
+                lambda value: value["evidence_ref"]["report_authority"].__setitem__(
+                    "report_schema", "dcsmizzer.other/v1"
+                ),
+            ),
+        )
+        for label, mutate in mutations:
+            with self.subTest(label=label):
+                candidate = json.loads(json.dumps(output))
+                mutate(candidate)
+                with self.assertRaises(ValueError):
+                    validate_attached_report_evidence_ref(candidate)
 
     def test_failed_command_downgrades_a_current_bundle_reference(self) -> None:
         output = attach_report_evidence_ref(
@@ -76,6 +109,7 @@ class ReportProvenanceTests(unittest.TestCase):
             reference["validation"]["usable_for_current_production_decision"]
         )
         self.assertFalse(reference["report_authority"]["runtime_valid"])
+        validate_attached_report_evidence_ref(output)
 
     def test_rejects_malformed_or_preexisting_reference(self) -> None:
         with self.assertRaisesRegex(ValueError, "already contains"):

@@ -109,9 +109,10 @@ received from an untrusted party.
 
 The supported `python Tools\dcsmizzer.py ...` entrypoint re-enters Python in
 isolated, no-site mode before importing product modules. Provenance-sensitive
-commands are the evidence snapshot/verify/diff/readiness lifecycle,
-`report-summary`, all three runtime commands, all three terrain-probe producer
-commands, and every invocation carrying `--evidence-bundle`. They require a
+commands are the evidence snapshot/verify/diff/readiness lifecycle, both
+construction provenance commands, `report-summary`, all three runtime
+commands, all three terrain-probe producer commands, and every invocation
+carrying `--evidence-bundle`. They require a
 clean ordinary index, reject every ignored or untracked entry under `Tools`,
 and require every tracked
 regular worktree file's Git-canonical content ID to equal its `HEAD` blob
@@ -124,9 +125,10 @@ authentication of an entrypoint or machine supplied by an adversary. Direct
 package imports do not provide this pre-import bootstrap property.
 
 This binding context is orthogonal to the report's intrinsic authority and
-cannot upgrade static/planning evidence to runtime proof. M0 remains partial
-because historical audit/build/verify artifacts are not yet transitively
-sealed to every evidence input and reproducible from that chain. See
+cannot upgrade static/planning evidence to runtime proof. M0 remains partial.
+New `construction-bundle/v1` traces seal exact audit/build/verify/spec/resource/
+MIZ bytes and evidence preimages, but do not record and replay every audit
+subquery decision; legacy reports remain unsealed. See
 [evidence-lifecycle-commands.md](reference/evidence-lifecycle-commands.md).
 
 The evidence reference is CLI transport metadata, not a field inserted into

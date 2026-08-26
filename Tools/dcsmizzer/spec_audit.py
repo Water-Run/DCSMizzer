@@ -7,15 +7,15 @@ from pathlib import Path
 from typing import Any
 
 from .br_static import br_airbase_report, br_terrain_report
-from .builder import _require_build_spec_unchanged, load_build_spec
+from .builder import BuildSpec, _require_build_spec_unchanged, load_build_spec
 from .dcs_static import (
+    _windows_product_version,
     airbase_beacon_report,
     countries_report,
     module_index_report,
     payload_fingerprint,
     payload_match_report,
     payload_report,
-    _windows_product_version,
 )
 from .facts import CATEGORIES, classify_start_mode, numeric_tables, table
 from .gci import (
@@ -754,6 +754,12 @@ def audit_build_spec(
         ],
     }
     return report, not failed
+
+
+def audit_spec_dependencies(spec: BuildSpec) -> dict[str, bool]:
+    """Return dependencies that make an audit consult optional evidence."""
+
+    return {"gci": bool(_gci_units(spec.tables["mission"]))}
 
 
 def _pydcs_terrain_matches(

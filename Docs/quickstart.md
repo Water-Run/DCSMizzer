@@ -253,9 +253,34 @@ review the logic and do not claim DCS runtime exclusivity or reachability.
 Read [mission-format.md](mission-format.md) only when diagnosing raw Lua/archive
 shape, starts, native MiG-29A GCI, resources, or CMP structure.
 
-## 5. Audit, build, verify, inspect
+## 5. Seal, verify, and inspect a construction
 
-Full audit/build/verify reports belong on disk:
+With a current evidence bundle, prefer the single provenance-preserving path:
+
+```powershell
+python Tools\dcsmizzer.py construction-snapshot spec.json `
+  --construction-root "D:\local-only\constructions" `
+  --evidence-bundle "D:\local-only\evidence\BUNDLE_ID" `
+  --dcs-root "D:\path\to\DCSWorld" `
+  --cache-root output\upstream `
+  --installed-terrain "EXACT_INSTALLED_TERRAIN_DIRECTORY" `
+  > output\construction-snapshot.json
+python Tools\dcsmizzer.py construction-verify `
+  "D:\local-only\constructions\CONSTRUCTION_ID" `
+  > output\construction-verification.json
+```
+
+Both commands keep `runtime_valid: null`. Version 1 can replay exact build
+bytes and static verification with the recorded producer/toolchain, but cannot
+replay every audit subquery decision; it therefore keeps
+`fully_reproducible=false` and `static_release_ready=false`. Keep the bundle
+local because it embeds exact spec, resources, evidence, and MIZ bytes. Use a
+separate trusted construction root; overlap with any input tree is rejected.
+Specs containing a native GCI station are refused until their conditional GCI
+sources have a sealed evidence domain.
+
+The legacy separate reports remain useful for diagnosis and for exporting a
+named MIZ:
 
 ```powershell
 python Tools\dcsmizzer.py audit-spec spec.json `

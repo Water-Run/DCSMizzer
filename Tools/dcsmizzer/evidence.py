@@ -600,6 +600,173 @@ def evidence_readiness(
             }
         )
 
+    producer = bundle_source["manifest"].get("producer", {})
+    collection = bundle_source["manifest"].get("collection", {})
+    decision = _readiness_decision(records, required, producer, collection)
+    required_results = decision["required_domains"]
+    producer_result = decision["producer"]
+    overall = decision["all_required_domains_ready"]
+    return {
+        "schema": READINESS_SCHEMA,
+        "dcs_started": False,
+        "bundle": bundle_source["reference"],
+        "current_identity": current["identity"],
+        "required_domains": required_results,
+        "producer": producer_result,
+        "domains": records,
+        "live_collection_failures": live["failures"],
+        "live_collection": {
+            "passes": 2,
+            "stable_across_passes": True,
+        },
+        "limitations": [
+            "Freshness compares exact normalized evidence, not DCS runtime behavior.",
+            "Partial static authority remains partial even when its bytes are current.",
+            "A domain absent from the live check cannot be assumed unchanged.",
+        ],
+        "validation": {
+            "bundle_valid": True,
+            "current_identity_collected": True,
+            "reproducible_producer": producer_result["reproducible"],
+            "all_required_domains_ready": overall,
+        },
+    }
+
+
+def validate_evidence_readiness_report(
+    readiness: Any,
+    verification: Any,
+    required_domains: list[str] | tuple[str, ...],
+) -> dict[str, Any]:
+    """Validate a saved readiness report against one verified bundle result."""
+
+    required = _validate_required_domains(required_domains)
+    if (
+        not isinstance(readiness, dict)
+        or set(readiness)
+        != {
+            "schema",
+            "dcs_started",
+            "bundle",
+            "current_identity",
+            "required_domains",
+            "producer",
+            "domains",
+            "live_collection_failures",
+            "live_collection",
+            "limitations",
+            "validation",
+        }
+        or readiness.get("schema") != READINESS_SCHEMA
+        or readiness.get("dcs_started") is not False
+        or not isinstance(readiness.get("bundle"), dict)
+        or not isinstance(readiness.get("current_identity"), dict)
+        or not isinstance(readiness.get("live_collection_failures"), list)
+        or readiness.get("live_collection")
+        != {"passes": 2, "stable_across_passes": True}
+        or not isinstance(readiness.get("limitations"), list)
+        or any(not isinstance(item, str) for item in readiness["limitations"])
+        or not isinstance(verification, dict)
+        or not isinstance(verification.get("bundle"), dict)
+        or not isinstance(verification.get("producer"), dict)
+        or not isinstance(verification.get("collection"), dict)
+        or not isinstance(verification.get("coverage"), list)
+    ):
+        raise ValueError("evidence readiness report shape is invalid")
+    decision = _readiness_decision(
+        readiness.get("domains"),
+        required,
+        verification["producer"],
+        verification["collection"],
+    )
+    bundle_coverage = _coverage_by_base(verification["coverage"])
+    if any(
+        item["bundle_coverage"]
+        != bundle_coverage.get(item["base_domain"], "absent")
+        for item in readiness["domains"]
+    ):
+        raise ValueError("evidence readiness bundle coverage is inconsistent")
+    expected_validation = {
+        "bundle_valid": True,
+        "current_identity_collected": True,
+        "reproducible_producer": decision["producer"]["reproducible"],
+        "all_required_domains_ready": decision["all_required_domains_ready"],
+    }
+    if (
+        readiness.get("bundle")
+        != {
+            "kind": "content_addressed_bundle",
+            "schema": BUNDLE_SCHEMA,
+            "bundle_id": verification["bundle"].get("id"),
+        }
+        or readiness.get("required_domains") != decision["required_domains"]
+        or readiness.get("producer") != decision["producer"]
+        or readiness.get("validation") != expected_validation
+    ):
+        raise ValueError("evidence readiness decision is inconsistent")
+    return decision
+
+
+def _readiness_decision(
+    records: Any,
+    required: frozenset[str],
+    producer: Any,
+    collection: Any,
+) -> dict[str, Any]:
+    if not isinstance(records, list):
+        raise ValueError("evidence readiness domain records are invalid")
+    names: list[str] = []
+    freshness_values = {
+        "absent_from_bundle",
+        "current_check_unavailable",
+        "incomparable_basis",
+        "stale",
+        "current",
+    }
+    coverage_values = {"absent", "complete", "partial", "blocked"}
+    for item in records:
+        if not isinstance(item, dict) or set(item) != {
+            "domain",
+            "base_domain",
+            "required",
+            "freshness",
+            "bundle_coverage",
+            "current_coverage",
+            "coverage",
+            "usable_for_required_decision",
+        }:
+            raise ValueError("evidence readiness domain record shape is invalid")
+        name = item.get("domain")
+        base = item.get("base_domain")
+        freshness = item.get("freshness")
+        bundled_coverage = item.get("bundle_coverage")
+        current_coverage = item.get("current_coverage")
+        coverage = item.get("coverage")
+        if (
+            not isinstance(name, str)
+            or not name
+            or not isinstance(base, str)
+            or base != _base_domain(name)
+            or base not in _REQUIRED_DOMAINS
+            or item.get("required") is not (base in required)
+            or not isinstance(freshness, str)
+            or freshness not in freshness_values
+            or not isinstance(bundled_coverage, str)
+            or bundled_coverage not in coverage_values
+            or not isinstance(current_coverage, str)
+            or current_coverage not in coverage_values
+            or coverage != _readiness_coverage(
+                bundled_coverage,
+                current_coverage,
+            )
+            or item.get("usable_for_required_decision")
+            is not (freshness == "current" and coverage == "complete")
+        ):
+            raise ValueError("evidence readiness domain record is inconsistent")
+        names.append(name)
+    if names != sorted(set(names)):
+        raise ValueError("evidence readiness domain records are unordered")
+
     required_results: dict[str, dict[str, Any]] = {}
     for domain in sorted(required):
         matching = [item for item in records if item["base_domain"] == domain]
@@ -616,8 +783,6 @@ def evidence_readiness(
                 }
             ),
         }
-    producer = bundle_source["manifest"].get("producer", {})
-    collection = bundle_source["manifest"].get("collection", {})
     producer_reproducible = bool(
         isinstance(producer, dict)
         and producer.get("git_dirty") is False
@@ -627,43 +792,21 @@ def evidence_readiness(
         and collection.get("stable_across_passes") is True
         and collection.get("outcome") == "complete"
     )
-    overall = bool(
-        producer_reproducible
-        and all(item["ready"] for item in required_results.values())
-    )
+    producer_result = {
+        "name": producer.get("name") if isinstance(producer, dict) else None,
+        "version": producer.get("version") if isinstance(producer, dict) else None,
+        "git_commit": (
+            producer.get("git_commit") if isinstance(producer, dict) else None
+        ),
+        "reproducible": producer_reproducible,
+    }
     return {
-        "schema": READINESS_SCHEMA,
-        "dcs_started": False,
-        "bundle": bundle_source["reference"],
-        "current_identity": current["identity"],
         "required_domains": required_results,
-        "producer": {
-            "name": producer.get("name") if isinstance(producer, dict) else None,
-            "version": (
-                producer.get("version") if isinstance(producer, dict) else None
-            ),
-            "git_commit": (
-                producer.get("git_commit") if isinstance(producer, dict) else None
-            ),
-            "reproducible": producer_reproducible,
-        },
-        "domains": records,
-        "live_collection_failures": live["failures"],
-        "live_collection": {
-            "passes": 2,
-            "stable_across_passes": True,
-        },
-        "limitations": [
-            "Freshness compares exact normalized evidence, not DCS runtime behavior.",
-            "Partial static authority remains partial even when its bytes are current.",
-            "A domain absent from the live check cannot be assumed unchanged.",
-        ],
-        "validation": {
-            "bundle_valid": True,
-            "current_identity_collected": True,
-            "reproducible_producer": producer_reproducible,
-            "all_required_domains_ready": overall,
-        },
+        "producer": producer_result,
+        "all_required_domains_ready": bool(
+            producer_reproducible
+            and all(item["ready"] for item in required_results.values())
+        ),
     }
 
 
@@ -673,7 +816,7 @@ def required_evidence_domains() -> tuple[str, ...]:
     return tuple(sorted(_REQUIRED_DOMAINS))
 
 
-def current_report_evidence_reference(
+def current_report_evidence_context(
     bundle_path: Path,
     dcs_root: Path,
     *,
@@ -686,7 +829,7 @@ def current_report_evidence_reference(
     runtime_manifests: list[Path] | tuple[Path, ...] = (),
     terrain_evidence: list[Path] | tuple[Path, ...] = (),
 ) -> dict[str, Any]:
-    """Build a path-free reference after live two-pass readiness validation."""
+    """Return a reference plus its exact verified readiness preimages."""
 
     required_values = _validate_required_domains(required_domains)
     mandatory_values = _binding_domains(
@@ -764,7 +907,7 @@ def current_report_evidence_reference(
         and reproducible_current
         and producer_matches
     )
-    return {
+    reference = {
         "schema": REPORT_EVIDENCE_REF_SCHEMA,
         "status": "bundle-current" if ready else "unbound",
         "bundle": {
@@ -821,6 +964,41 @@ def current_report_evidence_reference(
             "evidence_ready_for_binding": ready,
         },
     }
+    return {
+        "reference": reference,
+        "readiness": readiness,
+        "verification": initial,
+    }
+
+
+def current_report_evidence_reference(
+    bundle_path: Path,
+    dcs_root: Path,
+    *,
+    report_command: str,
+    query_sha256: str,
+    mandatory_domains: list[str] | tuple[str, ...],
+    source_roots_matched: bool,
+    cache_root: Path | None = None,
+    required_domains: list[str] | tuple[str, ...] = (),
+    runtime_manifests: list[Path] | tuple[Path, ...] = (),
+    terrain_evidence: list[Path] | tuple[Path, ...] = (),
+) -> dict[str, Any]:
+    """Build a path-free reference after live two-pass readiness validation."""
+
+    context = current_report_evidence_context(
+        bundle_path,
+        dcs_root,
+        report_command=report_command,
+        query_sha256=query_sha256,
+        mandatory_domains=mandatory_domains,
+        source_roots_matched=source_roots_matched,
+        cache_root=cache_root,
+        required_domains=required_domains,
+        runtime_manifests=runtime_manifests,
+        terrain_evidence=terrain_evidence,
+    )
+    return context["reference"]
 
 
 def _binding_domains(values: Any, *, label: str) -> frozenset[str]:
@@ -1211,6 +1389,8 @@ def _artifact_directory_names(path: Path) -> set[str]:
     directory = _safe_bundle_directory(path, "evidence artifact directory")
     names: set[str] = set()
     for item in directory.iterdir():
+        if len(names) >= MAX_ARTIFACTS:
+            raise ValueError("evidence artifact directory has too many entries")
         status_result = item.lstat()
         if not stat.S_ISREG(status_result.st_mode) or _is_reparse(status_result):
             raise ValueError("evidence artifact directory contains an unsafe entry")
@@ -1219,7 +1399,14 @@ def _artifact_directory_names(path: Path) -> set[str]:
 
 
 def _validate_bundle_members(bundle: Path) -> None:
-    entries = {item.name: item for item in bundle.iterdir()}
+    entries: dict[str, Path] = {}
+    for item in bundle.iterdir():
+        if len(entries) >= 2:
+            raise ValueError(
+                "evidence bundle contains unmanifested root entries "
+                "(too many entries)"
+            )
+        entries[item.name] = item
     if set(entries) != {"artifacts", "manifest.json"}:
         raise ValueError("evidence bundle contains unmanifested root entries")
     manifest_status = entries["manifest.json"].lstat()

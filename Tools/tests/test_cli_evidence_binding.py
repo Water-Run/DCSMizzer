@@ -37,6 +37,8 @@ class CliEvidenceBindingTests(unittest.TestCase):
 
     def test_policy_exhaustively_partitions_every_command(self) -> None:
         denied = {
+            "construction-snapshot",
+            "construction-verify",
             "evidence-snapshot",
             "evidence-verify",
             "evidence-diff",
@@ -73,16 +75,24 @@ class CliEvidenceBindingTests(unittest.TestCase):
         self.assertEqual(commands, set(_EVIDENCE_BINDING_DOMAINS) | denied)
         self.assertFalse(set(_EVIDENCE_BINDING_DOMAINS) & denied)
         for name, command_parser in subparsers.choices.items():
-            option_strings = {
-                option
-                for action in command_parser._actions
-                for option in action.option_strings
-            }
             self.assertEqual(
-                "--evidence-bundle" in option_strings,
+                any(
+                    action.dest == "evidence_bundle"
+                    for action in command_parser._actions
+                ),
                 name in _EVIDENCE_BINDING_DOMAINS,
                 name,
             )
+        construction = subparsers.choices["construction-snapshot"]
+        construction_evidence = next(
+            action
+            for action in construction._actions
+            if "--evidence-bundle" in action.option_strings
+        )
+        self.assertEqual(
+            construction_evidence.dest,
+            "construction_evidence_bundle",
+        )
         self.assertEqual(
             _EVIDENCE_BINDING_DOMAINS["dcs-payloads"],
             ("installation", "payloads"),
@@ -183,6 +193,86 @@ class CliEvidenceBindingTests(unittest.TestCase):
         self.assertEqual(exit_code, 2)
         self.assertIn("require --evidence-bundle", stderr.getvalue())
         handler.assert_not_called()
+
+    def test_construction_commands_use_their_internal_bundle_contract(self) -> None:
+        snapshot_report = {
+            "schema": "dcsmizzer.construction-snapshot/v1",
+            "dcs_started": False,
+            "validation": {
+                "bundle_valid": True,
+                "audit_passed": True,
+                "build_passed": True,
+                "verify_passed": True,
+                "replay_producer_matches": True,
+                "artifact_rebuilt_exact": True,
+                "verification_replayed": True,
+                "evidence_ready_for_static_release": True,
+                "runtime_valid": None,
+            },
+        }
+        verify_report = {
+            "schema": "dcsmizzer.construction-verification/v1",
+            "dcs_started": False,
+            "validation": {
+                "bundle_valid": True,
+                "pipeline_continuity_valid": True,
+                "replay_producer_matches": True,
+                "artifact_rebuilt_exact": True,
+                "verification_replayed": True,
+                "runtime_valid": None,
+            },
+        }
+        with patch(
+            "dcsmizzer.cli.create_construction_snapshot",
+            return_value=snapshot_report,
+        ) as snapshot:
+            stdout = io.StringIO()
+            exit_code = main(
+                [
+                    "construction-snapshot",
+                    str(self.root / "spec.json"),
+                    "--construction-root",
+                    str(self.root / "construction"),
+                    "--evidence-bundle",
+                    str(self.bundle),
+                    "--dcs-root",
+                    str(self.dcs),
+                    "--cache-root",
+                    str(self.cache),
+                ],
+                stdout=stdout,
+                stderr=io.StringIO(),
+            )
+
+        self.assertEqual(exit_code, 0)
+        snapshot.assert_called_once()
+        self.assertEqual(
+            snapshot.call_args.kwargs["evidence_bundle"],
+            self.bundle,
+        )
+        self.assertEqual(
+            json.loads(stdout.getvalue())["evidence_ref"]["status"],
+            "unbound",
+        )
+
+        with patch(
+            "dcsmizzer.cli.verify_construction_bundle",
+            return_value=verify_report,
+        ) as verify:
+            stdout = io.StringIO()
+            exit_code = main(
+                ["construction-verify", str(self.root / "construction-bundle")],
+                stdout=stdout,
+                stderr=io.StringIO(),
+            )
+
+        self.assertEqual(exit_code, 0)
+        verify.assert_called_once_with(self.root / "construction-bundle")
+        self.assertFalse(
+            json.loads(stdout.getvalue())["evidence_ref"]["validation"][
+                "usable_for_current_production_decision"
+            ]
+        )
 
     def test_mandatory_domains_are_union_not_caller_replacement(self) -> None:
         args = _build_parser().parse_args(

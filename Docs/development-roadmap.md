@@ -294,11 +294,15 @@ recorded `2.9.28.26283` baseline versus current `2.9.28.26385` comparison is
 machine-generated rather than prose-only. The pydcs no-change candidate and the
 16-commit-ahead BriefingRoom candidate were exercised; the latter retained its
 pin because only project-version metadata changed across its 36-path diff.
-M0 is not marked complete because historical audit/build/verify outputs still
-lack a transitive seal over every evidence input and cannot yet be reproduced
-from one complete stored provenance chain. The machine-readable support matrix
-and human publication also remain independently maintained rather than
-generated from that chain.
+New `construction-bundle/v1` traces now content-address the exact spec,
+resources, MIZ, bound audit/build/verify reports, current readiness and bundle
+verification preimages, embedded evidence bundle, producer/toolchain, and a
+recomputed three-stage hash DAG. Exact build bytes and static verification can
+be replayed under the recorded producer/toolchain. M0 is not marked complete
+because v1 does not record and replay every audit subquery decision, legacy
+reports remain unsealed, and the machine-readable support matrix and human
+publication remain independently maintained rather than generated from that
+chain.
 
 The clean reference run from producer commit
 `5fdbeb4df86d0e07d1457e92779375682dc44d87` collected DCS

@@ -17,13 +17,13 @@ TOOLS_ROOT = Path(__file__).resolve().parents[1]
 if str(TOOLS_ROOT) not in sys.path:
     sys.path.insert(0, str(TOOLS_ROOT))
 
+from dcsmizzer import builder as builder_module  # noqa: E402
 from dcsmizzer.builder import (  # noqa: E402
     BuildSpecError,
     build_miz,
     load_build_spec,
     verify_miz,
 )
-from dcsmizzer import builder as builder_module  # noqa: E402
 from dcsmizzer.cli import main  # noqa: E402
 
 
@@ -1879,6 +1879,102 @@ class MizBuilderTests(unittest.TestCase):
             hashlib.sha256(b"changed resource").hexdigest(),
         )
         self.assertFalse(changed_report["resource_equality"]["briefing.bin"])
+
+    def test_resource_overrides_support_exact_path_free_replay(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            spec = fixture_spec()
+            spec["mapResource"] = {"briefing": "briefing.bin"}
+            spec["resources"] = [
+                {"member": "briefing.bin", "source": "original-missing.bin"}
+            ]
+            spec["expect"]["minimum"]["resource_mappings"] = 1
+            spec_path = root / "mission.json"
+            replay_resource = root / "objects" / "resource.bin"
+            replay_resource.parent.mkdir()
+            replay_resource.write_bytes(b"content-addressed resource")
+            spec_path.write_text(json.dumps(spec), encoding="utf-8")
+            output = root / "mission.miz"
+            overrides = {"briefing.bin": replay_resource}
+
+            build_report, built = build_miz(
+                spec_path,
+                output,
+                resource_overrides=overrides,
+            )
+            verify_report, verified = verify_miz(
+                output,
+                spec_path,
+                resource_overrides=overrides,
+            )
+
+            self.assertTrue(built)
+            self.assertTrue(verified)
+            self.assertEqual(
+                build_report["resource_inputs"],
+                verify_report["resource_inputs"],
+            )
+            with self.assertRaisesRegex(BuildSpecError, "exact specification"):
+                build_miz(
+                    spec_path,
+                    root / "wrong.miz",
+                    resource_overrides={"other.bin": replay_resource},
+                )
+
+    def test_relative_resource_override_cannot_be_force_overwritten(self) -> None:
+        with tempfile.TemporaryDirectory(dir=Path.cwd()) as temp_dir:
+            root = Path(temp_dir)
+            spec = fixture_spec()
+            spec["mapResource"] = {"briefing": "briefing.bin"}
+            spec["resources"] = [
+                {"member": "briefing.bin", "source": "original-missing.bin"}
+            ]
+            spec["expect"]["minimum"]["resource_mappings"] = 1
+            spec_path = root / "mission.json"
+            spec_path.write_text(json.dumps(spec), encoding="utf-8")
+            output = root / "input-and-output.miz"
+            original = b"must remain an input resource"
+            output.write_bytes(original)
+            relative = output.relative_to(Path.cwd())
+
+            with self.assertRaisesRegex(
+                BuildSpecError,
+                "cannot overwrite a resource input",
+            ):
+                build_miz(
+                    spec_path,
+                    output,
+                    force=True,
+                    resource_overrides={"briefing.bin": relative},
+                )
+
+            self.assertEqual(output.read_bytes(), original)
+
+    def test_resource_reader_rejects_linked_parent_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            real = root / "real"
+            linked = root / "linked"
+            real.mkdir()
+            resource = real / "briefing.bin"
+            resource.write_bytes(b"resource")
+            try:
+                linked.symlink_to(real, target_is_directory=True)
+            except OSError as error:
+                self.skipTest(
+                    f"directory symlinks unavailable: {type(error).__name__}"
+                )
+            spec = fixture_spec()
+            spec["mapResource"] = {"briefing": "briefing.bin"}
+            spec["resources"] = [
+                {"member": "briefing.bin", "source": str(linked / resource.name)}
+            ]
+            spec["expect"]["minimum"]["resource_mappings"] = 1
+            spec_path = root / "mission.json"
+            spec_path.write_text(json.dumps(spec), encoding="utf-8")
+
+            with self.assertRaisesRegex(BuildSpecError, "safe regular file"):
+                build_miz(spec_path, root / "mission.miz")
 
     def test_builder_rejects_same_size_resource_hardlink_identity_swap(
         self,

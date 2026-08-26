@@ -11,16 +11,20 @@ from pathlib import Path
 from typing import Any, TextIO
 
 from .archive import inspect_miz
+from .br_coordinates import br_coordinate_report
 from .br_static import (
     br_airbase_report,
     br_spawnpoint_report,
     br_terrain_report,
 )
-from .br_coordinates import br_coordinate_report
 from .builder import build_miz, verify_miz
 from .campaign import analyse_cmp
 from .capabilities import capabilities_report
 from .coastline import br_coastline_report
+from .construction_provenance import (
+    create_construction_snapshot,
+    verify_construction_bundle,
+)
 from .coordinates import coordinate_report
 from .dcs_static import (
     airbase_beacon_report,
@@ -60,6 +64,7 @@ from .report_views import (
     output_view,
     report_summary,
 )
+from .runtime import collect_runtime, prepare_runtime, run_runtime
 from .spec_audit import audit_build_spec
 from .templates import options_template_report, warehouse_template_report
 from .terrain_catalog import terrain_catalog_report
@@ -73,7 +78,6 @@ from .terrain_physical import (
     placement_report,
     terrain_corridor_report,
 )
-from .runtime import collect_runtime, prepare_runtime, run_runtime
 from .terrain_probe import (
     extract_terrain_probe,
     generate_terrain_probe_script,
@@ -89,7 +93,6 @@ from .upstream_promotion import (
     upstream_promotion_report,
 )
 from .weather import cloud_preset_report, weather_registry_report
-
 
 DEFAULT_EXACT_PARKING_LIMIT = 8
 MAX_CLI_ERROR_BYTES = 2 * 1024
@@ -226,6 +229,46 @@ def main(
         elif args.command == "evidence-verify":
             report = verify_evidence_bundle(args.bundle)
             exit_code = 0 if report["validation"]["bundle_valid"] is True else 1
+        elif args.command == "construction-snapshot":
+            report = create_construction_snapshot(
+                args.spec,
+                args.construction_root,
+                evidence_bundle=args.construction_evidence_bundle,
+                dcs_root=args.dcs_root,
+                cache_root=args.cache_root,
+                installed_terrain=args.installed_terrain,
+                pydcs_terrain=args.pydcs_terrain,
+            )
+            validation = report["validation"]
+            exit_code = (
+                0
+                if validation.get("bundle_valid") is True
+                and validation.get("audit_passed") is True
+                and validation.get("build_passed") is True
+                and validation.get("verify_passed") is True
+                and validation.get("replay_producer_matches") is True
+                and validation.get("artifact_rebuilt_exact") is True
+                and validation.get("verification_replayed") is True
+                and validation.get("evidence_ready_for_static_release") is True
+                else 1
+            )
+        elif args.command == "construction-verify":
+            report = verify_construction_bundle(args.bundle)
+            validation = report["validation"]
+            replay_passed = bool(
+                validation["replay_producer_matches"] is not True
+                or (
+                    validation["artifact_rebuilt_exact"] is True
+                    and validation["verification_replayed"] is True
+                )
+            )
+            exit_code = (
+                0
+                if validation["bundle_valid"] is True
+                and validation["pipeline_continuity_valid"] is True
+                and replay_passed
+                else 1
+            )
         elif args.command == "evidence-diff":
             report = compare_evidence(args.before, args.after)
             exit_code = 0
@@ -1248,7 +1291,7 @@ def _build_parser() -> argparse.ArgumentParser:
         epilog=(
             "Recommended model workflow:\n"
             "  capabilities -> evidence-readiness -> evidence queries -> "
-            "audit-spec -> build-miz -> verify-miz -> inspect\n"
+            "construction-snapshot -> construction-verify -> inspect\n"
             "  Redirect full audit/build/verify/inspect JSON to files; review "
             "them with report-summary.\n"
             "  Report any unavailable runtime checks.\n\n"
@@ -1470,6 +1513,71 @@ def _build_parser() -> argparse.ArgumentParser:
         "bundle",
         type=Path,
         help="Exact content-addressed evidence bundle directory.",
+    )
+
+    construction_snapshot = add_command(
+        "construction-snapshot",
+        "Audit, build, verify, and content-address one exact low-level MIZ "
+        "construction. The local bundle embeds its exact evidence snapshot "
+        "and construction inputs. Authority: tamper-evident static V1 trace; "
+        "audit-decision and DCS-runtime replay remain unavailable.",
+    )
+    construction_snapshot.add_argument(
+        "spec",
+        type=Path,
+        help="Complete dcsmizzer.miz-build-spec/v1 JSON file.",
+    )
+    construction_snapshot.add_argument(
+        "--construction-root",
+        type=Path,
+        required=True,
+        help=(
+            "Explicit local-only root for content-addressed construction "
+            "bundles."
+        ),
+    )
+    construction_snapshot.add_argument(
+        "--evidence-bundle",
+        dest="construction_evidence_bundle",
+        type=Path,
+        required=True,
+        help="Exact verified evidence bundle embedded into the construction.",
+    )
+    construction_snapshot.add_argument(
+        "--dcs-root",
+        type=Path,
+        required=True,
+        help=dcs_root_help,
+    )
+    construction_snapshot.add_argument(
+        "--cache-root",
+        type=Path,
+        required=True,
+        help=(
+            "Acknowledged upstream cache containing exact pydcs and "
+            "briefing-room-for-dcs checkouts."
+        ),
+    )
+    construction_snapshot.add_argument(
+        "--installed-terrain",
+        help="Exact installed terrain directory for current-data cross-checks.",
+    )
+    construction_snapshot.add_argument(
+        "--pydcs-terrain",
+        help="pydcs terrain override; defaults to mission.theatre.",
+    )
+
+    construction_verify = add_command(
+        "construction-verify",
+        "Verify a content-addressed construction bundle and byte-replay its "
+        "build and static verification when the exact producer/toolchain is "
+        "available. Authority: exact saved bytes, hashes, and static replay; "
+        "never audit-decision or DCS-runtime replay.",
+    )
+    construction_verify.add_argument(
+        "bundle",
+        type=Path,
+        help="Exact content-addressed construction-bundle directory.",
     )
 
     evidence_diff = add_command(
