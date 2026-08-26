@@ -41,6 +41,7 @@ from .lua_write import (
 )
 from .logic import LogicSpecError, compile_logic
 from .mission import analyse_miz, observe_miz_without_member_reads
+from .path_safety import canonical_existing_file
 from .structure import validate_mission_structure
 from .templates import WAREHOUSE_COALITIONS
 
@@ -121,6 +122,7 @@ class BoundResourceInput:
 class BuildSpec:
     path: Path
     sha256: str
+    identity: os.stat_result
     tables: dict[str, LuaTable]
     theatre: str
     resources: tuple[ResourceInput, ...]
@@ -146,6 +148,88 @@ def _lstat_optional(path: Path) -> os.stat_result | None:
         return path.lstat()
     except FileNotFoundError:
         return None
+
+
+def _read_bound_build_spec(
+    path: Path,
+) -> tuple[Path, bytes, os.stat_result]:
+    """Read one spec through a stable regular-file identity."""
+
+    try:
+        source = canonical_existing_file(path, "build specification")
+    except ValueError as error:
+        raise BuildSpecError(
+            "build specification does not exist or is not a safe regular file"
+        ) from error
+    before = _lstat_optional(source)
+    if (
+        before is None
+        or not stat.S_ISREG(before.st_mode)
+        or _is_link_or_reparse(before)
+    ):
+        raise BuildSpecError("build specification is not a safe regular file")
+    flags = os.O_RDONLY | getattr(os, "O_BINARY", 0)
+    nofollow = getattr(os, "O_NOFOLLOW", 0)
+    if nofollow:
+        flags |= nofollow
+    try:
+        descriptor = os.open(source, flags)
+    except OSError as error:
+        raise BuildSpecError(
+            "cannot read the build specification (filesystem error)"
+        ) from error
+    try:
+        opened = os.fstat(descriptor)
+        after_open = source.lstat()
+        if (
+            not stat.S_ISREG(opened.st_mode)
+            or not stat.S_ISREG(after_open.st_mode)
+            or _is_link_or_reparse(after_open)
+            or not _same_file_identity(before, opened)
+            or not _same_file_identity(opened, after_open)
+        ):
+            raise BuildSpecError(
+                "build specification changed while it was being opened"
+            )
+        with os.fdopen(descriptor, "rb", closefd=False) as stream:
+            raw_bytes = stream.read(MAX_BUILD_SPEC_BYTES + 1)
+        final_opened = os.fstat(descriptor)
+        final_path = source.lstat()
+        if (
+            not _same_file_identity(opened, final_opened)
+            or not _same_file_identity(final_opened, final_path)
+            or final_opened.st_size != opened.st_size
+            or len(raw_bytes) != opened.st_size
+            or _is_link_or_reparse(final_path)
+        ):
+            raise BuildSpecError(
+                "build specification changed while it was being read"
+            )
+        return source, raw_bytes, opened
+    except OSError as error:
+        raise BuildSpecError(
+            "cannot read the build specification (filesystem error)"
+        ) from error
+    finally:
+        os.close(descriptor)
+
+
+def _require_build_spec_unchanged(spec: BuildSpec) -> None:
+    """Recheck the exact spec identity and bytes before accepting a result."""
+
+    try:
+        source, raw_bytes, identity = _read_bound_build_spec(spec.path)
+    except BuildSpecError as error:
+        raise BuildSpecError(
+            "build specification changed after it was loaded"
+        ) from error
+    if (
+        source != spec.path
+        or not _same_file_identity(spec.identity, identity)
+        or identity.st_size != spec.identity.st_size
+        or hashlib.sha256(raw_bytes).hexdigest() != spec.sha256
+    ):
+        raise BuildSpecError("build specification changed after it was loaded")
 
 
 def _same_file_identity(
@@ -718,6 +802,7 @@ def build_miz(
         )
         _require_bound_regular_path(temporary, descriptor)
         _require_bound_resources_unchanged(bound_resources)
+        _require_build_spec_unchanged(spec)
         candidate = {
             "artifact_sha256": report["artifact_sha256"],
             "artifact_bytes": report["artifact_bytes"],
@@ -825,6 +910,7 @@ def verify_miz(
         )
         _require_bound_regular_path(requested_miz, descriptor)
         _require_bound_resources_unchanged(bound_resources)
+        _require_build_spec_unchanged(spec)
         report["validation"]["artifact_identity_bound_to_open_handle"] = True
     except OSError as error:
         raise BuildSpecError("cannot read the MIZ input artifact") from error
@@ -878,19 +964,7 @@ def _load_build_spec(
     *,
     require_resource_files: bool,
 ) -> BuildSpec:
-    try:
-        source = path.resolve()
-    except (OSError, RuntimeError) as error:
-        raise BuildSpecError("cannot resolve the build specification path") from error
-    if not source.is_file():
-        raise BuildSpecError("build specification does not exist")
-    try:
-        with source.open("rb") as stream:
-            raw_bytes = stream.read(MAX_BUILD_SPEC_BYTES + 1)
-    except OSError as error:
-        raise BuildSpecError(
-            "cannot read the build specification (filesystem error)"
-        ) from error
+    source, raw_bytes, source_identity = _read_bound_build_spec(path)
     if len(raw_bytes) > MAX_BUILD_SPEC_BYTES:
         raise BuildSpecError(
             f"build specification exceeds the {MAX_BUILD_SPEC_BYTES}-byte input limit"
@@ -1069,6 +1143,7 @@ def _load_build_spec(
     return BuildSpec(
         path=source,
         sha256=hashlib.sha256(raw_bytes).hexdigest(),
+        identity=source_identity,
         tables=tables,
         theatre=theatre,
         resources=tuple(resources),
@@ -1282,6 +1357,14 @@ def _verify(
         "artifact": artifact_name,
         "artifact_sha256": _sha256_stream(miz_file),
         "artifact_bytes": os.fstat(miz_file.fileno()).st_size,
+        "resource_inputs": [
+            {
+                "member": resource.member,
+                "size_bytes": resource.size,
+                "sha256": resource.sha256,
+            }
+            for resource in sorted(resources, key=lambda item: item.member)
+        ],
         "archive": archive.to_dict(),
         "core_table_errors": table_errors,
         "core_table_equality": table_equality,

@@ -92,7 +92,11 @@ Terrain selection is made from the complete unfiltered identity graph; any
 unparsed terrain or airport package makes that graph unusable instead of
 allowing an override to hide the gap.
 
-The report exposes the spec basename and SHA-256, never its absolute path. Git
+The spec must be a safe regular file reached without a symbolic link, junction,
+reparse point, or Windows alternate data stream. It is read through one bound
+file identity; audit, build, and verify recheck that identity and the original
+loaded-content SHA-256 before accepting their result. The report exposes the
+spec basename and SHA-256, never its absolute path. Git
 remotes in upstream provenance have user information, query strings, and
 fragments removed; local, loopback, private/link-local IP, file, UNC,
 drive-path, and malformed remotes are redacted. `commit_bound` additionally
@@ -122,6 +126,8 @@ deterministic MIZ, reads it back, and returns:
 - packaged-resource byte equality against every spec source file, with each
   regular resource bound to one open identity and initial SHA-256 for the
   complete operation;
+- a path-free `member`/`size_bytes`/`sha256` ledger for every bound resource
+  input;
 - limited structural diagnostics;
 - finite trigger/goal compilation metadata when top-level `logic` is used;
 - every caller-declared scenario-contract check;

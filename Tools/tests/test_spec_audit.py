@@ -14,6 +14,7 @@ if str(TOOLS_ROOT) not in sys.path:
 
 from dcsmizzer.cli import main  # noqa: E402
 from dcsmizzer import spec_audit as spec_audit_module  # noqa: E402
+from dcsmizzer.builder import BuildSpecError  # noqa: E402
 from dcsmizzer.lua import parse_lua_bytes  # noqa: E402
 from dcsmizzer.lua_write import json_to_lua  # noqa: E402
 from dcsmizzer.spec_audit import audit_build_spec  # noqa: E402
@@ -206,6 +207,43 @@ def _add_bombing_runway_task(
 
 
 class BuildSpecEvidenceAuditTests(unittest.TestCase):
+    def test_audit_rejects_spec_drift_and_never_rehashes_the_path(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            dcs_root = root / "DCS"
+            pydcs_root = root / "pydcs"
+            br_root = root / "briefing-room"
+            self._write_sources(dcs_root, pydcs_root)
+            self._write_br_sources(br_root)
+            spec_path = root / "spec.json"
+            original = json.dumps(fixture_spec()).encode("utf-8")
+            spec_path.write_bytes(original)
+            original_inventory = spec_audit_module._mission_coordinate_inventory
+
+            def inventory_then_change_spec(*args: object, **kwargs: object) -> object:
+                result = original_inventory(*args, **kwargs)
+                spec_path.write_bytes(original + b" ")
+                return result
+
+            with (
+                patch(
+                    "dcsmizzer.spec_audit._mission_coordinate_inventory",
+                    side_effect=inventory_then_change_spec,
+                ),
+                self.assertRaisesRegex(
+                    BuildSpecError,
+                    "build specification changed after it was loaded",
+                ),
+            ):
+                audit_build_spec(
+                    spec_path,
+                    dcs_root=dcs_root,
+                    installed_terrain="FixtureTerrain",
+                    pydcs_root=pydcs_root,
+                    pydcs_terrain="fixture",
+                    br_root=br_root,
+                )
+
     def test_strict_audit_and_cli_hard_fail_unacknowledged_sources(
         self,
     ) -> None:

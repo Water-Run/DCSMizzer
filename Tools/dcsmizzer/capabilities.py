@@ -336,6 +336,8 @@ _CAPABILITIES: dict[str, Any] = {
             "complete-scenario terminal flag guard/order checks that reject "
             "startup-phase writers and reset/other-value writes",
             "dictionary-backed timed guidance text actions",
+            "safe regular-file spec input bound to one opened identity and "
+            "content hash, with post-operation drift rejection",
             "open-handle-bound candidate validation and atomic final "
             "filesystem path update",
         ],
@@ -349,6 +351,7 @@ _CAPABILITIES: dict[str, Any] = {
             "identity_bound_to_open_handles": True,
             "content_bound_to_sha256": True,
             "rechecked_before_completion": True,
+            "path_free_member_size_sha256_ledger": True,
         },
         "does_not_provide": [
             "natural-language scenario planning",
@@ -413,6 +416,8 @@ _CAPABILITIES: dict[str, Any] = {
             "runway-task airport evidence checks",
             "fuel/countermeasure bounds and aircraft-property declaration checks",
             "current MiG-29 GCI station country checks",
+            "spec identity and original loaded-content hash rechecked before "
+            "an audit result is accepted",
         ],
         "does_not_provide": [
             "scenario-intent judgment",

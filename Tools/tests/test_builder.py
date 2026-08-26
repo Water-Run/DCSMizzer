@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import io
 import json
 import os
@@ -1101,9 +1102,8 @@ class MizBuilderTests(unittest.TestCase):
             self.assertEqual(output.read_bytes(), b"old")
 
             private_read_error = OSError(str(root / "private-spec-location.json"))
-            with mock.patch.object(
-                Path,
-                "open",
+            with mock.patch(
+                "dcsmizzer.builder.os.open",
                 side_effect=private_read_error,
             ):
                 with self.assertRaisesRegex(
@@ -1115,6 +1115,102 @@ class MizBuilderTests(unittest.TestCase):
                         require_resource_files=True,
                     )
             self.assertNotIn(str(root), str(read_error.exception))
+
+    def test_build_spec_reader_rejects_linked_input(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            target = root / "target.json"
+            linked = root / "linked.json"
+            target.write_text(json.dumps(fixture_spec()), encoding="utf-8")
+            try:
+                linked.symlink_to(target)
+            except OSError as error:
+                self.skipTest(f"file symlinks unavailable: {type(error).__name__}")
+
+            with self.assertRaisesRegex(
+                BuildSpecError,
+                "safe regular file",
+            ):
+                load_build_spec(linked, require_resource_files=True)
+
+    @unittest.skipUnless(os.name == "nt", "Windows ADS regression")
+    def test_build_spec_reader_rejects_windows_alternate_data_stream(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            host = root / "host.json"
+            host.write_text("host", encoding="utf-8")
+            stream = Path(f"{host}:spec")
+            try:
+                stream.write_text(json.dumps(fixture_spec()), encoding="utf-8")
+            except OSError as error:
+                self.skipTest(
+                    "alternate data streams unavailable: "
+                    f"{type(error).__name__}"
+                )
+
+            with self.assertRaisesRegex(BuildSpecError, "safe regular file"):
+                load_build_spec(stream, require_resource_files=True)
+
+    def test_builder_rejects_spec_change_after_candidate_verification(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            spec_path = root / "mission.json"
+            output = root / "mission.miz"
+            original_bytes = json.dumps(fixture_spec()).encode("utf-8")
+            changed_bytes = original_bytes + b" "
+            spec_path.write_bytes(original_bytes)
+            original_verify = builder_module._verify
+
+            def verify_then_change_spec(*args: object, **kwargs: object) -> object:
+                result = original_verify(*args, **kwargs)
+                spec_path.write_bytes(changed_bytes)
+                return result
+
+            with (
+                mock.patch(
+                    "dcsmizzer.builder._verify",
+                    side_effect=verify_then_change_spec,
+                ),
+                self.assertRaisesRegex(
+                    BuildSpecError,
+                    "build specification changed after it was loaded",
+                ),
+            ):
+                build_miz(spec_path, output)
+
+            self.assertFalse(output.exists())
+            self.assertEqual(list(root.glob(f".{output.name}.*")), [])
+
+    def test_verify_rejects_spec_change_during_artifact_check(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            spec_path = root / "mission.json"
+            output = root / "mission.miz"
+            original_bytes = json.dumps(fixture_spec()).encode("utf-8")
+            spec_path.write_bytes(original_bytes)
+            _report, built = build_miz(spec_path, output)
+            self.assertTrue(built)
+            artifact_bytes = output.read_bytes()
+            original_verify = builder_module._verify
+
+            def verify_then_change_spec(*args: object, **kwargs: object) -> object:
+                result = original_verify(*args, **kwargs)
+                spec_path.write_bytes(original_bytes + b" ")
+                return result
+
+            with (
+                mock.patch(
+                    "dcsmizzer.builder._verify",
+                    side_effect=verify_then_change_spec,
+                ),
+                self.assertRaisesRegex(
+                    BuildSpecError,
+                    "build specification changed after it was loaded",
+                ),
+            ):
+                verify_miz(output, spec_path)
+
+            self.assertEqual(output.read_bytes(), artifact_bytes)
 
     def test_deep_json_is_rejected_before_all_spec_commands(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -1766,8 +1862,22 @@ class MizBuilderTests(unittest.TestCase):
             report["validation"]["resource_inputs_identity_bound_to_open_handles"]
         )
         self.assertTrue(report["validation"]["resource_inputs_content_bound_to_sha256"])
+        self.assertEqual(
+            report["resource_inputs"],
+            [
+                {
+                    "member": "briefing.bin",
+                    "size_bytes": len(b"original resource"),
+                    "sha256": hashlib.sha256(b"original resource").hexdigest(),
+                }
+            ],
+        )
         self.assertFalse(verified)
         self.assertFalse(changed_report["validation"]["all_resources_equal"])
+        self.assertEqual(
+            changed_report["resource_inputs"][0]["sha256"],
+            hashlib.sha256(b"changed resource").hexdigest(),
+        )
         self.assertFalse(changed_report["resource_equality"]["briefing.bin"])
 
     def test_builder_rejects_same_size_resource_hardlink_identity_swap(

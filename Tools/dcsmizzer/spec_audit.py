@@ -2,13 +2,12 @@
 
 from __future__ import annotations
 
-import hashlib
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
 from .br_static import br_airbase_report, br_terrain_report
-from .builder import load_build_spec
+from .builder import _require_build_spec_unchanged, load_build_spec
 from .dcs_static import (
     airbase_beacon_report,
     countries_report,
@@ -602,10 +601,11 @@ def audit_build_spec(
         )
 
     failed = [item for item in checks if not item["passed"]]
+    _require_build_spec_unchanged(spec)
     report = {
         "schema": "dcsmizzer.build-spec-evidence-audit/v1",
         "input_spec": spec.path.name,
-        "input_spec_sha256": _sha256(spec.path),
+        "input_spec_sha256": spec.sha256,
         "input_spec_path_scope": "basename_only",
         "dcs_started": False,
         "upstream_python_executed": False,
@@ -2516,11 +2516,3 @@ def _version_compatibility(
         "project_target_string_matches_installed": status == "same_version",
         "version_matched_claim_allowed": False,
     }
-
-
-def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as stream:
-        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
