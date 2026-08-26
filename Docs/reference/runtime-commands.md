@@ -103,3 +103,9 @@ derivatives. Retain only privacy-reviewed schemas, summaries, and synthetic
 fixtures. Report the DCS product version, Steam build when available, exact
 manifest/execution/result hashes, validation tier achieved, checks that did not
 run, and any external blocker.
+
+After collection, `evidence-snapshot --runtime-manifest ...` can revalidate and
+bind the exact run into a general content-addressed bundle. The resulting
+attestation omits absolute paths and raw logs. Pass the same manifest to
+`evidence-readiness` when runtime is a required domain; omission is reported as
+current-check unavailable and never treated as current.

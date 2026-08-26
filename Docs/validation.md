@@ -15,8 +15,10 @@ normative input contract.
 | Round-trip-valid | The five parsed core tables exactly equal the complete input spec and the theatre member matches | Whether the supplied tables are legitimate DCS data |
 | Limited-structure-valid | Implemented identity, route, coordinate, pylon, parking, logic, native-GCI, briefing, and resource consistency checks have no errors | Full DCS schema or gameplay behavior |
 | Contract-valid | Every caller-declared count/membership constraint survived the artifact | Constraints the caller forgot to declare |
-| Evidence-bundle-valid | Canonical manifest, content address, safe exact artifact membership, hashes, schemas, authority labels, and derived coverage records match | External authorship or truth of the reports' semantic claims |
+| Evidence-bundle-valid | Canonical manifest, content address, safe exact artifact membership, hashes, schemas, authority labels, cross-artifact installation identity, and derived coverage records match | External authorship or truth of unvalidated report claims |
 | Evidence-domain-ready | The verified clean-producer bundle matches a new read-only collection and the named domain declares complete coverage | Runtime behavior, entitlement, or any domain marked partial/blocked/incomparable |
+| Runtime-attestation-complete | The prepared runtime manifest is revalidated; the exact collection is valid and came from a clean bound producer | Anything above the runtime collection's explicit mode/tier or omitted raw logs |
+| Terrain-attestation-complete | The raw physical document validates, binds the current DCS version, and declares an initialized runtime-attested export for its finite scope | Unsampled space or access to raw geometry after the external source file is lost |
 | V2 DCS-load-valid | A version/hash-bound run loaded the exact filename and theatre | Stable simulation, AI behavior, or another artifact/version |
 | V3 simulation-smoke-valid | V2 plus simulation start and the declared stable interval; declared DCS coordinate checks also pass | Every trigger path, AI tactics, or a human playthrough |
 

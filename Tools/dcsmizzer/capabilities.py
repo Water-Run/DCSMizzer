@@ -110,7 +110,7 @@ _CAPABILITIES: dict[str, Any] = {
         ],
     },
     "evidence_lifecycle": {
-        "status": "implemented_static_bundle_and_drift_gate",
+        "status": "implemented_bundle_drift_and_bound_attestation_gate",
         "commands": [
             "evidence-snapshot",
             "evidence-verify",
@@ -128,6 +128,10 @@ _CAPABILITIES: dict[str, Any] = {
             "machine-readable historical installation/domain comparison",
             "current, stale, incomparable, absent, partial, and blocked "
             "readiness states",
+            "revalidated runtime-manifest attestations with absolute paths and "
+            "raw logs omitted",
+            "validated physical-terrain attestations binding the full external "
+            "source hash and finite coverage",
         ],
         "boundaries": [
             "bundle verification authenticates bytes and bindings, not who "
@@ -136,6 +140,10 @@ _CAPABILITIES: dict[str, Any] = {
             "runtime evidence",
             "dirty or partial bundles cannot pass a required readiness gate",
             "raw local evidence bundles remain ignored and unredistributed",
+            "physical-terrain attestations bind but do not embed raw local "
+            "physical records",
+            "runtime or terrain inputs absent from a current readiness pass "
+            "remain current-check unavailable",
         ],
     },
     "observed_miz_registry": {

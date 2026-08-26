@@ -54,6 +54,20 @@ def validate_terrain_evidence(data: Any) -> None:
     _validate_evidence(data)
 
 
+def terrain_evidence_document(
+    path: Path,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Read one bounded evidence file and return path-free source identity."""
+
+    payload, _file_identity = _read_bounded_file(Path(path))
+    data = _parse_terrain_evidence_payload(payload)
+    return data, {
+        "schema": data["schema"],
+        "size_bytes": len(payload),
+        "sha256": hashlib.sha256(payload).hexdigest(),
+    }
+
+
 def placement_sample_points(
     *,
     x: float,
@@ -946,30 +960,7 @@ def _load_evidence(
             "dcs_version is required to bind physical evidence to the task"
         )
     payload, identity = _read_bounded_file(path)
-
-    def unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
-        result: dict[str, Any] = {}
-        for key, value in pairs:
-            if key in result:
-                raise ValueError(f"duplicate JSON key: {_bounded_text(key)}")
-            result[key] = value
-        return result
-
-    def reject_constant(value: str) -> None:
-        raise ValueError(f"non-finite JSON constant is not allowed: {value}")
-
-    try:
-        data = json.loads(
-            payload.decode("utf-8-sig"),
-            object_pairs_hook=unique_object,
-            parse_constant=reject_constant,
-        )
-    except UnicodeDecodeError as error:
-        raise ValueError("terrain evidence is not valid UTF-8 JSON") from error
-    except json.JSONDecodeError as error:
-        raise ValueError("terrain evidence is not valid JSON") from error
-    _validate_json_graph(data)
-    _validate_evidence(data)
+    data = _parse_terrain_evidence_payload(payload)
     if data["terrain"].casefold() != terrain.casefold():
         raise ValueError(
             "terrain evidence terrain does not match the requested terrain"
@@ -1044,6 +1035,33 @@ def _load_evidence(
         "identity_source": data["dcs"].get("identity_source"),
     }
     return data, provenance
+
+
+def _parse_terrain_evidence_payload(payload: bytes) -> dict[str, Any]:
+    def unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+        result: dict[str, Any] = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate JSON key: {_bounded_text(key)}")
+            result[key] = value
+        return result
+
+    def reject_constant(value: str) -> None:
+        raise ValueError(f"non-finite JSON constant is not allowed: {value}")
+
+    try:
+        data = json.loads(
+            payload.decode("utf-8-sig"),
+            object_pairs_hook=unique_object,
+            parse_constant=reject_constant,
+        )
+    except UnicodeDecodeError as error:
+        raise ValueError("terrain evidence is not valid UTF-8 JSON") from error
+    except json.JSONDecodeError as error:
+        raise ValueError("terrain evidence is not valid JSON") from error
+    _validate_json_graph(data)
+    _validate_evidence(data)
+    return data
 
 
 def _read_bounded_file(path: Path) -> tuple[bytes, dict[str, Any]]:

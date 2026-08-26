@@ -67,11 +67,13 @@ Command routing and links to bounded on-demand references are in
 `evidence-snapshot` collects the current static installation, countries,
 module declarations, default-payload observations, weather presets, every
 installed terrain's static airfield radio/beacon view, current capability
-matrix, and an optional locked-upstream status. Two complete passes must match
-before it creates a canonical local bundle. The manifest binds a clean or
-dirty producer commit, DCS product/distribution/build, executable/API hashes,
-artifact schemas, exact bytes, authority labels, coverage, failures, and a
-collection run ID. The directory name is its manifest content address.
+matrix, and an optional locked-upstream status. It can additionally revalidate
+exact prepared runtime manifests and validate physical-terrain evidence files.
+Two complete passes must match before it creates a canonical local bundle. The
+manifest binds a clean or dirty producer commit, DCS
+product/distribution/build, executable/API hashes, artifact schemas, exact
+bytes, authority labels, coverage, failures, and a collection run ID. The
+directory name is its manifest content address.
 
 `evidence-verify` recomputes the address and every artifact record, rejects
 extra files, and rederives coverage labels from the bound reports. It proves
@@ -84,10 +86,16 @@ the underlying source cannot prove entitlement, full payload compatibility,
 or a complete initialized airfield registry. A dirty producer or partial
 collection cannot pass even an otherwise-current required domain.
 
+Runtime bindings omit local absolute paths and raw logs while retaining the
+exact manifest/execution/result/log hashes and a bounded result summary.
+Physical-terrain bindings validate the raw document and retain its complete
+hash plus coverage hashes/counts without embedding potentially proprietary
+samples, objects, or airfield geometry. Therefore the external raw terrain
+file must still be retained locally to reproduce later physical queries.
+
 Bundle contents remain under ignored local output and are not redistribution-
-approved. The general bundle currently covers static and upstream reports;
-runtime/terrain evidence still retains its dedicated exact manifests and must
-be integrated before M0 can be considered complete. See
+approved. Ordinary unbundled command reports do not yet carry a bundle
+reference, so M0 remains incomplete. See
 [evidence-lifecycle-commands.md](reference/evidence-lifecycle-commands.md).
 
 ## Installed static-source scope

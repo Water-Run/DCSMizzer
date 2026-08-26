@@ -14,7 +14,7 @@ python Tools\dcsmizzer.py capabilities
 | Facility | What it establishes |
 |---|---|
 | Locked upstream cache management | Read-only `upstream-status` and the sole network/cache writer `upstream-prepare` verify the fixed pydcs and BriefingRoom remote, branch, commit, tree, clean-worktree, and license contract without executing either project |
-| Evidence lifecycle | Two-pass stable collection into local content-addressed bundles; canonical manifest and exact artifact membership/hash verification; legacy/current DCS domain diff; and current/stale/incomparable/partial/blocked readiness gates with dirty-producer rejection |
+| Evidence lifecycle | Two-pass stable collection into local content-addressed bundles; canonical manifest and exact artifact membership/hash verification; legacy/current DCS domain diff; privacy-safe revalidated runtime and hash-bound physical-terrain attestations; and current/stale/incomparable/partial/blocked readiness gates with dirty-producer rejection |
 | MIZ inspection | ZIP/path policy, optional CRC, safe parsing of five core Lua data members, and anonymous mission statistics |
 | CMP inspection | Safe campaign-table parsing, stage and interval checks, and relative MIZ-reference presence |
 | Current-install inventory | Executable/Steam version when discoverable, installed module directories, country source, and declared static-source coverage |

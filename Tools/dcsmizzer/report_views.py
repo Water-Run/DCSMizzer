@@ -98,6 +98,8 @@ KNOWN_REPORT_SCHEMAS = frozenset(
         "dcsmizzer.evidence-manifest/v1",
         "dcsmizzer.evidence-readiness/v1",
         "dcsmizzer.evidence-snapshot/v1",
+        "dcsmizzer.runtime-attestation/v1",
+        "dcsmizzer.terrain-evidence-attestation/v1",
         "dcsmizzer.acknowledged-upstream-cache/v1",
         "dcsmizzer.runtime-collection/v1",
         "dcsmizzer.runtime-execution/v1",

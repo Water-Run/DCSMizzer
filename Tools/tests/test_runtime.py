@@ -279,6 +279,8 @@ class RuntimeBridgeTests(unittest.TestCase):
         self.assertTrue(run["validation"]["completed"])
         self.assertTrue(collected["validation"]["runtime_valid"])
         self.assertEqual(collected["validation"]["failure_reasons"], [])
+        self.assertEqual(collected["producer"], manifest["producer"])
+        self.assertEqual(collected["prepared_utc"], manifest["created_utc"])
 
         execution_file = (
             Path(manifest["profile"]["absolute_path"])

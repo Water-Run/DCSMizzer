@@ -77,7 +77,7 @@ After the runtime bridge, terrain-probe MIZ instrumenter, coordinate
 hardening, pydcs pin promotion, and coastline-planning work were integrated,
 the release candidate passed:
 
-- 422 product tests, with one Windows-only open-path replacement race test
+- 439 product tests, with one Windows-only open-path replacement race test
   skipped because the platform denies replacing that already-open temporary
   path;
 - all 37 survey tests;
@@ -199,17 +199,20 @@ visible.
 
 ## M0: evidence lifecycle and reproducible baselines
 
-**Implementation status (2026-08-26): static lifecycle implemented; exit gate
-partially satisfied.** Product commands now perform two-pass stable collection
-into local content-addressed bundles, verify canonical manifests and exact
-artifact membership/hashes, compare recognized historical/current evidence,
-and gate current/stale/incomparable/partial/blocked decision domains. Dirty
-producers, partial collection, changed inputs, and incompatible source scopes
-fail closed. The recorded `2.9.28.26283` baseline versus current
-`2.9.28.26385` comparison is now machine-generated rather than prose-only.
-Initialized runtime/terrain exports are not yet ingested into the general
-bundle, and ordinary unbundled reports do not yet carry a bundle reference, so
-M0 is not marked complete.
+**Implementation status (2026-08-26): bundle lifecycle and bound attestations
+implemented; exit gate partially satisfied.** Product commands now perform
+two-pass stable collection into local content-addressed bundles, verify
+canonical manifests and exact artifact membership/hashes, compare recognized
+historical/current evidence, and gate
+current/stale/incomparable/partial/blocked decision domains. Exact runtime
+manifests can be revalidated into path-free attestations; physical-terrain
+files can be validated and bound by full source and finite-coverage hashes
+without embedding raw records. Dirty producers, blocked domains, partial
+collection, changed inputs, and incompatible source scopes fail closed. The
+recorded `2.9.28.26283` baseline versus current `2.9.28.26385` comparison is
+machine-generated rather than prose-only. Ordinary unbundled reports do not
+yet carry a bundle reference, and the upstream pin-promotion protocol remains
+incomplete, so M0 is not marked complete.
 
 The clean reference run from producer commit
 `5fdbeb4df86d0e07d1457e92779375682dc44d87` collected DCS
@@ -340,6 +343,12 @@ Exact record export follows only after this lifecycle succeeds.
 - Cleanup is safe after success, failure, and timeout.
 
 ## M2: initialized registries and terrain evidence
+
+**Implementation status (2026-08-26): partial.** Aggregate initialized-registry
+runtime counts, bounded physical-terrain consumers/probes, and privacy-safe
+bundle attestations exist. The staged initialized record export, referential-
+integrity graph, full payload/launcher resolution, and per-installed-terrain
+initialization records below do not yet exist.
 
 ### Goal
 

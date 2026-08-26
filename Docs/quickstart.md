@@ -49,6 +49,11 @@ scope remains non-ready even when the bundle's bytes verify. See the
 [evidence lifecycle command details](reference/evidence-lifecycle-commands.md)
 only when snapshot, drift, or readiness behavior needs review.
 
+When an exact isolated runtime run or initialized physical-terrain export is
+already available, add its `--runtime-manifest` or `--terrain-evidence` path to
+both snapshot and later readiness commands. These options revalidate existing
+files and never start DCS.
+
 If `upstream-status` is nonzero, prepare the fixed source lock, then check it
 again:
 

@@ -775,6 +775,8 @@ def _collection_report(
         "mode": manifest["mode"],
         "authority": "run_id_and_content_hash_bound_dcs_runtime_result",
         "dcs_started": execution.get("pid") is not None,
+        "prepared_utc": manifest["created_utc"],
+        "producer": manifest["producer"],
         "evidence": {
             "manifest_sha256": expected_manifest_hash,
             "execution_sha256": hashlib.sha256(execution_payload).hexdigest(),

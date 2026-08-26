@@ -72,8 +72,11 @@ ready only after a passing version/hash-bound collection.
 
 Implementation and readiness are separate. When a current content-addressed
 bundle exists, `evidence-readiness` must pass every domain used by the decision;
-otherwise create and verify a snapshot first. An implemented upstream reader
-is not ready evidence until `upstream-status` exits zero. If it does not, run
+otherwise create and verify a snapshot first. Pass the exact runtime manifest
+and physical-terrain source again whenever those bundled domains are required;
+an omitted external source is unavailable, not implicitly current. An
+implemented upstream reader is not ready evidence until `upstream-status`
+exits zero. If it does not, run
 `upstream-prepare --cache-root output\upstream`, then rerun status. Only
 `upstream-prepare` may contact the network or write that cache; add `--offline`
 to forbid network access. The fixed locks and failure semantics are in the

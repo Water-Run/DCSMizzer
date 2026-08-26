@@ -22,6 +22,19 @@ from .dcs_static import (
     payload_index_report,
     static_install_report,
 )
+from .evidence_inputs import (
+    MAX_BOUND_INPUTS_PER_KIND,
+    RUNTIME_ATTESTATION_SCHEMA,
+    TERRAIN_ATTESTATION_SCHEMA,
+    runtime_artifact_name,
+    runtime_attestation,
+    runtime_coverage,
+    terrain_artifact_name,
+    terrain_attestation,
+    terrain_coverage,
+    validate_runtime_attestation,
+    validate_terrain_attestation,
+)
 from .report_views import (
     KNOWN_REPORT_SCHEMAS,
     _parse_report_json,
@@ -55,6 +68,7 @@ _BUNDLE_ID = re.compile(r"\A[0-9a-f]{64}\Z")
 _ARTIFACT_NAME = re.compile(r"\A[a-z0-9][a-z0-9.-]{0,95}\Z")
 _HASH = re.compile(r"\A[0-9a-f]{64}\Z")
 _COLLECTION_RUN_ID = re.compile(r"\Asnapshot-[0-9TZ.]{8,32}\Z")
+_RUNTIME_ARTIFACT_RUN_ID = re.compile(r"\A[a-z0-9][a-z0-9-]{0,47}\Z")
 _STAGING_PREFIX = ".dcsmizzer-evidence-"
 _REQUIRED_DOMAINS = frozenset(
     {
@@ -66,6 +80,8 @@ _REQUIRED_DOMAINS = frozenset(
         "airfields",
         "upstream",
         "capabilities",
+        "runtime",
+        "terrain",
     }
 )
 _ARTIFACT_SCHEMAS = {
@@ -77,6 +93,8 @@ _ARTIFACT_SCHEMAS = {
     "weather": frozenset({"dcsmizzer.dcs-weather-presets/v1"}),
     "upstream": frozenset({"dcsmizzer.acknowledged-upstream-cache/v1"}),
     "airfields": frozenset({"dcsmizzer.dcs-airbase-beacons/v1"}),
+    "runtime": frozenset({RUNTIME_ATTESTATION_SCHEMA}),
+    "terrain": frozenset({TERRAIN_ATTESTATION_SCHEMA}),
 }
 
 
@@ -85,6 +103,8 @@ def create_evidence_snapshot(
     bundle_root: Path,
     *,
     cache_root: Path | None = None,
+    runtime_manifests: list[Path] | tuple[Path, ...] = (),
+    terrain_evidence: list[Path] | tuple[Path, ...] = (),
     repository_root: Path | None = None,
     created_utc: str | None = None,
 ) -> dict[str, Any]:
@@ -96,9 +116,27 @@ def create_evidence_snapshot(
         if repository_root is not None
         else Path(__file__).resolve().parents[2]
     )
+    runtime_inputs = _bounded_evidence_inputs(
+        runtime_manifests,
+        "runtime manifests",
+    )
+    terrain_inputs = _bounded_evidence_inputs(
+        terrain_evidence,
+        "terrain evidence",
+    )
     git_before = _git_identity(repository)
-    first = _collect_snapshot_pass(dcs, cache_root)
-    second = _collect_snapshot_pass(dcs, cache_root)
+    first = _collect_snapshot_pass(
+        dcs,
+        cache_root,
+        runtime_inputs,
+        terrain_inputs,
+    )
+    second = _collect_snapshot_pass(
+        dcs,
+        cache_root,
+        runtime_inputs,
+        terrain_inputs,
+    )
     if _canonical_bytes(first) != _canonical_bytes(second):
         raise ValueError("evidence sources changed between the two collection passes")
     git_after = _git_identity(repository)
@@ -234,6 +272,9 @@ def create_evidence_snapshot(
             "bundle_valid": True,
             "content_address_verified": True,
             "reproducible_producer": reproducible,
+            "coverage_unblocked": all(
+                item["status"] != "blocked" for item in coverage
+            ),
         },
     }
 
@@ -344,6 +385,10 @@ def verify_evidence_bundle(bundle_path: Path) -> dict[str, Any]:
             "all_artifact_hashes_valid": True,
             "artifact_count": len(artifact_results),
             "artifact_bytes": total_bytes,
+            "coverage_unblocked": all(
+                item["status"] != "blocked"
+                for item in manifest["coverage"]
+            ),
         },
     }
 
@@ -456,14 +501,34 @@ def evidence_readiness(
     *,
     cache_root: Path | None = None,
     required_domains: list[str] | tuple[str, ...] = (),
+    runtime_manifests: list[Path] | tuple[Path, ...] = (),
+    terrain_evidence: list[Path] | tuple[Path, ...] = (),
 ) -> dict[str, Any]:
     """Compare a bundle with live read-only identities and gate named domains."""
 
     required = _validate_required_domains(required_domains)
+    runtime_inputs = _bounded_evidence_inputs(
+        runtime_manifests,
+        "runtime manifests",
+    )
+    terrain_inputs = _bounded_evidence_inputs(
+        terrain_evidence,
+        "terrain evidence",
+    )
     bundle_source = _load_evidence_source(Path(bundle_path), require_bundle=True)
     dcs = _existing_directory(Path(dcs_root), "DCS root")
-    live = _collect_snapshot_pass(dcs, cache_root)
-    live_confirmation = _collect_snapshot_pass(dcs, cache_root)
+    live = _collect_snapshot_pass(
+        dcs,
+        cache_root,
+        runtime_inputs,
+        terrain_inputs,
+    )
+    live_confirmation = _collect_snapshot_pass(
+        dcs,
+        cache_root,
+        runtime_inputs,
+        terrain_inputs,
+    )
     if _canonical_bytes(live) != _canonical_bytes(live_confirmation):
         raise ValueError("current evidence changed between readiness passes")
     live_source = {
@@ -598,6 +663,8 @@ def required_evidence_domains() -> tuple[str, ...]:
 def _collect_snapshot_pass(
     dcs_root: Path,
     cache_root: Path | None,
+    runtime_manifests: tuple[Path, ...] = (),
+    terrain_evidence: tuple[Path, ...] = (),
 ) -> dict[str, Any]:
     installation = static_install_report(dcs_root)
     identity = _installation_identity(dcs_root, installation)
@@ -646,11 +713,29 @@ def _collect_snapshot_pass(
             "upstream",
             lambda: upstream_status_report(Path(cache_root)),
         )
+    for manifest_path in runtime_manifests:
+        report = runtime_attestation(manifest_path)
+        name = runtime_artifact_name(report)
+        _add_bound_artifact(artifacts, name, report)
+    for evidence_path in terrain_evidence:
+        report = terrain_attestation(evidence_path)
+        name = terrain_artifact_name(report)
+        _add_bound_artifact(artifacts, name, report)
     return {
         "identity": identity,
         "artifacts": artifacts,
         "failures": failures,
     }
+
+
+def _add_bound_artifact(
+    artifacts: dict[str, dict[str, Any]],
+    name: str,
+    report: dict[str, Any],
+) -> None:
+    if name in artifacts:
+        raise ValueError("bound evidence artifact identity is duplicated")
+    artifacts[name] = report
 
 
 def _collect_optional(
@@ -758,6 +843,10 @@ def _coverage_record(name: str, report: dict[str, Any]) -> dict[str, Any]:
         if duplicates:
             status = "blocked"
             reason = "country identifiers are ambiguous"
+    elif base == "runtime":
+        status, reason = runtime_coverage(report)
+    elif base == "terrain":
+        status, reason = terrain_coverage(report)
     return {
         "artifact": name,
         "domain": base,
@@ -1046,13 +1135,19 @@ def _validate_manifest_shape(manifest: dict[str, Any]) -> None:
     }
     if not required_optional_names <= names | failure_names:
         raise ValueError("evidence bundle omits a required collection result")
-    allowed_names = {
+    fixed_allowed_names = {
         "installation",
         "capabilities",
         "upstream",
         *required_optional_names,
     }
-    if not names | failure_names <= allowed_names:
+    unexpected_names = {
+        name
+        for name in names | failure_names
+        if name not in fixed_allowed_names
+        and _snapshot_artifact_domain(name) not in {"runtime", "terrain"}
+    }
+    if unexpected_names:
         raise ValueError("evidence bundle contains an unexpected collection result")
     coverage = manifest.get("coverage")
     if not isinstance(coverage, list) or len(coverage) != len(records):
@@ -1258,6 +1353,38 @@ def _validate_artifact_consistency(
             "terrain_directory"
         ) != terrain_by_artifact.get(name):
             raise ValueError("evidence bundle airfield identity is inconsistent")
+        if name.startswith("runtime."):
+            validate_runtime_attestation(report)
+            if name != runtime_artifact_name(report):
+                raise ValueError("runtime evidence artifact identity is inconsistent")
+            runtime_dcs = report["dcs"]
+            if (
+                runtime_dcs["product_version"]
+                != identity_dcs["product_version"]
+                or runtime_dcs["distribution"] != identity_dcs["distribution"]
+                or runtime_dcs["distribution_build"]
+                != identity_dcs["distribution_build"]
+                or runtime_dcs["executable"]["sha256"]
+                != identity_dcs["executable"]["sha256"]
+                or runtime_dcs.get("sim_control_api")
+                != identity_dcs.get("sim_control_api")
+            ):
+                raise ValueError("runtime evidence installation identity conflicts")
+        if name.startswith("terrain."):
+            validate_terrain_attestation(report)
+            if name != terrain_artifact_name(report):
+                raise ValueError("terrain evidence artifact identity is inconsistent")
+            terrain_dcs = report["dcs"]
+            if (
+                terrain_dcs["product_version"]
+                != identity_dcs["product_version"]
+                or (
+                    terrain_dcs["steam_build_id"] is not None
+                    and terrain_dcs["steam_build_id"]
+                    != identity_dcs["distribution_build"]
+                )
+            ):
+                raise ValueError("terrain evidence installation identity conflicts")
 
 
 def _load_evidence_source(
@@ -1322,6 +1449,10 @@ def _load_evidence_source(
 
 def _infer_artifact_name(report: dict[str, Any]) -> str:
     schema = report.get("schema")
+    if schema == RUNTIME_ATTESTATION_SCHEMA:
+        return runtime_artifact_name(report)
+    if schema == TERRAIN_ATTESTATION_SCHEMA:
+        return terrain_artifact_name(report)
     mapping = {
         LEGACY_INSTALLATION_SCHEMA: "legacy-installation",
         "dcsmizzer.dcs-static/v1": "installation",
@@ -1422,6 +1553,25 @@ def _normalize_source(source: dict[str, Any]) -> dict[str, Any]:
                 domains,
                 f"airfields:{qualifier}",
                 "dcs-static-airfield-beacons/v1",
+                report,
+            )
+        elif name.startswith("runtime.") and isinstance(report, dict):
+            _set_domain(
+                domains,
+                f"runtime:{report.get('run_id')}",
+                RUNTIME_ATTESTATION_SCHEMA,
+                report,
+            )
+        elif name.startswith("terrain.") and isinstance(report, dict):
+            source = report.get("source", {})
+            source_hash = source.get("sha256") if isinstance(source, dict) else None
+            _set_domain(
+                domains,
+                (
+                    f"terrain:{str(report.get('terrain')).casefold()}:"
+                    f"{str(source_hash)[:16]}"
+                ),
+                TERRAIN_ATTESTATION_SCHEMA,
                 report,
             )
     if "installation" not in domains and any(identity.values()):
@@ -1571,6 +1721,21 @@ def _semantic_summary(name: str, value: Any) -> dict[str, Any]:
             "source_sha256": value.get("source_sha256"),
             "radio_source_sha256": value.get("radio_source_sha256"),
         }
+    if name.startswith("runtime:") and isinstance(value, dict):
+        return {
+            "run_id": value.get("run_id"),
+            "mode": value.get("mode"),
+            "runtime_valid": value.get("validation", {}).get("runtime_valid"),
+            "result_sha256": value.get("evidence", {}).get("result_sha256"),
+        }
+    if name.startswith("terrain:") and isinstance(value, dict):
+        return {
+            "terrain": value.get("terrain"),
+            "source_sha256": value.get("source", {}).get("sha256"),
+            "samples": value.get("coverage", {}).get("samples"),
+            "objects": value.get("coverage", {}).get("objects"),
+            "airfields": value.get("coverage", {}).get("airfields"),
+        }
     if isinstance(value, dict):
         return {"top_level_fields": len(value)}
     return {"value_present": value is not None}
@@ -1642,9 +1807,36 @@ def _validate_required_domains(values: Any) -> frozenset[str]:
     return result
 
 
+def _bounded_evidence_inputs(
+    values: Any,
+    label: str,
+) -> tuple[Path, ...]:
+    if not isinstance(values, (list, tuple)) or len(values) > (
+        MAX_BOUND_INPUTS_PER_KIND
+    ):
+        raise ValueError(f"{label} are invalid")
+    paths: list[Path] = []
+    identities: set[str] = set()
+    for value in values:
+        try:
+            path = Path(value)
+        except (TypeError, ValueError) as error:
+            raise ValueError(f"{label} contain an invalid path") from error
+        identity = os.path.normcase(str(path.absolute()))
+        if identity in identities:
+            raise ValueError(f"{label} contain a duplicate path")
+        identities.add(identity)
+        paths.append(path)
+    return tuple(paths)
+
+
 def _base_domain(name: str) -> str:
     if name.startswith(("airfields.", "airfields:")):
         return "airfields"
+    if name.startswith(("runtime.", "runtime:")):
+        return "runtime"
+    if name.startswith(("terrain.", "terrain:")):
+        return "terrain"
     if name == "module-declarations":
         return "modules"
     return name.split(".", 1)[0]
@@ -1672,6 +1864,18 @@ def _snapshot_artifact_domain(name: Any) -> str | None:
         qualifier = name.removeprefix("airfields.")
         if re.fullmatch(r"[a-z0-9][a-z0-9-]{0,63}", qualifier):
             return "airfields"
+    if name.startswith("runtime."):
+        run_id = name.removeprefix("runtime.")
+        if _RUNTIME_ARTIFACT_RUN_ID.fullmatch(run_id) is not None:
+            return "runtime"
+    if name.startswith("terrain."):
+        parts = name.split(".")
+        if (
+            len(parts) == 3
+            and re.fullmatch(r"[a-z0-9][a-z0-9-]{0,47}", parts[1])
+            and re.fullmatch(r"[0-9a-f]{16}", parts[2])
+        ):
+            return "terrain"
     return None
 
 

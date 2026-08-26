@@ -30,7 +30,8 @@ it generated for you.
 > verification; beacon-fitted coordinates with whole-airfield holdouts,
 > extrapolation diagnostics, WGS-84 geodesic offsets, and commit-bound planning-
 > coastline distance/side checks; two-pass stable, content-addressed local
-> evidence bundles with drift/readiness gates; disposable physical-
+> evidence bundles with drift/readiness gates and privacy-safe runtime/terrain
+> attestations; disposable physical-
 > probe MIZ instrumentation; and an explicit-opt-in isolated DCS runtime bridge.
 > The aggregate registry path has been exercised on DCS 2.9.28.26385; an exact
 > MIZ is runtime-valid only when its own hash-bound collection passes.

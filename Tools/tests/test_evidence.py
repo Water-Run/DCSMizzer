@@ -90,6 +90,138 @@ class EvidenceLifecycleTests(unittest.TestCase):
         rendered = json.dumps(verified)
         self.assertNotIn(str(self.root), rendered)
 
+    def test_snapshot_and_readiness_bind_runtime_and_terrain_inputs(self) -> None:
+        runtime_path = self.root / "runtime-manifest.json"
+        terrain_path = self.root / "terrain-evidence.json"
+        with self._collection_patches():
+            snapshot = create_evidence_snapshot(
+                self.dcs,
+                self.bundle_root,
+                runtime_manifests=[runtime_path],
+                terrain_evidence=[terrain_path],
+                created_utc=CREATED,
+            )
+            bundle = self.bundle_root / snapshot["bundle"]["id"]
+            ready = evidence_readiness(
+                bundle,
+                self.dcs,
+                required_domains=["runtime", "terrain"],
+                runtime_manifests=[runtime_path],
+                terrain_evidence=[terrain_path],
+            )
+            missing_live_input = evidence_readiness(
+                bundle,
+                self.dcs,
+                required_domains=["runtime"],
+            )
+
+        verified = verify_evidence_bundle(bundle)
+        artifact_names = {item["name"] for item in verified["artifacts"]}
+        self.assertIn("runtime.fixture-runtime", artifact_names)
+        self.assertTrue(
+            any(name.startswith("terrain.sinai.") for name in artifact_names)
+        )
+        self.assertEqual(verified["validation"]["artifact_count"], 9)
+        self.assertTrue(snapshot["validation"]["coverage_unblocked"])
+        self.assertTrue(ready["validation"]["all_required_domains_ready"])
+        self.assertFalse(
+            missing_live_input["validation"]["all_required_domains_ready"]
+        )
+        self.assertEqual(
+            missing_live_input["required_domains"]["runtime"]["states"],
+            ["current_check_unavailable:absent"],
+        )
+
+    def test_snapshot_cli_fails_when_bound_runtime_is_blocked(self) -> None:
+        blocked = self._runtime_bound()
+        blocked["producer"]["git_dirty"] = True
+        with self._collection_patches(runtime_bound=blocked):
+            stdout = io.StringIO()
+            stderr = io.StringIO()
+            code = main(
+                [
+                    "evidence-snapshot",
+                    "--dcs-root",
+                    str(self.dcs),
+                    "--bundle-root",
+                    str(self.bundle_root),
+                    "--runtime-manifest",
+                    str(self.root / "runtime-manifest.json"),
+                ],
+                stdout=stdout,
+                stderr=stderr,
+            )
+
+        report = json.loads(stdout.getvalue())
+        self.assertEqual(stderr.getvalue(), "")
+        self.assertEqual(code, 1)
+        self.assertFalse(report["validation"]["coverage_unblocked"])
+        runtime_record = next(
+            item
+            for item in report["collection"]["coverage"]
+            if item["domain"] == "runtime"
+        )
+        self.assertEqual(runtime_record["status"], "blocked")
+
+    def test_snapshot_cli_fails_when_bound_upstream_is_blocked(self) -> None:
+        blocked_upstream = {
+            "schema": "dcsmizzer.acknowledged-upstream-cache/v1",
+            "authority": "immutable_acknowledged_upstream_pins",
+            "sources": [],
+            "validation": {"all_sources_usable": False},
+        }
+        with self._collection_patches(), patch(
+            "dcsmizzer.evidence.upstream_status_report",
+            return_value=blocked_upstream,
+        ):
+            stdout = io.StringIO()
+            code = main(
+                [
+                    "evidence-snapshot",
+                    "--dcs-root",
+                    str(self.dcs),
+                    "--bundle-root",
+                    str(self.bundle_root),
+                    "--cache-root",
+                    str(self.root / "cache"),
+                ],
+                stdout=stdout,
+                stderr=io.StringIO(),
+            )
+
+        report = json.loads(stdout.getvalue())
+        self.assertEqual(code, 1)
+        self.assertFalse(report["validation"]["coverage_unblocked"])
+        upstream = next(
+            item
+            for item in report["collection"]["coverage"]
+            if item["domain"] == "upstream"
+        )
+        self.assertEqual(upstream["status"], "blocked")
+
+    def test_snapshot_rejects_conflicting_runtime_installation_identity(
+        self,
+    ) -> None:
+        conflicting = self._runtime_bound()
+        conflicting["dcs"]["product_version"] = "0.0.0"
+        conflicting["result_summary"]["dcs"][
+            "expected_product_version"
+        ] = "0.0.0"
+        conflicting["result_summary"]["dcs"][
+            "runtime_product_version"
+        ] = "0.0.0"
+        with self._collection_patches(
+            runtime_bound=conflicting
+        ), self.assertRaisesRegex(ValueError, "runtime evidence installation"):
+            create_evidence_snapshot(
+                self.dcs,
+                self.bundle_root,
+                runtime_manifests=[self.root / "runtime-manifest.json"],
+                created_utc=CREATED,
+            )
+
+        self.assertFalse(self.bundle_root.exists())
+
     def test_verifier_rejects_tamper_and_unmanifested_files(self) -> None:
         with self._collection_patches():
             report = create_evidence_snapshot(
@@ -586,6 +718,8 @@ class EvidenceLifecycleTests(unittest.TestCase):
         countries: dict[str, object] | None = None,
         airfields: dict[str, object] | None = None,
         payloads: dict[str, object] | None = None,
+        runtime_bound: dict[str, object] | None = None,
+        terrain_bound: dict[str, object] | None = None,
         payload_error: Exception | None = None,
         git_dirty: bool = False,
     ) -> ExitStack:
@@ -652,6 +786,18 @@ class EvidenceLifecycleTests(unittest.TestCase):
             patch(
                 "dcsmizzer.evidence.airbase_beacon_report",
                 return_value=airfields or self._airfields(),
+            )
+        )
+        stack.enter_context(
+            patch(
+                "dcsmizzer.evidence.runtime_attestation",
+                return_value=runtime_bound or self._runtime_bound(),
+            )
+        )
+        stack.enter_context(
+            patch(
+                "dcsmizzer.evidence.terrain_attestation",
+                return_value=terrain_bound or self._terrain_bound(),
             )
         )
         return stack
@@ -874,6 +1020,177 @@ class EvidenceLifecycleTests(unittest.TestCase):
                 }
             ],
             "validation": {"all_sources_usable": True},
+        }
+
+    def _runtime_bound(self) -> dict[str, object]:
+        executable = self.dcs / "bin" / "DCS.exe"
+        api = self.dcs / "API" / "Sim_ControlAPI.md"
+        return {
+            "schema": "dcsmizzer.runtime-attestation/v1",
+            "authority": "revalidated_hash_bound_runtime_collection",
+            "dcs_started": False,
+            "runtime_observed": True,
+            "run_id": "fixture-runtime",
+            "mode": "registry-probe",
+            "prepared_utc": CREATED,
+            "producer": {
+                "name": "DCSMizzer",
+                "version": "0.6.0",
+                "git_commit": "d" * 40,
+                "git_dirty": False,
+            },
+            "dcs": {
+                "distribution": "steam",
+                "distribution_build": "24431605",
+                "distribution_manifest": {
+                    "relative_path": "appmanifest_223750.acf",
+                    "size_bytes": 10,
+                    "sha256": "6" * 64,
+                },
+                "distribution_launcher": {
+                    "size_bytes": 20,
+                    "sha256": "7" * 64,
+                },
+                "product_version": VERSION,
+                "executable": {
+                    "relative_path": "bin/DCS.exe",
+                    "size_bytes": executable.stat().st_size,
+                    "sha256": hashlib.sha256(executable.read_bytes()).hexdigest(),
+                },
+                "sim_control_api": {
+                    "relative_path": "API/Sim_ControlAPI.md",
+                    "size_bytes": api.stat().st_size,
+                    "sha256": hashlib.sha256(api.read_bytes()).hexdigest(),
+                },
+            },
+            "mission": None,
+            "evidence": {
+                "collection_schema": "dcsmizzer.runtime-collection/v1",
+                "collection_sha256": "1" * 64,
+                "manifest_sha256": "2" * 64,
+                "execution_sha256": "3" * 64,
+                "result_sha256": "4" * 64,
+                "dcs_log": {
+                    "name": "dcs.log",
+                    "size_bytes": 10,
+                    "sha256": "5" * 64,
+                },
+            },
+            "execution": {
+                "classification": "normal_completion",
+                "elapsed_seconds": 10.0,
+                "timed_out": False,
+                "terminated": False,
+                "killed": False,
+                "dcs_exit_observed": True,
+                "result_exists": True,
+                "process_attested": True,
+                "profile_argument_attested": True,
+                "mission_argument_attested": None,
+                "executable_sha256": hashlib.sha256(
+                    executable.read_bytes()
+                ).hexdigest(),
+            },
+            "result_summary": {
+                "schema": "dcsmizzer.runtime-result/v1",
+                "run_id": "fixture-runtime",
+                "mode": "registry-probe",
+                "status": "ok",
+                "created_utc": CREATED,
+                "dcs": {
+                    "expected_product_version": VERSION,
+                    "runtime_product_version": VERSION,
+                    "runtime_identity_attested": True,
+                },
+                "registry": {
+                    "initialized": True,
+                    "aggregate_only": True,
+                    "counts": {
+                        "countries": 1,
+                        "unit_types": 1,
+                        "weapons_by_clsid": 1,
+                        "task_definitions": 1,
+                        "planes": 1,
+                        "pylon_launcher_edges": 1,
+                    },
+                },
+                "failure_present": False,
+            },
+            "validation": {
+                "manifest_valid": True,
+                "inputs_unchanged": True,
+                "hook_unchanged": True,
+                "execution_bound": True,
+                "result_present": True,
+                "run_id_matched": True,
+                "mode_matched": True,
+                "runtime_version_matched": True,
+                "failure_reasons": [],
+                "runtime_valid": True,
+            },
+            "privacy": {
+                "absolute_paths_recorded": False,
+                "raw_logs_recorded": False,
+                "raw_manifest_recorded": False,
+                "raw_execution_recorded": False,
+            },
+            "limitations": ["fixture runtime limitation"],
+        }
+
+    @staticmethod
+    def _terrain_bound() -> dict[str, object]:
+        return {
+            "schema": "dcsmizzer.terrain-evidence-attestation/v1",
+            "authority": "version_bound_initialized_dcs_terrain_api_export",
+            "dcs_started": False,
+            "terrain": "Sinai",
+            "dcs": {
+                "product_version": VERSION,
+                "steam_build_id": "24431605",
+                "product_version_basis": "runtime_attested",
+                "runtime_identity_attested": True,
+                "identity_source": "fixture",
+            },
+            "export": {
+                "kind": "dcs_terrain_api_runtime_export",
+                "runtime_initialized": True,
+                "created_utc": CREATED,
+            },
+            "source": {
+                "schema": "dcsmizzer.terrain-physical-evidence/v1",
+                "size_bytes": 100,
+                "sha256": "9" * 64,
+            },
+            "coverage": {
+                "sampling_design_present": True,
+                "sampling_design_sha256": hashlib.sha256(
+                    b'"fixture"\n'
+                ).hexdigest(),
+                "sample_spacing_m": None,
+                "sample_match_tolerance_m": 0.01,
+                "object_inventory_complete": False,
+                "object_search_complete": True,
+                "object_search_complete_for_ground_placement": True,
+                "airfield_inventory_complete": False,
+                "object_searches": 1,
+                "object_searches_sha256": "1" * 64,
+                "samples": 1,
+                "samples_sha256": "2" * 64,
+                "objects": 1,
+                "objects_sha256": "3" * 64,
+                "airfields": 0,
+                "airfields_sha256": "4" * 64,
+            },
+            "validation": {
+                "source_schema_valid": True,
+                "physical_authority": True,
+                "runtime_version_attested": True,
+            },
+            "privacy": {
+                "absolute_paths_recorded": False,
+                "raw_physical_records_embedded": False,
+            },
+            "limitations": ["fixture terrain limitation"],
         }
 
 

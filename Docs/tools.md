@@ -89,8 +89,10 @@ capabilities
 
 Query commands, including `upstream-status`, are read-only.
 `evidence-snapshot` is the sole evidence-bundle writer and creates only a new
-content-addressed directory below its explicit local bundle root; verify,
-diff, and readiness are read-only.
+content-addressed directory below its explicit local bundle root. Optional
+runtime manifests and physical-terrain files are revalidated read-only and
+bound without embedding absolute paths, raw logs, or raw terrain records;
+verify, diff, and readiness are read-only.
 `upstream-prepare` is the only command that may contact the network or write
 the locked source cache. `terrain-probe-script` and
 `terrain-probe-extract` write only their requested output; they do not execute

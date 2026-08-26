@@ -18,6 +18,12 @@ authorized `runtime-run` command can start DCS; no product command starts
 Mission Editor. A planning snapshot or uninitialized export therefore fails
 physical validation.
 
+A validated raw export can be bound into a content-addressed evidence snapshot
+with `evidence-snapshot --terrain-evidence ...`. The small attestation records
+the full source hash and finite coverage hashes/counts but deliberately does
+not embed raw samples, objects, or airfield geometry. Keep the raw local file
+for subsequent physical queries and pass it again to `evidence-readiness`.
+
 The local probe can produce physical evidence only for a theatre that the
 user's DCS installation can load and initialize in a matching mission. If a
 theatre is uninstalled, unavailable, or not entitled and therefore cannot be

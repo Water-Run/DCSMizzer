@@ -122,12 +122,15 @@ def main(
                 args.dcs_root,
                 args.bundle_root,
                 cache_root=args.cache_root,
+                runtime_manifests=args.runtime_manifest,
+                terrain_evidence=args.terrain_evidence,
             )
             exit_code = (
                 0
                 if report["validation"]["bundle_valid"] is True
                 and report["validation"]["reproducible_producer"] is True
                 and report["validation"]["collection_complete"] is True
+                and report["validation"]["coverage_unblocked"] is True
                 else 1
             )
         elif args.command == "evidence-verify":
@@ -142,6 +145,8 @@ def main(
                 args.dcs_root,
                 cache_root=args.cache_root,
                 required_domains=args.required_domain,
+                runtime_manifests=args.runtime_manifest,
+                terrain_evidence=args.terrain_evidence,
             )
             exit_code = (
                 0
@@ -952,6 +957,26 @@ def _build_parser() -> argparse.ArgumentParser:
             "same snapshot; it is read only."
         ),
     )
+    evidence_snapshot.add_argument(
+        "--runtime-manifest",
+        type=Path,
+        action="append",
+        default=[],
+        help=(
+            "Optional exact prepared runtime manifest to revalidate and bind "
+            "without recording absolute paths; repeat for distinct runs."
+        ),
+    )
+    evidence_snapshot.add_argument(
+        "--terrain-evidence",
+        type=Path,
+        action="append",
+        default=[],
+        help=(
+            "Optional initialized physical-terrain evidence file to validate "
+            "and bind by full raw hash; repeat for distinct exports."
+        ),
+    )
 
     evidence_verify = add_command(
         "evidence-verify",
@@ -1004,6 +1029,26 @@ def _build_parser() -> argparse.ArgumentParser:
         "--cache-root",
         type=Path,
         help="Optional current acknowledged-upstream cache to compare read only.",
+    )
+    evidence_ready.add_argument(
+        "--runtime-manifest",
+        type=Path,
+        action="append",
+        default=[],
+        help=(
+            "Current exact runtime manifest for a bundled runtime domain; "
+            "repeat for distinct runs. DCS is not started."
+        ),
+    )
+    evidence_ready.add_argument(
+        "--terrain-evidence",
+        type=Path,
+        action="append",
+        default=[],
+        help=(
+            "Current raw physical-terrain evidence for a bundled terrain "
+            "domain; repeat for distinct exports."
+        ),
     )
     evidence_ready.add_argument(
         "--require",
