@@ -667,7 +667,9 @@ def airfield_footprint_report(
         ]
         taxi_corridors: list[dict[str, Any]] = []
         for route_index, route in enumerate(item["taxi_routes"]):
-            for segment_index, (start, end) in enumerate(zip(route, route[1:])):
+            for segment_index, (start, end) in enumerate(
+                zip(route, route[1:], strict=False)
+            ):
                 dx = end["x"] - start["x"]
                 dy = end["y"] - start["y"]
                 segment_length = math.hypot(dx, dy)
@@ -1733,7 +1735,7 @@ def _airfield_collisions(
                 conflicts.append(conflict)
         for route_index, route in enumerate(item["taxi_routes"]):
             for segment_index, (start, end) in enumerate(
-                zip(route, route[1:])
+                zip(route, route[1:], strict=False)
             ):
                 dx = end["x"] - start["x"]
                 dy = end["y"] - start["y"]
@@ -1790,7 +1792,9 @@ def _corridor_queries(
     )
     seen: set[tuple[int, int, int]] = set()
     query_upper_bound = 0
-    for segment_index, (start, end) in enumerate(zip(route, route[1:])):
+    for segment_index, (start, end) in enumerate(
+        zip(route, route[1:], strict=False)
+    ):
         dx = end["x"] - start["x"]
         dy = end["y"] - start["y"]
         distance = math.hypot(dx, dy)

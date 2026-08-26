@@ -57,6 +57,7 @@ KNOWN_REPORT_SCHEMAS = frozenset(
     {
         "dcsmizzer.br-airbases/v1",
         "dcsmizzer.br-airfield-footprint/v1",
+        "dcsmizzer.br-coastline/v1",
         "dcsmizzer.br-coordinate-conversion/v1",
         "dcsmizzer.br-spawnpoints/v1",
         "dcsmizzer.br-terrains/v1",

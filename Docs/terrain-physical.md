@@ -8,7 +8,7 @@ mountain clearance, or airport-area geometry affects the mission.
 | Layer | Route | What it proves |
 |---|---|---|
 | Public terrain identity | `terrain-catalog` | The recorded official survey has 18 product cards but 14 unique `mission.theatre` IDs. Regional entitlements and legacy cards do not create new theatre IDs. This is not physical terrain evidence. |
-| Upstream planning snapshot | `terrain-coverage`, `pydcs-*`, `br-*`, `br-airfield-footprint` | Commit-bound identities, projections, airports, parking, and candidate points. BR/pydcs coordinates do not prove height, surface, slope, collision, or mountain clearance. |
+| Upstream planning snapshot | `terrain-coverage`, `pydcs-*`, `br-*`, `br-coastline`, `br-airfield-footprint` | Commit-bound identities, projections, airports, parking, candidate points, and sea-mask boundary offsets. BR/pydcs coordinates and masks do not prove height, current surface, slope, collision, or mountain clearance. |
 | Initialized DCS physical export | Commands using `--evidence` | Only queried samples/objects/airfields from an initialized DCS terrain, Mission Editor, or mission-scripting export. Theatre and declared version metadata remain explicit; runtime-version attestation is a separate field. Unsampled space remains unknown. |
 
 The repository currently contains bounded physical-evidence consumers, probe
@@ -37,6 +37,7 @@ planning only.
 | Route versus mountains | `terrain-corridor --evidence ... --terrain ... --dcs-version ... --point X,Y,ALT_MSL ...` | Returns `sampled_corridor_clear` for the centerline and two lateral edges. Three discrete traces do not prove continuous terrain coverage or aircraft performance. |
 | Physical airport geometry | `airfield-footprint --evidence ... --terrain ... --dcs-version ... --airfield ...` | Requires a complete airfield inventory and one record declaring complete runway/parking/taxi geometry. Its envelope is derived geometry, never an official airport boundary. |
 | Airport planning fallback | `br-airfield-footprint --br-root ... --terrain ... --airfield ...` | Commit-bound planning geometry only; `validation.physical_validation` remains false. |
+| Distance from a planning coast | `br-coastline --br-root ... --terrain ... --x ... --y ... --offset-distance ... --side water` | Computes and globally rechecks a unique exact offset from the nearest exported `landMasses` segment. The result still requires a version-matched DCS point/surface probe. |
 
 For a request such as “place a SAM at the pyramids,” first export/search a
 pyramid **instance**, then run `placement-check` at the returned local

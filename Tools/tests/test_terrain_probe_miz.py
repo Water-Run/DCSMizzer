@@ -94,7 +94,10 @@ class TerrainProbeMizTests(unittest.TestCase):
         action = rule.get("actions").get(1)
         self.assertEqual(action.get("predicate"), "a_do_script_file")
         self.assertEqual(action.get("file"), report["probe"]["resource_key"])
-        self.assertEqual(mission.get("trig").get("conditions").get(index), "return(true)")
+        self.assertEqual(
+            mission.get("trig").get("conditions").get(index),
+            "return(true)",
+        )
         self.assertIn(
             report["probe"]["resource_key"],
             mission.get("trig").get("actions").get(index),

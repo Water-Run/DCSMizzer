@@ -196,6 +196,38 @@ The command returns exit code 1 for an incomplete bounds catalog. Resolved
 bounds and spawn paths must remain inside the supplied checkout even when an
 ancestor is a symlink or Windows reparse point.
 
+## `br-coastline`
+
+Measure an anchor's minimum distance to the exported planning land-mass
+boundary, or construct an exact perpendicular offset on one requested mask
+side:
+
+```powershell
+python Tools\dcsmizzer.py br-coastline `
+  --br-root output\upstream\briefing-room-for-dcs `
+  --terrain "EXACT_DCS_THEATRE_ID" `
+  --x -148274.5 --y 444041.0 `
+  --offset-distance 100000 `
+  --side water
+```
+
+The anchor selects the globally nearest `landMasses` segment. For an offset,
+both perpendicular candidates are classified against the `waters` and
+`landMasses` masks, and the selected destination is remeasured against every
+land-mass segment. The command succeeds only when exactly one candidate is on
+the requested side and its global minimum distance matches the requested
+distance within the reported tolerance. This prevents a nominal 100 km offset
+from silently landing closer to another island or planning edge.
+
+The selected theatre declaration and geometry are parsed from their exact
+reported Git commit blobs and include blob OIDs and hashes; both worktree paths
+must independently be safe regular files.
+The result is still lower-authority, simplified BriefingRoom sea-mask planning
+geometry. It is not a current DCS coastline, bathymetry, surface, collision, or
+navigability query. Convert the destination separately when WGS-84 is needed,
+preserve any extrapolation warning, and require a version-matched initialized-
+DCS surface probe before using the point in a playable scenario.
+
 ## `br-airbases`
 
 ```powershell

@@ -43,9 +43,10 @@ release, product, and patch facts. They do not replace installed internal IDs.
 | Airport/runway/parking declarations when installed/observed evidence is missing | `pydcs-airports` | Lower-authority generated upstream data at the reported commit |
 | Additional theatre/airbase/parking coverage | `br-terrains`, `br-airbases` | Lower-authority exported upstream data, including three DCS IDs absent from pydcs |
 | Candidate ground-placement planning points | `br-spawnpoints` | Planning export only; no terrain, collision, road, or tactical validity |
+| Minimum distance to a planning land-mass boundary | `br-coastline` | Commit-bound BriefingRoom sea-mask geometry only; an exact offset is globally remeasured but is not a current initialized-DCS coastline or surface result |
 | Plane station/store cross-check | `pydcs-aircraft` | Lower-authority generated upstream data, not installed runtime compatibility |
 | Complete authored-spec technical cross-check | `audit-spec` | Finite country/weather/task/pylon/parking evidence audit; no scenario or runtime judgment |
-| Installed WGS-84 ↔ mission-local coordinates | `dcs-coordinates` | Beacon fit with inverse and whole-airfield holdouts plus explicit sample-domain/extrapolation diagnostics; no height, land-cover, coastline geometry, or placement proof |
+| Installed WGS-84 ↔ mission-local coordinates | `dcs-coordinates` | Beacon fit with inverse and whole-airfield holdouts plus explicit sample-domain/extrapolation diagnostics; no height, land-cover, authoritative coastline geometry, or placement proof |
 | Exported point, footprint, corridor, or landmark checks | `terrain-point`, `placement-check`, `terrain-corridor`, `landmark-search` | Exact initialized-theatre evidence and queried samples only; declared-version provenance does not imply runtime attestation |
 | Derived airfield operating footprint | `airfield-footprint` | Supplied initialized runway/parking/taxi evidence only; derived envelope, not an official boundary |
 | Physical-evidence capture chain | `terrain-probe-script`, `terrain-probe-instrument`, authorized exact-MIZ run, `terrain-probe-extract` | Probe commands write only named artifacts; mission scripting cannot export airport geometry |
@@ -210,11 +211,35 @@ command executes upstream code or starts DCS.
 The recorded clean upstream states are:
 
 - pydcs `master` at
-  `412952c5ad5688783d8d53830280f316dbe311ff`;
+  `e20f328390aecaac2a7f82444b4f5a96ac6bb2c3`;
 - BriefingRoom `main` at
   `4d8773e9eec0215edb5cd9f576c085ee9f1bf7a7`.
 
-The current-install observation refreshed on 2026-07-29 is DCS
+The pydcs pin was promoted on 2026-08-26 after inspecting its two-commit
+generated-data diff, validating the unchanged license and required source
+model, rebuilding the locked cache, and passing the pydcs/cache compatibility
+tests. Relative to the prior pin it adds one plane, one vehicle, and one Kola
+airport with 11 parking records. The newer inspected BriefingRoom tip
+`be5e3663ec6ed2b22db69c22f91c51f150566a91` did not change the terrain bounds,
+spawn points, or airbase export consumed here, so its product pin was retained
+instead of moving merely because the branch advanced.
+
+The read-only development survey clones were safely fast-forwarded and clean
+at these inspected tips on 2026-08-26:
+
+| Project | Remote branch | Inspected commit | Product disposition |
+|---|---|---|---|
+| pydcs | [`master`](https://github.com/pydcs/dcs) | `e20f328390aecaac2a7f82444b4f5a96ac6bb2c3` | Promoted to the immutable product cache profile |
+| BriefingRoom | [`main`](https://github.com/DCS-BR-Tools/briefing-room-for-dcs) | `be5e3663ec6ed2b22db69c22f91c51f150566a91` | Inspected; consumed product pin retained at `4d8773e...` after relevant-data comparison |
+| DCS Retribution | [`dev`](https://github.com/dcs-retribution/dcs-retribution) | `59719b24662d0b96492e3426c6fb78a58d8d31bc` | Read-only survey reference |
+| MOOSE | [`master-ng`](https://github.com/FlightControl-Master/MOOSE) | `4849acbb327471bf4277ae5524c2d96ea89d4b93` | Read-only survey reference |
+| dcs-mission-maker | [`master`](https://github.com/JonathanTurnock/dcs-mission-maker) | `48b2841b4f72ba32be217f3e618cfa3cec6c8f28` | Read-only survey reference |
+| DCS Global Terrain Database | [`main`](https://github.com/flying-dice/dcs-global-terrain-database) | `d58c7a38d3f0a681bde67bed21868b6d3ecd9bb8` | Read-only survey reference |
+
+Only pydcs and BriefingRoom participate in product commands. No third-party
+source was copied into DCSMizzer.
+
+The current-install observation refreshed on 2026-08-26 is DCS
 `2.9.28.26385`, Steam build `24431605`, matching Eagle Dynamics'
 [2026-07-28 changelog](https://www.digitalcombatsimulator.com/en/news/changelog/).
 The recorded BriefingRoom project targets `2.9.28.26283`; it is one patch
@@ -265,7 +290,7 @@ The aggregate clean-checkout mapping contains:
 
 - 802 BriefingRoom airbases and 25,730 parking records across 14 theatre IDs;
 - 5,635,118 BriefingRoom spawn points;
-- 744 pydcs airports and 22,650 parking records across 11 terrain packages.
+- 745 pydcs airports and 22,661 parking records across 11 terrain packages.
 
 For a dual-source terrain not installed locally, start with pydcs and retain
 BriefingRoom as an independent conflict check. Resolve each requested
@@ -325,6 +350,52 @@ These exports have hard limits:
   diagnostics and cannot claim a pydcs-resolver pass;
 - a project-level target DCS version does not prove that each exported
   bounds/spawn file was regenerated for that version.
+
+### 2026-08-26 coordinate and coastline exercise
+
+The locked BriefingRoom HEAD blobs were exercised across all 14 theatre IDs.
+For each theatre, the first exported airbase was used only as a deterministic
+boundary-selection anchor; both `water` and `land` offsets were attempted at
+100 m, 1 km, and 100 km. Of 84 combinations, 40 satisfied the unique-side and
+global-minimum-distance invariant and 44 failed closed. Nevada accounts for
+six expected rejections because its recorded bounds contain no `landMasses`
+boundary. These counts test algorithmic coverage; they do not turn the source
+mask into current DCS physical evidence.
+
+One explicit Caucasus case used the reported commit
+`4d8773e9eec0215edb5cd9f576c085ee9f1bf7a7`, terrain-bounds blob
+`41ad5fc6bb549c0be2b743887f3c61c8c8b7c822`, and an anchor at mission-local
+`x=-148274.511456, y=444041.026167`. The nearest planning `landMasses`
+boundary was 453.746559 m away. The unique water-side point whose global
+minimum planning-boundary distance is 100,000 m is
+`x=-222687.862251, y=376560.596254`; residual was below
+`1.5e-11` m. The current-install beacon fit inversely maps it to approximately
+`42.9823964215 N, 38.8384627474 E`, but classifies it as an extrapolation about
+100.93 km from the nearest beacon sample. The generated physical-probe MIZ
+passed archive, CRC, parse, resource-hash, trigger-binding, entity-count, and
+human-slot preservation checks. It did not obtain a DCS surface result.
+
+For the Sinai landmark exercise, the selected Great Pyramid reference point
+was Wikidata Q37200's `29°58′44.94″N, 31°8′03.19″E`
+(`29.97915, 31.1342194444`); UNESCO independently identifies the broader Giza
+to Dahshur pyramid-fields component, not that individual structure's point.
+The current-install Sinai beacon fit maps the point to
+`x=-7373.176364, y=-10781.869447`, inside its sample convex hull and about
+25.96 km from the nearest sample. The disposable probe MIZ passed the same
+static instrumentation gates and requests a 1.5 km scenery search, but no
+runtime object or surface result was produced. Preserve the distinction
+between a real-world reference point and the actual initialized-DCS scenery
+instance. Sources: [Wikidata Great Pyramid](https://www.wikidata.org/wiki/Q37200),
+[UNESCO component map](https://whc.unesco.org/en/list/086/maps/).
+
+Two final isolated aggregate retries started exact, attested DCS
+2.9.28.26385 processes but failed before Hook initialization: DCS logged Steam
+authorization failures `-35` (SSL connect) and `-28` (timeout), with no cached
+authorization in the disposable profiles. The bounded runner stopped the
+first at timeout; the second exact PID was identity-checked and stopped early
+to avoid excess game time. This does not invalidate the earlier successful
+aggregate runtime run, but it prevents claiming current-session V2/V3 or
+physical evidence for either disposable mission.
 
 The dated product-card survey exposed by `terrain-catalog` records 18 official
 cards mapping to 14 current `mission.theatre` IDs, including explicit regional,

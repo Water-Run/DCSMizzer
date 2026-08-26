@@ -1089,7 +1089,7 @@ def _write_miz(
     _require_resource_binding_set(spec, resources)
     policy = ArchivePolicy()
     payloads: list[tuple[str, bytes]] = []
-    for spec_name, member_name in SPEC_TABLES.items():
+    for _spec_name, member_name in SPEC_TABLES.items():
         global_name = CORE_GLOBALS[member_name]
         payloads.append(
             (

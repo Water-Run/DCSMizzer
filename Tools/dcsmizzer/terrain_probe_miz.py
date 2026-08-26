@@ -166,7 +166,8 @@ def _instrument_archive(
         if map_resource.has(resource_key):
             raise ValueError("terrain probe resource key already exists")
         if any(
-            isinstance(field.value, str) and field.value.casefold() == resource_name.casefold()
+            isinstance(field.value, str)
+            and field.value.casefold() == resource_name.casefold()
             for field in map_resource.fields
         ):
             raise ValueError("terrain probe resource filename already exists")
@@ -277,7 +278,10 @@ def _verify_instrumented_archive(
     analysis = analyse_miz(stream)
     if not analysis.parse_valid or analysis.theatre != source_analysis.theatre:
         raise ValueError("instrumented MIZ core tables did not parse consistently")
-    if analysis.stats.groups != source_analysis.stats.groups or analysis.stats.units != source_analysis.stats.units:
+    if (
+        analysis.stats.groups != source_analysis.stats.groups
+        or analysis.stats.units != source_analysis.stats.units
+    ):
         raise ValueError("instrumentation changed mission entity counts")
     if analysis.stats.human_slots != source_analysis.stats.human_slots:
         raise ValueError("instrumentation changed mission human slots")

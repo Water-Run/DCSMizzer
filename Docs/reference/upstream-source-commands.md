@@ -23,7 +23,7 @@ The product lock is:
 
 | Cache directory | Remote | Branch | Commit | Git tree | License |
 |---|---|---|---|---|---|
-| `pydcs` | `https://github.com/pydcs/dcs` | `master` | `412952c5ad5688783d8d53830280f316dbe311ff` | `18e761c90e7857884d4334570de6a15bdd1567c8` | LGPL-3.0-only, upstream `LICENSE.txt`, SHA-256 `ea7d049c7705dc13afc202dd18e1827f3484f8212fd3fa7b82fc4a0c363432c9` |
+| `pydcs` | `https://github.com/pydcs/dcs` | `master` | `e20f328390aecaac2a7f82444b4f5a96ac6bb2c3` | `b07fadf3dddd0873176eab32c15caa4c34c46b0f` | LGPL-3.0-only, upstream `LICENSE.txt`, SHA-256 `ea7d049c7705dc13afc202dd18e1827f3484f8212fd3fa7b82fc4a0c363432c9` |
 | `briefing-room-for-dcs` | `https://github.com/DCS-BR-Tools/briefing-room-for-dcs` | `main` | `4d8773e9eec0215edb5cd9f576c085ee9f1bf7a7` | `75898835689457be82ffa08693aaadae92e28117` | GPL-3.0-only, upstream `LICENSE`, SHA-256 `a0ee746064b06d09cab0768116ec265fd0d45261d4087c9ad2c698a07c7aac0e` |
 
 A branch name identifies provenance but does not authorize moving to its

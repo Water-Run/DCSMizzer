@@ -28,7 +28,8 @@ it generated for you.
 > authored-spec evidence auditing; deterministic low-level MIZ assembly;
 > strict complete-scenario structural and contract checks; read-back
 > verification; beacon-fitted coordinates with whole-airfield holdouts,
-> extrapolation diagnostics, and WGS-84 geodesic offsets; disposable physical-
+> extrapolation diagnostics, WGS-84 geodesic offsets, and commit-bound planning-
+> coastline distance/side checks; disposable physical-
 > probe MIZ instrumentation; and an explicit-opt-in isolated DCS runtime bridge.
 > The aggregate registry path has been exercised on DCS 2.9.28.26385; an exact
 > MIZ is runtime-valid only when its own hash-bound collection passes.

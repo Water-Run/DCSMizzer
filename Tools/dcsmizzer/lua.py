@@ -360,7 +360,11 @@ class _Parser:
         value = float(raw)
         if not math.isfinite(value):
             self._syntax("non-finite number")
-        return int(value) if value.is_integer() and "." not in raw and "e" not in raw.lower() else value
+        return (
+            int(value)
+            if value.is_integer() and "." not in raw and "e" not in raw.lower()
+            else value
+        )
 
     def _parse_short_string(self) -> str:
         quote = self.text[self.position]

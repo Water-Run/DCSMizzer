@@ -18,6 +18,7 @@ from .br_coordinates import br_coordinate_report
 from .builder import build_miz, verify_miz
 from .campaign import analyse_cmp
 from .capabilities import capabilities_report
+from .coastline import br_coastline_report
 from .coordinates import coordinate_report
 from .dcs_static import (
     airbase_beacon_report,
@@ -352,6 +353,18 @@ def main(
                 map_y=args.map_y,
             )
             exit_code = 0 if report["validation"]["validated"] is True else 1
+        elif args.command == "br-coastline":
+            report = br_coastline_report(
+                args.br_root,
+                args.terrain,
+                map_x=args.map_x,
+                map_y=args.map_y,
+                offset_distance_m=args.offset_distance,
+                target_side=args.side,
+            )
+            exit_code = (
+                0 if report["validation"]["usable_for_generation"] is True else 1
+            )
         elif args.command == "br-airbases":
             exact_airbase = args.airport is not None or args.airdrome_id is not None
             parking_limit = _model_facing_parking_limit(
@@ -1562,6 +1575,52 @@ def _build_parser() -> argparse.ArgumentParser:
         dest="map_y",
         type=float,
         help="Mission-local y; provide together with --x for inverse conversion.",
+    )
+
+    br_coastline = add_command(
+        "br-coastline",
+        "Measure or construct an exact perpendicular offset from the nearest "
+        "BriefingRoom water-exclusion land-mass boundary. Authority: commit-"
+        "bound planning sea-mask geometry, never a current DCS coastline.",
+    )
+    br_coastline.add_argument(
+        "--br-root",
+        type=Path,
+        required=True,
+        help=br_root_help,
+    )
+    br_coastline.add_argument(
+        "--terrain",
+        required=True,
+        help="Exact BriefingRoom declaration ID or DCS theatre ID.",
+    )
+    br_coastline.add_argument(
+        "--x",
+        dest="map_x",
+        type=float,
+        required=True,
+        help="Mission-local anchor x used to select the nearest planning boundary.",
+    )
+    br_coastline.add_argument(
+        "--y",
+        dest="map_y",
+        type=float,
+        required=True,
+        help="Mission-local anchor y used to select the nearest planning boundary.",
+    )
+    br_coastline.add_argument(
+        "--offset-distance",
+        type=float,
+        help=(
+            "Optional perpendicular distance in metres (0.001-2000000). "
+            "Without it, report only the anchor's minimum boundary distance."
+        ),
+    )
+    br_coastline.add_argument(
+        "--side",
+        choices=("water", "land"),
+        default="water",
+        help="Required planning-mask side for an offset destination (default: water).",
     )
 
     br_airbases = add_command(

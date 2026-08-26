@@ -281,7 +281,9 @@ def prepare_runtime(
                 "template_sha256": hashlib.sha256(hook_template).hexdigest(),
             },
             "result_relative_path": result_path.relative_to(profile_root).as_posix(),
-            "execution_relative_path": execution_path.relative_to(profile_root).as_posix(),
+            "execution_relative_path": execution_path.relative_to(
+                profile_root
+            ).as_posix(),
         },
         "command": {
             "argv": command,
@@ -932,7 +934,11 @@ def _validate_runtime_result(
             for item in events
             if isinstance(item, dict)
         } if isinstance(events, list) else set()
-        for required in ("mission_load_end", "simulation_start", "smoke_interval_complete"):
+        for required in (
+            "mission_load_end",
+            "simulation_start",
+            "smoke_interval_complete",
+        ):
             if required not in names:
                 reasons.append(f"runtime_event_missing:{required}")
     return reasons
@@ -1005,7 +1011,10 @@ def _load_and_verify_manifest(
     expected_profile_name = PROFILE_PREFIX + run_id
     if profile.get("name") != expected_profile_name:
         raise ValueError("runtime manifest profile name is invalid")
-    if profile.get("ordinary_profile") is not False or profile.get("isolated") is not True:
+    if (
+        profile.get("ordinary_profile") is not False
+        or profile.get("isolated") is not True
+    ):
         raise ValueError("runtime manifest does not declare an isolated profile")
     profile_root = _existing_directory(
         Path(_required_text(profile.get("absolute_path"), "profile.absolute_path")),
@@ -1141,7 +1150,9 @@ def _load_and_verify_manifest(
                 "terrain": coordinate_source.get("terrain"),
                 "checks": coordinate_source.get("records"),
             },
-            expected_theatre=mission.get("theatre") if isinstance(mission, dict) else None,
+            expected_theatre=(
+                mission.get("theatre") if isinstance(mission, dict) else None
+            ),
         )
         if coordinate_source.get("checks") != len(coordinate_records):
             raise ValueError("runtime manifest coordinate-check count is invalid")
@@ -1202,7 +1213,10 @@ def _load_and_verify_manifest(
             raise ValueError("Steam launcher identity changed after preparation")
         if launcher_kind != "steam_applaunch":
             raise ValueError("Steam runtime command launcher kind is invalid")
-        if command.get("steam_custom_arguments_confirmation_may_be_required") is not True:
+        if (
+            command.get("steam_custom_arguments_confirmation_may_be_required")
+            is not True
+        ):
             raise ValueError("Steam runtime command confirmation policy is invalid")
         expected_argv = [
             str(launcher.resolve()),
@@ -1219,7 +1233,10 @@ def _load_and_verify_manifest(
             raise ValueError("standalone runtime manifest contains a Steam manifest")
         if launcher_kind != "direct":
             raise ValueError("direct runtime command launcher kind is invalid")
-        if command.get("steam_custom_arguments_confirmation_may_be_required") is not False:
+        if (
+            command.get("steam_custom_arguments_confirmation_may_be_required")
+            is not False
+        ):
             raise ValueError("direct runtime command confirmation policy is invalid")
         expected_argv = [
             str(executable),
@@ -1267,7 +1284,9 @@ def _load_and_verify_manifest(
         theatre=mission["theatre"] if isinstance(mission, dict) else "",
         smoke_seconds=float(smoke_seconds) if smoke_seconds is not None else 10.0,
         coordinate_checks=coordinate_records,
-        expected_groups=(mission["expected_groups"] if isinstance(mission, dict) else 0),
+        expected_groups=(
+            mission["expected_groups"] if isinstance(mission, dict) else 0
+        ),
         expected_units=(mission["expected_units"] if isinstance(mission, dict) else 0),
         expected_player_slots=(
             mission["expected_player_slots"] if isinstance(mission, dict) else 0
@@ -1476,7 +1495,9 @@ def _running_dcs_pids() -> list[int]:
             timeout=10,
         )
     except (OSError, subprocess.TimeoutExpired) as error:
-        raise ValueError("could not determine whether DCS is already running") from error
+        raise ValueError(
+            "could not determine whether DCS is already running"
+        ) from error
     if result.returncode != 0:
         raise ValueError("could not determine whether DCS is already running")
     pids: list[int] = []
@@ -1840,7 +1861,9 @@ def _contained(root: Path, relative: Path, label: str) -> Path:
 def _safe_relative(value: Any, label: str) -> Path:
     text = _required_text(value, label, 256)
     candidate = Path(text)
-    if candidate.is_absolute() or any(part in {"", ".", ".."} for part in candidate.parts):
+    if candidate.is_absolute() or any(
+        part in {"", ".", ".."} for part in candidate.parts
+    ):
         raise ValueError(f"{label} is not a safe relative path")
     return candidate
 

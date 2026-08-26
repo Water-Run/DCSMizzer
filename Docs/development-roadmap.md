@@ -71,6 +71,29 @@ Verification rerun on the baseline date produced:
 The skipped product test requires a Lua 5.5 executable that was not available;
 it was not a product-test failure.
 
+### 2026-08-26 release-candidate verification
+
+After the runtime bridge, terrain-probe MIZ instrumenter, coordinate
+hardening, pydcs pin promotion, and coastline-planning work were integrated,
+the release candidate passed:
+
+- 400 product tests, with one Windows-only open-path replacement race test
+  skipped because the platform denies replacing that already-open temporary
+  path;
+- all 37 survey tests;
+- all Ruff `E`, `F`, and `B` checks over product code and tests;
+- Python bytecode compilation over product and survey code;
+- 147 source blocks and 186 headings in each bilingual Prompt catalog;
+- all links in 22 repository-facing documentation files;
+- Lua 5.5 syntax checks for the rendered runtime Hook and both generated
+  Sinai/Caucasus terrain probes;
+- both locked upstream-cache profiles, including pydcs
+  `e20f328390aecaac2a7f82444b4f5a96ac6bb2c3`, with zero unusable sources.
+
+The DCS runtime limits recorded below remain external validation gaps; passing
+the static release suite does not upgrade the blocked exact-MIZ probes to V2
+or V3.
+
 ### Current DCS evidence
 
 The local Steam installation reported:
@@ -353,9 +376,11 @@ presets means valid" exemption.
 **Implementation status (2026-08-26): partially implemented.** Exact-MIZ
 load/start/smoke collection and DCS Export coordinate checks exist with unit
 and failure-injection coverage. The current-session Sinai/Caucasus mission lane
-remains unpromoted because Steam reported another active session and no
-authority was given to evict it; static instrumentation success is not counted
-as V2/V3.
+remains unpromoted: an initial Steam launch requested authority to evict another
+active session, and later isolated retries reached exact DCS processes but the
+DCS Steam-authorization request failed with SSL/timeout errors before Hook
+initialization. No other session was evicted, and static instrumentation
+success is not counted as V2/V3.
 
 ### Goal
 

@@ -56,8 +56,8 @@ ACKNOWLEDGED_UPSTREAMS: tuple[AcknowledgedUpstream, ...] = (
         name="pydcs",
         remote="https://github.com/pydcs/dcs",
         branch="master",
-        commit="412952c5ad5688783d8d53830280f316dbe311ff",
-        tree="18e761c90e7857884d4334570de6a15bdd1567c8",
+        commit="e20f328390aecaac2a7f82444b4f5a96ac6bb2c3",
+        tree="b07fadf3dddd0873176eab32c15caa4c34c46b0f",
         directory="pydcs",
         license_id="LGPL-3.0-only",
         license_path="LICENSE.txt",
@@ -743,7 +743,9 @@ def _source_status(
         errors.append(
             {
                 "code": "branch_mismatch",
-                "message": "checkout is neither detached nor on the acknowledged branch",
+                "message": (
+                    "checkout is neither detached nor on the acknowledged branch"
+                ),
             }
         )
     if clean is None:
@@ -785,7 +787,9 @@ def _source_status(
         errors.append(
             {
                 "code": "required_paths_incomplete",
-                "message": "one or more acknowledged product paths are missing or unsafe",
+                "message": (
+                    "one or more acknowledged product paths are missing or unsafe"
+                ),
             }
         )
 

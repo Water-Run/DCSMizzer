@@ -159,7 +159,9 @@ class RuntimeBridgeTests(unittest.TestCase):
             ]
         )
         self.assertEqual(preview["interaction"]["confirmation_deadline_seconds"], 120)
-        self.assertTrue((Path(manifest["profile"]["absolute_path"]) / "Tracks").is_dir())
+        self.assertTrue(
+            (Path(manifest["profile"]["absolute_path"]) / "Tracks").is_dir()
+        )
 
     def test_prepare_rejects_existing_profile_and_hook_tampering(self) -> None:
         report = runtime.prepare_runtime(
@@ -639,7 +641,9 @@ class RuntimeBridgeTests(unittest.TestCase):
         self.assertEqual(manifest["inputs"]["mission"]["expected_units"], 3)
         self.assertEqual(report["command_preview"][-1], str(mission.resolve()))
 
-    def test_coordinate_checks_reject_wrong_terrain_duplicate_and_nonfinite(self) -> None:
+    def test_coordinate_checks_reject_wrong_terrain_duplicate_and_nonfinite(
+        self,
+    ) -> None:
         base = {
             "schema": runtime.COORDINATE_CHECKS_SCHEMA,
             "terrain": "Sinai",

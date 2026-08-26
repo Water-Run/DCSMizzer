@@ -610,18 +610,18 @@ class ObservedRegistryTests(unittest.TestCase):
                 )
                 observed_strings: list[str] = []
 
-                def collect(value: object) -> None:
+                def collect(value: object, target: list[str]) -> None:
                     if isinstance(value, dict):
                         for key, child in value.items():
-                            observed_strings.append(str(key))
-                            collect(child)
+                            target.append(str(key))
+                            collect(child, target)
                     elif isinstance(value, list):
                         for child in value:
-                            collect(child)
+                            collect(child, target)
                     elif isinstance(value, str):
-                        observed_strings.append(value)
+                        target.append(value)
 
-                collect(report)
+                collect(report, observed_strings)
                 returned_private_strings = {
                     value
                     for value in observed_strings

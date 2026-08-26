@@ -80,6 +80,8 @@ _CAPABILITIES: dict[str, Any] = {
             "bounded streamed planning-point queries",
             "validated commit-bound BriefingRoom airbase-centre coordinate "
             "fits for 13 of 14 theatre IDs; Afghanistan fails closed",
+            "commit-bound BriefingRoom planning sea-mask minimum-distance "
+            "and exact perpendicular land/water offset checks",
             "upstream remote, branch, commit, cleanliness, and source hashes",
         ],
         "authority": "lower_than_version_matched_installed_or_observed_data",
@@ -157,8 +159,27 @@ _CAPABILITIES: dict[str, Any] = {
             "terrain height or land-cover validation",
             "airport centers, runways, or parking",
             "unit placement validity",
-            "minimum distance to a coastline geometry",
+            "minimum distance to authoritative current-DCS coastline geometry",
         ],
+    },
+    "coastline_planning_geometry": {
+        "status": "implemented_commit_bound_planning_only",
+        "command": "br-coastline",
+        "provides": [
+            "global minimum distance from an anchor to BriefingRoom "
+            "water-exclusion landMasses segments",
+            "exact perpendicular offsets whose requested land/water mask side "
+            "is unique",
+            "global remeasurement against every planning land-mass boundary",
+            "bounded parsing of exact upstream theatre/bounds commit blobs plus "
+            "source hashing",
+        ],
+        "does_not_provide": [
+            "an authoritative or current initialized-DCS coastline",
+            "terrain height, surface, collision, or placement validity",
+            "safe ship, aircraft, or ground-unit placement",
+        ],
+        "runtime_validity": "requires_separate_exact_point_DCS_surface_evidence",
     },
     "terrain_physical_evidence": {
         "status": "implemented_probe_and_bounded_consumers",
