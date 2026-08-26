@@ -6,6 +6,7 @@ from pathlib import Path
 
 from Tools.validate_document_links import (
     _default_documents,
+    _git_tracked_paths,
     validate_document_links,
 )
 
@@ -144,6 +145,51 @@ class DocumentLinkValidationTests(unittest.TestCase):
         self.assertTrue(
             any("missing local fragment" in issue for issue in issues),
             issues,
+        )
+
+    def test_release_mode_rejects_existing_untracked_target(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = root / "README.md"
+            target = root / "local-only.md"
+            readme.write_text("[Local](local-only.md)\n", encoding="utf-8")
+            target.write_text("# Local only\n", encoding="utf-8")
+
+            issues = validate_document_links(
+                [readme],
+                tracked_paths=frozenset({readme.resolve()}),
+            )
+
+        self.assertTrue(
+            any("target is not tracked" in issue for issue in issues),
+            issues,
+        )
+
+    def test_release_mode_accepts_tracked_document_and_target(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = root / "README.md"
+            target = root / "guide.md"
+            readme.write_text("[Guide](guide.md#guide)\n", encoding="utf-8")
+            target.write_text("# Guide\n", encoding="utf-8")
+
+            issues = validate_document_links(
+                [readme],
+                tracked_paths=frozenset(
+                    {readme.resolve(), target.resolve()}
+                ),
+            )
+
+        self.assertEqual([], issues)
+
+    def test_repository_index_enumeration_contains_validator(self) -> None:
+        root = Path(__file__).resolve().parents[2]
+
+        tracked = _git_tracked_paths(root)
+
+        self.assertIn(
+            (root / "Tools" / "validate_document_links.py").resolve(),
+            tracked,
         )
 
 

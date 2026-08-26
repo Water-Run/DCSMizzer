@@ -6,6 +6,7 @@ import argparse
 import html
 import re
 import string
+import subprocess
 import sys
 import unicodedata
 from itertools import chain
@@ -139,12 +140,18 @@ def _markdown_anchors(path: Path) -> set[str]:
     return anchors
 
 
-def validate_document_links(paths: Sequence[Path]) -> list[str]:
+def validate_document_links(
+    paths: Sequence[Path],
+    *,
+    tracked_paths: frozenset[Path] | None = None,
+) -> list[str]:
     """Return link issues found in the supplied documentation files."""
     issues: list[str] = []
     anchor_cache: dict[Path, set[str] | None] = {}
     for path in paths:
         path = Path(path)
+        if tracked_paths is not None and path.resolve() not in tracked_paths:
+            issues.append(f"{path}: document is not tracked in Git")
         try:
             text = path.read_text(encoding="utf-8")
         except (OSError, UnicodeError) as error:
@@ -179,6 +186,12 @@ def validate_document_links(paths: Sequence[Path]) -> list[str]:
                     f"{raw_target!r}"
                 )
                 continue
+            if tracked_paths is not None and target.resolve() not in tracked_paths:
+                issues.append(
+                    f"{path}: line {line_number}: local target is not tracked "
+                    f"in Git {raw_target!r}"
+                )
+                continue
 
             fragment = unquote(urlsplit(raw_target).fragment)
             if not fragment or target.suffix.casefold() != ".md":
@@ -205,6 +218,33 @@ def validate_document_links(paths: Sequence[Path]) -> list[str]:
     return issues
 
 
+def _git_tracked_paths(root: Path) -> frozenset[Path]:
+    try:
+        completed = subprocess.run(
+            ["git", "-C", str(root), "ls-files", "-z", "--"],
+            check=True,
+            capture_output=True,
+            timeout=15,
+        )
+    except (OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
+        raise ValueError("cannot enumerate the repository Git index") from error
+    if len(completed.stdout) > 16 * 1024 * 1024:
+        raise ValueError("repository Git index listing exceeds the byte limit")
+    try:
+        names = completed.stdout.decode("utf-8").split("\0")
+    except UnicodeDecodeError as error:
+        raise ValueError("repository Git index paths are not UTF-8") from error
+    tracked: set[Path] = set()
+    for name in names:
+        if not name:
+            continue
+        relative = Path(name)
+        if relative.is_absolute() or ".." in relative.parts:
+            raise ValueError("repository Git index contains an unsafe path")
+        tracked.add((root / relative).resolve())
+    return frozenset(tracked)
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     root = Path(__file__).resolve().parent.parent
     parser = argparse.ArgumentParser(
@@ -219,7 +259,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     arguments = parser.parse_args(argv)
     paths = arguments.paths or _default_documents(root)
 
-    issues = validate_document_links(paths)
+    try:
+        tracked_paths = _git_tracked_paths(root)
+    except ValueError as error:
+        print(f"ERROR: {error}", file=sys.stderr)
+        return 1
+    issues = validate_document_links(paths, tracked_paths=tracked_paths)
     if issues:
         for issue in issues:
             print(f"ERROR: {issue}", file=sys.stderr)

@@ -7,8 +7,9 @@
   groundwork.
 - Current capability boundary: [capabilities.md](./capabilities.md).
 - Evidence and conflict policy: [evidence.md](./evidence.md).
-- Baseline issue review:
-  [ISSUE-REVIEW-2026-08-05.md](../output/survey-verification-2026-08-05/ISSUE-REVIEW-2026-08-05.md).
+- Baseline issue review: local-only
+  `output/survey-verification-2026-08-05/ISSUE-REVIEW-2026-08-05.md` (ignored
+  evidence; its non-sensitive conclusions are incorporated below).
 
 This document records the intended development order, dependencies, acceptance
 gates, and deliberate non-goals. It does not override the current capability

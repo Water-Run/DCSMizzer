@@ -39,6 +39,11 @@ The ordinary lane runs:
 - Ruff `E`, `F`, and `B` rules over product code and tests;
 - Python bytecode compilation over product and survey code.
 
+The document-link gate resolves local targets and also requires both each
+repository-facing document and every linked local target to exist in the Git
+index. An ignored or untracked local file therefore cannot make a developer
+checkout pass when the same link would be broken in a release checkout.
+
 The corresponding release-checkout commands that do not depend on maintainer
 survey material are:
 
