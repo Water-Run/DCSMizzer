@@ -316,6 +316,10 @@ def replay_audit(
 ) -> tuple[dict[str, Any], bool]:
     """Replay one complete audit query stream and require full consumption."""
 
+    if _resource_overrides is None:
+        raise ValueError(
+            "audit replay requires the exact sealed resource override set"
+        )
     replay = ReplayProvider(transcript)
     report, valid = audit_build_spec(
         spec_path,

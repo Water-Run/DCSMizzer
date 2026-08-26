@@ -616,6 +616,7 @@ class AuditTranscriptTests(unittest.TestCase):
                 pydcs_root=root / "missing-pydcs",
                 pydcs_terrain="fixture",
                 br_root=root / "missing-briefing-room",
+                _resource_overrides={},
             )
 
         self.assertTrue(valid)
@@ -623,6 +624,29 @@ class AuditTranscriptTests(unittest.TestCase):
         self.assertEqual(replayed, report)
         self.assertEqual(len(transcript["requests"]), 14)
         self.assertEqual(len(transcript["responses"]), 14)
+
+    def test_replay_helper_requires_explicit_sealed_resource_set(self) -> None:
+        with (
+            patch.object(
+                transcript_module,
+                "audit_build_spec",
+                side_effect=AssertionError("audit must not start"),
+            ) as audit,
+            self.assertRaisesRegex(ValueError, "sealed resource override set"),
+        ):
+            transcript_module.replay_audit(
+                {
+                    "schema": transcript_module.AUDIT_TRANSCRIPT_SCHEMA,
+                    "requests": [],
+                    "responses": [],
+                },
+                Path("spec.json"),
+                dcs_root=Path("missing-dcs"),
+                installed_terrain=None,
+                pydcs_root=Path("missing-pydcs"),
+                pydcs_terrain=None,
+            )
+        audit.assert_not_called()
 
 
 if __name__ == "__main__":
