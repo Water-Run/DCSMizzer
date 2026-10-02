@@ -37,6 +37,8 @@ class CliEvidenceBindingTests(unittest.TestCase):
 
     def test_policy_exhaustively_partitions_every_command(self) -> None:
         denied = {
+            "validation-contract",
+            "initialized-registry-validate",
             "construction-snapshot",
             "construction-verify",
             "evidence-snapshot",

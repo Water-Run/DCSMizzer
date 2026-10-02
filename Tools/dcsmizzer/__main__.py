@@ -1,11 +1,7 @@
-import sys
+"""Run the installed command with python -m dcsmizzer."""
 
-from .cli import main
+from .entrypoint import main
 
 
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8")
-if hasattr(sys.stderr, "reconfigure"):
-    sys.stderr.reconfigure(encoding="utf-8")
-
-raise SystemExit(main())
+if __name__ == "__main__":
+    raise SystemExit(main())

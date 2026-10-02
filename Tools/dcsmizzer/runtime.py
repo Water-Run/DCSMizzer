@@ -20,7 +20,9 @@ from typing import Any
 from . import __version__
 from .archive import inspect_miz
 from .dcs_static import _windows_product_version
+from .initialized_registry import initialized_registry_report
 from .mission import analyse_miz
+from .validation_contract import runtime_tier_report
 
 
 MANIFEST_SCHEMA = "dcsmizzer.evidence-manifest/v1"
@@ -1317,6 +1319,12 @@ def _collection_report(
     log_path = paths["profile_root"] / "Logs" / "dcs.log"
     log_record = _file_record_if_present(log_path, maximum_bytes=MAX_LOG_HASH_BYTES)
     valid = not failure_reasons
+    validation_tiers = runtime_tier_report(
+        manifest,
+        result,
+        failure_reasons,
+        inputs_unchanged=inputs_unchanged,
+    )
     return {
         "schema": "dcsmizzer.runtime-collection/v1",
         "run_id": manifest["run_id"],
@@ -1339,6 +1347,7 @@ def _collection_report(
         },
         "execution": execution,
         "result": result,
+        "validation_tiers": validation_tiers,
         "validation": {
             "manifest_valid": True,
             "inputs_unchanged": inputs_unchanged,
@@ -1354,6 +1363,7 @@ def _collection_report(
             == manifest["dcs"]["product_version"],
             "failure_reasons": sorted(set(failure_reasons)),
             "runtime_valid": valid,
+            "highest_mission_tier": validation_tiers["highest_achieved"],
         },
         "limitations": [
             "Runtime validity is bound only to this exact DCS version, run ID, "
@@ -1409,6 +1419,55 @@ def _validate_runtime_result(
                 value = counts.get(name)
                 if isinstance(value, bool) or not isinstance(value, int) or value <= 0:
                     reasons.append(f"registry_count_invalid:{name}")
+        if isinstance(registry, dict):
+            record_export = registry.get("record_export")
+            aggregate_only = registry.get("aggregate_only")
+            if record_export is None:
+                if aggregate_only is not True:
+                    reasons.append("registry_export_state_invalid")
+            else:
+                if aggregate_only is not False:
+                    reasons.append("registry_export_state_invalid")
+                export_report = initialized_registry_report(record_export)
+                export_validation = export_report["validation"]
+                if export_validation["structural_valid"] is not True:
+                    reasons.append("registry_record_export_invalid")
+                else:
+                    identity = export_report["declared_identity"]
+                    if identity["run_id"] != manifest["run_id"]:
+                        reasons.append("registry_record_export_run_id_mismatch")
+                    if (
+                        identity["product_version"]
+                        != manifest["dcs"]["product_version"]
+                    ):
+                        reasons.append("registry_record_export_version_mismatch")
+                    hard_reference_errors = [
+                        error
+                        for error in export_report["referential_integrity"]["errors"]
+                        if error.get("code") != "launcher_weapon_unresolved"
+                    ]
+                    if hard_reference_errors:
+                        reasons.append("registry_record_export_references_invalid")
+                    if isinstance(counts, dict):
+                        stage_complete = {
+                            stage["name"]: stage["complete"]
+                            for stage in export_report["coverage"]["stages"]
+                        }
+                        for aggregate_name, record_name, stage_name in (
+                            ("countries", "countries", "countries"),
+                            ("unit_types", "units", "units"),
+                            ("weapons_by_clsid", "weapons", "weapons"),
+                            ("task_definitions", "tasks", "tasks"),
+                            ("pylon_launcher_edges", "pylon_edges", "pylons"),
+                        ):
+                            if stage_complete[stage_name] and (
+                                counts.get(aggregate_name)
+                                != export_report["counts"][record_name]
+                            ):
+                                reasons.append(
+                                    "registry_record_count_mismatch:"
+                                    + aggregate_name
+                                )
     else:
         mission = result.get("mission")
         smoke = result.get("smoke")

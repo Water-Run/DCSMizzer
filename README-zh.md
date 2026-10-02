@@ -4,7 +4,7 @@
   <strong><a href="./README.md">English README</a></strong>
 </p>
 
-`DCSMizzer`是一个**面向LLM的DCS战斗生成器**. 提供`Docs`供Agent阅读, 以及`Tools`供Agent调用. 在此目录运行你的Coding Agent, 用*自然语言*表述并生成你想要的战斗.
+`DCSMizzer`是一个**面向 Agent 的 DCS World 任务工具库**，提供 Python API、CLI 和模型阅读文档。用户用自然语言描述场景，由 Agent 阅读文档、查询证据，再调用工具构建和验证任务。
 
 > [!NOTE]
 >
@@ -14,26 +14,14 @@
 
 > [!IMPORTANT]
 >
-> **当前状态（2026-08-27）：基础建设阶段，已具备隔离运行时桥。** `Tools`提供MIZ/CMP
-> 检查；当前安装静态和真实任务观测证据查询；锁定上游缓存的准备和就绪检查；
-> 认可且绑定提交、覆盖多地图的地形、机场、停机位、生成点、单位及挂点查询；
-> 当前选项和仓库模板；常用触发器、
-> 目标和定时文本的有限编译；原生MiG-29A GCI证据；构建规格证据审计；
-> 确定性低层MIZ组装；完整场景严格结构与契约检查；回读验证；带整机场留出
-> 检验、外推诊断和WGS-84测地线偏移的坐标转换；绑定提交的规划海岸线
-> 距离与侧向检查；带隐私安全运行时/地形证明的双遍稳定采集、内容寻址、
-> 差异与就绪门禁本地证据包；统一的CLI证据引用状态，以及仅面向来源精确匹配
-> 只读查询、带查询前后栅栏及规范化报告正文哈希的当前证据包绑定；
-> 一次性物理探针MIZ注入；
-> 以及显式授权、隔离配置的DCS运行时桥。聚合注册表路径曾由较早的开发提交在
-> DCS 2.9.28.26385上实测；当前干净候选在Hook初始化前被Steam授权阻断，不具备
-> 可复用的运行时权威。只有某个MIZ自身哈希绑定的运行结果采集通过，才能称其
-> 运行验证通过。
-> 自然语言场景规划、战役生成、完整运行时注册表逐项导出、任务编辑器重存、
-> 通用行为验证和人工游玩验证仍未实现。使用前先读[`Docs/index.txt`](./Docs/index.txt)，并运行
-> `python Tools/dcsmizzer.py capabilities`。
-> 以证据为导向的开发顺序与验收门槛记录在
-> [`Docs/development-roadmap.md`](./Docs/development-roadmap.md)。
+> **当前状态（2026-10-02）：可安装的 Python 库与 CLI，仍处于基础建设阶段。**
+> 已实现 MIZ/CMP 检查、证据查询与审计、基于明确规格的低层 MIZ 构建和回读验证，
+> 以及需要显式授权的隔离 DCS 运行时桥。注册表文件的离线结构验证已实现，
+> 当前 Hook 仍只导出聚合计数。
+> 自然语言规划、战役生成、完整运行时注册表导出、任务编辑器重存、通用行为验证
+> 和人工游玩验证仍未实现。静态检查或打包成功不代表某个任务已经通过 DCS 运行验证。
+> 能力边界以 [`Docs/capabilities.md`](./Docs/capabilities.md) 和当前
+> `python Tools/dcsmizzer.py capabilities` 输出为准。
 
 **良好的Prompt是生成高质量战斗的基础:** 你可以参考[**Prompt示例**](./PROMPT-SAMPLE-zh.adoc)学习如何写一个有效的Prompt.
 
@@ -50,12 +38,49 @@
 
 ---
 
+## Python 库
+
+核心代码是 Python 包，现在可以从此仓库安装为库（需要 Python 3.14 或更高版本）：
+
+```powershell
+python -m pip install .
+# 开发时使用可编辑安装：
+python -m pip install -e .
+```
+
+```python
+from pathlib import Path
+from dcsmizzer import inspect_miz, analyse_miz
+
+mission = Path("output/mission.miz")
+archive = inspect_miz(mission)
+if archive.safe:
+    observation = analyse_miz(mission)
+    print(observation.theatre)
+```
+
+安装后可运行 `dcsmizzer capabilities` 或 `python -m dcsmizzer capabilities`。
+库提供任务检查、基于明确规格的低层构建和验证；自然语言规划和战役生成仍未实现。
+证据、构建溯源和运行时命令仍需要干净的独立 Git 克隆及原有
+`python Tools/dcsmizzer.py` 校验入口，wheel 安装不具备 Git 来源证明。
+API、构建方法和可编辑安装的缓存约束见[Python 库说明](Docs/python-library.md)。
+
+## 文档导航
+
+| 需要 | 文档 |
+|---|---|
+| 安装、Python API、分发包构建 | [Python 库](Docs/python-library.md) |
+| 为 Agent 选择命令与参考 | [文档入口](Docs/index.txt)、[命令路由](Docs/tools.md) |
+| 按用户场景生成任务 | [任务工作流](Docs/quickstart.md)、[构建规格](Docs/build-spec.md) |
+| 判断能力和验证结果 | [能力边界](Docs/capabilities.md)、[验证语义](Docs/validation.md) |
+| 开发方向和版本变更 | [开发路线](Docs/development-roadmap.md)、[更新记录](CHANGELOG.md) |
+
 ## 使用
 
 *在开始之前, 你的设备最好有这些环境(相信对于有Coding Agent的你来说不是难事):*
 
-- **[Python](https://www.python.org/)**. 推荐3.14及以上;
-- **[Lua](https://www.lua.org/)**. 推荐5.5.0及以上; `DCS`的`.miz`实际就是`.lua`脚本包
+- **[Python](https://www.python.org/)** 3.14 或更高版本。库的运行依赖只有标准库。
+- **[Lua](https://www.lua.org/)** 解释器是可选的开发环境，用于 Hook 的 Lua 测试；库自行解析 MIZ 中的 Lua 数据，不需要外部 Lua。
 - **[Git for Windows](https://gitforwindows.org/)**
 - **一个Coding Agent.** 作者推荐这些Agent:
 

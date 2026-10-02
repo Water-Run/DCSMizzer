@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dcsmizzer"
+dynamic = ["version"]
+description = "Evidence-oriented DCS World mission construction and validation toolkit"
+readme = "README.md"
+requires-python = ">=3.14"
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
+dependencies = []
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+]
+
+[project.urls]
+Repository = "https://github.com/Water-Run/DCSMizzer"
+Issues = "https://github.com/Water-Run/DCSMizzer/issues"
+
+[project.scripts]
+dcsmizzer = "dcsmizzer.entrypoint:main"
+
+[tool.setuptools]
+packages = ["dcsmizzer"]
+package-dir = { dcsmizzer = "Tools/dcsmizzer" }
+py-modules = []
+include-package-data = false
+
+[tool.setuptools.dynamic]
+version = { attr = "dcsmizzer._version.__version__" }
+
+[tool.setuptools.package-data]
+dcsmizzer = ["resources/*.lua"]

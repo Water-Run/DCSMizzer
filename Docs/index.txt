@@ -1,10 +1,14 @@
 DCSMIZZER MODEL ROUTER
 
-Status: low-level MIZ toolkit plus an explicit-opt-in isolated DCS runtime
+Status: installable Python library and CLI for low-level MIZ work, plus an
+explicit-opt-in isolated DCS runtime
 bridge; not a natural-language planner. Only runtime-run can start DCS, only
 after its authorization flag. No product command starts Mission Editor.
 
-Typical read path:
+Library integration:
+  README or README-zh -> python-library.md -> the needed Python module
+
+Typical mission read path:
   README or README-zh -> this file -> quickstart.md -> exact reference only
 
 Start:
@@ -30,6 +34,7 @@ Hard rules:
     artifact's declared runtime tier.
 
 Read only what the decision needs:
+  python-library.md  installation, public Python API, packaging, CLI trust gate
   quickstart.md       bounded end-to-end path and document routing
   capabilities.md     implemented/partial/unavailable boundary
   development-roadmap.md planned sequence, dependencies, and acceptance gates;
@@ -47,3 +52,4 @@ Read only what the decision needs:
   build-spec.md       normative JSON-to-MIZ construction contract
   validation.md       validation meanings and completion claims
   mission-format.md   raw MIZ/CMP structure and diagnosis; optional
+  ../CHANGELOG.md     dated release changes and their capability limits

@@ -9,7 +9,15 @@ from typing import Any
 _CAPABILITIES: dict[str, Any] = {
     "schema": "dcsmizzer.capabilities/v3",
     "survey_basis": "2026-07-30",
-    "implementation_reviewed_on": "2026-08-27",
+    "implementation_reviewed_on": "2026-10-02",
+    "python_library": {
+        "status": "implemented",
+        "import_name": "dcsmizzer",
+        "requires_python": ">=3.14",
+        "distribution_formats": ["wheel", "sdist"],
+        "cli_entrypoints": ["dcsmizzer", "python -m dcsmizzer"],
+        "provenance_sensitive_commands_require_source_checkout": True,
+    },
     "inspect_miz": {
         "status": "implemented",
         "archive_policy": {
@@ -354,6 +362,42 @@ _CAPABILITIES: dict[str, Any] = {
         ],
         "runtime_validity": "never_implied",
     },
+    "initialized_registry_consumer": {
+        "status": "implemented_offline_consumer",
+        "command": "initialized-registry-validate",
+        "schemas": {
+            "input": "dcsmizzer.initialized-registry/v1",
+            "report": "dcsmizzer.initialized-registry-validation/v1",
+        },
+        "provides": [
+            "bounded duplicate-key-safe UTF-8 JSON consumption",
+            "cycle, unsupported-value, nonfinite-number, depth, node, record, "
+            "and byte limits",
+            "stable normalization and canonical registry SHA-256",
+            "explicit countries, tasks, units, weapons, launchers, pylon "
+            "edges, and unit-shell stages",
+            "unit-country, unit-task, default-task, launcher-weapon, "
+            "pylon-unit, pylon-launcher, and unit-shell-unit reference checks",
+            "listed and counted unresolved launcher CLSIDs",
+            "optional exact-run/version/count/reference validation when an "
+            "in-result record-export slice is bound by runtime-collect",
+        ],
+        "limits": {
+            "standalone_input_bytes": 67108864,
+            "json_depth": 32,
+            "json_nodes": 250000,
+            "records_per_collection": 50000,
+        },
+        "current_product_hook": "aggregate_counts_only",
+        "current_initialized_record_exports": 0,
+        "authority": "caller_supplied_structure_only_without_runtime_binding",
+        "does_not_provide": [
+            "a DCS-side record exporter",
+            "runtime attestation for a caller-supplied file",
+            "complete current unit, task, payload, pylon, or unit-shell data",
+            "permission to redistribute raw initialized DCS data",
+        ],
+    },
     "mission_generation": {
         "status": "implemented_low_level",
         "input": "dcsmizzer.miz-build-spec/v1",
@@ -541,6 +585,8 @@ _CAPABILITIES: dict[str, Any] = {
             "Steam appmanifest preparation hashes plus launch-stable semantic "
             "app/build/install/state revalidation",
             "hash-bound aggregate initialized-registry evidence",
+            "validation of an optional bounded initialized-registry record "
+            "slice when the exact product Hook supplies one",
             "exact-MIZ load/start/bounded smoke and DCS Export coordinate checks",
             "timeout and post-result cleanup limited to the re-attested process",
         ],
@@ -548,6 +594,8 @@ _CAPABILITIES: dict[str, Any] = {
             "runtime validity without a passing collection for the exact artifact",
             "AI behaviour, every trigger path, or a human playtest",
             "Mission Editor resave",
+            "a current initialized record export while the product Hook "
+            "remains aggregate-only",
         ],
     },
     "dcs_launch": {

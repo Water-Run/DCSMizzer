@@ -57,6 +57,40 @@ compatibility relationships. A passing aggregate result proves initialization
 and those counts for the bound installation; it does not make a complete unit
 or pylon registry available.
 
+## Initialized-registry consumer contract
+
+The offline consumer validates a caller-supplied staged record document without
+starting DCS:
+
+```powershell
+python Tools\dcsmizzer.py initialized-registry-validate `
+  path\initialized-registry.json
+```
+
+The input schema is `dcsmizzer.initialized-registry/v1`; the report schema is
+`dcsmizzer.initialized-registry-validation/v1`. The consumer bounds the file,
+JSON graph, depth, records, identifiers, and source-path declarations; rejects
+duplicate keys, cycles, unsupported values, and nonfinite numbers; normalizes
+record ordering; and checks country, task, unit, weapon, launcher, pylon, and
+unit-shell references. Unknown launcher CLSIDs remain listed and make the
+standalone integrity gate fail.
+
+This command establishes structure and internal references only. Its
+`runtime_attestation_verified` and
+`usable_as_current_initialized_authority` fields remain false. When an exact
+product runtime result eventually carries a bounded `record_export` slice,
+`runtime-collect` additionally checks its run ID, product version, completed-
+stage aggregate counts, and hard references. The current product Hook remains
+aggregate-only, so there is no current real record export and no complete
+initialized-registry capability to claim.
+
+Standalone registry files are bounded at 64 MiB. The current embedded runtime
+result remains bounded at 2 MiB; a future full exporter must therefore either
+emit intentionally incomplete in-result stages or introduce a separately
+hash-bound local artifact before claiming complete coverage. Raw initialized
+DCS data remains local and must not be committed or redistributed without a
+separate review.
+
 ## Exact-MIZ load and smoke
 
 ```powershell

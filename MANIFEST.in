@@ -1,0 +1,7 @@
+include AGENTS.md README-zh.md CHANGELOG.md PROMPT-SAMPLE.adoc PROMPT-SAMPLE-zh.adoc
+include Tools/dcsmizzer.py Tools/validate.py Tools/validate_document_links.py Tools/validate_prompt_samples.py
+graft Docs
+prune .develope
+prune .github
+prune Tools/tests
+global-exclude __pycache__ *.py[cod]

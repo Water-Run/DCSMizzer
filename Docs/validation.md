@@ -6,6 +6,33 @@ sequence. Start with [quickstart.md](quickstart.md); use
 [workflow.md](workflow.md) for order and [build-spec.md](build-spec.md) for the
 normative input contract.
 
+## Machine-readable V0-V5 contract
+
+Publish the definitions without performing any validation:
+
+```powershell
+python Tools\dcsmizzer.py validation-contract
+```
+
+The installed CLI also exposes `dcsmizzer validation-contract`. The
+`dcsmizzer.validation-contract/v1` response describes these separate levels:
+
+| Level | Minimum evidence |
+|---|---|
+| V0 | Static schema and authored-spec audit pass |
+| V1 | Safe archive, required-member parsing, and read-back pass |
+| V2 | Exact version/hash-bound artifact loads in DCS |
+| V3 | V2 plus simulation start and a declared stable interval |
+| V4 | V3 plus observed contract-bound behavior checkpoints |
+| V5 | Recorded human playtest within an explicit scope |
+
+Publishing this contract does not establish any level. A lower level never
+implies a higher one. `runtime-collect` includes
+`dcsmizzer.validation-tiers/v1` metadata, separates V2 and V3, and leaves
+unobserved V4/V5 unknown. A failed smoke interval can preserve V2 only when
+the exact artifact's load evidence and input bindings passed. Aggregate
+registry initialization establishes neither V2 nor V3 for a mission.
+
 ## Validation levels
 
 | Level | Proves | Does not prove |

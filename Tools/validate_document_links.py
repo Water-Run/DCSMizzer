@@ -57,6 +57,7 @@ def _default_documents(root: Path) -> list[Path]:
     paths = [
         root / "README.md",
         root / "README-zh.md",
+        root / "CHANGELOG.md",
         root / "PROMPT-SAMPLE.adoc",
         root / "PROMPT-SAMPLE-zh.adoc",
     ]

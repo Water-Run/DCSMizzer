@@ -39,22 +39,33 @@ The ordinary lane runs:
 - Ruff `E`, `F`, and `B` rules over product code and tests;
 - Python bytecode compilation over product and survey code.
 
+All gates are orchestrated by `.github/validate_repository.py`. It launches
+Python children with bytecode writes disabled and redirects the explicit
+`compileall` output to a temporary cache outside the repository. Before and
+after the matrix it refuses any `__pycache__`, `.pyc`, or `.pyo` artifact under
+`Tools` or the maintainer survey package. It reports those paths but never
+deletes them. This keeps a completed local validation run compatible with the
+provenance-sensitive CLI checkout gate.
+
 The document-link gate resolves local targets and also requires both each
 repository-facing document and every linked local target to exist in the Git
 index. An ignored or untracked local file therefore cannot make a developer
 checkout pass when the same link would be broken in a release checkout.
 
-The corresponding release-checkout commands that do not depend on maintainer
-survey material are:
+Run the complete matrix from a repository clone, which includes the product
+tests and tracked maintainer survey package:
 
 ```powershell
 python -m pip install --no-deps --only-binary=:all: --require-hashes -r .github\requirements-ci.txt
-python -m unittest discover -s Tools\tests
-python Tools\validate_document_links.py
-python Tools\validate_prompt_samples.py
-ruff check --select E,F,B Tools\dcsmizzer.py Tools\dcsmizzer Tools\tests
-python -m compileall -q Tools
+python -B .github\validate_repository.py
 ```
+
+Public library imports and installed-entrypoint policy are covered by the
+product tests. This ordinary CI lane does not build or install distributions.
+Wheel/source-distribution construction and installation checks are separate
+release work; see [python-library.md](python-library.md#build-and-check-distributions).
+Source distributions omit repository tests and maintainer surveys, so run the
+full matrix from the clone before packaging.
 
 For the complete local evidence lane, populate the acknowledged clones under
 `.develope/upstream` at the commits recorded by the survey, then run the same

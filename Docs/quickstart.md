@@ -5,6 +5,11 @@ does not plan a scenario from prose, invent missing DCS data, or prove runtime
 playability. Keep generated specs, reports, and MIZ files under a working
 directory such as `output/`.
 
+For installation and integration into Python programs, read
+[python-library.md](python-library.md). The mission workflow below uses the
+source-checkout CLI because its evidence and runtime steps need the isolated
+Git producer gate.
+
 ## 1. Capture the request
 
 Make a compact constraint ledger: era/date, duration, exact map, coalitions,

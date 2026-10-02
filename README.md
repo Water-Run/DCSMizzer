@@ -4,10 +4,10 @@
   <strong><a href="./README-zh.md">中文 README</a></strong>
 </p>
 
-`DCSMizzer` is an **LLM-oriented DCS combat generator**. It provides `Docs` for
-Agents to read and `Tools` for Agents to call. Run your Coding Agent in this
-directory, describe the combat scenario you want in *natural language*, and have
-it generated for you.
+`DCSMizzer` is an **Agent-oriented DCS World mission toolkit** with a Python
+API, CLI, and model-facing documentation. Describe a scenario in natural
+language; an Agent reads the guides, queries evidence, and calls the tools to
+construct and validate a mission.
 
 > [!NOTE]
 >
@@ -19,39 +19,17 @@ it generated for you.
 
 > [!IMPORTANT]
 >
-> **Current status (2026-08-27): groundwork with an isolated runtime bridge.** `Tools` provide MIZ/CMP
-> inspection; current-install static and real-mission observed evidence
-> queries; locked upstream-cache preparation, readiness, and read-only pin-
-> candidate audits; acknowledged
-> commit-bound cross-map terrain, airbase, parking, spawn-point, unit, and
-> pylon queries; current options and warehouse templates; finite common
-> trigger, goal, and timed-text compilation; native MiG-29A GCI evidence;
-> authored-spec evidence auditing; deterministic low-level MIZ assembly;
-> strict complete-scenario structural and contract checks; read-back
-> verification; beacon-fitted coordinates with whole-airfield holdouts,
-> extrapolation diagnostics, WGS-84 geodesic offsets, and commit-bound planning-
-> coastline distance/side checks; two-pass stable, content-addressed local
-> evidence bundles with drift/readiness gates and privacy-safe runtime/terrain
-> attestations; uniform CLI evidence-reference states plus fail-closed,
-> pre/post-fenced current-bundle binding, including canonical intrinsic-report
-> hashes, for source-matched read-only queries;
-> disposable physical-
-> probe MIZ instrumentation; a read-only, dependency-pinned Windows CI release
-> gate; and an explicit-opt-in isolated DCS runtime bridge.
-> The aggregate registry path was exercised on DCS 2.9.28.26385 by an older
-> development producer; the current clean candidate was blocked by Steam
-> authorization before Hook initialization and has no reusable runtime
-> authority. An exact MIZ is runtime-valid only when its own hash-bound
-> collection passes.
-> Natural-language scenario planning, campaign generation, complete runtime
-> registry record export, Mission Editor resave, and general behavioural or
-> human-playtest validation are not implemented. Before use, read [`Docs/index.txt`](./Docs/index.txt) and run
-> `python Tools/dcsmizzer.py capabilities`.
-> The evidence-led development order and acceptance gates are recorded in
-> [`Docs/development-roadmap.md`](./Docs/development-roadmap.md).
-> The ordinary hosted/static gate and its strict separation from authorized
-> local DCS validation are documented in
-> [`Docs/continuous-validation.md`](./Docs/continuous-validation.md).
+> **Current status (2026-10-02): installable Python library and CLI; groundwork phase.**
+> Implemented facilities include MIZ/CMP inspection, evidence queries and audits,
+> explicit-spec low-level construction and read-back verification, and an
+> explicitly authorized isolated DCS runtime bridge. Offline registry-file
+> validation exists; the current Hook still exports aggregate counts only.
+> Natural-language planning, campaign generation, complete initialized-registry
+> export, Mission Editor resave, general behavior validation, and human playtest
+> validation remain unimplemented. Static or package success does not prove
+> that a mission passed DCS runtime validation. Use
+> [`Docs/capabilities.md`](./Docs/capabilities.md) and the current
+> `python Tools/dcsmizzer.py capabilities` output for the capability boundary.
 
 **A good Prompt is the foundation of a high-quality combat scenario.** See the
 [**Prompt examples**](./PROMPT-SAMPLE.adoc) to learn how to write an effective
@@ -74,14 +52,58 @@ projects for providing the foundations for mapping:
 
 ---
 
+## Python library
+
+The core Python package can now be installed from this repository with
+Python 3.14 or later:
+
+```powershell
+python -m pip install .
+# Use an editable install for development:
+python -m pip install -e .
+```
+
+```python
+from pathlib import Path
+from dcsmizzer import inspect_miz, analyse_miz
+
+mission = Path("output/mission.miz")
+archive = inspect_miz(mission)
+if archive.safe:
+    observation = analyse_miz(mission)
+    print(observation.theatre)
+```
+
+After installation, run `dcsmizzer capabilities` or
+`python -m dcsmizzer capabilities`. The library provides inspection,
+explicit-spec low-level construction, and validation. Natural-language
+planning and campaign generation remain unimplemented. Evidence,
+construction-provenance, and runtime commands still require a clean standalone
+Git clone and the original `python Tools/dcsmizzer.py` integrity gate; a wheel
+installation has no verified Git producer identity. See the
+[Python library guide](Docs/python-library.md) for API usage, packaging,
+and editable-install cache constraints.
+
+## Documentation
+
+| Need | Guide |
+|---|---|
+| Installation, Python API, distribution builds | [Python library](Docs/python-library.md) |
+| Agent command and reference selection | [Document entry](Docs/index.txt), [command router](Docs/tools.md) |
+| Build a user scenario | [Mission workflow](Docs/quickstart.md), [build spec](Docs/build-spec.md) |
+| Interpret capability and validation claims | [Capabilities](Docs/capabilities.md), [validation](Docs/validation.md) |
+| Development direction and release changes | [Roadmap](Docs/development-roadmap.md), [changelog](CHANGELOG.md) |
+
 ## Usage
 
 *Before you begin, it is best to have the following available on your machine
 (which should not be difficult if you already use a Coding Agent):*
 
-- **[Python](https://www.python.org/)**, version 3.14 or later recommended;
-- **[Lua](https://www.lua.org/)**, version 5.5.0 or later recommended; a `DCS` `.miz`
-  file is essentially a package of `.lua` scripts;
+- **[Python](https://www.python.org/)** 3.14 or later. Product runtime imports
+  use only the standard library.
+- An optional **[Lua](https://www.lua.org/)** interpreter for developer Hook
+  tests. The library parses Lua data in MIZ archives itself and does not need
+  an external Lua interpreter.
 - **[Git for Windows](https://gitforwindows.org/)**;
 - **A Coding Agent.** The author recommends:
 

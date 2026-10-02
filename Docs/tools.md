@@ -10,6 +10,14 @@ python Tools\dcsmizzer.py <command> --help
 CLI help is authoritative for command availability, flags, defaults, and
 argument order.
 
+## Library and installation
+
+See [python-library.md](python-library.md) for installation, the public API,
+packaging, and editable-install cache constraints. After installation,
+`dcsmizzer <command>` and `python -m dcsmizzer <command>` provide the same
+ordinary command interface. Provenance-sensitive work still requires the
+original isolated source-checkout bootstrap shown above.
+
 ## Context gate
 
 Use this evidence ladder:
@@ -69,6 +77,8 @@ compact catalog -> exact type or airport -> one preset, station, or parking
 | Need | Commands | Open only if help is insufficient |
 |---|---|---|
 | Capability boundary | `capabilities` (compact status matrix; `--details` for the full machine report) | [capabilities.md](capabilities.md) |
+| V0-V5 definitions without observing a mission | `validation-contract` | [validation.md](validation.md#machine-readable-v0-v5-contract) |
+| Initialized-registry structure and reference validation | `initialized-registry-validate` (standalone input is unbound unless the exact slice is separately carried by a passing runtime collection) | [runtime command details](reference/runtime-commands.md) |
 | Content-addressed evidence, historical drift, and current readiness | `evidence-snapshot`, `evidence-verify`, `evidence-diff`, `evidence-readiness` | [evidence lifecycle command details](reference/evidence-lifecycle-commands.md) |
 | Locked upstream cache readiness/preparation and candidate review | `upstream-status`, `upstream-prepare`, `upstream-promotion-audit` | [upstream source command details](reference/upstream-source-commands.md) |
 | Official product cards versus unique theatre IDs | `terrain-catalog` | [physical terrain routing](terrain-physical.md) |

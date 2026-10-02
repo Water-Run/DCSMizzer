@@ -6,6 +6,10 @@
 - Scope: development after the survey, low-level generator, and static-validation
   groundwork.
 - Current capability boundary: [capabilities.md](./capabilities.md).
+- Current packaged release: `0.12.0`; see [CHANGELOG.md](../CHANGELOG.md) and
+  [python-library.md](python-library.md). Dated checkpoints below retain their
+  original evidence and pause boundaries; they do not describe current Git
+  status or revoke later user instructions.
 - Evidence and conflict policy: [evidence.md](./evidence.md).
 - Baseline issue review: local-only
   `output/survey-verification-2026-08-05/ISSUE-REVIEW-2026-08-05.md` (ignored
@@ -464,11 +468,12 @@ Exact record export follows only after this lifecycle succeeds.
 
 ## M2: initialized registries and terrain evidence
 
-**Implementation status (2026-08-26): partial.** Aggregate initialized-registry
-runtime counts, bounded physical-terrain consumers/probes, and privacy-safe
-bundle attestations exist. The staged initialized record export, referential-
-integrity graph, full payload/launcher resolution, and per-installed-terrain
-initialization records below do not yet exist.
+**Implementation status (2026-08-31): partial.** Aggregate initialized-registry
+runtime counts, a bounded deterministic offline record consumer with synthetic
+referential-integrity coverage, bounded physical-terrain consumers/probes, and
+privacy-safe bundle attestations exist. The current Hook remains aggregate-only;
+a real staged initialized record export, full payload/launcher resolution, and
+per-installed-terrain initialization records below do not yet exist.
 
 ### Goal
 
@@ -927,3 +932,131 @@ Progress is measured by evidence gates, not dates alone.
   to match later product state.
 - Reassess milestone priority after the first authorized DCS probe, after each
   DCS version update that changes relevant APIs/data, and before campaign work.
+
+## Paused development checkpoint: 2026-08-31
+
+Development paused here at the user's request on 2026-08-31
+(Asia/Shanghai). No Git commit, DCS or Mission Editor launch, upstream update,
+or destructive worktree operation was performed.
+
+### Repository and evidence identity
+
+- Branch and starting commit: `main` at
+  `dee295e3fabb9ae7257506b2830f1d7255520d6b`.
+- Package version: `0.11.1`.
+- The tracked and relevant untracked worktree was clean before this work.
+- The exact hosted model tier is not exposed, so the AGENTS.md requirement of
+  a provable GPT-5.6-or-higher tier remains an environment caveat. Internet
+  search, multimodal input handling, and sustained repository tools were
+  available.
+- The pre-change validation baseline was 603 product tests passed with 2
+  skipped, 39 survey tests passed, and successful required Ruff, document-link,
+  bilingual Prompt-sample, and compile checks.
+- Current static evidence still identified DCS `2.9.28.26385` and Steam build
+  `24431605`. Installation, countries, weather, capabilities, and locked
+  upstream domains were complete; module, payload, and airfield authority
+  remained partial.
+- Six acknowledged upstream checkouts were inspected as clean read-only
+  sources. The product pins included pydcs
+  `e20f328390aecaac2a7f82444b4f5a96ac6bb2c3` and BriefingRoom
+  `4d8773e9eec0215edb5cd9f576c085ee9f1bf7a7`; the separately inspected
+  BriefingRoom reference checkout was
+  `be5e3663ec6ed2b22db69c22f91c51f150566a91`.
+
+### Local construction-v2 baseline
+
+A real local v2 snapshot and same-producer verification were created outside
+the repository under `D:\Coding\DCSMizzer-local\construction-bundles`.
+
+- Bundle ID:
+  `6abf87795b4d2ecf9e8082833a7e3cb80f257246ac967d8c31902349af7bb5d2`.
+- Manifest SHA-256:
+  `be078f7fcae9cc889a5d97b01a5a296fac30644751825678798c4bdb51ca75e4`.
+- Offline audit replay, build/rebuild, verification replay, and DAG checks
+  passed; `fully_reproducible` was true.
+- `runtime_valid` remained null and `static_release_ready` remained false
+  because current evidence coverage is partial.
+
+### Work implemented but not finalized
+
+The dirty checkpoint contains two bounded development slices:
+
+1. A unified `.github/validate_repository.py` ordinary-validation runner and a
+   simplified Product CI workflow. The runner executes the existing matrix
+   without a shell, disables repository bytecode writes, redirects compile
+   caches to an OS temporary directory, and refuses source-tree
+   `__pycache__`/`.pyc`/`.pyo` artifacts without deleting them. Contract and
+   failure-injection tests are present.
+2. An initialized-registry consumer foundation with schema
+   `dcsmizzer.initialized-registry/v1`, report schema
+   `dcsmizzer.initialized-registry-validation/v1`, and CLI command
+   `initialized-registry-validate PATH`. It provides bounded JSON input,
+   duplicate-key/nonfinite/cycle/unsupported-value rejection, stable canonical
+   hashing, explicit staged coverage, and country/task/unit/weapon/launcher/
+   pylon/unit-shell referential-integrity checks. Authority remains explicitly
+   `caller_supplied_structure_only`.
+
+`runtime-collect` validation can check an optional in-result `record_export`
+slice against its exact run ID, DCS version, complete-stage aggregate counts,
+and hard references while retaining aggregate-only backward compatibility.
+Unresolved launcher CLSIDs remain explicit. The current product Hook still
+emits aggregate counts only: no real initialized record export was generated
+or claimed.
+
+Targeted validation after the final code edit passed:
+
+```powershell
+python -B -m unittest `
+  Tools.tests.test_initialized_registry `
+  Tools.tests.test_runtime `
+  Tools.tests.test_ci_contract `
+  Tools.tests.test_validation_runner -v
+
+python -B -m ruff check --select E,F,B `
+  .github/validate_repository.py `
+  Tools/dcsmizzer.py Tools/dcsmizzer Tools/tests
+```
+
+This was 57 passing tests plus the required Ruff rules. The full unified
+post-change matrix has not run.
+
+### Preserved dirty worktree
+
+Modified tracked files at pause:
+
+- `.github/workflows/product-ci.yml`
+- `Docs/continuous-validation.md`
+- `Docs/development-roadmap.md`
+- `Tools/dcsmizzer/cli.py`
+- `Tools/dcsmizzer/report_views.py`
+- `Tools/dcsmizzer/runtime.py`
+- `Tools/tests/test_ci_contract.py`
+- `Tools/tests/test_runtime.py`
+
+New untracked files at pause:
+
+- `.github/validate_repository.py`
+- `Tools/dcsmizzer/initialized_registry.py`
+- `Tools/tests/test_initialized_registry.py`
+- `Tools/tests/test_validation_runner.py`
+
+Do not reset, clean, or assume these files are disposable when resuming.
+
+### Resume boundary
+
+1. Decide whether initialized-registry stages remain within the current 2 MiB
+   embedded runtime-result limit or become separate hash-bound local artifacts;
+   the standalone consumer currently permits at most 64 MiB.
+2. Update the machine-readable capability matrix and user documentation to
+   advertise only the offline consumer and optional binding validator. A
+   complete initialized registry, full pylon compatibility, and real Hook
+   exporter remain unavailable.
+3. Run `python -B .github\validate_repository.py`, recheck the cache-free
+   source tree, inspect the final diff, and apply package/version policy.
+4. Do not commit or release without an explicit request. Resume M3 static
+   conformance fixtures and M4 scenario-intent/resolved-plan contracts only
+   after this checkpoint passes the full matrix.
+
+Partial current evidence, no real initialized record export, no DCS runtime
+execution in this session, the model-tier caveat, and the missing post-change
+full matrix remain completion boundaries rather than implied successes.

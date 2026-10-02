@@ -1378,7 +1378,17 @@ class ToolCliTests(unittest.TestCase):
         report = json.loads(stdout.getvalue())
         self.assertEqual(exit_code, 0)
         self.assertEqual(stderr.getvalue(), "")
-        self.assertEqual(report["implementation_reviewed_on"], "2026-08-27")
+        self.assertEqual(report["implementation_reviewed_on"], "2026-10-02")
+        self.assertEqual(report["python_library"]["status"], "implemented")
+        self.assertTrue(
+            report["python_library"][
+                "provenance_sensitive_commands_require_source_checkout"
+            ]
+        )
+        registry = report["initialized_registry_consumer"]
+        self.assertEqual(registry["status"], "implemented_offline_consumer")
+        self.assertEqual(registry["current_initialized_record_exports"], 0)
+        self.assertEqual(registry["current_product_hook"], "aggregate_counts_only")
         self.assertEqual(
             report["mission_generation"]["status"],
             "implemented_low_level",

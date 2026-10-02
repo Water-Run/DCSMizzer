@@ -44,6 +44,7 @@ from .evidence import (
     verify_evidence_bundle,
 )
 from .gci import gci_evidence_report, gci_report_complete
+from .initialized_registry import validate_initialized_registry_file
 from .mission import (
     MissionStats,
     analyse_miz,
@@ -92,6 +93,7 @@ from .upstream_promotion import (
     promotion_audit_passed,
     upstream_promotion_report,
 )
+from .validation_contract import validation_contract_report
 from .weather import cloud_preset_report, weather_registry_report
 
 DEFAULT_EXACT_PARKING_LIMIT = 8
@@ -209,6 +211,9 @@ def main(
         binding_plan = _preflight_evidence_binding(args)
         if args.command == "capabilities":
             report = capabilities_report()
+            exit_code = 0
+        elif args.command == "validation-contract":
+            report = validation_contract_report()
             exit_code = 0
         elif args.command == "evidence-snapshot":
             report = create_evidence_snapshot(
@@ -352,6 +357,9 @@ def main(
         elif args.command == "runtime-collect":
             report = collect_runtime(args.manifest)
             exit_code = 0 if report["validation"]["runtime_valid"] is True else 1
+        elif args.command == "initialized-registry-validate":
+            report = validate_initialized_registry_file(args.path)
+            exit_code = 0 if report["validation"]["registry_valid"] is True else 1
         elif args.command == "inspect":
             report, exit_code = _inspect(args.path, skip_crc=args.skip_crc)
         elif args.command == "dcs-static":
@@ -1476,6 +1484,26 @@ def _build_parser() -> argparse.ArgumentParser:
         "Authority: product-declared capability matrix.",
     )
     add_view_options(capabilities)
+
+    add_command(
+        "validation-contract",
+        "Publish the machine-readable V0-V5 validation ladder without "
+        "performing runtime work or claiming observed evidence. Authority: "
+        "product validation semantics.",
+    )
+
+    initialized_registry = add_command(
+        "initialized-registry-validate",
+        "Validate one bounded initialized-registry record export and its "
+        "internal country, task, unit, launcher, pylon, weapon, and unit-shell "
+        "references. Authority: caller-supplied structure only unless the "
+        "same export is separately bound by runtime-collect.",
+    )
+    initialized_registry.add_argument(
+        "path",
+        type=Path,
+        help="Initialized-registry JSON file; read only by this command.",
+    )
 
     evidence_snapshot = add_command(
         "evidence-snapshot",

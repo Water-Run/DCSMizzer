@@ -49,22 +49,5 @@ jobs:
           python --version
           ruff --version
 
-      - name: Run product tests
-        run: python -m unittest discover -s Tools\tests
-
-      - name: Run survey tests
-        run: >-
-          python -m unittest discover -s .develope\survey
-          -t .develope\survey -p test_*.py
-
-      - name: Validate repository documents
-        run: python Tools\validate_document_links.py
-
-      - name: Validate bilingual Prompt samples
-        run: python Tools\validate_prompt_samples.py
-
-      - name: Run required Ruff rules
-        run: ruff check --select E,F,B Tools\dcsmizzer.py Tools\dcsmizzer Tools\tests
-
-      - name: Compile product and survey Python
-        run: python -m compileall -q Tools .develope\survey
+      - name: Run cache-isolated repository validation
+        run: python -B .github\validate_repository.py

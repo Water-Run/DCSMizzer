@@ -1339,6 +1339,83 @@ class RuntimeBridgeTests(unittest.TestCase):
                     report = runtime.collect_runtime(manifest_path)
                     self.assertIn(expected, report["validation"]["failure_reasons"])
 
+    def test_runtime_validator_accepts_a_bound_initialized_registry_slice(
+        self,
+    ) -> None:
+        manifest_path = self._prepare_registry("record-export")
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        result = self._registry_result(manifest["run_id"])
+        registry = result["registry"]
+        registry["aggregate_only"] = False
+        registry["counts"] = self._record_export_counts()
+        registry["record_export"] = self._record_export(manifest["run_id"])
+
+        self.assertEqual(runtime._validate_runtime_result(result, manifest), [])
+
+    def test_runtime_validator_checks_export_state_identity_refs_and_counts(
+        self,
+    ) -> None:
+        manifest_path = self._prepare_registry("record-export-errors")
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+
+        def candidate() -> dict[str, object]:
+            result = self._registry_result(manifest["run_id"])
+            registry = result["registry"]
+            registry["aggregate_only"] = False
+            registry["counts"] = self._record_export_counts()
+            registry["record_export"] = self._record_export(manifest["run_id"])
+            return result
+
+        cases = []
+
+        invalid_state = candidate()
+        invalid_state["registry"]["aggregate_only"] = True
+        cases.append((invalid_state, "registry_export_state_invalid"))
+
+        wrong_run = candidate()
+        wrong_run["registry"]["record_export"]["identity"]["run_id"] = "wrong"
+        cases.append((wrong_run, "registry_record_export_run_id_mismatch"))
+
+        wrong_version = candidate()
+        wrong_version["registry"]["record_export"]["identity"][
+            "product_version"
+        ] = "0.0.0.0"
+        cases.append((wrong_version, "registry_record_export_version_mismatch"))
+
+        invalid_reference = candidate()
+        invalid_reference["registry"]["record_export"]["units"][0][
+            "country_ids"
+        ] = [999]
+        cases.append(
+            (invalid_reference, "registry_record_export_references_invalid")
+        )
+
+        count_mismatch = candidate()
+        count_mismatch["registry"]["counts"]["countries"] = 2
+        cases.append((count_mismatch, "registry_record_count_mismatch:countries"))
+
+        invalid_structure = candidate()
+        del invalid_structure["registry"]["record_export"]["schema"]
+        cases.append((invalid_structure, "registry_record_export_invalid"))
+
+        for result, expected in cases:
+            with self.subTest(reason=expected):
+                reasons = runtime._validate_runtime_result(result, manifest)
+                self.assertIn(expected, reasons)
+
+    def test_runtime_binding_preserves_unresolved_launcher_evidence(self) -> None:
+        manifest_path = self._prepare_registry("unresolved-launcher")
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        result = self._registry_result(manifest["run_id"])
+        registry = result["registry"]
+        registry["aggregate_only"] = False
+        registry["counts"] = self._record_export_counts()
+        export = self._record_export(manifest["run_id"])
+        export["launchers"][0]["weapon_clsid"] = None
+        registry["record_export"] = export
+
+        self.assertEqual(runtime._validate_runtime_result(result, manifest), [])
+
     def test_timeout_terminates_and_kills_only_started_process(self) -> None:
         manifest_path = self._prepare_registry("timeout")
         process = _TimeoutProcess()
@@ -1698,6 +1775,85 @@ assert(exited)
                     "pylon_launcher_edges": 5000,
                 },
             },
+        }
+
+    @staticmethod
+    def _record_export_counts() -> dict[str, int]:
+        return {
+            "countries": 1,
+            "unit_types": 1,
+            "weapons_by_clsid": 1,
+            "task_definitions": 1,
+            "planes": 1,
+            "pylon_launcher_edges": 1,
+        }
+
+    @staticmethod
+    def _record_export(run_id: str) -> dict[str, object]:
+        return {
+            "schema": "dcsmizzer.initialized-registry/v1",
+            "identity": {
+                "run_id": run_id,
+                "product_version": VERSION,
+                "source_schema": runtime.RESULT_SCHEMA,
+            },
+            "coverage": {
+                "stages": [
+                    {
+                        "name": name,
+                        "complete": True,
+                        "source_paths": [f"fixture/{name}.lua"],
+                    }
+                    for name in (
+                        "countries",
+                        "tasks",
+                        "units",
+                        "weapons",
+                        "pylons",
+                        "unit_shells",
+                    )
+                ]
+            },
+            "countries": [{"id": 0, "name": "Fixture Country"}],
+            "tasks": [{"id": 10, "name": "CAP"}],
+            "units": [
+                {
+                    "type_name": "Fixture Plane",
+                    "category": "planes",
+                    "country_ids": [0],
+                    "task_ids": [10],
+                    "default_task_id": 10,
+                    "flyable": True,
+                    "attributes": ["Air"],
+                }
+            ],
+            "weapons": [
+                {
+                    "clsid": "{FIXTURE-WEAPON}",
+                    "type_name": "Fixture Weapon",
+                }
+            ],
+            "launchers": [
+                {
+                    "clsid": "{FIXTURE-LAUNCHER}",
+                    "weapon_clsid": "{FIXTURE-WEAPON}",
+                    "settings": {},
+                }
+            ],
+            "pylon_edges": [
+                {
+                    "unit_type": "Fixture Plane",
+                    "station": 1,
+                    "launcher_clsid": "{FIXTURE-LAUNCHER}",
+                    "settings": {},
+                }
+            ],
+            "unit_shells": [
+                {
+                    "unit_type": "Fixture Plane",
+                    "fields": {"fuel_max": 1_000},
+                }
+            ],
         }
 
 
